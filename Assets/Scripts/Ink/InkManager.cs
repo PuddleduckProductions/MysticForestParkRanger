@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class InkManager : MonoBehaviour
 {
-    public static UnityEvent<string> startDialog;
+    #region Story Management
     public bool runOnStart = false;
 
     public static bool storyActive { get; private set; }
@@ -16,6 +16,9 @@ public class InkManager : MonoBehaviour
     protected TextAsset inkJSONAsset;
 
     protected Story story;
+    #endregion
+
+    InkCommands commands = new InkCommands();
 
     #region Dialog Parameters
     protected GameObject dialogInstance;
@@ -43,7 +46,10 @@ public class InkManager : MonoBehaviour
     }
     #endregion
 
-
+    /// <summary>
+    /// Just for other functions to immediately call StartDialog without needing a reference.
+    /// </summary>
+    public static UnityEvent<string> startDialog;
     void Awake() {
         story = new Story(inkJSONAsset.text);
         dialogInstance = transform.GetChild(0).gameObject;
@@ -94,8 +100,16 @@ public class InkManager : MonoBehaviour
     protected void EvaluateStory()
     {
         string text = story.Continue();
-        DialogLine line = LineFromString(text);
-        DrawDialog(line);
+        if (text[0] == '$') {
+            commands.Evaluate(text, story.currentTags);
+        } else {
+            DialogLine line = LineFromString(text);
+            DrawDialog(line);
+        }
+    }
+
+    private void Update() {
+        commands.Update();
     }
     #endregion
 
