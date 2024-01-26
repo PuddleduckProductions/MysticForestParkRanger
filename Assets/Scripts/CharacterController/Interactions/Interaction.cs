@@ -7,6 +7,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using static Interaction;
 
+/// <summary>
+/// Editor for <see cref="Interaction"/>, to make selecting <see cref="InteractionBehavior"/> automated and easy for designers.
+/// TODO: Need to figure out how to access the serialized properties of InteractionBehavior.
+/// </summary>
 [CustomEditor(typeof(Interaction))]
 [CanEditMultipleObjects]
 public class InteractionEditor : Editor {
@@ -41,14 +45,22 @@ public class InteractionEditor : Editor {
     }
 }
 
+/// <summary>
+/// A serialized class meant to control different interaction behaviors when space is pressed on one.
+/// This is to avoid having to attach multiple monobehaviors for anything with one interaction.
+/// If you want to add your own, you can either use Custom (in progress), or create a subclass of InteractionBehavior.
+/// </summary>
 [Serializable]
 public abstract class InteractionBehavior {
-    // We serialize so we don't lose the parent reference:
+    /// <summary>
+    /// Reference to the MonoBehaviour <see cref="Interaction"/> for accessing things like position.
+    /// It's a serialized field so we don't lose the reference to the parent when the scene starts.
+    /// </summary>
     [SerializeField]
-    protected Interaction interaction;
+    protected Interaction interactionObject;
 
     public InteractionBehavior(Interaction parent) {
-        interaction = parent;
+        interactionObject = parent;
     }
 
     public abstract bool isInteracting { get; }
@@ -68,7 +80,7 @@ public class InkInteraction : InteractionBehavior {
 
     public override bool isInteracting => InkManager.storyActive;
     public override void Interact() {
-        InkManager.startDialog.Invoke("interact_" + interaction.name);
+        InkManager.startDialog.Invoke("interact_" + interactionObject.name);
         UIController.onInteract.AddListener(InteractAdvance);
         InkManager.dialogEnd.AddListener(EndDialog);
     }
@@ -99,7 +111,7 @@ public class PushableInteraction : InteractionBehavior {
         player = GameObject.FindGameObjectWithTag("Player");
         isPushing = true;
         UIController.onInteract.AddListener(ReleasePush);
-        offset = interaction.transform.position - player.transform.position;
+        offset = interactionObject.transform.position - player.transform.position;
     }
 
     protected void ReleasePush(bool pressed) {
@@ -110,7 +122,7 @@ public class PushableInteraction : InteractionBehavior {
     }
 
     public override void Update() {
-        interaction.transform.position = player.transform.position + offset;
+        interactionObject.transform.position = player.transform.position + offset;
     }
 }
 
