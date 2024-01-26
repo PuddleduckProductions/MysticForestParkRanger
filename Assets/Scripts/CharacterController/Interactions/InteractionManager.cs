@@ -9,16 +9,16 @@ public class InteractionManager : MonoBehaviour
     protected Camera mainCamera;
 
     protected GameObject player;
-    protected GameObject[] interactionsInScene;
-    protected GameObject interactionButton;
+    protected Interaction[] interactionsInScene;
+    protected RectTransform interactionButton;
 
-    GameObject closestInteraction;
+    Interaction closestInteraction;
     // Start is called before the first frame update
     void Start()
     {
-        interactionsInScene = GameObject.FindGameObjectsWithTag("Interactive");
+        interactionsInScene = GameObject.FindObjectsByType<Interaction>(FindObjectsSortMode.None);
         player = GameObject.FindGameObjectWithTag("Player");
-        interactionButton = transform.GetChild(0).gameObject;
+        interactionButton = transform.GetChild(0).GetComponent<RectTransform>();
 
         mainCamera = Camera.main;
 
@@ -30,8 +30,7 @@ public class InteractionManager : MonoBehaviour
     void Interact(bool interacted) {
         interactPressed = interacted && !InkManager.storyActive;
         if (interactPressed && closestInteraction != null) {
-
-            InkManager.startDialog.Invoke("interact_" + closestInteraction.name);
+            closestInteraction.Interact();
         }
     }
 
@@ -42,18 +41,18 @@ public class InteractionManager : MonoBehaviour
         closestInteraction = null;
         if (!InkManager.storyActive) {
             // TODO: Fix so that objects get filtered better without having to run this each loop.
-            foreach (GameObject interaction in interactionsInScene) {
-                if (interaction != null && interaction.activeInHierarchy) {
+            foreach (Interaction interaction in interactionsInScene) {
+                if (interaction != null && interaction.gameObject.activeInHierarchy) {
                     var dist = Vector3.Distance(player.transform.position, interaction.transform.position);
                     if (dist <= interactionRange) {
                         isActive = true;
-                        interactionButton.transform.position = mainCamera.WorldToScreenPoint(interaction.transform.position);
+                        interactionButton.position = mainCamera.WorldToScreenPoint(interaction.transform.position);
                         closestInteraction = interaction;
                         break;
                     }
                 }
             }
         }
-        interactionButton.SetActive(isActive);
+        interactionButton.gameObject.SetActive(isActive);
     }
 }
