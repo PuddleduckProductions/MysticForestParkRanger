@@ -325,3 +325,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557ba209abcc6504aa964a9b8604591e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  symbolsFont: {fileID: 11400000, guid: b9c0bb971a565854e8b83dd4ca33a71a, type: 2}

@@ -6,6 +6,8 @@ using System.Text.RegularExpressions;
 
 public class InkManager : MonoBehaviour
 {
+    public bool runOnStart = false;
+
     [SerializeField]
     protected TextAsset inkJSONAsset;
 
@@ -20,21 +22,23 @@ public class InkManager : MonoBehaviour
     public struct DialogLine {
         public string character { get; }
         public string dialog { get; }
-        public DialogLine(string character, string dialog) {
+        public List<string> tags { get; }
+        public DialogLine(string character, string dialog, List<string> tags) {
             this.character = character;
             this.dialog = dialog;
+            this.tags = tags;
         }
     }
 
     static protected Regex lineMatchRegex;
-    static protected DialogLine LineFromString(string text) {
+    protected DialogLine LineFromString(string text) {
         const string lineMatch = @"(?:(?<characterName>[\w\W]*):)?(?<dialog>.*)";
         if (lineMatchRegex == null) {
             lineMatchRegex = new Regex(lineMatch);
         }
 
         Match match = lineMatchRegex.Match(text);
-        return new DialogLine(match.Groups["characterName"].Value, match.Groups["dialog"].Value);
+        return new DialogLine(match.Groups["characterName"].Value, match.Groups["dialog"].Value, story.currentTags);
     }
     #endregion
 
@@ -45,6 +49,11 @@ public class InkManager : MonoBehaviour
         dialogRenderer = dialogInstance.GetComponent<DialogRenderer>();
         dialogRenderer.Init();
         dialogInstance.SetActive(false);
+
+        if (runOnStart) {
+            storyActive = true;
+            AdvanceStory();
+        }
     }
 
     #region Flow Control
@@ -52,8 +61,8 @@ public class InkManager : MonoBehaviour
         // Not sure if there's a better way to test this.
         if (!storyActive) {
             story.ChoosePathString(name);
-            EvaluateStory();
             storyActive = true;
+            AdvanceStory();
         } else {
             Debug.LogWarning("Dialog already in progress.");
         }

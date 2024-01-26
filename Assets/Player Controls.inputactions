@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "interact",
+                    "type": "Button",
+                    "id": "f6f80894-3491-415f-a1a6-87bc4c3c9428",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -70,6 +79,17 @@
                     "action": "walking",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2d1a9e26-46fc-4f63-a373-55918a200399",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
