@@ -69,6 +69,18 @@ public class InkInteraction : InteractionBehavior {
     public override bool isInteracting => InkManager.storyActive;
     public override void Interact() {
         InkManager.startDialog.Invoke("interact_" + interaction.name);
+        UIController.onInteract.AddListener(InteractAdvance);
+        InkManager.dialogEnd.AddListener(EndDialog);
+    }
+
+    public void EndDialog() {
+        UIController.onInteract.RemoveListener(InteractAdvance);
+    }
+
+    public void InteractAdvance(bool pressed) {
+        if (pressed && InkManager.storyActive) {
+            InkManager.advanceStory.Invoke();
+        }
     }
 }
 
@@ -81,11 +93,13 @@ public class PushableInteraction : InteractionBehavior {
     protected bool isPushing;
     GameObject player;
 
+    Vector3 offset;
+
     public override void Interact() {
         player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(player);
         isPushing = true;
         UIController.onInteract.AddListener(ReleasePush);
+        offset = interaction.transform.position - player.transform.position;
     }
 
     protected void ReleasePush(bool pressed) {
@@ -96,7 +110,7 @@ public class PushableInteraction : InteractionBehavior {
     }
 
     public override void Update() {
-        interaction.transform.position = Vector3.Lerp(interaction.transform.position, player.transform.position, Time.deltaTime * 0.1f);
+        interaction.transform.position = player.transform.position + offset;
     }
 }
 

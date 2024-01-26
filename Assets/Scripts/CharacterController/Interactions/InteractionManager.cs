@@ -43,8 +43,8 @@ public class InteractionManager : MonoBehaviour
     void Update()
     {
         var isActive = false;
-        closestInteraction = null;
         if (CanInteract()) {
+            closestInteraction = null;
             // TODO: Fix so that objects get filtered better without having to run this each loop.
             foreach (Interaction interaction in interactionsInScene) {
                 if (interaction != null && interaction.gameObject.activeInHierarchy) {

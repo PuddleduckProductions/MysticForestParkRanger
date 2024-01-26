@@ -916,14 +916,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   behavior:
-    rid: 48647399063945217
+    rid: 48647399063945225
   references:
     version: 2
     RefIds:
-    - rid: 48647399063945217
+    - rid: 48647399063945225
       type: {class: InkInteraction, ns: , asm: Assembly-CSharp}
       data:
-        interaction: {fileID: 0}
+        interaction: {fileID: 1523201104}
 --- !u!1 &1602125427
 GameObject:
   m_ObjectHideFlags: 0
