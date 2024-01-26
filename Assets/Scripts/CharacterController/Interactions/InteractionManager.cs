@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-    public float interactionRange = 5.0f;
+    public float interactionRange = 3.0f;
 
     protected Camera mainCamera;
 
