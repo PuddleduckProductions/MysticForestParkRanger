@@ -124,7 +124,7 @@ public class InkCommands
 
     static protected Regex commandRegex;
     public void Evaluate(string commandString, List<string> tags) {
-        const string commandMatch = @"$\$(?<commandName>[\w]+)";
+        const string commandMatch = @"^\$(?<commandName>[\w]+)";
         if (commandRegex == null) {
             commandRegex = new Regex(commandMatch);
         }
