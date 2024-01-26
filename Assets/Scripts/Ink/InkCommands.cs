@@ -41,7 +41,7 @@ namespace InkCommandDef {
     static class CommandHelper {
         public static bool Vector3FromString(string str, out Vector3 vector) {
             vector = Vector3.zero;
-            var split = str.Split(",");
+            var split = str.Replace("(", "").Replace(")","").Split(",");
 
             if (split.Length != 3) {
                 return false;
@@ -93,7 +93,7 @@ namespace InkCommandDef {
 
         public override bool Update() {
             toMove.transform.position = Vector3.Lerp(toMove.transform.position, positionToUse, Time.deltaTime);
-            if (Vector3.Distance(toMove.transform.position, positionToUse) <= 2f) {
+            if (Vector3.Distance(toMove.transform.position, positionToUse) <= 0.5f) {
                 return true;
             }
             return false;
@@ -109,15 +109,17 @@ public class InkCommands
     protected Dictionary<string, ConstructorInfo> commands = new Dictionary<string, ConstructorInfo>();
     List<InkCommand> commandUpdates = new List<InkCommand>();
 
-    static Type[] commandTypes;
+    //static Type[] commandTypes;
     public InkCommands() {
         commands.Clear();
         var fullCommands = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType == typeof(InkCommand));
-        if (commandTypes == null) {
-            commandTypes = new[] { typeof(List<string>), typeof(string) };
-        }
+        // Would use these, but the out variable for error makes it really difficult.
+        // So we make the assumption there is only one constructor.
+        /*if (commandTypes == null) {
+            commandTypes = new[] { typeof(List<string>), typeof(System.String&) };
+        }*/
         foreach (var command in fullCommands) {
-            commands.Add(command.Name, command.GetConstructor(commandTypes));
+            commands.Add(command.Name, command.GetConstructors()[0]);
             
         }
     }
