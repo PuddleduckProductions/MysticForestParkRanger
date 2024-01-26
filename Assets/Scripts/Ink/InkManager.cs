@@ -61,6 +61,7 @@ public class InkManager : MonoBehaviour
             storyActive = true;
             AdvanceStory();
         }
+        UIController.onInteract.AddListener(InteractAdvance);
     }
 
     #region Flow Control
@@ -72,6 +73,12 @@ public class InkManager : MonoBehaviour
             AdvanceStory();
         } else {
             Debug.LogWarning("Dialog already in progress.");
+        }
+    }
+
+    public void InteractAdvance(bool pressed) {
+        if (pressed) {
+            AdvanceStory();
         }
     }
 
@@ -87,7 +94,6 @@ public class InkManager : MonoBehaviour
     protected void EvaluateStory()
     {
         string text = story.Continue();
-        Debug.Log(text);
         DialogLine line = LineFromString(text);
         DrawDialog(line);
     }

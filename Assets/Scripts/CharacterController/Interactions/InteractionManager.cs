@@ -11,6 +11,8 @@ public class InteractionManager : MonoBehaviour
     protected GameObject player;
     protected GameObject[] interactionsInScene;
     protected GameObject interactionButton;
+
+    GameObject closestInteraction;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,18 @@ public class InteractionManager : MonoBehaviour
     bool interactPressed = false;
 
     void Interact(bool interacted) {
-        interactPressed = interacted;
+        interactPressed = interacted && !InkManager.storyActive;
+        if (interactPressed && closestInteraction != null) {
+
+            InkManager.startDialog.Invoke("interact_" + closestInteraction.name);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         var isActive = false;
+        closestInteraction = null;
         if (!InkManager.storyActive) {
             // TODO: Fix so that objects get filtered better without having to run this each loop.
             foreach (GameObject interaction in interactionsInScene) {
@@ -41,10 +48,7 @@ public class InteractionManager : MonoBehaviour
                     if (dist <= interactionRange) {
                         isActive = true;
                         interactionButton.transform.position = mainCamera.WorldToScreenPoint(interaction.transform.position);
-                        if (interactPressed) {
-                            InkManager.startDialog.Invoke("interact_" + interaction.name);
-                            interactPressed = false;
-                        }
+                        closestInteraction = interaction;
                         break;
                     }
                 }

@@ -13,6 +13,6 @@ class UIController : MonoBehaviour
         }
     }
     void OnInteract(InputValue value) {
-        onInteract.Invoke(value.Get<float>() > 0);
+        onInteract.Invoke(value.isPressed);
     }
 }
