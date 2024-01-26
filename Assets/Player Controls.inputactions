@@ -15,9 +15,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "interact",
+                    "name": "Interact",
                     "type": "Button",
-                    "id": "f6f80894-3491-415f-a1a6-87bc4c3c9428",
+                    "id": "c1073278-ab0d-4f3b-a327-d5b189cc36cd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -82,12 +82,12 @@
                 },
                 {
                     "name": "",
-                    "id": "2d1a9e26-46fc-4f63-a373-55918a200399",
+                    "id": "a16e3ca6-6ce5-4ccb-8941-2a01ecf7caa1",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "interact",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

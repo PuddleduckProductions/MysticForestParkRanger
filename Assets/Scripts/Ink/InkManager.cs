@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using System.Text.RegularExpressions;
+using UnityEngine.Events;
 
 public class InkManager : MonoBehaviour
 {
+    public static UnityEvent<string> startDialog;
     public bool runOnStart = false;
+
+    public static bool storyActive { get; private set; }
 
     [SerializeField]
     protected TextAsset inkJSONAsset;
 
     protected Story story;
-    bool storyActive = false;
 
     #region Dialog Parameters
-    [SerializeField]
-    protected GameObject dialog;
     protected GameObject dialogInstance;
     protected DialogRenderer dialogRenderer;
     public struct DialogLine {
@@ -45,10 +46,16 @@ public class InkManager : MonoBehaviour
 
     void Awake() {
         story = new Story(inkJSONAsset.text);
-        dialogInstance = GameObject.Instantiate(dialog, transform);
+        dialogInstance = transform.GetChild(0).gameObject;
         dialogRenderer = dialogInstance.GetComponent<DialogRenderer>();
         dialogRenderer.Init();
+        // In case it's active:
         dialogInstance.SetActive(false);
+
+        if (startDialog == null) {
+            startDialog = new UnityEvent<string>();
+        }
+        startDialog.AddListener(StartDialog);
 
         if (runOnStart) {
             storyActive = true;
