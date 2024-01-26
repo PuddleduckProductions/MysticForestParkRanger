@@ -83,7 +83,7 @@ public class InkManager : MonoBehaviour
     }
 
     public void InteractAdvance(bool pressed) {
-        if (pressed) {
+        if (pressed && storyActive) {
             AdvanceStory();
         }
     }

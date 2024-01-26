@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
@@ -28,10 +29,14 @@ public class InteractionManager : MonoBehaviour
     bool interactPressed = false;
 
     void Interact(bool interacted) {
-        interactPressed = interacted && !InkManager.storyActive;
-        if (interactPressed && closestInteraction != null) {
+        interactPressed = interacted;
+        if (interactPressed && CanInteract()) {
             closestInteraction.Interact();
         }
+    }
+
+    protected bool CanInteract() {
+        return closestInteraction == null || !closestInteraction.IsInteracting();
     }
 
     // Update is called once per frame
@@ -39,7 +44,7 @@ public class InteractionManager : MonoBehaviour
     {
         var isActive = false;
         closestInteraction = null;
-        if (!InkManager.storyActive) {
+        if (CanInteract()) {
             // TODO: Fix so that objects get filtered better without having to run this each loop.
             foreach (Interaction interaction in interactionsInScene) {
                 if (interaction != null && interaction.gameObject.activeInHierarchy) {
