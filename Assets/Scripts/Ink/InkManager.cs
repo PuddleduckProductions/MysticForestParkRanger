@@ -97,11 +97,11 @@ public class InkManager : MonoBehaviour
         }
     }
 
-    protected void EvaluateStory()
-    {
+    protected void EvaluateStory() {
         string text = story.Continue();
-        if (text[0] == '$') {
+        if (text.Length > 0 && text[0] == '$') {
             commands.Evaluate(text, story.currentTags);
+            AdvanceStory();
         } else {
             DialogLine line = LineFromString(text);
             DrawDialog(line);

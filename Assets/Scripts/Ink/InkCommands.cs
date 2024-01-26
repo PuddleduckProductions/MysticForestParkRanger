@@ -110,7 +110,7 @@ public class InkCommands
     List<InkCommand> commandUpdates = new List<InkCommand>();
 
     static Type[] commandTypes;
-    public void Init() {
+    public InkCommands() {
         commands.Clear();
         var fullCommands = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType == typeof(InkCommand));
         if (commandTypes == null) {
