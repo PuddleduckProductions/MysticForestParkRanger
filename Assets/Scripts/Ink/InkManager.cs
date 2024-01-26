@@ -49,7 +49,13 @@ public class InkManager : MonoBehaviour
     /// <summary>
     /// Just for other functions to immediately call StartDialog without needing a reference.
     /// </summary>
-    public static UnityEvent<string> startDialog;
+    public static UnityEvent<string> startDialog = new UnityEvent<string>();
+    /// <summary>
+    /// For functions to immediately call AdvanceStory without a reference.
+    /// </summary>
+    public static UnityEvent advanceStory = new UnityEvent();
+
+    public static UnityEvent dialogEnd = new UnityEvent();
     void Awake() {
         story = new Story(inkJSONAsset.text);
         dialogInstance = transform.GetChild(0).gameObject;
@@ -58,16 +64,13 @@ public class InkManager : MonoBehaviour
         // In case it's active:
         dialogInstance.SetActive(false);
 
-        if (startDialog == null) {
-            startDialog = new UnityEvent<string>();
-        }
         startDialog.AddListener(StartDialog);
+        advanceStory.AddListener(AdvanceStory);
 
         if (runOnStart) {
             storyActive = true;
             AdvanceStory();
         }
-        UIController.onInteract.AddListener(InteractAdvance);
     }
 
     #region Flow Control
@@ -82,18 +85,13 @@ public class InkManager : MonoBehaviour
         }
     }
 
-    public void InteractAdvance(bool pressed) {
-        if (pressed) {
-            AdvanceStory();
-        }
-    }
-
     public void AdvanceStory() {
         if (story.canContinue) {
             EvaluateStory();
         } else {
             storyActive = false;
             dialogInstance.SetActive(false);
+            dialogEnd.Invoke();
         }
     }
 
