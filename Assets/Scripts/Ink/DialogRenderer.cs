@@ -11,6 +11,7 @@ public class DialogRenderer : MonoBehaviour
     [SerializeField]
     protected TMP_FontAsset symbolsFont;
     protected TMP_FontAsset defaultFont;
+    protected float defaultFontSize;
 
     protected RectTransform dialogParent;
     protected TextMeshProUGUI dialog;
@@ -24,6 +25,7 @@ public class DialogRenderer : MonoBehaviour
         dialog = dialogParent.GetComponentInChildren<TextMeshProUGUI>();
         
         defaultFont = dialog.font;
+        defaultFontSize = dialog.fontSize;
     }
 
     protected bool TryGetCharacter(string name, out GameObject character) {
@@ -53,6 +55,7 @@ public class DialogRenderer : MonoBehaviour
             dialog.fontSize = 150.0f;
         } else {
             dialog.font = defaultFont;
+            dialog.fontSize = defaultFontSize;
         }
         dialog.text = line.dialog;
         dialogParent.position = position;
