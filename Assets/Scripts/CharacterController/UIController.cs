@@ -4,15 +4,17 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-class UIController : MonoBehaviour
+class UIController : MonoBehaviour, ISingleton<UIController>
 {
-    public static UnityEvent<bool> onInteract;
+    public UnityEvent<bool> onInteract;
     private void Awake() {
-        if (onInteract == null) {
-            onInteract = new UnityEvent<bool>();
-        }
+        ((ISingleton<UIController>)this).Initialize();
     }
-    void OnInteract(InputValue value) {
+
+    /// <summary>
+    /// New input system control. DO NOT RENAME (Looking at you, Tyler)
+    /// </summary>
+    public void OnInteract(InputValue value) {
         onInteract.Invoke(value.isPressed);
     }
 }

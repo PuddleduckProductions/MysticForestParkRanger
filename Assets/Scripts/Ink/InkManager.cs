@@ -5,8 +5,7 @@ using Ink.Runtime;
 using System.Text.RegularExpressions;
 using UnityEngine.Events;
 
-public class InkManager : MonoBehaviour
-{
+public class InkManager : MonoBehaviour, ISingleton<InkManager> {
     #region Story Management
     public bool runOnStart = false;
 
@@ -46,16 +45,8 @@ public class InkManager : MonoBehaviour
     }
     #endregion
 
-    /// <summary>
-    /// Just for other functions to immediately call StartDialog without needing a reference.
-    /// </summary>
-    public static UnityEvent<string> startDialog = new UnityEvent<string>();
-    /// <summary>
-    /// For functions to immediately call AdvanceStory without a reference.
-    /// </summary>
-    public static UnityEvent advanceStory = new UnityEvent();
+    public UnityEvent dialogEnd = new UnityEvent();
 
-    public static UnityEvent dialogEnd = new UnityEvent();
     void Awake() {
         story = new Story(inkJSONAsset.text);
         dialogInstance = transform.GetChild(0).gameObject;
@@ -64,8 +55,7 @@ public class InkManager : MonoBehaviour
         // In case it's active:
         dialogInstance.SetActive(false);
 
-        startDialog.AddListener(StartDialog);
-        advanceStory.AddListener(AdvanceStory);
+        ((ISingleton<InkManager>)this).Initialize();
 
         if (runOnStart) {
             storyActive = true;

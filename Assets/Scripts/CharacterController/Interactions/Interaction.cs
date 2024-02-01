@@ -39,18 +39,18 @@ public class InkInteraction : InteractionBehavior {
 
     public override bool isInteracting => InkManager.storyActive;
     public override void Interact() {
-        InkManager.startDialog.Invoke("interact_" + interactionObject.name);
-        UIController.onInteract.AddListener(InteractAdvance);
-        InkManager.dialogEnd.AddListener(EndDialog);
+        ISingleton<InkManager>.Instance.StartDialog("interact_" + interactionObject.name);
+        ISingleton<UIController>.Instance.onInteract.AddListener(InteractAdvance);
+        ISingleton<InkManager>.Instance.dialogEnd.AddListener(EndDialog);
     }
 
     public void EndDialog() {
-        UIController.onInteract.RemoveListener(InteractAdvance);
+        ISingleton<UIController>.Instance.onInteract.RemoveListener(InteractAdvance);
     }
 
     public void InteractAdvance(bool pressed) {
         if (pressed && InkManager.storyActive) {
-            InkManager.advanceStory.Invoke();
+            ISingleton<InkManager>.Instance.AdvanceStory();
         }
     }
 }
@@ -69,14 +69,14 @@ public class PushableInteraction : InteractionBehavior {
     public override void Interact() {
         player = GameObject.FindGameObjectWithTag("Player");
         isPushing = true;
-        UIController.onInteract.AddListener(ReleasePush);
+        ISingleton<UIController>.Instance.onInteract.AddListener(ReleasePush);
         offset = interactionObject.transform.position - player.transform.position;
     }
 
     protected void ReleasePush(bool pressed) {
         if (pressed) {
             isPushing = false;
-            UIController.onInteract.RemoveListener(ReleasePush);
+            ISingleton<UIController>.Instance.onInteract.RemoveListener(ReleasePush);
         }
     }
 
