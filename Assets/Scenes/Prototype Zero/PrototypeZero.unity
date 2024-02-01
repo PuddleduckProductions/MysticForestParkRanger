@@ -916,12 +916,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   behavior:
-    rid: 48647399063945229
+    rid: 3483134132018741349
   references:
     version: 2
     RefIds:
-    - rid: 48647399063945229
-      type: {class: InkInteraction, ns: , asm: Assembly-CSharp}
+    - rid: 3483134132018741349
+      type: {class: InkInteraction, ns: , asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1523201104}
 --- !u!1 &1602125427
@@ -1044,12 +1044,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   behavior:
-    rid: 48647399063945227
+    rid: 3483134132018741350
   references:
     version: 2
     RefIds:
-    - rid: 48647399063945227
-      type: {class: PushableInteraction, ns: , asm: Assembly-CSharp}
+    - rid: 3483134132018741350
+      type: {class: PushableInteraction, ns: , asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1602125432}
 --- !u!1001 &1375481812498211963
