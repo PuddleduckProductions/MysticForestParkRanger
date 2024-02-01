@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionManager : MonoBehaviour
+public class InteractionManager : MonoBehaviour, ISingleton<InteractionManager>
 {
     public float interactionRange = 3.0f;
 
@@ -22,7 +22,8 @@ public class InteractionManager : MonoBehaviour
 
         mainCamera = Camera.main;
 
-        UIController.onInteract.AddListener(Interact);
+        ISingleton<InteractionManager>.Initialize(this);
+        ISingleton<UIController>.Instance.onInteract.AddListener(Interact);
     }
 
     bool interactPressed = false;
