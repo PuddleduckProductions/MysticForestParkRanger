@@ -55,7 +55,7 @@ public class InkManager : MonoBehaviour, ISingleton<InkManager> {
         // In case it's active:
         dialogInstance.SetActive(false);
 
-        ISingleton<InkManager>.Initialize(this);
+        ((ISingleton<InkManager>)this).Initialize();
 
         if (runOnStart) {
             storyActive = true;

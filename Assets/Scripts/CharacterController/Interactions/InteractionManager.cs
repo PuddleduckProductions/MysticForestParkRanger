@@ -22,7 +22,7 @@ public class InteractionManager : MonoBehaviour, ISingleton<InteractionManager>
 
         mainCamera = Camera.main;
 
-        ISingleton<InteractionManager>.Initialize(this);
+        ((ISingleton<InteractionManager>)this).Initialize();
         ISingleton<UIController>.Instance.onInteract.AddListener(Interact);
     }
 

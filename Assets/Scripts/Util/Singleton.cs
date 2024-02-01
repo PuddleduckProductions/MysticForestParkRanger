@@ -6,12 +6,12 @@ public interface ISingleton<T> where T: MonoBehaviour
 {
     public static T Instance { get; protected set; }
     
-    public static void Initialize(T instance) {
+    public void Initialize() {
         if (Instance == null) {
-            Instance = instance;
+            Instance = (T)this;
         } else {
             Debug.LogWarning("Singleton " + typeof(T).Name + " already exists.");
-            Object.Destroy(instance);
+            Object.Destroy((T)this);
         }
     }
 }

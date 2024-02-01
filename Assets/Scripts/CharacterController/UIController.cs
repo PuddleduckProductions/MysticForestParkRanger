@@ -8,7 +8,7 @@ class UIController : MonoBehaviour, ISingleton<UIController>
 {
     public UnityEvent<bool> onInteract;
     private void Awake() {
-        ISingleton<UIController>.Initialize(this);
+        ((ISingleton<UIController>)this).Initialize();
     }
 
     /// <summary>
