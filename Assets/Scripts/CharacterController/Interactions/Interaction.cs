@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -115,8 +113,12 @@ public class Interaction : MonoBehaviour
 {
     public enum InteractionType { Ink, Pushable, Custom };
     public InteractionType type;
-    [HideInInspector, SerializeReference]
+    [SerializeReference]
     public InteractionBehavior behavior;
+
+    public bool HasInteractionBehavior() {
+        return behavior != null;
+    }
 
     public bool IsInteracting() {
         return behavior.isInteracting;
@@ -127,7 +129,7 @@ public class Interaction : MonoBehaviour
     }
 
     private void Update() {
-        if (IsInteracting()) {
+        if (behavior != null && IsInteracting()) {
             behavior.Update();
         }
     }
