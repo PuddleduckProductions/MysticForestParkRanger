@@ -7,7 +7,7 @@ public class characterController : MonoBehaviour
 {
     CharacterController c;
     Vector2 input;
-    private Animator animator;
+    //private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
