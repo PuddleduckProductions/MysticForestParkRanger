@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 1523201100}
   - component: {fileID: 1523201104}
   m_Layer: 0
-  m_Name: TestInteraction
+  m_Name: Dugong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
