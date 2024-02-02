@@ -9,7 +9,9 @@
           ]
         }
       ],
-      "dest": "api"
+      "dest": "api",
+      "filter": "filterConfig.yml",
+      "globalNamespaceId": "MysticForestParkRanger"
     }
   ],
   "build": {

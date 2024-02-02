@@ -1,0 +1,123 @@
+### YamlMime:ManagedReference
+items:
+- uid: MysticForestParkRanger.ISingleton`1
+  commentId: T:MysticForestParkRanger.ISingleton`1
+  id: ISingleton`1
+  parent: MysticForestParkRanger
+  children:
+  - MysticForestParkRanger.ISingleton`1.Initialize
+  - MysticForestParkRanger.ISingleton`1.Instance
+  langs:
+  - csharp
+  - vb
+  name: ISingleton<T>
+  nameWithType: ISingleton<T>
+  fullName: ISingleton<T>
+  type: Interface
+  source:
+    remote:
+      path: Assets/Scripts/Util/Singleton.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: ISingleton
+    path: ../Assets/Scripts/Util/Singleton.cs
+    startLine: 4
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: 'public interface ISingleton<T> where T : MonoBehaviour'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface ISingleton(Of T As MonoBehaviour)
+  nameWithType.vb: ISingleton(Of T)
+  fullName.vb: ISingleton(Of T)
+  name.vb: ISingleton(Of T)
+- uid: MysticForestParkRanger.ISingleton`1.Instance
+  commentId: P:MysticForestParkRanger.ISingleton`1.Instance
+  id: Instance
+  parent: MysticForestParkRanger.ISingleton`1
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: ISingleton<T>.Instance
+  fullName: ISingleton<T>.Instance
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Util/Singleton.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Instance
+    path: ../Assets/Scripts/Util/Singleton.cs
+    startLine: 6
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public static T Instance { get; protected set; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Shared Property Instance As T
+  overload: MysticForestParkRanger.ISingleton`1.Instance*
+  nameWithType.vb: ISingleton(Of T).Instance
+  fullName.vb: ISingleton(Of T).Instance
+- uid: MysticForestParkRanger.ISingleton`1.Initialize
+  commentId: M:MysticForestParkRanger.ISingleton`1.Initialize
+  id: Initialize
+  parent: MysticForestParkRanger.ISingleton`1
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: ISingleton<T>.Initialize()
+  fullName: ISingleton<T>.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Util/Singleton.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Initialize
+    path: ../Assets/Scripts/Util/Singleton.cs
+    startLine: 8
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: void Initialize()
+    content.vb: Sub Initialize()
+  overload: MysticForestParkRanger.ISingleton`1.Initialize*
+  nameWithType.vb: ISingleton(Of T).Initialize()
+  fullName.vb: ISingleton(Of T).Initialize()
+references:
+- uid: MysticForestParkRanger
+- uid: MysticForestParkRanger.ISingleton`1.Instance*
+  commentId: Overload:MysticForestParkRanger.ISingleton`1.Instance
+  href: MysticForestParkRanger.ISingleton-1.html#ISingleton_1_Instance
+  name: Instance
+  nameWithType: ISingleton<T>.Instance
+  fullName: ISingleton<T>.Instance
+  nameWithType.vb: ISingleton(Of T).Instance
+  fullName.vb: ISingleton(Of T).Instance
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  commentId: '!:T'
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: MysticForestParkRanger.ISingleton`1.Initialize*
+  commentId: Overload:MysticForestParkRanger.ISingleton`1.Initialize
+  href: MysticForestParkRanger.ISingleton-1.html#ISingleton_1_Initialize
+  name: Initialize
+  nameWithType: ISingleton<T>.Initialize
+  fullName: ISingleton<T>.Initialize
+  nameWithType.vb: ISingleton(Of T).Initialize
+  fullName.vb: ISingleton(Of T).Initialize

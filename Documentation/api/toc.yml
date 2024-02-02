@@ -7,4 +7,33 @@ items:
     name: InkCommand
   - uid: InkCommandDef.moveTo
     name: moveTo
+- uid: MysticForestParkRanger
+  name: ''
+  items:
+  - uid: MysticForestParkRanger.CustomInteraction
+    name: CustomInteraction
+  - uid: MysticForestParkRanger.DialogRenderer
+    name: DialogRenderer
+  - uid: MysticForestParkRanger.ISingleton`1
+    name: ISingleton<T>
+  - uid: MysticForestParkRanger.InkCommands
+    name: InkCommands
+  - uid: MysticForestParkRanger.InkInteraction
+    name: InkInteraction
+  - uid: MysticForestParkRanger.InkManager
+    name: InkManager
+  - uid: MysticForestParkRanger.InkManager.DialogLine
+    name: InkManager.DialogLine
+  - uid: MysticForestParkRanger.Interaction
+    name: Interaction
+  - uid: MysticForestParkRanger.Interaction.InteractionType
+    name: Interaction.InteractionType
+  - uid: MysticForestParkRanger.InteractionBehavior
+    name: InteractionBehavior
+  - uid: MysticForestParkRanger.InteractionManager
+    name: InteractionManager
+  - uid: MysticForestParkRanger.PushableInteraction
+    name: PushableInteraction
+  - uid: MysticForestParkRanger.characterController
+    name: characterController
 memberLayout: SamePage
