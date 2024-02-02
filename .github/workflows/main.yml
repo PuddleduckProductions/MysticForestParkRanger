@@ -31,10 +31,11 @@ jobs:
           dotnet-version: 8.x
   
       - run: dotnet tool update -g docfx
-      - run: docfx Documentation/docfx.json
+      - run: docfx metadata Documentation/docfx.json
       # Quickly fix any issues that might stem from current bugs:
       - run: bash Documentation/docfxfix.sh
-  
+      - run: docfx build Documentation/docfx.json
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
