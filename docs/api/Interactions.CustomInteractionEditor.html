@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class UIController | MysticForestParkRanger </title>
+      <title>Class CustomInteractionEditor | MysticForestParkRanger </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class UIController | MysticForestParkRanger ">
+      <meta name="title" content="Class CustomInteractionEditor | MysticForestParkRanger ">
       
       
       <link rel="icon" href="../assets/images/icon.png">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/PuddleduckProductions/MysticForestParkRanger/new/Design-Implementation-Test-Playtest1/apiSpec/new?filename=MysticForestParkRanger_UIController.md&amp;value=---%0Auid%3A%20MysticForestParkRanger.UIController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/PuddleduckProductions/MysticForestParkRanger/new/Design-Implementation-Test-Playtest1/apiSpec/new?filename=Interactions_CustomInteractionEditor.md&amp;value=---%0Auid%3A%20Interactions.CustomInteractionEditor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,24 +84,26 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="MysticForestParkRanger.UIController">
+        <article data-uid="Interactions.CustomInteractionEditor">
 
 
 
-  <h1 id="MysticForestParkRanger_UIController" data-uid="MysticForestParkRanger.UIController" class="text-break">
-Class UIController  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Scripts/CharacterController/UIController.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <h1 id="Interactions_CustomInteractionEditor" data-uid="Interactions.CustomInteractionEditor" class="text-break">
+Class CustomInteractionEditor  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Editor/Interactions/CustomInteractionEditor.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="MysticForestParkRanger.html">MysticForestParkRanger</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ScriptAssembly.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Interactions.html">Interactions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>EditorAssembly.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class UIController : MonoBehaviour, ISingleton&lt;UIController&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">[CustomEditor(typeof(CustomInteraction))]
+[CanEditMultipleObjects]
+public class CustomInteractionEditor : Editor</code></pre>
   </div>
 
 
@@ -112,215 +114,145 @@ Class UIController  <a class="header-action link-secondary" title="View source" 
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><span class="xref">Object</span></div>
-      <div><span class="xref">Component</span></div>
-      <div><span class="xref">Behaviour</span></div>
-      <div><span class="xref">MonoBehaviour</span></div>
-      <div><span class="xref">UIController</span></div>
+      <div><span class="xref">ScriptableObject</span></div>
+      <div><span class="xref">Editor</span></div>
+      <div><span class="xref">CustomInteractionEditor</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="Utility.ISingleton-1.html">ISingleton</a>&lt;<a class="xref" href="UIController.html">UIController</a>&gt;</div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <span class="xref">MonoBehaviour.IsInvoking()</span>
+      <span class="xref">Editor.SaveChanges()</span>
     </div>
     <div>
-      <span class="xref">MonoBehaviour.CancelInvoke()</span>
+      <span class="xref">Editor.DiscardChanges()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.Invoke(string, float)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateEditorWithContext(Object[], Object, Type)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.InvokeRepeating(string, float, float)</a>
+      <span class="xref">Editor.CreateEditorWithContext(Object[], Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.CancelInvoke(string)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateCachedEditorWithContext(Object, Object, Type, ref Editor)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.IsInvoking(string)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateCachedEditorWithContext(Object[], Object, Type, ref Editor)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateCachedEditor(Object, Type, ref Editor)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateCachedEditor(Object[], Type, ref Editor)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine(IEnumerator)</a>
+      <span class="xref">Editor.CreateEditor(Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine_Auto(IEnumerator)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateEditor(Object, Type)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StopCoroutine(IEnumerator)</a>
+      <span class="xref">Editor.CreateEditor(Object[])</span>
     </div>
     <div>
-      <span class="xref">MonoBehaviour.StopCoroutine(Coroutine)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Editor.CreateEditor(Object[], Type)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StopCoroutine(string)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Editor.DrawPropertiesExcluding(SerializedObject, params string[])</a>
     </div>
     <div>
-      <span class="xref">MonoBehaviour.StopAllCoroutines()</span>
+      <span class="xref">Editor.DrawDefaultInspector()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">MonoBehaviour.print(object)</a>
+      <span class="xref">Editor.Repaint()</span>
     </div>
     <div>
-      <span class="xref">MonoBehaviour.destroyCancellationToken</span>
+      <span class="xref">Editor.CreateInspectorGUI()</span>
     </div>
     <div>
-      <span class="xref">MonoBehaviour.useGUILayout</span>
+      <span class="xref">Editor.RequiresConstantRepaint()</span>
     </div>
     <div>
-      <span class="xref">MonoBehaviour.runInEditMode</span>
+      <span class="xref">Editor.DrawHeader()</span>
     </div>
     <div>
-      <span class="xref">Behaviour.enabled</span>
+      <span class="xref">Editor.OnHeaderGUI()</span>
     </div>
     <div>
-      <span class="xref">Behaviour.isActiveAndEnabled</span>
+      <span class="xref">Editor.ShouldHideOpenButton()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponent(Type)</a>
+      <span class="xref">Editor.DrawFoldoutInspector(Object, ref Editor)</span>
     </div>
     <div>
-      <span class="xref">Component.GetComponent&lt;T&gt;()</span>
+      <span class="xref">Editor.HasPreviewGUI()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.TryGetComponent(Type, out Component)</a>
+      <span class="xref">Editor.GetPreviewTitle()</span>
     </div>
     <div>
-      <span class="xref">Component.TryGetComponent&lt;T&gt;(out T)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Editor.RenderStaticPreview(string, Object[], int, int)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.GetComponent(string)</a>
+      <span class="xref">Editor.OnPreviewGUI(Rect, GUIStyle)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type, bool)</a>
+      <span class="xref">Editor.OnInteractivePreviewGUI(Rect, GUIStyle)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type)</a>
+      <span class="xref">Editor.OnPreviewSettings()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInChildren&lt;T&gt;(bool)</a>
+      <span class="xref">Editor.GetInfoString()</span>
     </div>
     <div>
-      <span class="xref">Component.GetComponentInChildren&lt;T&gt;()</span>
+      <span class="xref">Editor.DrawPreview(Rect)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type, bool)</a>
+      <span class="xref">Editor.ReloadPreviewInstances()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type)</a>
+      <span class="xref">Editor.UseDefaultMargins()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool)</a>
+      <span class="xref">Editor.MoveNextTarget()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool, List&lt;T&gt;)</a>
+      <span class="xref">Editor.ResetTarget()</span>
     </div>
     <div>
-      <span class="xref">Component.GetComponentsInChildren&lt;T&gt;()</span>
+      <span class="xref">Editor.hasUnsavedChanges</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)</a>
+      <span class="xref">Editor.saveChangesMessage</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type, bool)</a>
+      <span class="xref">Editor.target</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type)</a>
+      <span class="xref">Editor.targets</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInParent&lt;T&gt;(bool)</a>
+      <span class="xref">Editor.serializedObject</span>
     </div>
     <div>
-      <span class="xref">Component.GetComponentInParent&lt;T&gt;()</span>
+      <span class="xref">Editor.finishedDefaultHeaderGUI</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type, bool)</a>
+      <span class="xref">ScriptableObject.SetDirty()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool, List&lt;T&gt;)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponentsInParent&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type, List&lt;Component&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponents&lt;T&gt;(List&lt;T&gt;)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponents&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.CompareTag(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, SendMessageOptions)</a>
-    </div>
-    <div>
-      <span class="xref">Component.transform</span>
-    </div>
-    <div>
-      <span class="xref">Component.gameObject</span>
-    </div>
-    <div>
-      <span class="xref">Component.tag</span>
+      <span class="xref">ScriptableObject.CreateInstance&lt;T&gt;()</span>
     </div>
     <div>
       <span class="xref">Object.GetInstanceID()</span>
@@ -479,31 +411,27 @@ Class UIController  <a class="header-action link-secondary" title="View source" 
 
 
 
-  <h2 class="section" id="fields">Fields
+  <h2 class="section" id="methods">Methods
 </h2>
 
 
+  <a id="Interactions_CustomInteractionEditor_OnEnable_" data-uid="Interactions.CustomInteractionEditor.OnEnable*"></a>
 
-  <h3 id="MysticForestParkRanger_UIController_onInteract" data-uid="MysticForestParkRanger.UIController.onInteract">
-  onInteract
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Scripts/CharacterController/UIController.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Interactions_CustomInteractionEditor_OnEnable" data-uid="Interactions.CustomInteractionEditor.OnEnable">
+  OnEnable()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Editor/Interactions/CustomInteractionEditor.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityEvent&lt;bool&gt; onInteract</code></pre>
+    <pre><code class="lang-csharp hljs">public void OnEnable()</code></pre>
   </div>
 
 
 
 
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">UnityEvent</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -513,30 +441,21 @@ Class UIController  <a class="header-action link-secondary" title="View source" 
 
 
 
-  <h2 class="section" id="methods">Methods
-</h2>
+  <a id="Interactions_CustomInteractionEditor_OnInspectorGUI_" data-uid="Interactions.CustomInteractionEditor.OnInspectorGUI*"></a>
 
-
-  <a id="MysticForestParkRanger_UIController_OnInteract_" data-uid="MysticForestParkRanger.UIController.OnInteract*"></a>
-
-  <h3 id="MysticForestParkRanger_UIController_OnInteract_UnityEngine_InputSystem_InputValue_" data-uid="MysticForestParkRanger.UIController.OnInteract(UnityEngine.InputSystem.InputValue)">
-  OnInteract(InputValue)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Scripts/CharacterController/UIController.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Interactions_CustomInteractionEditor_OnInspectorGUI" data-uid="Interactions.CustomInteractionEditor.OnInspectorGUI">
+  OnInspectorGUI()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Editor/Interactions/CustomInteractionEditor.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>New input system control. DO NOT RENAME (Looking at you, Tyler)</p>
+  <div class="markdown level1 summary"><p>Implement this function to make a custom inspector.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnInteract(InputValue value)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnInspectorGUI()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>value</code> <span class="xref">InputValue</span></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -553,7 +472,7 @@ Class UIController  <a class="header-action link-secondary" title="View source" 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Scripts/CharacterController/UIController.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/Design-Implementation-Test-Playtest1/Assets/Editor/Interactions/CustomInteractionEditor.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

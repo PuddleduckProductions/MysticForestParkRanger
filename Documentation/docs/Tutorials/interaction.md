@@ -11,6 +11,13 @@ Here it is, in a nutshell:
 
 Each of the interaction types you could use are described under [Interaction.Behaviors](~/api/Interactions.Behaviors.yml). Check the documentation there for the possibilities.
 
+### Bugs
+Right now the system isn't fully tested and can have some bugs. Some things to test:
+1. If you open Unity Tests (Window->General->Test Runner), do all of the VerifyInteraction tests (under Edit Mode) return success?
+2. Are there multiple main cameras in a scene? (There should only be one)
+
+If you find a bug, please report it in [issues](https://github.com/PuddleduckProductions/MysticForestParkRanger/issues) and label it to programming!
+
 ### Creating your own interactions
 You have two options. Custom interactions, or going into the code and adding your own [InteractionBehavior in Interactions.Behaviors](~/api/Interactions.Behaviors.yml).
 

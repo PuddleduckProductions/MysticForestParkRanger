@@ -582,12 +582,6 @@ references:
   isSpec: "True"
   fullName: Interactions.Behaviors.CustomInteraction.isInteracting
   nameWithType: CustomInteraction.isInteracting
-- uid: Interactions.Behaviors.CustomInteraction.objectToCheck
-  name: objectToCheck
-  href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_objectToCheck
-  commentId: F:Interactions.Behaviors.CustomInteraction.objectToCheck
-  fullName: Interactions.Behaviors.CustomInteraction.objectToCheck
-  nameWithType: CustomInteraction.objectToCheck
 - uid: Interactions.Behaviors.CustomInteraction.onInteract
   name: onInteract
   href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_onInteract
@@ -830,6 +824,38 @@ references:
   commentId: F:Interactions.Behaviors.PushableInteraction.isPushing
   fullName: Interactions.Behaviors.PushableInteraction.isPushing
   nameWithType: PushableInteraction.isPushing
+- uid: Interactions.CustomInteractionEditor
+  name: CustomInteractionEditor
+  href: api/Interactions.CustomInteractionEditor.html
+  commentId: T:Interactions.CustomInteractionEditor
+  fullName: Interactions.CustomInteractionEditor
+  nameWithType: CustomInteractionEditor
+- uid: Interactions.CustomInteractionEditor.OnEnable
+  name: OnEnable()
+  href: api/Interactions.CustomInteractionEditor.html#Interactions_CustomInteractionEditor_OnEnable
+  commentId: M:Interactions.CustomInteractionEditor.OnEnable
+  fullName: Interactions.CustomInteractionEditor.OnEnable()
+  nameWithType: CustomInteractionEditor.OnEnable()
+- uid: Interactions.CustomInteractionEditor.OnEnable*
+  name: OnEnable
+  href: api/Interactions.CustomInteractionEditor.html#Interactions_CustomInteractionEditor_OnEnable_
+  commentId: Overload:Interactions.CustomInteractionEditor.OnEnable
+  isSpec: "True"
+  fullName: Interactions.CustomInteractionEditor.OnEnable
+  nameWithType: CustomInteractionEditor.OnEnable
+- uid: Interactions.CustomInteractionEditor.OnInspectorGUI
+  name: OnInspectorGUI()
+  href: api/Interactions.CustomInteractionEditor.html#Interactions_CustomInteractionEditor_OnInspectorGUI
+  commentId: M:Interactions.CustomInteractionEditor.OnInspectorGUI
+  fullName: Interactions.CustomInteractionEditor.OnInspectorGUI()
+  nameWithType: CustomInteractionEditor.OnInspectorGUI()
+- uid: Interactions.CustomInteractionEditor.OnInspectorGUI*
+  name: OnInspectorGUI
+  href: api/Interactions.CustomInteractionEditor.html#Interactions_CustomInteractionEditor_OnInspectorGUI_
+  commentId: Overload:Interactions.CustomInteractionEditor.OnInspectorGUI
+  isSpec: "True"
+  fullName: Interactions.CustomInteractionEditor.OnInspectorGUI
+  nameWithType: CustomInteractionEditor.OnInspectorGUI
 - uid: Interactions.Interaction
   name: Interaction
   href: api/Interactions.Interaction.html
@@ -980,10 +1006,8 @@ references:
   fullName: Interactions.InteractionManager.player
   nameWithType: InteractionManager.player
 - uid: MysticForestParkRanger
-  name: MysticForestParkRanger
+  name: ''
   href: api/MysticForestParkRanger.html
-  fullName: MysticForestParkRanger
-  nameWithType: MysticForestParkRanger
 - uid: MysticForestParkRanger.InteractionEditor
   name: InteractionEditor
   href: api/MysticForestParkRanger.InteractionEditor.html
