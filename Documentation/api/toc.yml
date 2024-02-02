@@ -8,7 +8,7 @@ items:
   - uid: InkCommandDef.moveTo
     name: moveTo
 - uid: MysticForestParkRanger
-  name: ''
+  name: MysticForestParkRanger
   items:
   - uid: MysticForestParkRanger.CustomInteraction
     name: CustomInteraction
