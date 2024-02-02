@@ -212,6 +212,7 @@ It's a serialized field so we don't lose the reference to the parent when the sc
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
+[HideInInspector]
 protected Interaction interactionObject</code></pre>
   </div>
 
@@ -278,10 +279,12 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_InteractionBehavior_Interact" data-uid="Interactions.Behaviors.InteractionBehavior.Interact">
   Interact()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Function to call when the object is interacted with (i.e., Space is pressed)
+Called by <a class="xref" href="Interactions.InteractionManager.html">InteractionManager</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -300,40 +303,15 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
 
 
-  <a id="Interactions_Behaviors_InteractionBehavior_OnInspectorGUI_" data-uid="Interactions.Behaviors.InteractionBehavior.OnInspectorGUI*"></a>
-
-  <h3 id="Interactions_Behaviors_InteractionBehavior_OnInspectorGUI" data-uid="Interactions.Behaviors.InteractionBehavior.OnInspectorGUI">
-  OnInspectorGUI()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L39"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnInspectorGUI()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Interactions_Behaviors_InteractionBehavior_Update_" data-uid="Interactions.Behaviors.InteractionBehavior.Update*"></a>
 
   <h3 id="Interactions_Behaviors_InteractionBehavior_Update" data-uid="Interactions.Behaviors.InteractionBehavior.Update">
   Update()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>While <a class="xref" href="Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_isInteracting">isInteracting</a> is true, call this function.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">

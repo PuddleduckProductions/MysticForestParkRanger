@@ -6,8 +6,4 @@ items:
     - name: Interaction System
       href: Tutorials/interaction.md
 - name: Scenes
-  items:
-    - name: PrototypeZero
-      href: Scenes/PrototypeZero.md
-    - name: environment test
-      href: Scenes/environment test.md
+  href: scenes.md

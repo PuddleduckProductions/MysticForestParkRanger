@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CustomInteraction | MysticForestParkRanger ">
       
-      
+      <meta name="description" content="Custom interaction setup. Define your own interaction behavior through other scripts.">
       <link rel="icon" href="../assets/images/icon.png">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="Interactions_Behaviors_CustomInteraction" data-uid="Interactions.Behaviors.CustomInteraction" class="text-break">
-Class CustomInteraction  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L98"><i class="bi bi-code-slash"></i></a>
+Class CustomInteraction  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class CustomInteraction  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>ScriptAssembly.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Custom interaction setup. Define your own interaction behavior through other scripts.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -164,7 +165,7 @@ public class CustomInteraction : InteractionBehavior</code></pre>
 
   <h3 id="Interactions_Behaviors_CustomInteraction__ctor_Interactions_Interaction_" data-uid="Interactions.Behaviors.CustomInteraction.#ctor(Interactions.Interaction)">
   CustomInteraction(Interaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -196,17 +197,16 @@ public class CustomInteraction : InteractionBehavior</code></pre>
 
 
 
-  <h3 id="Interactions_Behaviors_CustomInteraction_interactionFunc" data-uid="Interactions.Behaviors.CustomInteraction.interactionFunc">
-  interactionFunc
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Interactions_Behaviors_CustomInteraction_objectToCheck" data-uid="Interactions.Behaviors.CustomInteraction.objectToCheck">
+  objectToCheck
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-protected string interactionFunc</code></pre>
+    <pre><code class="lang-csharp hljs">public Object objectToCheck</code></pre>
   </div>
 
 
@@ -214,7 +214,7 @@ protected string interactionFunc</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">Object</span></dt>
     <dd></dd>
   </dl>
 
@@ -229,10 +229,11 @@ protected string interactionFunc</code></pre>
 
   <h3 id="Interactions_Behaviors_CustomInteraction_onInteract" data-uid="Interactions.Behaviors.CustomInteraction.onInteract">
   onInteract
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Functions to call when space is pressed on this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -265,7 +266,7 @@ protected UnityEvent onInteract</code></pre>
 
   <h3 id="Interactions_Behaviors_CustomInteraction_isInteracting" data-uid="Interactions.Behaviors.CustomInteraction.isInteracting">
   isInteracting
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L146"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Are we currently having an interaction happen?
@@ -303,10 +304,12 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_CustomInteraction_Interact" data-uid="Interactions.Behaviors.CustomInteraction.Interact">
   Interact()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L148"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Function to call when the object is interacted with (i.e., Space is pressed)
+Called by <a class="xref" href="Interactions.InteractionManager.html">InteractionManager</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -325,37 +328,11 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
 
 
-  <a id="Interactions_Behaviors_CustomInteraction_OnInspectorGUI_" data-uid="Interactions.Behaviors.CustomInteraction.OnInspectorGUI*"></a>
-
-  <h3 id="Interactions_Behaviors_CustomInteraction_OnInspectorGUI" data-uid="Interactions.Behaviors.CustomInteraction.OnInspectorGUI">
-  OnInspectorGUI()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L119"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnInspectorGUI()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L98" class="edit-link">Edit this page</a>
+          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L135" class="edit-link">Edit this page</a>
         </div>
 
 

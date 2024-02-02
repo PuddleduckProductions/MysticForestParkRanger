@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class PushableInteraction | MysticForestParkRanger ">
       
-      
+      <meta name="description" content="Push an object around. TODO: Disable collider on push.">
       <link rel="icon" href="../assets/images/icon.png">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="Interactions_Behaviors_PushableInteraction" data-uid="Interactions.Behaviors.PushableInteraction" class="text-break">
-Class PushableInteraction  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L68"><i class="bi bi-code-slash"></i></a>
+Class PushableInteraction  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L83"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class PushableInteraction  <a class="header-action link-secondary" title="View s
   <dl><dt>Assembly</dt><dd>ScriptAssembly.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Push an object around.
+TODO: Disable collider on push.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -124,9 +126,6 @@ public class PushableInteraction : InteractionBehavior</code></pre>
     <dd>
     <div>
       <a class="xref" href="Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_interactionObject">InteractionBehavior.interactionObject</a>
-    </div>
-    <div>
-      <a class="xref" href="Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_OnInspectorGUI">InteractionBehavior.OnInspectorGUI()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -164,7 +163,7 @@ public class PushableInteraction : InteractionBehavior</code></pre>
 
   <h3 id="Interactions_Behaviors_PushableInteraction__ctor_Interactions_Interaction_" data-uid="Interactions.Behaviors.PushableInteraction.#ctor(Interactions.Interaction)">
   PushableInteraction(Interaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -198,10 +197,11 @@ public class PushableInteraction : InteractionBehavior</code></pre>
 
   <h3 id="Interactions_Behaviors_PushableInteraction_isPushing" data-uid="Interactions.Behaviors.PushableInteraction.isPushing">
   isPushing
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L92"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Whether player is still pushing. Active until space is pressed.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -233,7 +233,7 @@ public class PushableInteraction : InteractionBehavior</code></pre>
 
   <h3 id="Interactions_Behaviors_PushableInteraction_isInteracting" data-uid="Interactions.Behaviors.PushableInteraction.isInteracting">
   isInteracting
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Are we currently having an interaction happen?
@@ -271,10 +271,11 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_PushableInteraction_Interact" data-uid="Interactions.Behaviors.PushableInteraction.Interact">
   Interact()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <a class="xref" href="Interactions.Behaviors.PushableInteraction.html#Interactions_Behaviors_PushableInteraction_ReleasePush_System_Boolean_">ReleasePush(bool)</a></p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -297,10 +298,11 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_PushableInteraction_ReleasePush_System_Boolean_" data-uid="Interactions.Behaviors.PushableInteraction.ReleasePush(System.Boolean)">
   ReleasePush(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L117"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Set pushed to false if pressed is true.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -310,7 +312,8 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pressed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Whether or not interact was pressed.</p>
+</dd>
   </dl>
 
 
@@ -328,10 +331,11 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_PushableInteraction_Update" data-uid="Interactions.Behaviors.PushableInteraction.Update">
   Update()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L127"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Update the pushed object to move with us.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -354,7 +358,7 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L68" class="edit-link">Edit this page</a>
+          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L83" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -274,21 +274,21 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "docs/Scenes/PrototypeZero.md",
+      "type": "Resource",
+      "source_relative_path": "assets/images/interactions/interactionComponent.png",
       "output": {
-        ".html": {
-          "relative_path": "docs/Scenes/PrototypeZero.html"
+        "resource": {
+          "relative_path": "assets/images/interactions/interactionComponent.png"
         }
       },
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "docs/Scenes/environment test.md",
+      "type": "Resource",
+      "source_relative_path": "assets/images/interactions/interactionUI.png",
       "output": {
-        ".html": {
-          "relative_path": "docs/Scenes/environment test.html"
+        "resource": {
+          "relative_path": "assets/images/interactions/interactionUI.png"
         }
       },
       "version": ""
@@ -309,6 +309,16 @@
       "output": {
         ".html": {
           "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/scenes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/scenes.html"
         }
       },
       "version": ""

@@ -569,25 +569,6 @@ references:
   isSpec: "True"
   fullName: Interactions.Behaviors.CustomInteraction.Interact
   nameWithType: CustomInteraction.Interact
-- uid: Interactions.Behaviors.CustomInteraction.OnInspectorGUI
-  name: OnInspectorGUI()
-  href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_OnInspectorGUI
-  commentId: M:Interactions.Behaviors.CustomInteraction.OnInspectorGUI
-  fullName: Interactions.Behaviors.CustomInteraction.OnInspectorGUI()
-  nameWithType: CustomInteraction.OnInspectorGUI()
-- uid: Interactions.Behaviors.CustomInteraction.OnInspectorGUI*
-  name: OnInspectorGUI
-  href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_OnInspectorGUI_
-  commentId: Overload:Interactions.Behaviors.CustomInteraction.OnInspectorGUI
-  isSpec: "True"
-  fullName: Interactions.Behaviors.CustomInteraction.OnInspectorGUI
-  nameWithType: CustomInteraction.OnInspectorGUI
-- uid: Interactions.Behaviors.CustomInteraction.interactionFunc
-  name: interactionFunc
-  href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_interactionFunc
-  commentId: F:Interactions.Behaviors.CustomInteraction.interactionFunc
-  fullName: Interactions.Behaviors.CustomInteraction.interactionFunc
-  nameWithType: CustomInteraction.interactionFunc
 - uid: Interactions.Behaviors.CustomInteraction.isInteracting
   name: isInteracting
   href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_isInteracting
@@ -601,6 +582,12 @@ references:
   isSpec: "True"
   fullName: Interactions.Behaviors.CustomInteraction.isInteracting
   nameWithType: CustomInteraction.isInteracting
+- uid: Interactions.Behaviors.CustomInteraction.objectToCheck
+  name: objectToCheck
+  href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_objectToCheck
+  commentId: F:Interactions.Behaviors.CustomInteraction.objectToCheck
+  fullName: Interactions.Behaviors.CustomInteraction.objectToCheck
+  nameWithType: CustomInteraction.objectToCheck
 - uid: Interactions.Behaviors.CustomInteraction.onInteract
   name: onInteract
   href: api/Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_onInteract
@@ -725,19 +712,6 @@ references:
   isSpec: "True"
   fullName: Interactions.Behaviors.InteractionBehavior.Interact
   nameWithType: InteractionBehavior.Interact
-- uid: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
-  name: OnInspectorGUI()
-  href: api/Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_OnInspectorGUI
-  commentId: M:Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
-  fullName: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI()
-  nameWithType: InteractionBehavior.OnInspectorGUI()
-- uid: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI*
-  name: OnInspectorGUI
-  href: api/Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_OnInspectorGUI_
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
-  isSpec: "True"
-  fullName: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
-  nameWithType: InteractionBehavior.OnInspectorGUI
 - uid: Interactions.Behaviors.InteractionBehavior.Update
   name: Update()
   href: api/Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update

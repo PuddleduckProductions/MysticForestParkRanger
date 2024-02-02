@@ -89,7 +89,7 @@
 
 
   <h1 id="Interactions_Behaviors_InkInteraction" data-uid="Interactions.Behaviors.InkInteraction" class="text-break">
-Class InkInteraction  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L46"><i class="bi bi-code-slash"></i></a>
+Class InkInteraction  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -130,9 +130,6 @@ public class InkInteraction : InteractionBehavior</code></pre>
       <a class="xref" href="Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update">InteractionBehavior.Update()</a>
     </div>
     <div>
-      <a class="xref" href="Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_OnInspectorGUI">InteractionBehavior.OnInspectorGUI()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
@@ -168,7 +165,7 @@ public class InkInteraction : InteractionBehavior</code></pre>
 
   <h3 id="Interactions_Behaviors_InkInteraction__ctor_Interactions_Interaction_" data-uid="Interactions.Behaviors.InkInteraction.#ctor(Interactions.Interaction)">
   InkInteraction(Interaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -203,12 +200,10 @@ public class InkInteraction : InteractionBehavior</code></pre>
 
   <h3 id="Interactions_Behaviors_InkInteraction_isInteracting" data-uid="Interactions.Behaviors.InkInteraction.isInteracting">
   isInteracting
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Are we currently having an interaction happen?
-If this is true, this supresses all other interactions in the scene.
-If active for more than one frame, <a class="xref" href="Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update">Update()</a> is called.</p>
+  <div class="markdown level1 summary"><p>Active as long as <a class="xref" href="InkTools.InkManager.html#InkTools_InkManager_storyActive">storyActive</a> is active.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -241,7 +236,7 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_InkInteraction_EndDialog" data-uid="Interactions.Behaviors.InkInteraction.EndDialog">
   EndDialog()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -267,10 +262,12 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_InkInteraction_Interact" data-uid="Interactions.Behaviors.InkInteraction.Interact">
   Interact()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Call interact_<span class="xref">UnityEngine.Object.name</span> in Ink.
+TODO: Make customizable</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -293,7 +290,7 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 
   <h3 id="Interactions_Behaviors_InkInteraction_InteractAdvance_System_Boolean_" data-uid="Interactions.Behaviors.InkInteraction.InteractAdvance(System.Boolean)">
   InteractAdvance(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -324,7 +321,7 @@ If active for more than one frame, <a class="xref" href="Interactions.Behaviors.
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L46" class="edit-link">Edit this page</a>
+          <a href="https://github.com/PuddleduckProductions/MysticForestParkRanger/blob/master/Assets/Scripts/CharacterController/Interactions/Interaction.cs/#L49" class="edit-link">Edit this page</a>
         </div>
 
 

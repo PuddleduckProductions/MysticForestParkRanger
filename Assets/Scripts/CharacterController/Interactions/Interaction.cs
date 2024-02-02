@@ -17,7 +17,7 @@ namespace Interactions {
             /// Reference to the MonoBehaviour <see cref="Interaction"/> for accessing things like position.
             /// It's a serialized field so we don't lose the reference to the parent when the scene starts.
             /// </summary>
-            [SerializeField]
+            [SerializeField, HideInInspector]
             protected Interaction interactionObject;
 
             public InteractionBehavior(Interaction parent) {
@@ -30,13 +30,16 @@ namespace Interactions {
             /// If active for more than one frame, <see cref="Update"/> is called.
             /// </summary>
             public abstract bool isInteracting { get; }
-            public abstract void Interact();
-            public virtual void Update() { }
 
-            /*public virtual SerializedProperty[] SerializedProperties(SerializedObject serializedObject) {
-                return new SerializedProperty[] { };
-            }*/
-            public virtual void OnInspectorGUI() { }
+            /// <summary>
+            /// Function to call when the object is interacted with (i.e., Space is pressed)
+            /// Called by <see cref="InteractionManager"/>.
+            /// </summary>
+            public abstract void Interact();
+            /// <summary>
+            /// While <see cref="isInteracting"/> is true, call this function.
+            /// </summary>
+            public virtual void Update() { }
 
         }
 
@@ -47,7 +50,15 @@ namespace Interactions {
         public class InkInteraction : InteractionBehavior {
             public InkInteraction(Interaction parent) : base(parent) { }
 
+            /// <summary>
+            /// Active as long as <see cref="InkManager.storyActive"/> is active.
+            /// </summary>
             public override bool isInteracting => InkTools.InkManager.storyActive;
+
+            /// <summary>
+            /// Call interact_<see cref="UnityEngine.Object.name"/> in Ink.
+            /// TODO: Make customizable
+            /// </summary>
             public override void Interact() {
                 ISingleton<InkManager>.Instance.StartDialog("interact_" + interactionObject.name);
                 ISingleton<UIController>.Instance.onInteract.AddListener(InteractAdvance);
@@ -65,17 +76,33 @@ namespace Interactions {
             }
         }
 
+        /// <summary>
+        /// Push an object around.
+        /// TODO: Disable collider on push.
+        /// </summary>
         [Serializable]
         public class PushableInteraction : InteractionBehavior {
             public PushableInteraction(Interaction parent) : base(parent) { }
 
             public override bool isInteracting => isPushing;
+            /// <summary>
+            /// Whether player is still pushing. Active until space is pressed.
+            /// </summary>
 
             protected bool isPushing;
+            /// <summary>
+            /// Our reference to the player.
+            /// </summary>
             GameObject player;
 
+            /// <summary>
+            /// Stored offset between the player and pushed object.
+            /// </summary>
             Vector3 offset;
 
+            /// <summary>
+            /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
+            /// </summary>
             public override void Interact() {
                 player = GameObject.FindGameObjectWithTag("Player");
                 isPushing = true;
@@ -83,6 +110,10 @@ namespace Interactions {
                 offset = interactionObject.transform.position - player.transform.position;
             }
 
+            /// <summary>
+            /// Set pushed to false if pressed is true.
+            /// </summary>
+            /// <param name="pressed">Whether or not interact was pressed.</param>
             protected void ReleasePush(bool pressed) {
                 if (pressed) {
                     isPushing = false;
@@ -90,34 +121,32 @@ namespace Interactions {
                 }
             }
 
+            /// <summary>
+            /// Update the pushed object to move with us.
+            /// </summary>
             public override void Update() {
                 interactionObject.transform.position = player.transform.position + offset;
             }
         }
 
+        /// <summary>
+        /// Custom interaction setup. Define your own interaction behavior through other scripts.
+        /// </summary>
         [Serializable]
         public class CustomInteraction : InteractionBehavior {
             public CustomInteraction(Interaction parent) : base(parent) { }
 
+            /// <summary>
+            /// Functions to call when space is pressed on this object.
+            /// </summary>
             [SerializeField]
             protected UnityEvent onInteract = new UnityEvent();
-            [SerializeField]
-            protected string interactionFunc;
+            public UnityEngine.Object objectToCheck;
 
-            public override bool isInteracting => throw new NotImplementedException();
+            public override bool isInteracting => false;
 
             public override void Interact() {
-                throw new NotImplementedException();
-            }
-
-            // TODO: Fix.
-            /*public override SerializedProperty[] SerializedProperties(SerializedObject serializedObject) {
-                SerializedProperty behavior = serializedObject.FindProperty("behavior");
-                return new[] { serializedObject.FindProperty("onInteract") };
-            }*/
-
-            public override void OnInspectorGUI() {
-                //EditorGUILayout.PropertyField("Test");
+                onInteract.Invoke();
             }
         }
     }
