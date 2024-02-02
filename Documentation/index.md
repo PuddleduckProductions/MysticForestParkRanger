@@ -9,7 +9,7 @@ If you're a programmer, you might want to check the [API](/api).
 
 For tutorials, check the [Docs](docs/introduction.md).
 
-Feel free to contribute to this repository in the Documentation folder on Github. Markdown files can be added in Documentation/docs. Comments that use XML formatting (i.e., ///&gt;summary&lt;) from within the project will be added.
+Feel free to contribute to this repository in the Documentation folder on Github. Markdown files can be added in Documentation/docs. Comments that use XML formatting (i.e., ///&lt;summary&gt;) from within the project will be added.
 
 Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
 
