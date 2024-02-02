@@ -2,10 +2,15 @@
 _layout: landing
 ---
 
-# This is the **HOMEPAGE**.
+# Mystic Forest Park Ranger
+Welcome to the documentation for MysticForestParkRanger!
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+If you're a programmer, you might want to check the [API](/api).
 
-## Quick Start Notes:
+For tutorials, check the [Docs](docs/introduction.md).
 
-1. Add images to the *images* folder if the file is referencing an image.
+Feel free to contribute to this repository in the Documentation folder on Github. Markdown files can be added in Documentation/docs. Comments that use XML formatting (i.e., ///&gt;summary&lt;) from within the project will be added.
+
+Any pushes to master will automatically update the docs on this page. Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+
+If your documentation isn't showing up, let Tyler know.

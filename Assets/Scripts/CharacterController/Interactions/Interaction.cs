@@ -24,6 +24,11 @@ namespace Interactions {
                 interactionObject = parent;
             }
 
+            /// <summary>
+            /// Are we currently having an interaction happen?
+            /// If this is true, this supresses all other interactions in the scene.
+            /// If active for more than one frame, <see cref="Update"/> is called.
+            /// </summary>
             public abstract bool isInteracting { get; }
             public abstract void Interact();
             public virtual void Update() { }

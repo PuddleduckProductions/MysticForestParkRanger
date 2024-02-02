@@ -51,6 +51,10 @@ namespace Interactions {
             }
         }*/
 
+        /// <summary>
+        /// Assign our <see cref="Interaction.behavior"/> based on the given <see cref="Interaction.type"/>.
+        /// </summary>
+        /// <param name="interaction">The parent to give our <see cref="InteractionBehavior"/></param>
         private void CreateBehavior(Interaction interaction) {
             switch (interaction.type) {
                 case InteractionType.Ink:
