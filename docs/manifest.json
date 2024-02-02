@@ -1,0 +1,368 @@
+{
+  "source_base_path": "C:/Users/tyly0/Desktop/CMPM171/MysticForestParkRanger/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.DialogRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.DialogRenderer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.InkCommandDef.InkCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.InkCommandDef.InkCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.InkCommandDef.moveTo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.InkCommandDef.moveTo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.InkCommandDef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.InkCommandDef.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.InkCommands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.InkCommands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.InkManager.DialogLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.InkManager.DialogLine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.InkManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.InkManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/InkTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InkTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.Behaviors.CustomInteraction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.Behaviors.CustomInteraction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.Behaviors.InkInteraction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.Behaviors.InkInteraction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.Behaviors.InteractionBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.Behaviors.InteractionBehavior.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.Behaviors.PushableInteraction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.Behaviors.PushableInteraction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.Behaviors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.Behaviors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.Interaction.InteractionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.Interaction.InteractionType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.Interaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.Interaction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.InteractionEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.InteractionEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.InteractionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.InteractionManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interactions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interactions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MysticForestParkRanger.InteractionEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MysticForestParkRanger.InteractionEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MysticForestParkRanger.UIController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MysticForestParkRanger.UIController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MysticForestParkRanger.characterController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MysticForestParkRanger.characterController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MysticForestParkRanger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MysticForestParkRanger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utility.ISingleton-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utility.ISingleton-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "assets/images/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/images/interactions/interactionComponent.png",
+      "output": {
+        "resource": {
+          "relative_path": "assets/images/interactions/interactionComponent.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/images/interactions/interactionUI.png",
+      "output": {
+        "resource": {
+          "relative_path": "assets/images/interactions/interactionUI.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/Tutorials/interaction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/Tutorials/interaction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/scenes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/scenes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

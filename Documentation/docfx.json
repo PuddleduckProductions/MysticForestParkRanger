@@ -1,0 +1,48 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../",
+          "files": [
+            "ScriptAssembly.csproj",
+            "EditorAssembly.csproj"
+          ]
+        }
+      ],
+      "dest": "api",
+      "namespaceLayout": "nested",
+      "globalNamespaceId": "MysticForestParkRanger"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "assets/**"
+        ]
+      }
+    ],
+    "output": "../docs",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "MysticForestParkRanger",
+      "_appTitle": "MysticForestParkRanger",
+      "_appLogoPath": "assets/images/icon.png",
+      "_appFaviconPath": "assets/images/icon.png",
+      "_gitUrlPattern": "https://github.com/PuddleduckProductions/MysticForestParkRanger",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}
