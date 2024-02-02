@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEditor;
 using Interactions;
+using Interactions.Behaviors;
 using static Interactions.Interaction;
 
 /// <summary>

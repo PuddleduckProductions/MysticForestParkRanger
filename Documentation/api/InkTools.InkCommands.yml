@@ -1,40 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: InkCommandDef.moveTo
-  commentId: T:InkCommandDef.moveTo
-  id: moveTo
-  parent: InkCommandDef
+- uid: InkTools.InkCommands
+  commentId: T:InkTools.InkCommands
+  id: InkCommands
+  parent: InkTools
   children:
-  - InkCommandDef.moveTo.#ctor(System.Collections.Generic.List{System.String},System.String@)
-  - InkCommandDef.moveTo.Update
-  - InkCommandDef.moveTo.requiresUpdate
-  - InkCommandDef.moveTo.usage
+  - InkTools.InkCommands.#ctor
+  - InkTools.InkCommands.Evaluate(System.String,System.Collections.Generic.List{System.String})
+  - InkTools.InkCommands.Update
+  - InkTools.InkCommands.commandRegex
+  - InkTools.InkCommands.commands
   langs:
   - csharp
   - vb
-  name: moveTo
-  nameWithType: moveTo
-  fullName: InkCommandDef.moveTo
+  name: InkCommands
+  nameWithType: InkCommands
+  fullName: InkTools.InkCommands
   type: Class
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: moveTo
+    id: InkCommands
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 57
+    startLine: 106
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
+  namespace: InkTools
+  summary: For running commands created from Ink.
+  example: []
   syntax:
-    content: 'public class moveTo : InkCommand'
-    content.vb: Public Class moveTo Inherits InkCommand
+    content: public class InkCommands
+    content.vb: Public Class InkCommands
   inheritance:
   - System.Object
-  - InkCommandDef.InkCommand
   inheritedMembers:
-  - InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -42,78 +43,43 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: InkCommandDef.moveTo.usage
-  commentId: P:InkCommandDef.moveTo.usage
-  id: usage
-  parent: InkCommandDef.moveTo
+- uid: InkTools.InkCommands.commands
+  commentId: F:InkTools.InkCommands.commands
+  id: commands
+  parent: InkTools.InkCommands
   langs:
   - csharp
   - vb
-  name: usage
-  nameWithType: moveTo.usage
-  fullName: InkCommandDef.moveTo.usage
-  type: Property
+  name: commands
+  nameWithType: InkCommands.commands
+  fullName: InkTools.InkCommands.commands
+  type: Field
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: usage
+    id: commands
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 61
+    startLine: 107
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
-  example: []
+  namespace: InkTools
   syntax:
-    content: public override string usage { get; }
-    parameters: []
+    content: protected Dictionary<string, ConstructorInfo> commands
     return:
-      type: System.String
-    content.vb: Public Overrides ReadOnly Property usage As String
-  overridden: InkCommandDef.InkCommand.usage
-  overload: InkCommandDef.moveTo.usage*
-- uid: InkCommandDef.moveTo.requiresUpdate
-  commentId: P:InkCommandDef.moveTo.requiresUpdate
-  id: requiresUpdate
-  parent: InkCommandDef.moveTo
+      type: System.Collections.Generic.Dictionary{System.String,System.Reflection.ConstructorInfo}
+    content.vb: Protected commands As Dictionary(Of String, ConstructorInfo)
+- uid: InkTools.InkCommands.#ctor
+  commentId: M:InkTools.InkCommands.#ctor
+  id: '#ctor'
+  parent: InkTools.InkCommands
   langs:
   - csharp
   - vb
-  name: requiresUpdate
-  nameWithType: moveTo.requiresUpdate
-  fullName: InkCommandDef.moveTo.requiresUpdate
-  type: Property
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkCommands.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: requiresUpdate
-    path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 62
-  assemblies:
-  - ScriptAssembly
-  namespace: InkCommandDef
-  example: []
-  syntax:
-    content: public override bool requiresUpdate { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Overrides ReadOnly Property requiresUpdate As Boolean
-  overridden: InkCommandDef.InkCommand.requiresUpdate
-  overload: InkCommandDef.moveTo.requiresUpdate*
-- uid: InkCommandDef.moveTo.#ctor(System.Collections.Generic.List{System.String},System.String@)
-  commentId: M:InkCommandDef.moveTo.#ctor(System.Collections.Generic.List{System.String},System.String@)
-  id: '#ctor(System.Collections.Generic.List{System.String},System.String@)'
-  parent: InkCommandDef.moveTo
-  langs:
-  - csharp
-  - vb
-  name: moveTo(List<string>, out string)
-  nameWithType: moveTo.moveTo(List<string>, out string)
-  fullName: InkCommandDef.moveTo.moveTo(System.Collections.Generic.List<string>, out string)
+  name: InkCommands()
+  nameWithType: InkCommands.InkCommands()
+  fullName: InkTools.InkCommands.InkCommands()
   type: Constructor
   source:
     remote:
@@ -122,32 +88,88 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 64
+    startLine: 111
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
+  namespace: InkTools
   syntax:
-    content: public moveTo(List<string> args, out string error)
+    content: public InkCommands()
+    content.vb: Public Sub New()
+  overload: InkTools.InkCommands.#ctor*
+  nameWithType.vb: InkCommands.New()
+  fullName.vb: InkTools.InkCommands.New()
+  name.vb: New()
+- uid: InkTools.InkCommands.commandRegex
+  commentId: F:InkTools.InkCommands.commandRegex
+  id: commandRegex
+  parent: InkTools.InkCommands
+  langs:
+  - csharp
+  - vb
+  name: commandRegex
+  nameWithType: InkCommands.commandRegex
+  fullName: InkTools.InkCommands.commandRegex
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkCommands.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: commandRegex
+    path: ../Assets/Scripts/Ink/InkCommands.cs
+    startLine: 125
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: protected static Regex commandRegex
+    return:
+      type: System.Text.RegularExpressions.Regex
+    content.vb: Protected Shared commandRegex As Regex
+- uid: InkTools.InkCommands.Evaluate(System.String,System.Collections.Generic.List{System.String})
+  commentId: M:InkTools.InkCommands.Evaluate(System.String,System.Collections.Generic.List{System.String})
+  id: Evaluate(System.String,System.Collections.Generic.List{System.String})
+  parent: InkTools.InkCommands
+  langs:
+  - csharp
+  - vb
+  name: Evaluate(string, List<string>)
+  nameWithType: InkCommands.Evaluate(string, List<string>)
+  fullName: InkTools.InkCommands.Evaluate(string, System.Collections.Generic.List<string>)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkCommands.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Evaluate
+    path: ../Assets/Scripts/Ink/InkCommands.cs
+    startLine: 126
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public void Evaluate(string commandString, List<string> tags)
     parameters:
-    - id: args
-      type: System.Collections.Generic.List{System.String}
-    - id: error
+    - id: commandString
       type: System.String
-    content.vb: Public Sub New(args As List(Of String), [error] As String)
-  overload: InkCommandDef.moveTo.#ctor*
-  nameWithType.vb: moveTo.New(List(Of String), String)
-  fullName.vb: InkCommandDef.moveTo.New(System.Collections.Generic.List(Of String), String)
-  name.vb: New(List(Of String), String)
-- uid: InkCommandDef.moveTo.Update
-  commentId: M:InkCommandDef.moveTo.Update
+    - id: tags
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Sub Evaluate(commandString As String, tags As List(Of String))
+  overload: InkTools.InkCommands.Evaluate*
+  nameWithType.vb: InkCommands.Evaluate(String, List(Of String))
+  fullName.vb: InkTools.InkCommands.Evaluate(String, System.Collections.Generic.List(Of String))
+  name.vb: Evaluate(String, List(Of String))
+- uid: InkTools.InkCommands.Update
+  commentId: M:InkTools.InkCommands.Update
   id: Update
-  parent: InkCommandDef.moveTo
+  parent: InkTools.InkCommands
   langs:
   - csharp
   - vb
   name: Update()
-  nameWithType: moveTo.Update()
-  fullName: InkCommandDef.moveTo.Update()
+  nameWithType: InkCommands.Update()
+  fullName: InkTools.InkCommands.Update()
   type: Method
   source:
     remote:
@@ -156,27 +178,21 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 92
+    startLine: 145
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
-  summary: To call if requiresUpdate is true.
-  example: []
+  namespace: InkTools
   syntax:
-    content: public override bool Update()
-    return:
-      type: System.Boolean
-      description: If update has finished, and we can remove this command from the list.
-    content.vb: Public Overrides Function Update() As Boolean
-  overridden: InkCommandDef.InkCommand.Update
-  overload: InkCommandDef.moveTo.Update*
+    content: public void Update()
+    content.vb: Public Sub Update()
+  overload: InkTools.InkCommands.Update*
 references:
-- uid: InkCommandDef
-  commentId: N:InkCommandDef
-  href: InkCommandDef.html
-  name: InkCommandDef
-  nameWithType: InkCommandDef
-  fullName: InkCommandDef
+- uid: InkTools
+  commentId: N:InkTools
+  href: InkTools.html
+  name: InkTools
+  nameWithType: InkTools
+  fullName: InkTools
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -188,70 +204,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: InkCommandDef.InkCommand
-  commentId: T:InkCommandDef.InkCommand
-  parent: InkCommandDef
-  href: InkCommandDef.InkCommand.html
-  name: InkCommand
-  nameWithType: InkCommand
-  fullName: InkCommandDef.InkCommand
-- uid: InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
-  commentId: M:InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
-  parent: InkCommandDef.InkCommand
-  isExternal: true
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_CommandWrite_System_String_System_Collections_Generic_List_System_String__
-  name: CommandWrite(string, List<string>)
-  nameWithType: InkCommand.CommandWrite(string, List<string>)
-  fullName: InkCommandDef.InkCommand.CommandWrite(string, System.Collections.Generic.List<string>)
-  nameWithType.vb: InkCommand.CommandWrite(String, List(Of String))
-  fullName.vb: InkCommandDef.InkCommand.CommandWrite(String, System.Collections.Generic.List(Of String))
-  name.vb: CommandWrite(String, List(Of String))
-  spec.csharp:
-  - uid: InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
-    name: CommandWrite
-    href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_CommandWrite_System_String_System_Collections_Generic_List_System_String__
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  - name: )
-  spec.vb:
-  - uid: InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
-    name: CommandWrite
-    href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_CommandWrite_System_String_System_Collections_Generic_List_System_String__
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -478,19 +430,184 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: InkCommandDef.InkCommand.usage
-  commentId: P:InkCommandDef.InkCommand.usage
-  parent: InkCommandDef.InkCommand
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_usage
-  name: usage
-  nameWithType: InkCommand.usage
-  fullName: InkCommandDef.InkCommand.usage
-- uid: InkCommandDef.moveTo.usage*
-  commentId: Overload:InkCommandDef.moveTo.usage
-  href: InkCommandDef.moveTo.html#InkCommandDef_moveTo_usage
-  name: usage
-  nameWithType: moveTo.usage
-  fullName: InkCommandDef.moveTo.usage
+- uid: System.Collections.Generic.Dictionary{System.String,System.Reflection.ConstructorInfo}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Reflection.ConstructorInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, ConstructorInfo>
+  nameWithType: Dictionary<string, ConstructorInfo>
+  fullName: System.Collections.Generic.Dictionary<string, System.Reflection.ConstructorInfo>
+  nameWithType.vb: Dictionary(Of String, ConstructorInfo)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, System.Reflection.ConstructorInfo)
+  name.vb: Dictionary(Of String, ConstructorInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.ConstructorInfo
+    name: ConstructorInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Reflection.ConstructorInfo
+    name: ConstructorInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: InkTools.InkCommands.#ctor*
+  commentId: Overload:InkTools.InkCommands.#ctor
+  href: InkTools.InkCommands.html#InkTools_InkCommands__ctor
+  name: InkCommands
+  nameWithType: InkCommands.InkCommands
+  fullName: InkTools.InkCommands.InkCommands
+  nameWithType.vb: InkCommands.New
+  fullName.vb: InkTools.InkCommands.New
+  name.vb: New
+- uid: System.Text.RegularExpressions.Regex
+  commentId: T:System.Text.RegularExpressions.Regex
+  parent: System.Text.RegularExpressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex
+  name: Regex
+  nameWithType: Regex
+  fullName: System.Text.RegularExpressions.Regex
+- uid: System.Text.RegularExpressions
+  commentId: N:System.Text.RegularExpressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text.RegularExpressions
+  nameWithType: System.Text.RegularExpressions
+  fullName: System.Text.RegularExpressions
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.RegularExpressions
+    name: RegularExpressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.RegularExpressions
+    name: RegularExpressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions
+- uid: InkTools.InkCommands.Evaluate*
+  commentId: Overload:InkTools.InkCommands.Evaluate
+  href: InkTools.InkCommands.html#InkTools_InkCommands_Evaluate_System_String_System_Collections_Generic_List_System_String__
+  name: Evaluate
+  nameWithType: InkCommands.Evaluate
+  fullName: InkTools.InkCommands.Evaluate
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -502,39 +619,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: InkCommandDef.InkCommand.requiresUpdate
-  commentId: P:InkCommandDef.InkCommand.requiresUpdate
-  parent: InkCommandDef.InkCommand
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_requiresUpdate
-  name: requiresUpdate
-  nameWithType: InkCommand.requiresUpdate
-  fullName: InkCommandDef.InkCommand.requiresUpdate
-- uid: InkCommandDef.moveTo.requiresUpdate*
-  commentId: Overload:InkCommandDef.moveTo.requiresUpdate
-  href: InkCommandDef.moveTo.html#InkCommandDef_moveTo_requiresUpdate
-  name: requiresUpdate
-  nameWithType: moveTo.requiresUpdate
-  fullName: InkCommandDef.moveTo.requiresUpdate
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: InkCommandDef.moveTo.#ctor*
-  commentId: Overload:InkCommandDef.moveTo.#ctor
-  href: InkCommandDef.moveTo.html#InkCommandDef_moveTo__ctor_System_Collections_Generic_List_System_String__System_String__
-  name: moveTo
-  nameWithType: moveTo.moveTo
-  fullName: InkCommandDef.moveTo.moveTo
-  nameWithType.vb: moveTo.New
-  fullName.vb: InkCommandDef.moveTo.New
-  name.vb: New
 - uid: System.Collections.Generic.List{System.String}
   commentId: T:System.Collections.Generic.List{System.String}
   parent: System.Collections.Generic
@@ -598,65 +682,9 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: InkCommandDef.InkCommand.Update
-  commentId: M:InkCommandDef.InkCommand.Update
-  parent: InkCommandDef.InkCommand
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_Update
-  name: Update()
-  nameWithType: InkCommand.Update()
-  fullName: InkCommandDef.InkCommand.Update()
-  spec.csharp:
-  - uid: InkCommandDef.InkCommand.Update
-    name: Update
-    href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_Update
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: InkCommandDef.InkCommand.Update
-    name: Update
-    href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_Update
-  - name: (
-  - name: )
-- uid: InkCommandDef.moveTo.Update*
-  commentId: Overload:InkCommandDef.moveTo.Update
-  href: InkCommandDef.moveTo.html#InkCommandDef_moveTo_Update
+- uid: InkTools.InkCommands.Update*
+  commentId: Overload:InkTools.InkCommands.Update
+  href: InkTools.InkCommands.html#InkTools_InkCommands_Update
   name: Update
-  nameWithType: moveTo.Update
-  fullName: InkCommandDef.moveTo.Update
+  nameWithType: InkCommands.Update
+  fullName: InkTools.InkCommands.Update

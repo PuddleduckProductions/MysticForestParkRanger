@@ -1,19 +1,19 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.Interaction.InteractionType
-  commentId: T:MysticForestParkRanger.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType
+  commentId: T:Interactions.Interaction.InteractionType
   id: Interaction.InteractionType
-  parent: MysticForestParkRanger
+  parent: Interactions
   children:
-  - MysticForestParkRanger.Interaction.InteractionType.Custom
-  - MysticForestParkRanger.Interaction.InteractionType.Ink
-  - MysticForestParkRanger.Interaction.InteractionType.Pushable
+  - Interactions.Interaction.InteractionType.Custom
+  - Interactions.Interaction.InteractionType.Ink
+  - Interactions.Interaction.InteractionType.Pushable
   langs:
   - csharp
   - vb
   name: Interaction.InteractionType
   nameWithType: Interaction.InteractionType
-  fullName: Interaction.InteractionType
+  fullName: Interactions.Interaction.InteractionType
   type: Enum
   source:
     remote:
@@ -22,23 +22,23 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionType
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 113
+    startLine: 117
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
     content: public enum Interaction.InteractionType
     content.vb: Public Enum Interaction.InteractionType
-- uid: MysticForestParkRanger.Interaction.InteractionType.Ink
-  commentId: F:MysticForestParkRanger.Interaction.InteractionType.Ink
+- uid: Interactions.Interaction.InteractionType.Ink
+  commentId: F:Interactions.Interaction.InteractionType.Ink
   id: Ink
-  parent: MysticForestParkRanger.Interaction.InteractionType
+  parent: Interactions.Interaction.InteractionType
   langs:
   - csharp
   - vb
   name: Ink
   nameWithType: Interaction.InteractionType.Ink
-  fullName: Interaction.InteractionType.Ink
+  fullName: Interactions.Interaction.InteractionType.Ink
   type: Field
   source:
     remote:
@@ -47,24 +47,24 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Ink
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 113
+    startLine: 117
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
     content: Ink = 0
     return:
-      type: MysticForestParkRanger.Interaction.InteractionType
-- uid: MysticForestParkRanger.Interaction.InteractionType.Pushable
-  commentId: F:MysticForestParkRanger.Interaction.InteractionType.Pushable
+      type: Interactions.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType.Pushable
+  commentId: F:Interactions.Interaction.InteractionType.Pushable
   id: Pushable
-  parent: MysticForestParkRanger.Interaction.InteractionType
+  parent: Interactions.Interaction.InteractionType
   langs:
   - csharp
   - vb
   name: Pushable
   nameWithType: Interaction.InteractionType.Pushable
-  fullName: Interaction.InteractionType.Pushable
+  fullName: Interactions.Interaction.InteractionType.Pushable
   type: Field
   source:
     remote:
@@ -73,24 +73,24 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Pushable
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 113
+    startLine: 117
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
     content: Pushable = 1
     return:
-      type: MysticForestParkRanger.Interaction.InteractionType
-- uid: MysticForestParkRanger.Interaction.InteractionType.Custom
-  commentId: F:MysticForestParkRanger.Interaction.InteractionType.Custom
+      type: Interactions.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType.Custom
+  commentId: F:Interactions.Interaction.InteractionType.Custom
   id: Custom
-  parent: MysticForestParkRanger.Interaction.InteractionType
+  parent: Interactions.Interaction.InteractionType
   langs:
   - csharp
   - vb
   name: Custom
   nameWithType: Interaction.InteractionType.Custom
-  fullName: Interaction.InteractionType.Custom
+  fullName: Interactions.Interaction.InteractionType.Custom
   type: Field
   source:
     remote:
@@ -99,35 +99,41 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Custom
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 113
+    startLine: 117
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
     content: Custom = 2
     return:
-      type: MysticForestParkRanger.Interaction.InteractionType
+      type: Interactions.Interaction.InteractionType
 references:
-- uid: MysticForestParkRanger
-- uid: MysticForestParkRanger.Interaction.InteractionType
-  commentId: T:MysticForestParkRanger.Interaction.InteractionType
-  href: Interaction.html
+- uid: Interactions
+  commentId: N:Interactions
+  href: Interactions.html
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions
+- uid: Interactions.Interaction.InteractionType
+  commentId: T:Interactions.Interaction.InteractionType
+  parent: Interactions
+  href: Interactions.Interaction.html
   name: Interaction.InteractionType
   nameWithType: Interaction.InteractionType
-  fullName: Interaction.InteractionType
+  fullName: Interactions.Interaction.InteractionType
   spec.csharp:
-  - uid: MysticForestParkRanger.Interaction
+  - uid: Interactions.Interaction
     name: Interaction
-    href: Interaction.html
+    href: Interactions.Interaction.html
   - name: .
-  - uid: MysticForestParkRanger.Interaction.InteractionType
+  - uid: Interactions.Interaction.InteractionType
     name: InteractionType
-    href: Interaction.InteractionType.html
+    href: Interactions.Interaction.InteractionType.html
   spec.vb:
-  - uid: MysticForestParkRanger.Interaction
+  - uid: Interactions.Interaction
     name: Interaction
-    href: Interaction.html
+    href: Interactions.Interaction.html
   - name: .
-  - uid: MysticForestParkRanger.Interaction.InteractionType
+  - uid: Interactions.Interaction.InteractionType
     name: InteractionType
-    href: Interaction.InteractionType.html
+    href: Interactions.Interaction.InteractionType.html

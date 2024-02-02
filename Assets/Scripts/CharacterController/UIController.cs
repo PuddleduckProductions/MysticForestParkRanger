@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Utility;
 
-class UIController : MonoBehaviour, ISingleton<UIController>
+public class UIController : MonoBehaviour, ISingleton<UIController>
 {
     public UnityEvent<bool> onInteract;
     private void Awake() {

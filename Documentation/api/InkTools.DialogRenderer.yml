@@ -1,53 +1,46 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.InkManager
-  commentId: T:MysticForestParkRanger.InkManager
-  id: InkManager
-  parent: MysticForestParkRanger
+- uid: InkTools.DialogRenderer
+  commentId: T:InkTools.DialogRenderer
+  id: DialogRenderer
+  parent: InkTools
   children:
-  - MysticForestParkRanger.InkManager.AdvanceStory
-  - MysticForestParkRanger.InkManager.DrawDialog(InkManager.DialogLine)
-  - MysticForestParkRanger.InkManager.EvaluateStory
-  - MysticForestParkRanger.InkManager.LineFromString(System.String)
-  - MysticForestParkRanger.InkManager.StartDialog(System.String)
-  - MysticForestParkRanger.InkManager.TryFindCharacter(System.String,UnityEngine.GameObject@)
-  - MysticForestParkRanger.InkManager.dialogEnd
-  - MysticForestParkRanger.InkManager.dialogInstance
-  - MysticForestParkRanger.InkManager.dialogRenderer
-  - MysticForestParkRanger.InkManager.inkJSONAsset
-  - MysticForestParkRanger.InkManager.lineMatchRegex
-  - MysticForestParkRanger.InkManager.runOnStart
-  - MysticForestParkRanger.InkManager.story
-  - MysticForestParkRanger.InkManager.storyActive
+  - InkTools.DialogRenderer.Init
+  - InkTools.DialogRenderer.Render(InkTools.InkManager.DialogLine)
+  - InkTools.DialogRenderer.TryGetCharacter(System.String,UnityEngine.GameObject@)
+  - InkTools.DialogRenderer.defaultFont
+  - InkTools.DialogRenderer.defaultFontSize
+  - InkTools.DialogRenderer.dialog
+  - InkTools.DialogRenderer.dialogParent
+  - InkTools.DialogRenderer.symbolsFont
+  - InkTools.DialogRenderer.worldCamera
   langs:
   - csharp
   - vb
-  name: InkManager
-  nameWithType: InkManager
-  fullName: InkManager
+  name: DialogRenderer
+  nameWithType: DialogRenderer
+  fullName: InkTools.DialogRenderer
   type: Class
   source:
     remote:
-      path: Assets/Scripts/Ink/InkManager.cs
+      path: Assets/Scripts/Ink/DialogRenderer.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InkManager
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 7
+    id: DialogRenderer
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 8
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
-    content: 'public class InkManager : MonoBehaviour, ISingleton<InkManager>'
-    content.vb: Public Class InkManager Inherits MonoBehaviour Implements ISingleton(Of InkManager)
+    content: 'public class DialogRenderer : MonoBehaviour'
+    content.vb: Public Class DialogRenderer Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.Component
   - UnityEngine.Behaviour
   - UnityEngine.MonoBehaviour
-  implements:
-  - MysticForestParkRanger.ISingleton{InkManager}
   inheritedMembers:
   - UnityEngine.MonoBehaviour.IsInvoking
   - UnityEngine.MonoBehaviour.CancelInvoke
@@ -163,376 +156,228 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: MysticForestParkRanger.InkManager.runOnStart
-  commentId: F:MysticForestParkRanger.InkManager.runOnStart
-  id: runOnStart
-  parent: MysticForestParkRanger.InkManager
+- uid: InkTools.DialogRenderer.symbolsFont
+  commentId: F:InkTools.DialogRenderer.symbolsFont
+  id: symbolsFont
+  parent: InkTools.DialogRenderer
   langs:
   - csharp
   - vb
-  name: runOnStart
-  nameWithType: InkManager.runOnStart
-  fullName: InkManager.runOnStart
+  name: symbolsFont
+  nameWithType: DialogRenderer.symbolsFont
+  fullName: InkTools.DialogRenderer.symbolsFont
   type: Field
   source:
     remote:
-      path: Assets/Scripts/Ink/InkManager.cs
+      path: Assets/Scripts/Ink/DialogRenderer.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: runOnStart
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 9
+    id: symbolsFont
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 10
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public bool runOnStart
-    return:
-      type: System.Boolean
-    content.vb: Public runOnStart As Boolean
-- uid: MysticForestParkRanger.InkManager.storyActive
-  commentId: P:MysticForestParkRanger.InkManager.storyActive
-  id: storyActive
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: storyActive
-  nameWithType: InkManager.storyActive
-  fullName: InkManager.storyActive
-  type: Property
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: storyActive
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 11
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public static bool storyActive { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Shared Property storyActive As Boolean
-  overload: MysticForestParkRanger.InkManager.storyActive*
-- uid: MysticForestParkRanger.InkManager.inkJSONAsset
-  commentId: F:MysticForestParkRanger.InkManager.inkJSONAsset
-  id: inkJSONAsset
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: inkJSONAsset
-  nameWithType: InkManager.inkJSONAsset
-  fullName: InkManager.inkJSONAsset
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: inkJSONAsset
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 14
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
     content: >-
       [SerializeField]
 
-      protected TextAsset inkJSONAsset
+      protected TMP_FontAsset symbolsFont
     return:
-      type: UnityEngine.TextAsset
+      type: TMPro.TMP_FontAsset
     content.vb: >-
       <SerializeField>
 
-      Protected inkJSONAsset As TextAsset
+      Protected symbolsFont As TMP_FontAsset
   attributes:
   - type: UnityEngine.SerializeField
     ctor: UnityEngine.SerializeField.#ctor
     arguments: []
-- uid: MysticForestParkRanger.InkManager.story
-  commentId: F:MysticForestParkRanger.InkManager.story
-  id: story
-  parent: MysticForestParkRanger.InkManager
+- uid: InkTools.DialogRenderer.defaultFont
+  commentId: F:InkTools.DialogRenderer.defaultFont
+  id: defaultFont
+  parent: InkTools.DialogRenderer
   langs:
   - csharp
   - vb
-  name: story
-  nameWithType: InkManager.story
-  fullName: InkManager.story
+  name: defaultFont
+  nameWithType: DialogRenderer.defaultFont
+  fullName: InkTools.DialogRenderer.defaultFont
   type: Field
   source:
     remote:
-      path: Assets/Scripts/Ink/InkManager.cs
+      path: Assets/Scripts/Ink/DialogRenderer.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: story
-    path: ../Assets/Scripts/Ink/InkManager.cs
+    id: defaultFont
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 11
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: protected TMP_FontAsset defaultFont
+    return:
+      type: TMPro.TMP_FontAsset
+    content.vb: Protected defaultFont As TMP_FontAsset
+- uid: InkTools.DialogRenderer.defaultFontSize
+  commentId: F:InkTools.DialogRenderer.defaultFontSize
+  id: defaultFontSize
+  parent: InkTools.DialogRenderer
+  langs:
+  - csharp
+  - vb
+  name: defaultFontSize
+  nameWithType: DialogRenderer.defaultFontSize
+  fullName: InkTools.DialogRenderer.defaultFontSize
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Ink/DialogRenderer.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: defaultFontSize
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: protected float defaultFontSize
+    return:
+      type: System.Single
+    content.vb: Protected defaultFontSize As Single
+- uid: InkTools.DialogRenderer.dialogParent
+  commentId: F:InkTools.DialogRenderer.dialogParent
+  id: dialogParent
+  parent: InkTools.DialogRenderer
+  langs:
+  - csharp
+  - vb
+  name: dialogParent
+  nameWithType: DialogRenderer.dialogParent
+  fullName: InkTools.DialogRenderer.dialogParent
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Ink/DialogRenderer.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: dialogParent
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 14
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: protected RectTransform dialogParent
+    return:
+      type: UnityEngine.RectTransform
+    content.vb: Protected dialogParent As RectTransform
+- uid: InkTools.DialogRenderer.dialog
+  commentId: F:InkTools.DialogRenderer.dialog
+  id: dialog
+  parent: InkTools.DialogRenderer
+  langs:
+  - csharp
+  - vb
+  name: dialog
+  nameWithType: DialogRenderer.dialog
+  fullName: InkTools.DialogRenderer.dialog
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Ink/DialogRenderer.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: dialog
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 15
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: protected TextMeshProUGUI dialog
+    return:
+      type: TMPro.TextMeshProUGUI
+    content.vb: Protected dialog As TextMeshProUGUI
+- uid: InkTools.DialogRenderer.worldCamera
+  commentId: F:InkTools.DialogRenderer.worldCamera
+  id: worldCamera
+  parent: InkTools.DialogRenderer
+  langs:
+  - csharp
+  - vb
+  name: worldCamera
+  nameWithType: DialogRenderer.worldCamera
+  fullName: InkTools.DialogRenderer.worldCamera
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Ink/DialogRenderer.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: worldCamera
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
     startLine: 16
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
-    content: protected Story story
+    content: protected Camera worldCamera
     return:
-      type: Ink.Runtime.Story
-    content.vb: Protected story As Story
-- uid: MysticForestParkRanger.InkManager.dialogInstance
-  commentId: F:MysticForestParkRanger.InkManager.dialogInstance
-  id: dialogInstance
-  parent: MysticForestParkRanger.InkManager
+      type: UnityEngine.Camera
+    content.vb: Protected worldCamera As Camera
+- uid: InkTools.DialogRenderer.Init
+  commentId: M:InkTools.DialogRenderer.Init
+  id: Init
+  parent: InkTools.DialogRenderer
   langs:
   - csharp
   - vb
-  name: dialogInstance
-  nameWithType: InkManager.dialogInstance
-  fullName: InkManager.dialogInstance
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: dialogInstance
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 22
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected GameObject dialogInstance
-    return:
-      type: UnityEngine.GameObject
-    content.vb: Protected dialogInstance As GameObject
-- uid: MysticForestParkRanger.InkManager.dialogRenderer
-  commentId: F:MysticForestParkRanger.InkManager.dialogRenderer
-  id: dialogRenderer
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: dialogRenderer
-  nameWithType: InkManager.dialogRenderer
-  fullName: InkManager.dialogRenderer
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: dialogRenderer
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 23
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected DialogRenderer dialogRenderer
-    return:
-      type: MysticForestParkRanger.DialogRenderer
-    content.vb: Protected dialogRenderer As DialogRenderer
-- uid: MysticForestParkRanger.InkManager.lineMatchRegex
-  commentId: F:MysticForestParkRanger.InkManager.lineMatchRegex
-  id: lineMatchRegex
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: lineMatchRegex
-  nameWithType: InkManager.lineMatchRegex
-  fullName: InkManager.lineMatchRegex
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: lineMatchRegex
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 35
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected static Regex lineMatchRegex
-    return:
-      type: System.Text.RegularExpressions.Regex
-    content.vb: Protected Shared lineMatchRegex As Regex
-- uid: MysticForestParkRanger.InkManager.LineFromString(System.String)
-  commentId: M:MysticForestParkRanger.InkManager.LineFromString(System.String)
-  id: LineFromString(System.String)
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: LineFromString(string)
-  nameWithType: InkManager.LineFromString(string)
-  fullName: InkManager.LineFromString(string)
+  name: Init()
+  nameWithType: DialogRenderer.Init()
+  fullName: InkTools.DialogRenderer.Init()
   type: Method
   source:
     remote:
-      path: Assets/Scripts/Ink/InkManager.cs
+      path: Assets/Scripts/Ink/DialogRenderer.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: LineFromString
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 36
+    id: Init
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 20
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
-    content: protected InkManager.DialogLine LineFromString(string text)
-    parameters:
-    - id: text
-      type: System.String
-    return:
-      type: MysticForestParkRanger.InkManager.DialogLine
-    content.vb: Protected Function LineFromString(text As String) As InkManager.DialogLine
-  overload: MysticForestParkRanger.InkManager.LineFromString*
-  nameWithType.vb: InkManager.LineFromString(String)
-  fullName.vb: InkManager.LineFromString(String)
-  name.vb: LineFromString(String)
-- uid: MysticForestParkRanger.InkManager.dialogEnd
-  commentId: F:MysticForestParkRanger.InkManager.dialogEnd
-  id: dialogEnd
-  parent: MysticForestParkRanger.InkManager
+    content: public void Init()
+    content.vb: Public Sub Init()
+  overload: InkTools.DialogRenderer.Init*
+- uid: InkTools.DialogRenderer.TryGetCharacter(System.String,UnityEngine.GameObject@)
+  commentId: M:InkTools.DialogRenderer.TryGetCharacter(System.String,UnityEngine.GameObject@)
+  id: TryGetCharacter(System.String,UnityEngine.GameObject@)
+  parent: InkTools.DialogRenderer
   langs:
   - csharp
   - vb
-  name: dialogEnd
-  nameWithType: InkManager.dialogEnd
-  fullName: InkManager.dialogEnd
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: dialogEnd
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 47
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public UnityEvent dialogEnd
-    return:
-      type: UnityEngine.Events.UnityEvent
-    content.vb: Public dialogEnd As UnityEvent
-- uid: MysticForestParkRanger.InkManager.StartDialog(System.String)
-  commentId: M:MysticForestParkRanger.InkManager.StartDialog(System.String)
-  id: StartDialog(System.String)
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: StartDialog(string)
-  nameWithType: InkManager.StartDialog(string)
-  fullName: InkManager.StartDialog(string)
+  name: TryGetCharacter(string, out GameObject)
+  nameWithType: DialogRenderer.TryGetCharacter(string, out GameObject)
+  fullName: InkTools.DialogRenderer.TryGetCharacter(string, out UnityEngine.GameObject)
   type: Method
   source:
     remote:
-      path: Assets/Scripts/Ink/InkManager.cs
+      path: Assets/Scripts/Ink/DialogRenderer.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: StartDialog
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 66
+    id: TryGetCharacter
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 29
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
-    content: public void StartDialog(string name)
-    parameters:
-    - id: name
-      type: System.String
-    content.vb: Public Sub StartDialog(name As String)
-  overload: MysticForestParkRanger.InkManager.StartDialog*
-  nameWithType.vb: InkManager.StartDialog(String)
-  fullName.vb: InkManager.StartDialog(String)
-  name.vb: StartDialog(String)
-- uid: MysticForestParkRanger.InkManager.AdvanceStory
-  commentId: M:MysticForestParkRanger.InkManager.AdvanceStory
-  id: AdvanceStory
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: AdvanceStory()
-  nameWithType: InkManager.AdvanceStory()
-  fullName: InkManager.AdvanceStory()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: AdvanceStory
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 77
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public void AdvanceStory()
-    content.vb: Public Sub AdvanceStory()
-  overload: MysticForestParkRanger.InkManager.AdvanceStory*
-- uid: MysticForestParkRanger.InkManager.EvaluateStory
-  commentId: M:MysticForestParkRanger.InkManager.EvaluateStory
-  id: EvaluateStory
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: EvaluateStory()
-  nameWithType: InkManager.EvaluateStory()
-  fullName: InkManager.EvaluateStory()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: EvaluateStory
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 87
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected void EvaluateStory()
-    content.vb: Protected Sub EvaluateStory()
-  overload: MysticForestParkRanger.InkManager.EvaluateStory*
-- uid: MysticForestParkRanger.InkManager.TryFindCharacter(System.String,UnityEngine.GameObject@)
-  commentId: M:MysticForestParkRanger.InkManager.TryFindCharacter(System.String,UnityEngine.GameObject@)
-  id: TryFindCharacter(System.String,UnityEngine.GameObject@)
-  parent: MysticForestParkRanger.InkManager
-  langs:
-  - csharp
-  - vb
-  name: TryFindCharacter(string, out GameObject)
-  nameWithType: InkManager.TryFindCharacter(string, out GameObject)
-  fullName: InkManager.TryFindCharacter(string, out UnityEngine.GameObject)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: TryFindCharacter
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 104
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected bool TryFindCharacter(string name, out GameObject character)
+    content: protected bool TryGetCharacter(string name, out GameObject character)
     parameters:
     - id: name
       type: System.String
@@ -540,42 +385,47 @@ items:
       type: UnityEngine.GameObject
     return:
       type: System.Boolean
-    content.vb: Protected Function TryFindCharacter(name As String, character As GameObject) As Boolean
-  overload: MysticForestParkRanger.InkManager.TryFindCharacter*
-  nameWithType.vb: InkManager.TryFindCharacter(String, GameObject)
-  fullName.vb: InkManager.TryFindCharacter(String, UnityEngine.GameObject)
-  name.vb: TryFindCharacter(String, GameObject)
-- uid: MysticForestParkRanger.InkManager.DrawDialog(InkManager.DialogLine)
-  commentId: M:MysticForestParkRanger.InkManager.DrawDialog(InkManager.DialogLine)
-  id: DrawDialog(InkManager.DialogLine)
-  parent: MysticForestParkRanger.InkManager
+    content.vb: Protected Function TryGetCharacter(name As String, character As GameObject) As Boolean
+  overload: InkTools.DialogRenderer.TryGetCharacter*
+  nameWithType.vb: DialogRenderer.TryGetCharacter(String, GameObject)
+  fullName.vb: InkTools.DialogRenderer.TryGetCharacter(String, UnityEngine.GameObject)
+  name.vb: TryGetCharacter(String, GameObject)
+- uid: InkTools.DialogRenderer.Render(InkTools.InkManager.DialogLine)
+  commentId: M:InkTools.DialogRenderer.Render(InkTools.InkManager.DialogLine)
+  id: Render(InkTools.InkManager.DialogLine)
+  parent: InkTools.DialogRenderer
   langs:
   - csharp
   - vb
-  name: DrawDialog(DialogLine)
-  nameWithType: InkManager.DrawDialog(InkManager.DialogLine)
-  fullName: InkManager.DrawDialog(InkManager.DialogLine)
+  name: Render(DialogLine)
+  nameWithType: DialogRenderer.Render(InkManager.DialogLine)
+  fullName: InkTools.DialogRenderer.Render(InkTools.InkManager.DialogLine)
   type: Method
   source:
     remote:
-      path: Assets/Scripts/Ink/InkManager.cs
+      path: Assets/Scripts/Ink/DialogRenderer.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: DrawDialog
-    path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 113
+    id: Render
+    path: ../Assets/Scripts/Ink/DialogRenderer.cs
+    startLine: 41
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
-    content: protected void DrawDialog(InkManager.DialogLine line)
+    content: public void Render(InkManager.DialogLine line)
     parameters:
     - id: line
-      type: MysticForestParkRanger.InkManager.DialogLine
-    content.vb: Protected Sub DrawDialog(line As InkManager.DialogLine)
-  overload: MysticForestParkRanger.InkManager.DrawDialog*
+      type: InkTools.InkManager.DialogLine
+    content.vb: Public Sub Render(line As InkManager.DialogLine)
+  overload: InkTools.DialogRenderer.Render*
 references:
-- uid: MysticForestParkRanger
+- uid: InkTools
+  commentId: N:InkTools
+  href: InkTools.html
+  name: InkTools
+  nameWithType: InkTools
+  fullName: InkTools
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -615,36 +465,6 @@ references:
   name: MonoBehaviour
   nameWithType: MonoBehaviour
   fullName: UnityEngine.MonoBehaviour
-- uid: MysticForestParkRanger.ISingleton{InkManager}
-  commentId: T:MysticForestParkRanger.ISingleton{InkManager}
-  definition: MysticForestParkRanger.ISingleton`1
-  href: ISingleton-1.html
-  name: ISingleton<InkManager>
-  nameWithType: ISingleton<InkManager>
-  fullName: ISingleton<InkManager>
-  nameWithType.vb: ISingleton(Of InkManager)
-  fullName.vb: ISingleton(Of InkManager)
-  name.vb: ISingleton(Of InkManager)
-  spec.csharp:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: <
-  - uid: MysticForestParkRanger.InkManager
-    name: InkManager
-    href: InkManager.html
-  - name: '>'
-  spec.vb:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: MysticForestParkRanger.InkManager
-    name: InkManager
-    href: InkManager.html
-  - name: )
 - uid: UnityEngine.MonoBehaviour.IsInvoking
   commentId: M:UnityEngine.MonoBehaviour.IsInvoking
   parent: UnityEngine.MonoBehaviour
@@ -4475,31 +4295,6 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
-- uid: MysticForestParkRanger.ISingleton`1
-  commentId: T:MysticForestParkRanger.ISingleton`1
-  href: ISingleton-1.html
-  name: ISingleton<T>
-  nameWithType: ISingleton<T>
-  fullName: ISingleton<T>
-  nameWithType.vb: ISingleton(Of T)
-  fullName.vb: ISingleton(Of T)
-  name.vb: ISingleton(Of T)
-  spec.csharp:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: UnityEngine.Component.TryGetComponent``1(``0@)
   commentId: M:UnityEngine.Component.TryGetComponent``1(``0@)
   isExternal: true
@@ -4979,117 +4774,63 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Boolean
-  commentId: T:System.Boolean
+- uid: TMPro.TMP_FontAsset
+  commentId: T:TMPro.TMP_FontAsset
+  parent: TMPro
+  isExternal: true
+  name: TMP_FontAsset
+  nameWithType: TMP_FontAsset
+  fullName: TMPro.TMP_FontAsset
+- uid: TMPro
+  commentId: N:TMPro
+  isExternal: true
+  name: TMPro
+  nameWithType: TMPro
+  fullName: TMPro
+- uid: System.Single
+  commentId: T:System.Single
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: MysticForestParkRanger.InkManager.storyActive*
-  commentId: Overload:MysticForestParkRanger.InkManager.storyActive
-  href: MysticForestParkRanger.InkManager.html#InkManager_storyActive
-  name: storyActive
-  nameWithType: InkManager.storyActive
-  fullName: InkManager.storyActive
-- uid: UnityEngine.TextAsset
-  commentId: T:UnityEngine.TextAsset
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UnityEngine.RectTransform
+  commentId: T:UnityEngine.RectTransform
   parent: UnityEngine
   isExternal: true
-  name: TextAsset
-  nameWithType: TextAsset
-  fullName: UnityEngine.TextAsset
-- uid: Ink.Runtime.Story
-  commentId: T:Ink.Runtime.Story
-  parent: Ink.Runtime
-  name: Story
-  nameWithType: Story
-  fullName: Ink.Runtime.Story
-- uid: Ink.Runtime
-  commentId: N:Ink.Runtime
-  name: Ink.Runtime
-  nameWithType: Ink.Runtime
-  fullName: Ink.Runtime
-  spec.csharp:
-  - uid: Ink
-    name: Ink
-  - name: .
-  - uid: Ink.Runtime
-    name: Runtime
-  spec.vb:
-  - uid: Ink
-    name: Ink
-  - name: .
-  - uid: Ink.Runtime
-    name: Runtime
-- uid: UnityEngine.GameObject
-  commentId: T:UnityEngine.GameObject
+  name: RectTransform
+  nameWithType: RectTransform
+  fullName: UnityEngine.RectTransform
+- uid: TMPro.TextMeshProUGUI
+  commentId: T:TMPro.TextMeshProUGUI
+  parent: TMPro
+  isExternal: true
+  name: TextMeshProUGUI
+  nameWithType: TextMeshProUGUI
+  fullName: TMPro.TextMeshProUGUI
+- uid: UnityEngine.Camera
+  commentId: T:UnityEngine.Camera
   parent: UnityEngine
   isExternal: true
-  name: GameObject
-  nameWithType: GameObject
-  fullName: UnityEngine.GameObject
-- uid: MysticForestParkRanger.DialogRenderer
-  commentId: T:MysticForestParkRanger.DialogRenderer
-  href: DialogRenderer.html
-  name: DialogRenderer
-  nameWithType: DialogRenderer
-  fullName: DialogRenderer
-- uid: System.Text.RegularExpressions.Regex
-  commentId: T:System.Text.RegularExpressions.Regex
-  parent: System.Text.RegularExpressions
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex
-  name: Regex
-  nameWithType: Regex
-  fullName: System.Text.RegularExpressions.Regex
-- uid: System.Text.RegularExpressions
-  commentId: N:System.Text.RegularExpressions
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Text.RegularExpressions
-  nameWithType: System.Text.RegularExpressions
-  fullName: System.Text.RegularExpressions
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Text
-    name: Text
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text
-  - name: .
-  - uid: System.Text.RegularExpressions
-    name: RegularExpressions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Text
-    name: Text
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text
-  - name: .
-  - uid: System.Text.RegularExpressions
-    name: RegularExpressions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions
-- uid: MysticForestParkRanger.InkManager.LineFromString*
-  commentId: Overload:MysticForestParkRanger.InkManager.LineFromString
-  href: MysticForestParkRanger.InkManager.html#InkManager_LineFromString_System_String_
-  name: LineFromString
-  nameWithType: InkManager.LineFromString
-  fullName: InkManager.LineFromString
+  name: Camera
+  nameWithType: Camera
+  fullName: UnityEngine.Camera
+- uid: InkTools.DialogRenderer.Init*
+  commentId: Overload:InkTools.DialogRenderer.Init
+  href: InkTools.DialogRenderer.html#InkTools_DialogRenderer_Init
+  name: Init
+  nameWithType: DialogRenderer.Init
+  fullName: InkTools.DialogRenderer.Init
+- uid: InkTools.DialogRenderer.TryGetCharacter*
+  commentId: Overload:InkTools.DialogRenderer.TryGetCharacter
+  href: InkTools.DialogRenderer.html#InkTools_DialogRenderer_TryGetCharacter_System_String_UnityEngine_GameObject__
+  name: TryGetCharacter
+  nameWithType: DialogRenderer.TryGetCharacter
+  fullName: InkTools.DialogRenderer.TryGetCharacter
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -5101,84 +4842,50 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: MysticForestParkRanger.InkManager.DialogLine
-  commentId: T:MysticForestParkRanger.InkManager.DialogLine
-  href: InkManager.html
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: InkTools.DialogRenderer.Render*
+  commentId: Overload:InkTools.DialogRenderer.Render
+  href: InkTools.DialogRenderer.html#InkTools_DialogRenderer_Render_InkTools_InkManager_DialogLine_
+  name: Render
+  nameWithType: DialogRenderer.Render
+  fullName: InkTools.DialogRenderer.Render
+- uid: InkTools.InkManager.DialogLine
+  commentId: T:InkTools.InkManager.DialogLine
+  parent: InkTools
+  href: InkTools.InkManager.html
   name: InkManager.DialogLine
   nameWithType: InkManager.DialogLine
-  fullName: InkManager.DialogLine
+  fullName: InkTools.InkManager.DialogLine
   spec.csharp:
-  - uid: MysticForestParkRanger.InkManager
+  - uid: InkTools.InkManager
     name: InkManager
-    href: InkManager.html
+    href: InkTools.InkManager.html
   - name: .
-  - uid: MysticForestParkRanger.InkManager.DialogLine
+  - uid: InkTools.InkManager.DialogLine
     name: DialogLine
-    href: InkManager.DialogLine.html
+    href: InkTools.InkManager.DialogLine.html
   spec.vb:
-  - uid: MysticForestParkRanger.InkManager
+  - uid: InkTools.InkManager
     name: InkManager
-    href: InkManager.html
+    href: InkTools.InkManager.html
   - name: .
-  - uid: MysticForestParkRanger.InkManager.DialogLine
+  - uid: InkTools.InkManager.DialogLine
     name: DialogLine
-    href: InkManager.DialogLine.html
-- uid: UnityEngine.Events.UnityEvent
-  commentId: T:UnityEngine.Events.UnityEvent
-  parent: UnityEngine.Events
-  isExternal: true
-  name: UnityEvent
-  nameWithType: UnityEvent
-  fullName: UnityEngine.Events.UnityEvent
-- uid: UnityEngine.Events
-  commentId: N:UnityEngine.Events
-  isExternal: true
-  name: UnityEngine.Events
-  nameWithType: UnityEngine.Events
-  fullName: UnityEngine.Events
-  spec.csharp:
-  - uid: UnityEngine
-    name: UnityEngine
-    isExternal: true
-  - name: .
-  - uid: UnityEngine.Events
-    name: Events
-    isExternal: true
-  spec.vb:
-  - uid: UnityEngine
-    name: UnityEngine
-    isExternal: true
-  - name: .
-  - uid: UnityEngine.Events
-    name: Events
-    isExternal: true
-- uid: MysticForestParkRanger.InkManager.StartDialog*
-  commentId: Overload:MysticForestParkRanger.InkManager.StartDialog
-  href: MysticForestParkRanger.InkManager.html#InkManager_StartDialog_System_String_
-  name: StartDialog
-  nameWithType: InkManager.StartDialog
-  fullName: InkManager.StartDialog
-- uid: MysticForestParkRanger.InkManager.AdvanceStory*
-  commentId: Overload:MysticForestParkRanger.InkManager.AdvanceStory
-  href: MysticForestParkRanger.InkManager.html#InkManager_AdvanceStory
-  name: AdvanceStory
-  nameWithType: InkManager.AdvanceStory
-  fullName: InkManager.AdvanceStory
-- uid: MysticForestParkRanger.InkManager.EvaluateStory*
-  commentId: Overload:MysticForestParkRanger.InkManager.EvaluateStory
-  href: MysticForestParkRanger.InkManager.html#InkManager_EvaluateStory
-  name: EvaluateStory
-  nameWithType: InkManager.EvaluateStory
-  fullName: InkManager.EvaluateStory
-- uid: MysticForestParkRanger.InkManager.TryFindCharacter*
-  commentId: Overload:MysticForestParkRanger.InkManager.TryFindCharacter
-  href: MysticForestParkRanger.InkManager.html#InkManager_TryFindCharacter_System_String_UnityEngine_GameObject__
-  name: TryFindCharacter
-  nameWithType: InkManager.TryFindCharacter
-  fullName: InkManager.TryFindCharacter
-- uid: MysticForestParkRanger.InkManager.DrawDialog*
-  commentId: Overload:MysticForestParkRanger.InkManager.DrawDialog
-  href: MysticForestParkRanger.InkManager.html#InkManager_DrawDialog_InkManager_DialogLine_
-  name: DrawDialog
-  nameWithType: InkManager.DrawDialog
-  fullName: InkManager.DrawDialog
+    href: InkTools.InkManager.DialogLine.html

@@ -1,41 +1,40 @@
 ### YamlMime:ManagedReference
 items:
-- uid: InkCommandDef.InkCommand
-  commentId: T:InkCommandDef.InkCommand
-  id: InkCommand
-  parent: InkCommandDef
+- uid: InkTools.InkCommandDef.moveTo
+  commentId: T:InkTools.InkCommandDef.moveTo
+  id: moveTo
+  parent: InkTools.InkCommandDef
   children:
-  - InkCommandDef.InkCommand.#ctor(System.Collections.Generic.List{System.String},System.String@)
-  - InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
-  - InkCommandDef.InkCommand.Update
-  - InkCommandDef.InkCommand.requiresUpdate
-  - InkCommandDef.InkCommand.usage
+  - InkTools.InkCommandDef.moveTo.#ctor(System.Collections.Generic.List{System.String},System.String@)
+  - InkTools.InkCommandDef.moveTo.Update
+  - InkTools.InkCommandDef.moveTo.requiresUpdate
+  - InkTools.InkCommandDef.moveTo.usage
   langs:
   - csharp
   - vb
-  name: InkCommand
-  nameWithType: InkCommand
-  fullName: InkCommandDef.InkCommand
+  name: moveTo
+  nameWithType: moveTo
+  fullName: InkTools.InkCommandDef.moveTo
   type: Class
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InkCommand
+    id: moveTo
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 10
+    startLine: 58
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
+  namespace: InkTools.InkCommandDef
   syntax:
-    content: public abstract class InkCommand
-    content.vb: Public MustInherit Class InkCommand
+    content: 'public class moveTo : InkCommand'
+    content.vb: Public Class moveTo Inherits InkCommand
   inheritance:
   - System.Object
-  derivedClasses:
-  - InkCommandDef.moveTo
+  - InkTools.InkCommandDef.InkCommand
   inheritedMembers:
+  - InkTools.InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -43,79 +42,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: InkCommandDef.InkCommand.requiresUpdate
-  commentId: P:InkCommandDef.InkCommand.requiresUpdate
-  id: requiresUpdate
-  parent: InkCommandDef.InkCommand
-  langs:
-  - csharp
-  - vb
-  name: requiresUpdate
-  nameWithType: InkCommand.requiresUpdate
-  fullName: InkCommandDef.InkCommand.requiresUpdate
-  type: Property
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkCommands.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: requiresUpdate
-    path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 11
-  assemblies:
-  - ScriptAssembly
-  namespace: InkCommandDef
-  syntax:
-    content: public virtual bool requiresUpdate { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Overridable ReadOnly Property requiresUpdate As Boolean
-  overload: InkCommandDef.InkCommand.requiresUpdate*
-- uid: InkCommandDef.InkCommand.#ctor(System.Collections.Generic.List{System.String},System.String@)
-  commentId: M:InkCommandDef.InkCommand.#ctor(System.Collections.Generic.List{System.String},System.String@)
-  id: '#ctor(System.Collections.Generic.List{System.String},System.String@)'
-  parent: InkCommandDef.InkCommand
-  langs:
-  - csharp
-  - vb
-  name: InkCommand(List<string>, out string)
-  nameWithType: InkCommand.InkCommand(List<string>, out string)
-  fullName: InkCommandDef.InkCommand.InkCommand(System.Collections.Generic.List<string>, out string)
-  type: Constructor
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkCommands.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: .ctor
-    path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 16
-  assemblies:
-  - ScriptAssembly
-  namespace: InkCommandDef
-  syntax:
-    content: public InkCommand(List<string> args, out string error)
-    parameters:
-    - id: args
-      type: System.Collections.Generic.List{System.String}
-    - id: error
-      type: System.String
-    content.vb: Public Sub New(args As List(Of String), [error] As String)
-  overload: InkCommandDef.InkCommand.#ctor*
-  nameWithType.vb: InkCommand.New(List(Of String), String)
-  fullName.vb: InkCommandDef.InkCommand.New(System.Collections.Generic.List(Of String), String)
-  name.vb: New(List(Of String), String)
-- uid: InkCommandDef.InkCommand.usage
-  commentId: P:InkCommandDef.InkCommand.usage
+- uid: InkTools.InkCommandDef.moveTo.usage
+  commentId: P:InkTools.InkCommandDef.moveTo.usage
   id: usage
-  parent: InkCommandDef.InkCommand
+  parent: InkTools.InkCommandDef.moveTo
   langs:
   - csharp
   - vb
   name: usage
-  nameWithType: InkCommand.usage
-  fullName: InkCommandDef.InkCommand.usage
+  nameWithType: moveTo.usage
+  fullName: InkTools.InkCommandDef.moveTo.usage
   type: Property
   source:
     remote:
@@ -124,63 +60,94 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: usage
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 20
+    startLine: 62
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
+  namespace: InkTools.InkCommandDef
+  example: []
   syntax:
-    content: public abstract string usage { get; }
+    content: public override string usage { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public MustOverride ReadOnly Property usage As String
-  overload: InkCommandDef.InkCommand.usage*
-- uid: InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
-  commentId: M:InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
-  id: CommandWrite(System.String,System.Collections.Generic.List{System.String})
-  parent: InkCommandDef.InkCommand
+    content.vb: Public Overrides ReadOnly Property usage As String
+  overridden: InkTools.InkCommandDef.InkCommand.usage
+  overload: InkTools.InkCommandDef.moveTo.usage*
+- uid: InkTools.InkCommandDef.moveTo.requiresUpdate
+  commentId: P:InkTools.InkCommandDef.moveTo.requiresUpdate
+  id: requiresUpdate
+  parent: InkTools.InkCommandDef.moveTo
   langs:
   - csharp
   - vb
-  name: CommandWrite(string, List<string>)
-  nameWithType: InkCommand.CommandWrite(string, List<string>)
-  fullName: InkCommandDef.InkCommand.CommandWrite(string, System.Collections.Generic.List<string>)
-  type: Method
+  name: requiresUpdate
+  nameWithType: moveTo.requiresUpdate
+  fullName: InkTools.InkCommandDef.moveTo.requiresUpdate
+  type: Property
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CommandWrite
+    id: requiresUpdate
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 24
+    startLine: 63
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
+  namespace: InkTools.InkCommandDef
+  example: []
   syntax:
-    content: public static string CommandWrite(string name, List<string> args)
+    content: public override bool requiresUpdate { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides ReadOnly Property requiresUpdate As Boolean
+  overridden: InkTools.InkCommandDef.InkCommand.requiresUpdate
+  overload: InkTools.InkCommandDef.moveTo.requiresUpdate*
+- uid: InkTools.InkCommandDef.moveTo.#ctor(System.Collections.Generic.List{System.String},System.String@)
+  commentId: M:InkTools.InkCommandDef.moveTo.#ctor(System.Collections.Generic.List{System.String},System.String@)
+  id: '#ctor(System.Collections.Generic.List{System.String},System.String@)'
+  parent: InkTools.InkCommandDef.moveTo
+  langs:
+  - csharp
+  - vb
+  name: moveTo(List<string>, out string)
+  nameWithType: moveTo.moveTo(List<string>, out string)
+  fullName: InkTools.InkCommandDef.moveTo.moveTo(System.Collections.Generic.List<string>, out string)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkCommands.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: .ctor
+    path: ../Assets/Scripts/Ink/InkCommands.cs
+    startLine: 65
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools.InkCommandDef
+  syntax:
+    content: public moveTo(List<string> args, out string error)
     parameters:
-    - id: name
-      type: System.String
     - id: args
       type: System.Collections.Generic.List{System.String}
-    return:
+    - id: error
       type: System.String
-    content.vb: Public Shared Function CommandWrite(name As String, args As List(Of String)) As String
-  overload: InkCommandDef.InkCommand.CommandWrite*
-  nameWithType.vb: InkCommand.CommandWrite(String, List(Of String))
-  fullName.vb: InkCommandDef.InkCommand.CommandWrite(String, System.Collections.Generic.List(Of String))
-  name.vb: CommandWrite(String, List(Of String))
-- uid: InkCommandDef.InkCommand.Update
-  commentId: M:InkCommandDef.InkCommand.Update
+    content.vb: Public Sub New(args As List(Of String), [error] As String)
+  overload: InkTools.InkCommandDef.moveTo.#ctor*
+  nameWithType.vb: moveTo.New(List(Of String), String)
+  fullName.vb: InkTools.InkCommandDef.moveTo.New(System.Collections.Generic.List(Of String), String)
+  name.vb: New(List(Of String), String)
+- uid: InkTools.InkCommandDef.moveTo.Update
+  commentId: M:InkTools.InkCommandDef.moveTo.Update
   id: Update
-  parent: InkCommandDef.InkCommand
+  parent: InkTools.InkCommandDef.moveTo
   langs:
   - csharp
   - vb
   name: Update()
-  nameWithType: InkCommand.Update()
-  fullName: InkCommandDef.InkCommand.Update()
+  nameWithType: moveTo.Update()
+  fullName: InkTools.InkCommandDef.moveTo.Update()
   type: Method
   source:
     remote:
@@ -189,26 +156,43 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 36
+    startLine: 93
   assemblies:
   - ScriptAssembly
-  namespace: InkCommandDef
+  namespace: InkTools.InkCommandDef
   summary: To call if requiresUpdate is true.
   example: []
   syntax:
-    content: public virtual bool Update()
+    content: public override bool Update()
     return:
       type: System.Boolean
       description: If update has finished, and we can remove this command from the list.
-    content.vb: Public Overridable Function Update() As Boolean
-  overload: InkCommandDef.InkCommand.Update*
+    content.vb: Public Overrides Function Update() As Boolean
+  overridden: InkTools.InkCommandDef.InkCommand.Update
+  overload: InkTools.InkCommandDef.moveTo.Update*
 references:
-- uid: InkCommandDef
-  commentId: N:InkCommandDef
-  href: InkCommandDef.html
-  name: InkCommandDef
-  nameWithType: InkCommandDef
-  fullName: InkCommandDef
+- uid: InkTools.InkCommandDef
+  commentId: N:InkTools.InkCommandDef
+  href: InkTools.html
+  name: InkTools.InkCommandDef
+  nameWithType: InkTools.InkCommandDef
+  fullName: InkTools.InkCommandDef
+  spec.csharp:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html
+  spec.vb:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -220,6 +204,70 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: InkTools.InkCommandDef.InkCommand
+  commentId: T:InkTools.InkCommandDef.InkCommand
+  parent: InkTools.InkCommandDef
+  href: InkTools.InkCommandDef.InkCommand.html
+  name: InkCommand
+  nameWithType: InkCommand
+  fullName: InkTools.InkCommandDef.InkCommand
+- uid: InkTools.InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
+  commentId: M:InkTools.InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
+  parent: InkTools.InkCommandDef.InkCommand
+  isExternal: true
+  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_CommandWrite_System_String_System_Collections_Generic_List_System_String__
+  name: CommandWrite(string, List<string>)
+  nameWithType: InkCommand.CommandWrite(string, List<string>)
+  fullName: InkTools.InkCommandDef.InkCommand.CommandWrite(string, System.Collections.Generic.List<string>)
+  nameWithType.vb: InkCommand.CommandWrite(String, List(Of String))
+  fullName.vb: InkTools.InkCommandDef.InkCommand.CommandWrite(String, System.Collections.Generic.List(Of String))
+  name.vb: CommandWrite(String, List(Of String))
+  spec.csharp:
+  - uid: InkTools.InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
+    name: CommandWrite
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_CommandWrite_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: InkTools.InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
+    name: CommandWrite
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_CommandWrite_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -446,12 +494,43 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: InkCommandDef.InkCommand.requiresUpdate*
-  commentId: Overload:InkCommandDef.InkCommand.requiresUpdate
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_requiresUpdate
+- uid: InkTools.InkCommandDef.InkCommand.usage
+  commentId: P:InkTools.InkCommandDef.InkCommand.usage
+  parent: InkTools.InkCommandDef.InkCommand
+  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_usage
+  name: usage
+  nameWithType: InkCommand.usage
+  fullName: InkTools.InkCommandDef.InkCommand.usage
+- uid: InkTools.InkCommandDef.moveTo.usage*
+  commentId: Overload:InkTools.InkCommandDef.moveTo.usage
+  href: InkTools.InkCommandDef.moveTo.html#InkTools_InkCommandDef_moveTo_usage
+  name: usage
+  nameWithType: moveTo.usage
+  fullName: InkTools.InkCommandDef.moveTo.usage
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: InkTools.InkCommandDef.InkCommand.requiresUpdate
+  commentId: P:InkTools.InkCommandDef.InkCommand.requiresUpdate
+  parent: InkTools.InkCommandDef.InkCommand
+  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_requiresUpdate
   name: requiresUpdate
   nameWithType: InkCommand.requiresUpdate
-  fullName: InkCommandDef.InkCommand.requiresUpdate
+  fullName: InkTools.InkCommandDef.InkCommand.requiresUpdate
+- uid: InkTools.InkCommandDef.moveTo.requiresUpdate*
+  commentId: Overload:InkTools.InkCommandDef.moveTo.requiresUpdate
+  href: InkTools.InkCommandDef.moveTo.html#InkTools_InkCommandDef_moveTo_requiresUpdate
+  name: requiresUpdate
+  nameWithType: moveTo.requiresUpdate
+  fullName: InkTools.InkCommandDef.moveTo.requiresUpdate
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -463,14 +542,14 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: InkCommandDef.InkCommand.#ctor*
-  commentId: Overload:InkCommandDef.InkCommand.#ctor
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand__ctor_System_Collections_Generic_List_System_String__System_String__
-  name: InkCommand
-  nameWithType: InkCommand.InkCommand
-  fullName: InkCommandDef.InkCommand.InkCommand
-  nameWithType.vb: InkCommand.New
-  fullName.vb: InkCommandDef.InkCommand.New
+- uid: InkTools.InkCommandDef.moveTo.#ctor*
+  commentId: Overload:InkTools.InkCommandDef.moveTo.#ctor
+  href: InkTools.InkCommandDef.moveTo.html#InkTools_InkCommandDef_moveTo__ctor_System_Collections_Generic_List_System_String__System_String__
+  name: moveTo
+  nameWithType: moveTo.moveTo
+  fullName: InkTools.InkCommandDef.moveTo.moveTo
+  nameWithType.vb: moveTo.New
+  fullName.vb: InkTools.InkCommandDef.moveTo.New
   name.vb: New
 - uid: System.Collections.Generic.List{System.String}
   commentId: T:System.Collections.Generic.List{System.String}
@@ -507,17 +586,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
@@ -583,21 +651,28 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: InkCommandDef.InkCommand.usage*
-  commentId: Overload:InkCommandDef.InkCommand.usage
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_usage
-  name: usage
-  nameWithType: InkCommand.usage
-  fullName: InkCommandDef.InkCommand.usage
-- uid: InkCommandDef.InkCommand.CommandWrite*
-  commentId: Overload:InkCommandDef.InkCommand.CommandWrite
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_CommandWrite_System_String_System_Collections_Generic_List_System_String__
-  name: CommandWrite
-  nameWithType: InkCommand.CommandWrite
-  fullName: InkCommandDef.InkCommand.CommandWrite
-- uid: InkCommandDef.InkCommand.Update*
-  commentId: Overload:InkCommandDef.InkCommand.Update
-  href: InkCommandDef.InkCommand.html#InkCommandDef_InkCommand_Update
+- uid: InkTools.InkCommandDef.InkCommand.Update
+  commentId: M:InkTools.InkCommandDef.InkCommand.Update
+  parent: InkTools.InkCommandDef.InkCommand
+  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  name: Update()
+  nameWithType: InkCommand.Update()
+  fullName: InkTools.InkCommandDef.InkCommand.Update()
+  spec.csharp:
+  - uid: InkTools.InkCommandDef.InkCommand.Update
+    name: Update
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: InkTools.InkCommandDef.InkCommand.Update
+    name: Update
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  - name: (
+  - name: )
+- uid: InkTools.InkCommandDef.moveTo.Update*
+  commentId: Overload:InkTools.InkCommandDef.moveTo.Update
+  href: InkTools.InkCommandDef.moveTo.html#InkTools_InkCommandDef_moveTo_Update
   name: Update
-  nameWithType: InkCommand.Update
-  fullName: InkCommandDef.InkCommand.Update
+  nameWithType: moveTo.Update
+  fullName: InkTools.InkCommandDef.moveTo.Update

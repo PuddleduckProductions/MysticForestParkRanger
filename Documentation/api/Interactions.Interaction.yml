@@ -1,45 +1,42 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.InteractionManager
-  commentId: T:MysticForestParkRanger.InteractionManager
-  id: InteractionManager
-  parent: MysticForestParkRanger
+- uid: Interactions.Interaction
+  commentId: T:Interactions.Interaction
+  id: Interaction
+  parent: Interactions
   children:
-  - MysticForestParkRanger.InteractionManager.CanInteract
-  - MysticForestParkRanger.InteractionManager.interactionButton
-  - MysticForestParkRanger.InteractionManager.interactionRange
-  - MysticForestParkRanger.InteractionManager.interactionsInScene
-  - MysticForestParkRanger.InteractionManager.mainCamera
-  - MysticForestParkRanger.InteractionManager.player
+  - Interactions.Interaction.HasInteractionBehavior
+  - Interactions.Interaction.Interact
+  - Interactions.Interaction.IsInteracting
+  - Interactions.Interaction.behavior
+  - Interactions.Interaction.type
   langs:
   - csharp
   - vb
-  name: InteractionManager
-  nameWithType: InteractionManager
-  fullName: InteractionManager
+  name: Interaction
+  nameWithType: Interaction
+  fullName: Interactions.Interaction
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionManager
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 4
+    id: Interaction
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 116
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
-    content: 'public class InteractionManager : MonoBehaviour, ISingleton<InteractionManager>'
-    content.vb: Public Class InteractionManager Inherits MonoBehaviour Implements ISingleton(Of InteractionManager)
+    content: 'public class Interaction : MonoBehaviour'
+    content.vb: Public Class Interaction Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.Component
   - UnityEngine.Behaviour
   - UnityEngine.MonoBehaviour
-  implements:
-  - MysticForestParkRanger.ISingleton{InteractionManager}
   inheritedMembers:
   - UnityEngine.MonoBehaviour.IsInvoking
   - UnityEngine.MonoBehaviour.CancelInvoke
@@ -155,171 +152,159 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: MysticForestParkRanger.InteractionManager.interactionRange
-  commentId: F:MysticForestParkRanger.InteractionManager.interactionRange
-  id: interactionRange
-  parent: MysticForestParkRanger.InteractionManager
+- uid: Interactions.Interaction.type
+  commentId: F:Interactions.Interaction.type
+  id: type
+  parent: Interactions.Interaction
   langs:
   - csharp
   - vb
-  name: interactionRange
-  nameWithType: InteractionManager.interactionRange
-  fullName: InteractionManager.interactionRange
+  name: type
+  nameWithType: Interaction.type
+  fullName: Interactions.Interaction.type
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionRange
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 6
+    id: type
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 118
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
-    content: public float interactionRange
+    content: public Interaction.InteractionType type
     return:
-      type: System.Single
-    content.vb: Public interactionRange As Single
-- uid: MysticForestParkRanger.InteractionManager.mainCamera
-  commentId: F:MysticForestParkRanger.InteractionManager.mainCamera
-  id: mainCamera
-  parent: MysticForestParkRanger.InteractionManager
+      type: Interactions.Interaction.InteractionType
+    content.vb: Public type As Interaction.InteractionType
+- uid: Interactions.Interaction.behavior
+  commentId: F:Interactions.Interaction.behavior
+  id: behavior
+  parent: Interactions.Interaction
   langs:
   - csharp
   - vb
-  name: mainCamera
-  nameWithType: InteractionManager.mainCamera
-  fullName: InteractionManager.mainCamera
+  name: behavior
+  nameWithType: Interaction.behavior
+  fullName: Interactions.Interaction.behavior
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: mainCamera
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 8
+    id: behavior
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 120
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
-    content: protected Camera mainCamera
+    content: >-
+      [SerializeReference]
+
+      public InteractionBehavior behavior
     return:
-      type: UnityEngine.Camera
-    content.vb: Protected mainCamera As Camera
-- uid: MysticForestParkRanger.InteractionManager.player
-  commentId: F:MysticForestParkRanger.InteractionManager.player
-  id: player
-  parent: MysticForestParkRanger.InteractionManager
+      type: Interactions.Behaviors.InteractionBehavior
+    content.vb: >-
+      <SerializeReference>
+
+      Public behavior As InteractionBehavior
+  attributes:
+  - type: UnityEngine.SerializeReference
+    ctor: UnityEngine.SerializeReference.#ctor
+    arguments: []
+- uid: Interactions.Interaction.HasInteractionBehavior
+  commentId: M:Interactions.Interaction.HasInteractionBehavior
+  id: HasInteractionBehavior
+  parent: Interactions.Interaction
   langs:
   - csharp
   - vb
-  name: player
-  nameWithType: InteractionManager.player
-  fullName: InteractionManager.player
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: player
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 10
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected GameObject player
-    return:
-      type: UnityEngine.GameObject
-    content.vb: Protected player As GameObject
-- uid: MysticForestParkRanger.InteractionManager.interactionsInScene
-  commentId: F:MysticForestParkRanger.InteractionManager.interactionsInScene
-  id: interactionsInScene
-  parent: MysticForestParkRanger.InteractionManager
-  langs:
-  - csharp
-  - vb
-  name: interactionsInScene
-  nameWithType: InteractionManager.interactionsInScene
-  fullName: InteractionManager.interactionsInScene
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionsInScene
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 11
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected Interaction[] interactionsInScene
-    return:
-      type: MysticForestParkRanger.Interaction[]
-    content.vb: Protected interactionsInScene As Interaction()
-- uid: MysticForestParkRanger.InteractionManager.interactionButton
-  commentId: F:MysticForestParkRanger.InteractionManager.interactionButton
-  id: interactionButton
-  parent: MysticForestParkRanger.InteractionManager
-  langs:
-  - csharp
-  - vb
-  name: interactionButton
-  nameWithType: InteractionManager.interactionButton
-  fullName: InteractionManager.interactionButton
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-      branch: documentation
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionButton
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 12
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: protected RectTransform interactionButton
-    return:
-      type: UnityEngine.RectTransform
-    content.vb: Protected interactionButton As RectTransform
-- uid: MysticForestParkRanger.InteractionManager.CanInteract
-  commentId: M:MysticForestParkRanger.InteractionManager.CanInteract
-  id: CanInteract
-  parent: MysticForestParkRanger.InteractionManager
-  langs:
-  - csharp
-  - vb
-  name: CanInteract()
-  nameWithType: InteractionManager.CanInteract()
-  fullName: InteractionManager.CanInteract()
+  name: HasInteractionBehavior()
+  nameWithType: Interaction.HasInteractionBehavior()
+  fullName: Interactions.Interaction.HasInteractionBehavior()
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CanInteract
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 37
+    id: HasInteractionBehavior
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 122
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions
   syntax:
-    content: protected bool CanInteract()
+    content: public bool HasInteractionBehavior()
     return:
       type: System.Boolean
-    content.vb: Protected Function CanInteract() As Boolean
-  overload: MysticForestParkRanger.InteractionManager.CanInteract*
+    content.vb: Public Function HasInteractionBehavior() As Boolean
+  overload: Interactions.Interaction.HasInteractionBehavior*
+- uid: Interactions.Interaction.IsInteracting
+  commentId: M:Interactions.Interaction.IsInteracting
+  id: IsInteracting
+  parent: Interactions.Interaction
+  langs:
+  - csharp
+  - vb
+  name: IsInteracting()
+  nameWithType: Interaction.IsInteracting()
+  fullName: Interactions.Interaction.IsInteracting()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: IsInteracting
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 126
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public bool IsInteracting()
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsInteracting() As Boolean
+  overload: Interactions.Interaction.IsInteracting*
+- uid: Interactions.Interaction.Interact
+  commentId: M:Interactions.Interaction.Interact
+  id: Interact
+  parent: Interactions.Interaction
+  langs:
+  - csharp
+  - vb
+  name: Interact()
+  nameWithType: Interaction.Interact()
+  fullName: Interactions.Interaction.Interact()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Interact
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 130
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public void Interact()
+    content.vb: Public Sub Interact()
+  overload: Interactions.Interaction.Interact*
 references:
-- uid: MysticForestParkRanger
+- uid: Interactions
+  commentId: N:Interactions
+  href: Interactions.html
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -359,36 +344,6 @@ references:
   name: MonoBehaviour
   nameWithType: MonoBehaviour
   fullName: UnityEngine.MonoBehaviour
-- uid: MysticForestParkRanger.ISingleton{InteractionManager}
-  commentId: T:MysticForestParkRanger.ISingleton{InteractionManager}
-  definition: MysticForestParkRanger.ISingleton`1
-  href: ISingleton-1.html
-  name: ISingleton<InteractionManager>
-  nameWithType: ISingleton<InteractionManager>
-  fullName: ISingleton<InteractionManager>
-  nameWithType.vb: ISingleton(Of InteractionManager)
-  fullName.vb: ISingleton(Of InteractionManager)
-  name.vb: ISingleton(Of InteractionManager)
-  spec.csharp:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: <
-  - uid: MysticForestParkRanger.InteractionManager
-    name: InteractionManager
-    href: InteractionManager.html
-  - name: '>'
-  spec.vb:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: MysticForestParkRanger.InteractionManager
-    name: InteractionManager
-    href: InteractionManager.html
-  - name: )
 - uid: UnityEngine.MonoBehaviour.IsInvoking
   commentId: M:UnityEngine.MonoBehaviour.IsInvoking
   parent: UnityEngine.MonoBehaviour
@@ -4219,31 +4174,6 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
-- uid: MysticForestParkRanger.ISingleton`1
-  commentId: T:MysticForestParkRanger.ISingleton`1
-  href: ISingleton-1.html
-  name: ISingleton<T>
-  nameWithType: ISingleton<T>
-  fullName: ISingleton<T>
-  nameWithType.vb: ISingleton(Of T)
-  fullName.vb: ISingleton(Of T)
-  name.vb: ISingleton(Of T)
-  spec.csharp:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: UnityEngine.Component.TryGetComponent``1(``0@)
   commentId: M:UnityEngine.Component.TryGetComponent``1(``0@)
   isExternal: true
@@ -4723,65 +4653,64 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
-- uid: UnityEngine.Camera
-  commentId: T:UnityEngine.Camera
-  parent: UnityEngine
-  isExternal: true
-  name: Camera
-  nameWithType: Camera
-  fullName: UnityEngine.Camera
-- uid: UnityEngine.GameObject
-  commentId: T:UnityEngine.GameObject
-  parent: UnityEngine
-  isExternal: true
-  name: GameObject
-  nameWithType: GameObject
-  fullName: UnityEngine.GameObject
-- uid: MysticForestParkRanger.Interaction[]
-  isExternal: true
-  href: Interaction.html
-  name: Interaction[]
-  nameWithType: Interaction[]
-  fullName: Interaction[]
-  nameWithType.vb: Interaction()
-  fullName.vb: Interaction()
-  name.vb: Interaction()
+- uid: Interactions.Interaction.InteractionType
+  commentId: T:Interactions.Interaction.InteractionType
+  parent: Interactions
+  href: Interactions.Interaction.html
+  name: Interaction.InteractionType
+  nameWithType: Interaction.InteractionType
+  fullName: Interactions.Interaction.InteractionType
   spec.csharp:
-  - uid: MysticForestParkRanger.Interaction
+  - uid: Interactions.Interaction
     name: Interaction
-    href: Interaction.html
-  - name: '['
-  - name: ']'
+    href: Interactions.Interaction.html
+  - name: .
+  - uid: Interactions.Interaction.InteractionType
+    name: InteractionType
+    href: Interactions.Interaction.InteractionType.html
   spec.vb:
-  - uid: MysticForestParkRanger.Interaction
+  - uid: Interactions.Interaction
     name: Interaction
-    href: Interaction.html
-  - name: (
-  - name: )
-- uid: UnityEngine.RectTransform
-  commentId: T:UnityEngine.RectTransform
-  parent: UnityEngine
-  isExternal: true
-  name: RectTransform
-  nameWithType: RectTransform
-  fullName: UnityEngine.RectTransform
-- uid: MysticForestParkRanger.InteractionManager.CanInteract*
-  commentId: Overload:MysticForestParkRanger.InteractionManager.CanInteract
-  href: MysticForestParkRanger.InteractionManager.html#InteractionManager_CanInteract
-  name: CanInteract
-  nameWithType: InteractionManager.CanInteract
-  fullName: InteractionManager.CanInteract
+    href: Interactions.Interaction.html
+  - name: .
+  - uid: Interactions.Interaction.InteractionType
+    name: InteractionType
+    href: Interactions.Interaction.InteractionType.html
+- uid: Interactions.Behaviors.InteractionBehavior
+  commentId: T:Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.InteractionBehavior.html
+  name: InteractionBehavior
+  nameWithType: InteractionBehavior
+  fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Behaviors
+  commentId: N:Interactions.Behaviors
+  href: Interactions.html
+  name: Interactions.Behaviors
+  nameWithType: Interactions.Behaviors
+  fullName: Interactions.Behaviors
+  spec.csharp:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+  spec.vb:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+- uid: Interactions.Interaction.HasInteractionBehavior*
+  commentId: Overload:Interactions.Interaction.HasInteractionBehavior
+  href: Interactions.Interaction.html#Interactions_Interaction_HasInteractionBehavior
+  name: HasInteractionBehavior
+  nameWithType: Interaction.HasInteractionBehavior
+  fullName: Interactions.Interaction.HasInteractionBehavior
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -4793,3 +4722,15 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: Interactions.Interaction.IsInteracting*
+  commentId: Overload:Interactions.Interaction.IsInteracting
+  href: Interactions.Interaction.html#Interactions_Interaction_IsInteracting
+  name: IsInteracting
+  nameWithType: Interaction.IsInteracting
+  fullName: Interactions.Interaction.IsInteracting
+- uid: Interactions.Interaction.Interact*
+  commentId: Overload:Interactions.Interaction.Interact
+  href: Interactions.Interaction.html#Interactions_Interaction_Interact
+  name: Interact
+  nameWithType: Interaction.Interact
+  fullName: Interactions.Interaction.Interact

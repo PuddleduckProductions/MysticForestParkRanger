@@ -1,20 +1,20 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.InkManager.DialogLine
-  commentId: T:MysticForestParkRanger.InkManager.DialogLine
+- uid: InkTools.InkManager.DialogLine
+  commentId: T:InkTools.InkManager.DialogLine
   id: InkManager.DialogLine
-  parent: MysticForestParkRanger
+  parent: InkTools
   children:
-  - MysticForestParkRanger.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
-  - MysticForestParkRanger.InkManager.DialogLine.character
-  - MysticForestParkRanger.InkManager.DialogLine.dialog
-  - MysticForestParkRanger.InkManager.DialogLine.tags
+  - InkTools.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
+  - InkTools.InkManager.DialogLine.character
+  - InkTools.InkManager.DialogLine.dialog
+  - InkTools.InkManager.DialogLine.tags
   langs:
   - csharp
   - vb
   name: InkManager.DialogLine
   nameWithType: InkManager.DialogLine
-  fullName: InkManager.DialogLine
+  fullName: InkTools.InkManager.DialogLine
   type: Struct
   source:
     remote:
@@ -23,10 +23,10 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: DialogLine
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
     content: public struct InkManager.DialogLine
     content.vb: Public Structure InkManager.DialogLine
@@ -37,16 +37,16 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: MysticForestParkRanger.InkManager.DialogLine.character
-  commentId: P:MysticForestParkRanger.InkManager.DialogLine.character
+- uid: InkTools.InkManager.DialogLine.character
+  commentId: P:InkTools.InkManager.DialogLine.character
   id: character
-  parent: MysticForestParkRanger.InkManager.DialogLine
+  parent: InkTools.InkManager.DialogLine
   langs:
   - csharp
   - vb
   name: character
   nameWithType: InkManager.DialogLine.character
-  fullName: InkManager.DialogLine.character
+  fullName: InkTools.InkManager.DialogLine.character
   type: Property
   source:
     remote:
@@ -55,27 +55,27 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: character
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
     content: public readonly string character { get; }
     parameters: []
     return:
       type: System.String
     content.vb: Public ReadOnly Property character As String
-  overload: MysticForestParkRanger.InkManager.DialogLine.character*
-- uid: MysticForestParkRanger.InkManager.DialogLine.dialog
-  commentId: P:MysticForestParkRanger.InkManager.DialogLine.dialog
+  overload: InkTools.InkManager.DialogLine.character*
+- uid: InkTools.InkManager.DialogLine.dialog
+  commentId: P:InkTools.InkManager.DialogLine.dialog
   id: dialog
-  parent: MysticForestParkRanger.InkManager.DialogLine
+  parent: InkTools.InkManager.DialogLine
   langs:
   - csharp
   - vb
   name: dialog
   nameWithType: InkManager.DialogLine.dialog
-  fullName: InkManager.DialogLine.dialog
+  fullName: InkTools.InkManager.DialogLine.dialog
   type: Property
   source:
     remote:
@@ -84,27 +84,27 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: dialog
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
     content: public readonly string dialog { get; }
     parameters: []
     return:
       type: System.String
     content.vb: Public ReadOnly Property dialog As String
-  overload: MysticForestParkRanger.InkManager.DialogLine.dialog*
-- uid: MysticForestParkRanger.InkManager.DialogLine.tags
-  commentId: P:MysticForestParkRanger.InkManager.DialogLine.tags
+  overload: InkTools.InkManager.DialogLine.dialog*
+- uid: InkTools.InkManager.DialogLine.tags
+  commentId: P:InkTools.InkManager.DialogLine.tags
   id: tags
-  parent: MysticForestParkRanger.InkManager.DialogLine
+  parent: InkTools.InkManager.DialogLine
   langs:
   - csharp
   - vb
   name: tags
   nameWithType: InkManager.DialogLine.tags
-  fullName: InkManager.DialogLine.tags
+  fullName: InkTools.InkManager.DialogLine.tags
   type: Property
   source:
     remote:
@@ -113,27 +113,27 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: tags
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
     content: public readonly List<string> tags { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{System.String}
     content.vb: Public ReadOnly Property tags As List(Of String)
-  overload: MysticForestParkRanger.InkManager.DialogLine.tags*
-- uid: MysticForestParkRanger.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
-  commentId: M:MysticForestParkRanger.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
+  overload: InkTools.InkManager.DialogLine.tags*
+- uid: InkTools.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
+  commentId: M:InkTools.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
   id: '#ctor(System.String,System.String,System.Collections.Generic.List{System.String})'
-  parent: MysticForestParkRanger.InkManager.DialogLine
+  parent: InkTools.InkManager.DialogLine
   langs:
   - csharp
   - vb
   name: DialogLine(string, string, List<string>)
   nameWithType: InkManager.DialogLine.DialogLine(string, string, List<string>)
-  fullName: InkManager.DialogLine.DialogLine(string, string, System.Collections.Generic.List<string>)
+  fullName: InkTools.InkManager.DialogLine.DialogLine(string, string, System.Collections.Generic.List<string>)
   type: Constructor
   source:
     remote:
@@ -142,10 +142,10 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: InkTools
   syntax:
     content: public DialogLine(string character, string dialog, List<string> tags)
     parameters:
@@ -156,12 +156,17 @@ items:
     - id: tags
       type: System.Collections.Generic.List{System.String}
     content.vb: Public Sub New(character As String, dialog As String, tags As List(Of String))
-  overload: MysticForestParkRanger.InkManager.DialogLine.#ctor*
+  overload: InkTools.InkManager.DialogLine.#ctor*
   nameWithType.vb: InkManager.DialogLine.New(String, String, List(Of String))
-  fullName.vb: InkManager.DialogLine.New(String, String, System.Collections.Generic.List(Of String))
+  fullName.vb: InkTools.InkManager.DialogLine.New(String, String, System.Collections.Generic.List(Of String))
   name.vb: New(String, String, List(Of String))
 references:
-- uid: MysticForestParkRanger
+- uid: InkTools
+  commentId: N:InkTools
+  href: InkTools.html
+  name: InkTools
+  nameWithType: InkTools
+  fullName: InkTools
 - uid: System.ValueType.Equals(System.Object)
   commentId: M:System.ValueType.Equals(System.Object)
   parent: System.ValueType
@@ -379,12 +384,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: MysticForestParkRanger.InkManager.DialogLine.character*
-  commentId: Overload:MysticForestParkRanger.InkManager.DialogLine.character
-  href: MysticForestParkRanger.InkManager.DialogLine.html#InkManager_DialogLine_character
+- uid: InkTools.InkManager.DialogLine.character*
+  commentId: Overload:InkTools.InkManager.DialogLine.character
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine_character
   name: character
   nameWithType: InkManager.DialogLine.character
-  fullName: InkManager.DialogLine.character
+  fullName: InkTools.InkManager.DialogLine.character
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -396,18 +401,18 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: MysticForestParkRanger.InkManager.DialogLine.dialog*
-  commentId: Overload:MysticForestParkRanger.InkManager.DialogLine.dialog
-  href: MysticForestParkRanger.InkManager.DialogLine.html#InkManager_DialogLine_dialog
+- uid: InkTools.InkManager.DialogLine.dialog*
+  commentId: Overload:InkTools.InkManager.DialogLine.dialog
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine_dialog
   name: dialog
   nameWithType: InkManager.DialogLine.dialog
-  fullName: InkManager.DialogLine.dialog
-- uid: MysticForestParkRanger.InkManager.DialogLine.tags*
-  commentId: Overload:MysticForestParkRanger.InkManager.DialogLine.tags
-  href: MysticForestParkRanger.InkManager.DialogLine.html#InkManager_DialogLine_tags
+  fullName: InkTools.InkManager.DialogLine.dialog
+- uid: InkTools.InkManager.DialogLine.tags*
+  commentId: Overload:InkTools.InkManager.DialogLine.tags
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine_tags
   name: tags
   nameWithType: InkManager.DialogLine.tags
-  fullName: InkManager.DialogLine.tags
+  fullName: InkTools.InkManager.DialogLine.tags
 - uid: System.Collections.Generic.List{System.String}
   commentId: T:System.Collections.Generic.List{System.String}
   parent: System.Collections.Generic
@@ -508,12 +513,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: MysticForestParkRanger.InkManager.DialogLine.#ctor*
-  commentId: Overload:MysticForestParkRanger.InkManager.DialogLine.#ctor
-  href: MysticForestParkRanger.InkManager.DialogLine.html#InkManager_DialogLine__ctor_System_String_System_String_System_Collections_Generic_List_System_String__
+- uid: InkTools.InkManager.DialogLine.#ctor*
+  commentId: Overload:InkTools.InkManager.DialogLine.#ctor
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine__ctor_System_String_System_String_System_Collections_Generic_List_System_String__
   name: DialogLine
   nameWithType: InkManager.DialogLine.DialogLine
-  fullName: InkManager.DialogLine.DialogLine
+  fullName: InkTools.InkManager.DialogLine.DialogLine
   nameWithType.vb: InkManager.DialogLine.New
-  fullName.vb: InkManager.DialogLine.New
+  fullName.vb: InkTools.InkManager.DialogLine.New
   name.vb: New

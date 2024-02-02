@@ -1,49 +1,57 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.InkInteraction
-  commentId: T:MysticForestParkRanger.InkInteraction
-  id: InkInteraction
-  parent: MysticForestParkRanger
+- uid: Interactions.Behaviors.InteractionBehavior
+  commentId: T:Interactions.Behaviors.InteractionBehavior
+  id: InteractionBehavior
+  parent: Interactions.Behaviors
   children:
-  - MysticForestParkRanger.InkInteraction.#ctor(Interaction)
-  - MysticForestParkRanger.InkInteraction.EndDialog
-  - MysticForestParkRanger.InkInteraction.Interact
-  - MysticForestParkRanger.InkInteraction.InteractAdvance(System.Boolean)
-  - MysticForestParkRanger.InkInteraction.isInteracting
+  - Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.Interact
+  - Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
+  - Interactions.Behaviors.InteractionBehavior.Update
+  - Interactions.Behaviors.InteractionBehavior.interactionObject
+  - Interactions.Behaviors.InteractionBehavior.isInteracting
   langs:
   - csharp
   - vb
-  name: InkInteraction
-  nameWithType: InkInteraction
-  fullName: InkInteraction
+  name: InteractionBehavior
+  nameWithType: InteractionBehavior
+  fullName: Interactions.Behaviors.InteractionBehavior
   type: Class
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InkInteraction
+    id: InteractionBehavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 33
+    startLine: 13
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions.Behaviors
+  summary: >-
+    A serialized class meant to control different interaction behaviors when space is pressed on one.
+
+    This is to avoid having to attach multiple monobehaviors for anything with one interaction.
+
+    If you want to add your own, you can either use Custom (in progress), or create a subclass of InteractionBehavior.
+  example: []
   syntax:
     content: >-
       [Serializable]
 
-      public class InkInteraction : InteractionBehavior
+      public abstract class InteractionBehavior
     content.vb: >-
       <Serializable>
 
-      Public Class InkInteraction Inherits InteractionBehavior
+      Public MustInherit Class InteractionBehavior
   inheritance:
   - System.Object
-  - MysticForestParkRanger.InteractionBehavior
+  derivedClasses:
+  - Interactions.Behaviors.CustomInteraction
+  - Interactions.Behaviors.InkInteraction
+  - Interactions.Behaviors.PushableInteraction
   inheritedMembers:
-  - MysticForestParkRanger.InteractionBehavior.interactionObject
-  - MysticForestParkRanger.InteractionBehavior.Update
-  - MysticForestParkRanger.InteractionBehavior.OnInspectorGUI
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -55,16 +63,58 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
-- uid: MysticForestParkRanger.InkInteraction.#ctor(Interaction)
-  commentId: M:MysticForestParkRanger.InkInteraction.#ctor(Interaction)
-  id: '#ctor(Interaction)'
-  parent: MysticForestParkRanger.InkInteraction
+- uid: Interactions.Behaviors.InteractionBehavior.interactionObject
+  commentId: F:Interactions.Behaviors.InteractionBehavior.interactionObject
+  id: interactionObject
+  parent: Interactions.Behaviors.InteractionBehavior
   langs:
   - csharp
   - vb
-  name: InkInteraction(Interaction)
-  nameWithType: InkInteraction.InkInteraction(Interaction)
-  fullName: InkInteraction.InkInteraction(Interaction)
+  name: interactionObject
+  nameWithType: InteractionBehavior.interactionObject
+  fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: documentation
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: interactionObject
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 20
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: >-
+    Reference to the MonoBehaviour <xref href="Interactions.Interaction" data-throw-if-not-resolved="false"></xref> for accessing things like position.
+
+    It's a serialized field so we don't lose the reference to the parent when the scene starts.
+  example: []
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected Interaction interactionObject
+    return:
+      type: Interactions.Interaction
+    content.vb: >-
+      <SerializeField>
+
+      Protected interactionObject As Interaction
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
+  id: '#ctor(Interactions.Interaction)'
+  parent: Interactions.Behaviors.InteractionBehavior
+  langs:
+  - csharp
+  - vb
+  name: InteractionBehavior(Interaction)
+  nameWithType: InteractionBehavior.InteractionBehavior(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.InteractionBehavior(Interactions.Interaction)
   type: Constructor
   source:
     remote:
@@ -73,30 +123,30 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 35
+    startLine: 22
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions.Behaviors
   syntax:
-    content: public InkInteraction(Interaction parent)
+    content: public InteractionBehavior(Interaction parent)
     parameters:
     - id: parent
-      type: MysticForestParkRanger.Interaction
+      type: Interactions.Interaction
     content.vb: Public Sub New(parent As Interaction)
-  overload: MysticForestParkRanger.InkInteraction.#ctor*
-  nameWithType.vb: InkInteraction.New(Interaction)
-  fullName.vb: InkInteraction.New(Interaction)
+  overload: Interactions.Behaviors.InteractionBehavior.#ctor*
+  nameWithType.vb: InteractionBehavior.New(Interaction)
+  fullName.vb: Interactions.Behaviors.InteractionBehavior.New(Interactions.Interaction)
   name.vb: New(Interaction)
-- uid: MysticForestParkRanger.InkInteraction.isInteracting
-  commentId: P:MysticForestParkRanger.InkInteraction.isInteracting
+- uid: Interactions.Behaviors.InteractionBehavior.isInteracting
+  commentId: P:Interactions.Behaviors.InteractionBehavior.isInteracting
   id: isInteracting
-  parent: MysticForestParkRanger.InkInteraction
+  parent: Interactions.Behaviors.InteractionBehavior
   langs:
   - csharp
   - vb
   name: isInteracting
-  nameWithType: InkInteraction.isInteracting
-  fullName: InkInteraction.isInteracting
+  nameWithType: InteractionBehavior.isInteracting
+  fullName: Interactions.Behaviors.InteractionBehavior.isInteracting
   type: Property
   source:
     remote:
@@ -105,29 +155,27 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 37
+    startLine: 26
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
-  example: []
+  namespace: Interactions.Behaviors
   syntax:
-    content: public override bool isInteracting { get; }
+    content: public abstract bool isInteracting { get; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Overrides ReadOnly Property isInteracting As Boolean
-  overridden: MysticForestParkRanger.InteractionBehavior.isInteracting
-  overload: MysticForestParkRanger.InkInteraction.isInteracting*
-- uid: MysticForestParkRanger.InkInteraction.Interact
-  commentId: M:MysticForestParkRanger.InkInteraction.Interact
+    content.vb: Public MustOverride ReadOnly Property isInteracting As Boolean
+  overload: Interactions.Behaviors.InteractionBehavior.isInteracting*
+- uid: Interactions.Behaviors.InteractionBehavior.Interact
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
   id: Interact
-  parent: MysticForestParkRanger.InkInteraction
+  parent: Interactions.Behaviors.InteractionBehavior
   langs:
   - csharp
   - vb
   name: Interact()
-  nameWithType: InkInteraction.Interact()
-  fullName: InkInteraction.Interact()
+  nameWithType: InteractionBehavior.Interact()
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact()
   type: Method
   source:
     remote:
@@ -136,76 +184,89 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 38
+    startLine: 27
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
-  example: []
+  namespace: Interactions.Behaviors
   syntax:
-    content: public override void Interact()
-    content.vb: Public Overrides Sub Interact()
-  overridden: MysticForestParkRanger.InteractionBehavior.Interact
-  overload: MysticForestParkRanger.InkInteraction.Interact*
-- uid: MysticForestParkRanger.InkInteraction.EndDialog
-  commentId: M:MysticForestParkRanger.InkInteraction.EndDialog
-  id: EndDialog
-  parent: MysticForestParkRanger.InkInteraction
+    content: public abstract void Interact()
+    content.vb: Public MustOverride Sub Interact()
+  overload: Interactions.Behaviors.InteractionBehavior.Interact*
+- uid: Interactions.Behaviors.InteractionBehavior.Update
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Update
+  id: Update
+  parent: Interactions.Behaviors.InteractionBehavior
   langs:
   - csharp
   - vb
-  name: EndDialog()
-  nameWithType: InkInteraction.EndDialog()
-  fullName: InkInteraction.EndDialog()
+  name: Update()
+  nameWithType: InteractionBehavior.Update()
+  fullName: Interactions.Behaviors.InteractionBehavior.Update()
   type: Method
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: EndDialog
+    id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 44
+    startLine: 28
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions.Behaviors
   syntax:
-    content: public void EndDialog()
-    content.vb: Public Sub EndDialog()
-  overload: MysticForestParkRanger.InkInteraction.EndDialog*
-- uid: MysticForestParkRanger.InkInteraction.InteractAdvance(System.Boolean)
-  commentId: M:MysticForestParkRanger.InkInteraction.InteractAdvance(System.Boolean)
-  id: InteractAdvance(System.Boolean)
-  parent: MysticForestParkRanger.InkInteraction
+    content: public virtual void Update()
+    content.vb: Public Overridable Sub Update()
+  overload: Interactions.Behaviors.InteractionBehavior.Update*
+- uid: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
+  commentId: M:Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
+  id: OnInspectorGUI
+  parent: Interactions.Behaviors.InteractionBehavior
   langs:
   - csharp
   - vb
-  name: InteractAdvance(bool)
-  nameWithType: InkInteraction.InteractAdvance(bool)
-  fullName: InkInteraction.InteractAdvance(bool)
+  name: OnInspectorGUI()
+  nameWithType: InteractionBehavior.OnInspectorGUI()
+  fullName: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI()
   type: Method
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: documentation
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractAdvance
+    id: OnInspectorGUI
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 48
+    startLine: 33
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Interactions.Behaviors
   syntax:
-    content: public void InteractAdvance(bool pressed)
-    parameters:
-    - id: pressed
-      type: System.Boolean
-    content.vb: Public Sub InteractAdvance(pressed As Boolean)
-  overload: MysticForestParkRanger.InkInteraction.InteractAdvance*
-  nameWithType.vb: InkInteraction.InteractAdvance(Boolean)
-  fullName.vb: InkInteraction.InteractAdvance(Boolean)
-  name.vb: InteractAdvance(Boolean)
+    content: public virtual void OnInspectorGUI()
+    content.vb: Public Overridable Sub OnInspectorGUI()
+  overload: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI*
 references:
-- uid: MysticForestParkRanger
+- uid: Interactions.Behaviors
+  commentId: N:Interactions.Behaviors
+  href: Interactions.html
+  name: Interactions.Behaviors
+  nameWithType: Interactions.Behaviors
+  fullName: Interactions.Behaviors
+  spec.csharp:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+  spec.vb:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -217,57 +278,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: MysticForestParkRanger.InteractionBehavior
-  commentId: T:MysticForestParkRanger.InteractionBehavior
-  href: InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: InteractionBehavior
-- uid: MysticForestParkRanger.InteractionBehavior.interactionObject
-  commentId: F:MysticForestParkRanger.InteractionBehavior.interactionObject
-  parent: MysticForestParkRanger.InteractionBehavior
-  href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_interactionObject
-  name: interactionObject
-  nameWithType: InteractionBehavior.interactionObject
-  fullName: InteractionBehavior.interactionObject
-- uid: MysticForestParkRanger.InteractionBehavior.Update
-  commentId: M:MysticForestParkRanger.InteractionBehavior.Update
-  parent: MysticForestParkRanger.InteractionBehavior
-  href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_Update
-  name: Update()
-  nameWithType: InteractionBehavior.Update()
-  fullName: InteractionBehavior.Update()
-  spec.csharp:
-  - uid: MysticForestParkRanger.InteractionBehavior.Update
-    name: Update
-    href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_Update
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: MysticForestParkRanger.InteractionBehavior.Update
-    name: Update
-    href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_Update
-  - name: (
-  - name: )
-- uid: MysticForestParkRanger.InteractionBehavior.OnInspectorGUI
-  commentId: M:MysticForestParkRanger.InteractionBehavior.OnInspectorGUI
-  parent: MysticForestParkRanger.InteractionBehavior
-  href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_OnInspectorGUI
-  name: OnInspectorGUI()
-  nameWithType: InteractionBehavior.OnInspectorGUI()
-  fullName: InteractionBehavior.OnInspectorGUI()
-  spec.csharp:
-  - uid: MysticForestParkRanger.InteractionBehavior.OnInspectorGUI
-    name: OnInspectorGUI
-    href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_OnInspectorGUI
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: MysticForestParkRanger.InteractionBehavior.OnInspectorGUI
-    name: OnInspectorGUI
-    href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_OnInspectorGUI
-  - name: (
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -494,34 +504,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: MysticForestParkRanger.InkInteraction.#ctor*
-  commentId: Overload:MysticForestParkRanger.InkInteraction.#ctor
-  href: MysticForestParkRanger.InkInteraction.html#InkInteraction__ctor_Interaction_
-  name: InkInteraction
-  nameWithType: InkInteraction.InkInteraction
-  fullName: InkInteraction.InkInteraction
-  nameWithType.vb: InkInteraction.New
-  fullName.vb: InkInteraction.New
-  name.vb: New
-- uid: MysticForestParkRanger.Interaction
-  commentId: T:MysticForestParkRanger.Interaction
-  href: Interaction.html
+- uid: Interactions.Interaction
+  commentId: T:Interactions.Interaction
+  parent: Interactions
+  href: Interactions.Interaction.html
   name: Interaction
   nameWithType: Interaction
-  fullName: Interaction
-- uid: MysticForestParkRanger.InteractionBehavior.isInteracting
-  commentId: P:MysticForestParkRanger.InteractionBehavior.isInteracting
-  parent: MysticForestParkRanger.InteractionBehavior
-  href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_isInteracting
+  fullName: Interactions.Interaction
+- uid: Interactions
+  commentId: N:Interactions
+  href: Interactions.html
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions
+- uid: Interactions.Behaviors.InteractionBehavior.#ctor*
+  commentId: Overload:Interactions.Behaviors.InteractionBehavior.#ctor
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior__ctor_Interactions_Interaction_
+  name: InteractionBehavior
+  nameWithType: InteractionBehavior.InteractionBehavior
+  fullName: Interactions.Behaviors.InteractionBehavior.InteractionBehavior
+  nameWithType.vb: InteractionBehavior.New
+  fullName.vb: Interactions.Behaviors.InteractionBehavior.New
+  name.vb: New
+- uid: Interactions.Behaviors.InteractionBehavior.isInteracting*
+  commentId: Overload:Interactions.Behaviors.InteractionBehavior.isInteracting
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_isInteracting
   name: isInteracting
   nameWithType: InteractionBehavior.isInteracting
-  fullName: InteractionBehavior.isInteracting
-- uid: MysticForestParkRanger.InkInteraction.isInteracting*
-  commentId: Overload:MysticForestParkRanger.InkInteraction.isInteracting
-  href: MysticForestParkRanger.InkInteraction.html#InkInteraction_isInteracting
-  name: isInteracting
-  nameWithType: InkInteraction.isInteracting
-  fullName: InkInteraction.isInteracting
+  fullName: Interactions.Behaviors.InteractionBehavior.isInteracting
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -533,40 +543,21 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: MysticForestParkRanger.InteractionBehavior.Interact
-  commentId: M:MysticForestParkRanger.InteractionBehavior.Interact
-  parent: MysticForestParkRanger.InteractionBehavior
-  href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_Interact
-  name: Interact()
-  nameWithType: InteractionBehavior.Interact()
-  fullName: InteractionBehavior.Interact()
-  spec.csharp:
-  - uid: MysticForestParkRanger.InteractionBehavior.Interact
-    name: Interact
-    href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_Interact
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: MysticForestParkRanger.InteractionBehavior.Interact
-    name: Interact
-    href: MysticForestParkRanger.InteractionBehavior.html#InteractionBehavior_Interact
-  - name: (
-  - name: )
-- uid: MysticForestParkRanger.InkInteraction.Interact*
-  commentId: Overload:MysticForestParkRanger.InkInteraction.Interact
-  href: MysticForestParkRanger.InkInteraction.html#InkInteraction_Interact
+- uid: Interactions.Behaviors.InteractionBehavior.Interact*
+  commentId: Overload:Interactions.Behaviors.InteractionBehavior.Interact
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
   name: Interact
-  nameWithType: InkInteraction.Interact
-  fullName: InkInteraction.Interact
-- uid: MysticForestParkRanger.InkInteraction.EndDialog*
-  commentId: Overload:MysticForestParkRanger.InkInteraction.EndDialog
-  href: MysticForestParkRanger.InkInteraction.html#InkInteraction_EndDialog
-  name: EndDialog
-  nameWithType: InkInteraction.EndDialog
-  fullName: InkInteraction.EndDialog
-- uid: MysticForestParkRanger.InkInteraction.InteractAdvance*
-  commentId: Overload:MysticForestParkRanger.InkInteraction.InteractAdvance
-  href: MysticForestParkRanger.InkInteraction.html#InkInteraction_InteractAdvance_System_Boolean_
-  name: InteractAdvance
-  nameWithType: InkInteraction.InteractAdvance
-  fullName: InkInteraction.InteractAdvance
+  nameWithType: InteractionBehavior.Interact
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact
+- uid: Interactions.Behaviors.InteractionBehavior.Update*
+  commentId: Overload:Interactions.Behaviors.InteractionBehavior.Update
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  name: Update
+  nameWithType: InteractionBehavior.Update
+  fullName: Interactions.Behaviors.InteractionBehavior.Update
+- uid: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI*
+  commentId: Overload:Interactions.Behaviors.InteractionBehavior.OnInspectorGUI
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_OnInspectorGUI
+  name: OnInspectorGUI
+  nameWithType: InteractionBehavior.OnInspectorGUI
+  fullName: Interactions.Behaviors.InteractionBehavior.OnInspectorGUI

@@ -3,18 +3,7 @@ items:
 - uid: MysticForestParkRanger
   id: MysticForestParkRanger
   children:
-  - MysticForestParkRanger.CustomInteraction
-  - MysticForestParkRanger.DialogRenderer
-  - MysticForestParkRanger.ISingleton`1
-  - MysticForestParkRanger.InkCommands
-  - MysticForestParkRanger.InkInteraction
-  - MysticForestParkRanger.InkManager
-  - MysticForestParkRanger.InkManager.DialogLine
-  - MysticForestParkRanger.Interaction
-  - MysticForestParkRanger.Interaction.InteractionType
-  - MysticForestParkRanger.InteractionBehavior
-  - MysticForestParkRanger.InteractionManager
-  - MysticForestParkRanger.PushableInteraction
+  - MysticForestParkRanger.UIController
   - MysticForestParkRanger.characterController
   langs:
   - csharp
@@ -26,132 +15,15 @@ items:
   assemblies:
   - ScriptAssembly
 references:
+- uid: MysticForestParkRanger.UIController
+  commentId: T:MysticForestParkRanger.UIController
+  href: UIController.html
+  name: UIController
+  nameWithType: UIController
+  fullName: UIController
 - uid: MysticForestParkRanger.characterController
   commentId: T:MysticForestParkRanger.characterController
   href: characterController.html
   name: characterController
   nameWithType: characterController
   fullName: characterController
-- uid: MysticForestParkRanger.InkManager
-  commentId: T:MysticForestParkRanger.InkManager
-  href: InkManager.html
-  name: InkManager
-  nameWithType: InkManager
-  fullName: InkManager
-- uid: MysticForestParkRanger.InkManager.DialogLine
-  commentId: T:MysticForestParkRanger.InkManager.DialogLine
-  href: InkManager.html
-  name: InkManager.DialogLine
-  nameWithType: InkManager.DialogLine
-  fullName: InkManager.DialogLine
-  spec.csharp:
-  - uid: MysticForestParkRanger.InkManager
-    name: InkManager
-    href: InkManager.html
-  - name: .
-  - uid: MysticForestParkRanger.InkManager.DialogLine
-    name: DialogLine
-    href: InkManager.DialogLine.html
-  spec.vb:
-  - uid: MysticForestParkRanger.InkManager
-    name: InkManager
-    href: InkManager.html
-  - name: .
-  - uid: MysticForestParkRanger.InkManager.DialogLine
-    name: DialogLine
-    href: InkManager.DialogLine.html
-- uid: MysticForestParkRanger.InteractionBehavior
-  commentId: T:MysticForestParkRanger.InteractionBehavior
-  href: InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: InteractionBehavior
-- uid: MysticForestParkRanger.InkInteraction
-  commentId: T:MysticForestParkRanger.InkInteraction
-  href: InkInteraction.html
-  name: InkInteraction
-  nameWithType: InkInteraction
-  fullName: InkInteraction
-- uid: MysticForestParkRanger.PushableInteraction
-  commentId: T:MysticForestParkRanger.PushableInteraction
-  href: PushableInteraction.html
-  name: PushableInteraction
-  nameWithType: PushableInteraction
-  fullName: PushableInteraction
-- uid: MysticForestParkRanger.CustomInteraction
-  commentId: T:MysticForestParkRanger.CustomInteraction
-  href: CustomInteraction.html
-  name: CustomInteraction
-  nameWithType: CustomInteraction
-  fullName: CustomInteraction
-- uid: MysticForestParkRanger.Interaction
-  commentId: T:MysticForestParkRanger.Interaction
-  href: Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interaction
-- uid: MysticForestParkRanger.Interaction.InteractionType
-  commentId: T:MysticForestParkRanger.Interaction.InteractionType
-  href: Interaction.html
-  name: Interaction.InteractionType
-  nameWithType: Interaction.InteractionType
-  fullName: Interaction.InteractionType
-  spec.csharp:
-  - uid: MysticForestParkRanger.Interaction
-    name: Interaction
-    href: Interaction.html
-  - name: .
-  - uid: MysticForestParkRanger.Interaction.InteractionType
-    name: InteractionType
-    href: Interaction.InteractionType.html
-  spec.vb:
-  - uid: MysticForestParkRanger.Interaction
-    name: Interaction
-    href: Interaction.html
-  - name: .
-  - uid: MysticForestParkRanger.Interaction.InteractionType
-    name: InteractionType
-    href: Interaction.InteractionType.html
-- uid: MysticForestParkRanger.DialogRenderer
-  commentId: T:MysticForestParkRanger.DialogRenderer
-  href: DialogRenderer.html
-  name: DialogRenderer
-  nameWithType: DialogRenderer
-  fullName: DialogRenderer
-- uid: MysticForestParkRanger.InkCommands
-  commentId: T:MysticForestParkRanger.InkCommands
-  href: InkCommands.html
-  name: InkCommands
-  nameWithType: InkCommands
-  fullName: InkCommands
-- uid: MysticForestParkRanger.ISingleton`1
-  commentId: T:MysticForestParkRanger.ISingleton`1
-  href: ISingleton-1.html
-  name: ISingleton<T>
-  nameWithType: ISingleton<T>
-  fullName: ISingleton<T>
-  nameWithType.vb: ISingleton(Of T)
-  fullName.vb: ISingleton(Of T)
-  name.vb: ISingleton(Of T)
-  spec.csharp:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: MysticForestParkRanger.ISingleton`1
-    name: ISingleton
-    href: ISingleton-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: MysticForestParkRanger.InteractionManager
-  commentId: T:MysticForestParkRanger.InteractionManager
-  href: InteractionManager.html
-  name: InteractionManager
-  nameWithType: InteractionManager
-  fullName: InteractionManager
