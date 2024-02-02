@@ -7,18 +7,19 @@ public class characterController : MonoBehaviour
 {
     CharacterController c;
     Vector2 input;
+    public int movementScalar;
     //private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         c = GetComponent<CharacterController>();
-        //animator = GetComponent<Animator>();
+        movementScalar = 5;//animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        c.Move(new Vector3(input.x*Time.deltaTime,0,input.y*Time.deltaTime));
+        c.Move(new Vector3(input.x*movementScalar*Time.deltaTime,0,input.y*movementScalar*Time.deltaTime));
     
     }
     void OnWalking(InputValue value)
