@@ -39,7 +39,7 @@ items:
   - uid: Interactions.InteractionManager
     name: InteractionManager
 - uid: MysticForestParkRanger
-  name: ''
+  name: MysticForestParkRanger
   items:
   - uid: MysticForestParkRanger.UIController
     name: UIController
