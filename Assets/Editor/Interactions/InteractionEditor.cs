@@ -13,43 +13,11 @@ namespace Interactions {
     [CustomEditor(typeof(Interaction))]
     [CanEditMultipleObjects]
     public class InteractionEditor : Editor {
-        Dictionary<string, SerializedProperty> properties;
-
         SerializedProperty behavior;
 
         private void OnEnable() {
             behavior = serializedObject.FindProperty(nameof(Interaction.behavior));
         }
-
-        //SerializedObject behavior;
-        /*private void OnEnable() {
-            //properties(interaction.behavior.SerializedProperties());
-            Interaction interaction = (Interaction)target;
-            if (interaction == null) {
-                CreateBehavior(interaction);
-            }
-        }
-
-        private void Awake() {
-            Interaction interaction = (Interaction)target;
-            if (interaction == null) {
-                CreateBehavior(interaction);
-            }
-        }
-
-        private void Reset() {
-            Interaction interaction = (Interaction)target;
-            if (interaction == null) {
-                CreateBehavior(interaction);
-            }
-        }
-
-        private void OnValidate() {
-            Interaction interaction = (Interaction)target;
-            if (interaction == null) {
-                CreateBehavior(interaction);
-            }
-        }*/
 
         /// <summary>
         /// Assign our <see cref="Interaction.behavior"/> based on the given <see cref="Interaction.type"/>.
@@ -79,7 +47,6 @@ namespace Interactions {
             if (interaction.behavior == null || initialType != interaction.type) {
                 CreateBehavior(interaction);
             }
-            //interaction.type = (Interaction.InteractionType)EditorGUILayout.EnumPopup("Interaction Type", interaction.type);
         }
     }
 }

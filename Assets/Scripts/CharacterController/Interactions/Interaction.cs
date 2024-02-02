@@ -131,6 +131,8 @@ namespace Interactions {
 
         /// <summary>
         /// Custom interaction setup. Define your own interaction behavior through other scripts.
+        /// Called once.
+        /// TODO: Updates.
         /// </summary>
         [Serializable]
         public class CustomInteraction : InteractionBehavior {
@@ -141,13 +143,16 @@ namespace Interactions {
             /// </summary>
             [SerializeField]
             protected UnityEvent onInteract = new UnityEvent();
-            public UnityEngine.Object objectToCheck;
 
             public override bool isInteracting => false;
 
             public override void Interact() {
                 onInteract.Invoke();
             }
+
+            /*public override void Update() {
+                onUpdate(ref interactRef);
+            }*/
         }
     }
 
