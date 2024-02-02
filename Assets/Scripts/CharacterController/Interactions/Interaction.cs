@@ -40,6 +40,9 @@ namespace Interactions {
 
         }
 
+        /// <summary>
+        /// For displaying dialog in Ink. Should be customizable, but right now just loads `interact_Name` for the Name of the current GameObject.
+        /// </summary>
         [Serializable]
         public class InkInteraction : InteractionBehavior {
             public InkInteraction(Interaction parent) : base(parent) { }
