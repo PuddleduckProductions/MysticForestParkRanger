@@ -8,9 +8,9 @@ items:
   langs:
   - csharp
   - vb
-  name: MysticForestParkRanger
-  nameWithType: MysticForestParkRanger
-  fullName: MysticForestParkRanger
+  name: ''
+  nameWithType: ''
+  fullName: ''
   type: Namespace
   assemblies:
   - ScriptAssembly

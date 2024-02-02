@@ -3,6 +3,13 @@ items:
 - uid: InkTools
   name: InkTools
   items:
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    items:
+    - uid: InkTools.InkCommandDef.InkCommand
+      name: InkCommand
+    - uid: InkTools.InkCommandDef.moveTo
+      name: moveTo
   - uid: InkTools.DialogRenderer
     name: DialogRenderer
   - uid: InkTools.InkCommands
@@ -11,35 +18,28 @@ items:
     name: InkManager
   - uid: InkTools.InkManager.DialogLine
     name: InkManager.DialogLine
-- uid: InkTools.InkCommandDef
-  name: InkTools.InkCommandDef
-  items:
-  - uid: InkTools.InkCommandDef.InkCommand
-    name: InkCommand
-  - uid: InkTools.InkCommandDef.moveTo
-    name: moveTo
 - uid: Interactions
   name: Interactions
   items:
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    items:
+    - uid: Interactions.Behaviors.CustomInteraction
+      name: CustomInteraction
+    - uid: Interactions.Behaviors.InkInteraction
+      name: InkInteraction
+    - uid: Interactions.Behaviors.InteractionBehavior
+      name: InteractionBehavior
+    - uid: Interactions.Behaviors.PushableInteraction
+      name: PushableInteraction
   - uid: Interactions.Interaction
     name: Interaction
   - uid: Interactions.Interaction.InteractionType
     name: Interaction.InteractionType
   - uid: Interactions.InteractionManager
     name: InteractionManager
-- uid: Interactions.Behaviors
-  name: Interactions.Behaviors
-  items:
-  - uid: Interactions.Behaviors.CustomInteraction
-    name: CustomInteraction
-  - uid: Interactions.Behaviors.InkInteraction
-    name: InkInteraction
-  - uid: Interactions.Behaviors.InteractionBehavior
-    name: InteractionBehavior
-  - uid: Interactions.Behaviors.PushableInteraction
-    name: PushableInteraction
 - uid: MysticForestParkRanger
-  name: MysticForestParkRanger
+  name: ''
   items:
   - uid: MysticForestParkRanger.UIController
     name: UIController

@@ -4,6 +4,7 @@ items:
   commentId: N:Interactions
   id: Interactions
   children:
+  - Interactions.Behaviors
   - Interactions.Interaction
   - Interactions.Interaction.InteractionType
   - Interactions.InteractionManager
@@ -17,6 +18,28 @@ items:
   assemblies:
   - ScriptAssembly
 references:
+- uid: Interactions.Behaviors
+  commentId: N:Interactions.Behaviors
+  href: Interactions.html
+  name: Interactions.Behaviors
+  nameWithType: Interactions.Behaviors
+  fullName: Interactions.Behaviors
+  spec.csharp:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+  spec.vb:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
 - uid: Interactions.Interaction
   commentId: T:Interactions.Interaction
   parent: Interactions

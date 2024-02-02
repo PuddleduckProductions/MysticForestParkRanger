@@ -2,7 +2,8 @@
 items:
 - uid: InkTools.InkCommandDef
   commentId: N:InkTools.InkCommandDef
-  id: InkTools.InkCommandDef
+  id: InkCommandDef
+  parent: InkTools
   children:
   - InkTools.InkCommandDef.InkCommand
   - InkTools.InkCommandDef.moveTo

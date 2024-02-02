@@ -5,6 +5,7 @@ items:
   id: InkTools
   children:
   - InkTools.DialogRenderer
+  - InkTools.InkCommandDef
   - InkTools.InkCommands
   - InkTools.InkManager
   - InkTools.InkManager.DialogLine
@@ -18,6 +19,41 @@ items:
   assemblies:
   - ScriptAssembly
 references:
+- uid: InkTools.InkCommandDef
+  commentId: N:InkTools.InkCommandDef
+  href: InkTools.html
+  name: InkTools.InkCommandDef
+  nameWithType: InkTools.InkCommandDef
+  fullName: InkTools.InkCommandDef
+  spec.csharp:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html
+  spec.vb:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html
+- uid: InkTools.DialogRenderer
+  commentId: T:InkTools.DialogRenderer
+  parent: InkTools
+  href: InkTools.DialogRenderer.html
+  name: DialogRenderer
+  nameWithType: DialogRenderer
+  fullName: InkTools.DialogRenderer
+- uid: InkTools.InkCommands
+  commentId: T:InkTools.InkCommands
+  href: InkTools.InkCommands.html
+  name: InkCommands
+  nameWithType: InkCommands
+  fullName: InkTools.InkCommands
 - uid: InkTools.InkManager
   commentId: T:InkTools.InkManager
   href: InkTools.InkManager.html
@@ -47,19 +83,6 @@ references:
   - uid: InkTools.InkManager.DialogLine
     name: DialogLine
     href: InkTools.InkManager.DialogLine.html
-- uid: InkTools.DialogRenderer
-  commentId: T:InkTools.DialogRenderer
-  parent: InkTools
-  href: InkTools.DialogRenderer.html
-  name: DialogRenderer
-  nameWithType: DialogRenderer
-  fullName: InkTools.DialogRenderer
-- uid: InkTools.InkCommands
-  commentId: T:InkTools.InkCommands
-  href: InkTools.InkCommands.html
-  name: InkCommands
-  nameWithType: InkCommands
-  fullName: InkTools.InkCommands
 - uid: InkTools
   commentId: N:InkTools
   href: InkTools.html
