@@ -1006,8 +1006,10 @@ references:
   fullName: Interactions.InteractionManager.player
   nameWithType: InteractionManager.player
 - uid: MysticForestParkRanger
-  name: ''
+  name: MysticForestParkRanger
   href: api/MysticForestParkRanger.html
+  fullName: MysticForestParkRanger
+  nameWithType: MysticForestParkRanger
 - uid: MysticForestParkRanger.InteractionEditor
   name: InteractionEditor
   href: api/MysticForestParkRanger.InteractionEditor.html

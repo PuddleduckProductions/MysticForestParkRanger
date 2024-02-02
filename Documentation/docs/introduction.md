@@ -16,9 +16,9 @@ Assets are exposed in the Documentation/assets folder, so place any items you ne
 
 For instance, you can check the source for this .md file to see the relative path to the site icon:
 
-![The site icon](/assets/images/icon.png)
+![The site icon](~/assets/images/icon.png)
 
-Which is `/assets/images/icon.png`.
+Which is `~/assets/images/icon.png`.
 
 If you want to test your changes locally, you'll need docfx installed: https://dotnet.github.io/docfx/index.html
 (You should already have the .NET SDK if you're running Unity)
