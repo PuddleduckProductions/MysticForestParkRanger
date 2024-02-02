@@ -16,7 +16,9 @@ Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to wri
 ## Generating Documentation
 Unfortunately, automatic updates are not allowed due to the .gitignore for Unity removing the crucial elements that need to be tracked for automatic generation.
 
-To update this documentation for yourself at any time (if you have [docfx installed](https://github.com/dotnet/docfx?tab=readme-ov-file#getting-started)), you have two routes:
+HOWEVER! This should be fixed in the future. The plan is to eventually use [GameCI](https://game.ci/) to automatically generate builds, which can then be used to generate documentation.
+
+In the meantime, to update this documentation for yourself at any time (if you have [docfx installed](https://github.com/dotnet/docfx?tab=readme-ov-file#getting-started)), you have two routes:
 
 ### Windows
 Run `build.ps1` in `Documentation/docs`
