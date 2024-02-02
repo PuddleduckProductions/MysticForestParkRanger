@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEditor;
-using static Interaction;
+using Interactions;
+using static Interactions.Interaction;
 
 /// <summary>
 /// Editor for <see cref="Interaction"/>, to make selecting <see cref="InteractionBehavior"/> automated and easy for designers.

@@ -4,6 +4,7 @@ using UnityEngine;
 using Ink.Runtime;
 using System.Text.RegularExpressions;
 using UnityEngine.Events;
+using Utility;
 
 public class InkManager : MonoBehaviour, ISingleton<InkManager> {
     #region Story Management

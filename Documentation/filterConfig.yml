@@ -1,3 +1,4 @@
+### YamlMime:ManagedReference
 apiRules:
 - exclude:
   # For whatever reason this avoids overwriting the globalNamespaceId stuff when there's a name value.
