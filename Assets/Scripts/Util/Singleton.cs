@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Utility {
+    /// <summary>
+    /// Singleton Interface.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface ISingleton<T> where T : MonoBehaviour {
         public static T Instance { get; protected set; }
 

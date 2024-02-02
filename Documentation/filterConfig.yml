@@ -3,5 +3,5 @@ apiRules:
 - exclude:
   # For whatever reason this avoids overwriting the globalNamespaceId stuff when there's a name value.
   # Could lead to trouble down the line, though.
-    uidRegex: ^MysticForestParkRanger.*
+    uidRegex: ^MysticForestParkRanger
     type: Namespace

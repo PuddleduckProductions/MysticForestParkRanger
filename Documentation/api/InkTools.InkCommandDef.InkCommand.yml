@@ -24,10 +24,15 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkCommand
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
+  summary: >-
+    Command that can be executed from Ink.
+
+    Can be executed with `$NameOfCommandClass #arg1 #arg2 #arg3`
+  example: []
   syntax:
     content: public abstract class InkCommand
     content.vb: Public MustInherit Class InkCommand
@@ -61,10 +66,12 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: requiresUpdate
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
+  summary: Should we call <xref href="InkTools.InkCommandDef.InkCommand.Update" data-throw-if-not-resolved="false"></xref> every frame?
+  example: []
   syntax:
     content: public virtual bool requiresUpdate { get; }
     parameters: []
@@ -90,7 +97,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 17
+    startLine: 25
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -124,7 +131,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: usage
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 21
+    startLine: 29
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -153,7 +160,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CommandWrite
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 25
+    startLine: 33
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -189,7 +196,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -462,6 +469,25 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: InkTools.InkCommandDef.InkCommand.Update
+  commentId: M:InkTools.InkCommandDef.InkCommand.Update
+  parent: InkTools.InkCommandDef.InkCommand
+  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  name: Update()
+  nameWithType: InkCommand.Update()
+  fullName: InkTools.InkCommandDef.InkCommand.Update()
+  spec.csharp:
+  - uid: InkTools.InkCommandDef.InkCommand.Update
+    name: Update
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: InkTools.InkCommandDef.InkCommand.Update
+    name: Update
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  - name: (
+  - name: )
 - uid: InkTools.InkCommandDef.InkCommand.requiresUpdate*
   commentId: Overload:InkTools.InkCommandDef.InkCommand.requiresUpdate
   href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_requiresUpdate
@@ -479,6 +505,13 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: InkTools.InkCommandDef.InkCommand
+  commentId: T:InkTools.InkCommandDef.InkCommand
+  parent: InkTools.InkCommandDef
+  href: InkTools.InkCommandDef.InkCommand.html
+  name: InkCommand
+  nameWithType: InkCommand
+  fullName: InkTools.InkCommandDef.InkCommand
 - uid: InkTools.InkCommandDef.InkCommand.#ctor*
   commentId: Overload:InkTools.InkCommandDef.InkCommand.#ctor
   href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand__ctor_System_Collections_Generic_List_System_String__System_String__

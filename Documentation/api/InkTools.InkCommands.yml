@@ -24,7 +24,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkCommands
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 106
+    startLine: 114
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: commands
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 107
+    startLine: 115
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -88,7 +88,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 111
+    startLine: 119
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -117,7 +117,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: commandRegex
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 125
+    startLine: 133
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -144,7 +144,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Evaluate
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 126
+    startLine: 134
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -178,7 +178,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 145
+    startLine: 153
   assemblies:
   - ScriptAssembly
   namespace: InkTools

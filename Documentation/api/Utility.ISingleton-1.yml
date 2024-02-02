@@ -21,14 +21,17 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ISingleton
     path: ../Assets/Scripts/Util/Singleton.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ScriptAssembly
   namespace: Utility
+  summary: Singleton Interface.
+  example: []
   syntax:
     content: 'public interface ISingleton<T> where T : MonoBehaviour'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public Interface ISingleton(Of T As MonoBehaviour)
   nameWithType.vb: ISingleton(Of T)
   fullName.vb: Utility.ISingleton(Of T)
@@ -51,7 +54,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Instance
     path: ../Assets/Scripts/Util/Singleton.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: Utility
@@ -82,7 +85,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Initialize
     path: ../Assets/Scripts/Util/Singleton.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - ScriptAssembly
   namespace: Utility

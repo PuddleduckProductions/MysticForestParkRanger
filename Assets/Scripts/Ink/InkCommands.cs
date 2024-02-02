@@ -9,12 +9,20 @@ using UnityEngine;
 
 namespace InkTools {
     namespace InkCommandDef {
+        /// <summary>
+        /// Command that can be executed from Ink.
+        /// Can be executed with `$NameOfCommandClass #arg1 #arg2 #arg3`
+        /// </summary>
         public abstract class InkCommand {
+            /// <summary>
+            /// Should we call <see cref="Update"/> every frame?
+            /// </summary>
             public virtual bool requiresUpdate {
                 get {
                     return false;
                 }
             }
+
             public InkCommand(List<string> args, out string error) {
                 error = null;
             }

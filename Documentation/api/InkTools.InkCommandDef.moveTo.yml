@@ -23,7 +23,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: moveTo
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 58
+    startLine: 66
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -60,7 +60,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: usage
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 62
+    startLine: 70
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -91,10 +91,11 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: requiresUpdate
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 63
+    startLine: 71
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
+  summary: Should we call <xref href="InkTools.InkCommandDef.InkCommand.Update" data-throw-if-not-resolved="false"></xref> every frame?
   example: []
   syntax:
     content: public override bool requiresUpdate { get; }
@@ -122,7 +123,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 65
+    startLine: 73
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -156,7 +157,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 93
+    startLine: 101
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -518,6 +519,25 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: InkTools.InkCommandDef.InkCommand.Update
+  commentId: M:InkTools.InkCommandDef.InkCommand.Update
+  parent: InkTools.InkCommandDef.InkCommand
+  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  name: Update()
+  nameWithType: InkCommand.Update()
+  fullName: InkTools.InkCommandDef.InkCommand.Update()
+  spec.csharp:
+  - uid: InkTools.InkCommandDef.InkCommand.Update
+    name: Update
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: InkTools.InkCommandDef.InkCommand.Update
+    name: Update
+    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
+  - name: (
+  - name: )
 - uid: InkTools.InkCommandDef.InkCommand.requiresUpdate
   commentId: P:InkTools.InkCommandDef.InkCommand.requiresUpdate
   parent: InkTools.InkCommandDef.InkCommand
@@ -651,25 +671,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: InkTools.InkCommandDef.InkCommand.Update
-  commentId: M:InkTools.InkCommandDef.InkCommand.Update
-  parent: InkTools.InkCommandDef.InkCommand
-  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
-  name: Update()
-  nameWithType: InkCommand.Update()
-  fullName: InkTools.InkCommandDef.InkCommand.Update()
-  spec.csharp:
-  - uid: InkTools.InkCommandDef.InkCommand.Update
-    name: Update
-    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: InkTools.InkCommandDef.InkCommand.Update
-    name: Update
-    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
-  - name: (
-  - name: )
 - uid: InkTools.InkCommandDef.moveTo.Update*
   commentId: Overload:InkTools.InkCommandDef.moveTo.Update
   href: InkTools.InkCommandDef.moveTo.html#InkTools_InkCommandDef_moveTo_Update
