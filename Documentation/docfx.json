@@ -20,9 +20,6 @@
       {
         "files": [
           "**/*.{md,yml}"
-        ],
-        "exclude": [
-          "_site/**"
         ]
       }
     ],
@@ -33,7 +30,7 @@
         ]
       }
     ],
-    "output": "_site",
+    "output": "../docs",
     "template": [
       "default",
       "modern"

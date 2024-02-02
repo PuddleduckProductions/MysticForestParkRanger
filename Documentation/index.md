@@ -11,6 +11,21 @@ For tutorials, check the [Docs](docs/introduction.md).
 
 Feel free to contribute to this repository in the Documentation folder on Github. Markdown files can be added in Documentation/docs. Comments that use XML formatting (i.e., ///&gt;summary&lt;) from within the project will be added.
 
-Any pushes to master will automatically update the docs on this page. Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
 
-If your documentation isn't showing up, let Tyler know.
+## Generating Documentation
+Unfortunately, automatic updates are not allowed due to the .gitignore for Unity removing the crucial elements that need to be tracked for automatic generation.
+
+To update this documentation for yourself at any time (if you have [docfx installed](https://github.com/dotnet/docfx?tab=readme-ov-file#getting-started)), you have two routes:
+
+### Windows
+Run `build.ps1` in `Documentation/docs`
+
+If you want to preview the docs, you can add `build.ps1 --serve` to run a local server. 
+
+### MacOS/Linux
+Run `build.sh` in `Documentation/docs`.
+
+If you want to preview the docs, you can add `build.sh --serve`  to run a local server.
+
+If you experience any bugs, let Tyler know.
