@@ -1,0 +1,14 @@
+{
+  "InkCommandDef": "InkCommandDef.yml",
+  "InkCommandDef.InkCommand": "InkCommandDef.InkCommand.yml",
+  "InkCommandDef.InkCommand.#ctor(System.Collections.Generic.List{System.String},System.String@)": "InkCommandDef.InkCommand.yml",
+  "InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})": "InkCommandDef.InkCommand.yml",
+  "InkCommandDef.InkCommand.Update": "InkCommandDef.InkCommand.yml",
+  "InkCommandDef.InkCommand.requiresUpdate": "InkCommandDef.InkCommand.yml",
+  "InkCommandDef.InkCommand.usage": "InkCommandDef.InkCommand.yml",
+  "InkCommandDef.moveTo": "InkCommandDef.moveTo.yml",
+  "InkCommandDef.moveTo.#ctor(System.Collections.Generic.List{System.String},System.String@)": "InkCommandDef.moveTo.yml",
+  "InkCommandDef.moveTo.Update": "InkCommandDef.moveTo.yml",
+  "InkCommandDef.moveTo.requiresUpdate": "InkCommandDef.moveTo.yml",
+  "InkCommandDef.moveTo.usage": "InkCommandDef.moveTo.yml"
+}

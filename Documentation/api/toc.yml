@@ -1,0 +1,10 @@
+### YamlMime:TableOfContent
+items:
+- uid: InkCommandDef
+  name: InkCommandDef
+  items:
+  - uid: InkCommandDef.InkCommand
+    name: InkCommand
+  - uid: InkCommandDef.moveTo
+    name: moveTo
+memberLayout: SamePage
