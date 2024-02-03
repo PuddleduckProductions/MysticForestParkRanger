@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Utility;
 using InkTools;
+using System.Reflection;
 
 namespace Interactions {
     namespace Behaviors {
@@ -136,6 +137,7 @@ namespace Interactions {
         /// </summary>
         [Serializable]
         public class CustomInteraction : InteractionBehavior {
+
             public CustomInteraction(Interaction parent) : base(parent) { }
 
             /// <summary>
@@ -143,6 +145,11 @@ namespace Interactions {
             /// </summary>
             [SerializeField]
             protected UnityEvent onInteract = new UnityEvent();
+
+            [HideInInspector]
+            public SerializedMethod<CustomInteraction> onUpdate;
+            [HideInInspector]
+            public UnityEngine.Object targetObject;
 
             public override bool isInteracting => false;
 
