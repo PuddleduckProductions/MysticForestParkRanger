@@ -8,6 +8,8 @@ on:
 permissions:
   actions: read
   pages: write
+  pull-requests: write
+  checks: write
   id-token: write
   contents: write
 
