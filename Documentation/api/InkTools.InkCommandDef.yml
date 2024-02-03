@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: InkTools.InkCommandDef
+  commentId: N:InkTools.InkCommandDef
+  id: InkCommandDef
+  parent: InkTools
+  children:
+  - InkTools.InkCommandDef.InkCommand
+  - InkTools.InkCommandDef.moveTo
+  langs:
+  - csharp
+  - vb
+  name: InkTools.InkCommandDef
+  nameWithType: InkTools.InkCommandDef
+  fullName: InkTools.InkCommandDef
+  type: Namespace
+  assemblies:
+  - ScriptAssembly
+references:
+- uid: InkTools.InkCommandDef.InkCommand
+  commentId: T:InkTools.InkCommandDef.InkCommand
+  parent: InkTools.InkCommandDef
+  href: InkTools.InkCommandDef.InkCommand.html
+  name: InkCommand
+  nameWithType: InkCommand
+  fullName: InkTools.InkCommandDef.InkCommand
+- uid: InkTools.InkCommandDef.moveTo
+  commentId: T:InkTools.InkCommandDef.moveTo
+  href: InkTools.InkCommandDef.moveTo.html
+  name: moveTo
+  nameWithType: moveTo
+  fullName: InkTools.InkCommandDef.moveTo
+- uid: InkTools.InkCommandDef
+  commentId: N:InkTools.InkCommandDef
+  href: InkTools.html
+  name: InkTools.InkCommandDef
+  nameWithType: InkTools.InkCommandDef
+  fullName: InkTools.InkCommandDef
+  spec.csharp:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html
+  spec.vb:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html

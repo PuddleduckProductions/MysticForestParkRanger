@@ -1,0 +1,524 @@
+### YamlMime:ManagedReference
+items:
+- uid: InkTools.InkManager.DialogLine
+  commentId: T:InkTools.InkManager.DialogLine
+  id: InkManager.DialogLine
+  parent: InkTools
+  children:
+  - InkTools.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
+  - InkTools.InkManager.DialogLine.character
+  - InkTools.InkManager.DialogLine.dialog
+  - InkTools.InkManager.DialogLine.tags
+  langs:
+  - csharp
+  - vb
+  name: InkManager.DialogLine
+  nameWithType: InkManager.DialogLine
+  fullName: InkTools.InkManager.DialogLine
+  type: Struct
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: DialogLine
+    path: ../Assets/Scripts/Ink/InkManager.cs
+    startLine: 26
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public struct InkManager.DialogLine
+    content.vb: Public Structure InkManager.DialogLine
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: InkTools.InkManager.DialogLine.character
+  commentId: P:InkTools.InkManager.DialogLine.character
+  id: character
+  parent: InkTools.InkManager.DialogLine
+  langs:
+  - csharp
+  - vb
+  name: character
+  nameWithType: InkManager.DialogLine.character
+  fullName: InkTools.InkManager.DialogLine.character
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: character
+    path: ../Assets/Scripts/Ink/InkManager.cs
+    startLine: 27
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public readonly string character { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property character As String
+  overload: InkTools.InkManager.DialogLine.character*
+- uid: InkTools.InkManager.DialogLine.dialog
+  commentId: P:InkTools.InkManager.DialogLine.dialog
+  id: dialog
+  parent: InkTools.InkManager.DialogLine
+  langs:
+  - csharp
+  - vb
+  name: dialog
+  nameWithType: InkManager.DialogLine.dialog
+  fullName: InkTools.InkManager.DialogLine.dialog
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: dialog
+    path: ../Assets/Scripts/Ink/InkManager.cs
+    startLine: 28
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public readonly string dialog { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property dialog As String
+  overload: InkTools.InkManager.DialogLine.dialog*
+- uid: InkTools.InkManager.DialogLine.tags
+  commentId: P:InkTools.InkManager.DialogLine.tags
+  id: tags
+  parent: InkTools.InkManager.DialogLine
+  langs:
+  - csharp
+  - vb
+  name: tags
+  nameWithType: InkManager.DialogLine.tags
+  fullName: InkTools.InkManager.DialogLine.tags
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: tags
+    path: ../Assets/Scripts/Ink/InkManager.cs
+    startLine: 29
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public readonly List<string> tags { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public ReadOnly Property tags As List(Of String)
+  overload: InkTools.InkManager.DialogLine.tags*
+- uid: InkTools.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
+  commentId: M:InkTools.InkManager.DialogLine.#ctor(System.String,System.String,System.Collections.Generic.List{System.String})
+  id: '#ctor(System.String,System.String,System.Collections.Generic.List{System.String})'
+  parent: InkTools.InkManager.DialogLine
+  langs:
+  - csharp
+  - vb
+  name: DialogLine(string, string, List<string>)
+  nameWithType: InkManager.DialogLine.DialogLine(string, string, List<string>)
+  fullName: InkTools.InkManager.DialogLine.DialogLine(string, string, System.Collections.Generic.List<string>)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: .ctor
+    path: ../Assets/Scripts/Ink/InkManager.cs
+    startLine: 30
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public DialogLine(string character, string dialog, List<string> tags)
+    parameters:
+    - id: character
+      type: System.String
+    - id: dialog
+      type: System.String
+    - id: tags
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Sub New(character As String, dialog As String, tags As List(Of String))
+  overload: InkTools.InkManager.DialogLine.#ctor*
+  nameWithType.vb: InkManager.DialogLine.New(String, String, List(Of String))
+  fullName.vb: InkTools.InkManager.DialogLine.New(String, String, System.Collections.Generic.List(Of String))
+  name.vb: New(String, String, List(Of String))
+references:
+- uid: InkTools
+  commentId: N:InkTools
+  href: InkTools.html
+  name: InkTools
+  nameWithType: InkTools
+  fullName: InkTools
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: InkTools.InkManager.DialogLine.character*
+  commentId: Overload:InkTools.InkManager.DialogLine.character
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine_character
+  name: character
+  nameWithType: InkManager.DialogLine.character
+  fullName: InkTools.InkManager.DialogLine.character
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: InkTools.InkManager.DialogLine.dialog*
+  commentId: Overload:InkTools.InkManager.DialogLine.dialog
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine_dialog
+  name: dialog
+  nameWithType: InkManager.DialogLine.dialog
+  fullName: InkTools.InkManager.DialogLine.dialog
+- uid: InkTools.InkManager.DialogLine.tags*
+  commentId: Overload:InkTools.InkManager.DialogLine.tags
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine_tags
+  name: tags
+  nameWithType: InkManager.DialogLine.tags
+  fullName: InkTools.InkManager.DialogLine.tags
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: InkTools.InkManager.DialogLine.#ctor*
+  commentId: Overload:InkTools.InkManager.DialogLine.#ctor
+  href: InkTools.InkManager.DialogLine.html#InkTools_InkManager_DialogLine__ctor_System_String_System_String_System_Collections_Generic_List_System_String__
+  name: DialogLine
+  nameWithType: InkManager.DialogLine.DialogLine
+  fullName: InkTools.InkManager.DialogLine.DialogLine
+  nameWithType.vb: InkManager.DialogLine.New
+  fullName.vb: InkTools.InkManager.DialogLine.New
+  name.vb: New

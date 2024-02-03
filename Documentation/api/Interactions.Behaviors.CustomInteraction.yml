@@ -1,0 +1,601 @@
+### YamlMime:ManagedReference
+items:
+- uid: Interactions.Behaviors.CustomInteraction
+  commentId: T:Interactions.Behaviors.CustomInteraction
+  id: CustomInteraction
+  parent: Interactions.Behaviors
+  children:
+  - Interactions.Behaviors.CustomInteraction.#ctor(Interactions.Interaction)
+  - Interactions.Behaviors.CustomInteraction.Interact
+  - Interactions.Behaviors.CustomInteraction.isInteracting
+  - Interactions.Behaviors.CustomInteraction.onInteract
+  langs:
+  - csharp
+  - vb
+  name: CustomInteraction
+  nameWithType: CustomInteraction
+  fullName: Interactions.Behaviors.CustomInteraction
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: CustomInteraction
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 136
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: >-
+    Custom interaction setup. Define your own interaction behavior through other scripts.
+
+    Called once.
+
+    TODO: Updates.
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class CustomInteraction : InteractionBehavior
+    content.vb: >-
+      <Serializable>
+
+      Public Class CustomInteraction Inherits InteractionBehavior
+  inheritance:
+  - System.Object
+  - Interactions.Behaviors.InteractionBehavior
+  inheritedMembers:
+  - Interactions.Behaviors.InteractionBehavior.interactionObject
+  - Interactions.Behaviors.InteractionBehavior.Update
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Interactions.Behaviors.CustomInteraction.#ctor(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.CustomInteraction.#ctor(Interactions.Interaction)
+  id: '#ctor(Interactions.Interaction)'
+  parent: Interactions.Behaviors.CustomInteraction
+  langs:
+  - csharp
+  - vb
+  name: CustomInteraction(Interaction)
+  nameWithType: CustomInteraction.CustomInteraction(Interaction)
+  fullName: Interactions.Behaviors.CustomInteraction.CustomInteraction(Interactions.Interaction)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: .ctor
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 138
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: public CustomInteraction(Interaction parent)
+    parameters:
+    - id: parent
+      type: Interactions.Interaction
+    content.vb: Public Sub New(parent As Interaction)
+  overload: Interactions.Behaviors.CustomInteraction.#ctor*
+  nameWithType.vb: CustomInteraction.New(Interaction)
+  fullName.vb: Interactions.Behaviors.CustomInteraction.New(Interactions.Interaction)
+  name.vb: New(Interaction)
+- uid: Interactions.Behaviors.CustomInteraction.onInteract
+  commentId: F:Interactions.Behaviors.CustomInteraction.onInteract
+  id: onInteract
+  parent: Interactions.Behaviors.CustomInteraction
+  langs:
+  - csharp
+  - vb
+  name: onInteract
+  nameWithType: CustomInteraction.onInteract
+  fullName: Interactions.Behaviors.CustomInteraction.onInteract
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: onInteract
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 144
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: Functions to call when space is pressed on this object.
+  example: []
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected UnityEvent onInteract
+    return:
+      type: UnityEngine.Events.UnityEvent
+    content.vb: >-
+      <SerializeField>
+
+      Protected onInteract As UnityEvent
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: Interactions.Behaviors.CustomInteraction.isInteracting
+  commentId: P:Interactions.Behaviors.CustomInteraction.isInteracting
+  id: isInteracting
+  parent: Interactions.Behaviors.CustomInteraction
+  langs:
+  - csharp
+  - vb
+  name: isInteracting
+  nameWithType: CustomInteraction.isInteracting
+  fullName: Interactions.Behaviors.CustomInteraction.isInteracting
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: isInteracting
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 146
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: >-
+    Are we currently having an interaction happen?
+
+    If this is true, this supresses all other interactions in the scene.
+
+    If active for more than one frame, <xref href="Interactions.Behaviors.InteractionBehavior.Update" data-throw-if-not-resolved="false"></xref> is called.
+  example: []
+  syntax:
+    content: public override bool isInteracting { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides ReadOnly Property isInteracting As Boolean
+  overridden: Interactions.Behaviors.InteractionBehavior.isInteracting
+  overload: Interactions.Behaviors.CustomInteraction.isInteracting*
+- uid: Interactions.Behaviors.CustomInteraction.Interact
+  commentId: M:Interactions.Behaviors.CustomInteraction.Interact
+  id: Interact
+  parent: Interactions.Behaviors.CustomInteraction
+  langs:
+  - csharp
+  - vb
+  name: Interact()
+  nameWithType: CustomInteraction.Interact()
+  fullName: Interactions.Behaviors.CustomInteraction.Interact()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Interact
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 148
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: >-
+    Function to call when the object is interacted with (i.e., Space is pressed)
+
+    Called by <xref href="Interactions.InteractionManager" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public override void Interact()
+    content.vb: Public Overrides Sub Interact()
+  overridden: Interactions.Behaviors.InteractionBehavior.Interact
+  overload: Interactions.Behaviors.CustomInteraction.Interact*
+references:
+- uid: Interactions.Behaviors
+  commentId: N:Interactions.Behaviors
+  href: Interactions.html
+  name: Interactions.Behaviors
+  nameWithType: Interactions.Behaviors
+  fullName: Interactions.Behaviors
+  spec.csharp:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+  spec.vb:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Interactions.Behaviors.InteractionBehavior
+  commentId: T:Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.InteractionBehavior.html
+  name: InteractionBehavior
+  nameWithType: InteractionBehavior
+  fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Behaviors.InteractionBehavior.interactionObject
+  commentId: F:Interactions.Behaviors.InteractionBehavior.interactionObject
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_interactionObject
+  name: interactionObject
+  nameWithType: InteractionBehavior.interactionObject
+  fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
+- uid: Interactions.Behaviors.InteractionBehavior.Update
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Update
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  name: Update()
+  nameWithType: InteractionBehavior.Update()
+  fullName: Interactions.Behaviors.InteractionBehavior.Update()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.Update
+    name: Update
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Update
+    name: Update
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Interactions.Behaviors.CustomInteraction.#ctor*
+  commentId: Overload:Interactions.Behaviors.CustomInteraction.#ctor
+  href: Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction__ctor_Interactions_Interaction_
+  name: CustomInteraction
+  nameWithType: CustomInteraction.CustomInteraction
+  fullName: Interactions.Behaviors.CustomInteraction.CustomInteraction
+  nameWithType.vb: CustomInteraction.New
+  fullName.vb: Interactions.Behaviors.CustomInteraction.New
+  name.vb: New
+- uid: Interactions.Interaction
+  commentId: T:Interactions.Interaction
+  parent: Interactions
+  href: Interactions.Interaction.html
+  name: Interaction
+  nameWithType: Interaction
+  fullName: Interactions.Interaction
+- uid: Interactions
+  commentId: N:Interactions
+  href: Interactions.html
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions
+- uid: UnityEngine.Events.UnityEvent
+  commentId: T:UnityEngine.Events.UnityEvent
+  parent: UnityEngine.Events
+  isExternal: true
+  name: UnityEvent
+  nameWithType: UnityEvent
+  fullName: UnityEngine.Events.UnityEvent
+- uid: UnityEngine.Events
+  commentId: N:UnityEngine.Events
+  isExternal: true
+  name: UnityEngine.Events
+  nameWithType: UnityEngine.Events
+  fullName: UnityEngine.Events
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+- uid: Interactions.Behaviors.InteractionBehavior.isInteracting
+  commentId: P:Interactions.Behaviors.InteractionBehavior.isInteracting
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_isInteracting
+  name: isInteracting
+  nameWithType: InteractionBehavior.isInteracting
+  fullName: Interactions.Behaviors.InteractionBehavior.isInteracting
+- uid: Interactions.Behaviors.CustomInteraction.isInteracting*
+  commentId: Overload:Interactions.Behaviors.CustomInteraction.isInteracting
+  href: Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_isInteracting
+  name: isInteracting
+  nameWithType: CustomInteraction.isInteracting
+  fullName: Interactions.Behaviors.CustomInteraction.isInteracting
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Interactions.InteractionManager
+  commentId: T:Interactions.InteractionManager
+  href: Interactions.InteractionManager.html
+  name: InteractionManager
+  nameWithType: InteractionManager
+  fullName: Interactions.InteractionManager
+- uid: Interactions.Behaviors.InteractionBehavior.Interact
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  name: Interact()
+  nameWithType: InteractionBehavior.Interact()
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.CustomInteraction.Interact*
+  commentId: Overload:Interactions.Behaviors.CustomInteraction.Interact
+  href: Interactions.Behaviors.CustomInteraction.html#Interactions_Behaviors_CustomInteraction_Interact
+  name: Interact
+  nameWithType: CustomInteraction.Interact
+  fullName: Interactions.Behaviors.CustomInteraction.Interact

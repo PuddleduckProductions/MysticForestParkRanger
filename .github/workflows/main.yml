@@ -69,12 +69,11 @@ jobs:
           dotnet-version: 8.x
 
       - run: dotnet tool update -g docfx
-      - run: bash Documentation/build.sh
+      - run: docfx build Documentation/docfx.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: 'Documentation/_site'
       
       - name: Deploy to Pages
