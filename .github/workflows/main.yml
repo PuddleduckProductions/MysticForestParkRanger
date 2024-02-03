@@ -11,7 +11,6 @@ on:
 
 permissions:
   actions: read
-  pages: write
   pull-requests: write
   checks: write
   id-token: write
@@ -60,26 +59,3 @@ jobs:
         with:
           name: Build
           path: build
-  build-docs:
-    name: Build Documentation
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        
-      - name: Dotnet Setup
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 8.x
-
-      - run: dotnet tool update -g docfx
-      - run: docfx build Documentation/docfx.json
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'Documentation/_site'
-      
-      - name: Deploy to Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
