@@ -2,6 +2,7 @@
 # If you're on Windows the path is most likely C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.16f1\\Editor\\Data\\Tools\\UnityYAMLMerge.exe
 # Unity merging stuff:
 *.cs diff=csharp text
+*.csproj merge=newest
 *.cginc text
 *.shader text
 

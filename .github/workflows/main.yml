@@ -39,15 +39,6 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-      
-      # We have to wait for Unity to compile before we can access .csproj:
-      - name: Upload .csproj
-        uses: actions/upload-artifact@v3
-        # Try running even if tests fail:
-        if: success() || failure()
-        with:
-          name: Assemblies
-          path: /*.csproj
 
       # Build
       - name: Build project
@@ -68,12 +59,9 @@ jobs:
   build-docs:
     name: Build Documentation
     runs-on: ubuntu-latest
-    if: success() || failure()
     steps:
-      - name: Download .csproj files
-        uses: actions/download-artifact@v3
-        with:
-          name: Assemblies
+      - name: Checkout
+        uses: actions/checkout@v3
         
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
@@ -81,9 +69,7 @@ jobs:
           dotnet-version: 8.x
 
       - run: dotnet tool update -g docfx
-      - run: docfx metadata Documentation/docfx.json
-      - run: bash Documentation/docfxfix.sh
-      - run: docfx build Documentation/docfx.json
+      - run: bash Documentation/build.sh
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

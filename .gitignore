@@ -95,3 +95,7 @@ fmod_editor.log
 Documentation/_site
 # Ignore api since we autogenerate this with commands (and fix with docfxfix.sh)
 Documentation/api
+# Trying something a little dumb:
+!ScriptAssembly.csproj
+!EditorAssembly.csproj
+!Ink-Libraries.csproj
