@@ -39,6 +39,15 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+      
+      # We have to wait for Unity to compile before we can access .csproj:
+      - name: Upload .csproj
+        uses: actions/upload-artifact@v3
+        # Try running even if tests fail:
+        if: success() || failure()
+        with:
+          name: Assemblies
+          path: /*.csproj
 
       # Build
       - name: Build project
@@ -51,13 +60,21 @@ jobs:
           targetPlatform: StandaloneWindows64
           # In case something changes, still allow builds:
           allowDirtyBuild: true
-
       # Output
       - uses: actions/upload-artifact@v3
         with:
           name: Build
           path: build
-      
+  build-docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    if: success() || failure()
+    steps:
+      - name: Download .csproj files
+        uses: actions/download-artifact@v3
+        with:
+          name: Assemblies
+        
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
         with:
@@ -77,4 +94,3 @@ jobs:
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
