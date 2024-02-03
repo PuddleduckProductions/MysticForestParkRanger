@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'Assets/**/*'
+      - 'Packages/**/*'
+      - 'ProjectSettings/**/*'
 
 permissions:
   actions: read
