@@ -5,6 +5,12 @@ on:
     branches:
       - master
 
+permissions:
+  actions: read
+  pages: write
+  id-token: write
+  contents: write
+
 jobs:
   build:
     name: Build MysticForestParkRanger
@@ -49,3 +55,24 @@ jobs:
         with:
           name: Build
           path: build
+      
+      - name: Dotnet Setup
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x
+
+      - run: dotnet tool update -g docfx
+      - run: docfx metadata Documentation/docfx.json
+      - run: bash Documentation/docfxfix.sh
+      - run: docfx build Documentation/docfx.json
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: 'Documentation/_site'
+      
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
