@@ -33,6 +33,6 @@ You add your own scripted InteractionBehavior thusly:
 ## Setting up Interactions
 If whatever scene you're working in doesn't have the spacebar appearing over interactions, you need to add interactions.
 
-There's a quick prefab for you: the UI prefab in Assets/Scripts/CharacterController. Drag that in along with PlayerObjects, and assuming you have a 
+There's a quick prefab for you: the UI prefab in Assets/Scripts/CharacterController. Drag that in along with PlayerObjects, and assuming you have only one Camera tagged "MainCamera", you should be good to go.
 
 ![UI prefab](~/assets/images/interactions/interactionUI.png)

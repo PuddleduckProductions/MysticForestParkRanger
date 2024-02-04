@@ -10,7 +10,7 @@ If you're in a bind and need the latest build in a hurry, please use this system
 
 ### To Download:
 
-Go to the Github Pages action: [![Unity Build and Test](https://github.com/PuddleduckProductions/MysticForestParkRanger/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/PuddleduckProductions/MysticForestParkRanger/actions/workflows/main.yml)
+Go to the Unity Build and Test action: [![Unity Build and Test](https://github.com/PuddleduckProductions/MysticForestParkRanger/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/PuddleduckProductions/MysticForestParkRanger/actions/workflows/main.yml)
 
 If it shows passing, go ahead and click. If the status checks show failing, that means that the latest build will most likely not work. Talk to a programmer! 
 
