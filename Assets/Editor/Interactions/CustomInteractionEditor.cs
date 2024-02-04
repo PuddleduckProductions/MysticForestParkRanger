@@ -4,10 +4,10 @@ using UnityEditor;
 
 namespace Interactions {
     using Behaviors;
-    using Codice.CM.SEIDInfo;
     using System.Linq;
     using System.Reflection;
     using UnityEngine;
+    using Utility;
 
     [CustomPropertyDrawer(typeof(CustomInteraction))]
     public class CustomInteractionDrawer : PropertyDrawer {
@@ -27,10 +27,25 @@ namespace Interactions {
             if (showFoldout) {
                 // Don't make child fields be indented
                 var indent = EditorGUI.indentLevel;
-                //EditorGUI.indentLevel = 0;
+                EditorGUI.indentLevel = 0;
 
+                position = new Rect(position.x, position.y + 20, position.width, 30);
+                baseHeight += 30;
+                var onInteract = property.FindPropertyRelative("onInteract");
+                EditorGUI.SelectableLabel(position, onInteract.tooltip);
+
+                position = new Rect(position.x, position.y + 30, position.width, 100);
+                baseHeight += 100;
+                EditorGUI.PropertyField(position, onInteract);
 
                 var targetObject = property.FindPropertyRelative("targetObject");
+
+                position = new Rect(position.x, position.y + 100, position.width, 20);
+                baseHeight += 20;
+
+                var onUpdate = property.FindPropertyRelative("onUpdate");
+                EditorGUI.LabelField(position, new GUIContent("OnUpdate()", onUpdate.tooltip));
+                EditorGUI.indentLevel += 1;
 
                 //EditorGUI.BeginProperty(position, new GUIContent("OnInteract"), property.FindPropertyRelative("onInteract"));
 
@@ -45,19 +60,38 @@ namespace Interactions {
                         targetObject.objectReferenceValue = null;
                     } else {
                         position = new Rect(position.x, position.y + 20, position.width, 20);
-                        var prefix = EditorGUI.PrefixLabel(position, new GUIContent("Method"));
 
-                        List<string> methods = new List<string>();;
+                        List<GUIContent> methods = new List<GUIContent>();;
                         var objectMethods = obj.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                            .Where(method => method.ReturnParameter.ParameterType == typeof(bool) && 
-                            method.GetParameters().Length == 1 && method.GetParameters()[0].ParameterType == typeof(CustomInteraction));
+                            .Where(CustomInteraction.ValidateUpdateFunc);
+
+                        methods.Add(new GUIContent("No Function"));
+
                         foreach (var method in objectMethods) {
-                            methods.Add(method.Name);
+                            var paramString = "";
+                            foreach (var param in method.GetParameters()) {
+                                paramString += param.ToString();
+                            }
+                            methods.Add(new GUIContent($"{method.ReflectedType.Name} {method.ReturnType} {method.Name}({paramString})"));
                         }
 
                         baseHeight += 20;
 
-                        EditorGUI.Popup(prefix, selectedFunc, methods.ToArray());
+                        EditorGUI.BeginChangeCheck();
+
+                        selectedFunc = EditorGUI.Popup(position, new GUIContent("Method", "Method to call"), selectedFunc, methods.ToArray());
+
+                        if (EditorGUI.EndChangeCheck()) {
+                            if (selectedFunc > 0) {
+                                MethodInfo info = objectMethods.ElementAt(selectedFunc - 1);
+
+                                SerializedMethod.SetMethod(onUpdate, info.Name, obj);
+
+                                //var methodStore = (SerializedMethod) onUpdate.managedReferenceValue;
+
+                                //methodStore.SetMethod(info, obj);
+                            }
+                        }
                     }
                 }
 

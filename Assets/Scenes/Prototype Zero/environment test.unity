@@ -516,11 +516,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   behavior:
-    rid: 3483134162746212355
+    rid: 3483134198558752775
   references:
     version: 2
     RefIds:
-    - rid: 3483134162746212355
+    - rid: 3483134198558752775
       type: {class: CustomInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 295133921}
@@ -528,8 +528,9 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
         onUpdate:
-          methodName: 
-        targetObject: {fileID: 0}
+          methodName: get_active
+          owningObject: {fileID: 534701002}
+        targetObject: {fileID: 534701002}
 --- !u!1 &375662619
 GameObject:
   m_ObjectHideFlags: 0

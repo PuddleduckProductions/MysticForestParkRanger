@@ -142,15 +142,25 @@ namespace Interactions {
 
             /// <summary>
             /// Functions to call when space is pressed on this object.
+            /// Called once.
             /// </summary>
             [SerializeField]
+            [Tooltip("Functions to call when space is pressed\non this object. Called once.")]
             protected UnityEvent onInteract = new UnityEvent();
 
-            public delegate bool OnUpdate(CustomInteraction invoker);
+            /// <summary>
+            /// Set in <see cref="Interactions.CustomInteractionEditor"/>
+            /// Called every frame. Should return a boolean as to whether or not the object is still being interacted with.
+            /// While returning true, the object will still be interacted with.
+            /// Can take <see cref="Interaction"/> as an optional argument.
+            /// Validated in <see cref="ValidateUpdateFunc(MethodInfo)"/>
+            /// </summary>
+            [HideInInspector, SerializeField, Tooltip("Called every frame. " +
+                "Should return a boolean as to whether or not the object is still being interacted with. " +
+                "While returning true, the object will still be interacted with. Can take Interaction as an optional argument.")]
+            public SerializedMethod onUpdate = new SerializedMethod();
 
-            [HideInInspector]
-            public SerializedMethod onUpdate;
-            [HideInInspector]
+            [HideInInspector, Tooltip("Object to call OnUpdate() on.")]
             public UnityEngine.Object targetObject;
 
             public override bool isInteracting => interactUpdate;
@@ -160,13 +170,31 @@ namespace Interactions {
                 onInteract.Invoke();
             }
 
+            /// <summary>
+            /// Used in <see cref="Interactions.CustomInteractionEditor"/> to validate functions.
+            /// </summary>
+            /// <param name="func">The function to validate.</param>
+            /// <returns>Whether or not <see cref="Update"/> will be able to call this function.</returns>
+            public static bool ValidateUpdateFunc(MethodInfo func) {
+                return func.ReturnParameter.ParameterType == typeof(bool) &&
+                    (func.GetParameters().Length == 0 || 
+                    func.GetParameters().Length == 1 && func.GetParameters()[0].ParameterType == typeof(Interaction));
+            }
+
             public override void Update() {
                 if (!onUpdate.IsNull()) {
-                    interactUpdate = (bool)onUpdate.Invoke(targetObject, new object[] { this });
+                    var parameters = onUpdate.parameters;
+                    if (parameters.Length == 0) {
+                        interactUpdate = (bool)onUpdate.Invoke(new object[0]);
+                    } else {
+                        interactUpdate = (bool)onUpdate.Invoke(new object[] { this.interactionObject });
+                    }
+                }
             }
         }
     }
 
+    [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
         public enum InteractionType { Ink, Pushable, Custom };
         public InteractionType type;
