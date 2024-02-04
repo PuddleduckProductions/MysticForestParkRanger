@@ -156,7 +156,8 @@ namespace Interactions {
 
             /// <summary>
             /// Set in <see cref="Interactions.CustomInteractionEditor"/>
-            /// Called every frame. Should return a boolean as to whether or not the object is still being interacted with.
+            /// Called every frame (in addition to, when space is first pressed).
+            /// Should return a boolean as to whether or not the object is still being interacted with.
             /// While returning true, the object will still be interacted with.
             /// Can take <see cref="Interaction"/> as an optional argument.
             /// Validated in <see cref="ValidateUpdateFunc(MethodInfo)"/>
@@ -174,6 +175,9 @@ namespace Interactions {
 
             public override void Interact() {
                 onInteract.Invoke();
+                if (!onUpdate.IsNull()) {
+                    CallUpdate();
+                }
             }
 
             /// <summary>
@@ -187,7 +191,7 @@ namespace Interactions {
                     func.GetParameters().Length == 1 && func.GetParameters()[0].ParameterType == typeof(Interaction));
             }
 
-            public override void Update() {
+            protected void CallUpdate() {
                 if (!onUpdate.IsNull()) {
                     var parameters = onUpdate.parameters;
                     if (parameters.Length == 0) {
@@ -196,6 +200,10 @@ namespace Interactions {
                         interactUpdate = (bool)onUpdate.Invoke(new object[] { this.interactionObject });
                     }
                 }
+            }
+
+            public override void Update() {
+                CallUpdate();
             }
         }
     }

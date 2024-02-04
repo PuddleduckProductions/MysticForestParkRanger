@@ -496,7 +496,7 @@ Transform:
   m_GameObject: {fileID: 295133919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.499273, y: 2.5837297, z: 4.496287}
+  m_LocalPosition: {x: 0.81, y: 2.5837297, z: 4.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -516,11 +516,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   behavior:
-    rid: 3483134198558752775
+    rid: 3483134199759896590
   references:
     version: 2
     RefIds:
-    - rid: 3483134198558752775
+    - rid: 3483134199759896590
       type: {class: CustomInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 295133921}
@@ -529,8 +529,8 @@ MonoBehaviour:
             m_Calls: []
         onUpdate:
           methodName: get_active
-          owningObject: {fileID: 534701002}
-        targetObject: {fileID: 534701002}
+          owningObject: {fileID: 1851728522}
+        targetObject: {fileID: 1851728522}
 --- !u!1 &375662619
 GameObject:
   m_ObjectHideFlags: 0
@@ -10196,6 +10196,7 @@ MonoBehaviour:
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 6779168486106575221}
+        inkKnot: 
 --- !u!33 &6811210235722508298
 MeshFilter:
   m_ObjectHideFlags: 0

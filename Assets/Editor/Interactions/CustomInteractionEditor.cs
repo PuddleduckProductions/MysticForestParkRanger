@@ -16,6 +16,7 @@ namespace Interactions {
 
         float baseHeight;
 
+        // TODO: Pretty sure this is busted on serialization update.
         int selectedFunc = 0;
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
@@ -67,12 +68,17 @@ namespace Interactions {
 
                         methods.Add(new GUIContent("No Function"));
 
+                        int i = 1;
                         foreach (var method in objectMethods) {
                             var paramString = "";
                             foreach (var param in method.GetParameters()) {
                                 paramString += param.ToString();
                             }
-                            methods.Add(new GUIContent($"{method.ReflectedType.Name} {method.ReturnType} {method.Name}({paramString})"));
+                            if (method.Name == onUpdate.FindPropertyRelative("methodName").stringValue) {
+                                selectedFunc = i;
+                            }
+                            i++;
+                            methods.Add(new GUIContent($"{method.ReflectedType.Name} - {method.Name}({paramString})"));
                         }
 
                         baseHeight += 20;

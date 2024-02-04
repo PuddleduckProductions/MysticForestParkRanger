@@ -58,7 +58,7 @@ namespace Utility {
 
         public void OnAfterDeserialize() {
             if (methodName != "" && owningObject != null) {
-                methodInfo = owningObject.GetType().GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance);
+                methodInfo = owningObject.GetType().GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
             }
         }
 
