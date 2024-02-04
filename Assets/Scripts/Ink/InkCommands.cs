@@ -15,18 +15,19 @@ namespace InkTools {
         /// </summary>
         public abstract class InkCommand {
             /// <summary>
-            /// Should we call <see cref="Update"/> every frame?
+            /// Consturct a command.
             /// </summary>
-            public virtual bool requiresUpdate {
-                get {
-                    return false;
-                }
-            }
-
+            /// <param name="args">Arguments passed in by ink.</param>
+            /// <param name="error">The error that an improperly constructed command returns.</param>
             public InkCommand(List<string> args, out string error) {
                 error = null;
             }
 
+            /// <summary>
+            /// How to use this. When the constructor has an error, this is returned as well.
+            /// Should be in the format: $commandName #&lt;requiredArg:type&gt; #&lt;requiredArg2&gt; #[optionalArg:type]
+            /// People reading the docs: read this!
+            /// </summary>
             public abstract string usage {
                 get;
             }
@@ -40,10 +41,10 @@ namespace InkTools {
             }
 
             /// <summary>
-            /// To call if requiresUpdate is true.
+            /// Called once on start, and then every frame after as long as it returns true.
             /// </summary>
-            /// <returns>If update has finished, and we can remove this command from the list.</returns>
-            public virtual bool Update() { return true; }
+            /// <returns>If we need to still update next frame.</returns>
+            public virtual bool Update() { return false; }
         }
 
         static class CommandHelper {
@@ -68,8 +69,7 @@ namespace InkTools {
             Vector3 positionToUse;
             GameObject toMove;
 
-            public override string usage => "$moveTo <objectToMove:string> <objectTarget:string|Vector3>";
-            public override bool requiresUpdate => true;
+            public override string usage => "$moveTo #<objectToMove:string> #<objectTarget:string|Vector3>";
 
             public moveTo(List<string> args, out string error) : base(args, out error) {
                 if (args.Count != 2) {
@@ -105,6 +105,30 @@ namespace InkTools {
                     return true;
                 }
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Stop the player from moving.
+        /// </summary>
+        public class enablePlayerMove : InkCommand {
+            public override string usage => "$enablePlayerMove #<enabled:bool>";
+
+            public enablePlayerMove(List<string> args, out string error) : base(args, out error) { 
+                if (args.Count != 1) {
+                    error = "Requires one arg of enabled:bool. Whether or not to allow the player to move.";
+                    return;
+                }
+
+                if (bool.TryParse(args[0], out bool enabled)) {
+                    var character = GameObject.FindGameObjectWithTag("Player").GetComponent<characterController>();
+                    character.moveEnabled = enabled;
+                } else {
+                    error = "enabled arg is not a bool.";
+                }
+            }
+            public override bool Update() {
+                return base.Update();
             }
         }
     }
@@ -143,7 +167,7 @@ namespace InkTools {
             if (commands.TryGetValue(commandName, out ConstructorInfo commandConstructor)) {
                 string error = null;
                 InkCommand command = (InkCommand)commandConstructor.Invoke(new object[] { tags, error });
-                if (error == null && command.requiresUpdate) {
+                if (error == null && command.Update()) {
                     commandUpdates.Add(command);
                 } else {
                     Debug.LogError("Error calling " + InkCommand.CommandWrite(commandName, tags) + ": " + error);
@@ -153,7 +177,7 @@ namespace InkTools {
 
         public void Update() {
             for (int i = commandUpdates.Count - 1; i >= 0; i--) {
-                if (commandUpdates[i].Update()) {
+                if (!commandUpdates[i].Update()) {
                     commandUpdates.RemoveAt(i);
                 }
             }
