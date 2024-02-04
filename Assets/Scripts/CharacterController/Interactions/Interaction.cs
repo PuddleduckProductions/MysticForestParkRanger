@@ -146,20 +146,24 @@ namespace Interactions {
             [SerializeField]
             protected UnityEvent onInteract = new UnityEvent();
 
+            public delegate bool OnUpdate(CustomInteraction invoker);
+
             [HideInInspector]
-            public SerializedMethod<CustomInteraction> onUpdate;
+            public SerializedMethod onUpdate;
             [HideInInspector]
             public UnityEngine.Object targetObject;
 
-            public override bool isInteracting => false;
+            public override bool isInteracting => interactUpdate;
+            protected bool interactUpdate = false;
 
             public override void Interact() {
                 onInteract.Invoke();
             }
 
-            /*public override void Update() {
-                onUpdate(ref interactRef);
-            }*/
+            public override void Update() {
+                if (!onUpdate.IsNull()) {
+                    interactUpdate = (bool)onUpdate.Invoke(targetObject, new object[] { this });
+            }
         }
     }
 

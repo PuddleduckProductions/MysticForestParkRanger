@@ -3,24 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Utility {
     [Serializable]
-    public class SerializedMethod<T> : ISerializationCallbackReceiver {
+    public class SerializedMethod : ISerializationCallbackReceiver {
         [SerializeField, HideInInspector]
         protected string methodName;
 
         protected Type owningObject;
         protected MethodInfo methodInfo;
 
+        public bool IsNull() {
+            return methodInfo == null;
+        }
+
         public void SetMethod(MethodInfo info) {
-            Assert.IsTrue(typeof(T) == info.ReflectedType, "Method " + info.Name + " does not belong to " + typeof(T).FullName);
             methodInfo = info;
         }
 
-        public void Invoke(T target, object[] parameters) {
-            methodInfo.Invoke(target, parameters);
+        public object Invoke(UnityEngine.Object target, object[] parameters) {
+            Debug.Assert(target.GetType() == methodInfo.ReflectedType, "Method " + methodInfo.Name + " does not belong to " + target.GetType().FullName);
+            return methodInfo.Invoke(target, parameters);
         }
 
         public void OnBeforeSerialize() {
