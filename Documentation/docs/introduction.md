@@ -12,7 +12,7 @@ A list of all the scenes contained in the build and a description of what they'r
 ## Writing your own Docs
 DocFX has some documentation on this subject. Write your articles in Documentation/docs as .md files. Then to add them to the table of contents in Documentation/docs: https://dotnet.github.io/docfx/docs/table-of-contents.html.
 
-Assets are exposed in the Documentation/assets folder, so place any items you need in there, then access them with `/assets/path/to/asset.mp4`.
+Assets are exposed in the Documentation/assets folder, so place any items you need in there, then access them with `~/assets/path/to/asset.mp4`.
 
 For instance, you can check the source for this .md file to see the relative path to the site icon:
 
