@@ -102,10 +102,7 @@ namespace InkTools {
 
             public override bool Update() {
                 toMove.transform.position = Vector3.Lerp(toMove.transform.position, positionToUse, Time.deltaTime);
-                if (Vector3.Distance(toMove.transform.position, positionToUse) <= 0.5f) {
-                    return true;
-                }
-                return false;
+                return Vector3.Distance(toMove.transform.position, positionToUse) > 0.5f;
             }
         }
 
@@ -185,11 +182,11 @@ namespace InkTools {
             for (int i = commandUpdates.Count - 1; i >= 0; i--) {
                 if (!commandUpdates[i].Update()) {
                     commandUpdates.RemoveAt(i);
+                    // If there are no more commands running, we can advance the story.
+                    if (commandUpdates.Count <= 0) {
+                        ISingleton<InkManager>.Instance.AdvanceStory();
+                    }
                 }
-            }
-            // If there are no more commands running, we can advance the story.
-            if (commandUpdates.Count <= 0) {
-                ISingleton<InkManager>.Instance.AdvanceStory();
             }
         }
     }
