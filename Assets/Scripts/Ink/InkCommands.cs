@@ -138,6 +138,11 @@ namespace InkTools {
         protected Dictionary<string, ConstructorInfo> commands = new Dictionary<string, ConstructorInfo>();
         List<InkCommand> commandUpdates = new List<InkCommand>();
 
+        public bool commandsActive {
+            get;
+            protected set;
+        }
+
         //static Type[] commandTypes;
         public InkCommands() {
             commands.Clear();
@@ -168,6 +173,7 @@ namespace InkTools {
                 if (error == null) {
                     // Advance to the next command if we're not currently running anything.
                     if (command.Update()) {
+                        commandsActive = true;
                         commandUpdates.Add(command);
                     } else {
                         ISingleton<InkManager>.Instance.AdvanceStory();
@@ -185,6 +191,7 @@ namespace InkTools {
                     // If there are no more commands running, we can advance the story.
                     if (commandUpdates.Count <= 0) {
                         ISingleton<InkManager>.Instance.AdvanceStory();
+                        commandsActive = false;
                     }
                 }
             }

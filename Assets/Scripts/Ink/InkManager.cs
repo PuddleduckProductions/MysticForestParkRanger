@@ -78,6 +78,9 @@ namespace InkTools {
         }
 
         public void AdvanceStory() {
+            if (commands.commandsActive) {
+                return;
+            }
             if (story.canContinue) {
                 EvaluateStory();
             } else {
