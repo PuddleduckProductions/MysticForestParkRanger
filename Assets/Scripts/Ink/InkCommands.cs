@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using Utility;
 
 namespace InkTools {
     namespace InkCommandDef {
@@ -167,8 +168,13 @@ namespace InkTools {
             if (commands.TryGetValue(commandName, out ConstructorInfo commandConstructor)) {
                 string error = null;
                 InkCommand command = (InkCommand)commandConstructor.Invoke(new object[] { tags, error });
-                if (error == null && command.Update()) {
-                    commandUpdates.Add(command);
+                if (error == null) {
+                    // Advance to the next command if we're not currently running anything.
+                    if (command.Update()) {
+                        commandUpdates.Add(command);
+                    } else {
+                        ISingleton<InkManager>.Instance.AdvanceStory();
+                    }
                 } else {
                     Debug.LogError("Error calling " + InkCommand.CommandWrite(commandName, tags) + ": " + error);
                 }
@@ -180,6 +186,10 @@ namespace InkTools {
                 if (!commandUpdates[i].Update()) {
                     commandUpdates.RemoveAt(i);
                 }
+            }
+            // If there are no more commands running, we can advance the story.
+            if (commandUpdates.Count <= 0) {
+                ISingleton<InkManager>.Instance.AdvanceStory();
             }
         }
     }
