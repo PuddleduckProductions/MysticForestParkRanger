@@ -49,7 +49,13 @@ namespace Interactions {
         /// </summary>
         [Serializable]
         public class InkInteraction : InteractionBehavior {
-            public InkInteraction(Interaction parent) : base(parent) { }
+            /// <summary>
+            /// Knot to start on interaction.
+            /// </summary>
+            public string inkKnot;
+            public InkInteraction(Interaction parent) : base(parent) {
+                inkKnot = $"interact_{parent.name}";
+            }
 
             /// <summary>
             /// Active as long as <see cref="InkManager.storyActive"/> is active.
@@ -61,7 +67,7 @@ namespace Interactions {
             /// TODO: Make customizable
             /// </summary>
             public override void Interact() {
-                ISingleton<InkManager>.Instance.StartDialog("interact_" + interactionObject.name);
+                ISingleton<InkManager>.Instance.StartDialog(inkKnot);
                 ISingleton<UIController>.Instance.onInteract.AddListener(InteractAdvance);
                 ISingleton<InkManager>.Instance.dialogEnd.AddListener(EndDialog);
             }
@@ -196,7 +202,7 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { Ink, Pushable, Custom };
+        public enum InteractionType { InkInteraction, PushableInteraction, CustomInteraction };
         public InteractionType type;
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;
