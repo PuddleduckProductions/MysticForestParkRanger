@@ -65,6 +65,8 @@ namespace InkTools {
             }
         }
 
+        public bool hasInkJSON => inkJSONAsset != null;
+
         public bool PathExists(string pathName) {
             return story.ContentAtPath(new Path(pathName)).obj != null;
         }

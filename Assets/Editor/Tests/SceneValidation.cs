@@ -36,8 +36,13 @@ namespace SceneValidation {
             }
         }
 
-        public void OneInkManager() {
+        [Test]
+        public void ValidateInkManager() {
             Assert.IsTrue(GameObject.FindObjectsOfType<InkManager>().Length <= 1, "More than one InkManager in the scene.");
+            var manager = GameObject.FindObjectOfType<InkManager>();
+            if (manager != null) {
+                Assert.IsTrue(manager.hasInkJSON);
+            }
         }
 
         [Test]
