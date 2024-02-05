@@ -70,8 +70,6 @@
                     "action": "walking",
                     "isComposite": false,
                     "isPartOfComposite": true
-<<<<<<< Updated upstream
-=======
                 },
                 {
                     "name": "2D Vector",
@@ -138,7 +136,6 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
->>>>>>> Stashed changes
                 }
             ]
         }
