@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 68aaa6caddcdcbd4186b04f816f3c293
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inkJSONAsset: {instanceID: 0}
+  - dialog: {fileID: 5785747984690703192, guid: 6a81b87bed6ee054d842b0d60e9ce44d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

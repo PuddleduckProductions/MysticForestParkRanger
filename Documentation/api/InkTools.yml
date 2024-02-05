@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: InkTools
+  commentId: N:InkTools
+  id: InkTools
+  children:
+  - InkTools.DialogRenderer
+  - InkTools.InkCommandDef
+  - InkTools.InkCommands
+  - InkTools.InkManager
+  - InkTools.InkManager.DialogLine
+  langs:
+  - csharp
+  - vb
+  name: InkTools
+  nameWithType: InkTools
+  fullName: InkTools
+  type: Namespace
+  assemblies:
+  - ScriptAssembly
+references:
+- uid: InkTools.InkCommandDef
+  commentId: N:InkTools.InkCommandDef
+  href: InkTools.html
+  name: InkTools.InkCommandDef
+  nameWithType: InkTools.InkCommandDef
+  fullName: InkTools.InkCommandDef
+  spec.csharp:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html
+  spec.vb:
+  - uid: InkTools
+    name: InkTools
+    href: InkTools.html
+  - name: .
+  - uid: InkTools.InkCommandDef
+    name: InkCommandDef
+    href: InkTools.InkCommandDef.html
+- uid: InkTools.DialogRenderer
+  commentId: T:InkTools.DialogRenderer
+  parent: InkTools
+  href: InkTools.DialogRenderer.html
+  name: DialogRenderer
+  nameWithType: DialogRenderer
+  fullName: InkTools.DialogRenderer
+- uid: InkTools.InkCommands
+  commentId: T:InkTools.InkCommands
+  href: InkTools.InkCommands.html
+  name: InkCommands
+  nameWithType: InkCommands
+  fullName: InkTools.InkCommands
+- uid: InkTools.InkManager
+  commentId: T:InkTools.InkManager
+  href: InkTools.InkManager.html
+  name: InkManager
+  nameWithType: InkManager
+  fullName: InkTools.InkManager
+- uid: InkTools.InkManager.DialogLine
+  commentId: T:InkTools.InkManager.DialogLine
+  parent: InkTools
+  href: InkTools.InkManager.html
+  name: InkManager.DialogLine
+  nameWithType: InkManager.DialogLine
+  fullName: InkTools.InkManager.DialogLine
+  spec.csharp:
+  - uid: InkTools.InkManager
+    name: InkManager
+    href: InkTools.InkManager.html
+  - name: .
+  - uid: InkTools.InkManager.DialogLine
+    name: DialogLine
+    href: InkTools.InkManager.DialogLine.html
+  spec.vb:
+  - uid: InkTools.InkManager
+    name: InkManager
+    href: InkTools.InkManager.html
+  - name: .
+  - uid: InkTools.InkManager.DialogLine
+    name: DialogLine
+    href: InkTools.InkManager.DialogLine.html
+- uid: InkTools
+  commentId: N:InkTools
+  href: InkTools.html
+  name: InkTools
+  nameWithType: InkTools
+  fullName: InkTools
