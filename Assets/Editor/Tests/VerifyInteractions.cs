@@ -5,6 +5,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using Interactions;
 using UnityEditor;
+using Interactions.Behaviors;
 
 namespace InteractionTests {
     [TestFixture]
@@ -30,6 +31,19 @@ namespace InteractionTests {
             foreach (var interaction in interactions) {
                 Assert.IsTrue(interaction.HasInteractionBehavior(),
                     $"{EditorSceneManager.GetActiveScene().name} invalid interaction {interaction.type} on {interaction.name}");
+            }
+        }
+
+        [Test]
+        public void ValidateCustomInteractions() {
+            var interactions = GameObject.FindObjectsOfType<Interaction>();
+            foreach (var interaction in interactions) {
+                if (interaction.GetType() == typeof(CustomInteraction)) {
+                    CustomInteraction c = (CustomInteraction)interaction.behavior;
+                    Assert.IsNotNull(c.targetObject);
+                    Assert.IsNotNull(c.onUpdate);
+                    Assert.IsFalse(c.onUpdate.IsNull());
+                }
             }
         }
 
