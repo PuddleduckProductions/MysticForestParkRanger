@@ -10135,6 +10135,7 @@ MonoBehaviour:
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 6779168486106575221}
+        inkKnot: 
 --- !u!33 &6811210235722508298
 MeshFilter:
   m_ObjectHideFlags: 0

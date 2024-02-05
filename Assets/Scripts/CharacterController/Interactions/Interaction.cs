@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Utility;
 using InkTools;
+using System.Reflection;
 
 namespace Interactions {
     namespace Behaviors {
@@ -48,7 +49,13 @@ namespace Interactions {
         /// </summary>
         [Serializable]
         public class InkInteraction : InteractionBehavior {
-            public InkInteraction(Interaction parent) : base(parent) { }
+            /// <summary>
+            /// Knot to start on interaction.
+            /// </summary>
+            public string inkKnot;
+            public InkInteraction(Interaction parent) : base(parent) {
+                inkKnot = $"interact_{parent.name}";
+            }
 
             /// <summary>
             /// Active as long as <see cref="InkManager.storyActive"/> is active.
@@ -60,7 +67,7 @@ namespace Interactions {
             /// TODO: Make customizable
             /// </summary>
             public override void Interact() {
-                ISingleton<InkManager>.Instance.StartDialog("interact_" + interactionObject.name);
+                ISingleton<InkManager>.Instance.StartDialog(inkKnot);
                 ISingleton<UIController>.Instance.onInteract.AddListener(InteractAdvance);
                 ISingleton<InkManager>.Instance.dialogEnd.AddListener(EndDialog);
             }
@@ -136,28 +143,74 @@ namespace Interactions {
         /// </summary>
         [Serializable]
         public class CustomInteraction : InteractionBehavior {
+
             public CustomInteraction(Interaction parent) : base(parent) { }
 
             /// <summary>
             /// Functions to call when space is pressed on this object.
+            /// Called once.
             /// </summary>
             [SerializeField]
+            [Tooltip("Functions to call when space is pressed\non this object. Called once.")]
             protected UnityEvent onInteract = new UnityEvent();
 
-            public override bool isInteracting => false;
+            /// <summary>
+            /// Set in <see cref="Interactions.CustomInteractionEditor"/>
+            /// Called every frame (in addition to, when space is first pressed).
+            /// Should return a boolean as to whether or not the object is still being interacted with.
+            /// While returning true, the object will still be interacted with.
+            /// Can take <see cref="Interaction"/> as an optional argument.
+            /// Validated in <see cref="ValidateUpdateFunc(MethodInfo)"/>
+            /// </summary>
+            [HideInInspector, SerializeField, Tooltip("Called every frame. " +
+                "Should return a boolean as to whether or not the object is still being interacted with. " +
+                "While returning true, the object will still be interacted with. Can take Interaction as an optional argument.")]
+            public SerializedMethod onUpdate = new SerializedMethod();
+
+            [HideInInspector, Tooltip("Object to call OnUpdate() on.")]
+            public UnityEngine.Object targetObject;
+
+            public override bool isInteracting => interactUpdate;
+            protected bool interactUpdate = false;
 
             public override void Interact() {
                 onInteract.Invoke();
+                if (!onUpdate.IsNull()) {
+                    CallUpdate();
+                }
             }
 
-            /*public override void Update() {
-                onUpdate(ref interactRef);
-            }*/
+            /// <summary>
+            /// Used in <see cref="Interactions.CustomInteractionEditor"/> to validate functions.
+            /// </summary>
+            /// <param name="func">The function to validate.</param>
+            /// <returns>Whether or not <see cref="Update"/> will be able to call this function.</returns>
+            public static bool ValidateUpdateFunc(MethodInfo func) {
+                return func.ReturnParameter.ParameterType == typeof(bool) &&
+                    (func.GetParameters().Length == 0 || 
+                    func.GetParameters().Length == 1 && func.GetParameters()[0].ParameterType == typeof(Interaction));
+            }
+
+            protected void CallUpdate() {
+                if (!onUpdate.IsNull()) {
+                    var parameters = onUpdate.parameters;
+                    if (parameters.Length == 0) {
+                        interactUpdate = (bool)onUpdate.Invoke(new object[0]);
+                    } else {
+                        interactUpdate = (bool)onUpdate.Invoke(new object[] { this.interactionObject });
+                    }
+                }
+            }
+
+            public override void Update() {
+                CallUpdate();
+            }
         }
     }
 
+    [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { Ink, Pushable, Custom };
+        public enum InteractionType { InkInteraction, PushableInteraction, CustomInteraction };
         public InteractionType type;
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;

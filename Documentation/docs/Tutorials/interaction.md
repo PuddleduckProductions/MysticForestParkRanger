@@ -22,13 +22,16 @@ If you find a bug, please report it in [issues](https://github.com/PuddleduckPro
 You have two options. Custom interactions, or going into the code and adding your own [InteractionBehavior in Interactions.Behaviors](~/api/Interactions.Behaviors.yml).
 
 #### Custom Interactions
-WIP. Not finished. Will be sometime this Sprint!
+If you want to add a one-off custom interaction, go ahead! You can select CustomInteraction, and then define some custom behavior to use: [Interactions.Behaviors.CustomInteraction](~/api/Interactions.Behaviors.CustomInteraction.yml).
+
+If you want something a more long-term solution (i.e., re-usable behaviors) read on:
 
 #### InteractionBehavior
 You add your own scripted InteractionBehavior thusly:
 
 1. Create a subclass of [InteractionBehavior](~/api/Interactions.Behaviors.InteractionBehavior.yml)
-2. Go to [InteractionEditor](~/api/Interactions.InteractionEditor.yml) and under `CreateBehavior`, add your custom type.
+2. Go to [Interaction.InteractionType](~/api/Interactions.Interaction.yml#InteractionType) and add your class name there as an enumerator.
+3. Your class should now appear in the dropdown.
 
 ## Setting up Interactions
 If whatever scene you're working in doesn't have the spacebar appearing over interactions, you need to add interactions.

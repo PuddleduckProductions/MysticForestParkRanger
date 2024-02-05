@@ -78,6 +78,9 @@ namespace InkTools {
         }
 
         public void AdvanceStory() {
+            if (commands.commandsActive) {
+                return;
+            }
             if (story.canContinue) {
                 EvaluateStory();
             } else {
@@ -90,8 +93,8 @@ namespace InkTools {
         protected void EvaluateStory() {
             string text = story.Continue();
             if (text.Length > 0 && text[0] == '$') {
+                // Wait to evaluate our commands, and let them advance the story.
                 commands.Evaluate(text, story.currentTags);
-                AdvanceStory();
             } else {
                 DialogLine line = LineFromString(text);
                 DrawDialog(line);

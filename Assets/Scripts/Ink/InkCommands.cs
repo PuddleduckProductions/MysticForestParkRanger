@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using Utility;
 
 namespace InkTools {
     namespace InkCommandDef {
@@ -15,18 +16,19 @@ namespace InkTools {
         /// </summary>
         public abstract class InkCommand {
             /// <summary>
-            /// Should we call <see cref="Update"/> every frame?
+            /// Consturct a command.
             /// </summary>
-            public virtual bool requiresUpdate {
-                get {
-                    return false;
-                }
-            }
-
+            /// <param name="args">Arguments passed in by ink.</param>
+            /// <param name="error">The error that an improperly constructed command returns.</param>
             public InkCommand(List<string> args, out string error) {
                 error = null;
             }
 
+            /// <summary>
+            /// How to use this. When the constructor has an error, this is returned as well.
+            /// Should be in the format: $commandName #&lt;requiredArg:type&gt; #&lt;requiredArg2&gt; #[optionalArg:type]
+            /// People reading the docs: read this!
+            /// </summary>
             public abstract string usage {
                 get;
             }
@@ -40,10 +42,10 @@ namespace InkTools {
             }
 
             /// <summary>
-            /// To call if requiresUpdate is true.
+            /// Called once on start, and then every frame after as long as it returns true.
             /// </summary>
-            /// <returns>If update has finished, and we can remove this command from the list.</returns>
-            public virtual bool Update() { return true; }
+            /// <returns>If we need to still update next frame.</returns>
+            public virtual bool Update() { return false; }
         }
 
         static class CommandHelper {
@@ -68,8 +70,7 @@ namespace InkTools {
             Vector3 positionToUse;
             GameObject toMove;
 
-            public override string usage => "$moveTo <objectToMove:string> <objectTarget:string|Vector3>";
-            public override bool requiresUpdate => true;
+            public override string usage => "$moveTo #<objectToMove:string> #<objectTarget:string|Vector3>";
 
             public moveTo(List<string> args, out string error) : base(args, out error) {
                 if (args.Count != 2) {
@@ -101,10 +102,31 @@ namespace InkTools {
 
             public override bool Update() {
                 toMove.transform.position = Vector3.Lerp(toMove.transform.position, positionToUse, Time.deltaTime);
-                if (Vector3.Distance(toMove.transform.position, positionToUse) <= 0.5f) {
-                    return true;
+                return Vector3.Distance(toMove.transform.position, positionToUse) > 0.5f;
+            }
+        }
+
+        /// <summary>
+        /// Stop the player from moving.
+        /// </summary>
+        public class enablePlayerMove : InkCommand {
+            public override string usage => "$enablePlayerMove #<enabled:bool>";
+
+            public enablePlayerMove(List<string> args, out string error) : base(args, out error) { 
+                if (args.Count != 1) {
+                    error = "Requires one arg of enabled:bool. Whether or not to allow the player to move.";
+                    return;
                 }
-                return false;
+
+                if (bool.TryParse(args[0], out bool enabled)) {
+                    var character = GameObject.FindGameObjectWithTag("Player").GetComponent<characterController>();
+                    character.moveEnabled = enabled;
+                } else {
+                    error = "enabled arg is not a bool.";
+                }
+            }
+            public override bool Update() {
+                return base.Update();
             }
         }
     }
@@ -115,6 +137,11 @@ namespace InkTools {
     public class InkCommands {
         protected Dictionary<string, ConstructorInfo> commands = new Dictionary<string, ConstructorInfo>();
         List<InkCommand> commandUpdates = new List<InkCommand>();
+
+        public bool commandsActive {
+            get;
+            protected set;
+        }
 
         //static Type[] commandTypes;
         public InkCommands() {
@@ -143,8 +170,14 @@ namespace InkTools {
             if (commands.TryGetValue(commandName, out ConstructorInfo commandConstructor)) {
                 string error = null;
                 InkCommand command = (InkCommand)commandConstructor.Invoke(new object[] { tags, error });
-                if (error == null && command.requiresUpdate) {
-                    commandUpdates.Add(command);
+                if (error == null) {
+                    // Advance to the next command if we're not currently running anything.
+                    if (command.Update()) {
+                        commandsActive = true;
+                        commandUpdates.Add(command);
+                    } else {
+                        ISingleton<InkManager>.Instance.AdvanceStory();
+                    }
                 } else {
                     Debug.LogError("Error calling " + InkCommand.CommandWrite(commandName, tags) + ": " + error);
                 }
@@ -153,8 +186,13 @@ namespace InkTools {
 
         public void Update() {
             for (int i = commandUpdates.Count - 1; i >= 0; i--) {
-                if (commandUpdates[i].Update()) {
+                if (!commandUpdates[i].Update()) {
                     commandUpdates.RemoveAt(i);
+                    // If there are no more commands running, we can advance the story.
+                    if (commandUpdates.Count <= 0) {
+                        ISingleton<InkManager>.Instance.AdvanceStory();
+                        commandsActive = false;
+                    }
                 }
             }
         }

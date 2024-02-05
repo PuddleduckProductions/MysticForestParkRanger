@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class characterController : MonoBehaviour
 {
+    public bool moveEnabled = true;
     CharacterController c;
     Vector2 input;
     //private Animator animator;
@@ -18,7 +19,9 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        c.Move(new Vector3(input.x*Time.deltaTime,0,input.y*Time.deltaTime));
+        if (moveEnabled) {
+            c.Move(new Vector3(input.x * Time.deltaTime, 0, input.y * Time.deltaTime));
+        }
     
     }
     void OnWalking(InputValue value)
