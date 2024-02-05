@@ -47,6 +47,8 @@ jobs:
   build:
     name: Build MysticForestParkRanger
     runs-on: ubuntu-latest
+    # Wait for tests so we don't waste a build.
+    needs: test
     steps:
       # Checkout
       - name: Checkout repository
