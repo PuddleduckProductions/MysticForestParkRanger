@@ -7,7 +7,8 @@ public class characterController : MonoBehaviour
 {
     CharacterController c;
     Vector2 input;
-    //private Animator animator;
+    public float movementSpeed = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,15 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        c.Move(new Vector3(input.x*Time.deltaTime,0,input.y*Time.deltaTime));
-    
+        c.Move(new Vector3(input.x*3f*Time.deltaTime,0,input.y*3f*Time.deltaTime));
+        Vector3 horizontalVelocity = c.velocity;
+        horizontalVelocity = new Vector3(c.velocity.x, 0, c.velocity.z);
+
+        float horizontalSpeed = horizontalVelocity.magnitude;
+
+        float verticalSpeed = c.velocity.y;
+
+        float overallSpeed = c.velocity.magnitude;
     }
     void OnWalking(InputValue value)
     {
