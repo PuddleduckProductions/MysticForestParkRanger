@@ -6,14 +6,16 @@ using UnityEngine;
 using Interactions;
 using UnityEditor;
 using Interactions.Behaviors;
+using InkTools;
+using Utility;
 
-namespace InteractionTests {
+namespace SceneValidation {
     [TestFixture]
     [TestFixtureSource(typeof(ScenesProvider))]
-    public class VerifyInteractions {
+    public class SceneValidation {
         private string scenePath;
 
-        public VerifyInteractions(string scenePath) {
+        public SceneValidation(string scenePath) {
             this.scenePath = scenePath;
         } 
 
@@ -34,6 +36,10 @@ namespace InteractionTests {
             }
         }
 
+        public void OneInkManager() {
+            Assert.IsTrue(GameObject.FindObjectsOfType<InkManager>().Length <= 1, "More than one InkManager in the scene.");
+        }
+
         [Test]
         public void ValidateCustomInteractions() {
             var interactions = GameObject.FindObjectsOfType<Interaction>();
@@ -43,6 +49,19 @@ namespace InteractionTests {
                     Assert.IsNotNull(c.targetObject);
                     Assert.IsNotNull(c.onUpdate);
                     Assert.IsFalse(c.onUpdate.IsNull());
+                }
+            }
+        }
+
+        [Test]
+        public void ValidateInkInteractions() {
+            var interactions = GameObject.FindObjectsOfType<Interaction>();
+            foreach (var interaction in interactions) {
+                if (interaction.GetType() == typeof(InkInteraction)) {
+                    InkInteraction i = (InkInteraction)interaction.behavior;
+                    var manager = GameObject.FindFirstObjectByType<InkManager>();
+                    Assert.IsNotNull(manager);
+                    manager.PathExists(i.inkKnot);
                 }
             }
         }
