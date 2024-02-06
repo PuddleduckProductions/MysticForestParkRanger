@@ -115,6 +115,8 @@ namespace Interactions {
                 isPushing = true;
                 ISingleton<UIController>.Instance.onInteract.AddListener(ReleasePush);
                 offset = interactionObject.transform.position - player.transform.position;
+                var Collider = interactionObject.GetComponent<Collider>();
+                Collider.enabled = false;
             }
 
             /// <summary>
@@ -125,6 +127,8 @@ namespace Interactions {
                 if (pressed) {
                     isPushing = false;
                     ISingleton<UIController>.Instance.onInteract.RemoveListener(ReleasePush);
+                    var Collider = interactionObject.GetComponent<Collider>();
+                    Collider.enabled = true;
                 }
             }
 
