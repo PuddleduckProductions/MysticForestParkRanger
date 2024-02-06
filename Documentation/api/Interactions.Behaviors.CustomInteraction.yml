@@ -23,7 +23,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CustomInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 136
+    startLine: 143
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -49,6 +49,7 @@ items:
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Update
+  - Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -78,7 +79,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 138
+    startLine: 145
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -110,7 +111,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 144
+    startLine: 151
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -149,7 +150,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 146
+    startLine: 153
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -186,7 +187,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 148
+    startLine: 155
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -266,6 +267,31 @@ references:
     name: Update
     href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
   - name: (
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
+  name: ChainInteraction(Interaction)
+  nameWithType: InteractionBehavior.ChainInteraction(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+    name: ChainInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+    name: ChainInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)

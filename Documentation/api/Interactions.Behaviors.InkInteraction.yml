@@ -24,7 +24,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 48
+    startLine: 55
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -45,6 +45,7 @@ items:
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Update
+  - Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -74,7 +75,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 50
+    startLine: 57
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -106,7 +107,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 55
+    startLine: 62
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -138,7 +139,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 61
+    startLine: 68
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -170,7 +171,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndDialog
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 67
+    startLine: 74
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -196,7 +197,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractAdvance
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 71
+    startLine: 78
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -276,6 +277,31 @@ references:
     name: Update
     href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
   - name: (
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
+  name: ChainInteraction(Interaction)
+  nameWithType: InteractionBehavior.ChainInteraction(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+    name: ChainInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
+    name: ChainInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
