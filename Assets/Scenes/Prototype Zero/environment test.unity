@@ -1651,7 +1651,7 @@ PrefabInstance:
       addedObject: {fileID: 1013812576}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4410249516146352786, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 1256775226}
   m_SourcePrefab: {fileID: 100100000, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
 --- !u!1 &715202785
@@ -9227,7 +9227,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093743576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e444c4960e6907488a4725445bf64c8, type: 3}
   m_Name: 
