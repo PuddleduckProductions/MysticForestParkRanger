@@ -24,9 +24,9 @@ public class characterController : MonoBehaviour
         Quaternion simplifiedRot = Quaternion.AngleAxis(camera.transform.eulerAngles.y, Vector3.up);
         Vector3 simplifiedForward = simplifiedRot * Vector3.forward;
         Vector3 simplifiedRight = simplifiedRot * Vector3.right;
-        Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x) * movementSpeed;
+        Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x);
         move.Normalize();
-        c.SimpleMove(move);
+        c.SimpleMove(move * movementSpeed);
     }
     void OnWalking(InputValue value)
     {
