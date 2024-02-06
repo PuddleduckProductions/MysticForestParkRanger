@@ -8,7 +8,9 @@ items:
   - Interactions.Behaviors.CustomInteraction
   - Interactions.Behaviors.InkInteraction
   - Interactions.Behaviors.InteractionBehavior
+  - Interactions.Behaviors.PickAndPutInteraction
   - Interactions.Behaviors.PushableInteraction
+  - Interactions.Behaviors.PutTrigger
   langs:
   - csharp
   - vb
@@ -39,12 +41,24 @@ references:
   name: InteractionBehavior
   nameWithType: InteractionBehavior
   fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Behaviors.PickAndPutInteraction
+  commentId: T:Interactions.Behaviors.PickAndPutInteraction
+  href: Interactions.Behaviors.PickAndPutInteraction.html
+  name: PickAndPutInteraction
+  nameWithType: PickAndPutInteraction
+  fullName: Interactions.Behaviors.PickAndPutInteraction
 - uid: Interactions.Behaviors.PushableInteraction
   commentId: T:Interactions.Behaviors.PushableInteraction
   href: Interactions.Behaviors.PushableInteraction.html
   name: PushableInteraction
   nameWithType: PushableInteraction
   fullName: Interactions.Behaviors.PushableInteraction
+- uid: Interactions.Behaviors.PutTrigger
+  commentId: T:Interactions.Behaviors.PutTrigger
+  href: Interactions.Behaviors.PutTrigger.html
+  name: PutTrigger
+  nameWithType: PutTrigger
+  fullName: Interactions.Behaviors.PutTrigger
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
   href: Interactions.html

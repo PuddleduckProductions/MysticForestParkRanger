@@ -30,7 +30,7 @@ namespace Interactions {
 
         void Interact(bool interacted) {
             interactPressed = interacted;
-            if (interactPressed && CanInteract()) {
+            if (interactPressed && closestInteraction != null && CanInteract()) {
                 closestInteraction.Interact();
             }
         }
@@ -39,25 +39,34 @@ namespace Interactions {
             return closestInteraction == null || !closestInteraction.IsInteracting();
         }
 
-        // Update is called once per frame
-        void Update() {
-            var isActive = false;
-            if (CanInteract()) {
-                closestInteraction = null;
-                // TODO: Fix so that objects get filtered better without having to run this each loop.
-                foreach (Interaction interaction in interactionsInScene) {
-                    if (interaction != null && interaction.gameObject.activeInHierarchy) {
-                        var dist = Vector3.Distance(player.transform.position, interaction.transform.position);
-                        if (dist <= interactionRange) {
-                            isActive = true;
-                            interactionButton.position = mainCamera.WorldToScreenPoint(interaction.transform.position);
-                            closestInteraction = interaction;
-                            break;
-                        }
+        public Interaction FindClosestInteraction() {
+            Interaction closest = null;
+            // TODO: Fix so that objects get filtered better without having to run this each loop.
+            foreach (Interaction interaction in interactionsInScene) {
+                if (interaction != null && interaction.gameObject.activeInHierarchy && interaction.interactionEnabled) {
+                    var dist = Vector3.Distance(player.transform.position, interaction.transform.position);
+                    if (dist <= interactionRange) {
+                        interactionButton.position = mainCamera.WorldToScreenPoint(interaction.transform.position);
+                        interactionButton.gameObject.SetActive(true);
+                        closest = interaction;
+                        break;
                     }
                 }
             }
-            interactionButton.gameObject.SetActive(isActive);
+            if (closest == null) {
+                interactionButton.gameObject.SetActive(false);
+            }
+            return closest;
+        }
+
+        // Update is called once per frame
+        void Update() {
+            if (closestInteraction == null || closestInteraction.interactionEnabled) {
+                interactionButton.gameObject.SetActive(false);
+            }
+            if (CanInteract()) {
+                closestInteraction = FindClosestInteraction();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ _layout: landing
 # Mystic Forest Park Ranger
 Welcome to the documentation for MysticForestParkRanger!
 
-If you're a programmer, you might want to check the [API](/api).
+If you're a programmer, you might want to check the API.
 
 For tutorials, check the [Docs](docs/introduction.md).
 

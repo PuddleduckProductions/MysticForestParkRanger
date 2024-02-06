@@ -7,3 +7,7 @@ items:
       href: Tutorials/interaction.md
 - name: Scenes
   href: scenes.md
+- name: Assets
+  href: assets.md
+- name: Github Actions
+  href: github-actions.md

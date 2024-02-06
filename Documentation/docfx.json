@@ -44,8 +44,7 @@
       "_appLogoPath": "assets/images/icon.png",
       "_appFaviconPath": "assets/images/icon.png",
       "_gitUrlPattern": "https://github.com/PuddleduckProductions/MysticForestParkRanger",
-      "_enableSearch": true,
-      "pdf": true
+      "_enableSearch": true
     }
   }
 }

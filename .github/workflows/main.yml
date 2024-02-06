@@ -1,6 +1,7 @@
 name: Unity Build and Test
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -17,9 +18,10 @@ permissions:
   contents: write
 
 jobs:
-  build:
-    name: Build MysticForestParkRanger
+  test:
+    name: Test MysticForestParkRanger
     runs-on: ubuntu-latest
+
     steps:
       # Checkout
       - name: Checkout repository
@@ -32,7 +34,6 @@ jobs:
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
-
       # Test
       - name: Run tests
         uses: game-ci/unity-test-runner@v4
@@ -42,6 +43,24 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  build:
+    name: Build MysticForestParkRanger
+    runs-on: ubuntu-latest
+    # Wait for tests so we don't waste a build.
+    needs: test
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Cache
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
 
       # Build
       - name: Build project
