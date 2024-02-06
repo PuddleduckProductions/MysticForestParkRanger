@@ -30,7 +30,7 @@ namespace Interactions {
 
         void Interact(bool interacted) {
             interactPressed = interacted;
-            if (interactPressed && CanInteract()) {
+            if (interactPressed && closestInteraction != null && CanInteract()) {
                 closestInteraction.Interact();
             }
         }
