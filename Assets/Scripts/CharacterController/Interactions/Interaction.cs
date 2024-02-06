@@ -224,6 +224,11 @@ namespace Interactions {
     } 
 
     public class Interaction : MonoBehaviour {
+        /// <summary>
+        /// Should we allow interaction with this object?
+        /// If this is set to false while <see cref="IsInteracting"/> is true,
+        /// this will allow control over <see cref="InteractionManager.interactionButton"/>
+        /// </summary>
         public bool interactionEnabled = true;
         public enum InteractionType { Ink, Pushable, PickAndPut, PutTrigger, Custom };
         public InteractionType type;

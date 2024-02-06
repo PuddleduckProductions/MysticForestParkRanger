@@ -46,25 +46,26 @@ namespace Interactions {
                 if (interaction != null && interaction.gameObject.activeInHierarchy && interaction.interactionEnabled) {
                     var dist = Vector3.Distance(player.transform.position, interaction.transform.position);
                     if (dist <= interactionRange) {
-                        interactionButton.position = mainCamera.WorldToScreenPoint(closest.transform.position);
+                        interactionButton.position = mainCamera.WorldToScreenPoint(interaction.transform.position);
                         interactionButton.gameObject.SetActive(true);
                         closest = interaction;
                         break;
                     }
                 }
             }
+            if (closest == null) {
+                interactionButton.gameObject.SetActive(false);
+            }
             return closest;
         }
 
         // Update is called once per frame
         void Update() {
+            if (closestInteraction == null || closestInteraction.interactionEnabled) {
+                interactionButton.gameObject.SetActive(false);
+            }
             if (CanInteract()) {
                 closestInteraction = FindClosestInteraction();
-                if (closestInteraction == null) {
-                    interactionButton.gameObject.SetActive(false);
-                }
-            } else if (interactionButton.gameObject.activeInHierarchy) {
-                interactionButton.gameObject.SetActive(false);
             }
         }
     }
