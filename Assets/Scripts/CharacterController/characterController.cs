@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class characterController : MonoBehaviour
 {
     CharacterController c;
+    Camera camera;
     Vector2 input;
     public float movementSpeed = 3f;
 
@@ -13,21 +14,19 @@ public class characterController : MonoBehaviour
     void Start()
     {
         c = GetComponent<CharacterController>();
+        camera = Camera.main;
         //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        c.Move(new Vector3(input.x*3f*Time.deltaTime,0,input.y*3f*Time.deltaTime));
-        Vector3 horizontalVelocity = c.velocity;
-        horizontalVelocity = new Vector3(c.velocity.x, 0, c.velocity.z);
-
-        float horizontalSpeed = horizontalVelocity.magnitude;
-
-        float verticalSpeed = c.velocity.y;
-
-        float overallSpeed = c.velocity.magnitude;
+        Quaternion simplifiedRot = Quaternion.AngleAxis(camera.transform.eulerAngles.y, Vector3.up);
+        Vector3 simplifiedForward = simplifiedRot * Vector3.forward;
+        Vector3 simplifiedRight = simplifiedRot * Vector3.right;
+        Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x) * movementSpeed;
+        move.Normalize();
+        c.SimpleMove(move);
     }
     void OnWalking(InputValue value)
     {

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4450663657350451911}
   - component: {fileID: 1793101599076300955}
   - component: {fileID: 5888951519526463918}
-  - component: {fileID: 3978234326120076567}
   - component: {fileID: 6814165541994301264}
   - component: {fileID: 23044552430943317}
   - component: {fileID: 2437757445079718294}
@@ -88,29 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3978234326120076567
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410249516146352786}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &6814165541994301264
 CharacterController:
   m_ObjectHideFlags: 0
@@ -183,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16afe5e72487a44bd98446cfabc224aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 3
 --- !u!114 &910300882131061185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4a932751f435545ae8675be6967b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6313193292897490927
 GameObject:
   m_ObjectHideFlags: 0
