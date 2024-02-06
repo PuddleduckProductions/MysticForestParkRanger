@@ -180,6 +180,8 @@ namespace Interactions {
                 isPicking = true;
                 interactionObject.interactionEnabled = false;
                 ISingleton<UIController>.Instance.onInteract.AddListener(PlaceDown);
+                var Collider = interactionObject.GetComponent<Collider>();
+                Collider.enabled = false;
             }
 
             Interaction closest = null;
@@ -189,11 +191,14 @@ namespace Interactions {
                     interactionObject.transform.position = player.transform.position + player.transform.forward;
                     interactionObject.interactionEnabled = true;
                     isPicking = false;
+                    var Collider = interactionObject.GetComponent<Collider>();
+                    Collider.enabled = true;
 
                     if (closest != null) {
                         closest.behavior.ChainInteraction(this.interactionObject);
                         GameObject.Destroy(interactionObject.gameObject);
                     }
+
                 }
             }
 
