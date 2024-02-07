@@ -5,8 +5,8 @@ using Utility;
 
 namespace Interactions {
     public class InteractionManager : MonoBehaviour, ISingleton<InteractionManager> {
-        public float interactionRange = 3.0f;
-
+        public float interactionRange = 3.0f; //raycast length
+        Ray ray; //raycast
         protected Camera mainCamera;
 
         protected GameObject player;
@@ -38,7 +38,8 @@ namespace Interactions {
         protected bool CanInteract() {
             return closestInteraction == null || !closestInteraction.IsInteracting();
         }
-
+        
+        //TODO: alter so that this uses a raycast system instead of looping through all
         public Interaction FindClosestInteraction() {
             Interaction closest = null;
             // TODO: Fix so that objects get filtered better without having to run this each loop.
