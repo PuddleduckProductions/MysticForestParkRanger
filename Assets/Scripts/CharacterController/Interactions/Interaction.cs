@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using Utility;
 using InkTools;
-using Interactions.Behaviors;
 
 namespace Interactions {
     namespace Behaviors {
@@ -41,12 +40,6 @@ namespace Interactions {
             /// While <see cref="isInteracting"/> is true, call this function.
             /// </summary>
             public virtual void Update() { }
-
-            /// <summary>
-            /// Called when another interaction wants to do something with this.
-            /// </summary>
-            /// <param name="other">The other interaction calling this.</param>
-            public virtual void ChainInteraction(Interaction other) { }
 
         }
 
@@ -115,10 +108,6 @@ namespace Interactions {
                 isPushing = true;
                 ISingleton<UIController>.Instance.onInteract.AddListener(ReleasePush);
                 offset = interactionObject.transform.position - player.transform.position;
-                // TODO: Should be recursive.
-                if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                    c.enabled = false;
-                }
             }
 
             /// <summary>
@@ -129,9 +118,6 @@ namespace Interactions {
                 if (pressed) {
                     isPushing = false;
                     ISingleton<UIController>.Instance.onInteract.RemoveListener(ReleasePush);
-                    if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                        c.enabled = true;
-                    }
                 }
             }
 
@@ -168,81 +154,10 @@ namespace Interactions {
                 onUpdate(ref interactRef);
             }*/
         }
-        
-        [Serializable]
-        public class PickAndPutInteraction : InteractionBehavior {
-            public PickAndPutInteraction(Interaction parent) : base(parent) { }
-
-            public override bool isInteracting => isPicking;
-            protected bool isPicking = false;
-
-            GameObject player;
-
-            public override void Interact() {
-                player = GameObject.FindGameObjectWithTag("Player");
-                isPicking = true;
-                interactionObject.interactionEnabled = false;
-                ISingleton<UIController>.Instance.onInteract.AddListener(PlaceDown);
-                var Collider = interactionObject.GetComponent<Collider>();
-                Collider.enabled = false;
-            }
-
-            Interaction closest = null;
-            public void PlaceDown(bool pressed) {
-                if (pressed) {
-                    ISingleton<UIController>.Instance.onInteract.RemoveListener(PlaceDown);
-                    interactionObject.transform.position = player.transform.position + player.transform.forward;
-                    interactionObject.interactionEnabled = true;
-                    isPicking = false;
-                    var Collider = interactionObject.GetComponent<Collider>();
-                    Collider.enabled = true;
-
-                    if (closest != null) {
-                        closest.behavior.ChainInteraction(this.interactionObject);
-                        GameObject.Destroy(interactionObject.gameObject);
-                    }
-
-                }
-            }
-
-
-            public override void Update() {
-                interactionObject.transform.position = player.transform.position + new Vector3(0, 1.5f, 0.0f);
-                closest = ISingleton<InteractionManager>.Instance.FindClosestInteraction();
-            }
-        }
-
-        [Serializable]
-
-        public class PutTrigger : InteractionBehavior {
-            public PutTrigger(Interaction parent) : base(parent) { }
-
-            public override bool isInteracting => false;
-
-            /// <summary>
-            /// Calls with the object that just interacted with this trigger. Use this to define custom place behavior.
-            /// </summary>
-            [Tooltip("Calls with the object that just interacted with this trigger. Use this to define custom place behavior.")]
-            public UnityEvent<GameObject> onChained = new UnityEvent<GameObject>();
-
-            public override void Interact() {
-                Debug.Log("No interaction");
-            }
-
-            public override void ChainInteraction(Interaction other) {
-                onChained.Invoke(other.gameObject);
-            }
-        }
-    } 
+    }
 
     public class Interaction : MonoBehaviour {
-        /// <summary>
-        /// Should we allow interaction with this object?
-        /// If this is set to false while <see cref="IsInteracting"/> is true,
-        /// this will allow control over <see cref="InteractionManager.interactionButton"/>
-        /// </summary>
-        public bool interactionEnabled = true;
-        public enum InteractionType { Ink, Pushable, PickAndPut, PutTrigger, Custom };
+        public enum InteractionType { Ink, Pushable, Custom };
         public InteractionType type;
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;
