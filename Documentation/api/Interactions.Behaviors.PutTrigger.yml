@@ -24,7 +24,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PutTrigger
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 202
+    startLine: 214
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -72,7 +72,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 205
+    startLine: 217
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -104,7 +104,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 207
+    startLine: 219
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -141,7 +141,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onChained
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 213
+    startLine: 225
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -182,7 +182,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 215
+    startLine: 227
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -214,7 +214,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ChainInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 219
+    startLine: 231
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors

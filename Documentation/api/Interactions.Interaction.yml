@@ -25,7 +25,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interaction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 225
+    startLine: 237
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -171,7 +171,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionEnabled
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 231
+    startLine: 243
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -205,7 +205,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: type
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 233
+    startLine: 245
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -232,7 +232,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: behavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 235
+    startLine: 247
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -269,7 +269,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: HasInteractionBehavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 237
+    startLine: 249
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -297,7 +297,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: IsInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 241
+    startLine: 253
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -325,7 +325,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 245
+    startLine: 257
   assemblies:
   - ScriptAssembly
   namespace: Interactions
