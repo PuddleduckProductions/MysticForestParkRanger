@@ -128,11 +128,23 @@ namespace Interactions {
             protected void ReleasePush(bool pressed) {
                 if (pressed) {
                     isPushing = false;
+                    SnapToGrid(interactionObject.transform);
                     ISingleton<UIController>.Instance.onInteract.RemoveListener(ReleasePush);
+                    
                     if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
                         c.enabled = true;
                     }
                 }
+            }
+            /// <summary>
+            /// Snap the object's position to the center of the nearest grid point
+            /// </summary>
+            private void SnapToGrid(Transform objTransform)
+            {
+                Vector3 position = objTransform.position;
+                //position.x = Mathf.Round(position.x / gridSize) * gridSize;
+                //position.z = Mathf.Round(position.z / gridSize) * gridSize;
+                objTransform.position = position;
             }
 
             /// <summary>

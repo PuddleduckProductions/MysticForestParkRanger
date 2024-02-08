@@ -109,6 +109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+  rotationSpeed: 75
+  relativeDirectionalMovement: 1
+  rotationSpeedMultiplier: 0.75
 --- !u!114 &910300882131061185
 MonoBehaviour:
   m_ObjectHideFlags: 0
