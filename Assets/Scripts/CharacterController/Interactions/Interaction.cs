@@ -234,7 +234,8 @@ namespace Interactions {
             }
         }
     } 
-
+    //Require a Collider for the Boxcast system to reference
+    [RequireComponent(typeof(Collider))]
     public class Interaction : MonoBehaviour {
         /// <summary>
         /// Should we allow interaction with this object?
