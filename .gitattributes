@@ -1,17 +1,59 @@
-# Set up unityyamlmerge with this guide: https://learn.unity.com/tutorial/working-with-yamlmerge#5feba6a2edbc2a69e6450f9d
-# If you're on Windows the path is most likely C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.16f1\\Editor\\Data\\Tools\\UnityYAMLMerge.exe
-# Unity merging stuff:
-*.cs diff=csharp text
-*.cginc text
-*.shader text
-Documentation/docfxfix.sh eol=lf
+# Define macros (only works in top-level gitattributes files)
+[attr]unity-yaml        merge=unityyamlmerge eol=lf linguist-language=yaml
 
-*.mat merge=unityyamlmerge eol=lf
-*.anim merge=unityyamlmerge eol=lf
-*.unity merge=unityyamlmerge eol=lf
-*.prefab merge=unityyamlmerge eol=lf
-*.physicsMaterial2D merge=unityyamlmerge eol=lf
-*.physicMaterial merge=unityyamlmerge eol=lf
-*.asset merge=unityyamlmerge eol=lf
-*.meta merge=unityyamlmerge eol=lf
-*.controller merge=unityyamlmerge eol=lf
+# Optionally collapse Unity-generated files on GitHub diffs
+# [attr]unity-yaml        merge=unityyamlmerge text linguist-language=yaml linguist-generated
+
+# Unity files
+*.cginc                 text
+*.compute               text linguist-language=hlsl
+*.cs                    text diff=csharp
+*.raytrace              text linguist-language=hlsl
+*.shader                text
+
+# Unity JSON files
+*.asmdef                text linguist-language=json
+*.asmref                text linguist-language=json
+*.index                 text linguist-language=json
+*.inputactions          text linguist-language=json
+*.shadergraph           text linguist-language=json
+*.shadersubgraph        text linguist-language=json
+
+# Unity UI Toolkit files
+*.tss                   text diff=css linguist-language=css
+*.uss                   text diff=css linguist-language=css
+*.uxml                  text linguist-language=xml linguist-detectable
+
+# Unity YAML
+*.anim                  unity-yaml
+*.asset                 unity-yaml
+*.brush                 unity-yaml
+*.controller            unity-yaml
+*.flare                 unity-yaml
+*.fontsettings          unity-yaml
+*.giparams              unity-yaml
+*.guiskin               unity-yaml
+*.lighting              unity-yaml
+*.mask                  unity-yaml
+*.mat                   unity-yaml
+*.meta                  unity-yaml
+*.mixer                 unity-yaml
+*.overrideController    unity-yaml
+*.playable              unity-yaml
+*.prefab                unity-yaml
+*.preset                unity-yaml
+*.renderTexture         unity-yaml
+*.scenetemplate         unity-yaml
+*.shadervariants        unity-yaml
+*.signal                unity-yaml
+*.spriteatlas           unity-yaml
+*.spriteatlasv2         unity-yaml
+*.terrainlayer          unity-yaml
+*.unity                 unity-yaml
+
+# "physic" for 3D but "physics" for 2D
+*.physicMaterial        unity-yaml
+*.physicsMaterial2D     unity-yaml
+
+# Exclude third-party plugins from GitHub stats
+Assets/Plugins/**       linguist-vendored
