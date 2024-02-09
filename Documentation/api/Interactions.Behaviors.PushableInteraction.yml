@@ -25,7 +25,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PushableInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 89
+    startLine: 82
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -48,7 +48,6 @@ items:
   - Interactions.Behaviors.InteractionBehavior
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
-  - Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -78,7 +77,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 91
+    startLine: 84
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -110,7 +109,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 93
+    startLine: 86
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -147,7 +146,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isPushing
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 98
+    startLine: 91
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -176,7 +175,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 112
+    startLine: 105
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -205,7 +204,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ReleasePush
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 127
+    startLine: 116
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -240,7 +239,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 140
+    startLine: 126
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -299,31 +298,6 @@ references:
   name: interactionObject
   nameWithType: InteractionBehavior.interactionObject
   fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
-- uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-  parent: Interactions.Behaviors.InteractionBehavior
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
-  name: ChainInteraction(Interaction)
-  nameWithType: InteractionBehavior.ChainInteraction(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-  spec.csharp:
-  - uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-    name: ChainInteraction
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
-  - name: (
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
-  - name: )
-  spec.vb:
-  - uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-    name: ChainInteraction
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
-  - name: (
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object

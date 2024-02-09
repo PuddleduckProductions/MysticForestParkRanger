@@ -31,12 +31,6 @@ namespace Interactions {
                 case InteractionType.Pushable:
                     behavior.managedReferenceValue = new PushableInteraction(interaction);
                     break;
-                case InteractionType.PickAndPut:
-                    behavior.managedReferenceValue = new PickAndPutInteraction(interaction);
-                    break;
-                case InteractionType.PutTrigger:
-                    behavior.managedReferenceValue = new PutTrigger(interaction);
-                    break;
                 case InteractionType.Custom:
                     behavior.managedReferenceValue = new CustomInteraction(interaction);
                     break;

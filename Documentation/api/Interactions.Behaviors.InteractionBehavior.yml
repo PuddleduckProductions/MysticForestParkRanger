@@ -6,7 +6,6 @@ items:
   parent: Interactions.Behaviors
   children:
   - Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
-  - Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
   - Interactions.Behaviors.InteractionBehavior.Interact
   - Interactions.Behaviors.InteractionBehavior.Update
   - Interactions.Behaviors.InteractionBehavior.interactionObject
@@ -25,7 +24,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionBehavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -50,9 +49,7 @@ items:
   derivedClasses:
   - Interactions.Behaviors.CustomInteraction
   - Interactions.Behaviors.InkInteraction
-  - Interactions.Behaviors.PickAndPutInteraction
   - Interactions.Behaviors.PushableInteraction
-  - Interactions.Behaviors.PutTrigger
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -83,7 +80,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionObject
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -132,7 +129,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -164,7 +161,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 32
+    startLine: 31
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -200,7 +197,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 38
+    startLine: 37
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -231,7 +228,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 42
+    startLine: 41
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -241,38 +238,6 @@ items:
     content: public virtual void Update()
     content.vb: Public Overridable Sub Update()
   overload: Interactions.Behaviors.InteractionBehavior.Update*
-- uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-  id: ChainInteraction(Interactions.Interaction)
-  parent: Interactions.Behaviors.InteractionBehavior
-  langs:
-  - csharp
-  - vb
-  name: ChainInteraction(Interaction)
-  nameWithType: InteractionBehavior.ChainInteraction(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.ChainInteraction(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: ChainInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 48
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: Called when another interaction wants to do something with this.
-  example: []
-  syntax:
-    content: public virtual void ChainInteraction(Interaction other)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-      description: The other interaction calling this.
-    content.vb: Public Overridable Sub ChainInteraction(other As Interaction)
-  overload: Interactions.Behaviors.InteractionBehavior.ChainInteraction*
 references:
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
@@ -623,9 +588,3 @@ references:
   name: Update
   nameWithType: InteractionBehavior.Update
   fullName: Interactions.Behaviors.InteractionBehavior.Update
-- uid: Interactions.Behaviors.InteractionBehavior.ChainInteraction*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.ChainInteraction
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_ChainInteraction_Interactions_Interaction_
-  name: ChainInteraction
-  nameWithType: InteractionBehavior.ChainInteraction
-  fullName: Interactions.Behaviors.InteractionBehavior.ChainInteraction

@@ -6,7 +6,6 @@ items:
   parent: Interactions
   children:
   - Interactions.InteractionManager.CanInteract
-  - Interactions.InteractionManager.FindClosestInteraction
   - Interactions.InteractionManager.interactionButton
   - Interactions.InteractionManager.interactionRange
   - Interactions.InteractionManager.interactionsInScene
@@ -319,34 +318,6 @@ items:
       type: System.Boolean
     content.vb: Protected Function CanInteract() As Boolean
   overload: Interactions.InteractionManager.CanInteract*
-- uid: Interactions.InteractionManager.FindClosestInteraction
-  commentId: M:Interactions.InteractionManager.FindClosestInteraction
-  id: FindClosestInteraction
-  parent: Interactions.InteractionManager
-  langs:
-  - csharp
-  - vb
-  name: FindClosestInteraction()
-  nameWithType: InteractionManager.FindClosestInteraction()
-  fullName: Interactions.InteractionManager.FindClosestInteraction()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: FindClosestInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 41
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public Interaction FindClosestInteraction()
-    return:
-      type: Interactions.Interaction
-    content.vb: Public Function FindClosestInteraction() As Interaction
-  overload: Interactions.InteractionManager.FindClosestInteraction*
 references:
 - uid: Interactions
   commentId: N:Interactions
@@ -4834,16 +4805,3 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: Interactions.InteractionManager.FindClosestInteraction*
-  commentId: Overload:Interactions.InteractionManager.FindClosestInteraction
-  href: Interactions.InteractionManager.html#Interactions_InteractionManager_FindClosestInteraction
-  name: FindClosestInteraction
-  nameWithType: InteractionManager.FindClosestInteraction
-  fullName: Interactions.InteractionManager.FindClosestInteraction
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction

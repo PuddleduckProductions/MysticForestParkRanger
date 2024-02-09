@@ -1,7 +1,6 @@
 name: Unity Build and Test
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - master
@@ -9,9 +8,6 @@ on:
       - 'Assets/**/*'
       - 'Packages/**/*'
       - 'ProjectSettings/**/*'
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 permissions:
   actions: read
@@ -21,32 +17,6 @@ permissions:
   contents: write
 
 jobs:
-  test:
-    name: Test MysticForestParkRanger
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checkout
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # Cache
-      - uses: actions/cache@v3
-        with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
-      # Test
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v4
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-
   build:
     name: Build MysticForestParkRanger
     runs-on: ubuntu-latest
@@ -63,6 +33,16 @@ jobs:
           restore-keys: |
             Library-
 
+      # Test
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v4
@@ -72,6 +52,8 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: StandaloneWindows64
+          # In case something changes, still allow builds:
+          allowDirtyBuild: true
       # Output
       - uses: actions/upload-artifact@v3
         with:
