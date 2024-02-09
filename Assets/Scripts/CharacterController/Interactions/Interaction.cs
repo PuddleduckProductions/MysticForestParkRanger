@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using Utility;
 using InkTools;
-using Interactions.Behaviors;
 
 namespace Interactions {
     namespace Behaviors {
@@ -41,12 +40,6 @@ namespace Interactions {
             /// While <see cref="isInteracting"/> is true, call this function.
             /// </summary>
             public virtual void Update() { }
-
-            /// <summary>
-            /// Called when another interaction wants to do something with this.
-            /// </summary>
-            /// <param name="other">The other interaction calling this.</param>
-            public virtual void ChainInteraction(Interaction other) { }
 
         }
 
@@ -115,10 +108,6 @@ namespace Interactions {
                 isPushing = true;
                 ISingleton<UIController>.Instance.onInteract.AddListener(ReleasePush);
                 offset = interactionObject.transform.position - player.transform.position;
-                // TODO: Should be recursive.
-                if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                    c.enabled = false;
-                }
             }
 
             /// <summary>
@@ -248,14 +237,9 @@ namespace Interactions {
     } 
     //Require a Collider for the Boxcast system to reference
     [RequireComponent(typeof(Collider))]
+
     public class Interaction : MonoBehaviour {
-        /// <summary>
-        /// Should we allow interaction with this object?
-        /// If this is set to false while <see cref="IsInteracting"/> is true,
-        /// this will allow control over <see cref="InteractionManager.interactionButton"/>
-        /// </summary>
-        public bool interactionEnabled = true;
-        public enum InteractionType { Ink, Pushable, PickAndPut, PutTrigger, Custom };
+        public enum InteractionType { Ink, Pushable, Custom };
         public InteractionType type;
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;

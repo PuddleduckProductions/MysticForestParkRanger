@@ -9,7 +9,6 @@ items:
   - Interactions.Interaction.Interact
   - Interactions.Interaction.IsInteracting
   - Interactions.Interaction.behavior
-  - Interactions.Interaction.interactionEnabled
   - Interactions.Interaction.type
   langs:
   - csharp
@@ -25,7 +24,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interaction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 237
+    startLine: 158
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -153,40 +152,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: Interactions.Interaction.interactionEnabled
-  commentId: F:Interactions.Interaction.interactionEnabled
-  id: interactionEnabled
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: interactionEnabled
-  nameWithType: Interaction.interactionEnabled
-  fullName: Interactions.Interaction.interactionEnabled
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionEnabled
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 243
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  summary: >-
-    Should we allow interaction with this object?
-
-    If this is set to false while <xref href="Interactions.Interaction.IsInteracting" data-throw-if-not-resolved="false"></xref> is true,
-
-    this will allow control over <xref href="Interactions.InteractionManager.interactionButton" data-throw-if-not-resolved="false"></xref>
-  example: []
-  syntax:
-    content: public bool interactionEnabled
-    return:
-      type: System.Boolean
-    content.vb: Public interactionEnabled As Boolean
 - uid: Interactions.Interaction.type
   commentId: F:Interactions.Interaction.type
   id: type
@@ -205,7 +170,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: type
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 245
+    startLine: 160
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -232,7 +197,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: behavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 247
+    startLine: 162
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -269,7 +234,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: HasInteractionBehavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 249
+    startLine: 164
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -297,7 +262,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: IsInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 253
+    startLine: 168
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -325,7 +290,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 257
+    startLine: 172
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -4688,41 +4653,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Interactions.Interaction.IsInteracting
-  commentId: M:Interactions.Interaction.IsInteracting
-  href: Interactions.Interaction.html#Interactions_Interaction_IsInteracting
-  name: IsInteracting()
-  nameWithType: Interaction.IsInteracting()
-  fullName: Interactions.Interaction.IsInteracting()
-  spec.csharp:
-  - uid: Interactions.Interaction.IsInteracting
-    name: IsInteracting
-    href: Interactions.Interaction.html#Interactions_Interaction_IsInteracting
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Interactions.Interaction.IsInteracting
-    name: IsInteracting
-    href: Interactions.Interaction.html#Interactions_Interaction_IsInteracting
-  - name: (
-  - name: )
-- uid: Interactions.InteractionManager.interactionButton
-  commentId: F:Interactions.InteractionManager.interactionButton
-  href: Interactions.InteractionManager.html#Interactions_InteractionManager_interactionButton
-  name: interactionButton
-  nameWithType: InteractionManager.interactionButton
-  fullName: Interactions.InteractionManager.interactionButton
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: Interactions.Interaction.InteractionType
   commentId: T:Interactions.Interaction.InteractionType
   parent: Interactions
@@ -4781,6 +4711,17 @@ references:
   name: HasInteractionBehavior
   nameWithType: Interaction.HasInteractionBehavior
   fullName: Interactions.Interaction.HasInteractionBehavior
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Interactions.Interaction.IsInteracting*
   commentId: Overload:Interactions.Interaction.IsInteracting
   href: Interactions.Interaction.html#Interactions_Interaction_IsInteracting

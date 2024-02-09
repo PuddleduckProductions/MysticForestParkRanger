@@ -4,7 +4,6 @@
 *.cs diff=csharp text
 *.cginc text
 *.shader text
-Documentation/docfxfix.sh eol=lf
 
 *.mat merge=unityyamlmerge eol=lf
 *.anim merge=unityyamlmerge eol=lf

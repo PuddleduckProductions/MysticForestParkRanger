@@ -7,9 +7,7 @@ items:
   children:
   - Interactions.Interaction.InteractionType.Custom
   - Interactions.Interaction.InteractionType.Ink
-  - Interactions.Interaction.InteractionType.PickAndPut
   - Interactions.Interaction.InteractionType.Pushable
-  - Interactions.Interaction.InteractionType.PutTrigger
   langs:
   - csharp
   - vb
@@ -24,7 +22,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionType
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 244
+    startLine: 159
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -49,7 +47,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Ink
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 244
+    startLine: 159
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -75,64 +73,12 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Pushable
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 244
+    startLine: 159
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
     content: Pushable = 1
-    return:
-      type: Interactions.Interaction.InteractionType
-- uid: Interactions.Interaction.InteractionType.PickAndPut
-  commentId: F:Interactions.Interaction.InteractionType.PickAndPut
-  id: PickAndPut
-  parent: Interactions.Interaction.InteractionType
-  langs:
-  - csharp
-  - vb
-  name: PickAndPut
-  nameWithType: Interaction.InteractionType.PickAndPut
-  fullName: Interactions.Interaction.InteractionType.PickAndPut
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: PickAndPut
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 244
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: PickAndPut = 2
-    return:
-      type: Interactions.Interaction.InteractionType
-- uid: Interactions.Interaction.InteractionType.PutTrigger
-  commentId: F:Interactions.Interaction.InteractionType.PutTrigger
-  id: PutTrigger
-  parent: Interactions.Interaction.InteractionType
-  langs:
-  - csharp
-  - vb
-  name: PutTrigger
-  nameWithType: Interaction.InteractionType.PutTrigger
-  fullName: Interactions.Interaction.InteractionType.PutTrigger
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: PutTrigger
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 244
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: PutTrigger = 3
     return:
       type: Interactions.Interaction.InteractionType
 - uid: Interactions.Interaction.InteractionType.Custom
@@ -153,12 +99,12 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Custom
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 244
+    startLine: 159
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
-    content: Custom = 4
+    content: Custom = 2
     return:
       type: Interactions.Interaction.InteractionType
 references:

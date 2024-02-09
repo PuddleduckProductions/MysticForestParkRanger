@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class characterController : MonoBehaviour
 {
     CharacterController c;
-    Camera camera;
     Vector2 input;
     public float movementSpeed = 3f;
     public float rotationSpeed = 75f;
@@ -15,12 +14,14 @@ public class characterController : MonoBehaviour
     public float movementSpeedMultiplier = 0.5f;
 
     Animator animator;
+    //private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         c = GetComponent<CharacterController>();
         camera = Camera.main;
         animator = GetComponentInChildren<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,5 +55,6 @@ public class characterController : MonoBehaviour
     void OnWalking(InputValue value)
     {
         input = value.Get<Vector2>();
+       // animator.SetBool("walking", true);
     }
 }
