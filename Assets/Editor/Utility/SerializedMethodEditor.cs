@@ -45,7 +45,7 @@ namespace Utility {
                 } else {
                     position = new Rect(position.x, position.y + 20, position.width, 20);
 
-                    List<GUIContent> methods = new List<GUIContent>()
+                    List<GUIContent> methods = new List<GUIContent>();
 
                     var attrs = fieldInfo.GetCustomAttributes(typeof(SerializedMethod.MethodValidation));
                     var objectMethods = obj.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
@@ -103,6 +103,8 @@ namespace Utility {
                             //var methodStore = (SerializedMethod) onUpdate.managedReferenceValue;
 
                             //methodStore.SetMethod(info, obj);
+                        } else {
+                            SerializedMethod.SetMethod(property, null, obj);
                         }
                     }
                 }

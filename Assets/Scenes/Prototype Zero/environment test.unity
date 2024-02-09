@@ -753,11 +753,11 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 4
   behavior:
-    rid: 3483134315667128321
+    rid: 3483134315667128323
   references:
     version: 2
     RefIds:
-    - rid: 3483134315667128321
+    - rid: 3483134315667128323
       type: {class: CustomInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 474322295}
@@ -765,8 +765,8 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
         onUpdate:
-          methodName: get_activeInHierarchy
-          targetObject: {fileID: 1851728522}
+          methodName: ' '
+          targetObject: {fileID: 3236889874476999515}
         targetObject: {fileID: 0}
 --- !u!1 &534701002
 GameObject:

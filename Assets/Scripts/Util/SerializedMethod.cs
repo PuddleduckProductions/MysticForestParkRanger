@@ -36,7 +36,7 @@ namespace Utility {
         protected MethodInfo methodInfo;
 
         public bool IsNull() {
-            return methodInfo == null;
+            return methodInfo == null || methodName == " " || methodName == null;
         }
 
         public void SetMethod(MethodInfo info, UnityEngine.Object target) {
@@ -46,7 +46,13 @@ namespace Utility {
         }
 
         public static void SetMethod(UnityEditor.SerializedProperty prop, string methodName, UnityEngine.Object target) {
-            prop.FindPropertyRelative("methodName").stringValue = methodName;
+            var methodProp = prop.FindPropertyRelative("methodName");
+            if (methodName == null) {
+                // Stupid workaround since I cant null the stringValue property this way.
+                methodProp.stringValue = " ";
+            } else {
+                methodProp.stringValue = methodName;
+            }
             prop.FindPropertyRelative("targetObject").objectReferenceValue = target;
         }
 
