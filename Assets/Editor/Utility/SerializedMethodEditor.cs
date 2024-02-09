@@ -10,31 +10,27 @@ using Utility;
 namespace Utility {
     [CustomPropertyDrawer(typeof(SerializedMethod))]
     public class SerializedMethodEditor : PropertyDrawer {
-        bool showFoldout = true;
-
         float baseHeight;
 
-        // TODO: Pretty sure this is busted on serialization update.
         int selectedFunc = 0;
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
             return baseHeight;
         }
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+            label.text += "()";
+            EditorGUI.BeginProperty(position, label, property);
             baseHeight = 20f;
-            // Don't make child fields be indented
+
             var indent = EditorGUI.indentLevel;
             EditorGUI.indentLevel = 0;
 
+            position = new Rect(position.x, position.y, position.width, 20f);
+            EditorGUI.LabelField(position, label);
+            // Don't make child fields be indented
+            //var indent = EditorGUI.indentLevel;
+            //EditorGUI.indentLevel = 0;
             var targetObject = property.FindPropertyRelative("targetObject");
-
-            position = new Rect(position.x, position.y + 100, position.width, 20);
-            baseHeight += 20;
-
-            var onUpdate = property.FindPropertyRelative("onUpdate");
-            EditorGUI.LabelField(position, new GUIContent("OnUpdate()", onUpdate.tooltip));
-            EditorGUI.indentLevel += 1;
-
             //EditorGUI.BeginProperty(position, new GUIContent("OnInteract"), property.FindPropertyRelative("onInteract"));
 
             position = new Rect(position.x, position.y + 20, position.width, 20);
@@ -49,9 +45,32 @@ namespace Utility {
                 } else {
                     position = new Rect(position.x, position.y + 20, position.width, 20);
 
-                    List<GUIContent> methods = new List<GUIContent>(); ;
+                    List<GUIContent> methods = new List<GUIContent>()
+
+                    var attrs = fieldInfo.GetCustomAttributes(typeof(SerializedMethod.MethodValidation));
                     var objectMethods = obj.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                        .Where(CustomInteraction.ValidateUpdateFunc);
+                        .Where(info => {
+                            foreach (var attr in attrs) {
+                                if (attr is SerializedMethod.MethodValidation s) {
+                                    if (s.returnType != info.ReturnType) {
+                                        return false;
+                                    }
+                                    var parameters = info.GetParameters();
+                                    if (parameters.Length != s.parameters.Length) {
+                                        return false;
+                                    }
+
+                                    for (int i = 0; i < parameters.Length; i++) {
+                                        if (parameters[i].ParameterType != s.parameters[i]) {
+                                            return false;
+                                        }
+                                    }
+                                    return true;
+                                }
+                            }
+                            Debug.LogError("SerializedMethod.MethodValidation attribute not found for " + property.name);
+                            return false;
+                        });
 
                     methods.Add(new GUIContent("No Function"));
 
@@ -61,7 +80,8 @@ namespace Utility {
                         foreach (var param in method.GetParameters()) {
                             paramString += param.ToString();
                         }
-                        if (method.Name == onUpdate.FindPropertyRelative("methodName").stringValue) {
+
+                        if (method.Name == property.FindPropertyRelative("methodName").stringValue) {
                             selectedFunc = i;
                         }
                         i++;
@@ -78,7 +98,7 @@ namespace Utility {
                         if (selectedFunc > 0) {
                             MethodInfo info = objectMethods.ElementAt(selectedFunc - 1);
 
-                            SerializedMethod.SetMethod(onUpdate, info.Name, obj);
+                            SerializedMethod.SetMethod(property, info.Name, obj);
 
                             //var methodStore = (SerializedMethod) onUpdate.managedReferenceValue;
 
@@ -87,6 +107,9 @@ namespace Utility {
                     }
                 }
             }
+            EditorGUI.indentLevel = indent;
+
+            EditorGUI.EndProperty();
 
             //EditorGUILayout.LabelField("Test");
 

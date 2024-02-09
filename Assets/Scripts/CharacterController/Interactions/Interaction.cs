@@ -181,9 +181,11 @@ namespace Interactions {
             /// Can take <see cref="Interaction"/> as an optional argument.
             /// Validated in <see cref="ValidateUpdateFunc(MethodInfo)"/>
             /// </summary>
-            [HideInInspector, SerializeField, Tooltip("Called every frame. " +
+            [SerializeField, Tooltip("Called every frame. " +
                 "Should return a boolean as to whether or not the object is still being interacted with. " +
                 "While returning true, the object will still be interacted with. Can take Interaction as an optional argument.")]
+            [SerializedMethod.MethodValidation(typeof(bool), new Type[] { }),
+                SerializedMethod.MethodValidation(typeof(bool), new Type[] { typeof(Interaction) })]
             public SerializedMethod onUpdate = new SerializedMethod();
 
             [HideInInspector, Tooltip("Object to call OnUpdate() on.")]
