@@ -25,7 +25,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PickAndPutInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 164
+    startLine: 171
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -73,7 +73,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 166
+    startLine: 173
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -105,7 +105,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isInteracting
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 168
+    startLine: 175
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isPicking
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 169
+    startLine: 176
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -169,7 +169,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 173
+    startLine: 180
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -201,7 +201,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PlaceDown
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 181
+    startLine: 190
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -233,7 +233,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 196
+    startLine: 208
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors

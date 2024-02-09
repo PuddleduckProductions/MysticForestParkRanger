@@ -18,7 +18,7 @@ public class characterController : MonoBehaviour
         c = GetComponent<CharacterController>();
 
         camera = Camera.main;
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame

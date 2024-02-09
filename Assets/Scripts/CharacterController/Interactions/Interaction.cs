@@ -123,6 +123,10 @@ namespace Interactions {
                 isPushing = true;
                 ISingleton<UIController>.Instance.onInteract.AddListener(ReleasePush);
                 offset = interactionObject.transform.position - player.transform.position;
+                // TODO: Should be recursive.
+                if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
+                    c.enabled = false;
+                }
             }
 
             /// <summary>
@@ -133,6 +137,9 @@ namespace Interactions {
                 if (pressed) {
                     isPushing = false;
                     ISingleton<UIController>.Instance.onInteract.RemoveListener(ReleasePush);
+                    if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
+                        c.enabled = true;
+                    }
                 }
             }
 
@@ -232,6 +239,8 @@ namespace Interactions {
                 isPicking = true;
                 interactionObject.interactionEnabled = false;
                 ISingleton<UIController>.Instance.onInteract.AddListener(PlaceDown);
+                var Collider = interactionObject.GetComponent<Collider>();
+                Collider.enabled = false;
             }
 
             Interaction closest = null;
@@ -241,11 +250,14 @@ namespace Interactions {
                     interactionObject.transform.position = player.transform.position + player.transform.forward;
                     interactionObject.interactionEnabled = true;
                     isPicking = false;
+                    var Collider = interactionObject.GetComponent<Collider>();
+                    Collider.enabled = true;
 
                     if (closest != null) {
                         closest.behavior.ChainInteraction(this.interactionObject);
                         GameObject.Destroy(interactionObject.gameObject);
                     }
+
                 }
             }
 
