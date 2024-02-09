@@ -5,6 +5,8 @@ items:
   items:
     - name: Interaction System
       href: Tutorials/interaction.md
+    - name: Shaders
+      href: Tutorials/Shaders.md
 - name: Scenes
   href: scenes.md
 - name: Assets
