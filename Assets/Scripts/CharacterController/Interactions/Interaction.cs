@@ -52,7 +52,8 @@ namespace Interactions {
         }
 
         /// <summary>
-        /// For displaying dialog in Ink. Should be customizable, but right now just loads `interact_Name` for the Name of the current GameObject.
+        /// For displaying dialog in Ink. By default, loads `interact_Name` knot in Ink. Can be changed.
+        /// Tests check to see if the selected knot exists. If you get an error on tests regarding an invalid knot, this is why.
         /// </summary>
         [Serializable]
         public class InkInteraction : InteractionBehavior {
@@ -214,6 +215,9 @@ namespace Interactions {
             }
         }
         
+        /// <summary>
+        /// An object that can be picked up and placed within the world.
+        /// </summary>
         [Serializable]
         public class PickAndPutInteraction : InteractionBehavior {
             public PickAndPutInteraction(Interaction parent) : base(parent) { }
@@ -252,8 +256,11 @@ namespace Interactions {
             }
         }
 
+        /// <summary>
+        /// An object where a <see cref="PickAndPutInteraction"/> can be placed.
+        /// TODO: Not finished, needs to be choosy.
+        /// </summary>
         [Serializable]
-
         public class PutTrigger : InteractionBehavior {
             public PutTrigger(Interaction parent) : base(parent) { }
 
