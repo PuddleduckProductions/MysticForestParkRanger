@@ -5,6 +5,8 @@ using Utility;
 using InkTools;
 using System.Reflection;
 using Interactions.Behaviors;
+using Ink.Parsed;
+using System.Collections.Generic;
 
 namespace Interactions {
     namespace Behaviors {
@@ -27,28 +29,40 @@ namespace Interactions {
             }
 
             /// <summary>
-            /// Are we currently having an interaction happen?
-            /// If this is true, this supresses all other interactions in the scene.
-            /// If active for more than one frame, <see cref="Update"/> is called.
-            /// </summary>
-            public abstract bool isInteracting { get; }
-
-            /// <summary>
             /// Function to call when the object is interacted with (i.e., Space is pressed)
             /// Called by <see cref="InteractionManager"/>.
+            /// This will still be called even while <see cref="Update"/> returns true, as long as this object is being
+            /// interacted with and space is being pressed.
             /// </summary>
             public abstract void Interact();
-            /// <summary>
-            /// While <see cref="isInteracting"/> is true, call this function.
-            /// </summary>
-            public virtual void Update() { }
 
             /// <summary>
-            /// Called when another interaction wants to do something with this.
+            /// Function to call when the object is interacted with another interaction.
+            /// This will still be called even while <see cref="Update"/> returns true, as long as this object is being
+            /// interacted with and space is being pressed on another object.
             /// </summary>
-            /// <param name="other">The other interaction calling this.</param>
-            public virtual void ChainInteraction(Interaction other) { }
+            /// <param name="other">The other interaction</param>
+            public virtual void Interact(Interaction other) { }
 
+            /// <summary>
+            /// Are we currently having an interaction happen? What do we need to do to update it?
+            /// If this returns true, this supresses all other interactions in the scene.
+            /// </summary>
+            public virtual bool Update() { return false; }
+
+            /// <summary>
+            /// What <see cref="InteractionManager"/> calls when we stop interacting for whatever reason.
+            /// Use this to clean up. You can trigger this yourself when you return false in <see cref="Update"/>,
+            /// but this may be called by other interactions who want to do interactions with your object in <see cref="InteractionManager.StopCurrentInteraction"/>
+            /// </summary>
+            public virtual void EndInteraction() { }
+
+            /// <summary>
+            /// Should we allow interactions currently?
+            /// </summary>
+            /// <param name="other">The other object that wants to interact with us. Can be null.</param>
+            /// <returns></returns>
+            public virtual bool CanInteract(Interaction other=null) { return true;  }
         }
 
         /// <summary>
@@ -65,29 +79,22 @@ namespace Interactions {
                 inkKnot = $"interact_{parent.name}";
             }
 
-            /// <summary>
-            /// Active as long as <see cref="InkManager.storyActive"/> is active.
-            /// </summary>
-            public override bool isInteracting => InkTools.InkManager.storyActive;
+            bool setup = false;
 
             /// <summary>
             /// Call interact_<see cref="UnityEngine.Object.name"/> in Ink.
-            /// TODO: Make customizable
             /// </summary>
             public override void Interact() {
-                ISingleton<InkManager>.Instance.StartDialog(inkKnot);
-                ISingleton<UIController>.Instance.onInteract.AddListener(InteractAdvance);
-                ISingleton<InkManager>.Instance.dialogEnd.AddListener(EndDialog);
-            }
-
-            public void EndDialog() {
-                ISingleton<UIController>.Instance.onInteract.RemoveListener(InteractAdvance);
-            }
-
-            public void InteractAdvance(bool pressed) {
-                if (pressed && InkManager.storyActive) {
+                if (!setup) {
+                    ISingleton<InkManager>.Instance.StartDialog(inkKnot);
+                    setup = true;
+                } else if (InkManager.storyActive) {
                     ISingleton<InkManager>.Instance.AdvanceStory();
                 }
+            }
+
+            public override bool Update() {
+                return InkManager.storyActive;
             }
         }
 
@@ -98,8 +105,6 @@ namespace Interactions {
         [Serializable]
         public class PushableInteraction : InteractionBehavior {
             public PushableInteraction(Interaction parent) : base(parent) { }
-
-            public override bool isInteracting => isPushing;
             /// <summary>
             /// Whether player is still pushing. Active until space is pressed.
             /// </summary>
@@ -119,35 +124,32 @@ namespace Interactions {
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
             /// </summary>
             public override void Interact() {
-                player = GameObject.FindGameObjectWithTag("Player");
-                isPushing = true;
-                ISingleton<UIController>.Instance.onInteract.AddListener(ReleasePush);
-                offset = interactionObject.transform.position - player.transform.position;
-                // TODO: Should be recursive.
-                if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                    c.enabled = false;
+                if (!isPushing) {
+                    player = GameObject.FindGameObjectWithTag("Player");
+                    isPushing = true;
+                    offset = interactionObject.transform.position - player.transform.position;
+                    // TODO: Should be recursive.
+                    if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
+                        c.enabled = false;
+                    }
+                } else {
+                    // Force InteractionManager to call EndInteraction.
+                    isPushing = false;
                 }
             }
 
-            /// <summary>
-            /// Set pushed to false if pressed is true.
-            /// </summary>
-            /// <param name="pressed">Whether or not interact was pressed.</param>
-            protected void ReleasePush(bool pressed) {
-                if (pressed) {
-                    isPushing = false;
-                    ISingleton<UIController>.Instance.onInteract.RemoveListener(ReleasePush);
-                    if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                        c.enabled = true;
-                    }
+            public override void EndInteraction() {
+                if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
+                    c.enabled = true;
                 }
             }
 
             /// <summary>
             /// Update the pushed object to move with us.
             /// </summary>
-            public override void Update() {
+            public override bool Update() {
                 interactionObject.transform.position = player.transform.position + offset;
+                return isPushing;
             }
         }
 
@@ -163,15 +165,17 @@ namespace Interactions {
 
             /// <summary>
             /// Functions to call when space is pressed on this object.
-            /// Called once.
+            /// Called when space is pressed for the first time, as well as
+            /// every time <see cref="onUpdate"/> returns true and space is pressed.
             /// </summary>
             [SerializeField]
-            [Tooltip("Functions to call when space is pressed\non this object. Called once.")]
+            [Tooltip("Functions to call when space is pressed\non this object. Called when space is pressed for " +
+                " the first time, as well as every time onUpdate returns true and space is pressed.")]
             protected UnityEvent onInteract = new UnityEvent();
 
             /// <summary>
             /// Set in <see cref="Interactions.CustomInteractionEditor"/>
-            /// Called every frame (in addition to, when space is first pressed).
+            /// Called every frame.
             /// Should return a boolean as to whether or not the object is still being interacted with.
             /// While returning true, the object will still be interacted with.
             /// Can take <see cref="Interaction"/> as an optional argument.
@@ -185,14 +189,8 @@ namespace Interactions {
             [HideInInspector, Tooltip("Object to call OnUpdate() on.")]
             public UnityEngine.Object targetObject;
 
-            public override bool isInteracting => interactUpdate;
-            protected bool interactUpdate = false;
-
             public override void Interact() {
                 onInteract.Invoke();
-                if (!onUpdate.IsNull()) {
-                    CallUpdate();
-                }
             }
 
             /// <summary>
@@ -206,19 +204,20 @@ namespace Interactions {
                     func.GetParameters().Length == 1 && func.GetParameters()[0].ParameterType == typeof(Interaction));
             }
 
-            protected void CallUpdate() {
+            protected bool CallUpdate() {
                 if (!onUpdate.IsNull()) {
                     var parameters = onUpdate.parameters;
                     if (parameters.Length == 0) {
-                        interactUpdate = (bool)onUpdate.Invoke(new object[0]);
+                        return (bool)onUpdate.Invoke(new object[0]);
                     } else {
-                        interactUpdate = (bool)onUpdate.Invoke(new object[] { this.interactionObject });
+                        return (bool)onUpdate.Invoke(new object[] { this.interactionObject });
                     }
                 }
+                return false;
             }
 
-            public override void Update() {
-                CallUpdate();
+            public override bool Update() {
+                return CallUpdate();
             }
         }
         
@@ -228,43 +227,34 @@ namespace Interactions {
         [Serializable]
         public class PickAndPutInteraction : InteractionBehavior {
             public PickAndPutInteraction(Interaction parent) : base(parent) { }
-
-            public override bool isInteracting => isPicking;
             protected bool isPicking = false;
 
             GameObject player;
 
             public override void Interact() {
-                player = GameObject.FindGameObjectWithTag("Player");
-                isPicking = true;
-                interactionObject.interactionEnabled = false;
-                ISingleton<UIController>.Instance.onInteract.AddListener(PlaceDown);
-                var Collider = interactionObject.GetComponent<Collider>();
-                Collider.enabled = false;
-            }
-
-            Interaction closest = null;
-            public void PlaceDown(bool pressed) {
-                if (pressed) {
-                    ISingleton<UIController>.Instance.onInteract.RemoveListener(PlaceDown);
-                    interactionObject.transform.position = player.transform.position + player.transform.forward;
-                    interactionObject.interactionEnabled = true;
-                    isPicking = false;
+                if (!isPicking) {
+                    player = GameObject.FindGameObjectWithTag("Player");
+                    isPicking = true;
+                    interactionObject.interactionEnabled = false;
                     var Collider = interactionObject.GetComponent<Collider>();
-                    Collider.enabled = true;
-
-                    if (closest != null) {
-                        closest.behavior.ChainInteraction(this.interactionObject);
-                        GameObject.Destroy(interactionObject.gameObject);
-                    }
-
+                    Collider.enabled = false;
+                } else {
+                    // Will force InteractionManager to call EndInteraction.
+                    isPicking = false;
                 }
             }
 
+            public override void EndInteraction() {
+                interactionObject.transform.position = player.transform.position + player.transform.forward;
+                interactionObject.interactionEnabled = true;
+                var Collider = interactionObject.GetComponent<Collider>();
+                Collider.enabled = true;
+            }
 
-            public override void Update() {
+
+            public override bool Update() {
                 interactionObject.transform.position = player.transform.position + new Vector3(0, 1.5f, 0.0f);
-                closest = ISingleton<InteractionManager>.Instance.FindClosestInteraction();
+                return isPicking;
             }
         }
 
@@ -276,20 +266,28 @@ namespace Interactions {
         public class PutTrigger : InteractionBehavior {
             public PutTrigger(Interaction parent) : base(parent) { }
 
-            public override bool isInteracting => false;
-
             /// <summary>
             /// Calls with the object that just interacted with this trigger. Use this to define custom place behavior.
             /// </summary>
             [Tooltip("Calls with the object that just interacted with this trigger. Use this to define custom place behavior.")]
             public UnityEvent<GameObject> onChained = new UnityEvent<GameObject>();
 
-            public override void Interact() {
-                Debug.Log("No interaction");
-            }
+            /// <summary>
+            /// A list of interactions with tags that are allowed to interact with this placement.
+            /// </summary>
+            [Tooltip("A list of interactions with tags that are allowed to interact with this placement.")]
+            public List<string> allowedTags = new List<string>();
 
-            public override void ChainInteraction(Interaction other) {
-                onChained.Invoke(other.gameObject);
+            public override void Interact() {}
+
+            public override bool CanInteract(Interaction other = null) {
+                if (other == null) return false;
+                foreach (var tag in allowedTags) {
+                    if (tag == other.tag) {
+                        return true;
+                    }
+                }
+                return false;
             }
         }
     } 
@@ -311,18 +309,31 @@ namespace Interactions {
             return behavior != null;
         }
 
-        public bool IsInteracting() {
-            return behavior.isInteracting;
-        }
-
         public void Interact() {
             behavior.Interact();
         }
 
-        private void Update() {
-            if (behavior != null && IsInteracting()) {
-                behavior.Update();
+        public void Interact(Interaction other) {
+            behavior.Interact(other);
+        }
+
+        public void EndInteraction() {
+            behavior.EndInteraction();
+        }
+
+        public bool CanInteract(Interaction other=null) {
+            return behavior.CanInteract(other);
+        }
+
+        /// <summary>
+        /// Is this interaction still being used?
+        /// </summary>
+        /// <returns>Whether or not to keep using this interaction</returns>
+        public bool InteractionUpdate() {
+            if (behavior != null) {
+                return behavior.Update();
             }
+            return false;
         }
     }
 }
