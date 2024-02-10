@@ -1,37 +1,32 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.characterController
-  commentId: T:MysticForestParkRanger.characterController
-  id: characterController
+- uid: MysticForestParkRanger.test
+  commentId: T:MysticForestParkRanger.test
+  id: test
   parent: MysticForestParkRanger
   children:
-  - MysticForestParkRanger.characterController.moveEnabled
-  - MysticForestParkRanger.characterController.movementSpeed
-  - MysticForestParkRanger.characterController.movementSpeedMultiplier
-  - MysticForestParkRanger.characterController.relativeDirectionalMovement
-  - MysticForestParkRanger.characterController.rotationSpeed
-  - MysticForestParkRanger.characterController.rotationSpeedMultiplier
+  - MysticForestParkRanger.test.shape
   langs:
   - csharp
   - vb
-  name: characterController
-  nameWithType: characterController
-  fullName: characterController
+  name: test
+  nameWithType: test
+  fullName: test
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
+      path: Assets/Scripts/CharacterController/Interactions/test.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: characterController
-    path: ../Assets/Scripts/CharacterController/characterController.cs
+    id: test
+    path: ../Assets/Scripts/CharacterController/Interactions/test.cs
     startLine: 5
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
   syntax:
-    content: 'public class characterController : MonoBehaviour'
-    content.vb: Public Class characterController Inherits MonoBehaviour
+    content: 'public class test : MonoBehaviour'
+    content.vb: Public Class test Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -153,168 +148,43 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: MysticForestParkRanger.characterController.moveEnabled
-  commentId: F:MysticForestParkRanger.characterController.moveEnabled
-  id: moveEnabled
-  parent: MysticForestParkRanger.characterController
+- uid: MysticForestParkRanger.test.shape
+  commentId: F:MysticForestParkRanger.test.shape
+  id: shape
+  parent: MysticForestParkRanger.test
   langs:
   - csharp
   - vb
-  name: moveEnabled
-  nameWithType: characterController.moveEnabled
-  fullName: characterController.moveEnabled
+  name: shape
+  nameWithType: test.shape
+  fullName: test.shape
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
+      path: Assets/Scripts/CharacterController/Interactions/test.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: moveEnabled
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 7
+    id: shape
+    path: ../Assets/Scripts/CharacterController/Interactions/test.cs
+    startLine: 8
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
   syntax:
-    content: public bool moveEnabled
+    content: >-
+      [SerializeField]
+
+      public BoolArray2D shape
     return:
-      type: System.Boolean
-    content.vb: Public moveEnabled As Boolean
-- uid: MysticForestParkRanger.characterController.movementSpeed
-  commentId: F:MysticForestParkRanger.characterController.movementSpeed
-  id: movementSpeed
-  parent: MysticForestParkRanger.characterController
-  langs:
-  - csharp
-  - vb
-  name: movementSpeed
-  nameWithType: characterController.movementSpeed
-  fullName: characterController.movementSpeed
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: movementSpeed
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 10
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public float movementSpeed
-    return:
-      type: System.Single
-    content.vb: Public movementSpeed As Single
-- uid: MysticForestParkRanger.characterController.rotationSpeed
-  commentId: F:MysticForestParkRanger.characterController.rotationSpeed
-  id: rotationSpeed
-  parent: MysticForestParkRanger.characterController
-  langs:
-  - csharp
-  - vb
-  name: rotationSpeed
-  nameWithType: characterController.rotationSpeed
-  fullName: characterController.rotationSpeed
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: rotationSpeed
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 11
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public float rotationSpeed
-    return:
-      type: System.Single
-    content.vb: Public rotationSpeed As Single
-- uid: MysticForestParkRanger.characterController.relativeDirectionalMovement
-  commentId: F:MysticForestParkRanger.characterController.relativeDirectionalMovement
-  id: relativeDirectionalMovement
-  parent: MysticForestParkRanger.characterController
-  langs:
-  - csharp
-  - vb
-  name: relativeDirectionalMovement
-  nameWithType: characterController.relativeDirectionalMovement
-  fullName: characterController.relativeDirectionalMovement
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: relativeDirectionalMovement
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 12
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public bool relativeDirectionalMovement
-    return:
-      type: System.Boolean
-    content.vb: Public relativeDirectionalMovement As Boolean
-- uid: MysticForestParkRanger.characterController.rotationSpeedMultiplier
-  commentId: F:MysticForestParkRanger.characterController.rotationSpeedMultiplier
-  id: rotationSpeedMultiplier
-  parent: MysticForestParkRanger.characterController
-  langs:
-  - csharp
-  - vb
-  name: rotationSpeedMultiplier
-  nameWithType: characterController.rotationSpeedMultiplier
-  fullName: characterController.rotationSpeedMultiplier
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: rotationSpeedMultiplier
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 13
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public float rotationSpeedMultiplier
-    return:
-      type: System.Single
-    content.vb: Public rotationSpeedMultiplier As Single
-- uid: MysticForestParkRanger.characterController.movementSpeedMultiplier
-  commentId: F:MysticForestParkRanger.characterController.movementSpeedMultiplier
-  id: movementSpeedMultiplier
-  parent: MysticForestParkRanger.characterController
-  langs:
-  - csharp
-  - vb
-  name: movementSpeedMultiplier
-  nameWithType: characterController.movementSpeedMultiplier
-  fullName: characterController.movementSpeedMultiplier
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: movementSpeedMultiplier
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 14
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public float movementSpeedMultiplier
-    return:
-      type: System.Single
-    content.vb: Public movementSpeedMultiplier As Single
+      type: MysticForestParkRanger.BoolArray2D
+    content.vb: >-
+      <SerializeField>
+
+      Public shape As BoolArray2D
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
 references:
 - uid: MysticForestParkRanger
 - uid: System.Object
@@ -4665,25 +4535,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
+- uid: MysticForestParkRanger.BoolArray2D
+  commentId: T:MysticForestParkRanger.BoolArray2D
+  href: BoolArray2D.html
+  name: BoolArray2D
+  nameWithType: BoolArray2D
+  fullName: BoolArray2D

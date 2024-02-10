@@ -3,8 +3,12 @@ items:
 - uid: MysticForestParkRanger
   id: MysticForestParkRanger
   children:
+  - MysticForestParkRanger.BoolArray2D
+  - MysticForestParkRanger.BoolArray2DDrawer
+  - MysticForestParkRanger.GridGroup
   - MysticForestParkRanger.UIController
   - MysticForestParkRanger.characterController
+  - MysticForestParkRanger.test
   langs:
   - csharp
   - vb
@@ -13,8 +17,26 @@ items:
   fullName: MysticForestParkRanger
   type: Namespace
   assemblies:
-  - ScriptAssembly
+  - EditorAssembly
 references:
+- uid: MysticForestParkRanger.BoolArray2D
+  commentId: T:MysticForestParkRanger.BoolArray2D
+  href: BoolArray2D.html
+  name: BoolArray2D
+  nameWithType: BoolArray2D
+  fullName: BoolArray2D
+- uid: MysticForestParkRanger.BoolArray2DDrawer
+  commentId: T:MysticForestParkRanger.BoolArray2DDrawer
+  href: BoolArray2DDrawer.html
+  name: BoolArray2DDrawer
+  nameWithType: BoolArray2DDrawer
+  fullName: BoolArray2DDrawer
+- uid: MysticForestParkRanger.GridGroup
+  commentId: T:MysticForestParkRanger.GridGroup
+  href: GridGroup.html
+  name: GridGroup
+  nameWithType: GridGroup
+  fullName: GridGroup
 - uid: MysticForestParkRanger.UIController
   commentId: T:MysticForestParkRanger.UIController
   href: UIController.html
@@ -27,3 +49,9 @@ references:
   name: characterController
   nameWithType: characterController
   fullName: characterController
+- uid: MysticForestParkRanger.test
+  commentId: T:MysticForestParkRanger.test
+  href: test.html
+  name: test
+  nameWithType: test
+  fullName: test

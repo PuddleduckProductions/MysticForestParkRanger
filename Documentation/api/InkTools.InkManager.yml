@@ -9,11 +9,13 @@ items:
   - InkTools.InkManager.DrawDialog(InkTools.InkManager.DialogLine)
   - InkTools.InkManager.EvaluateStory
   - InkTools.InkManager.LineFromString(System.String)
+  - InkTools.InkManager.PathExists(System.String)
   - InkTools.InkManager.StartDialog(System.String)
   - InkTools.InkManager.TryFindCharacter(System.String,UnityEngine.GameObject@)
   - InkTools.InkManager.dialogEnd
   - InkTools.InkManager.dialogInstance
   - InkTools.InkManager.dialogRenderer
+  - InkTools.InkManager.hasInkJSON
   - InkTools.InkManager.inkJSONAsset
   - InkTools.InkManager.lineMatchRegex
   - InkTools.InkManager.runOnStart
@@ -425,6 +427,69 @@ items:
     return:
       type: UnityEngine.Events.UnityEvent
     content.vb: Public dialogEnd As UnityEvent
+- uid: InkTools.InkManager.hasInkJSON
+  commentId: P:InkTools.InkManager.hasInkJSON
+  id: hasInkJSON
+  parent: InkTools.InkManager
+  langs:
+  - csharp
+  - vb
+  name: hasInkJSON
+  nameWithType: InkManager.hasInkJSON
+  fullName: InkTools.InkManager.hasInkJSON
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: hasInkJSON
+    path: ../Assets/Scripts/Ink/InkManager.cs
+    startLine: 67
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public bool hasInkJSON { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property hasInkJSON As Boolean
+  overload: InkTools.InkManager.hasInkJSON*
+- uid: InkTools.InkManager.PathExists(System.String)
+  commentId: M:InkTools.InkManager.PathExists(System.String)
+  id: PathExists(System.String)
+  parent: InkTools.InkManager
+  langs:
+  - csharp
+  - vb
+  name: PathExists(string)
+  nameWithType: InkManager.PathExists(string)
+  fullName: InkTools.InkManager.PathExists(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: PathExists
+    path: ../Assets/Scripts/Ink/InkManager.cs
+    startLine: 69
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public bool PathExists(string pathName)
+    parameters:
+    - id: pathName
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function PathExists(pathName As String) As Boolean
+  overload: InkTools.InkManager.PathExists*
+  nameWithType.vb: InkManager.PathExists(String)
+  fullName.vb: InkTools.InkManager.PathExists(String)
+  name.vb: PathExists(String)
 - uid: InkTools.InkManager.StartDialog(System.String)
   commentId: M:InkTools.InkManager.StartDialog(System.String)
   id: StartDialog(System.String)
@@ -443,7 +508,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: StartDialog
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 68
+    startLine: 74
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -475,7 +540,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: AdvanceStory
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 79
+    startLine: 85
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -501,7 +566,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EvaluateStory
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 89
+    startLine: 98
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -527,7 +592,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: TryFindCharacter
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 106
+    startLine: 115
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -563,7 +628,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: DrawDialog
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 114
+    startLine: 123
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -5166,6 +5231,18 @@ references:
   - uid: UnityEngine.Events
     name: Events
     isExternal: true
+- uid: InkTools.InkManager.hasInkJSON*
+  commentId: Overload:InkTools.InkManager.hasInkJSON
+  href: InkTools.InkManager.html#InkTools_InkManager_hasInkJSON
+  name: hasInkJSON
+  nameWithType: InkManager.hasInkJSON
+  fullName: InkTools.InkManager.hasInkJSON
+- uid: InkTools.InkManager.PathExists*
+  commentId: Overload:InkTools.InkManager.PathExists
+  href: InkTools.InkManager.html#InkTools_InkManager_PathExists_System_String_
+  name: PathExists
+  nameWithType: InkManager.PathExists
+  fullName: InkTools.InkManager.PathExists
 - uid: InkTools.InkManager.StartDialog*
   commentId: Overload:InkTools.InkManager.StartDialog
   href: InkTools.InkManager.html#InkTools_InkManager_StartDialog_System_String_

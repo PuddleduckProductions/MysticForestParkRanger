@@ -5,11 +5,11 @@ items:
   id: Interactions
   children:
   - Interactions.Behaviors
-  - Interactions.CustomInteractionEditor
   - Interactions.Interaction
   - Interactions.Interaction.InteractionType
   - Interactions.InteractionEditor
   - Interactions.InteractionManager
+  - Interactions.InteractionManager.InteractionState
   langs:
   - csharp
   - vb
@@ -42,12 +42,6 @@ references:
   - uid: Interactions.Behaviors
     name: Behaviors
     href: Interactions.Behaviors.html
-- uid: Interactions.CustomInteractionEditor
-  commentId: T:Interactions.CustomInteractionEditor
-  href: Interactions.CustomInteractionEditor.html
-  name: CustomInteractionEditor
-  nameWithType: CustomInteractionEditor
-  fullName: Interactions.CustomInteractionEditor
 - uid: Interactions.Interaction
   commentId: T:Interactions.Interaction
   parent: Interactions
@@ -90,6 +84,29 @@ references:
   name: InteractionManager
   nameWithType: InteractionManager
   fullName: Interactions.InteractionManager
+- uid: Interactions.InteractionManager.InteractionState
+  commentId: T:Interactions.InteractionManager.InteractionState
+  parent: Interactions
+  href: Interactions.InteractionManager.html
+  name: InteractionManager.InteractionState
+  nameWithType: InteractionManager.InteractionState
+  fullName: Interactions.InteractionManager.InteractionState
+  spec.csharp:
+  - uid: Interactions.InteractionManager
+    name: InteractionManager
+    href: Interactions.InteractionManager.html
+  - name: .
+  - uid: Interactions.InteractionManager.InteractionState
+    name: InteractionState
+    href: Interactions.InteractionManager.InteractionState.html
+  spec.vb:
+  - uid: Interactions.InteractionManager
+    name: InteractionManager
+    href: Interactions.InteractionManager.html
+  - name: .
+  - uid: Interactions.InteractionManager.InteractionState
+    name: InteractionState
+    href: Interactions.InteractionManager.InteractionState.html
 - uid: Interactions
   commentId: N:Interactions
   href: Interactions.html

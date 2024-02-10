@@ -1,60 +1,51 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  id: InteractionBehavior
+- uid: Interactions.Behaviors.PickAndPutInteraction
+  commentId: T:Interactions.Behaviors.PickAndPutInteraction
+  id: PickAndPutInteraction
   parent: Interactions.Behaviors
   children:
-  - Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
-  - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  - Interactions.Behaviors.InteractionBehavior.EndInteraction
-  - Interactions.Behaviors.InteractionBehavior.Interact
-  - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  - Interactions.Behaviors.InteractionBehavior.Update
-  - Interactions.Behaviors.InteractionBehavior.interactionObject
+  - Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
+  - Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+  - Interactions.Behaviors.PickAndPutInteraction.Interact
+  - Interactions.Behaviors.PickAndPutInteraction.Update
+  - Interactions.Behaviors.PickAndPutInteraction.isPicking
   langs:
   - csharp
   - vb
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
+  name: PickAndPutInteraction
+  nameWithType: PickAndPutInteraction
+  fullName: Interactions.Behaviors.PickAndPutInteraction
   type: Class
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionBehavior
+    id: PickAndPutInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 17
+    startLine: 236
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: >-
-    A serialized class meant to control different interaction behaviors when space is pressed on one.
-
-    This is to avoid having to attach multiple monobehaviors for anything with one interaction.
-
-    If you want to add your own, you can either use Custom (in progress), or create a subclass of InteractionBehavior.
+  summary: An object that can be picked up and placed within the world.
   example: []
   syntax:
     content: >-
       [Serializable]
 
-      public abstract class InteractionBehavior
+      public class PickAndPutInteraction : InteractionBehavior
     content.vb: >-
       <Serializable>
 
-      Public MustInherit Class InteractionBehavior
+      Public Class PickAndPutInteraction Inherits InteractionBehavior
   inheritance:
   - System.Object
-  derivedClasses:
-  - Interactions.Behaviors.CustomInteraction
-  - Interactions.Behaviors.InkInteraction
-  - Interactions.Behaviors.PickAndPutInteraction
-  - Interactions.Behaviors.PushableInteraction
-  - Interactions.Behaviors.PutTrigger
+  - Interactions.Behaviors.InteractionBehavior
   inheritedMembers:
+  - Interactions.Behaviors.InteractionBehavior.interactionObject
+  - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -66,65 +57,16 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
-- uid: Interactions.Behaviors.InteractionBehavior.interactionObject
-  commentId: F:Interactions.Behaviors.InteractionBehavior.interactionObject
-  id: interactionObject
-  parent: Interactions.Behaviors.InteractionBehavior
-  langs:
-  - csharp
-  - vb
-  name: interactionObject
-  nameWithType: InteractionBehavior.interactionObject
-  fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionObject
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 24
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    Reference to the MonoBehaviour <xref href="Interactions.Interaction" data-throw-if-not-resolved="false"></xref> for accessing things like position.
-
-    It's a serialized field so we don't lose the reference to the parent when the scene starts.
-  example: []
-  syntax:
-    content: >-
-      [SerializeField]
-
-      [HideInInspector]
-
-      protected Interaction interactionObject
-    return:
-      type: Interactions.Interaction
-    content.vb: >-
-      <SerializeField>
-
-      <HideInInspector>
-
-      Protected interactionObject As Interaction
-  attributes:
-  - type: UnityEngine.SerializeField
-    ctor: UnityEngine.SerializeField.#ctor
-    arguments: []
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
+- uid: Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
-  parent: Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors.PickAndPutInteraction
   langs:
   - csharp
   - vb
-  name: InteractionBehavior(Interaction)
-  nameWithType: InteractionBehavior.InteractionBehavior(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.InteractionBehavior(Interactions.Interaction)
+  name: PickAndPutInteraction(Interaction)
+  nameWithType: PickAndPutInteraction.PickAndPutInteraction(Interaction)
+  fullName: Interactions.Behaviors.PickAndPutInteraction.PickAndPutInteraction(Interactions.Interaction)
   type: Constructor
   source:
     remote:
@@ -133,30 +75,57 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 26
+    startLine: 238
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
   syntax:
-    content: public InteractionBehavior(Interaction parent)
+    content: public PickAndPutInteraction(Interaction parent)
     parameters:
     - id: parent
       type: Interactions.Interaction
     content.vb: Public Sub New(parent As Interaction)
-  overload: Interactions.Behaviors.InteractionBehavior.#ctor*
-  nameWithType.vb: InteractionBehavior.New(Interaction)
-  fullName.vb: Interactions.Behaviors.InteractionBehavior.New(Interactions.Interaction)
+  overload: Interactions.Behaviors.PickAndPutInteraction.#ctor*
+  nameWithType.vb: PickAndPutInteraction.New(Interaction)
+  fullName.vb: Interactions.Behaviors.PickAndPutInteraction.New(Interactions.Interaction)
   name.vb: New(Interaction)
-- uid: Interactions.Behaviors.InteractionBehavior.Interact
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
+- uid: Interactions.Behaviors.PickAndPutInteraction.isPicking
+  commentId: F:Interactions.Behaviors.PickAndPutInteraction.isPicking
+  id: isPicking
+  parent: Interactions.Behaviors.PickAndPutInteraction
+  langs:
+  - csharp
+  - vb
+  name: isPicking
+  nameWithType: PickAndPutInteraction.isPicking
+  fullName: Interactions.Behaviors.PickAndPutInteraction.isPicking
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: isPicking
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 239
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: protected bool isPicking
+    return:
+      type: System.Boolean
+    content.vb: Protected isPicking As Boolean
+- uid: Interactions.Behaviors.PickAndPutInteraction.Interact
+  commentId: M:Interactions.Behaviors.PickAndPutInteraction.Interact
   id: Interact
-  parent: Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors.PickAndPutInteraction
   langs:
   - csharp
   - vb
   name: Interact()
-  nameWithType: InteractionBehavior.Interact()
-  fullName: Interactions.Behaviors.InteractionBehavior.Interact()
+  nameWithType: PickAndPutInteraction.Interact()
+  fullName: Interactions.Behaviors.PickAndPutInteraction.Interact()
   type: Method
   source:
     remote:
@@ -165,7 +134,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 36
+    startLine: 243
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -179,89 +148,20 @@ items:
     interacted with and space is being pressed.
   example: []
   syntax:
-    content: public abstract void Interact()
-    content.vb: Public MustOverride Sub Interact()
-  overload: Interactions.Behaviors.InteractionBehavior.Interact*
-- uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  id: Interact(Interactions.Interaction)
-  parent: Interactions.Behaviors.InteractionBehavior
-  langs:
-  - csharp
-  - vb
-  name: Interact(Interaction)
-  nameWithType: InteractionBehavior.Interact(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 44
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    Function to call when the object is interacted with another interaction.
-
-    This will still be called even while <xref href="Interactions.Behaviors.InteractionBehavior.Update" data-throw-if-not-resolved="false"></xref> returns true, as long as this object is being
-
-    interacted with and space is being pressed on another object.
-  example: []
-  syntax:
-    content: public virtual void Interact(Interaction other)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-      description: The other interaction
-    content.vb: Public Overridable Sub Interact(other As Interaction)
-  overload: Interactions.Behaviors.InteractionBehavior.Interact*
-- uid: Interactions.Behaviors.InteractionBehavior.Update
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Update
-  id: Update
-  parent: Interactions.Behaviors.InteractionBehavior
-  langs:
-  - csharp
-  - vb
-  name: Update()
-  nameWithType: InteractionBehavior.Update()
-  fullName: Interactions.Behaviors.InteractionBehavior.Update()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Update
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 50
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    Are we currently having an interaction happen? What do we need to do to update it?
-
-    If this returns true, this supresses all other interactions in the scene.
-  example: []
-  syntax:
-    content: public virtual bool Update()
-    return:
-      type: System.Boolean
-    content.vb: Public Overridable Function Update() As Boolean
-  overload: Interactions.Behaviors.InteractionBehavior.Update*
-- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
-  commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction
+    content: public override void Interact()
+    content.vb: Public Overrides Sub Interact()
+  overridden: Interactions.Behaviors.InteractionBehavior.Interact
+  overload: Interactions.Behaviors.PickAndPutInteraction.Interact*
+- uid: Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+  commentId: M:Interactions.Behaviors.PickAndPutInteraction.EndInteraction
   id: EndInteraction
-  parent: Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors.PickAndPutInteraction
   langs:
   - csharp
   - vb
   name: EndInteraction()
-  nameWithType: InteractionBehavior.EndInteraction()
-  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction()
+  nameWithType: PickAndPutInteraction.EndInteraction()
+  fullName: Interactions.Behaviors.PickAndPutInteraction.EndInteraction()
   type: Method
   source:
     remote:
@@ -270,7 +170,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 57
+    startLine: 256
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -282,44 +182,44 @@ items:
     but this may be called by other interactions who want to do interactions with your object in <xref href="Interactions.InteractionManager.StopCurrentInteraction" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public virtual void EndInteraction()
-    content.vb: Public Overridable Sub EndInteraction()
-  overload: Interactions.Behaviors.InteractionBehavior.EndInteraction*
-- uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  id: CanInteract(Interactions.Interaction)
-  parent: Interactions.Behaviors.InteractionBehavior
+    content: public override void EndInteraction()
+    content.vb: Public Overrides Sub EndInteraction()
+  overridden: Interactions.Behaviors.InteractionBehavior.EndInteraction
+  overload: Interactions.Behaviors.PickAndPutInteraction.EndInteraction*
+- uid: Interactions.Behaviors.PickAndPutInteraction.Update
+  commentId: M:Interactions.Behaviors.PickAndPutInteraction.Update
+  id: Update
+  parent: Interactions.Behaviors.PickAndPutInteraction
   langs:
   - csharp
   - vb
-  name: CanInteract(Interaction)
-  nameWithType: InteractionBehavior.CanInteract(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  name: Update()
+  nameWithType: PickAndPutInteraction.Update()
+  fullName: Interactions.Behaviors.PickAndPutInteraction.Update()
   type: Method
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CanInteract
+    id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 64
+    startLine: 264
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: Should we allow interactions currently?
+  summary: >-
+    Are we currently having an interaction happen? What do we need to do to update it?
+
+    If this returns true, this supresses all other interactions in the scene.
   example: []
   syntax:
-    content: public virtual bool CanInteract(Interaction other = null)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-      description: The other object that wants to interact with us. Can be null.
+    content: public override bool Update()
     return:
       type: System.Boolean
-      description: ''
-    content.vb: Public Overridable Function CanInteract(other As Interaction = Nothing) As Boolean
-  overload: Interactions.Behaviors.InteractionBehavior.CanInteract*
+    content.vb: Public Overrides Function Update() As Boolean
+  overridden: Interactions.Behaviors.InteractionBehavior.Update
+  overload: Interactions.Behaviors.PickAndPutInteraction.Update*
 references:
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
@@ -354,6 +254,70 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: Interactions.Behaviors.InteractionBehavior
+  commentId: T:Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.InteractionBehavior.html
+  name: InteractionBehavior
+  nameWithType: InteractionBehavior
+  fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Behaviors.InteractionBehavior.interactionObject
+  commentId: F:Interactions.Behaviors.InteractionBehavior.interactionObject
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_interactionObject
+  name: interactionObject
+  nameWithType: InteractionBehavior.interactionObject
+  fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
+- uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  name: Interact(Interaction)
+  nameWithType: InteractionBehavior.Interact(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  name: CanInteract(Interaction)
+  nameWithType: InteractionBehavior.CanInteract(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -580,6 +544,15 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Interactions.Behaviors.PickAndPutInteraction.#ctor*
+  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.#ctor
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction__ctor_Interactions_Interaction_
+  name: PickAndPutInteraction
+  nameWithType: PickAndPutInteraction.PickAndPutInteraction
+  fullName: Interactions.Behaviors.PickAndPutInteraction.PickAndPutInteraction
+  nameWithType.vb: PickAndPutInteraction.New
+  fullName.vb: Interactions.Behaviors.PickAndPutInteraction.New
+  name.vb: New
 - uid: Interactions.Interaction
   commentId: T:Interactions.Interaction
   parent: Interactions
@@ -593,15 +566,17 @@ references:
   name: Interactions
   nameWithType: Interactions
   fullName: Interactions
-- uid: Interactions.Behaviors.InteractionBehavior.#ctor*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.#ctor
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior__ctor_Interactions_Interaction_
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior.InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior.InteractionBehavior
-  nameWithType.vb: InteractionBehavior.New
-  fullName.vb: Interactions.Behaviors.InteractionBehavior.New
-  name.vb: New
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Interactions.InteractionManager
   commentId: T:Interactions.InteractionManager
   href: Interactions.InteractionManager.html
@@ -627,36 +602,31 @@ references:
     href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
   - name: (
   - name: )
-- uid: Interactions.Behaviors.InteractionBehavior.Interact*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.Interact
+- uid: Interactions.Behaviors.InteractionBehavior.Interact
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
+  parent: Interactions.Behaviors.InteractionBehavior
   href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  name: Interact()
+  nameWithType: InteractionBehavior.Interact()
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.PickAndPutInteraction.Interact*
+  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.Interact
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Interact
   name: Interact
-  nameWithType: InteractionBehavior.Interact
-  fullName: Interactions.Behaviors.InteractionBehavior.Interact
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions.Behaviors.InteractionBehavior.Update*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.Update
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
-  name: Update
-  nameWithType: InteractionBehavior.Update
-  fullName: Interactions.Behaviors.InteractionBehavior.Update
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
+  nameWithType: PickAndPutInteraction.Interact
+  fullName: Interactions.Behaviors.PickAndPutInteraction.Interact
 - uid: Interactions.InteractionManager.StopCurrentInteraction
   commentId: M:Interactions.InteractionManager.StopCurrentInteraction
   href: Interactions.InteractionManager.html#Interactions_InteractionManager_StopCurrentInteraction
@@ -675,15 +645,34 @@ references:
     href: Interactions.InteractionManager.html#Interactions_InteractionManager_StopCurrentInteraction
   - name: (
   - name: )
-- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.EndInteraction
+- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+  commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction
+  parent: Interactions.Behaviors.InteractionBehavior
   href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
+  name: EndInteraction()
+  nameWithType: InteractionBehavior.EndInteraction()
+  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.PickAndPutInteraction.EndInteraction*
+  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_EndInteraction
   name: EndInteraction
-  nameWithType: InteractionBehavior.EndInteraction
-  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction
-- uid: Interactions.Behaviors.InteractionBehavior.CanInteract*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.CanInteract
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
-  name: CanInteract
-  nameWithType: InteractionBehavior.CanInteract
-  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract
+  nameWithType: PickAndPutInteraction.EndInteraction
+  fullName: Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+- uid: Interactions.Behaviors.PickAndPutInteraction.Update*
+  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.Update
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Update
+  name: Update
+  nameWithType: PickAndPutInteraction.Update
+  fullName: Interactions.Behaviors.PickAndPutInteraction.Update

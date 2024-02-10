@@ -6,6 +6,7 @@ items:
   parent: InkTools
   children:
   - InkTools.InkCommandDef.InkCommand
+  - InkTools.InkCommandDef.enablePlayerMove
   - InkTools.InkCommandDef.moveTo
   langs:
   - csharp
@@ -24,6 +25,12 @@ references:
   name: InkCommand
   nameWithType: InkCommand
   fullName: InkTools.InkCommandDef.InkCommand
+- uid: InkTools.InkCommandDef.enablePlayerMove
+  commentId: T:InkTools.InkCommandDef.enablePlayerMove
+  href: InkTools.InkCommandDef.enablePlayerMove.html
+  name: enablePlayerMove
+  nameWithType: enablePlayerMove
+  fullName: InkTools.InkCommandDef.enablePlayerMove
 - uid: InkTools.InkCommandDef.moveTo
   commentId: T:InkTools.InkCommandDef.moveTo
   href: InkTools.InkCommandDef.moveTo.html

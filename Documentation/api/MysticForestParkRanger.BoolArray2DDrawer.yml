@@ -1,47 +1,38 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.InteractionEditor
-  commentId: T:Interactions.InteractionEditor
-  id: InteractionEditor
-  parent: Interactions
+- uid: MysticForestParkRanger.BoolArray2DDrawer
+  commentId: T:MysticForestParkRanger.BoolArray2DDrawer
+  id: BoolArray2DDrawer
+  parent: MysticForestParkRanger
   children:
-  - Interactions.InteractionEditor.OnInspectorGUI
+  - MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
   langs:
   - csharp
   - vb
-  name: InteractionEditor
-  nameWithType: InteractionEditor
-  fullName: Interactions.InteractionEditor
+  name: BoolArray2DDrawer
+  nameWithType: BoolArray2DDrawer
+  fullName: BoolArray2DDrawer
   type: Class
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Interactions/BoolArray2DDrawer.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionEditor
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 12
+    id: BoolArray2DDrawer
+    path: ../Assets/Editor/Interactions/BoolArray2DDrawer.cs
+    startLine: 6
   assemblies:
   - EditorAssembly
-  namespace: Interactions
-  summary: >-
-    Editor for <xref href="Interactions.Interaction" data-throw-if-not-resolved="false"></xref>, to make selecting <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> automated and easy for designers.
-
-    TODO: Need to figure out how to access the serialized properties of InteractionBehavior.
-  example: []
+  namespace: MysticForestParkRanger
   syntax:
     content: >-
-      [CustomEditor(typeof(Interaction))]
+      [CustomEditor(typeof(test))]
 
-      [CanEditMultipleObjects]
-
-      public class InteractionEditor : Editor
+      public class BoolArray2DDrawer : Editor
     content.vb: >-
-      <CustomEditor(GetType(Interaction))>
+      <CustomEditor(GetType(test))>
 
-      <CanEditMultipleObjects>
-
-      Public Class InteractionEditor Inherits Editor
+      Public Class BoolArray2DDrawer Inherits Editor
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -146,60 +137,38 @@ items:
     ctor: UnityEditor.CustomEditor.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: Interactions.Interaction
-  - type: UnityEditor.CanEditMultipleObjects
-    ctor: UnityEditor.CanEditMultipleObjects.#ctor
-    arguments: []
-- uid: Interactions.InteractionEditor.OnInspectorGUI
-  commentId: M:Interactions.InteractionEditor.OnInspectorGUI
+      value: MysticForestParkRanger.test
+- uid: MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
+  commentId: M:MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
   id: OnInspectorGUI
-  parent: Interactions.InteractionEditor
+  parent: MysticForestParkRanger.BoolArray2DDrawer
   langs:
   - csharp
   - vb
   name: OnInspectorGUI()
-  nameWithType: InteractionEditor.OnInspectorGUI()
-  fullName: Interactions.InteractionEditor.OnInspectorGUI()
+  nameWithType: BoolArray2DDrawer.OnInspectorGUI()
+  fullName: BoolArray2DDrawer.OnInspectorGUI()
   type: Method
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Interactions/BoolArray2DDrawer.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 42
+    path: ../Assets/Editor/Interactions/BoolArray2DDrawer.cs
+    startLine: 15
   assemblies:
   - EditorAssembly
-  namespace: Interactions
+  namespace: MysticForestParkRanger
   summary: <p>Implement this function to make a custom inspector.</p>
   example: []
   syntax:
     content: public override void OnInspectorGUI()
     content.vb: Public Overrides Sub OnInspectorGUI()
   overridden: UnityEditor.Editor.OnInspectorGUI
-  overload: Interactions.InteractionEditor.OnInspectorGUI*
+  overload: MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI*
 references:
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions
-  commentId: N:Interactions
-  href: Interactions.html
-  name: Interactions
-  nameWithType: Interactions
-  fullName: Interactions
+- uid: MysticForestParkRanger
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -3148,28 +3117,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: Interactions.Behaviors
-  commentId: N:Interactions.Behaviors
-  href: Interactions.html
-  name: Interactions.Behaviors
-  nameWithType: Interactions.Behaviors
-  fullName: Interactions.Behaviors
-  spec.csharp:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
-  spec.vb:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -3446,9 +3393,9 @@ references:
     isExternal: true
   - name: (
   - name: )
-- uid: Interactions.InteractionEditor.OnInspectorGUI*
-  commentId: Overload:Interactions.InteractionEditor.OnInspectorGUI
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_OnInspectorGUI
+- uid: MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI*
+  commentId: Overload:MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
+  href: MysticForestParkRanger.BoolArray2DDrawer.html#BoolArray2DDrawer_OnInspectorGUI
   name: OnInspectorGUI
-  nameWithType: InteractionEditor.OnInspectorGUI
-  fullName: Interactions.InteractionEditor.OnInspectorGUI
+  nameWithType: BoolArray2DDrawer.OnInspectorGUI
+  fullName: BoolArray2DDrawer.OnInspectorGUI
