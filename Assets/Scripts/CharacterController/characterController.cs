@@ -47,7 +47,7 @@ public class characterController : MonoBehaviour
 
         if (relativeDirectionalMovement) {
             transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
-        } else {
+        } else if (move != Vector3.zero) {
             transform.rotation = Quaternion.LookRotation(move, transform.up);
         }
         move.Normalize();
