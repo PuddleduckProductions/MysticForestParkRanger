@@ -4,8 +4,7 @@ items:
   commentId: T:MysticForestParkRanger.characterController
   id: characterController
   parent: MysticForestParkRanger
-  children:
-  - MysticForestParkRanger.characterController.movementSpeed
+  children: []
   langs:
   - csharp
   - vb
@@ -148,33 +147,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: MysticForestParkRanger.characterController.movementSpeed
-  commentId: F:MysticForestParkRanger.characterController.movementSpeed
-  id: movementSpeed
-  parent: MysticForestParkRanger.characterController
-  langs:
-  - csharp
-  - vb
-  name: movementSpeed
-  nameWithType: characterController.movementSpeed
-  fullName: characterController.movementSpeed
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: movementSpeed
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 10
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public float movementSpeed
-    return:
-      type: System.Single
-    content.vb: Public movementSpeed As Single
 references:
 - uid: MysticForestParkRanger
 - uid: System.Object
@@ -4525,14 +4497,3 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single

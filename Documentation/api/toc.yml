@@ -30,12 +30,8 @@ items:
       name: InkInteraction
     - uid: Interactions.Behaviors.InteractionBehavior
       name: InteractionBehavior
-    - uid: Interactions.Behaviors.PickAndPutInteraction
-      name: PickAndPutInteraction
     - uid: Interactions.Behaviors.PushableInteraction
       name: PushableInteraction
-    - uid: Interactions.Behaviors.PutTrigger
-      name: PutTrigger
   - uid: Interactions.CustomInteractionEditor
     name: CustomInteractionEditor
   - uid: Interactions.Interaction

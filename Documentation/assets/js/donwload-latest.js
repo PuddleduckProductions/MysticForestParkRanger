@@ -1,3 +1,4 @@
+@ -1,32 +0,0 @@
 function downloadLatestBuildArtifact() {
 	fetch("https://api.github.com/repos/PuddleduckProductions/MysticForestParkRanger/actions/runs").then((res) => {
 		return res.json();

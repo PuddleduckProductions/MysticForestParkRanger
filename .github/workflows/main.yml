@@ -9,10 +9,11 @@ on:
       - 'Assets/**/*'
       - 'Packages/**/*'
       - 'ProjectSettings/**/*'
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
+      
 permissions:
   actions: read
   pull-requests: write
@@ -24,7 +25,6 @@ jobs:
   test:
     name: Test MysticForestParkRanger
     runs-on: ubuntu-latest
-
     steps:
       # Checkout
       - name: Checkout repository
@@ -37,6 +37,7 @@ jobs:
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
+
       # Test
       - name: Run tests
         uses: game-ci/unity-test-runner@v4
@@ -46,7 +47,6 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-
   build:
     name: Build MysticForestParkRanger
     runs-on: ubuntu-latest

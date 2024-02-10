@@ -139,9 +139,20 @@ namespace Interactions {
             }
 
             public override void EndInteraction() {
+                SnapToGrid(interactionObject.transform);
                 if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
                     c.enabled = true;
                 }
+            }
+            /// <summary>
+            /// Snap the object's position to the center of the nearest grid point
+            /// </summary>
+            private void SnapToGrid(Transform objTransform)
+            {
+                Vector3 position = objTransform.position;
+                //position.x = Mathf.Round(position.x / gridSize) * gridSize;
+                //position.z = Mathf.Round(position.z / gridSize) * gridSize;
+                objTransform.position = position;
             }
 
             /// <summary>
@@ -301,6 +312,8 @@ namespace Interactions {
             }
         }
     } 
+    //Require a Collider for the Boxcast system to reference
+    [RequireComponent(typeof(Collider))]
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {

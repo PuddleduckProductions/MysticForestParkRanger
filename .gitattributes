@@ -1,5 +1,13 @@
 # Define macros (only works in top-level gitattributes files)
 [attr]unity-yaml        merge=unityyamlmerge eol=lf linguist-language=yaml
+# Set up unityyamlmerge with this guide: https://learn.unity.com/tutorial/working-with-yamlmerge#5feba6a2edbc2a69e6450f9d
+# If you're on Windows the path is most likely C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.16f1\\Editor\\Data\\Tools\\UnityYAMLMerge.exe
+# Unity merging stuff:
+*.cs diff=csharp text
+*.cginc text
+*.shader text
+
+Documentation/docfxfix.sh eol=lf
 
 # Optionally collapse Unity-generated files on GitHub diffs
 # [attr]unity-yaml        merge=unityyamlmerge text linguist-language=yaml linguist-generated

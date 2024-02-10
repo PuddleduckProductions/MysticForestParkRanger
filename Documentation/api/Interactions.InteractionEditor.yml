@@ -168,7 +168,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
     path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 46
+    startLine: 40
   assemblies:
   - EditorAssembly
   namespace: Interactions
