@@ -5,6 +5,8 @@ items:
   items:
     - name: Interaction System
       href: Tutorials/interaction.md
+    - name: Unity Merge Tools
+      href: Tutorials/unity-merge.md
 - name: Scenes
   href: scenes.md
 - name: Assets
