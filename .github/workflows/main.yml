@@ -9,6 +9,7 @@ on:
       - 'Assets/**/*'
       - 'Packages/**/*'
       - 'ProjectSettings/**/*'
+      - .github/workflows/main.yml
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
