@@ -41,6 +41,12 @@ namespace Interactions {
             /// </summary>
             public virtual void Update() { }
 
+            /// <summary>
+            /// Called when another interaction wants to do something with this.
+            /// </summary>
+            /// <param name="other">The other interaction calling this.</param>
+            public virtual void ChainInteraction(Interaction other) { }
+
         }
 
         /// <summary>
@@ -239,7 +245,8 @@ namespace Interactions {
     [RequireComponent(typeof(Collider))]
 
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { Ink, Pushable, Custom };
+        public bool interactionEnabled = true;
+        public enum InteractionType { Ink, Pushable, PickAndPut, PutTrigger, Custom };
         public InteractionType type;
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;
