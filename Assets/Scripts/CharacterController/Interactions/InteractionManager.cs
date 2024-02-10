@@ -111,7 +111,9 @@ namespace Interactions {
             RaycastHit[] hits = Physics.BoxCastAll(playerPosition, interactionExtents* .5f, player.transform.forward, player.transform.rotation, interactionRange);
             foreach (RaycastHit hit in hits) {
                 if (hit.collider != null && hit.collider.TryGetComponent<Interaction>(out Interaction interaction)) {
-                    if(interaction.gameObject.activeInHierarchy && interaction.interactionEnabled){ //if inter. not null & inter enabled
+                    if(interaction.gameObject.activeInHierarchy
+                        // CanInteract accounts for the possibility that usingInteraction is null.
+                        && interaction.interactionEnabled && interaction.CanInteract(usingInteraction)){
                         var distance = Vector3.Distance(playerPosition, hit.point); // get distance from player --> hit
                         if (distance < closestDistance) { //if closest distance so far
                             closestDistance = distance; //change closest distance
