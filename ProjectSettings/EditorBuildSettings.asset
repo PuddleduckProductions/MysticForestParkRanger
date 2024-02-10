@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Prototype Zero/environment test.unity
+    guid: cd01818c46900414597e123ccba3225f
+  - enabled: 1
     path: Assets/Scenes/Prototype Zero/PrototypeZero.unity
     guid: 0c07f19816d2e408fb5d30f362c10681
   m_configObjects: {}

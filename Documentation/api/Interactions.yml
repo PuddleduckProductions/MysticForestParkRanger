@@ -1,0 +1,98 @@
+### YamlMime:ManagedReference
+items:
+- uid: Interactions
+  commentId: N:Interactions
+  id: Interactions
+  children:
+  - Interactions.Behaviors
+  - Interactions.CustomInteractionEditor
+  - Interactions.Interaction
+  - Interactions.Interaction.InteractionType
+  - Interactions.InteractionEditor
+  - Interactions.InteractionManager
+  langs:
+  - csharp
+  - vb
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions
+  type: Namespace
+  assemblies:
+  - EditorAssembly
+references:
+- uid: Interactions.Behaviors
+  commentId: N:Interactions.Behaviors
+  href: Interactions.html
+  name: Interactions.Behaviors
+  nameWithType: Interactions.Behaviors
+  fullName: Interactions.Behaviors
+  spec.csharp:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+  spec.vb:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+- uid: Interactions.CustomInteractionEditor
+  commentId: T:Interactions.CustomInteractionEditor
+  href: Interactions.CustomInteractionEditor.html
+  name: CustomInteractionEditor
+  nameWithType: CustomInteractionEditor
+  fullName: Interactions.CustomInteractionEditor
+- uid: Interactions.Interaction
+  commentId: T:Interactions.Interaction
+  parent: Interactions
+  href: Interactions.Interaction.html
+  name: Interaction
+  nameWithType: Interaction
+  fullName: Interactions.Interaction
+- uid: Interactions.Interaction.InteractionType
+  commentId: T:Interactions.Interaction.InteractionType
+  parent: Interactions
+  href: Interactions.Interaction.html
+  name: Interaction.InteractionType
+  nameWithType: Interaction.InteractionType
+  fullName: Interactions.Interaction.InteractionType
+  spec.csharp:
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: .
+  - uid: Interactions.Interaction.InteractionType
+    name: InteractionType
+    href: Interactions.Interaction.InteractionType.html
+  spec.vb:
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: .
+  - uid: Interactions.Interaction.InteractionType
+    name: InteractionType
+    href: Interactions.Interaction.InteractionType.html
+- uid: Interactions.InteractionEditor
+  commentId: T:Interactions.InteractionEditor
+  href: Interactions.InteractionEditor.html
+  name: InteractionEditor
+  nameWithType: InteractionEditor
+  fullName: Interactions.InteractionEditor
+- uid: Interactions.InteractionManager
+  commentId: T:Interactions.InteractionManager
+  href: Interactions.InteractionManager.html
+  name: InteractionManager
+  nameWithType: InteractionManager
+  fullName: Interactions.InteractionManager
+- uid: Interactions
+  commentId: N:Interactions
+  href: Interactions.html
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions

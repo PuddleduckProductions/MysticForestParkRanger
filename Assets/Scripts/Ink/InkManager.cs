@@ -4,126 +4,118 @@ using UnityEngine;
 using Ink.Runtime;
 using System.Text.RegularExpressions;
 using UnityEngine.Events;
+using Utility;
 
-public class InkManager : MonoBehaviour
-{
-    #region Story Management
-    public bool runOnStart = false;
+namespace InkTools {
+    public class InkManager : MonoBehaviour, ISingleton<InkManager> {
+        #region Story Management
+        public bool runOnStart = false;
 
-    public static bool storyActive { get; private set; }
+        public static bool storyActive { get; private set; }
 
-    [SerializeField]
-    protected TextAsset inkJSONAsset;
+        [SerializeField]
+        protected TextAsset inkJSONAsset;
 
-    protected Story story;
-    #endregion
+        protected Story story;
+        #endregion
 
-    InkCommands commands = new InkCommands();
+        InkCommands commands = new InkCommands();
 
-    #region Dialog Parameters
-    protected GameObject dialogInstance;
-    protected DialogRenderer dialogRenderer;
-    public struct DialogLine {
-        public string character { get; }
-        public string dialog { get; }
-        public List<string> tags { get; }
-        public DialogLine(string character, string dialog, List<string> tags) {
-            this.character = character;
-            this.dialog = dialog;
-            this.tags = tags;
-        }
-    }
-
-    static protected Regex lineMatchRegex;
-    protected DialogLine LineFromString(string text) {
-        const string lineMatch = @"(?:(?<characterName>[\w\W]*):)?(?<dialog>.*)";
-        if (lineMatchRegex == null) {
-            lineMatchRegex = new Regex(lineMatch);
+        #region Dialog Parameters
+        protected GameObject dialogInstance;
+        protected DialogRenderer dialogRenderer;
+        public struct DialogLine {
+            public string character { get; }
+            public string dialog { get; }
+            public List<string> tags { get; }
+            public DialogLine(string character, string dialog, List<string> tags) {
+                this.character = character;
+                this.dialog = dialog;
+                this.tags = tags;
+            }
         }
 
-        Match match = lineMatchRegex.Match(text);
-        return new DialogLine(match.Groups["characterName"].Value, match.Groups["dialog"].Value, story.currentTags);
-    }
-    #endregion
+        static protected Regex lineMatchRegex;
+        protected DialogLine LineFromString(string text) {
+            const string lineMatch = @"(?:(?<characterName>[\w\W]*):)?(?<dialog>.*)";
+            if (lineMatchRegex == null) {
+                lineMatchRegex = new Regex(lineMatch);
+            }
 
-    /// <summary>
-    /// Just for other functions to immediately call StartDialog without needing a reference.
-    /// </summary>
-    public static UnityEvent<string> startDialog = new UnityEvent<string>();
-    /// <summary>
-    /// For functions to immediately call AdvanceStory without a reference.
-    /// </summary>
-    public static UnityEvent advanceStory = new UnityEvent();
-
-    public static UnityEvent dialogEnd = new UnityEvent();
-    void Awake() {
-        story = new Story(inkJSONAsset.text);
-        dialogInstance = transform.GetChild(0).gameObject;
-        dialogRenderer = dialogInstance.GetComponent<DialogRenderer>();
-        dialogRenderer.Init();
-        // In case it's active:
-        dialogInstance.SetActive(false);
-
-        startDialog.AddListener(StartDialog);
-        advanceStory.AddListener(AdvanceStory);
-
-        if (runOnStart) {
-            storyActive = true;
-            AdvanceStory();
+            Match match = lineMatchRegex.Match(text);
+            return new DialogLine(match.Groups["characterName"].Value, match.Groups["dialog"].Value, story.currentTags);
         }
-    }
+        #endregion
 
-    #region Flow Control
-    public void StartDialog(string name) {
-        // Not sure if there's a better way to test this.
-        if (!storyActive) {
-            story.ChoosePathString(name);
-            storyActive = true;
-            AdvanceStory();
-        } else {
-            Debug.LogWarning("Dialog already in progress.");
-        }
-    }
+        public UnityEvent dialogEnd = new UnityEvent();
 
-    public void AdvanceStory() {
-        if (story.canContinue) {
-            EvaluateStory();
-        } else {
-            storyActive = false;
+        void Awake() {
+            story = new Story(inkJSONAsset.text);
+            dialogInstance = transform.GetChild(0).gameObject;
+            dialogRenderer = dialogInstance.GetComponent<DialogRenderer>();
+            dialogRenderer.Init();
+            // In case it's active:
             dialogInstance.SetActive(false);
-            dialogEnd.Invoke();
+
+            ((ISingleton<InkManager>)this).Initialize();
+
+            if (runOnStart) {
+                storyActive = true;
+                AdvanceStory();
+            }
         }
-    }
 
-    protected void EvaluateStory() {
-        string text = story.Continue();
-        if (text.Length > 0 && text[0] == '$') {
-            commands.Evaluate(text, story.currentTags);
-            AdvanceStory();
-        } else {
-            DialogLine line = LineFromString(text);
-            DrawDialog(line);
+        #region Flow Control
+        public void StartDialog(string name) {
+            // Not sure if there's a better way to test this.
+            if (!storyActive) {
+                story.ChoosePathString(name);
+                storyActive = true;
+                AdvanceStory();
+            } else {
+                Debug.LogWarning("Dialog already in progress.");
+            }
         }
-    }
 
-    private void Update() {
-        commands.Update();
-    }
-    #endregion
-
-    #region Dialog Rendering
-    protected bool TryFindCharacter(string name, out GameObject character)
-    {
-        character = GameObject.Find(name);
-        if (character == null) {
-            Debug.LogWarning("Could not find Character " + name);
+        public void AdvanceStory() {
+            if (story.canContinue) {
+                EvaluateStory();
+            } else {
+                storyActive = false;
+                dialogInstance.SetActive(false);
+                dialogEnd.Invoke();
+            }
         }
-        return character == null;
-    }
 
-    protected void DrawDialog(DialogLine line) {
-        dialogRenderer.Render(line);
-        dialogInstance.SetActive(true);
+        protected void EvaluateStory() {
+            string text = story.Continue();
+            if (text.Length > 0 && text[0] == '$') {
+                commands.Evaluate(text, story.currentTags);
+                AdvanceStory();
+            } else {
+                DialogLine line = LineFromString(text);
+                DrawDialog(line);
+            }
+        }
+
+        private void Update() {
+            commands.Update();
+        }
+        #endregion
+
+        #region Dialog Rendering
+        protected bool TryFindCharacter(string name, out GameObject character) {
+            character = GameObject.Find(name);
+            if (character == null) {
+                Debug.LogWarning("Could not find Character " + name);
+            }
+            return character == null;
+        }
+
+        protected void DrawDialog(DialogLine line) {
+            dialogRenderer.Render(line);
+            dialogInstance.SetActive(true);
+        }
+        #endregion
     }
-    #endregion
 }
