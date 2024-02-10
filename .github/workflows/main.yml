@@ -72,8 +72,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: StandaloneWindows64
-          buildName: Mystic Forest Park Ranger
-      
+          buildName: MysticForestParkRanger
       # Output
       - uses: actions/upload-artifact@v3
         with:
