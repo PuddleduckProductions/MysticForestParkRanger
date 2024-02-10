@@ -55,6 +55,8 @@ jobs:
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - run: git submodule update --init --recursive
 
       # Cache
       - uses: actions/cache@v3
