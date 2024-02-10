@@ -27,10 +27,15 @@ namespace Interactions {
 
         public InteractionState interactionMode = InteractionState.EMPTY;
 
+        /// <summary>
+        /// Stores closest interaction to be displayed with a contextual button prompt.
+        /// </summary>
         Interaction closestInteraction;
+        /// <summary>
+        /// The active interaction that we're using.
+        /// </summary>
         Interaction usingInteraction;
-        RaycastHit closestHit; // stores hit info (of closest one)
-        Interaction closestInteraction; // stores the interaction info (of closest one)
+
         // Start is called before the first frame update
         void Start() {
             interactionsInScene = GameObject.FindObjectsByType<Interaction>(FindObjectsSortMode.None);
