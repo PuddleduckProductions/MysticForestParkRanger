@@ -1,4 +1,3 @@
-@ -1,32 +0,0 @@
 function downloadLatestBuildArtifact() {
 	fetch("https://api.github.com/repos/PuddleduckProductions/MysticForestParkRanger/actions/runs").then((res) => {
 		return res.json();
@@ -9,7 +8,7 @@ function downloadLatestBuildArtifact() {
 				if (r.status !== "completed") {
 					alert("Latest build is not ready yet.");
 					window.open(r.html_url + "#artifacts");
-				} else if (r.status !== "success") {
+				} else if (r.conclusion !== "success") {
 					alert("Latest build was not successful.");
 					window.open(r.html_url + "#artifacts");
 				} else {
