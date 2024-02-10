@@ -98,13 +98,13 @@ namespace Utility {
                         if (selectedFunc > 0) {
                             MethodInfo info = objectMethods.ElementAt(selectedFunc - 1);
 
-                            SerializedMethod.SetMethod(property, info.Name, obj);
+                            SetMethod(property, info.Name, obj);
 
                             //var methodStore = (SerializedMethod) onUpdate.managedReferenceValue;
 
                             //methodStore.SetMethod(info, obj);
                         } else {
-                            SerializedMethod.SetMethod(property, null, obj);
+                            SetMethod(property, null, obj);
                         }
                     }
                 }
@@ -116,6 +116,18 @@ namespace Utility {
             //EditorGUILayout.LabelField("Test");
 
             //targetObject.objectReferenceValue = EditorGUILayout.ObjectField("Target Object", targetObject.objectReferenceValue, typeof(UnityEngine.Object), true);
+        }
+
+
+        public void SetMethod(UnityEditor.SerializedProperty prop, string methodName, UnityEngine.Object target) {
+            var methodProp = prop.FindPropertyRelative("methodName");
+            if (methodName == null) {
+                // Stupid workaround since I cant null the stringValue property this way.
+                methodProp.stringValue = " ";
+            } else {
+                methodProp.stringValue = methodName;
+            }
+            prop.FindPropertyRelative("targetObject").objectReferenceValue = target;
         }
     }
 }

@@ -45,17 +45,6 @@ namespace Utility {
             Debug.Assert(target.GetType() == info.ReflectedType, "Invalid MethodInfo, does not exist in target.");
         }
 
-        public static void SetMethod(UnityEditor.SerializedProperty prop, string methodName, UnityEngine.Object target) {
-            var methodProp = prop.FindPropertyRelative("methodName");
-            if (methodName == null) {
-                // Stupid workaround since I cant null the stringValue property this way.
-                methodProp.stringValue = " ";
-            } else {
-                methodProp.stringValue = methodName;
-            }
-            prop.FindPropertyRelative("targetObject").objectReferenceValue = target;
-        }
-
         public ParameterInfo[] parameters {
             get {
                 if (!IsNull()) {
