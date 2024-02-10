@@ -36,7 +36,7 @@ namespace Utility {
         protected MethodInfo methodInfo;
 
         public bool IsNull() {
-            return methodInfo == null || methodName == " " || methodName == null;
+            return methodInfo == null || methodName == " " || methodName == null || targetObject == null;
         }
 
         public void SetMethod(MethodInfo info, UnityEngine.Object target) {

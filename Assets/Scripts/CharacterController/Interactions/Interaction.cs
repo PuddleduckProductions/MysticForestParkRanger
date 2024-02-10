@@ -199,9 +199,6 @@ namespace Interactions {
                 SerializedMethod.MethodValidation(typeof(bool), new Type[] { typeof(Interaction) })]
             public SerializedMethod onUpdate = new SerializedMethod();
 
-            [HideInInspector, Tooltip("Object to call OnUpdate() on.")]
-            public UnityEngine.Object targetObject;
-
             public override void Interact() {
                 onInteract.Invoke();
             }
