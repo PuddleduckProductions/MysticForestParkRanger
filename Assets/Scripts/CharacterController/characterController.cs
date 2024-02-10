@@ -13,13 +13,15 @@ public class characterController : MonoBehaviour
     public float rotationSpeedMultiplier = 0.75f;
     public float movementSpeedMultiplier = 0.5f;
 
+    Camera mainCamera;
+
     Animator animator;
     //private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         c = GetComponent<CharacterController>();
-        camera = Camera.main;
+        mainCamera = Camera.main;
         animator = GetComponentInChildren<Animator>();
         //animator = GetComponent<Animator>();
     }
@@ -35,13 +37,19 @@ public class characterController : MonoBehaviour
             currMoveSpeed *= movementSpeed * movementSpeedMultiplier;
         }
 
-        transform.Rotate(Vector3.up, input.x * currRotationSpeed  * Time.deltaTime);
-        Quaternion simplifiedRot = Quaternion.AngleAxis(camera.transform.eulerAngles.y, Vector3.up);
+        Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
 
         Vector3 simplifiedForward = relativeDirectionalMovement ? transform.forward : simplifiedRot * Vector3.forward;
         Vector3 simplifiedRight = relativeDirectionalMovement ? transform.right : simplifiedRot * Vector3.right;
 
         Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x);
+
+
+        if (relativeDirectionalMovement) {
+            transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
+        } else {
+            transform.rotation = Quaternion.LookRotation(move, transform.up);
+        }
         move.Normalize();
         c.SimpleMove(move * movementSpeed);
         
