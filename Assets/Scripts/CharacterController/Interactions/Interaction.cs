@@ -282,6 +282,14 @@ namespace Interactions {
 
             public override void Interact() {}
 
+            public override void Interact(Interaction other) {
+                onChained.Invoke(other.gameObject);
+                // FIXME: Probably a more elegant solution based on what we want later on.
+                // This is fine for now.
+                ISingleton<InteractionManager>.Instance.StopCurrentInteraction();
+                GameObject.Destroy(other.gameObject);
+            }
+
             public override bool CanInteract(Interaction other = null) {
                 if (other == null) return false;
                 foreach (var tag in allowedTags) {
