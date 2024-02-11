@@ -27,6 +27,7 @@ namespace Character {
         void Update() {
             foreach (var cam in cameras) {
                 var pos = CameraHelper.WorldToScreenPointVcam(mainCamera, cam, player.transform.position);
+                // TODO: System for when the player gets obscured by objects
                 if (pos.x > 0 && pos.x < mainCamera.pixelWidth && pos.y > 0 && pos.y < mainCamera.pixelHeight) {
                     cam.Priority = 20 - (int)Mathf.Log(Vector3.Distance(player.transform.position, cam.transform.position));
                 } else {

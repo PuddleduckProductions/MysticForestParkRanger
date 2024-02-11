@@ -145,6 +145,7 @@ MonoBehaviour:
   cameras:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   playerCamera: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &6313193292897490927
