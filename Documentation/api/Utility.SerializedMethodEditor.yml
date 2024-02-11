@@ -7,6 +7,7 @@ items:
   children:
   - Utility.SerializedMethodEditor.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   - Utility.SerializedMethodEditor.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
+  - Utility.SerializedMethodEditor.SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
   langs:
   - csharp
   - vb
@@ -17,7 +18,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Utility/SerializedMethodEditor.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: SerializedMethodEditor
     path: ../Assets/Editor/Utility/SerializedMethodEditor.cs
@@ -71,7 +72,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Utility/SerializedMethodEditor.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GetPropertyHeight
     path: ../Assets/Editor/Utility/SerializedMethodEditor.cs
@@ -110,7 +111,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Utility/SerializedMethodEditor.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnGUI
     path: ../Assets/Editor/Utility/SerializedMethodEditor.cs
@@ -135,6 +136,42 @@ items:
     content.vb: Public Overrides Sub OnGUI(position As Rect, [property] As SerializedProperty, label As GUIContent)
   overridden: UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   overload: Utility.SerializedMethodEditor.OnGUI*
+- uid: Utility.SerializedMethodEditor.SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
+  commentId: M:Utility.SerializedMethodEditor.SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
+  id: SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
+  parent: Utility.SerializedMethodEditor
+  langs:
+  - csharp
+  - vb
+  name: SetMethod(SerializedProperty, string, Object)
+  nameWithType: SerializedMethodEditor.SetMethod(SerializedProperty, string, Object)
+  fullName: Utility.SerializedMethodEditor.SetMethod(UnityEditor.SerializedProperty, string, UnityEngine.Object)
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Utility/SerializedMethodEditor.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: SetMethod
+    path: ../Assets/Editor/Utility/SerializedMethodEditor.cs
+    startLine: 121
+  assemblies:
+  - EditorAssembly
+  namespace: Utility
+  syntax:
+    content: public void SetMethod(SerializedProperty prop, string methodName, Object target)
+    parameters:
+    - id: prop
+      type: UnityEditor.SerializedProperty
+    - id: methodName
+      type: System.String
+    - id: target
+      type: UnityEngine.Object
+    content.vb: Public Sub SetMethod(prop As SerializedProperty, methodName As String, target As [Object])
+  overload: Utility.SerializedMethodEditor.SetMethod*
+  nameWithType.vb: SerializedMethodEditor.SetMethod(SerializedProperty, String, Object)
+  fullName.vb: Utility.SerializedMethodEditor.SetMethod(UnityEditor.SerializedProperty, String, UnityEngine.Object)
+  name.vb: SetMethod(SerializedProperty, String, Object)
 references:
 - uid: Utility
   commentId: N:Utility
@@ -600,3 +637,27 @@ references:
   name: Rect
   nameWithType: Rect
   fullName: UnityEngine.Rect
+- uid: Utility.SerializedMethodEditor.SetMethod*
+  commentId: Overload:Utility.SerializedMethodEditor.SetMethod
+  href: Utility.SerializedMethodEditor.html#Utility_SerializedMethodEditor_SetMethod_UnityEditor_SerializedProperty_System_String_UnityEngine_Object_
+  name: SetMethod
+  nameWithType: SerializedMethodEditor.SetMethod
+  fullName: Utility.SerializedMethodEditor.SetMethod
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object

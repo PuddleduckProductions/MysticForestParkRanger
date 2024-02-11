@@ -1,5 +1,7 @@
 - name: Interaction System
   href: interaction.md
+- name: Adding Dynamic Cameras
+  href: cameras.md
 - name: Unity Merge Tools
   href: unity-merge.md
 - name: New Scene

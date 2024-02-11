@@ -5,13 +5,27 @@ using Cinemachine;
 using Utility;
 
 namespace Character {
+    /// <summary>
+    /// Looks at all active Cinemachine Cameras in the scene and sets priority.
+    /// Cameras are updated in the inspector, press the "Update Cameras List" button when you add a new camera.
+    /// </summary>
     public class CameraController : MonoBehaviour {
+        /// <summary>
+        /// List of virtual cameras in the scene to switch between.
+        /// TODO: Needs to work with loading.
+        /// </summary>
         [SerializeField]
         CinemachineVirtualCamera[] cameras;
 
+        /// <summary>
+        /// The player camera, in case no other cameras are found.
+        /// </summary>
         [SerializeField]
         CinemachineVirtualCamera playerCamera;
 
+        /// <summary>
+        /// The current camera we're using for render info.
+        /// </summary>
         Camera mainCamera;
 
         [SerializeField]

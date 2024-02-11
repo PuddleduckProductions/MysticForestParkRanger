@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/test.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: test
     path: ../Assets/Scripts/CharacterController/Interactions/test.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/test.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: shape
     path: ../Assets/Scripts/CharacterController/Interactions/test.cs

@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MethodValidation
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: returnType
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: parameters
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -166,7 +166,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Util/SerializedMethod.cs

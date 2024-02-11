@@ -4,6 +4,7 @@ items:
   commentId: N:Utility
   id: Utility
   children:
+  - Utility.CameraHelper
   - Utility.ISingleton`1
   - Utility.SerializedMethod
   - Utility.SerializedMethod.MethodValidation
@@ -18,6 +19,12 @@ items:
   assemblies:
   - EditorAssembly
 references:
+- uid: Utility.CameraHelper
+  commentId: T:Utility.CameraHelper
+  href: Utility.CameraHelper.html
+  name: CameraHelper
+  nameWithType: CameraHelper
+  fullName: Utility.CameraHelper
 - uid: Utility.ISingleton`1
   commentId: T:Utility.ISingleton`1
   href: Utility.ISingleton-1.html

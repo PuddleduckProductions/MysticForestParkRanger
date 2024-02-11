@@ -1,43 +1,37 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.GridGroup
-  commentId: T:MysticForestParkRanger.GridGroup
-  id: GridGroup
-  parent: MysticForestParkRanger
+- uid: Character.characterController
+  commentId: T:Character.characterController
+  id: characterController
+  parent: Character
   children:
-  - MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  - MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
+  - Character.characterController.moveEnabled
+  - Character.characterController.movementSpeed
+  - Character.characterController.movementSpeedMultiplier
+  - Character.characterController.relativeDirectionalMovement
+  - Character.characterController.rotationSpeed
+  - Character.characterController.rotationSpeedMultiplier
   langs:
   - csharp
   - vb
-  name: GridGroup
-  nameWithType: GridGroup
-  fullName: GridGroup
+  name: characterController
+  nameWithType: characterController
+  fullName: Character.characterController
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/characterController.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GridGroup
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 2
+    id: characterController
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 6
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
   syntax:
-    content: >-
-      [RequireComponent(typeof(test))]
-
-      [RequireComponent(typeof(Grid))]
-
-      public class GridGroup : MonoBehaviour
-    content.vb: >-
-      <RequireComponent(GetType(test))>
-
-      <RequireComponent(GetType(Grid))>
-
-      Public Class GridGroup Inherits MonoBehaviour
+    content: 'public class characterController : MonoBehaviour'
+    content.vb: Public Class characterController Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -159,91 +153,175 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  attributes:
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: MysticForestParkRanger.test
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: UnityEngine.Grid
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  commentId: M:MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  id: GetCellCenterLocal(System.Int32,System.Int32)
-  parent: MysticForestParkRanger.GridGroup
+- uid: Character.characterController.moveEnabled
+  commentId: F:Character.characterController.moveEnabled
+  id: moveEnabled
+  parent: Character.characterController
   langs:
   - csharp
   - vb
-  name: GetCellCenterLocal(int, int)
-  nameWithType: GridGroup.GetCellCenterLocal(int, int)
-  fullName: GridGroup.GetCellCenterLocal(int, int)
-  type: Method
+  name: moveEnabled
+  nameWithType: characterController.moveEnabled
+  fullName: Character.characterController.moveEnabled
+  type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/characterController.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GetCellCenterLocal
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 16
+    id: moveEnabled
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 7
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
   syntax:
-    content: public Vector3 GetCellCenterLocal(int x, int y)
-    parameters:
-    - id: x
-      type: System.Int32
-    - id: y
-      type: System.Int32
+    content: public bool moveEnabled
     return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function GetCellCenterLocal(x As Integer, y As Integer) As Vector3
-  overload: MysticForestParkRanger.GridGroup.GetCellCenterLocal*
-  nameWithType.vb: GridGroup.GetCellCenterLocal(Integer, Integer)
-  fullName.vb: GridGroup.GetCellCenterLocal(Integer, Integer)
-  name.vb: GetCellCenterLocal(Integer, Integer)
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
-  commentId: M:MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
-  id: GetCellCenterWorld(System.Int32,System.Int32)
-  parent: MysticForestParkRanger.GridGroup
+      type: System.Boolean
+    content.vb: Public moveEnabled As Boolean
+- uid: Character.characterController.movementSpeed
+  commentId: F:Character.characterController.movementSpeed
+  id: movementSpeed
+  parent: Character.characterController
   langs:
   - csharp
   - vb
-  name: GetCellCenterWorld(int, int)
-  nameWithType: GridGroup.GetCellCenterWorld(int, int)
-  fullName: GridGroup.GetCellCenterWorld(int, int)
-  type: Method
+  name: movementSpeed
+  nameWithType: characterController.movementSpeed
+  fullName: Character.characterController.movementSpeed
+  type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/characterController.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GetCellCenterWorld
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 32
+    id: movementSpeed
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 10
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
   syntax:
-    content: public Vector3 GetCellCenterWorld(int x, int y)
-    parameters:
-    - id: x
-      type: System.Int32
-    - id: y
-      type: System.Int32
+    content: public float movementSpeed
     return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function GetCellCenterWorld(x As Integer, y As Integer) As Vector3
-  overload: MysticForestParkRanger.GridGroup.GetCellCenterWorld*
-  nameWithType.vb: GridGroup.GetCellCenterWorld(Integer, Integer)
-  fullName.vb: GridGroup.GetCellCenterWorld(Integer, Integer)
-  name.vb: GetCellCenterWorld(Integer, Integer)
+      type: System.Single
+    content.vb: Public movementSpeed As Single
+- uid: Character.characterController.rotationSpeed
+  commentId: F:Character.characterController.rotationSpeed
+  id: rotationSpeed
+  parent: Character.characterController
+  langs:
+  - csharp
+  - vb
+  name: rotationSpeed
+  nameWithType: characterController.rotationSpeed
+  fullName: Character.characterController.rotationSpeed
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: rotationSpeed
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 11
+  assemblies:
+  - ScriptAssembly
+  namespace: Character
+  syntax:
+    content: public float rotationSpeed
+    return:
+      type: System.Single
+    content.vb: Public rotationSpeed As Single
+- uid: Character.characterController.relativeDirectionalMovement
+  commentId: F:Character.characterController.relativeDirectionalMovement
+  id: relativeDirectionalMovement
+  parent: Character.characterController
+  langs:
+  - csharp
+  - vb
+  name: relativeDirectionalMovement
+  nameWithType: characterController.relativeDirectionalMovement
+  fullName: Character.characterController.relativeDirectionalMovement
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: relativeDirectionalMovement
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: Character
+  syntax:
+    content: public bool relativeDirectionalMovement
+    return:
+      type: System.Boolean
+    content.vb: Public relativeDirectionalMovement As Boolean
+- uid: Character.characterController.rotationSpeedMultiplier
+  commentId: F:Character.characterController.rotationSpeedMultiplier
+  id: rotationSpeedMultiplier
+  parent: Character.characterController
+  langs:
+  - csharp
+  - vb
+  name: rotationSpeedMultiplier
+  nameWithType: characterController.rotationSpeedMultiplier
+  fullName: Character.characterController.rotationSpeedMultiplier
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: rotationSpeedMultiplier
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: Character
+  syntax:
+    content: public float rotationSpeedMultiplier
+    return:
+      type: System.Single
+    content.vb: Public rotationSpeedMultiplier As Single
+- uid: Character.characterController.movementSpeedMultiplier
+  commentId: F:Character.characterController.movementSpeedMultiplier
+  id: movementSpeedMultiplier
+  parent: Character.characterController
+  langs:
+  - csharp
+  - vb
+  name: movementSpeedMultiplier
+  nameWithType: characterController.movementSpeedMultiplier
+  fullName: Character.characterController.movementSpeedMultiplier
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: movementSpeedMultiplier
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 14
+  assemblies:
+  - ScriptAssembly
+  namespace: Character
+  syntax:
+    content: public float movementSpeedMultiplier
+    return:
+      type: System.Single
+    content.vb: Public movementSpeedMultiplier As Single
 references:
-- uid: MysticForestParkRanger
+- uid: Character
+  commentId: N:Character
+  href: Character.html
+  name: Character
+  nameWithType: Character
+  fullName: Character
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -4592,33 +4670,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterLocal*
-  commentId: Overload:MysticForestParkRanger.GridGroup.GetCellCenterLocal
-  href: MysticForestParkRanger.GridGroup.html#GridGroup_GetCellCenterLocal_System_Int32_System_Int32_
-  name: GetCellCenterLocal
-  nameWithType: GridGroup.GetCellCenterLocal
-  fullName: GridGroup.GetCellCenterLocal
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
   isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterWorld*
-  commentId: Overload:MysticForestParkRanger.GridGroup.GetCellCenterWorld
-  href: MysticForestParkRanger.GridGroup.html#GridGroup_GetCellCenterWorld_System_Int32_System_Int32_
-  name: GetCellCenterWorld
-  nameWithType: GridGroup.GetCellCenterWorld
-  fullName: GridGroup.GetCellCenterWorld
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single

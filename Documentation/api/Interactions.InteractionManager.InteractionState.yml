@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionState
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
@@ -42,7 +42,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EMPTY
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
@@ -68,7 +68,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: HOLDING_INTERACTION
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs

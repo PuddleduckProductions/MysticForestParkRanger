@@ -1,43 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.GridGroup
-  commentId: T:MysticForestParkRanger.GridGroup
-  id: GridGroup
-  parent: MysticForestParkRanger
-  children:
-  - MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  - MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
+- uid: Character.CameraController
+  commentId: T:Character.CameraController
+  id: CameraController
+  parent: Character
+  children: []
   langs:
   - csharp
   - vb
-  name: GridGroup
-  nameWithType: GridGroup
-  fullName: GridGroup
+  name: CameraController
+  nameWithType: CameraController
+  fullName: Character.CameraController
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/CameraController.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GridGroup
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 2
+    id: CameraController
+    path: ../Assets/Scripts/CharacterController/CameraController.cs
+    startLine: 11
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
+  summary: >-
+    Looks at all active Cinemachine Cameras in the scene and sets priority.
+
+    Cameras are updated in the inspector, press the "Update Cameras List" button when you add a new camera.
+  example: []
   syntax:
-    content: >-
-      [RequireComponent(typeof(test))]
-
-      [RequireComponent(typeof(Grid))]
-
-      public class GridGroup : MonoBehaviour
-    content.vb: >-
-      <RequireComponent(GetType(test))>
-
-      <RequireComponent(GetType(Grid))>
-
-      Public Class GridGroup Inherits MonoBehaviour
+    content: 'public class CameraController : MonoBehaviour'
+    content.vb: Public Class CameraController Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -159,91 +152,13 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  attributes:
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: MysticForestParkRanger.test
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: UnityEngine.Grid
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  commentId: M:MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  id: GetCellCenterLocal(System.Int32,System.Int32)
-  parent: MysticForestParkRanger.GridGroup
-  langs:
-  - csharp
-  - vb
-  name: GetCellCenterLocal(int, int)
-  nameWithType: GridGroup.GetCellCenterLocal(int, int)
-  fullName: GridGroup.GetCellCenterLocal(int, int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-      branch: camera-improvements
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GetCellCenterLocal
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 16
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public Vector3 GetCellCenterLocal(int x, int y)
-    parameters:
-    - id: x
-      type: System.Int32
-    - id: y
-      type: System.Int32
-    return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function GetCellCenterLocal(x As Integer, y As Integer) As Vector3
-  overload: MysticForestParkRanger.GridGroup.GetCellCenterLocal*
-  nameWithType.vb: GridGroup.GetCellCenterLocal(Integer, Integer)
-  fullName.vb: GridGroup.GetCellCenterLocal(Integer, Integer)
-  name.vb: GetCellCenterLocal(Integer, Integer)
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
-  commentId: M:MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
-  id: GetCellCenterWorld(System.Int32,System.Int32)
-  parent: MysticForestParkRanger.GridGroup
-  langs:
-  - csharp
-  - vb
-  name: GetCellCenterWorld(int, int)
-  nameWithType: GridGroup.GetCellCenterWorld(int, int)
-  fullName: GridGroup.GetCellCenterWorld(int, int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-      branch: camera-improvements
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GetCellCenterWorld
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 32
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public Vector3 GetCellCenterWorld(int x, int y)
-    parameters:
-    - id: x
-      type: System.Int32
-    - id: y
-      type: System.Int32
-    return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function GetCellCenterWorld(x As Integer, y As Integer) As Vector3
-  overload: MysticForestParkRanger.GridGroup.GetCellCenterWorld*
-  nameWithType.vb: GridGroup.GetCellCenterWorld(Integer, Integer)
-  fullName.vb: GridGroup.GetCellCenterWorld(Integer, Integer)
-  name.vb: GetCellCenterWorld(Integer, Integer)
 references:
-- uid: MysticForestParkRanger
+- uid: Character
+  commentId: N:Character
+  href: Character.html
+  name: Character
+  nameWithType: Character
+  fullName: Character
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -4592,33 +4507,3 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterLocal*
-  commentId: Overload:MysticForestParkRanger.GridGroup.GetCellCenterLocal
-  href: MysticForestParkRanger.GridGroup.html#GridGroup_GetCellCenterLocal_System_Int32_System_Int32_
-  name: GetCellCenterLocal
-  nameWithType: GridGroup.GetCellCenterLocal
-  fullName: GridGroup.GetCellCenterLocal
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterWorld*
-  commentId: Overload:MysticForestParkRanger.GridGroup.GetCellCenterWorld
-  href: MysticForestParkRanger.GridGroup.html#GridGroup_GetCellCenterWorld_System_Int32_System_Int32_
-  name: GetCellCenterWorld
-  nameWithType: GridGroup.GetCellCenterWorld
-  fullName: GridGroup.GetCellCenterWorld

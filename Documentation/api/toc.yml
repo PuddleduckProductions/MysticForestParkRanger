@@ -1,5 +1,16 @@
 ### YamlMime:TableOfContent
 items:
+- uid: Character
+  name: Character
+  items:
+  - uid: Character.CameraController
+    name: CameraController
+  - uid: Character.CameraControllerEditor
+    name: CameraControllerEditor
+  - uid: Character.UIController
+    name: UIController
+  - uid: Character.characterController
+    name: characterController
 - uid: InkTools
   name: InkTools
   items:
@@ -49,7 +60,7 @@ items:
   - uid: Interactions.InteractionManager.InteractionState
     name: InteractionManager.InteractionState
 - uid: MysticForestParkRanger
-  name: MysticForestParkRanger
+  name: ''
   items:
   - uid: MysticForestParkRanger.BoolArray2D
     name: BoolArray2D
@@ -57,15 +68,13 @@ items:
     name: BoolArray2DDrawer
   - uid: MysticForestParkRanger.GridGroup
     name: GridGroup
-  - uid: MysticForestParkRanger.UIController
-    name: UIController
-  - uid: MysticForestParkRanger.characterController
-    name: characterController
   - uid: MysticForestParkRanger.test
     name: test
 - uid: Utility
   name: Utility
   items:
+  - uid: Utility.CameraHelper
+    name: CameraHelper
   - uid: Utility.ISingleton`1
     name: ISingleton<T>
   - uid: Utility.SerializedMethod

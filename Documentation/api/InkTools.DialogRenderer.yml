@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: DialogRenderer
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: symbolsFont
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -207,7 +207,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: defaultFont
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -234,7 +234,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: defaultFontSize
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: dialogParent
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -288,7 +288,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: dialog
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -315,7 +315,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: worldCamera
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -342,7 +342,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Init
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -368,7 +368,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: TryGetCharacter
     path: ../Assets/Scripts/Ink/DialogRenderer.cs
@@ -404,7 +404,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/DialogRenderer.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Render
     path: ../Assets/Scripts/Ink/DialogRenderer.cs

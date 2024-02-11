@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CustomInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -79,7 +79,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onUpdate
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -234,7 +234,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -270,7 +270,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ValidateUpdateFunc
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -305,7 +305,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CallUpdate
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -333,7 +333,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs

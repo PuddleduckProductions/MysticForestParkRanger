@@ -1,49 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.GridGroup
-  commentId: T:MysticForestParkRanger.GridGroup
-  id: GridGroup
-  parent: MysticForestParkRanger
+- uid: Character.UIController
+  commentId: T:Character.UIController
+  id: UIController
+  parent: Character
   children:
-  - MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  - MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
+  - Character.UIController.OnInteract(UnityEngine.InputSystem.InputValue)
+  - Character.UIController.onInteract
   langs:
   - csharp
   - vb
-  name: GridGroup
-  nameWithType: GridGroup
-  fullName: GridGroup
+  name: UIController
+  nameWithType: UIController
+  fullName: Character.UIController
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/UIController.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GridGroup
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 2
+    id: UIController
+    path: ../Assets/Scripts/CharacterController/UIController.cs
+    startLine: 8
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
   syntax:
-    content: >-
-      [RequireComponent(typeof(test))]
-
-      [RequireComponent(typeof(Grid))]
-
-      public class GridGroup : MonoBehaviour
-    content.vb: >-
-      <RequireComponent(GetType(test))>
-
-      <RequireComponent(GetType(Grid))>
-
-      Public Class GridGroup Inherits MonoBehaviour
+    content: 'public class UIController : MonoBehaviour, ISingleton<UIController>'
+    content.vb: Public Class UIController Inherits MonoBehaviour Implements ISingleton(Of UIController)
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.Component
   - UnityEngine.Behaviour
   - UnityEngine.MonoBehaviour
+  implements:
+  - Utility.ISingleton{Character.UIController}
   inheritedMembers:
   - UnityEngine.MonoBehaviour.IsInvoking
   - UnityEngine.MonoBehaviour.CancelInvoke
@@ -159,91 +151,71 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  attributes:
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: MysticForestParkRanger.test
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: UnityEngine.Grid
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  commentId: M:MysticForestParkRanger.GridGroup.GetCellCenterLocal(System.Int32,System.Int32)
-  id: GetCellCenterLocal(System.Int32,System.Int32)
-  parent: MysticForestParkRanger.GridGroup
+- uid: Character.UIController.onInteract
+  commentId: F:Character.UIController.onInteract
+  id: onInteract
+  parent: Character.UIController
   langs:
   - csharp
   - vb
-  name: GetCellCenterLocal(int, int)
-  nameWithType: GridGroup.GetCellCenterLocal(int, int)
-  fullName: GridGroup.GetCellCenterLocal(int, int)
-  type: Method
+  name: onInteract
+  nameWithType: UIController.onInteract
+  fullName: Character.UIController.onInteract
+  type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/UIController.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GetCellCenterLocal
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 16
+    id: onInteract
+    path: ../Assets/Scripts/CharacterController/UIController.cs
+    startLine: 9
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
   syntax:
-    content: public Vector3 GetCellCenterLocal(int x, int y)
-    parameters:
-    - id: x
-      type: System.Int32
-    - id: y
-      type: System.Int32
+    content: public UnityEvent<bool> onInteract
     return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function GetCellCenterLocal(x As Integer, y As Integer) As Vector3
-  overload: MysticForestParkRanger.GridGroup.GetCellCenterLocal*
-  nameWithType.vb: GridGroup.GetCellCenterLocal(Integer, Integer)
-  fullName.vb: GridGroup.GetCellCenterLocal(Integer, Integer)
-  name.vb: GetCellCenterLocal(Integer, Integer)
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
-  commentId: M:MysticForestParkRanger.GridGroup.GetCellCenterWorld(System.Int32,System.Int32)
-  id: GetCellCenterWorld(System.Int32,System.Int32)
-  parent: MysticForestParkRanger.GridGroup
+      type: UnityEngine.Events.UnityEvent{System.Boolean}
+    content.vb: Public onInteract As UnityEvent(Of Boolean)
+- uid: Character.UIController.OnInteract(UnityEngine.InputSystem.InputValue)
+  commentId: M:Character.UIController.OnInteract(UnityEngine.InputSystem.InputValue)
+  id: OnInteract(UnityEngine.InputSystem.InputValue)
+  parent: Character.UIController
   langs:
   - csharp
   - vb
-  name: GetCellCenterWorld(int, int)
-  nameWithType: GridGroup.GetCellCenterWorld(int, int)
-  fullName: GridGroup.GetCellCenterWorld(int, int)
+  name: OnInteract(InputValue)
+  nameWithType: UIController.OnInteract(InputValue)
+  fullName: Character.UIController.OnInteract(UnityEngine.InputSystem.InputValue)
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/UIController.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GetCellCenterWorld
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 32
+    id: OnInteract
+    path: ../Assets/Scripts/CharacterController/UIController.cs
+    startLine: 17
   assemblies:
   - ScriptAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
+  summary: New input system control. DO NOT RENAME (Looking at you, Tyler)
+  example: []
   syntax:
-    content: public Vector3 GetCellCenterWorld(int x, int y)
+    content: public void OnInteract(InputValue value)
     parameters:
-    - id: x
-      type: System.Int32
-    - id: y
-      type: System.Int32
-    return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function GetCellCenterWorld(x As Integer, y As Integer) As Vector3
-  overload: MysticForestParkRanger.GridGroup.GetCellCenterWorld*
-  nameWithType.vb: GridGroup.GetCellCenterWorld(Integer, Integer)
-  fullName.vb: GridGroup.GetCellCenterWorld(Integer, Integer)
-  name.vb: GetCellCenterWorld(Integer, Integer)
+    - id: value
+      type: UnityEngine.InputSystem.InputValue
+    content.vb: Public Sub OnInteract(value As InputValue)
+  overload: Character.UIController.OnInteract*
 references:
-- uid: MysticForestParkRanger
+- uid: Character
+  commentId: N:Character
+  href: Character.html
+  name: Character
+  nameWithType: Character
+  fullName: Character
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -283,6 +255,37 @@ references:
   name: MonoBehaviour
   nameWithType: MonoBehaviour
   fullName: UnityEngine.MonoBehaviour
+- uid: Utility.ISingleton{Character.UIController}
+  commentId: T:Utility.ISingleton{Character.UIController}
+  parent: Utility
+  definition: Utility.ISingleton`1
+  href: Utility.ISingleton-1.html
+  name: ISingleton<UIController>
+  nameWithType: ISingleton<UIController>
+  fullName: Utility.ISingleton<Character.UIController>
+  nameWithType.vb: ISingleton(Of UIController)
+  fullName.vb: Utility.ISingleton(Of Character.UIController)
+  name.vb: ISingleton(Of UIController)
+  spec.csharp:
+  - uid: Utility.ISingleton`1
+    name: ISingleton
+    href: Utility.ISingleton-1.html
+  - name: <
+  - uid: Character.UIController
+    name: UIController
+    href: Character.UIController.html
+  - name: '>'
+  spec.vb:
+  - uid: Utility.ISingleton`1
+    name: ISingleton
+    href: Utility.ISingleton-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Character.UIController
+    name: UIController
+    href: Character.UIController.html
+  - name: )
 - uid: UnityEngine.MonoBehaviour.IsInvoking
   commentId: M:UnityEngine.MonoBehaviour.IsInvoking
   parent: UnityEngine.MonoBehaviour
@@ -4113,6 +4116,37 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
+- uid: Utility.ISingleton`1
+  commentId: T:Utility.ISingleton`1
+  href: Utility.ISingleton-1.html
+  name: ISingleton<T>
+  nameWithType: ISingleton<T>
+  fullName: Utility.ISingleton<T>
+  nameWithType.vb: ISingleton(Of T)
+  fullName.vb: Utility.ISingleton(Of T)
+  name.vb: ISingleton(Of T)
+  spec.csharp:
+  - uid: Utility.ISingleton`1
+    name: ISingleton
+    href: Utility.ISingleton-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Utility.ISingleton`1
+    name: ISingleton
+    href: Utility.ISingleton-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Utility
+  commentId: N:Utility
+  href: Utility.html
+  name: Utility
+  nameWithType: Utility
+  fullName: Utility
 - uid: UnityEngine.Component.TryGetComponent``1(``0@)
   commentId: M:UnityEngine.Component.TryGetComponent``1(``0@)
   isExternal: true
@@ -4592,33 +4626,118 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterLocal*
-  commentId: Overload:MysticForestParkRanger.GridGroup.GetCellCenterLocal
-  href: MysticForestParkRanger.GridGroup.html#GridGroup_GetCellCenterLocal_System_Int32_System_Int32_
-  name: GetCellCenterLocal
-  nameWithType: GridGroup.GetCellCenterLocal
-  fullName: GridGroup.GetCellCenterLocal
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
+- uid: UnityEngine.Events.UnityEvent{System.Boolean}
+  commentId: T:UnityEngine.Events.UnityEvent{System.Boolean}
+  parent: UnityEngine.Events
+  definition: UnityEngine.Events.UnityEvent`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: UnityEvent<bool>
+  nameWithType: UnityEvent<bool>
+  fullName: UnityEngine.Events.UnityEvent<bool>
+  nameWithType.vb: UnityEvent(Of Boolean)
+  fullName.vb: UnityEngine.Events.UnityEvent(Of Boolean)
+  name.vb: UnityEvent(Of Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Events.UnityEvent`1
+    name: UnityEvent
+    isExternal: true
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.Events.UnityEvent`1
+    name: UnityEvent
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Events.UnityEvent`1
+  commentId: T:UnityEngine.Events.UnityEvent`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
+  name: UnityEvent<T0>
+  nameWithType: UnityEvent<T0>
+  fullName: UnityEngine.Events.UnityEvent<T0>
+  nameWithType.vb: UnityEvent(Of T0)
+  fullName.vb: UnityEngine.Events.UnityEvent(Of T0)
+  name.vb: UnityEvent(Of T0)
+  spec.csharp:
+  - uid: UnityEngine.Events.UnityEvent`1
+    name: UnityEvent
+    isExternal: true
+  - name: <
+  - name: T0
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.Events.UnityEvent`1
+    name: UnityEvent
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T0
+  - name: )
+- uid: UnityEngine.Events
+  commentId: N:UnityEngine.Events
   isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3
-- uid: MysticForestParkRanger.GridGroup.GetCellCenterWorld*
-  commentId: Overload:MysticForestParkRanger.GridGroup.GetCellCenterWorld
-  href: MysticForestParkRanger.GridGroup.html#GridGroup_GetCellCenterWorld_System_Int32_System_Int32_
-  name: GetCellCenterWorld
-  nameWithType: GridGroup.GetCellCenterWorld
-  fullName: GridGroup.GetCellCenterWorld
+  name: UnityEngine.Events
+  nameWithType: UnityEngine.Events
+  fullName: UnityEngine.Events
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+- uid: Character.UIController.OnInteract*
+  commentId: Overload:Character.UIController.OnInteract
+  href: Character.UIController.html#Character_UIController_OnInteract_UnityEngine_InputSystem_InputValue_
+  name: OnInteract
+  nameWithType: UIController.OnInteract
+  fullName: Character.UIController.OnInteract
+- uid: UnityEngine.InputSystem.InputValue
+  commentId: T:UnityEngine.InputSystem.InputValue
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: InputValue
+  nameWithType: InputValue
+  fullName: UnityEngine.InputSystem.InputValue
+- uid: UnityEngine.InputSystem
+  commentId: N:UnityEngine.InputSystem
+  isExternal: true
+  name: UnityEngine.InputSystem
+  nameWithType: UnityEngine.InputSystem
+  fullName: UnityEngine.InputSystem
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true

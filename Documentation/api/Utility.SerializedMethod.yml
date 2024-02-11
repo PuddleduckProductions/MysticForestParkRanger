@@ -10,7 +10,6 @@ items:
   - Utility.SerializedMethod.OnAfterDeserialize
   - Utility.SerializedMethod.OnBeforeSerialize
   - Utility.SerializedMethod.SetMethod(System.Reflection.MethodInfo,UnityEngine.Object)
-  - Utility.SerializedMethod.SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
   - Utility.SerializedMethod.methodInfo
   - Utility.SerializedMethod.methodName
   - Utility.SerializedMethod.parameters
@@ -25,7 +24,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: SerializedMethod
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -72,7 +71,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: methodName
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -116,7 +115,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: targetObject
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -153,7 +152,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: methodInfo
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -180,7 +179,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: IsNull
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -208,7 +207,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: SetMethod
     path: ../Assets/Scripts/Util/SerializedMethod.cs
@@ -225,42 +224,6 @@ items:
       type: UnityEngine.Object
     content.vb: Public Sub SetMethod(info As MethodInfo, target As [Object])
   overload: Utility.SerializedMethod.SetMethod*
-- uid: Utility.SerializedMethod.SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
-  commentId: M:Utility.SerializedMethod.SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
-  id: SetMethod(UnityEditor.SerializedProperty,System.String,UnityEngine.Object)
-  parent: Utility.SerializedMethod
-  langs:
-  - csharp
-  - vb
-  name: SetMethod(SerializedProperty, string, Object)
-  nameWithType: SerializedMethod.SetMethod(SerializedProperty, string, Object)
-  fullName: Utility.SerializedMethod.SetMethod(UnityEditor.SerializedProperty, string, UnityEngine.Object)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: SetMethod
-    path: ../Assets/Scripts/Util/SerializedMethod.cs
-    startLine: 47
-  assemblies:
-  - ScriptAssembly
-  namespace: Utility
-  syntax:
-    content: public static void SetMethod(SerializedProperty prop, string methodName, Object target)
-    parameters:
-    - id: prop
-      type: UnityEditor.SerializedProperty
-    - id: methodName
-      type: System.String
-    - id: target
-      type: UnityEngine.Object
-    content.vb: Public Shared Sub SetMethod(prop As SerializedProperty, methodName As String, target As [Object])
-  overload: Utility.SerializedMethod.SetMethod*
-  nameWithType.vb: SerializedMethod.SetMethod(SerializedProperty, String, Object)
-  fullName.vb: Utility.SerializedMethod.SetMethod(UnityEditor.SerializedProperty, String, UnityEngine.Object)
-  name.vb: SetMethod(SerializedProperty, String, Object)
 - uid: Utility.SerializedMethod.parameters
   commentId: P:Utility.SerializedMethod.parameters
   id: parameters
@@ -275,11 +238,11 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: parameters
     path: ../Assets/Scripts/Util/SerializedMethod.cs
-    startLine: 58
+    startLine: 47
   assemblies:
   - ScriptAssembly
   namespace: Utility
@@ -304,11 +267,11 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Invoke
     path: ../Assets/Scripts/Util/SerializedMethod.cs
-    startLine: 68
+    startLine: 57
   assemblies:
   - ScriptAssembly
   namespace: Utility
@@ -338,11 +301,11 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnBeforeSerialize
     path: ../Assets/Scripts/Util/SerializedMethod.cs
-    startLine: 79
+    startLine: 68
   assemblies:
   - ScriptAssembly
   namespace: Utility
@@ -368,11 +331,11 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/SerializedMethod.cs
-      branch: master
+      branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnAfterDeserialize
     path: ../Assets/Scripts/Util/SerializedMethod.cs
-    startLine: 85
+    startLine: 74
   assemblies:
   - ScriptAssembly
   namespace: Utility
@@ -717,19 +680,6 @@ references:
   name: SetMethod
   nameWithType: SerializedMethod.SetMethod
   fullName: Utility.SerializedMethod.SetMethod
-- uid: UnityEditor.SerializedProperty
-  commentId: T:UnityEditor.SerializedProperty
-  parent: UnityEditor
-  isExternal: true
-  name: SerializedProperty
-  nameWithType: SerializedProperty
-  fullName: UnityEditor.SerializedProperty
-- uid: UnityEditor
-  commentId: N:UnityEditor
-  isExternal: true
-  name: UnityEditor
-  nameWithType: UnityEditor
-  fullName: UnityEditor
 - uid: Utility.SerializedMethod.parameters*
   commentId: Overload:Utility.SerializedMethod.parameters
   href: Utility.SerializedMethod.html#Utility_SerializedMethod_parameters

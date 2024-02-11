@@ -1,45 +1,47 @@
 ### YamlMime:ManagedReference
 items:
-- uid: MysticForestParkRanger.BoolArray2DDrawer
-  commentId: T:MysticForestParkRanger.BoolArray2DDrawer
-  id: BoolArray2DDrawer
-  parent: MysticForestParkRanger
+- uid: Character.CameraControllerEditor
+  commentId: T:Character.CameraControllerEditor
+  id: CameraControllerEditor
+  parent: Character
   children:
-  - MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
+  - Character.CameraControllerEditor.OnEnable
+  - Character.CameraControllerEditor.OnInspectorGUI
+  - Character.CameraControllerEditor.SaveChanges
+  - Character.CameraControllerEditor.UpdateCams
   langs:
   - csharp
   - vb
-  name: BoolArray2DDrawer
-  nameWithType: BoolArray2DDrawer
-  fullName: BoolArray2DDrawer
+  name: CameraControllerEditor
+  nameWithType: CameraControllerEditor
+  fullName: Character.CameraControllerEditor
   type: Class
   source:
     remote:
-      path: Assets/Editor/Interactions/BoolArray2DDrawer.cs
+      path: Assets/Editor/Character/CameraControllerEditor.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: BoolArray2DDrawer
-    path: ../Assets/Editor/Interactions/BoolArray2DDrawer.cs
-    startLine: 6
+    id: CameraControllerEditor
+    path: ../Assets/Editor/Character/CameraControllerEditor.cs
+    startLine: 9
   assemblies:
   - EditorAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
   syntax:
     content: >-
-      [CustomEditor(typeof(test))]
+      [CustomEditor(typeof(CameraController))]
 
-      public class BoolArray2DDrawer : Editor
+      public class CameraControllerEditor : Editor
     content.vb: >-
-      <CustomEditor(GetType(test))>
+      <CustomEditor(GetType(CameraController))>
 
-      Public Class BoolArray2DDrawer Inherits Editor
+      Public Class CameraControllerEditor Inherits Editor
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - UnityEditor.Editor
   inheritedMembers:
-  - UnityEditor.Editor.SaveChanges
   - UnityEditor.Editor.DiscardChanges
   - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
   - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
@@ -137,38 +139,124 @@ items:
     ctor: UnityEditor.CustomEditor.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: MysticForestParkRanger.test
-- uid: MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
-  commentId: M:MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
+      value: Character.CameraController
+- uid: Character.CameraControllerEditor.OnEnable
+  commentId: M:Character.CameraControllerEditor.OnEnable
+  id: OnEnable
+  parent: Character.CameraControllerEditor
+  langs:
+  - csharp
+  - vb
+  name: OnEnable()
+  nameWithType: CameraControllerEditor.OnEnable()
+  fullName: Character.CameraControllerEditor.OnEnable()
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Character/CameraControllerEditor.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: OnEnable
+    path: ../Assets/Editor/Character/CameraControllerEditor.cs
+    startLine: 15
+  assemblies:
+  - EditorAssembly
+  namespace: Character
+  syntax:
+    content: public void OnEnable()
+    content.vb: Public Sub OnEnable()
+  overload: Character.CameraControllerEditor.OnEnable*
+- uid: Character.CameraControllerEditor.SaveChanges
+  commentId: M:Character.CameraControllerEditor.SaveChanges
+  id: SaveChanges
+  parent: Character.CameraControllerEditor
+  langs:
+  - csharp
+  - vb
+  name: SaveChanges()
+  nameWithType: CameraControllerEditor.SaveChanges()
+  fullName: Character.CameraControllerEditor.SaveChanges()
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Character/CameraControllerEditor.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: SaveChanges
+    path: ../Assets/Editor/Character/CameraControllerEditor.cs
+    startLine: 22
+  assemblies:
+  - EditorAssembly
+  namespace: Character
+  summary: <p>Performs a save action on the contents of the editor.</p>
+  example: []
+  syntax:
+    content: public override void SaveChanges()
+    content.vb: Public Overrides Sub SaveChanges()
+  overridden: UnityEditor.Editor.SaveChanges
+  overload: Character.CameraControllerEditor.SaveChanges*
+- uid: Character.CameraControllerEditor.UpdateCams
+  commentId: M:Character.CameraControllerEditor.UpdateCams
+  id: UpdateCams
+  parent: Character.CameraControllerEditor
+  langs:
+  - csharp
+  - vb
+  name: UpdateCams()
+  nameWithType: CameraControllerEditor.UpdateCams()
+  fullName: Character.CameraControllerEditor.UpdateCams()
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Character/CameraControllerEditor.cs
+      branch: camera-improvements
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: UpdateCams
+    path: ../Assets/Editor/Character/CameraControllerEditor.cs
+    startLine: 27
+  assemblies:
+  - EditorAssembly
+  namespace: Character
+  syntax:
+    content: protected void UpdateCams()
+    content.vb: Protected Sub UpdateCams()
+  overload: Character.CameraControllerEditor.UpdateCams*
+- uid: Character.CameraControllerEditor.OnInspectorGUI
+  commentId: M:Character.CameraControllerEditor.OnInspectorGUI
   id: OnInspectorGUI
-  parent: MysticForestParkRanger.BoolArray2DDrawer
+  parent: Character.CameraControllerEditor
   langs:
   - csharp
   - vb
   name: OnInspectorGUI()
-  nameWithType: BoolArray2DDrawer.OnInspectorGUI()
-  fullName: BoolArray2DDrawer.OnInspectorGUI()
+  nameWithType: CameraControllerEditor.OnInspectorGUI()
+  fullName: Character.CameraControllerEditor.OnInspectorGUI()
   type: Method
   source:
     remote:
-      path: Assets/Editor/Interactions/BoolArray2DDrawer.cs
+      path: Assets/Editor/Character/CameraControllerEditor.cs
       branch: camera-improvements
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
-    path: ../Assets/Editor/Interactions/BoolArray2DDrawer.cs
-    startLine: 15
+    path: ../Assets/Editor/Character/CameraControllerEditor.cs
+    startLine: 48
   assemblies:
   - EditorAssembly
-  namespace: MysticForestParkRanger
+  namespace: Character
   summary: <p>Implement this function to make a custom inspector.</p>
   example: []
   syntax:
     content: public override void OnInspectorGUI()
     content.vb: Public Overrides Sub OnInspectorGUI()
   overridden: UnityEditor.Editor.OnInspectorGUI
-  overload: MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI*
+  overload: Character.CameraControllerEditor.OnInspectorGUI*
 references:
-- uid: MysticForestParkRanger
+- uid: Character
+  commentId: N:Character
+  href: Character.html
+  name: Character
+  nameWithType: Character
+  fullName: Character
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -201,25 +289,6 @@ references:
   name: Editor
   nameWithType: Editor
   fullName: UnityEditor.Editor
-- uid: UnityEditor.Editor.SaveChanges
-  commentId: M:UnityEditor.Editor.SaveChanges
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: SaveChanges()
-  nameWithType: Editor.SaveChanges()
-  fullName: UnityEditor.Editor.SaveChanges()
-  spec.csharp:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
-    isExternal: true
-  - name: (
-  - name: )
 - uid: UnityEditor.Editor.DiscardChanges
   commentId: M:UnityEditor.Editor.DiscardChanges
   parent: UnityEditor.Editor
@@ -3374,6 +3443,43 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: Character.CameraControllerEditor.OnEnable*
+  commentId: Overload:Character.CameraControllerEditor.OnEnable
+  href: Character.CameraControllerEditor.html#Character_CameraControllerEditor_OnEnable
+  name: OnEnable
+  nameWithType: CameraControllerEditor.OnEnable
+  fullName: Character.CameraControllerEditor.OnEnable
+- uid: UnityEditor.Editor.SaveChanges
+  commentId: M:UnityEditor.Editor.SaveChanges
+  parent: UnityEditor.Editor
+  isExternal: true
+  name: SaveChanges()
+  nameWithType: Editor.SaveChanges()
+  fullName: UnityEditor.Editor.SaveChanges()
+  spec.csharp:
+  - uid: UnityEditor.Editor.SaveChanges
+    name: SaveChanges
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.Editor.SaveChanges
+    name: SaveChanges
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Character.CameraControllerEditor.SaveChanges*
+  commentId: Overload:Character.CameraControllerEditor.SaveChanges
+  href: Character.CameraControllerEditor.html#Character_CameraControllerEditor_SaveChanges
+  name: SaveChanges
+  nameWithType: CameraControllerEditor.SaveChanges
+  fullName: Character.CameraControllerEditor.SaveChanges
+- uid: Character.CameraControllerEditor.UpdateCams*
+  commentId: Overload:Character.CameraControllerEditor.UpdateCams
+  href: Character.CameraControllerEditor.html#Character_CameraControllerEditor_UpdateCams
+  name: UpdateCams
+  nameWithType: CameraControllerEditor.UpdateCams
+  fullName: Character.CameraControllerEditor.UpdateCams
 - uid: UnityEditor.Editor.OnInspectorGUI
   commentId: M:UnityEditor.Editor.OnInspectorGUI
   parent: UnityEditor.Editor
@@ -3393,9 +3499,9 @@ references:
     isExternal: true
   - name: (
   - name: )
-- uid: MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI*
-  commentId: Overload:MysticForestParkRanger.BoolArray2DDrawer.OnInspectorGUI
-  href: MysticForestParkRanger.BoolArray2DDrawer.html#BoolArray2DDrawer_OnInspectorGUI
+- uid: Character.CameraControllerEditor.OnInspectorGUI*
+  commentId: Overload:Character.CameraControllerEditor.OnInspectorGUI
+  href: Character.CameraControllerEditor.html#Character_CameraControllerEditor_OnInspectorGUI
   name: OnInspectorGUI
-  nameWithType: BoolArray2DDrawer.OnInspectorGUI
-  fullName: BoolArray2DDrawer.OnInspectorGUI
+  nameWithType: CameraControllerEditor.OnInspectorGUI
+  fullName: Character.CameraControllerEditor.OnInspectorGUI
