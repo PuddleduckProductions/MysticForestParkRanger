@@ -25,11 +25,14 @@ namespace Character {
 
         // Update is called once per frame
         void Update() {
-            var pos = CameraHelper.WorldToVcamPoint(mainCamera, cameras[0], player.transform.position);
             foreach (var cam in cameras) {
-                Debug.Log($"{cam.name}: {pos} {mainCamera.WorldToScreenPoint(player.transform.position)}");
+                var pos = CameraHelper.WorldToScreenPointVcam(mainCamera, cam, player.transform.position);
+                if (pos.x > 0 && pos.x < mainCamera.pixelWidth && pos.y > 0 && pos.y < mainCamera.pixelHeight) {
+                    cam.Priority = 20 - (int)Mathf.Log(Vector3.Distance(player.transform.position, cam.transform.position));
+                } else {
+                    cam.Priority = 0;
+                }
                 // TODO: Project theoretical camera here and get if there is an overlap.
-                cam.Priority = -(int)Vector3.Distance(player.transform.position, cam.transform.position);
                 //var collider = cam.GetComponent<CinemachineCollider>();
             }
         }

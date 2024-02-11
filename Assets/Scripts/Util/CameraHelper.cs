@@ -13,7 +13,7 @@ namespace Utility {
             return transform * vCam.transform.worldToLocalMatrix;
         }
 
-        public static Vector2 WorldToVcamPoint(Camera camera, CinemachineVirtualCamera vCam, Vector3 point) {
+        public static Vector2 WorldToScreenPointVcam(Camera camera, CinemachineVirtualCamera vCam, Vector3 point) {
             var worldToClip = camera.projectionMatrix * WorldToCameraMatrixFromVcam(camera, vCam);
 
             Vector3 clip = worldToClip.MultiplyPoint(point);
