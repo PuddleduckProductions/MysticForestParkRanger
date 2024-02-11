@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: Interactions.InteractionManager.InteractionState
+  commentId: T:Interactions.InteractionManager.InteractionState
+  id: InteractionManager.InteractionState
+  parent: Interactions
+  children:
+  - Interactions.InteractionManager.InteractionState.EMPTY
+  - Interactions.InteractionManager.InteractionState.HOLDING_INTERACTION
+  langs:
+  - csharp
+  - vb
+  name: InteractionManager.InteractionState
+  nameWithType: InteractionManager.InteractionState
+  fullName: Interactions.InteractionManager.InteractionState
+  type: Enum
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: InteractionState
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 22
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public enum InteractionManager.InteractionState
+    content.vb: Public Enum InteractionManager.InteractionState
+- uid: Interactions.InteractionManager.InteractionState.EMPTY
+  commentId: F:Interactions.InteractionManager.InteractionState.EMPTY
+  id: EMPTY
+  parent: Interactions.InteractionManager.InteractionState
+  langs:
+  - csharp
+  - vb
+  name: EMPTY
+  nameWithType: InteractionManager.InteractionState.EMPTY
+  fullName: Interactions.InteractionManager.InteractionState.EMPTY
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: EMPTY
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 23
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: EMPTY = 0
+    return:
+      type: Interactions.InteractionManager.InteractionState
+- uid: Interactions.InteractionManager.InteractionState.HOLDING_INTERACTION
+  commentId: F:Interactions.InteractionManager.InteractionState.HOLDING_INTERACTION
+  id: HOLDING_INTERACTION
+  parent: Interactions.InteractionManager.InteractionState
+  langs:
+  - csharp
+  - vb
+  name: HOLDING_INTERACTION
+  nameWithType: InteractionManager.InteractionState.HOLDING_INTERACTION
+  fullName: Interactions.InteractionManager.InteractionState.HOLDING_INTERACTION
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: HOLDING_INTERACTION
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 24
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: HOLDING_INTERACTION = 1
+    return:
+      type: Interactions.InteractionManager.InteractionState
+references:
+- uid: Interactions
+  commentId: N:Interactions
+  href: Interactions.html
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions
+- uid: Interactions.InteractionManager.InteractionState
+  commentId: T:Interactions.InteractionManager.InteractionState
+  parent: Interactions
+  href: Interactions.InteractionManager.html
+  name: InteractionManager.InteractionState
+  nameWithType: InteractionManager.InteractionState
+  fullName: Interactions.InteractionManager.InteractionState
+  spec.csharp:
+  - uid: Interactions.InteractionManager
+    name: InteractionManager
+    href: Interactions.InteractionManager.html
+  - name: .
+  - uid: Interactions.InteractionManager.InteractionState
+    name: InteractionState
+    href: Interactions.InteractionManager.InteractionState.html
+  spec.vb:
+  - uid: Interactions.InteractionManager
+    name: InteractionManager
+    href: Interactions.InteractionManager.html
+  - name: .
+  - uid: Interactions.InteractionManager.InteractionState
+    name: InteractionState
+    href: Interactions.InteractionManager.InteractionState.html

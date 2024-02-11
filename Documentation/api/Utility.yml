@@ -4,7 +4,11 @@ items:
   commentId: N:Utility
   id: Utility
   children:
+  - Utility.CameraHelper
   - Utility.ISingleton`1
+  - Utility.SerializedMethod
+  - Utility.SerializedMethod.MethodValidation
+  - Utility.SerializedMethodEditor
   langs:
   - csharp
   - vb
@@ -13,8 +17,14 @@ items:
   fullName: Utility
   type: Namespace
   assemblies:
-  - ScriptAssembly
+  - EditorAssembly
 references:
+- uid: Utility.CameraHelper
+  commentId: T:Utility.CameraHelper
+  href: Utility.CameraHelper.html
+  name: CameraHelper
+  nameWithType: CameraHelper
+  fullName: Utility.CameraHelper
 - uid: Utility.ISingleton`1
   commentId: T:Utility.ISingleton`1
   href: Utility.ISingleton-1.html
@@ -40,3 +50,45 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: Utility.SerializedMethod
+  commentId: T:Utility.SerializedMethod
+  parent: Utility
+  href: Utility.SerializedMethod.html
+  name: SerializedMethod
+  nameWithType: SerializedMethod
+  fullName: Utility.SerializedMethod
+- uid: Utility.SerializedMethod.MethodValidation
+  commentId: T:Utility.SerializedMethod.MethodValidation
+  parent: Utility
+  href: Utility.SerializedMethod.html
+  name: SerializedMethod.MethodValidation
+  nameWithType: SerializedMethod.MethodValidation
+  fullName: Utility.SerializedMethod.MethodValidation
+  spec.csharp:
+  - uid: Utility.SerializedMethod
+    name: SerializedMethod
+    href: Utility.SerializedMethod.html
+  - name: .
+  - uid: Utility.SerializedMethod.MethodValidation
+    name: MethodValidation
+    href: Utility.SerializedMethod.MethodValidation.html
+  spec.vb:
+  - uid: Utility.SerializedMethod
+    name: SerializedMethod
+    href: Utility.SerializedMethod.html
+  - name: .
+  - uid: Utility.SerializedMethod.MethodValidation
+    name: MethodValidation
+    href: Utility.SerializedMethod.MethodValidation.html
+- uid: Utility.SerializedMethodEditor
+  commentId: T:Utility.SerializedMethodEditor
+  href: Utility.SerializedMethodEditor.html
+  name: SerializedMethodEditor
+  nameWithType: SerializedMethodEditor
+  fullName: Utility.SerializedMethodEditor
+- uid: Utility
+  commentId: N:Utility
+  href: Utility.html
+  name: Utility
+  nameWithType: Utility
+  fullName: Utility

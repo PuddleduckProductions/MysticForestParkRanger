@@ -8,7 +8,7 @@ function downloadLatestBuildArtifact() {
 				if (r.status !== "completed") {
 					alert("Latest build is not ready yet.");
 					window.open(r.html_url + "#artifacts");
-				} else if (r.status !== "success") {
+				} else if (r.conclusion !== "success") {
 					alert("Latest build was not successful.");
 					window.open(r.html_url + "#artifacts");
 				} else {

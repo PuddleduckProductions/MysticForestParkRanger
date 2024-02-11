@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724f0696aa21b114fb34cb1aa9cfa3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 3
+  interactionRange: 1
+  extentsScale: {x: 1, y: 2, z: 1}
 --- !u!1 &7439933351979529418
 GameObject:
   m_ObjectHideFlags: 0

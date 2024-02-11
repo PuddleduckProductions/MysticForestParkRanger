@@ -1444,7 +1444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6047049
+      value: -1.6728327
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1452,27 +1452,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.327706
+      value: -9.859089
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8893867
+      value: 0.9015299
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.41877997
+      value: 0.42449778
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.1658746
+      value: 0.07594047
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07810434
+      value: -0.03575762
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6047049
+      value: -1.6728327
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1480,27 +1480,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.327706
+      value: -9.859089
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8893867
+      value: 0.9015299
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.41877997
+      value: 0.42449778
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.1658746
+      value: 0.07594047
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07810434
+      value: -0.03575762
       objectReference: {fileID: 0}
     - target: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.35
+      value: 1.81
       objectReference: {fileID: 0}
     - target: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1508,7 +1508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.47
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6029,11 +6029,11 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 2
   behavior:
-    rid: 3483134241649459203
+    rid: 3483134242627518467
   references:
     version: 2
     RefIds:
-    - rid: 3483134241649459203
+    - rid: 3483134242627518467
       type: {class: PickAndPutInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1266099252}
@@ -9089,20 +9089,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e444c4960e6907488a4725445bf64c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionEnabled: 0
+  interactionEnabled: 1
   type: 3
   behavior:
-    rid: 3483134241649459204
+    rid: 3483134242627518466
   references:
     version: 2
     RefIds:
-    - rid: 3483134241649459204
+    - rid: 3483134242627518466
       type: {class: PutTrigger, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2093743577}
         onChained:
           m_PersistentCalls:
             m_Calls: []
+        allowedTags: []
 --- !u!65 &2093743578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10168,7 +10169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4832438186812400447}
   m_Layer: 0
-  m_Name: ThisCausesMePain
+  m_Name: Dugong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10335,6 +10336,7 @@ MonoBehaviour:
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 6779168486106575221}
+        inkKnot: 
 --- !u!33 &6811210235722508298
 MeshFilter:
   m_ObjectHideFlags: 0

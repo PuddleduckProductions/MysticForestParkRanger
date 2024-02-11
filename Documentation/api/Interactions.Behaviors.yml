@@ -23,7 +23,6 @@ items:
 references:
 - uid: Interactions.Behaviors.CustomInteraction
   commentId: T:Interactions.Behaviors.CustomInteraction
-  parent: Interactions.Behaviors
   href: Interactions.Behaviors.CustomInteraction.html
   name: CustomInteraction
   nameWithType: CustomInteraction
