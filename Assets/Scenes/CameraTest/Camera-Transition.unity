@@ -331,11 +331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.07006502
+      value: 0.070065066
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.032991078
+      value: -0.0329911
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -347,11 +347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.07006502
+      value: 0.070065066
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.032991078
+      value: -0.0329911
       objectReference: {fileID: 0}
     - target: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,7 +417,9 @@ PrefabInstance:
       propertyPath: cameras.Array.data[1]
       value: 
       objectReference: {fileID: 1928488857}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3589653520050386469, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+    - {fileID: 4364581695069736890, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
