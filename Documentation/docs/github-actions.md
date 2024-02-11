@@ -9,7 +9,7 @@ If you're in a bind and need the latest build in a hurry, please use this system
 
 
 ### To Download:
-<script src="assets/js/download-latest.js"></script>
+<script src="~/assets/js/download-latest.js"></script>
 
 <button onclick="downloadLatestBuildArtifact()">Click to download</button>
 

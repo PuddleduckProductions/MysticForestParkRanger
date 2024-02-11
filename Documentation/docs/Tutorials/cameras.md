@@ -7,6 +7,7 @@ Want to have a camera that will be automatically switched to? Here's all you hav
 
 > [!TIP]
 > To frame the shot, you can view in edit mode and then select "GameObject->Cinemachine->Virtual Camera".
+
 ![Create Camera](~/assets/images/cameras/create-camera.png)
 
 3. Go to the Player object and click the "Update Cameras List" button.
