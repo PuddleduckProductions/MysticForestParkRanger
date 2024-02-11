@@ -119,7 +119,7 @@ namespace InkTools {
                 }
 
                 if (bool.TryParse(args[0], out bool enabled)) {
-                    var character = GameObject.FindGameObjectWithTag("Player").GetComponent<characterController>();
+                    var character = GameObject.FindGameObjectWithTag("Player").GetComponent<Character.characterController>();
                     character.moveEnabled = enabled;
                 } else {
                     error = "enabled arg is not a bool.";

@@ -45,7 +45,7 @@ namespace Interactions {
             mainCamera = Camera.main;
             
             ((ISingleton<InteractionManager>)this).Initialize();
-            ISingleton<UIController>.Instance.onInteract.AddListener(Interact);
+            ISingleton<Character.UIController>.Instance.onInteract.AddListener(Interact);
         }
 
         protected void UpdateMode(InteractionState newState) {
