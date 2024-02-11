@@ -13,3 +13,6 @@ Set up by Athena, mostly just is a probuilder environment with character control
 
 ## Play Area
 This is a template scene for basic character controls and interactions. It can be copied with `CTRL+N` (or `File->New Scene`).
+
+## Camera-Transition
+A demo scene meant to demonstrate how multiple virtual cameras can work together.

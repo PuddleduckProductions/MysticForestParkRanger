@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/UIController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: UIController
     path: ../Assets/Scripts/CharacterController/UIController.cs
@@ -165,7 +165,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/UIController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onInteract
     path: ../Assets/Scripts/CharacterController/UIController.cs
@@ -192,7 +192,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/UIController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInteract
     path: ../Assets/Scripts/CharacterController/UIController.cs

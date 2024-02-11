@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -74,7 +74,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: inkKnot
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -135,7 +135,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
@@ -164,7 +164,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs

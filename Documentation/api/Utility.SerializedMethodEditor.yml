@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Utility/SerializedMethodEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: SerializedMethodEditor
     path: ../Assets/Editor/Utility/SerializedMethodEditor.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Utility/SerializedMethodEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GetPropertyHeight
     path: ../Assets/Editor/Utility/SerializedMethodEditor.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Utility/SerializedMethodEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnGUI
     path: ../Assets/Editor/Utility/SerializedMethodEditor.cs
@@ -150,7 +150,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Utility/SerializedMethodEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: SetMethod
     path: ../Assets/Editor/Utility/SerializedMethodEditor.cs

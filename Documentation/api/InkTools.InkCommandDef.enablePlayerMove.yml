@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: enablePlayerMove
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: usage
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs

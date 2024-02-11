@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Interactions/BoolArray2DDrawer.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: BoolArray2DDrawer
     path: ../Assets/Editor/Interactions/BoolArray2DDrawer.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Interactions/BoolArray2DDrawer.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
     path: ../Assets/Editor/Interactions/BoolArray2DDrawer.cs

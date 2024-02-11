@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/CameraHelper.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CameraHelper
     path: ../Assets/Scripts/Util/CameraHelper.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/CameraHelper.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: WorldToCameraMatrixFromVcam
     path: ../Assets/Scripts/Util/CameraHelper.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Util/CameraHelper.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: WorldToScreenPointVcam
     path: ../Assets/Scripts/Util/CameraHelper.cs

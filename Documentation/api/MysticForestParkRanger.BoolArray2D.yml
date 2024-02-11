@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: BoolArray2D
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: data
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
@@ -104,7 +104,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: width
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: height
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
@@ -178,7 +178,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: defaultValue
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
@@ -205,7 +205,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
@@ -239,7 +239,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Reset
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
@@ -271,7 +271,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: this[]
     path: ../Assets/Scripts/CharacterController/Interactions/BoolArray2D.cs

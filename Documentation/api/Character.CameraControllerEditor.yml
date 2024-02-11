@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Character/CameraControllerEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CameraControllerEditor
     path: ../Assets/Editor/Character/CameraControllerEditor.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Character/CameraControllerEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnEnable
     path: ../Assets/Editor/Character/CameraControllerEditor.cs
@@ -180,7 +180,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Character/CameraControllerEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: SaveChanges
     path: ../Assets/Editor/Character/CameraControllerEditor.cs
@@ -209,7 +209,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Character/CameraControllerEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: UpdateCams
     path: ../Assets/Editor/Character/CameraControllerEditor.cs
@@ -235,7 +235,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Character/CameraControllerEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
     path: ../Assets/Editor/Character/CameraControllerEditor.cs

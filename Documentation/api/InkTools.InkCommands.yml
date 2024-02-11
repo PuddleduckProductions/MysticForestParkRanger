@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkCommands
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: commands
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: commandsActive
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: commandRegex
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Evaluate
     path: ../Assets/Scripts/Ink/InkCommands.cs
@@ -204,7 +204,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkCommands.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs

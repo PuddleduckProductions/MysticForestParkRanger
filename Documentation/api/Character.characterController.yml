@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: characterController
     path: ../Assets/Scripts/CharacterController/characterController.cs
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: moveEnabled
     path: ../Assets/Scripts/CharacterController/characterController.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: movementSpeed
     path: ../Assets/Scripts/CharacterController/characterController.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: rotationSpeed
     path: ../Assets/Scripts/CharacterController/characterController.cs
@@ -248,7 +248,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: relativeDirectionalMovement
     path: ../Assets/Scripts/CharacterController/characterController.cs
@@ -275,7 +275,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: rotationSpeedMultiplier
     path: ../Assets/Scripts/CharacterController/characterController.cs
@@ -302,7 +302,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: movementSpeedMultiplier
     path: ../Assets/Scripts/CharacterController/characterController.cs

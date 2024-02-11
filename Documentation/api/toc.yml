@@ -60,7 +60,7 @@ items:
   - uid: Interactions.InteractionManager.InteractionState
     name: InteractionManager.InteractionState
 - uid: MysticForestParkRanger
-  name: ''
+  name: MysticForestParkRanger
   items:
   - uid: MysticForestParkRanger.BoolArray2D
     name: BoolArray2D

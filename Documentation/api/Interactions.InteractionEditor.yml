@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Interactions/InteractionEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionEditor
     path: ../Assets/Editor/Interactions/InteractionEditor.cs
@@ -164,7 +164,7 @@ items:
   source:
     remote:
       path: Assets/Editor/Interactions/InteractionEditor.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
     path: ../Assets/Editor/Interactions/InteractionEditor.cs

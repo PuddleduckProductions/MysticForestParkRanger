@@ -10,9 +10,9 @@ items:
   langs:
   - csharp
   - vb
-  name: ''
-  nameWithType: ''
-  fullName: ''
+  name: MysticForestParkRanger
+  nameWithType: MysticForestParkRanger
+  fullName: MysticForestParkRanger
   type: Namespace
   assemblies:
   - EditorAssembly

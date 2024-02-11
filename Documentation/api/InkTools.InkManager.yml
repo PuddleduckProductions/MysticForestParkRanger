@@ -31,7 +31,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkManager
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: runOnStart
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -206,7 +206,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: storyActive
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -235,7 +235,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: inkJSONAsset
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -272,7 +272,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: story
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -299,7 +299,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: dialogInstance
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -326,7 +326,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: dialogRenderer
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -353,7 +353,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: lineMatchRegex
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -380,7 +380,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: LineFromString
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -414,7 +414,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: dialogEnd
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -441,7 +441,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: hasInkJSON
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -470,7 +470,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PathExists
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -504,7 +504,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: StartDialog
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -536,7 +536,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: AdvanceStory
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -562,7 +562,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EvaluateStory
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -588,7 +588,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: TryFindCharacter
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -624,7 +624,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: DrawDialog
     path: ../Assets/Scripts/Ink/InkManager.cs

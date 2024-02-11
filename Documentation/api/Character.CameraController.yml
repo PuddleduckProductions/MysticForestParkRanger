@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/CameraController.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CameraController
     path: ../Assets/Scripts/CharacterController/CameraController.cs

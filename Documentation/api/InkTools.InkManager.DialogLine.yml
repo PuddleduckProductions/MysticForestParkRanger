@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: DialogLine
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: character
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: dialog
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -109,7 +109,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: tags
     path: ../Assets/Scripts/Ink/InkManager.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/Ink/InkManager.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkManager.cs

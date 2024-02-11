@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GridGroup
     path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GetCellCenterLocal
     path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
@@ -220,7 +220,7 @@ items:
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-      branch: camera-improvements
+      branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GetCellCenterWorld
     path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
