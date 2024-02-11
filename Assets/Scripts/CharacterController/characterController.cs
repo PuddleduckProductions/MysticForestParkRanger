@@ -49,7 +49,7 @@ public class characterController : MonoBehaviour
             if (relativeDirectionalMovement) {
                 transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
             } else if (move != Vector3.zero) {
-                transform.rotation = Quaternion.LookRotation(move, transform.up);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), currRotationSpeed * Time.deltaTime);
             }
             move.Normalize();
             c.SimpleMove(move * movementSpeed);
