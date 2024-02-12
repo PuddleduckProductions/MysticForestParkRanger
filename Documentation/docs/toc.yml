@@ -2,14 +2,8 @@ items:
 - name: Introduction
   href: introduction.md
 - name: Tutorials
-  items:
-    - name: Interaction System
-      href: Tutorials/interaction.md
-    - name: Shaders
-      href: Tutorials/Shaders.md
-- name: Scenes
-  href: scenes.md
-- name: Assets
-  href: assets.md
+  href: Tutorials/toc.yml
+- name: Asset Documentation
+  href: Assets/toc.yml
 - name: Github Actions
   href: github-actions.md

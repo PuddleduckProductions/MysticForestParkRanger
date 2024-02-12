@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEditor;
 
 namespace Interactions {
     using Behaviors;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Reflection;
     using static Interaction;
     /// <summary>
     /// Editor for <see cref="Interaction"/>, to make selecting <see cref="InteractionBehavior"/> automated and easy for designers.
@@ -24,16 +24,18 @@ namespace Interactions {
         /// </summary>
         /// <param name="interaction">The parent to give our <see cref="InteractionBehavior"/></param>
         private void CreateBehavior(Interaction interaction) {
-            switch (interaction.type) {
-                case InteractionType.Ink:
-                    behavior.managedReferenceValue = new InkInteraction(interaction);
+            var behaviorAssembly = typeof(InteractionBehavior).Assembly;
+            var subTypes = behaviorAssembly.GetTypes().Where(t => t.BaseType == typeof(InteractionBehavior));
+
+            ConstructorInfo constructor = null;
+            foreach (var subType in subTypes) {
+                if (subType.Name == interaction.type.ToString()) {
+                    constructor = subType.GetConstructors()[0];
                     break;
-                case InteractionType.Pushable:
-                    behavior.managedReferenceValue = new PushableInteraction(interaction);
-                    break;
-                case InteractionType.Custom:
-                    behavior.managedReferenceValue = new CustomInteraction(interaction);
-                    break;
+                }
+            }
+            if (constructor != null) {
+                behavior.managedReferenceValue = constructor.Invoke(new object[] { interaction });
             }
             serializedObject.ApplyModifiedProperties();
         }

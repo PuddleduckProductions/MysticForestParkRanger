@@ -8,7 +8,6 @@ items:
   - InkTools.InkCommandDef.InkCommand.#ctor(System.Collections.Generic.List{System.String},System.String@)
   - InkTools.InkCommandDef.InkCommand.CommandWrite(System.String,System.Collections.Generic.List{System.String})
   - InkTools.InkCommandDef.InkCommand.Update
-  - InkTools.InkCommandDef.InkCommand.requiresUpdate
   - InkTools.InkCommandDef.InkCommand.usage
   langs:
   - csharp
@@ -24,7 +23,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkCommand
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -39,6 +38,7 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - InkTools.InkCommandDef.enablePlayerMove
   - InkTools.InkCommandDef.moveTo
   inheritedMembers:
   - System.Object.Equals(System.Object)
@@ -48,37 +48,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: InkTools.InkCommandDef.InkCommand.requiresUpdate
-  commentId: P:InkTools.InkCommandDef.InkCommand.requiresUpdate
-  id: requiresUpdate
-  parent: InkTools.InkCommandDef.InkCommand
-  langs:
-  - csharp
-  - vb
-  name: requiresUpdate
-  nameWithType: InkCommand.requiresUpdate
-  fullName: InkTools.InkCommandDef.InkCommand.requiresUpdate
-  type: Property
-  source:
-    remote:
-      path: Assets/Scripts/Ink/InkCommands.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: requiresUpdate
-    path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 19
-  assemblies:
-  - ScriptAssembly
-  namespace: InkTools.InkCommandDef
-  summary: Should we call <xref href="InkTools.InkCommandDef.InkCommand.Update" data-throw-if-not-resolved="false"></xref> every frame?
-  example: []
-  syntax:
-    content: public virtual bool requiresUpdate { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Overridable ReadOnly Property requiresUpdate As Boolean
-  overload: InkTools.InkCommandDef.InkCommand.requiresUpdate*
 - uid: InkTools.InkCommandDef.InkCommand.#ctor(System.Collections.Generic.List{System.String},System.String@)
   commentId: M:InkTools.InkCommandDef.InkCommand.#ctor(System.Collections.Generic.List{System.String},System.String@)
   id: '#ctor(System.Collections.Generic.List{System.String},System.String@)'
@@ -97,17 +66,21 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 25
+    startLine: 22
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
+  summary: Consturct a command.
+  example: []
   syntax:
     content: public InkCommand(List<string> args, out string error)
     parameters:
     - id: args
       type: System.Collections.Generic.List{System.String}
+      description: Arguments passed in by ink.
     - id: error
       type: System.String
+      description: The error that an improperly constructed command returns.
     content.vb: Public Sub New(args As List(Of String), [error] As String)
   overload: InkTools.InkCommandDef.InkCommand.#ctor*
   nameWithType.vb: InkCommand.New(List(Of String), String)
@@ -131,10 +104,17 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: usage
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
+  summary: >-
+    How to use this. When the constructor has an error, this is returned as well.
+
+    Should be in the format: $commandName #&lt;requiredArg:type&gt; #&lt;requiredArg2&gt; #[optionalArg:type]
+
+    People reading the docs: read this!
+  example: []
   syntax:
     content: public abstract string usage { get; }
     parameters: []
@@ -160,7 +140,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CommandWrite
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 33
+    startLine: 35
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
@@ -196,17 +176,17 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - ScriptAssembly
   namespace: InkTools.InkCommandDef
-  summary: To call if requiresUpdate is true.
+  summary: Called once on start, and then every frame after as long as it returns true.
   example: []
   syntax:
     content: public virtual bool Update()
     return:
       type: System.Boolean
-      description: If update has finished, and we can remove this command from the list.
+      description: If we need to still update next frame.
     content.vb: Public Overridable Function Update() As Boolean
   overload: InkTools.InkCommandDef.InkCommand.Update*
 references:
@@ -469,49 +449,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: InkTools.InkCommandDef.InkCommand.Update
-  commentId: M:InkTools.InkCommandDef.InkCommand.Update
-  parent: InkTools.InkCommandDef.InkCommand
-  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
-  name: Update()
-  nameWithType: InkCommand.Update()
-  fullName: InkTools.InkCommandDef.InkCommand.Update()
-  spec.csharp:
-  - uid: InkTools.InkCommandDef.InkCommand.Update
-    name: Update
-    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: InkTools.InkCommandDef.InkCommand.Update
-    name: Update
-    href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_Update
-  - name: (
-  - name: )
-- uid: InkTools.InkCommandDef.InkCommand.requiresUpdate*
-  commentId: Overload:InkTools.InkCommandDef.InkCommand.requiresUpdate
-  href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand_requiresUpdate
-  name: requiresUpdate
-  nameWithType: InkCommand.requiresUpdate
-  fullName: InkTools.InkCommandDef.InkCommand.requiresUpdate
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: InkTools.InkCommandDef.InkCommand
-  commentId: T:InkTools.InkCommandDef.InkCommand
-  parent: InkTools.InkCommandDef
-  href: InkTools.InkCommandDef.InkCommand.html
-  name: InkCommand
-  nameWithType: InkCommand
-  fullName: InkTools.InkCommandDef.InkCommand
 - uid: InkTools.InkCommandDef.InkCommand.#ctor*
   commentId: Overload:InkTools.InkCommandDef.InkCommand.#ctor
   href: InkTools.InkCommandDef.InkCommand.html#InkTools_InkCommandDef_InkCommand__ctor_System_Collections_Generic_List_System_String__System_String__
@@ -650,3 +587,14 @@ references:
   name: Update
   nameWithType: InkCommand.Update
   fullName: InkTools.InkCommandDef.InkCommand.Update
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

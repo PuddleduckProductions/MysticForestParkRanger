@@ -5,6 +5,10 @@ _layout: landing
 # Mystic Forest Park Ranger
 Welcome to the documentation for MysticForestParkRanger!
 
+Download the latest build here: <script src="~/assets/js/download-latest.js"></script>
+
+<button onclick="downloadLatestBuildArtifact()">Click to download</button>
+
 If you're a programmer, you might want to check the API.
 
 For tutorials, check the [Docs](docs/introduction.md).

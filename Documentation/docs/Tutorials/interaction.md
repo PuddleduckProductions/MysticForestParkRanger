@@ -22,17 +22,26 @@ If you find a bug, please report it in [issues](https://github.com/PuddleduckPro
 You have two options. Custom interactions, or going into the code and adding your own [InteractionBehavior in Interactions.Behaviors](~/api/Interactions.Behaviors.yml).
 
 #### Custom Interactions
-WIP. Not finished. Will be sometime this Sprint!
+If you want to add a one-off custom interaction, go ahead! You can select CustomInteraction, and then define some custom behavior to use: [Interactions.Behaviors.CustomInteraction](~/api/Interactions.Behaviors.CustomInteraction.yml).
+
+If you want something a more long-term solution (i.e., re-usable behaviors) read on:
 
 #### InteractionBehavior
 You add your own scripted InteractionBehavior thusly:
 
 1. Create a subclass of [InteractionBehavior](~/api/Interactions.Behaviors.InteractionBehavior.yml)
-2. Go to [InteractionEditor](~/api/Interactions.InteractionEditor.yml) and under `CreateBehavior`, add your custom type.
+2. Go to [Interaction.InteractionType](~/api/Interactions.Interaction.yml#InteractionType) and add your class name there as an enumerator.
+3. Your class should now appear in the dropdown.
 
 ## Setting up Interactions
 If whatever scene you're working in doesn't have the spacebar appearing over interactions, you need to add interactions.
 
-There's a quick prefab for you: the UI prefab in Assets/Scripts/CharacterController. Drag that in along with PlayerObjects, and assuming you have only one Camera tagged "MainCamera", you should be good to go.
+There's a quick prefab for you, the `PlayArea` scene. Hit `CTRL+N` and select it to get started.
 
+You should then see something like this:
 ![UI prefab](~/assets/images/interactions/interactionUI.png)
+
+### Put Trigger
+This will allow any interaction to interact with it, so long as it's being held by the player (i.e., there's an interaction whose Update function is being called and returning true). It will only show as valid if the currently held interaction has a tag from the `Allowed Tags` list. When space is pressed with a current interaction on this one, the other interaction is destroyed, and `onChained` is called. You can set `onChained` to do whatever you want, and it takes a `GameObject` as a parameter.
+
+Want some more functionality? Maybe being able to let you use something with a put trigger without destroying what you're holding? Let me know. I'll move it higher up on my priorities.

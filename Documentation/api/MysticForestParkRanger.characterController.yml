@@ -4,7 +4,13 @@ items:
   commentId: T:MysticForestParkRanger.characterController
   id: characterController
   parent: MysticForestParkRanger
-  children: []
+  children:
+  - MysticForestParkRanger.characterController.moveEnabled
+  - MysticForestParkRanger.characterController.movementSpeed
+  - MysticForestParkRanger.characterController.movementSpeedMultiplier
+  - MysticForestParkRanger.characterController.relativeDirectionalMovement
+  - MysticForestParkRanger.characterController.rotationSpeed
+  - MysticForestParkRanger.characterController.rotationSpeedMultiplier
   langs:
   - csharp
   - vb
@@ -147,6 +153,168 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: MysticForestParkRanger.characterController.moveEnabled
+  commentId: F:MysticForestParkRanger.characterController.moveEnabled
+  id: moveEnabled
+  parent: MysticForestParkRanger.characterController
+  langs:
+  - csharp
+  - vb
+  name: moveEnabled
+  nameWithType: characterController.moveEnabled
+  fullName: characterController.moveEnabled
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: moveEnabled
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 7
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public bool moveEnabled
+    return:
+      type: System.Boolean
+    content.vb: Public moveEnabled As Boolean
+- uid: MysticForestParkRanger.characterController.movementSpeed
+  commentId: F:MysticForestParkRanger.characterController.movementSpeed
+  id: movementSpeed
+  parent: MysticForestParkRanger.characterController
+  langs:
+  - csharp
+  - vb
+  name: movementSpeed
+  nameWithType: characterController.movementSpeed
+  fullName: characterController.movementSpeed
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: movementSpeed
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 10
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public float movementSpeed
+    return:
+      type: System.Single
+    content.vb: Public movementSpeed As Single
+- uid: MysticForestParkRanger.characterController.rotationSpeed
+  commentId: F:MysticForestParkRanger.characterController.rotationSpeed
+  id: rotationSpeed
+  parent: MysticForestParkRanger.characterController
+  langs:
+  - csharp
+  - vb
+  name: rotationSpeed
+  nameWithType: characterController.rotationSpeed
+  fullName: characterController.rotationSpeed
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: rotationSpeed
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 11
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public float rotationSpeed
+    return:
+      type: System.Single
+    content.vb: Public rotationSpeed As Single
+- uid: MysticForestParkRanger.characterController.relativeDirectionalMovement
+  commentId: F:MysticForestParkRanger.characterController.relativeDirectionalMovement
+  id: relativeDirectionalMovement
+  parent: MysticForestParkRanger.characterController
+  langs:
+  - csharp
+  - vb
+  name: relativeDirectionalMovement
+  nameWithType: characterController.relativeDirectionalMovement
+  fullName: characterController.relativeDirectionalMovement
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: relativeDirectionalMovement
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public bool relativeDirectionalMovement
+    return:
+      type: System.Boolean
+    content.vb: Public relativeDirectionalMovement As Boolean
+- uid: MysticForestParkRanger.characterController.rotationSpeedMultiplier
+  commentId: F:MysticForestParkRanger.characterController.rotationSpeedMultiplier
+  id: rotationSpeedMultiplier
+  parent: MysticForestParkRanger.characterController
+  langs:
+  - csharp
+  - vb
+  name: rotationSpeedMultiplier
+  nameWithType: characterController.rotationSpeedMultiplier
+  fullName: characterController.rotationSpeedMultiplier
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: rotationSpeedMultiplier
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public float rotationSpeedMultiplier
+    return:
+      type: System.Single
+    content.vb: Public rotationSpeedMultiplier As Single
+- uid: MysticForestParkRanger.characterController.movementSpeedMultiplier
+  commentId: F:MysticForestParkRanger.characterController.movementSpeedMultiplier
+  id: movementSpeedMultiplier
+  parent: MysticForestParkRanger.characterController
+  langs:
+  - csharp
+  - vb
+  name: movementSpeedMultiplier
+  nameWithType: characterController.movementSpeedMultiplier
+  fullName: characterController.movementSpeedMultiplier
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/characterController.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: movementSpeedMultiplier
+    path: ../Assets/Scripts/CharacterController/characterController.cs
+    startLine: 14
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public float movementSpeedMultiplier
+    return:
+      type: System.Single
+    content.vb: Public movementSpeedMultiplier As Single
 references:
 - uid: MysticForestParkRanger
 - uid: System.Object
@@ -4497,3 +4665,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single

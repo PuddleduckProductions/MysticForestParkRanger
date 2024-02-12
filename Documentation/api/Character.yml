@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: Character
+  commentId: N:Character
+  id: Character
+  children:
+  - Character.CameraController
+  - Character.CameraControllerEditor
+  - Character.UIController
+  - Character.characterController
+  langs:
+  - csharp
+  - vb
+  name: Character
+  nameWithType: Character
+  fullName: Character
+  type: Namespace
+  assemblies:
+  - EditorAssembly
+references:
+- uid: Character.CameraController
+  commentId: T:Character.CameraController
+  parent: Character
+  href: Character.CameraController.html
+  name: CameraController
+  nameWithType: CameraController
+  fullName: Character.CameraController
+- uid: Character.CameraControllerEditor
+  commentId: T:Character.CameraControllerEditor
+  href: Character.CameraControllerEditor.html
+  name: CameraControllerEditor
+  nameWithType: CameraControllerEditor
+  fullName: Character.CameraControllerEditor
+- uid: Character.UIController
+  commentId: T:Character.UIController
+  href: Character.UIController.html
+  name: UIController
+  nameWithType: UIController
+  fullName: Character.UIController
+- uid: Character.characterController
+  commentId: T:Character.characterController
+  href: Character.characterController.html
+  name: characterController
+  nameWithType: characterController
+  fullName: Character.characterController
+- uid: Character
+  commentId: N:Character
+  href: Character.html
+  name: Character
+  nameWithType: Character
+  fullName: Character

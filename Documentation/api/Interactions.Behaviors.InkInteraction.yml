@@ -6,10 +6,9 @@ items:
   parent: Interactions.Behaviors
   children:
   - Interactions.Behaviors.InkInteraction.#ctor(Interactions.Interaction)
-  - Interactions.Behaviors.InkInteraction.EndDialog
   - Interactions.Behaviors.InkInteraction.Interact
-  - Interactions.Behaviors.InkInteraction.InteractAdvance(System.Boolean)
-  - Interactions.Behaviors.InkInteraction.isInteracting
+  - Interactions.Behaviors.InkInteraction.Update
+  - Interactions.Behaviors.InkInteraction.inkKnot
   langs:
   - csharp
   - vb
@@ -24,11 +23,14 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 48
+    startLine: 71
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: For displaying dialog in Ink. Should be customizable, but right now just loads `interact_Name` for the Name of the current GameObject.
+  summary: >-
+    For displaying dialog in Ink. By default, loads `interact_Name` knot in Ink. Can be changed.
+
+    Tests check to see if the selected knot exists. If you get an error on tests regarding an invalid knot, this is why.
   example: []
   syntax:
     content: >-
@@ -44,7 +46,9 @@ items:
   - Interactions.Behaviors.InteractionBehavior
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
-  - Interactions.Behaviors.InteractionBehavior.Update
+  - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.EndInteraction
+  - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -56,6 +60,35 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+- uid: Interactions.Behaviors.InkInteraction.inkKnot
+  commentId: F:Interactions.Behaviors.InkInteraction.inkKnot
+  id: inkKnot
+  parent: Interactions.Behaviors.InkInteraction
+  langs:
+  - csharp
+  - vb
+  name: inkKnot
+  nameWithType: InkInteraction.inkKnot
+  fullName: Interactions.Behaviors.InkInteraction.inkKnot
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: inkKnot
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 76
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: Knot to start on interaction.
+  example: []
+  syntax:
+    content: public string inkKnot
+    return:
+      type: System.String
+    content.vb: Public inkKnot As String
 - uid: Interactions.Behaviors.InkInteraction.#ctor(Interactions.Interaction)
   commentId: M:Interactions.Behaviors.InkInteraction.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
@@ -74,7 +107,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 50
+    startLine: 77
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -88,38 +121,6 @@ items:
   nameWithType.vb: InkInteraction.New(Interaction)
   fullName.vb: Interactions.Behaviors.InkInteraction.New(Interactions.Interaction)
   name.vb: New(Interaction)
-- uid: Interactions.Behaviors.InkInteraction.isInteracting
-  commentId: P:Interactions.Behaviors.InkInteraction.isInteracting
-  id: isInteracting
-  parent: Interactions.Behaviors.InkInteraction
-  langs:
-  - csharp
-  - vb
-  name: isInteracting
-  nameWithType: InkInteraction.isInteracting
-  fullName: Interactions.Behaviors.InkInteraction.isInteracting
-  type: Property
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: isInteracting
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 55
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: Active as long as <xref href="InkTools.InkManager.storyActive" data-throw-if-not-resolved="false"></xref> is active.
-  example: []
-  syntax:
-    content: public override bool isInteracting { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Overrides ReadOnly Property isInteracting As Boolean
-  overridden: Interactions.Behaviors.InteractionBehavior.isInteracting
-  overload: Interactions.Behaviors.InkInteraction.isInteracting*
 - uid: Interactions.Behaviors.InkInteraction.Interact
   commentId: M:Interactions.Behaviors.InkInteraction.Interact
   id: Interact
@@ -138,78 +139,51 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 61
+    startLine: 86
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: >-
-    Call interact_<xref href="UnityEngine.Object.name" data-throw-if-not-resolved="false"></xref> in Ink.
-
-    TODO: Make customizable
+  summary: Call interact_<xref href="UnityEngine.Object.name" data-throw-if-not-resolved="false"></xref> in Ink.
   example: []
   syntax:
     content: public override void Interact()
     content.vb: Public Overrides Sub Interact()
   overridden: Interactions.Behaviors.InteractionBehavior.Interact
   overload: Interactions.Behaviors.InkInteraction.Interact*
-- uid: Interactions.Behaviors.InkInteraction.EndDialog
-  commentId: M:Interactions.Behaviors.InkInteraction.EndDialog
-  id: EndDialog
+- uid: Interactions.Behaviors.InkInteraction.Update
+  commentId: M:Interactions.Behaviors.InkInteraction.Update
+  id: Update
   parent: Interactions.Behaviors.InkInteraction
   langs:
   - csharp
   - vb
-  name: EndDialog()
-  nameWithType: InkInteraction.EndDialog()
-  fullName: Interactions.Behaviors.InkInteraction.EndDialog()
+  name: Update()
+  nameWithType: InkInteraction.Update()
+  fullName: Interactions.Behaviors.InkInteraction.Update()
   type: Method
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: EndDialog
+    id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 67
+    startLine: 95
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
+  summary: >-
+    Are we currently having an interaction happen? What do we need to do to update it?
+
+    If this returns true, this supresses all other interactions in the scene.
+  example: []
   syntax:
-    content: public void EndDialog()
-    content.vb: Public Sub EndDialog()
-  overload: Interactions.Behaviors.InkInteraction.EndDialog*
-- uid: Interactions.Behaviors.InkInteraction.InteractAdvance(System.Boolean)
-  commentId: M:Interactions.Behaviors.InkInteraction.InteractAdvance(System.Boolean)
-  id: InteractAdvance(System.Boolean)
-  parent: Interactions.Behaviors.InkInteraction
-  langs:
-  - csharp
-  - vb
-  name: InteractAdvance(bool)
-  nameWithType: InkInteraction.InteractAdvance(bool)
-  fullName: Interactions.Behaviors.InkInteraction.InteractAdvance(bool)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractAdvance
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 71
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  syntax:
-    content: public void InteractAdvance(bool pressed)
-    parameters:
-    - id: pressed
+    content: public override bool Update()
+    return:
       type: System.Boolean
-    content.vb: Public Sub InteractAdvance(pressed As Boolean)
-  overload: Interactions.Behaviors.InkInteraction.InteractAdvance*
-  nameWithType.vb: InkInteraction.InteractAdvance(Boolean)
-  fullName.vb: Interactions.Behaviors.InkInteraction.InteractAdvance(Boolean)
-  name.vb: InteractAdvance(Boolean)
+    content.vb: Public Overrides Function Update() As Boolean
+  overridden: Interactions.Behaviors.InteractionBehavior.Update
+  overload: Interactions.Behaviors.InkInteraction.Update*
 references:
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
@@ -258,24 +232,74 @@ references:
   name: interactionObject
   nameWithType: InteractionBehavior.interactionObject
   fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
-- uid: Interactions.Behaviors.InteractionBehavior.Update
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Update
+- uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
   parent: Interactions.Behaviors.InteractionBehavior
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
-  name: Update()
-  nameWithType: InteractionBehavior.Update()
-  fullName: Interactions.Behaviors.InteractionBehavior.Update()
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  name: Interact(Interaction)
+  nameWithType: InteractionBehavior.Interact(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
   spec.csharp:
-  - uid: Interactions.Behaviors.InteractionBehavior.Update
-    name: Update
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+  commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
+  name: EndInteraction()
+  nameWithType: InteractionBehavior.EndInteraction()
+  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
   - name: (
   - name: )
   spec.vb:
-  - uid: Interactions.Behaviors.InteractionBehavior.Update
-    name: Update
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
   - name: (
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  name: CanInteract(Interaction)
+  nameWithType: InteractionBehavior.CanInteract(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -503,6 +527,17 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Interactions.Behaviors.InkInteraction.#ctor*
   commentId: Overload:Interactions.Behaviors.InkInteraction.#ctor
   href: Interactions.Behaviors.InkInteraction.html#Interactions_Behaviors_InkInteraction__ctor_Interactions_Interaction_
@@ -525,36 +560,6 @@ references:
   name: Interactions
   nameWithType: Interactions
   fullName: Interactions
-- uid: InkTools.InkManager.storyActive
-  commentId: P:InkTools.InkManager.storyActive
-  href: InkTools.InkManager.html#InkTools_InkManager_storyActive
-  name: storyActive
-  nameWithType: InkManager.storyActive
-  fullName: InkTools.InkManager.storyActive
-- uid: Interactions.Behaviors.InteractionBehavior.isInteracting
-  commentId: P:Interactions.Behaviors.InteractionBehavior.isInteracting
-  parent: Interactions.Behaviors.InteractionBehavior
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_isInteracting
-  name: isInteracting
-  nameWithType: InteractionBehavior.isInteracting
-  fullName: Interactions.Behaviors.InteractionBehavior.isInteracting
-- uid: Interactions.Behaviors.InkInteraction.isInteracting*
-  commentId: Overload:Interactions.Behaviors.InkInteraction.isInteracting
-  href: Interactions.Behaviors.InkInteraction.html#Interactions_Behaviors_InkInteraction_isInteracting
-  name: isInteracting
-  nameWithType: InkInteraction.isInteracting
-  fullName: Interactions.Behaviors.InkInteraction.isInteracting
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: UnityEngine.Object.name
   commentId: P:UnityEngine.Object.name
   parent: UnityEngine.Object
@@ -600,15 +605,39 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
-- uid: Interactions.Behaviors.InkInteraction.EndDialog*
-  commentId: Overload:Interactions.Behaviors.InkInteraction.EndDialog
-  href: Interactions.Behaviors.InkInteraction.html#Interactions_Behaviors_InkInteraction_EndDialog
-  name: EndDialog
-  nameWithType: InkInteraction.EndDialog
-  fullName: Interactions.Behaviors.InkInteraction.EndDialog
-- uid: Interactions.Behaviors.InkInteraction.InteractAdvance*
-  commentId: Overload:Interactions.Behaviors.InkInteraction.InteractAdvance
-  href: Interactions.Behaviors.InkInteraction.html#Interactions_Behaviors_InkInteraction_InteractAdvance_System_Boolean_
-  name: InteractAdvance
-  nameWithType: InkInteraction.InteractAdvance
-  fullName: Interactions.Behaviors.InkInteraction.InteractAdvance
+- uid: Interactions.Behaviors.InteractionBehavior.Update
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Update
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  name: Update()
+  nameWithType: InteractionBehavior.Update()
+  fullName: Interactions.Behaviors.InteractionBehavior.Update()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.Update
+    name: Update
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Update
+    name: Update
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.InkInteraction.Update*
+  commentId: Overload:Interactions.Behaviors.InkInteraction.Update
+  href: Interactions.Behaviors.InkInteraction.html#Interactions_Behaviors_InkInteraction_Update
+  name: Update
+  nameWithType: InkInteraction.Update
+  fullName: Interactions.Behaviors.InkInteraction.Update
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

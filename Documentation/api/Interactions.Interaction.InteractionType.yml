@@ -5,9 +5,11 @@ items:
   id: Interaction.InteractionType
   parent: Interactions
   children:
-  - Interactions.Interaction.InteractionType.Custom
-  - Interactions.Interaction.InteractionType.Ink
-  - Interactions.Interaction.InteractionType.Pushable
+  - Interactions.Interaction.InteractionType.CustomInteraction
+  - Interactions.Interaction.InteractionType.InkInteraction
+  - Interactions.Interaction.InteractionType.PickAndPutInteraction
+  - Interactions.Interaction.InteractionType.PushableInteraction
+  - Interactions.Interaction.InteractionType.PutTrigger
   langs:
   - csharp
   - vb
@@ -22,89 +24,141 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionType
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 159
+    startLine: 316
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
     content: public enum Interaction.InteractionType
     content.vb: Public Enum Interaction.InteractionType
-- uid: Interactions.Interaction.InteractionType.Ink
-  commentId: F:Interactions.Interaction.InteractionType.Ink
-  id: Ink
+- uid: Interactions.Interaction.InteractionType.InkInteraction
+  commentId: F:Interactions.Interaction.InteractionType.InkInteraction
+  id: InkInteraction
   parent: Interactions.Interaction.InteractionType
   langs:
   - csharp
   - vb
-  name: Ink
-  nameWithType: Interaction.InteractionType.Ink
-  fullName: Interactions.Interaction.InteractionType.Ink
+  name: InkInteraction
+  nameWithType: Interaction.InteractionType.InkInteraction
+  fullName: Interactions.Interaction.InteractionType.InkInteraction
   type: Field
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Ink
+    id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 159
+    startLine: 316
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
-    content: Ink = 0
+    content: InkInteraction = 0
     return:
       type: Interactions.Interaction.InteractionType
-- uid: Interactions.Interaction.InteractionType.Pushable
-  commentId: F:Interactions.Interaction.InteractionType.Pushable
-  id: Pushable
+- uid: Interactions.Interaction.InteractionType.PushableInteraction
+  commentId: F:Interactions.Interaction.InteractionType.PushableInteraction
+  id: PushableInteraction
   parent: Interactions.Interaction.InteractionType
   langs:
   - csharp
   - vb
-  name: Pushable
-  nameWithType: Interaction.InteractionType.Pushable
-  fullName: Interactions.Interaction.InteractionType.Pushable
+  name: PushableInteraction
+  nameWithType: Interaction.InteractionType.PushableInteraction
+  fullName: Interactions.Interaction.InteractionType.PushableInteraction
   type: Field
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Pushable
+    id: PushableInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 159
+    startLine: 316
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
-    content: Pushable = 1
+    content: PushableInteraction = 1
     return:
       type: Interactions.Interaction.InteractionType
-- uid: Interactions.Interaction.InteractionType.Custom
-  commentId: F:Interactions.Interaction.InteractionType.Custom
-  id: Custom
+- uid: Interactions.Interaction.InteractionType.PickAndPutInteraction
+  commentId: F:Interactions.Interaction.InteractionType.PickAndPutInteraction
+  id: PickAndPutInteraction
   parent: Interactions.Interaction.InteractionType
   langs:
   - csharp
   - vb
-  name: Custom
-  nameWithType: Interaction.InteractionType.Custom
-  fullName: Interactions.Interaction.InteractionType.Custom
+  name: PickAndPutInteraction
+  nameWithType: Interaction.InteractionType.PickAndPutInteraction
+  fullName: Interactions.Interaction.InteractionType.PickAndPutInteraction
   type: Field
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Custom
+    id: PickAndPutInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 159
+    startLine: 316
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
-    content: Custom = 2
+    content: PickAndPutInteraction = 2
+    return:
+      type: Interactions.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType.PutTrigger
+  commentId: F:Interactions.Interaction.InteractionType.PutTrigger
+  id: PutTrigger
+  parent: Interactions.Interaction.InteractionType
+  langs:
+  - csharp
+  - vb
+  name: PutTrigger
+  nameWithType: Interaction.InteractionType.PutTrigger
+  fullName: Interactions.Interaction.InteractionType.PutTrigger
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: PutTrigger
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 316
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: PutTrigger = 3
+    return:
+      type: Interactions.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType.CustomInteraction
+  commentId: F:Interactions.Interaction.InteractionType.CustomInteraction
+  id: CustomInteraction
+  parent: Interactions.Interaction.InteractionType
+  langs:
+  - csharp
+  - vb
+  name: CustomInteraction
+  nameWithType: Interaction.InteractionType.CustomInteraction
+  fullName: Interactions.Interaction.InteractionType.CustomInteraction
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: CustomInteraction
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 316
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: CustomInteraction = 4
     return:
       type: Interactions.Interaction.InteractionType
 references:

@@ -10,6 +10,7 @@ items:
   - InkTools.InkCommands.Update
   - InkTools.InkCommands.commandRegex
   - InkTools.InkCommands.commands
+  - InkTools.InkCommands.commandsActive
   langs:
   - csharp
   - vb
@@ -24,7 +25,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkCommands
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 114
+    startLine: 136
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -61,7 +62,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: commands
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 115
+    startLine: 137
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -70,6 +71,35 @@ items:
     return:
       type: System.Collections.Generic.Dictionary{System.String,System.Reflection.ConstructorInfo}
     content.vb: Protected commands As Dictionary(Of String, ConstructorInfo)
+- uid: InkTools.InkCommands.commandsActive
+  commentId: P:InkTools.InkCommands.commandsActive
+  id: commandsActive
+  parent: InkTools.InkCommands
+  langs:
+  - csharp
+  - vb
+  name: commandsActive
+  nameWithType: InkCommands.commandsActive
+  fullName: InkTools.InkCommands.commandsActive
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Ink/InkCommands.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: commandsActive
+    path: ../Assets/Scripts/Ink/InkCommands.cs
+    startLine: 140
+  assemblies:
+  - ScriptAssembly
+  namespace: InkTools
+  syntax:
+    content: public bool commandsActive { get; protected set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property commandsActive As Boolean
+  overload: InkTools.InkCommands.commandsActive*
 - uid: InkTools.InkCommands.#ctor
   commentId: M:InkTools.InkCommands.#ctor
   id: '#ctor'
@@ -88,7 +118,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 119
+    startLine: 146
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -117,7 +147,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: commandRegex
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 133
+    startLine: 160
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -144,7 +174,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Evaluate
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 134
+    startLine: 161
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -178,7 +208,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/Ink/InkCommands.cs
-    startLine: 153
+    startLine: 186
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -548,6 +578,23 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: InkTools.InkCommands.commandsActive*
+  commentId: Overload:InkTools.InkCommands.commandsActive
+  href: InkTools.InkCommands.html#InkTools_InkCommands_commandsActive
+  name: commandsActive
+  nameWithType: InkCommands.commandsActive
+  fullName: InkTools.InkCommands.commandsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: InkTools.InkCommands.#ctor*
   commentId: Overload:InkTools.InkCommands.#ctor
   href: InkTools.InkCommands.html#InkTools_InkCommands__ctor

@@ -9,6 +9,11 @@ If you're in a bind and need the latest build in a hurry, please use this system
 
 
 ### To Download:
+<script src="~/assets/js/download-latest.js"></script>
+
+<button onclick="downloadLatestBuildArtifact()">Click to download</button>
+
+OR (if that doesn't work):
 
 Go to the Unity Build and Test action: [![Unity Build and Test](https://github.com/PuddleduckProductions/MysticForestParkRanger/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/PuddleduckProductions/MysticForestParkRanger/actions/workflows/main.yml)
 

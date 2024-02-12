@@ -6,7 +6,12 @@ items:
   parent: Interactions
   children:
   - Interactions.InteractionManager.CanInteract
+  - Interactions.InteractionManager.FindClosestInteraction
+  - Interactions.InteractionManager.StopCurrentInteraction
+  - Interactions.InteractionManager.UpdateMode(Interactions.InteractionManager.InteractionState)
+  - Interactions.InteractionManager.extentsScale
   - Interactions.InteractionManager.interactionButton
+  - Interactions.InteractionManager.interactionMode
   - Interactions.InteractionManager.interactionRange
   - Interactions.InteractionManager.interactionsInScene
   - Interactions.InteractionManager.mainCamera
@@ -25,10 +30,12 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionManager
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ScriptAssembly
   namespace: Interactions
+  summary: A State Machine for searching for interactions and updating based on their behavior.
+  example: []
   syntax:
     content: 'public class InteractionManager : MonoBehaviour, ISingleton<InteractionManager>'
     content.vb: Public Class InteractionManager Inherits MonoBehaviour Implements ISingleton(Of InteractionManager)
@@ -173,7 +180,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionRange
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -182,6 +189,45 @@ items:
     return:
       type: System.Single
     content.vb: Public interactionRange As Single
+- uid: Interactions.InteractionManager.extentsScale
+  commentId: F:Interactions.InteractionManager.extentsScale
+  id: extentsScale
+  parent: Interactions.InteractionManager
+  langs:
+  - csharp
+  - vb
+  name: extentsScale
+  nameWithType: InteractionManager.extentsScale
+  fullName: Interactions.InteractionManager.extentsScale
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: extentsScale
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: >-
+      [Tooltip("determines size of boxcast relative to player size")]
+
+      public Vector3 extentsScale
+    return:
+      type: UnityEngine.Vector3
+    content.vb: >-
+      <Tooltip("determines size of boxcast relative to player size")>
+
+      Public extentsScale As Vector3
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: determines size of boxcast relative to player size
 - uid: Interactions.InteractionManager.mainCamera
   commentId: F:Interactions.InteractionManager.mainCamera
   id: mainCamera
@@ -200,7 +246,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: mainCamera
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 9
+    startLine: 16
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -227,7 +273,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: player
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 11
+    startLine: 18
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -254,7 +300,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionsInScene
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -281,7 +327,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionButton
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 13
+    startLine: 20
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -290,6 +336,93 @@ items:
     return:
       type: UnityEngine.RectTransform
     content.vb: Protected interactionButton As RectTransform
+- uid: Interactions.InteractionManager.interactionMode
+  commentId: F:Interactions.InteractionManager.interactionMode
+  id: interactionMode
+  parent: Interactions.InteractionManager
+  langs:
+  - csharp
+  - vb
+  name: interactionMode
+  nameWithType: InteractionManager.interactionMode
+  fullName: Interactions.InteractionManager.interactionMode
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: interactionMode
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 27
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public InteractionManager.InteractionState interactionMode
+    return:
+      type: Interactions.InteractionManager.InteractionState
+    content.vb: Public interactionMode As InteractionManager.InteractionState
+- uid: Interactions.InteractionManager.UpdateMode(Interactions.InteractionManager.InteractionState)
+  commentId: M:Interactions.InteractionManager.UpdateMode(Interactions.InteractionManager.InteractionState)
+  id: UpdateMode(Interactions.InteractionManager.InteractionState)
+  parent: Interactions.InteractionManager
+  langs:
+  - csharp
+  - vb
+  name: UpdateMode(InteractionState)
+  nameWithType: InteractionManager.UpdateMode(InteractionManager.InteractionState)
+  fullName: Interactions.InteractionManager.UpdateMode(Interactions.InteractionManager.InteractionState)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: UpdateMode
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 50
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: protected void UpdateMode(InteractionManager.InteractionState newState)
+    parameters:
+    - id: newState
+      type: Interactions.InteractionManager.InteractionState
+    content.vb: Protected Sub UpdateMode(newState As InteractionManager.InteractionState)
+  overload: Interactions.InteractionManager.UpdateMode*
+- uid: Interactions.InteractionManager.StopCurrentInteraction
+  commentId: M:Interactions.InteractionManager.StopCurrentInteraction
+  id: StopCurrentInteraction
+  parent: Interactions.InteractionManager
+  langs:
+  - csharp
+  - vb
+  name: StopCurrentInteraction()
+  nameWithType: InteractionManager.StopCurrentInteraction()
+  fullName: Interactions.InteractionManager.StopCurrentInteraction()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: StopCurrentInteraction
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 65
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  summary: >-
+    Should be called by <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> whenever we want to stop
+
+    the current interaction.
+  example: []
+  syntax:
+    content: public void StopCurrentInteraction()
+    content.vb: Public Sub StopCurrentInteraction()
+  overload: Interactions.InteractionManager.StopCurrentInteraction*
 - uid: Interactions.InteractionManager.CanInteract
   commentId: M:Interactions.InteractionManager.CanInteract
   id: CanInteract
@@ -308,7 +441,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 37
+    startLine: 92
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -318,6 +451,34 @@ items:
       type: System.Boolean
     content.vb: Protected Function CanInteract() As Boolean
   overload: Interactions.InteractionManager.CanInteract*
+- uid: Interactions.InteractionManager.FindClosestInteraction
+  commentId: M:Interactions.InteractionManager.FindClosestInteraction
+  id: FindClosestInteraction
+  parent: Interactions.InteractionManager
+  langs:
+  - csharp
+  - vb
+  name: FindClosestInteraction()
+  nameWithType: InteractionManager.FindClosestInteraction()
+  fullName: Interactions.InteractionManager.FindClosestInteraction()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: FindClosestInteraction
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 96
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public Interaction FindClosestInteraction()
+    return:
+      type: Interactions.Interaction
+    content.vb: Public Function FindClosestInteraction() As Interaction
+  overload: Interactions.InteractionManager.FindClosestInteraction*
 references:
 - uid: Interactions
   commentId: N:Interactions
@@ -4746,6 +4907,13 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
 - uid: UnityEngine.Camera
   commentId: T:UnityEngine.Camera
   parent: UnityEngine
@@ -4788,6 +4956,70 @@ references:
   name: RectTransform
   nameWithType: RectTransform
   fullName: UnityEngine.RectTransform
+- uid: Interactions.InteractionManager.InteractionState
+  commentId: T:Interactions.InteractionManager.InteractionState
+  parent: Interactions
+  href: Interactions.InteractionManager.html
+  name: InteractionManager.InteractionState
+  nameWithType: InteractionManager.InteractionState
+  fullName: Interactions.InteractionManager.InteractionState
+  spec.csharp:
+  - uid: Interactions.InteractionManager
+    name: InteractionManager
+    href: Interactions.InteractionManager.html
+  - name: .
+  - uid: Interactions.InteractionManager.InteractionState
+    name: InteractionState
+    href: Interactions.InteractionManager.InteractionState.html
+  spec.vb:
+  - uid: Interactions.InteractionManager
+    name: InteractionManager
+    href: Interactions.InteractionManager.html
+  - name: .
+  - uid: Interactions.InteractionManager.InteractionState
+    name: InteractionState
+    href: Interactions.InteractionManager.InteractionState.html
+- uid: Interactions.InteractionManager.UpdateMode*
+  commentId: Overload:Interactions.InteractionManager.UpdateMode
+  href: Interactions.InteractionManager.html#Interactions_InteractionManager_UpdateMode_Interactions_InteractionManager_InteractionState_
+  name: UpdateMode
+  nameWithType: InteractionManager.UpdateMode
+  fullName: Interactions.InteractionManager.UpdateMode
+- uid: Interactions.Behaviors.InteractionBehavior
+  commentId: T:Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.InteractionBehavior.html
+  name: InteractionBehavior
+  nameWithType: InteractionBehavior
+  fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.InteractionManager.StopCurrentInteraction*
+  commentId: Overload:Interactions.InteractionManager.StopCurrentInteraction
+  href: Interactions.InteractionManager.html#Interactions_InteractionManager_StopCurrentInteraction
+  name: StopCurrentInteraction
+  nameWithType: InteractionManager.StopCurrentInteraction
+  fullName: Interactions.InteractionManager.StopCurrentInteraction
+- uid: Interactions.Behaviors
+  commentId: N:Interactions.Behaviors
+  href: Interactions.html
+  name: Interactions.Behaviors
+  nameWithType: Interactions.Behaviors
+  fullName: Interactions.Behaviors
+  spec.csharp:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+  spec.vb:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
 - uid: Interactions.InteractionManager.CanInteract*
   commentId: Overload:Interactions.InteractionManager.CanInteract
   href: Interactions.InteractionManager.html#Interactions_InteractionManager_CanInteract
@@ -4805,3 +5037,16 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: Interactions.InteractionManager.FindClosestInteraction*
+  commentId: Overload:Interactions.InteractionManager.FindClosestInteraction
+  href: Interactions.InteractionManager.html#Interactions_InteractionManager_FindClosestInteraction
+  name: FindClosestInteraction
+  nameWithType: InteractionManager.FindClosestInteraction
+  fullName: Interactions.InteractionManager.FindClosestInteraction
+- uid: Interactions.Interaction
+  commentId: T:Interactions.Interaction
+  parent: Interactions
+  href: Interactions.Interaction.html
+  name: Interaction
+  nameWithType: Interaction
+  fullName: Interactions.Interaction

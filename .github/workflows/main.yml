@@ -1,6 +1,7 @@
 name: Unity Build and Test
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -8,7 +9,12 @@ on:
       - 'Assets/**/*'
       - 'Packages/**/*'
       - 'ProjectSettings/**/*'
+      - .github/workflows/main.yml
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+      
 permissions:
   actions: read
   pull-requests: write
@@ -17,8 +23,8 @@ permissions:
   contents: write
 
 jobs:
-  build:
-    name: Build MysticForestParkRanger
+  test:
+    name: Test MysticForestParkRanger
     runs-on: ubuntu-latest
     steps:
       # Checkout
@@ -42,6 +48,23 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    name: Build MysticForestParkRanger
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - run: git submodule update --init --recursive
+
+      # Cache
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
 
       # Build
       - name: Build project
@@ -52,8 +75,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: StandaloneWindows64
-          # In case something changes, still allow builds:
-          allowDirtyBuild: true
+          buildName: MysticForestParkRanger
       # Output
       - uses: actions/upload-artifact@v3
         with:
