@@ -13,6 +13,21 @@ Playtests should be run at least once a week.
 	a. Internal testing of the builds done on Sunday, or up until the day before a playtest
 3. Playtesting happens any day Monday-Friday
 
+```mermaid
+timeline
+    title Playtesting Build Process
+        Monday-Wednesday
+        : Asset and Feature PRs
+        Thursday
+        : Programming merges PRs
+        Friday-Saturday
+        : Playtest Build created
+        : Playtest Form created
+        : Playtest Instructions created
+        Sunday
+        : Playtest build tested for bugs
+```
+
 ### Playtesting Content
 Any new content for the playtest should be made into a pull request for the master branch. Pull requests for next week’s playtest are due Thursday morning, any pull requests opened after will have to wait until next week.
 
