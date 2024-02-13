@@ -15,12 +15,13 @@ namespace Character {
         public float rotationSpeedMultiplier = 0.75f;
         public float movementSpeedMultiplier = 0.5f;
 
-        //pushing force, make player stronger
-        public float pushForce = 1f;
-
         Camera mainCamera;
 
-        public Animator animator;
+        Animator animator;
+
+        Vector3 velocity; // velocity variable
+        public float friction = 0.99f; // friction value
+
         //private Animator animator;
         // Start is called before the first frame update
         void Start() {
@@ -49,6 +50,13 @@ namespace Character {
 
         public Vector3 intendedMove {
             get {
+                float currRotationSpeed = rotationSpeed;
+                float currMoveSpeed = movementSpeed;
+                if (input.y <= 0) {
+                    currRotationSpeed *= rotationSpeedMultiplier; // Decrease rotation speed if not moving forward
+                    currMoveSpeed *= movementSpeed * movementSpeedMultiplier;
+                }
+
                 Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
 
                 Vector3 simplifiedForward = relativeDirectionalMovement ? transform.forward : simplifiedRot * Vector3.forward;
@@ -58,6 +66,22 @@ namespace Character {
                 move.Normalize();
 
                 return move;
+
+
+                if (relativeDirectionalMovement) {
+                    transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
+                } else if (move != Vector3.zero) {
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), currRotationSpeed * Time.deltaTime);
+                }
+                move.Normalize();
+
+                // adding acceleration
+                velocity += move * currMoveSpeed * Time.deltaTime;
+
+                //applying friction
+                velocity *= friction;
+
+                c.SimpleMove(velocity);
             }
         }
 
