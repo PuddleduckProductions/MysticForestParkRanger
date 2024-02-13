@@ -327,7 +327,7 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction };
+        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, WaterPipe };
         /// <summary>
         /// Should we allow interaction with this object?
         /// If this is set to false while <see cref="IsInteracting"/> is true,
