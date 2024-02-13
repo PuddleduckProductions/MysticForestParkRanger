@@ -45,6 +45,11 @@ namespace Interactions {
             public virtual void Interact(Interaction other) { }
 
             /// <summary>
+            /// Called during <see cref="Interaction.Start"/>.
+            /// </summary>
+            public virtual void GameObjectStart() { }
+
+            /// <summary>
             /// Are we currently having an interaction happen? What do we need to do to update it?
             /// If this returns true, this supresses all other interactions in the scene.
             /// </summary>
@@ -338,6 +343,12 @@ namespace Interactions {
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;
 
+        private void Start() {
+            if (HasInteractionBehavior()) {
+                behavior.GameObjectStart();
+            }
+        }
+
         public bool HasInteractionBehavior() {
             return behavior != null;
         }
@@ -363,7 +374,7 @@ namespace Interactions {
         /// </summary>
         /// <returns>Whether or not to keep using this interaction</returns>
         public bool InteractionUpdate() {
-            if (behavior != null) {
+            if (HasInteractionBehavior()) {
                 return behavior.Update();
             }
             return false;
