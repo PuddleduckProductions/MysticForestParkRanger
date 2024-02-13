@@ -16,6 +16,11 @@
     }
   ],
   "build": {
+    "markdownEngineProperties": {
+      "markdigExtensions": [
+          "ListExtras"
+      ]
+    },
     "content": [
       {
         "files": [

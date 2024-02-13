@@ -7,10 +7,10 @@ Playtests should be run at least once a week.
 ### The Rough Calendar
 
 1. Assets due Thursday morning through a pull request (or earlier if possible) 
-  - Playtesting form creation starts, due Sunday evening.
-  - Playtesting document creation starts, due day before playtest.
+	a. Playtesting form creation starts, due Sunday evening.
+	b. Playtesting document creation starts, due day before playtest.
 2. Playtest builds due by Saturday (or earlier if possible)
-  - Internal testing of the builds done on Sunday, or up until the day before a playtest
+	a. Internal testing of the builds done on Sunday, or up until the day before a playtest
 3. Playtesting happens any day Monday-Friday
 
 ### Playtesting Content
@@ -49,12 +49,12 @@ The playtest form should always be open on the coordinator’s computer, as well
 We want to avoid interfering with the player’s experience as much as possible, and so here are the rules for coordinating a playtest:
 
 1. Always take notes
-  - Anything the player says, write it down
-  - If you notice anything yourself, write it down.
-  - Notes should be shared in Discord when the playtest is concluded.
+	a. Anything the player says, write it down
+	b. If you notice anything yourself, write it down.
+	c. Notes should be shared in Discord when the playtest is concluded.
 2. No talking to the player during the playtest.
-  - You should ask for their train of thought/stream of consciousness if they are being quiet, but that’s it.
-  - You can talk to them before and after, but you should aim to only cover what the playtesting document covers and the questions the form asks.
-  - Avoid making excuses for the game’s content.
-    - No “oh, yeah this hasn’t been fixed yet”, or “this WILL look like something else”
+	a. You should ask for their train of thought/stream of consciousness if they are being quiet, but that’s it.
+	b. You can talk to them before and after, but you should aim to only cover what the playtesting document covers and the questions the form asks.
+	c. Avoid making excuses for the game’s content.
+		i. No “oh, yeah this hasn’t been fixed yet”, or “this WILL look like something else”
 3. Only help if the player asks for help after about 5 minutes of them being stuck.
