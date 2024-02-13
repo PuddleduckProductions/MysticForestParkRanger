@@ -25,7 +25,7 @@ namespace Interactions {
         /// <param name="interaction">The parent to give our <see cref="InteractionBehavior"/></param>
         private void CreateBehavior(Interaction interaction) {
             var behaviorAssembly = typeof(InteractionBehavior).Assembly;
-            var subTypes = behaviorAssembly.GetTypes().Where(t => t.BaseType == typeof(InteractionBehavior));
+            var subTypes = behaviorAssembly.GetTypes().Where(t => typeof(InteractionBehavior).IsAssignableFrom(t));
 
             ConstructorInfo constructor = null;
             foreach (var subType in subTypes) {
