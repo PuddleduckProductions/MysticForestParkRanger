@@ -31,6 +31,8 @@ Writers should create a document to outline controls or context for anything tha
 ### Creating the Builds
 Programming will implement any assets or changes delivered over Thursday, with builds due by Saturday, or earlier if possible. Any additional pull requests should be ignored, but any small tweaks that are feasible will be considered.
 
+Builds should have a tag with the name of the relevant playtest that will be used. So we can refer back to certain builds later.
+
 Automatic builds will be done for Windows, there will be no guarantee for other operating systems unless someone else needs a build for their OS.
 
 ### Internal Testing
