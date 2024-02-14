@@ -100,46 +100,94 @@ namespace Interactions {
 
         /// <summary>
         /// Push an object around.
-        /// TODO: Disable collider on push.
         /// </summary>
         [Serializable]
         public class PushableInteraction : InteractionBehavior {
             public PushableInteraction(Interaction parent) : base(parent) { }
             /// <summary>
-            /// Whether player is still pushing. Active until space is pressed.
+            /// Whether player is pushing. 
             /// </summary>
-
             protected bool isPushing;
+            /// <summary>
+            /// Whether player is in pushing/pulling "mode". Active until space is pressed.
+            /// </summary>
+            protected bool inPushMode;
             /// <summary>
             /// Our reference to the player.
             /// </summary>
             GameObject player;
-
+            /// <summary>
+            /// Our reference to the player's character controller script.
+            /// </summary>
+            Character.characterController controller;
             /// <summary>
             /// Stored offset between the player and pushed object.
             /// </summary>
             Vector3 offset;
+            /// <summary>
+            /// makes sure player is intentionally moving (mostly for controllers). 
+            /// </summary>
+
+            public float moveThreshold = 0.01f;
+            /// <summary>
+            /// Weight of the Interactable Object, used with the CharacterController's
+            /// pushForce and movementSpeed to determine speed.
+            /// </summary>
+            public float weight = 1f;
+            /// <summary>
+            /// distance between every push start and ending position.
+            /// </summary>
+            public float cellLength = 10f;
+            /// <summary>
+            /// Time to wait inbetween pushes.
+            /// </summary>
+
+            public float pushCoolDown = 1f;
+            float lastPushTime = -Mathf.Infinity;
+            /// <summary>
+            /// Game Time when last push/pull was started.
+            /// </summary>
+            private float startTime;
+            /// <summary>
+            /// calculated time a push/pull takes based on:
+            ///     player movement speed & push force 
+            ///     interactable object's weight.
+            /// </summary>
+            private float pushTime;
+            /// <summary>
+            /// target for player position based on start position, direction & length of cell in the grid
+            /// </summary>
+            private Vector3 playerTargetPosition;            
+            /// <summary>
+            /// position of player before a push or pull
+            /// </summary>
+            private Vector3 playerStartPosition;
 
             /// <summary>
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
             /// </summary>
             public override void Interact() {
-                if (!isPushing) {
+                Debug.Log("Interacted w/ pushable object!");
+                if (!inPushMode) {
                     player = GameObject.FindGameObjectWithTag("Player");
-                    isPushing = true;
-                    offset = interactionObject.transform.position - player.transform.position;
+                    controller = player.GetComponent<Character.characterController>();
+                    inPushMode = true;
+
                     // TODO: Should be recursive.
                     if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
                         c.enabled = false;
                     }
+
                 } else {
                     // Force InteractionManager to call EndInteraction.
-                    isPushing = false;
+                    Debug.Log("made isPushing false");
+                    inPushMode = false;
                 }
+
             }
 
             public override void EndInteraction() {
-                SnapToGrid(interactionObject.transform);
+                //SnapToGrid(interactionObject.transform);
                 if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
                     c.enabled = true;
                 }
@@ -153,14 +201,53 @@ namespace Interactions {
                 //position.x = Mathf.Round(position.x / gridSize) * gridSize;
                 //position.z = Mathf.Round(position.z / gridSize) * gridSize;
                 objTransform.position = position;
+            }   
+
+            public void activatePush(){
+                isPushing = true; // we're now pushing!
+                controller.moveEnabled = false;
+                offset = interactionObject.transform.position - player.transform.position;
+                playerStartPosition = player.transform.position;
+                Vector2 direction = controller.input.normalized;
+                playerTargetPosition = new Vector3(playerStartPosition.x + direction.x * cellLength, (float)playerStartPosition.y, playerStartPosition.z + direction.y * cellLength); 
+                
+                
+                pushTime = cellLength / (controller.movementSpeed * (controller.pushForce / weight)); //for lerping
+                startTime = Time.time;
+
+            }
+            public void updatePush(){
+                controller.moveEnabled = false;
+                float elapsedTime = Time.time - startTime;
+                if (elapsedTime < pushTime){
+                    player.transform.position = Vector3.Lerp(playerStartPosition, playerTargetPosition, elapsedTime / pushTime);
+                    interactionObject.transform.position = player.transform.position + offset;
+                }
+                else
+                {
+                    // ensure player & obj are at target pos when done
+                    player.transform.position = playerTargetPosition;
+                    interactionObject.transform.position = player.transform.position + offset;
+                    
+                    isPushing = false; // stop pushing once movement is complete
+                    controller.moveEnabled = true;
+                }
             }
 
             /// <summary>
             /// Update the pushed object to move with us.
             /// </summary>
             public override bool Update() {
-                interactionObject.transform.position = player.transform.position + offset;
-                return isPushing;
+                //interactionObject.transform.position = player.transform.position + offset;
+                if(inPushMode && isPushing){
+                    updatePush();
+                }
+                if(inPushMode && !isPushing){
+                    if (controller.input.magnitude> moveThreshold || controller.input.magnitude < -moveThreshold) {
+                        if(Time.time - lastPushTime >= pushCoolDown) activatePush();
+                    }
+                }
+                return inPushMode;
             }
         }
 

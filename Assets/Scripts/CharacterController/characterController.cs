@@ -7,12 +7,16 @@ namespace Character {
     public class characterController : MonoBehaviour {
         public bool moveEnabled = true;
         CharacterController c;
-        Vector2 input;
+        [HideInInspector]
+        public Vector2 input;
         public float movementSpeed = 3f;
         public float rotationSpeed = 75f;
         public bool relativeDirectionalMovement = true;
         public float rotationSpeedMultiplier = 0.75f;
         public float movementSpeedMultiplier = 0.5f;
+
+        //pushing force, make player stronger
+        public float pushForce = 1f;
 
         Camera mainCamera;
 
