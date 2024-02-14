@@ -240,14 +240,19 @@ namespace Interactions {
             protected bool isPicking = false;
 
             GameObject player;
+            Collider playerCollider;
+            Collider c;
+            Bounds colliderBounds;
 
             public override void Interact() {
                 if (!isPicking) {
                     player = GameObject.FindGameObjectWithTag("Player");
                     isPicking = true;
                     interactionObject.interactionEnabled = false;
-                    var Collider = interactionObject.GetComponent<Collider>();
-                    Collider.enabled = false;
+                    c = interactionObject.GetComponent<Collider>();
+                    playerCollider = player.GetComponent<Collider>();
+                    colliderBounds = c.bounds;
+                    c.enabled = false;
                 } else {
                     // Will force InteractionManager to call EndInteraction.
                     isPicking = false;
@@ -255,15 +260,23 @@ namespace Interactions {
             }
 
             public override void EndInteraction() {
-                interactionObject.transform.position = player.transform.position + player.transform.forward;
+                interactionObject.transform.position = player.transform.position + player.transform.forward * (0.5f + 
+                    Mathf.Max(
+                    Vector3.Dot(Vector3.forward, colliderBounds.extents), 
+                    playerCollider.bounds.size.z
+                    ));
+                // Doesn't work rn because of player.
+                if (Physics.Raycast(interactionObject.transform.position, Vector3.down, out RaycastHit hit)) {
+                    interactionObject.transform.position += new Vector3(0, (hit.point.y - interactionObject.transform.position.y) + colliderBounds.size.y/2);
+                }
                 interactionObject.interactionEnabled = true;
-                var Collider = interactionObject.GetComponent<Collider>();
-                Collider.enabled = true;
+                c.enabled = true;
             }
 
 
             public override bool Update() {
-                interactionObject.transform.position = player.transform.position + new Vector3(0, 1.5f, 0.0f);
+                interactionObject.transform.position = player.transform.position + new Vector3(0, playerCollider.bounds.size.y);
+                interactionObject.transform.rotation = player.transform.rotation;
                 return isPicking;
             }
         }

@@ -1,6 +1,8 @@
 items:
 - name: Introduction
   href: introduction.md
+- name: Playtesting Pipeline
+  href: playtesting.md
 - name: Tutorials
   href: Tutorials/toc.yml
 - name: Asset Documentation
