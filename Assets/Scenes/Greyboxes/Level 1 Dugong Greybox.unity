@@ -23620,31 +23620,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.28235555
+      value: -16.84
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.589964
+      value: 10.14
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.82371
+      value: -20.5
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9267541
+      value: 0.83346885
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3741945
+      value: 0.1698003
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.030828554
+      value: 0.51524645
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012447612
+      value: -0.10496973
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -23789,11 +23789,11 @@ PrefabInstance:
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[0]
       value: 
-      objectReference: {fileID: 549002011}
+      objectReference: {fileID: 327487890}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[1]
       value: 
-      objectReference: {fileID: 327487890}
+      objectReference: {fileID: 549002011}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[2]
       value: 
@@ -47837,17 +47837,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameras:
-  - {fileID: 549002011}
   - {fileID: 327487890}
+  - {fileID: 549002011}
   - {fileID: 584300274}
   - {fileID: 716681215}
   - {fileID: 2070271747}
   cameraZones:
   - {fileID: 66962516}
-  - {fileID: 1778475059}
   - {fileID: 621451445}
-  - {fileID: 1342817964}
   - {fileID: 791579223}
+  - {fileID: 1342817964}
+  - {fileID: 1778475059}
   playerCamera: {fileID: 399897432}
   zoneCamera: {fileID: 0}
   player: {fileID: 1976580243}
