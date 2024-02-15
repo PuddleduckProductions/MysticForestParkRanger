@@ -60,10 +60,11 @@ namespace Interactions {
 
             /// <summary>
             /// Should we allow interactions currently?
+            /// Default setting is as long as you're not holdign something else.
             /// </summary>
             /// <param name="other">The other object that wants to interact with us. Can be null.</param>
             /// <returns></returns>
-            public virtual bool CanInteract(Interaction other=null) { return true;  }
+            public virtual bool CanInteract(Interaction other=null) { return other == null;  }
         }
 
         /// <summary>
@@ -428,7 +429,7 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction };
+        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, ShowImageInteraction };
         /// <summary>
         /// Should we allow interaction with this object?
         /// If this is set to false while <see cref="IsInteracting"/> is true,
