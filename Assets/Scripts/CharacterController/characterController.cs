@@ -7,16 +7,20 @@ namespace Character {
     public class characterController : MonoBehaviour {
         public bool moveEnabled = true;
         CharacterController c;
-        Vector2 input;
+        [HideInInspector]
+        public Vector2 input;
         public float movementSpeed = 3f;
         public float rotationSpeed = 75f;
         public bool relativeDirectionalMovement = true;
         public float rotationSpeedMultiplier = 0.75f;
         public float movementSpeedMultiplier = 0.5f;
 
+        //pushing force, make player stronger
+        public float pushForce = 1f;
+
         Camera mainCamera;
 
-        Animator animator;
+        public Animator animator;
         //private Animator animator;
         // Start is called before the first frame update
         void Start() {
@@ -52,10 +56,8 @@ namespace Character {
                 move.Normalize();
                 c.SimpleMove(move * movementSpeed);
 
-                // Check if the magnitude of input is greater than a threshold (e.g., 0.1)
                 bool isWalking = input.magnitude > 0.01f;
 
-                // Set the "walking" parameter in the animator based on the input magnitude
                 animator.SetBool("walking", isWalking);
             }
         }

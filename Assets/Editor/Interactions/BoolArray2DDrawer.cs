@@ -74,7 +74,6 @@ public class BoolArray2DDrawer : Editor
     }
 
     private void AdjustWidth(SerializedProperty shapeProperty, bool defaultValue, int newWidth, int newHeight) {
-        Debug.Log("Adjust Width called");
         SerializedProperty dataProp = shapeProperty.FindPropertyRelative("data");
         int oldTotalCells = dataProp.arraySize;
         int oldWidth = oldTotalCells / newHeight; // calcs based on newHeight
@@ -98,7 +97,6 @@ public class BoolArray2DDrawer : Editor
     }
 
     private void AdjustHeight(SerializedProperty shapeProperty, bool defaultValue, int newWidth, int newHeight) {
-        Debug.Log("Adjust Height called");
         SerializedProperty dataProp = shapeProperty.FindPropertyRelative("data");
         int oldWidth = newWidth; // assumes width remains constant when adjusting height
         int oldHeight = dataProp.arraySize / oldWidth; // calcs old height based on constant width
@@ -130,7 +128,7 @@ public class BoolArray2DDrawer : Editor
     }
 
     private void ResizeDataArrayIfNeeded(SerializedProperty shapeProperty, bool defaultValue, bool isWidthChanged) {
-        if(isWidthChanged == null) return;
+        if(isWidthChanged) return;
 
         if (isWidthChanged) {
             AdjustWidth(shapeProperty, defaultValue, shapeProperty.FindPropertyRelative("width").intValue, shapeProperty.FindPropertyRelative("height").intValue);
