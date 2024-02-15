@@ -33,13 +33,6 @@ namespace Character {
         // Update is called once per frame
         void Update() {
             if (moveEnabled) {
-                float currRotationSpeed = rotationSpeed;
-                float currMoveSpeed = movementSpeed;
-                if (input.y <= 0) {
-                    currRotationSpeed *= rotationSpeedMultiplier; // Decrease rotation speed if not moving forward
-                    currMoveSpeed *= movementSpeed * movementSpeedMultiplier;
-                }
-
                 Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
 
                 Vector3 simplifiedForward = relativeDirectionalMovement ? transform.forward : simplifiedRot * Vector3.forward;
@@ -47,19 +40,21 @@ namespace Character {
 
                 Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x);
 
-
-                if (relativeDirectionalMovement) {
-                    transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
-                } else if (move != Vector3.zero) {
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), currRotationSpeed * Time.deltaTime);
-                }
                 move.Normalize();
                 c.SimpleMove(move * movementSpeed);
-
-                bool isWalking = input.magnitude > 0.01f;
-
-                animator.SetBool("walking", isWalking);
             }
+
+            if (relativeDirectionalMovement) {
+                transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
+            } else if (c.velocity != Vector3.zero) {
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(c.velocity, transform.up), rotationSpeed * Time.deltaTime);
+            }
+
+            animator.SetBool("walking", c.velocity.magnitude > 0.01f);
+        }
+
+        public void MoveTo() {
+
         }
 
         void OnWalking(InputValue value) {
