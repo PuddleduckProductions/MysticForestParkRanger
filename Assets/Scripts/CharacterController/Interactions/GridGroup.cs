@@ -89,6 +89,9 @@ namespace Interactions {
             foreach (var cell in cells) {
                 var box = CellToWorld(cell);
                 Gizmos.color = Color.black;
+                if (cell.gameObject != null) {
+                    Gizmos.color = Color.red;
+                }
                 Gizmos.DrawWireCube(box.center, box.scale);
             }
         }
