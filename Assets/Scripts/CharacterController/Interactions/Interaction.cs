@@ -7,6 +7,7 @@ using System.Reflection;
 using Interactions.Behaviors;
 using Ink.Parsed;
 using System.Collections.Generic;
+using static Cell;
 
 namespace Interactions {
     namespace Behaviors {
@@ -104,6 +105,7 @@ namespace Interactions {
         [Serializable]
         public class PushableInteraction : InteractionBehavior {
             public PushableInteraction(Interaction parent) : base(parent) { }
+            Interaction parent;
             /// <summary>
             /// Whether player is pushing. 
             /// </summary>
@@ -120,6 +122,8 @@ namespace Interactions {
             /// Our reference to the player's character controller script.
             /// </summary>
             Character.characterController controller;
+
+            public Cell parentCell;
             /// <summary>
             /// Stored offset between the player and pushed object.
             /// </summary>
@@ -144,23 +148,9 @@ namespace Interactions {
 
             public float pushCoolDown = 1f;
             float lastPushTime = -Mathf.Infinity;
-            /// <summary>
-            /// Game Time when last push/pull was started.
-            /// </summary>
             private float startTime;
-            /// <summary>
-            /// calculated time a push/pull takes based on:
-            ///     player movement speed & push force 
-            ///     interactable object's weight.
-            /// </summary>
             private float pushTime;
-            /// <summary>
-            /// target for player position based on start position, direction & length of cell in the grid
-            /// </summary>
             private Vector3 playerTargetPosition;            
-            /// <summary>
-            /// position of player before a push or pull
-            /// </summary>
             private Vector3 playerStartPosition;
 
             /// <summary>
@@ -180,7 +170,6 @@ namespace Interactions {
 
                 } else {
                     // Force InteractionManager to call EndInteraction.
-                    Debug.Log("made isPushing false");
                     inPushMode = false;
                 }
 
@@ -191,6 +180,7 @@ namespace Interactions {
                 if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
                     c.enabled = true;
                 }
+                controller.moveEnabled = true;
             }
             /// <summary>
             /// Snap the object's position to the center of the nearest grid point
@@ -204,21 +194,33 @@ namespace Interactions {
             }   
 
             public void activatePush(){
+                Vector2 direction = controller.input.normalized;
+                //here is where check push would occur to make sure the cell you're going towards is valid 
+                GridGroup grid = parentCell.parent;
+                Cell newCell = grid.cellInDirection(parentCell, direction);
+                if(newCell == null) return;
+                
+                grid.moveObjFromAToB(parentCell, newCell);
+                Debug.Log($" old cell x: {parentCell.x}, new cell x: {newCell.x}");
+                parentCell = newCell;
+                initPushMovement();
+
+            }
+            public void initPushMovement(){ //once checks have been made, inits values for push
                 isPushing = true; // we're now pushing!
-                controller.moveEnabled = false;
+                controller.animator.SetBool("walking", isPushing); //FOR FUTURE CHANGE TO PUSHING OR HANDLE MOVEMENT IN CHAR CONTROLLER
+                Vector3 objTargetPos = parentCell.pos;
                 offset = interactionObject.transform.position - player.transform.position;
                 playerStartPosition = player.transform.position;
-                Vector2 direction = controller.input.normalized;
-                playerTargetPosition = new Vector3(playerStartPosition.x + direction.x * cellLength, (float)playerStartPosition.y, playerStartPosition.z + direction.y * cellLength); 
-                
+                playerTargetPosition = new Vector3(objTargetPos.x - offset.x, playerStartPosition.y, objTargetPos.z - offset.z);
                 
                 pushTime = cellLength / (controller.movementSpeed * (controller.pushForce / weight)); //for lerping
                 startTime = Time.time;
-
             }
             public void updatePush(){
                 controller.moveEnabled = false;
                 float elapsedTime = Time.time - startTime;
+
                 if (elapsedTime < pushTime){
                     player.transform.position = Vector3.Lerp(playerStartPosition, playerTargetPosition, elapsedTime / pushTime);
                     interactionObject.transform.position = player.transform.position + offset;
@@ -230,6 +232,8 @@ namespace Interactions {
                     interactionObject.transform.position = player.transform.position + offset;
                     
                     isPushing = false; // stop pushing once movement is complete
+                    controller.animator.SetBool("walking", isPushing);
+
                     controller.moveEnabled = true;
                 }
             }
@@ -238,11 +242,12 @@ namespace Interactions {
             /// Update the pushed object to move with us.
             /// </summary>
             public override bool Update() {
-                //interactionObject.transform.position = player.transform.position + offset;
                 if(inPushMode && isPushing){
+                    controller.moveEnabled = false;
                     updatePush();
                 }
                 if(inPushMode && !isPushing){
+                    controller.moveEnabled = false;
                     if (controller.input.magnitude> moveThreshold || controller.input.magnitude < -moveThreshold) {
                         if(Time.time - lastPushTime >= pushCoolDown) activatePush();
                     }

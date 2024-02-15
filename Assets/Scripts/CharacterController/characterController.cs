@@ -20,7 +20,7 @@ namespace Character {
 
         Camera mainCamera;
 
-        Animator animator;
+        public Animator animator;
         //private Animator animator;
         // Start is called before the first frame update
         void Start() {
