@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Greyboxes/alex-greybox.unity
     guid: fa9f15ba2f510f547a684f9ec346747c
+  - enabled: 1
+    path: Assets/Scenes/Greyboxes/Level 1 Dugong Greybox.unity
+    guid: 475eadd7521e9a34aa14b61af045411d
   m_configObjects: {}
