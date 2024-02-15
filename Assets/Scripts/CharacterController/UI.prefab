@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 8924568750643908006}
   - component: {fileID: 8895764081189441761}
   - component: {fileID: 8950335290925587475}
+  - component: {fileID: 3964221020854184366}
   m_Layer: 5
   m_Name: ShowImage
   m_TagString: Untagged
@@ -294,7 +295,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -314,6 +315,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e536455859c2745b61b2f7d39af066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3964221020854184366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553993486351932554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 3
+  m_AspectRatio: 1
 --- !u!1 &8158480404355642181
 GameObject:
   m_ObjectHideFlags: 0
