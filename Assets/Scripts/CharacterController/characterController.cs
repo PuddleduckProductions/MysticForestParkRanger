@@ -56,10 +56,8 @@ namespace Character {
                 move.Normalize();
                 c.SimpleMove(move * movementSpeed);
 
-                // Check if the magnitude of input is greater than a threshold (e.g., 0.1)
                 bool isWalking = input.magnitude > 0.01f;
 
-                // Set the "walking" parameter in the animator based on the input magnitude
                 animator.SetBool("walking", isWalking);
             }
         }

@@ -21,17 +21,8 @@ public class GridGroup : MonoBehaviour {
         initItems();
 
     }
-    // wrapper func, gets logical pos coord of a grid cell (locally)
-    public Vector3 GetCellCenterLocal(int x, int y) {
-        if (!IsCellValid(x, y)) {
-            Debug.LogWarning("Invalid cell coordinates.");
-            return Vector3.zero;
-        }
-        // calcs the position of the center of the cell in local space
-        Vector3 position = new Vector3(x * (cellSize.x + cellGap.x), 0, y * (cellSize.z + cellGap.z)) + (cellSize / 2f) + (cellGap / 2f);
-        return position;
-    }
 
+    //returns the cell in a specific direction from a current cell
     public Cell cellInDirection(Cell cell, Vector2 direction){
         int X = cell.x + (int)direction.x;
         int Y = cell.y + (int)direction.y;
@@ -51,14 +42,14 @@ public class GridGroup : MonoBehaviour {
         a.obj = null;
     }
     
-    // wrapper func, gets logical center coord of a grid cell (in world space)
+    // gets the center of the cell relative to world coords
     public Vector3 GetCellCenterWorld(int x, int y) {
         Vector3 position = new Vector3(x * (cellSize.x + cellGap.x), 0, y * (cellSize.z + cellGap.z))
                                       + transform.position + (cellSize / 2f) + (cellGap / 2f); 
         return position;
     }
 
-    // checks if a cell is valid
+    // checks if a cell is valid & unoccupied
     private bool IsCellValid(int x, int y) {
         if (gridHolder == null || gridHolder.shape == null) {
             Debug.LogWarning("Grid or shape is not initialized.");
@@ -74,7 +65,7 @@ public class GridGroup : MonoBehaviour {
         for (int y = 0; y < gridHolder.shape.height; y++) {
             for (int x = 0; x < gridHolder.shape.width; x++) {
                 Cell cell = new Cell(x,y,GetCellCenterWorld(x, y), this);
-                //set cell.parent to a reference to this.
+                //logic for finding game obj in cell & seeing if item belongs in cell
                 Collider[] colliders = Physics.OverlapBox(cell.pos, cellSize * 0.5f, Quaternion.identity);
                 foreach(Collider collider in colliders){
                     if (collider.TryGetComponent<Interaction>(out Interaction interaction)){
@@ -90,7 +81,7 @@ public class GridGroup : MonoBehaviour {
                             }
                         }
                     }else {
-                        cell.obj = null; // No pushable in this cell
+                        cell.obj = null; // no obj in this cell
                     }
                 }
                 this[x,y] = cell;
@@ -105,34 +96,29 @@ public class GridGroup : MonoBehaviour {
         for (int y = 0; y < matrix.height; y++) {
             for (int x = 0; x < matrix.width; x++) {
                 if (matrix[x, y]) { // this cell is "callable"
-                    // calcs position to draw Gizmo @
                     Vector3 position = new Vector3(x * (cellSize.x + cellGap.x), 0, y * (cellSize.z + cellGap.z))
                                       + transform.position + (cellSize / 2f) + (cellGap / 2f); 
-
-                    // draws wire cube @ the position
-                    Gizmos.color = Color.green;
+                    if (this[x,y].obj !=null) Gizmos.color = Color.blue;
+                    else {Gizmos.color = Color.green;}
                     Gizmos.DrawWireCube(position, cellSize);
                 }
             }
         }
     }
-
-
+    //for ease of syntax
     public Cell this[int x, int y] {
         get { return items[y * gridHolder.shape.width + x]; }
         set { items[y * gridHolder.shape.width + x]= value; }
     }
 
 }
-public class Cell {
+public class Cell { //cell class >.<
     public GameObject obj;
-    public bool valid;
-    public Vector3 pos; // World space center of the grid
+    public Vector3 pos;
     public int x;
     public int y;
-    public GridGroup parent; // Reference to the parent GridGroup
+    public GridGroup parent; 
 
-    // Constructor to set initial values
     public Cell(int x, int y, Vector3 pos, GridGroup parent) {
         this.x = x;
         this.y = y;

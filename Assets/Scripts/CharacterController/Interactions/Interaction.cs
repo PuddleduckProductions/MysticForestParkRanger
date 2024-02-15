@@ -139,10 +139,6 @@ namespace Interactions {
             /// </summary>
             public float weight = 1f;
             /// <summary>
-            /// distance between every push start and ending position.
-            /// </summary>
-            public float cellLength = 10f;
-            /// <summary>
             /// Time to wait inbetween pushes.
             /// </summary>
 
@@ -188,6 +184,7 @@ namespace Interactions {
             }
             /// <summary>
             /// Snap the object's position to the center of the nearest grid point
+            /// (currently unused)
             /// </summary>
             private void SnapToGrid(Transform objTransform)
             {
@@ -196,7 +193,7 @@ namespace Interactions {
                 //position.z = Mathf.Round(position.z / gridSize) * gridSize;
                 objTransform.position = position;
             }   
-
+            //checks to see if we can start changing values to COMMENCE pushing movement
             public void activatePush(){
                 Vector2 direction = controller.input.normalized;
                 //here is where check push would occur to make sure the cell you're going towards is valid 
@@ -209,6 +206,8 @@ namespace Interactions {
                 initPushMovement();
 
             }
+            //sets values related to pushing movement
+            //IF CHAR CONTROLLER CONTROLS PUSHING MOVEMENT LOGIC HERE WILL BE MOVED THERE
             public void initPushMovement(){ //once checks have been made, inits values for push
                 isPushing = true; // we're now pushing!
                 controller.animator.SetBool("walking", isPushing); //FOR FUTURE CHANGE TO PUSHING OR HANDLE MOVEMENT IN CHAR CONTROLLER
@@ -220,6 +219,8 @@ namespace Interactions {
                 pushTime = cellLength / (controller.movementSpeed * (controller.pushForce / weight)); //for lerping
                 startTime = Time.time;
             }
+            //updates obj & player positions!
+            //IF CHAR CONTROLLER CONTROLS PUSHING MOVEMENT LOGIC HERE WILL BE MOVED THERE
             public void updatePush(){
                 controller.moveEnabled = false;
                 float elapsedTime = Time.time - startTime;
