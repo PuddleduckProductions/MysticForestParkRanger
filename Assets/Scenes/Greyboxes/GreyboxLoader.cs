@@ -7,6 +7,8 @@ public class GreyboxLoader : MonoBehaviour
 {
     public void LoadLevel(string name) {
         SceneManager.LoadScene(name);
+        // Fix any pausing issues:
+        Time.timeScale = 1;
     }
 
     public void Quit() {
