@@ -138,10 +138,15 @@ namespace Interactions {
             /// pushForce and movementSpeed to determine speed.
             /// </summary>
             public float weight = 1f;
+
+            /// <summary>
+            /// distance between every push start and ending position.
+            /// </summary>
+            public float cellLength = 10f;
+
             /// <summary>
             /// Time to wait inbetween pushes.
             /// </summary>
-
             public float pushCoolDown = 1f;
             float lastPushTime = -Mathf.Infinity;
             private float startTime;
