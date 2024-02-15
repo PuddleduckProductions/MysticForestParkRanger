@@ -33,11 +33,11 @@ namespace Interactions {
                     int gridX = Mathf.FloorToInt(pos.x / (cellSize.vector3Value.x + cellSpacing.vector3Value.x));
                     int gridY = Mathf.FloorToInt(pos.z / (cellSize.vector3Value.z + cellSpacing.vector3Value.z));
                     if (gridX < 0 || gridX >= gridDimensions.vector2IntValue.x || gridY < 0 || gridY >= gridDimensions.vector2IntValue.y) {
-                        Debug.Log(gridX + " " + gridY + " " + c.name);
+                        Debug.LogError($"{c.name} does not fit in grid at {gridX},{gridY}");
                         return;
                     }
                     // TODO: Figure out multiple cells together to make one object.
-                    var cell = new GridGroup.Cell(c.gameObject, new Vector2Int(gridX, gridY), new Vector2Int(1, 1));
+                    var cell = new GridGroup.Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY), new Vector2Int(1, 1));
                     toAdd.Add(cell);
                 }
             }
@@ -76,7 +76,7 @@ namespace Interactions {
             var children = gridObjectsToAdd();
             foreach (var child in children) {
                 var cell = cells.GetArrayElementAtIndex((child.pos.y * gridSize.x) + child.pos.x);
-                cell.FindPropertyRelative("gameObject").objectReferenceValue = child.gameObject;
+                cell.FindPropertyRelative("type").enumValueIndex = 1;
             }
             serializedObject.ApplyModifiedProperties();
         }

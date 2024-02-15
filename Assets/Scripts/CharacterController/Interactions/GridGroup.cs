@@ -6,16 +6,16 @@ using Interactions;
 using System;
 
 namespace Interactions {
-
     public class GridGroup : MonoBehaviour {
         [Serializable]
         public struct Cell {
-            public GameObject gameObject;
+            public enum CellType { EMPTY, FULL };
+            public CellType type;
             public Vector2Int pos;
             public Vector2Int scale;
 
-            public Cell(GameObject gameObject, Vector2Int pos, Vector2Int scale) { 
-                this.gameObject = gameObject;
+            public Cell(CellType type, Vector2Int pos, Vector2Int scale) {
+                this.type = type;
                 this.pos = pos;
                 this.scale = scale;
             }
@@ -89,7 +89,7 @@ namespace Interactions {
             foreach (var cell in cells) {
                 var box = CellToWorld(cell);
                 Gizmos.color = Color.black;
-                if (cell.gameObject != null) {
+                if (cell.type == Cell.CellType.FULL) {
                     Gizmos.color = Color.red;
                 }
                 Gizmos.DrawWireCube(box.center, box.scale);
