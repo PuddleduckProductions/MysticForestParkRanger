@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Greyboxes/GreyboxScene.unity
+    guid: 59b23f4197791134b87b3d0b328defa6
+  - enabled: 1
     path: Assets/Scenes/Greyboxes/alex-greybox.unity
     guid: fa9f15ba2f510f547a684f9ec346747c
   - enabled: 1
