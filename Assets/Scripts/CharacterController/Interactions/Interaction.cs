@@ -157,10 +157,14 @@ namespace Interactions {
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
             /// </summary>
             public override void Interact() {
-                Debug.Log("Interacted w/ pushable object!");
                 if (!inPushMode) {
                     player = GameObject.FindGameObjectWithTag("Player");
                     controller = player.GetComponent<Character.characterController>();
+                    if (parentCell == null){
+                        inPushMode = false;
+                        Debug.LogWarning("Make sure your item is in a Grid (create a grid game object and attach the grid group component to it!)");
+                        return; //needs to be in grid in order to be pushable
+                    } 
                     inPushMode = true;
 
                     // TODO: Should be recursive.
@@ -201,7 +205,6 @@ namespace Interactions {
                 if(newCell == null) return;
                 
                 grid.moveObjFromAToB(parentCell, newCell);
-                Debug.Log($" old cell x: {parentCell.x}, new cell x: {newCell.x}");
                 parentCell = newCell;
                 initPushMovement();
 
