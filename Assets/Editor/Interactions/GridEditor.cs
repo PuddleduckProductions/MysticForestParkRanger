@@ -26,7 +26,6 @@ namespace Interactions {
             var start = c.bounds.center - c.bounds.extents;
             var end = c.bounds.center + c.bounds.extents;
 
-
             for (float x = start.x; x < end.x; x += cellSize.vector3Value.x + cellSpacing.vector3Value.x) {
                 for (float y = start.z; y < end.z; y += cellSize.vector3Value.z + cellSpacing.vector3Value.z) {
                     Vector3 pos = new Vector3(x, 0, y) - (group.transform.position + group.gridOffset);
@@ -41,6 +40,12 @@ namespace Interactions {
                     toAdd.Add(cell);
                 }
             }
+
+            if (c.TryGetComponent(out GridObject go)) {
+                go.cells = toAdd.ToArray();
+                go.manager = group;
+            }
+
             children.AddRange(toAdd);
         }
 

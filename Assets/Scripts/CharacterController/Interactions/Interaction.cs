@@ -105,7 +105,14 @@ namespace Interactions {
         /// </summary>
         [Serializable]
         public class PushableInteraction : InteractionBehavior {
-            public PushableInteraction(Interaction parent) : base(parent) { }
+            GridObject gridObject;
+            public PushableInteraction(Interaction parent) : base(parent) { 
+                if (parent.TryGetComponent(out GridObject o)) {
+                    gridObject = o;
+                } else {
+                    gridObject = parent.gameObject.AddComponent<GridObject>();
+                }
+            }
             Interaction parent;
             /// <summary>
             /// Whether player is pushing. 

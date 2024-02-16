@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Interactions;
 using System;
+using static Interactions.GridGroup;
 
 namespace Interactions {
     public class GridGroup : MonoBehaviour {
@@ -12,12 +13,10 @@ namespace Interactions {
             public enum CellType { EMPTY, FULL };
             public CellType type;
             public Vector2Int pos;
-            public Vector2Int scale;
-
-            public Cell(CellType type, Vector2Int pos, Vector2Int scale) {
+            
+            public Cell(CellType type, Vector2Int pos) {
                 this.type = type;
                 this.pos = pos;
-                this.scale = scale;
             }
         }
 
@@ -60,29 +59,59 @@ namespace Interactions {
             set { cells[y * gridDimensions.x + x] = value; }
         }
 
-        /// <summary>
-        /// returns the cell in a specific direction from a current cell
-        /// </summary>
-        /// <param name="cell"></param>
-        /// <param name="direction"></param>
-        /// <returns></returns>
-        public Cell cellInDirection(Cell cell, Vector2Int direction) {
-            int X = cell.pos.x + direction.x;
-            int Y = cell.pos.y + direction.y;
-            Debug.Log($"X: {X}, Y: {Y}");
-            return this[X, Y];
+        public Cell this[Vector2Int idx] { 
+            get { return cells[idx.y * gridDimensions.x + idx.x]; }
+            set { cells[idx.y * gridDimensions.x + idx.x] = value; }
+        }
+
+        public Cell this[int idx] {
+            get { return cells[idx]; }
+            set { cells[idx] = value; }
+        }
+
+        public ref Cell GetCell(Vector2Int idx) {
+            return ref cells[idx.y * gridDimensions.x + idx.x];
         }
 
         public Box CellToWorld(Cell cell) {
             var corner = transform.position + gridOffset + new Vector3(cell.pos.x * (cellSize.x + cellSpacing.x), 0, cell.pos.y * (cellSize.z + cellSpacing.z));
-            var size = new Vector3(cell.scale.x * cellSize.x, 1, cell.scale.y * cellSize.y);
+            var size = new Vector3(cellSize.x, 1, cellSize.y);
             return new Box(corner + size/2, size);
         }
 
-        // checks if a cell is valid & unoccupied
-        private bool IsCellValid(int x, int y) {
 
-            return false;
+        /// <summary>
+        /// Move all cells of a given array in a specific direction.
+        /// Does NOT check if the move will overwrite existing cells.
+        /// Should call <see cref="MoveValid(Vector2Int, Vector2Int)"/> for the edges of the move to see if you should call this.
+        /// </summary>
+        /// <param name="cells">Cells to move.</param>
+        /// <param name="direction">Direction to move the cells in.</param>
+        /// <returns></returns>
+        public void MoveCells(ref Cell[] cells, Vector2Int direction) {
+            for (int i = 0; i < cells.Length; i++) {
+                var cell = cells[i];
+                GetCell(cell.pos).type = Cell.CellType.EMPTY;
+                cell.pos += direction;
+                GetCell(cell.pos).type = cell.type;
+                i++;
+            }
+        }
+
+        /// <summary>
+        /// Return whether or not the given move from one cell to another would be valid.
+        /// Does not count for overlapping moves (i.e., you're moving one cell owned by one object onto another cell owned by the same object).
+        /// </summary>
+        /// <param name="pos">The position of the cell.</param>
+        /// <param name="direction">The direction the cell is moving.</param>
+        /// <returns>Whether or not the move is valid.</returns>
+        public bool MoveValid(Vector2Int pos, Vector2Int direction) {
+            var target = pos + direction;
+            if (target.x >= 0 && target.x < gridDimensions.x && target.y >= 0 && target.y < gridDimensions.y) {
+                return this[target].type == Cell.CellType.EMPTY; 
+            } else {
+                return false;
+            }
         }
 
         void OnDrawGizmos() {
