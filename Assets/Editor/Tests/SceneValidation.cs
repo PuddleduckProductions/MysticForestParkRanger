@@ -56,7 +56,7 @@ namespace SceneValidation {
         public void ValidateCustomInteractions() {
             var interactions = GameObject.FindObjectsOfType<Interaction>();
             foreach (var interaction in interactions) {
-                if (interaction.GetType() == typeof(CustomInteraction)) {
+                if (interaction.behavior.GetType() == typeof(CustomInteraction)) {
                     CustomInteraction c = (CustomInteraction)interaction.behavior;
                     Assert.IsNotNull(c.onUpdate);
                     Assert.IsFalse(c.onUpdate.IsNull());
@@ -68,7 +68,7 @@ namespace SceneValidation {
         public void ValidateInkInteractions() {
             var interactions = GameObject.FindObjectsOfType<Interaction>();
             foreach (var interaction in interactions) {
-                if (interaction.GetType() == typeof(InkInteraction)) {
+                if (interaction.behavior.GetType() == typeof(InkInteraction)) {
                     InkInteraction i = (InkInteraction)interaction.behavior;
                     var manager = GameObject.FindFirstObjectByType<InkManager>();
                     Assert.IsNotNull(manager);
