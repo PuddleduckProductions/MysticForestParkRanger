@@ -33,15 +33,7 @@ namespace Character {
         // Update is called once per frame
         void Update() {
             if (moveEnabled) {
-                Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
-
-                Vector3 simplifiedForward = relativeDirectionalMovement ? transform.forward : simplifiedRot * Vector3.forward;
-                Vector3 simplifiedRight = relativeDirectionalMovement ? transform.right : simplifiedRot * Vector3.right;
-
-                Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x);
-
-                move.Normalize();
-                c.SimpleMove(move * movementSpeed);
+                c.SimpleMove(intendedMove * movementSpeed);
             }
 
             if (relativeDirectionalMovement) {
@@ -53,8 +45,18 @@ namespace Character {
             animator.SetBool("walking", c.velocity.magnitude > 0.01f);
         }
 
-        public void MoveTo() {
+        public Vector3 intendedMove {
+            get {
+                Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
 
+                Vector3 simplifiedForward = relativeDirectionalMovement ? transform.forward : simplifiedRot * Vector3.forward;
+                Vector3 simplifiedRight = relativeDirectionalMovement ? transform.right : simplifiedRot * Vector3.right;
+
+                Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x);
+                move.Normalize();
+
+                return move;
+            }
         }
 
         void OnWalking(InputValue value) {

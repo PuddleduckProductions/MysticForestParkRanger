@@ -113,7 +113,6 @@ namespace Interactions {
                     gridObject = parent.gameObject.AddComponent<GridObject>();
                 }
             }
-            Interaction parent;
             /// <summary>
             /// Whether player is pushing. 
             /// </summary>
@@ -241,6 +240,15 @@ namespace Interactions {
             /// Update the pushed object to move with us.
             /// </summary>
             public override bool Update() {
+                if (controller.intendedMove.x > moveThreshold) {
+                    gridObject.Move(Vector2Int.right);
+                } else if (controller.intendedMove.x < moveThreshold) {
+                    gridObject.Move(Vector2Int.left);
+                } else if (controller.intendedMove.y > moveThreshold) {
+                    gridObject.Move(Vector2Int.up);
+                } else if (controller.intendedMove.y < moveThreshold) {
+                    gridObject.Move(Vector2Int.down);
+                }
                 return isPushing;
             }
         }
