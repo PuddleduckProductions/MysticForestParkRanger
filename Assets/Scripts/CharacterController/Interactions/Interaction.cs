@@ -4,8 +4,6 @@ using UnityEngine.Events;
 using Utility;
 using InkTools;
 using System.Reflection;
-using Interactions.Behaviors;
-using Ink.Parsed;
 using System.Collections.Generic;
 using static Interactions.GridGroup;
 

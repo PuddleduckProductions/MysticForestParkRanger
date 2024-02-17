@@ -5838,7 +5838,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1775623806}
+  - {fileID: 1650357393}
   - {fileID: 620920930}
   - {fileID: 585867181}
   - {fileID: 343106178}
@@ -7098,7 +7098,6 @@ MonoBehaviour:
         interactionObject: {fileID: 289459821}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!64 &289459822
 MeshCollider:
@@ -8164,7 +8163,6 @@ MonoBehaviour:
         interactionObject: {fileID: 343106179}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!43 &353131243
 Mesh:
@@ -9040,7 +9038,6 @@ MonoBehaviour:
         interactionObject: {fileID: 386488155}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!43 &404014322
 Mesh:
@@ -12288,7 +12285,6 @@ MonoBehaviour:
         interactionObject: {fileID: 566036433}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!1 &571497170
 GameObject:
@@ -12669,7 +12665,6 @@ MonoBehaviour:
         interactionObject: {fileID: 571497177}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!1 &585867174
 GameObject:
@@ -12718,7 +12713,6 @@ MonoBehaviour:
         interactionObject: {fileID: 585867175}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!64 &585867176
 MeshCollider:
@@ -13949,7 +13943,6 @@ MonoBehaviour:
         interactionObject: {fileID: 620920931}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!1 &623953048
 GameObject:
@@ -26662,7 +26655,6 @@ MonoBehaviour:
         interactionObject: {fileID: 1457181195}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!64 &1457181196
 MeshCollider:
@@ -28543,6 +28535,78 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1650357392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1650357393}
+  - component: {fileID: 1650357394}
+  m_Layer: 0
+  m_Name: Pushable1Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1650357393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650357392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.96579, y: -5.3732595, z: -135.61942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1775623806}
+  m_Father: {fileID: 218431317}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650357394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650357392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc1c411e4ba15f48893c1f23e207d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellSize: {x: 1, y: 1, z: 2}
+  cellSpacing: {x: 0, y: 0, z: 0}
+  gridOffset: {x: -7.32, y: 0, z: -1.14}
+  gridDimensions: {x: 11, y: 1}
+  cells:
+  - type: 0
+    pos: {x: 0, y: 0}
+  - type: 0
+    pos: {x: 1, y: 0}
+  - type: 0
+    pos: {x: 2, y: 0}
+  - type: 1
+    pos: {x: 3, y: 0}
+  - type: 1
+    pos: {x: 4, y: 0}
+  - type: 1
+    pos: {x: 5, y: 0}
+  - type: 1
+    pos: {x: 6, y: 0}
+  - type: 1
+    pos: {x: 7, y: 0}
+  - type: 1
+    pos: {x: 8, y: 0}
+  - type: 1
+    pos: {x: 9, y: 0}
+  - type: 1
+    pos: {x: 10, y: 0}
 --- !u!1 &1696390311
 GameObject:
   m_ObjectHideFlags: 0
@@ -29872,7 +29936,6 @@ MonoBehaviour:
         interactionObject: {fileID: 1736157611}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!64 &1736157612
 MeshCollider:
@@ -30299,11 +30362,11 @@ Transform:
   m_GameObject: {fileID: 1775623805}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.96579, y: -5.3732595, z: -135.61942}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.028506, y: 2.5425582, z: 1.2444118}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 218431317}
+  m_Father: {fileID: 1650357393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1775623807
 MonoBehaviour:
@@ -30330,7 +30393,6 @@ MonoBehaviour:
         interactionObject: {fileID: 1775623807}
         moveThreshold: 0
         weight: 0
-        cellLength: 0
         pushCoolDown: 0
 --- !u!65 &1775623808
 BoxCollider:
