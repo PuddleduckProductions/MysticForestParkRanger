@@ -46,10 +46,11 @@ namespace Interactions {
         /// <summary>
         /// Attempt to move this object in a given direction.
         /// </summary>
-        /// <param name="direction">The direction to move in.</param>
+        /// <param name="direction">The direction to move in. Should be a normalized vector.</param>
         /// <returns>Whether or not the move was successful.</returns>
-        public bool Move(Vector2Int direction) {
-            return manager.MoveObject(this, direction);
+        public bool Move(Vector3 direction) {
+            var gridMove = new Vector2Int(Mathf.FloorToInt(direction.x), Mathf.FloorToInt(direction.z));
+            return manager.MoveObject(this, gridMove);
         }
     }
 }

@@ -7096,6 +7096,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 289459821}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -8161,6 +8162,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 343106179}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -9036,6 +9038,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 386488155}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -12283,6 +12286,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 566036433}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -12663,6 +12667,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 571497177}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -12711,6 +12716,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 585867175}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -13941,6 +13947,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 620920931}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -26653,6 +26660,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1457181195}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -29934,6 +29942,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1736157611}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -30346,6 +30355,7 @@ GameObject:
   - component: {fileID: 1775623809}
   - component: {fileID: 1775623808}
   - component: {fileID: 1775623807}
+  - component: {fileID: 1775623811}
   m_Layer: 0
   m_Name: Pushable_01
   m_TagString: Untagged
@@ -30383,17 +30393,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 4230519717729140743
+    rid: 440602197877063683
   references:
     version: 2
     RefIds:
-    - rid: 4230519717729140743
+    - rid: 440602197877063683
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1775623807}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 1775623811}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!65 &1775623808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30465,6 +30476,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775623805}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1775623811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775623805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells:
+  - type: 1
+    pos: {x: 3, y: 0}
+  - type: 1
+    pos: {x: 4, y: 0}
+  - type: 1
+    pos: {x: 5, y: 0}
+  - type: 1
+    pos: {x: 6, y: 0}
+  - type: 1
+    pos: {x: 7, y: 0}
+  - type: 1
+    pos: {x: 8, y: 0}
+  - type: 1
+    pos: {x: 9, y: 0}
+  - type: 1
+    pos: {x: 10, y: 0}
+  manager: {fileID: 1650357394}
 --- !u!43 &1800133496
 Mesh:
   m_ObjectHideFlags: 0

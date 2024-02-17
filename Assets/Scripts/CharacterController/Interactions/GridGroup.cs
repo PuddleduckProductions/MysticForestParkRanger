@@ -98,29 +98,55 @@ namespace Interactions {
                 var cell = cells[i];
                 GetCell(cell.pos).type = Cell.CellType.EMPTY;
                 cell.pos += direction;
+                cells[i].pos += direction;
                 GetCell(cell.pos).type = cell.type;
-                i++;
             }
         }
 
         /// <summary>
         /// Attempt to move this object in a given direction.
+        /// Assumes no diagonals.
         /// </summary>
-        /// <param name="direction">The direction to move in.</param>
+        /// <param name="direction">The direction to move in. Assumes no diagonals.</param>
         /// <returns>Whether or not the move was successful.</returns>
         public bool MoveObject(GridObject gridObject, Vector2Int direction) {
-            for (int i = gridObject.min.x; i < gridObject.max.x; i++) {
-                for (int j = gridObject.min.y; j < gridObject.max.y; j++) {
-                    if (!MoveValid(new Vector2Int(i, j), direction)) {
-                        return false;
-                    }
+            // Test the edges of a move.
+            int testMin = 0;
+            int testMax = 0;
+            Vector2Int increment = Vector2Int.zero;
+            Vector2Int startPos = Vector2Int.zero;
+            if (direction.x != 0) {
+                testMin = gridObject.min.y;
+                testMax = gridObject.max.y;
+                if (direction.x < 0) {
+                    startPos = gridObject.min;
+                    increment = Vector2Int.left;
+                } else {
+                    startPos = gridObject.max;
+                    increment = Vector2Int.right;
+                }
+            } else if (direction.y != 0) {
+                testMin = gridObject.min.x;
+                testMax = gridObject.max.y;
+                if (direction.y < 0) {
+                    startPos = gridObject.min;
+                    increment = Vector2Int.down;
+                } else {
+                    startPos = gridObject.max;
+                    increment = Vector2Int.up;
+                }
+            }
+
+            for (int i = testMin; i <= testMax; i++) {
+                if (!MoveValid(startPos + increment * i, direction)) {
+                    return false;
                 }
             }
 
             // TODO: Lerp
             gridObject.transform.position += new Vector3(direction.x * (cellSpacing.x + cellSize.x), 0, direction.y * (cellSpacing.z + cellSize.z));
 
-            MoveCells(ref cells, direction);
+            MoveCells(ref gridObject.cells, direction);
             return true;
         } 
 
@@ -146,6 +172,9 @@ namespace Interactions {
                 Gizmos.color = Color.black;
                 if (cell.type == Cell.CellType.FULL) {
                     Gizmos.color = Color.red;
+                }
+                if (cell.pos == Vector2Int.zero) {
+                    Gizmos.color = Color.blue;
                 }
                 Gizmos.DrawWireCube(box.center, box.scale);
             }

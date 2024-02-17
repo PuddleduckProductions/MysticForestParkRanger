@@ -6,6 +6,7 @@ using InkTools;
 using System.Reflection;
 using System.Collections.Generic;
 using static Interactions.GridGroup;
+using System.Collections;
 
 namespace Interactions {
     namespace Behaviors {
@@ -103,6 +104,7 @@ namespace Interactions {
         /// </summary>
         [Serializable]
         public class PushableInteraction : InteractionBehavior {
+            [SerializeField, HideInInspector]
             GridObject gridObject;
             public PushableInteraction(Interaction parent) : base(parent) { 
                 if (parent.TryGetComponent(out GridObject o)) {
@@ -124,12 +126,6 @@ namespace Interactions {
             /// </summary>
             Character.characterController controller;
 
-            public Cell? parentCell;
-            /// <summary>
-            /// Stored offset between the player and pushed object.
-            /// </summary>
-            Vector3 offset;
-
             /// <summary>
             /// makes sure player is intentionally moving (mostly for controllers). 
             /// </summary>
@@ -145,10 +141,7 @@ namespace Interactions {
             /// Time to wait inbetween pushes.
             /// </summary>
             public float pushCoolDown = 1f;
-            private float startTime;
-            private float pushTime;
-            private Vector3 playerTargetPosition;            
-            private Vector3 playerStartPosition;
+            protected bool pushEnabled = true;
 
             /// <summary>
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
@@ -157,17 +150,8 @@ namespace Interactions {
                 if (!isPushing) {
                     player = GameObject.FindGameObjectWithTag("Player");
                     controller = player.GetComponent<Character.characterController>();
-                    if (parentCell == null){
-                        isPushing = false;
-                        Debug.LogWarning("Make sure your item is in a Grid (create a grid game object and attach the grid group component to it!)");
-                        return; //needs to be in grid in order to be pushable
-                    } 
                     isPushing = true;
-
-                    // TODO: Should be recursive.
-                    if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                        c.enabled = false;
-                    }
+                    pushEnabled = true;
 
                     controller.moveEnabled = false;
 
@@ -179,73 +163,25 @@ namespace Interactions {
             }
 
             public override void EndInteraction() {
-                if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                    c.enabled = true;
-                }
                 controller.moveEnabled = true;
             }
-            //checks to see if we can start changing values to COMMENCE pushing movement
-            /*public void activatePush(){
-                Vector2 direction = controller.input.normalized;
-                //here is where check push would occur to make sure the cell you're going towards is valid 
-                GridGroup grid = parentCell.parent;
-                Cell newCell = grid.cellInDirection(parentCell, direction);
-                if(newCell == null) return;
-                
-                grid.moveObjFromAToB(parentCell, newCell);
-                parentCell = newCell;
-                initPushMovement();
 
-            }*/
-            //sets values related to pushing movement
-            //IF CHAR CONTROLLER CONTROLS PUSHING MOVEMENT LOGIC HERE WILL BE MOVED THERE
-            /*public void initPushMovement(){ //once checks have been made, inits values for push
-                isPushing = true; // we're now pushing!
-                controller.animator.SetBool("walking", isPushing); //FOR FUTURE CHANGE TO PUSHING OR HANDLE MOVEMENT IN CHAR CONTROLLER
-                Vector3 objTargetPos = parentCell.pos;
-                offset = interactionObject.transform.position - player.transform.position;
-                playerStartPosition = player.transform.position;
-                playerTargetPosition = new Vector3(objTargetPos.x - offset.x, playerStartPosition.y, objTargetPos.z - offset.z);
-                
-                pushTime = cellLength / (controller.movementSpeed * (controller.pushForce / weight)); //for lerping
-                startTime = Time.time;
-            }*/
-
-            //updates obj & player positions!
-            //IF CHAR CONTROLLER CONTROLS PUSHING MOVEMENT LOGIC HERE WILL BE MOVED THERE
-            public void updatePush(){
-                controller.moveEnabled = false;
-                float elapsedTime = Time.time - startTime;
-
-                if (elapsedTime < pushTime){
-                    player.transform.position = Vector3.Lerp(playerStartPosition, playerTargetPosition, elapsedTime / pushTime);
-                    interactionObject.transform.position = player.transform.position + offset;
-                }
-                else
-                {
-                    // ensure player & obj are at target pos when done
-                    player.transform.position = playerTargetPosition;
-                    interactionObject.transform.position = player.transform.position + offset;
-                    
-                    isPushing = false; // stop pushing once movement is complete
-                    controller.animator.SetBool("walking", isPushing);
-
-                    controller.moveEnabled = true;
-                }
+            // Since Coroutines can't be run from non MonoBehaviours.
+            protected static IEnumerator Push(PushableInteraction p, Vector3 dir) {
+                p.pushEnabled = false;
+                p.gridObject.Move(dir);
+                yield return new WaitForSeconds(p.pushCoolDown);
+                p.pushEnabled = true;
             }
 
             /// <summary>
             /// Update the pushed object to move with us.
             /// </summary>
             public override bool Update() {
-                if (controller.intendedMove.x > moveThreshold) {
-                    gridObject.Move(Vector2Int.right);
-                } else if (controller.intendedMove.x < moveThreshold) {
-                    gridObject.Move(Vector2Int.left);
-                } else if (controller.intendedMove.y > moveThreshold) {
-                    gridObject.Move(Vector2Int.up);
-                } else if (controller.intendedMove.y < moveThreshold) {
-                    gridObject.Move(Vector2Int.down);
+                if (pushEnabled) {
+                    if (controller.intendedMove.magnitude > moveThreshold) {
+                        interactionObject.StartCoroutine(Push(this, controller.intendedMove));
+                    }
                 }
                 return isPushing;
             }
