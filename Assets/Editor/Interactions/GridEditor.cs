@@ -36,7 +36,7 @@ namespace Interactions {
                         return;
                     }
                     // TODO: Figure out multiple cells together to make one object.
-                    var cell = new GridGroup.Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY), new Vector2Int(1, 1));
+                    var cell = new GridGroup.Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY));
                     toAdd.Add(cell);
                 }
             }
