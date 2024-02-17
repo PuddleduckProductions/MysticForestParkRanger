@@ -36,13 +36,15 @@ namespace Character {
                 c.SimpleMove(intendedMove * movementSpeed);
             }
 
+            var xzVel = new Vector3(c.velocity.x, 0, c.velocity.z);
+
             if (relativeDirectionalMovement) {
                 transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
-            } else if (c.velocity != Vector3.zero) {
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(c.velocity, transform.up), rotationSpeed * Time.deltaTime);
+            } else if (xzVel != Vector3.zero) {
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(xzVel, transform.up), rotationSpeed * Time.deltaTime);
             }
 
-            animator.SetBool("walking", c.velocity.magnitude > 0.01f);
+            animator.SetBool("walking", xzVel.magnitude > 0.01f);
         }
 
         public Vector3 intendedMove {
