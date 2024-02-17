@@ -28,16 +28,13 @@ namespace Interactions {
 
             for (float x = start.x; x < end.x; x += cellSize.vector3Value.x + cellSpacing.vector3Value.x) {
                 for (float y = start.z; y < end.z; y += cellSize.vector3Value.z + cellSpacing.vector3Value.z) {
-                    Vector3 pos = new Vector3(x, 0, y) - (group.transform.position + group.gridOffset);
-                    int gridX = Mathf.FloorToInt(pos.x / (cellSize.vector3Value.x + cellSpacing.vector3Value.x));
-                    int gridY = Mathf.FloorToInt(pos.z / (cellSize.vector3Value.z + cellSpacing.vector3Value.z));
-                    if (gridX < 0 || gridX >= gridDimensions.vector2IntValue.x || gridY < 0 || gridY >= gridDimensions.vector2IntValue.y) {
-                        Debug.LogWarning($"{c.name} does not fit in grid at {gridX},{gridY}");
+                    // TODO: Figure out multiple cells together to make one object.
+                    var cell = group.WorldToCell(new Vector3(x, 0, y));
+                    if (cell == null) {
+                        Debug.LogWarning($"{c.name} does not fit in grid at {x},{y}");
                         return;
                     }
-                    // TODO: Figure out multiple cells together to make one object.
-                    var cell = new GridGroup.Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY));
-                    toAdd.Add(cell);
+                    toAdd.Add((GridGroup.Cell)cell);
                 }
             }
 
@@ -74,7 +71,6 @@ namespace Interactions {
                     var pos = new Vector2Int(x, y);
                     var scale = new Vector2Int(1, 1);
                     cell.FindPropertyRelative("pos").vector2IntValue = pos;
-                    cell.FindPropertyRelative("scale").vector2IntValue = scale;
                 }
             }
 

@@ -1,10 +1,5 @@
 using UnityEngine;
-using Interactions.Behaviors;
-using System.Collections;
-using System.Collections.Generic;
-using Interactions;
 using System;
-using static Interactions.GridGroup;
 
 namespace Interactions {
     public class GridGroup : MonoBehaviour {
@@ -75,8 +70,18 @@ namespace Interactions {
 
         public Box CellToWorld(Cell cell) {
             var corner = transform.position + gridOffset + new Vector3(cell.pos.x * (cellSize.x + cellSpacing.x), 0, cell.pos.y * (cellSize.z + cellSpacing.z));
-            var size = new Vector3(cellSize.x, 1, cellSize.y);
-            return new Box(corner + size/2, size);
+            return new Box(corner + cellSize/2, cellSize);
+        }
+
+        public Cell? WorldToCell(Vector3 pos) {
+            Vector3 localPos = new Vector3(pos.x, 0, pos.z) - (transform.position + gridOffset);
+            int gridX = Mathf.FloorToInt(localPos.x / (cellSize.x + cellSpacing.x));
+            int gridY = Mathf.FloorToInt(localPos.z / (cellSize.z + cellSpacing.z));
+            if (gridX < 0 || gridX >= gridDimensions.x || gridY < 0 || gridY >= gridDimensions.y) {
+                return null;
+            }
+            // TODO: Figure out multiple cells together to make one object.
+            return new Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY));
         }
 
 
