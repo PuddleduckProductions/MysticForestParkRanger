@@ -50,7 +50,12 @@ namespace Interactions {
         /// <returns>Whether or not the move was successful.</returns>
         public bool Move(Vector3 direction) {
             var gridMove = new Vector2Int(Mathf.FloorToInt(direction.x), Mathf.FloorToInt(direction.z));
-            return manager.MoveObject(this, gridMove);
+            if (manager.MoveObject(this, gridMove)) {
+                _min += gridMove;
+                _max += gridMove;
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -97,9 +97,8 @@ namespace Interactions {
             for (int i = 0; i < cells.Length; i++) {
                 var cell = cells[i];
                 GetCell(cell.pos).type = Cell.CellType.EMPTY;
-                cell.pos += direction;
                 cells[i].pos += direction;
-                GetCell(cell.pos).type = cell.type;
+                GetCell(cell.pos + direction).type = cell.type;
             }
         }
 
