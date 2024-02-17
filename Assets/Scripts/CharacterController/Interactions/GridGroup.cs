@@ -88,7 +88,7 @@ namespace Interactions {
         /// <param name="cells">Cells to move.</param>
         /// <param name="direction">Direction to move the cells in.</param>
         /// <returns></returns>
-        public void MoveCells(ref Cell[] cells, Vector2Int direction) {
+        protected void MoveCells(ref Cell[] cells, Vector2Int direction) {
             for (int i = 0; i < cells.Length; i++) {
                 var cell = cells[i];
                 GetCell(cell.pos).type = Cell.CellType.EMPTY;
@@ -97,6 +97,27 @@ namespace Interactions {
                 i++;
             }
         }
+
+        /// <summary>
+        /// Attempt to move this object in a given direction.
+        /// </summary>
+        /// <param name="direction">The direction to move in.</param>
+        /// <returns>Whether or not the move was successful.</returns>
+        public bool MoveObject(GridObject gridObject, Vector2Int direction) {
+            for (int i = gridObject.min.x; i < gridObject.max.x; i++) {
+                for (int j = gridObject.min.y; j < gridObject.max.y; j++) {
+                    if (!MoveValid(new Vector2Int(i, j), direction)) {
+                        return false;
+                    }
+                }
+            }
+
+            // TODO: Lerp
+            gridObject.transform.position += new Vector3(direction.x * (cellSpacing.x + cellSize.x), 0, direction.y * (cellSpacing.z + cellSize.z));
+
+            MoveCells(ref cells, direction);
+            return true;
+        } 
 
         /// <summary>
         /// Return whether or not the given move from one cell to another would be valid.
