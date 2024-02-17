@@ -103,8 +103,9 @@ namespace Interactions {
         }
 
         /// <summary>
-        /// Attempt to move this object in a given direction.
+        /// Attempt to move the given gridObject in a direction.
         /// Assumes no diagonals.
+        /// Called by <see cref="GridObject.Move(Vector3)"/>, which you should call instead of this function.
         /// </summary>
         /// <param name="direction">The direction to move in. Assumes no diagonals.</param>
         /// <returns>Whether or not the move was successful.</returns>
@@ -126,7 +127,7 @@ namespace Interactions {
                 }
             } else if (direction.y != 0) {
                 testMin = gridObject.min.x;
-                testMax = gridObject.max.y;
+                testMax = gridObject.max.x;
                 if (direction.y < 0) {
                     startPos = gridObject.min;
                     increment = Vector2Int.down;

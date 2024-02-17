@@ -49,7 +49,7 @@ namespace Interactions {
         /// <param name="direction">The direction to move in. Should be a normalized vector.</param>
         /// <returns>Whether or not the move was successful.</returns>
         public bool Move(Vector3 direction) {
-            var gridMove = new Vector2Int(Mathf.FloorToInt(direction.x), Mathf.FloorToInt(direction.z));
+            var gridMove = new Vector2Int(Mathf.RoundToInt(direction.x), Mathf.RoundToInt(direction.z));
             if (manager.MoveObject(this, gridMove)) {
                 _min += gridMove;
                 _max += gridMove;
