@@ -51,7 +51,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Outline_Brightness: 0
-    - _Outline_Thickness: 0.03
+    - _Outline_Thickness: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
