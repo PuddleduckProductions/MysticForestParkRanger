@@ -145,6 +145,8 @@ namespace Interactions {
 
             var start = PointToLocal(c.transform.TransformPoint(c.center - c.size/2));
             var end = PointToLocal(c.transform.TransformPoint(c.center + c.size/2));
+            var endXY = LocalToGridXY(end + cellSize + cellSpacing);
+            end = new Vector3(endXY.x, end.y, endXY.y);
 
             for (float x = start.x; x < end.x; x += cellSize.x + cellSpacing.x) {
                 for (float y = start.z; y < end.z; y += cellSize.z + cellSpacing.z) {
