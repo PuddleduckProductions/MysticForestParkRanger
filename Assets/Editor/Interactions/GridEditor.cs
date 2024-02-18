@@ -27,8 +27,10 @@ namespace Interactions {
 
             foreach (var cell in toAdd) {
                 if (objectColors.Contains(cell.pos)) {
-                    Debug.LogError($"{c.name} shares a cell with another object at {cell.pos}", c.gameObject);
                     errorCells.Add(cell.pos);
+                    if (!hadErrors) {
+                        Debug.LogError($"{c.name} shares a cell with another object at {cell.pos}", c.gameObject);
+                    }
                     return;
                 } else {
                     objectColors.Add(cell.pos);
@@ -55,6 +57,8 @@ namespace Interactions {
             return children;
         }
 
+        bool hadErrors = false;
+
         public override void OnInspectorGUI() {
             base.OnInspectorGUI();
             Vector2Int gridSize = gridDimensions.vector2IntValue;
@@ -78,6 +82,7 @@ namespace Interactions {
             }
 
             objectColors.Clear();
+            hadErrors = errorCells.Count > 0;
             errorCells.Clear();
 
             var children = gridObjectsToAdd();
@@ -92,34 +97,35 @@ namespace Interactions {
             var group = (GridGroup)target;
             foreach (var cell in group.cells) {
                 var box = group.CellToWorld(cell);
+                Handles.color = Color.black;
                 if (errorCells.Contains(cell.pos)) {
                     Handles.color = Color.red;
                     Handles.DrawDottedLines(box.edges, 0.3f);
-                    Handles.DrawSolidDisc(box.center, group.transform.up, box.scale.x/4f);
+                    Handles.DrawSolidDisc(box.center, group.transform.up, box.scale.x / 4f);
                     continue;
-                } else if (cell.type == Cell.CellType.FULL) {
-                    Handles.color = Color.green;
-                } else if (cell.pos == Vector2Int.zero) {
-                    Handles.color = Color.blue;
-                } else {
-                    Handles.color = Color.yellow;
-                    var smallest = Mathf.Min(box.scale.x, box.scale.y, box.scale.z);
-                    if (Handles.Button(box.center, Quaternion.identity, smallest/4f, smallest/2f, Handles.DotHandleCap)) {
-                        var cellToChange = cells.GetArrayElementAtIndex((cell.pos.y * gridDimensions.vector2IntValue.x) + cell.pos.x);
-
-                        var type = cellToChange.FindPropertyRelative("type");
-                        if (type.enumValueIndex == 2) {
-                            type.enumValueIndex = 0;
-                        } else {
-                            type.enumValueIndex = 2;
-                        }
-                        serializedObject.ApplyModifiedProperties();
-                    }
-
-                    if (cell.type == Cell.CellType.MAP_FULL) {
+                } else if (errorCells.Count <= 0) {
+                    if (cell.type == Cell.CellType.FULL) {
                         Handles.color = Color.green;
+                    } else if (cell.pos == Vector2Int.zero) {
+                        Handles.color = Color.blue;
                     } else {
-                        Handles.color = Color.black;
+                        Handles.color = Color.yellow;
+                        var smallest = Mathf.Min(box.scale.x, box.scale.y, box.scale.z);
+                        if (Handles.Button(box.center, Quaternion.identity, smallest / 4f, smallest / 2f, Handles.DotHandleCap)) {
+                            var cellToChange = cells.GetArrayElementAtIndex((cell.pos.y * gridDimensions.vector2IntValue.x) + cell.pos.x);
+
+                            var type = cellToChange.FindPropertyRelative("type");
+                            if (type.enumValueIndex == 2) {
+                                type.enumValueIndex = 0;
+                            } else {
+                                type.enumValueIndex = 2;
+                            }
+                            serializedObject.ApplyModifiedProperties();
+                        }
+
+                        if (cell.type == Cell.CellType.MAP_FULL) {
+                            Handles.color = Color.green;
+                        }
                     }
                 }
 
