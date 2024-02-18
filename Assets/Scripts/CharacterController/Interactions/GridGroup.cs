@@ -1,128 +1,177 @@
 using UnityEngine;
-using Interactions.Behaviors;
-using System.Collections;
-using System.Collections.Generic;
-using Interactions;
-using Utility;
-[ExecuteInEditMode]
-[RequireComponent(typeof(test))]
-public class GridGroup : MonoBehaviour {
-    private test gridHolder;
-    public Vector3 cellSize;
-    public Vector3 cellGap;
-    public Cell[] items;
+using System;
+using UnityEditor;
 
-    void Awake() {
-        // gets reference to test component (holds the BoolArray2D)
-        gridHolder = GetComponent<test>();
-        items = new Cell[gridHolder.shape.width * gridHolder.shape.height];
-        Debug.Log($"height: {gridHolder.shape.height}, width: {gridHolder.shape.width}");
-
-        initItems();
-
-    }
-
-    //returns the cell in a specific direction from a current cell
-    public Cell cellInDirection(Cell cell, Vector2 direction){
-        int X = cell.x + (int)direction.x;
-        int Y = cell.y + (int)direction.y;
-        Debug.Log($"X: {X}, Y: {Y}");
-        if (IsCellValid(X, Y)) {
-            return this[X,Y];
-        }else{
-            return null;
-        }
-    }
-    public void moveObjFromAToB(Cell a, Cell b){
-        if (a.obj == null){
-            Debug.LogWarning("cell A does not contain an object to move.");
-            return;
-        }
-        b.obj = a.obj;
-        a.obj = null;
-    }
-    
-    // gets the center of the cell relative to world coords
-    public Vector3 GetCellCenterWorld(int x, int y) {
-        Vector3 position = new Vector3(x * (cellSize.x + cellGap.x), 0, y * (cellSize.z + cellGap.z))
-                                      + transform.position + (cellSize / 2f) + (cellGap / 2f); 
-        return position;
-    }
-
-    // checks if a cell is valid & unoccupied
-    private bool IsCellValid(int x, int y) {
-        if (gridHolder == null || gridHolder.shape == null) {
-            Debug.LogWarning("Grid or shape is not initialized.");
-            return false;
-        }
-        if(x >= 0 && x < gridHolder.shape.width && y >= 0 && y < gridHolder.shape.height){
-            return (gridHolder.shape[x,y] && (this[x,y].obj == null));
-        }
-        return false;
-    }
-
-    public void initItems(){
-        for (int y = 0; y < gridHolder.shape.height; y++) {
-            for (int x = 0; x < gridHolder.shape.width; x++) {
-                Cell cell = new Cell(x,y,GetCellCenterWorld(x, y), this);
-                //logic for finding game obj in cell & seeing if item belongs in cell
-                Collider[] colliders = Physics.OverlapBox(cell.pos, cellSize * 0.5f, Quaternion.identity);
-                foreach(Collider collider in colliders){
-                    if (collider.TryGetComponent<Interaction>(out Interaction interaction)){
-                        if(interaction != null && interaction.behavior is PushableInteraction pushableBehavior){
-                            Vector3 cellMin = cell.pos - cellSize * 0.5f;
-                            Vector3 cellMax = cell.pos + cellSize * 0.5f;
-                            Vector3 objCenter = interaction.gameObject.transform.position;
-                            
-                            if (objCenter.x >= cellMin.x && objCenter.x <= cellMax.x && objCenter.z >= cellMin.z && objCenter.z <= cellMax.z) {
-                                cell.obj = interaction.gameObject;
-                                pushableBehavior.parentCell = cell;
-                                cell.obj.transform.position = new Vector3(cell.pos.x, objCenter.y, cell.pos.z);
-                            }
-                        }
-                    }else {
-                        cell.obj = null; // no obj in this cell
-                    }
-                }
-                this[x,y] = cell;
+namespace Interactions {
+    public class GridGroup : MonoBehaviour {
+        [Serializable]
+        public struct Cell {
+            /// <summary>
+            /// EMPTY represents nothing. FULL represents an object (controlled by <see cref="GridObject"/>. MAP_FULL indicates a cell that's been set to full that can be
+            /// reset to EMPTY from the scene editor.
+            /// </summary>
+            public enum CellType { EMPTY, FULL, MAP_FULL };
+            public CellType type;
+            public Vector2Int pos;
+            
+            public Cell(CellType type, Vector2Int pos) {
+                this.type = type;
+                this.pos = pos;
             }
         }
-    }
-    void OnDrawGizmos() {
-        if (gridHolder == null || gridHolder.shape == null) return;
 
-        BoolArray2D matrix = gridHolder.shape;
-
-        for (int y = 0; y < matrix.height; y++) {
-            for (int x = 0; x < matrix.width; x++) {
-                if (matrix[x, y]) { // this cell is "callable"
-                    Vector3 position = new Vector3(x * (cellSize.x + cellGap.x), 0, y * (cellSize.z + cellGap.z))
-                                      + transform.position + (cellSize / 2f) + (cellGap / 2f); 
-                    if (this[x,y].obj !=null) Gizmos.color = Color.blue;
-                    else {Gizmos.color = Color.green;}
-                    Gizmos.DrawWireCube(position, cellSize);
-                }
+        public struct Box {
+            public Vector3 scale;
+            public Vector3 center;
+            public Box(Vector3 center, Vector3 scale) {
+                this.center = center;
+                this.scale = scale;
             }
         }
-    }
-    //for ease of syntax
-    public Cell this[int x, int y] {
-        get { return items[y * gridHolder.shape.width + x]; }
-        set { items[y * gridHolder.shape.width + x]= value; }
-    }
 
-}
-public class Cell { //cell class >.<
-    public GameObject obj;
-    public Vector3 pos;
-    public int x;
-    public int y;
-    public GridGroup parent; 
+        /// <summary>
+        /// How big the cells are in the world.
+        /// </summary>
+        public Vector3 cellSize = Vector3.one;
 
-    public Cell(int x, int y, Vector3 pos, GridGroup parent) {
-        this.x = x;
-        this.y = y;
-        this.pos = pos;
-        this.parent = parent;
+        /// <summary>
+        /// How far the cells are apart.
+        /// </summary>
+        public Vector3 cellSpacing = Vector3.zero;
+
+        /// <summary>
+        /// Where to position the grid in space.
+        /// </summary>
+        public Vector3 gridOffset;
+
+        public Vector2Int gridDimensions = new Vector2Int(10, 10);
+
+        public Cell[] cells;
+
+        /// <summary>
+        /// For ease of syntax
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public Cell this[int x, int y] {
+            get { return cells[y * gridDimensions.x + x]; }
+            set { cells[y * gridDimensions.x + x] = value; }
+        }
+
+        public Cell this[Vector2Int idx] { 
+            get { return cells[idx.y * gridDimensions.x + idx.x]; }
+            set { cells[idx.y * gridDimensions.x + idx.x] = value; }
+        }
+
+        public Cell this[int idx] {
+            get { return cells[idx]; }
+            set { cells[idx] = value; }
+        }
+
+        public ref Cell GetCell(Vector2Int idx) {
+            return ref cells[idx.y * gridDimensions.x + idx.x];
+        }
+
+        public Box CellToWorld(Cell cell) {
+            var corner = transform.position + gridOffset + new Vector3(cell.pos.x * (cellSize.x + cellSpacing.x), 0, cell.pos.y * (cellSize.z + cellSpacing.z));
+            return new Box(corner + cellSize/2, cellSize);
+        }
+
+        public Cell? WorldToCell(Vector3 pos) {
+            Vector3 localPos = new Vector3(pos.x, 0, pos.z) - (transform.position + gridOffset);
+            int gridX = Mathf.FloorToInt(localPos.x / (cellSize.x + cellSpacing.x));
+            int gridY = Mathf.FloorToInt(localPos.z / (cellSize.z + cellSpacing.z));
+            if (gridX < 0 || gridX >= gridDimensions.x || gridY < 0 || gridY >= gridDimensions.y) {
+                return null;
+            }
+            // TODO: Figure out multiple cells together to make one object.
+            return new Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY));
+        }
+
+
+        /// <summary>
+        /// Move all cells of a given array in a specific direction.
+        /// Does NOT check if the move will overwrite existing cells.
+        /// Should call <see cref="MoveValid(Vector2Int, Vector2Int)"/> for the edges of the move to see if you should call this.
+        /// </summary>
+        /// <param name="cells">Cells to move.</param>
+        /// <param name="direction">Direction to move the cells in.</param>
+        /// <returns></returns>
+        protected void MoveCells(ref Cell[] cells, Vector2Int direction) {
+            for (int i = 0; i < cells.Length; i++) {
+                var cell = cells[i];
+                GetCell(cell.pos).type = Cell.CellType.EMPTY;
+                cells[i].pos += direction;
+                GetCell(cell.pos + direction).type = cell.type;
+            }
+        }
+
+        /// <summary>
+        /// Attempt to move the given gridObject in a direction.
+        /// Assumes no diagonals.
+        /// Does not move the object physically in the space. You have to edit the transform yourself.
+        /// Called by <see cref="GridObject.Move(Vector3)"/>, which you should call instead of this function.
+        /// </summary>
+        /// <param name="direction">The direction to move in. Assumes no diagonals.</param>
+        /// <returns>Whether or not the move was successful.</returns>
+        public bool MoveObject(GridObject gridObject, Vector2Int direction) {
+            // Test the edges of a move.
+            int testMin = 0;
+            int testMax = 0;
+            Vector2Int increment = Vector2Int.zero;
+            Vector2Int startPos = Vector2Int.zero;
+            if (direction.x != 0) {
+                // Test along the y-axis:
+                testMin = gridObject.min.y;
+                testMax = gridObject.max.y;
+                // If we're testing to the left:
+                if (direction.x < 0) {
+                    // Start from the bottom left,
+                    startPos = gridObject.min;
+                    // And move up to the top left.
+                    increment = Vector2Int.up;
+                } else {
+                    startPos = gridObject.max;
+                    increment = Vector2Int.down;
+                }
+            } else if (direction.y != 0) {
+                testMin = gridObject.min.x;
+                testMax = gridObject.max.x;
+                if (direction.y < 0) {
+                    startPos = gridObject.min;
+                    increment = Vector2Int.right;
+                } else {
+                    startPos = gridObject.max;
+                    increment = Vector2Int.left;
+                }
+            }
+
+            for (int i = 0; i <= testMax - testMin; i++) {
+                if (!MoveValid(startPos + increment * i, direction)) {
+                    return false;
+                }
+            }
+
+            MoveCells(ref gridObject.cells, direction);
+            return true;
+        } 
+
+        /// <summary>
+        /// Return whether or not the given move from one cell to another would be valid.
+        /// Does not count for overlapping moves (i.e., you're moving one cell owned by one object onto another cell owned by the same object).
+        /// </summary>
+        /// <param name="pos">The position of the cell.</param>
+        /// <param name="direction">The direction the cell is moving.</param>
+        /// <returns>Whether or not the move is valid.</returns>
+        public bool MoveValid(Vector2Int pos, Vector2Int direction) {
+            var target = pos + direction;
+            if (target.x >= 0 && target.x < gridDimensions.x && target.y >= 0 && target.y < gridDimensions.y) {
+                return this[target].type == Cell.CellType.EMPTY; 
+            } else {
+                return false;
+            }
+        }
+
     }
 }
