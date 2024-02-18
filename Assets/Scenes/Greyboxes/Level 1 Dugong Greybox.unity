@@ -2368,6 +2368,7 @@ GameObject:
   - component: {fileID: 118204804}
   - component: {fileID: 118204803}
   - component: {fileID: 118204802}
+  - component: {fileID: 118204808}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,1),(1,1))
   m_TagString: Untagged
@@ -2405,17 +2406,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 440602205058498746
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 440602205058498746
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 118204802}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 118204808}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &118204803
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2733,6 +2735,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &118204808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118204800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!43 &149787693
 Mesh:
   m_ObjectHideFlags: 0
@@ -5522,6 +5538,7 @@ GameObject:
   - component: {fileID: 311285681}
   - component: {fileID: 311285680}
   - component: {fileID: 311285679}
+  - component: {fileID: 311285685}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((1,2),(2,2))
   m_TagString: Untagged
@@ -5559,17 +5576,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 440602205058498748
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 440602205058498748
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 311285679}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 311285685}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &311285680
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5887,6 +5905,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &311285685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311285677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!1 &324151418
 GameObject:
   m_ObjectHideFlags: 0
@@ -7600,6 +7632,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 427120895}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -7980,6 +8013,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 429848733}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -9231,6 +9265,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 496020528}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -12540,6 +12575,7 @@ GameObject:
   - component: {fileID: 644940718}
   - component: {fileID: 644940717}
   - component: {fileID: 644940716}
+  - component: {fileID: 644940722}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,0),(1,0))
   m_TagString: Untagged
@@ -12577,17 +12613,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 440602205058498745
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 440602205058498745
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 644940716}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 644940722}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &644940717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12905,6 +12942,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &644940722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644940714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!4 &660970957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
@@ -17030,6 +17081,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 723444935}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -17530,6 +17582,7 @@ GameObject:
   - component: {fileID: 748013139}
   - component: {fileID: 748013138}
   - component: {fileID: 748013137}
+  - component: {fileID: 748013144}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -17552,17 +17605,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 440602205058498744
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 440602205058498744
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 748013137}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 748013144}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &748013138
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17895,6 +17949,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1150424420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &748013144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748013136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!1 &791579218
 GameObject:
   m_ObjectHideFlags: 0
@@ -21986,6 +22054,7 @@ GameObject:
   - component: {fileID: 1035614648}
   - component: {fileID: 1035614647}
   - component: {fileID: 1035614646}
+  - component: {fileID: 1035614653}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -22008,17 +22077,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690555
+    rid: 440602205058498743
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690555
+    - rid: 440602205058498743
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1035614646}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 1035614653}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &1035614647
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22351,6 +22421,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1150424420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035614653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035614645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!43 &1048521707
 Mesh:
   m_ObjectHideFlags: 0
@@ -23776,7 +23860,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.983862
+      value: -36.45271
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23784,23 +23868,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.558834
+      value: 25.085363
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.06762065
+      value: 0.4184073
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0035028073
+      value: 0.12680449
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9963691
+      value: 0.86070526
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.051612765
+      value: -0.26084942
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24944,604 +25028,404 @@ MonoBehaviour:
   cells:
   - type: 0
     pos: {x: 0, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 0}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 9, y: 0}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 10, y: 0}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 11, y: 0}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 12, y: 0}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 13, y: 0}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 14, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 15, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 0}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 1}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 9, y: 1}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 10, y: 1}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 11, y: 1}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 12, y: 1}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 13, y: 1}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 14, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 15, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 1}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 2}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 9, y: 2}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 10, y: 2}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 11, y: 2}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 12, y: 2}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 13, y: 2}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 14, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 15, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 2}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 9, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 10, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 11, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 12, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 13, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 14, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 15, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 3}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 9, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 10, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 11, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 12, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 13, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 14, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 15, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 4}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 9, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 10, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 11, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 12, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 13, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 14, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 15, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 5}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 9, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 10, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 11, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 12, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 13, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 14, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 15, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 6}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 9, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 10, y: 7}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 11, y: 7}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 12, y: 7}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 13, y: 7}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 14, y: 7}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 15, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 7}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 9, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 10, y: 8}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 11, y: 8}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 12, y: 8}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 13, y: 8}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 14, y: 8}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 15, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 8}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 0, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 1, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 2, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 3, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 4, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 5, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 6, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 7, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 8, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 9, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 10, y: 9}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 11, y: 9}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 12, y: 9}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 13, y: 9}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 14, y: 9}
-    scale: {x: 1, y: 1}
   - type: 1
     pos: {x: 15, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 16, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 17, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 18, y: 9}
-    scale: {x: 1, y: 1}
   - type: 0
     pos: {x: 19, y: 9}
-    scale: {x: 1, y: 1}
 --- !u!43 &1164568733
 Mesh:
   m_ObjectHideFlags: 0
@@ -26285,6 +26169,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1221117623}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -28255,6 +28140,7 @@ GameObject:
   - component: {fileID: 1269098513}
   - component: {fileID: 1269098512}
   - component: {fileID: 1269098511}
+  - component: {fileID: 1269098517}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((3,0),(3,0))
   m_TagString: Untagged
@@ -28292,17 +28178,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 440602205058498750
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 440602205058498750
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1269098511}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 1269098517}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &1269098512
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28620,6 +28507,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1269098517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269098509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!43 &1279784219
 Mesh:
   m_ObjectHideFlags: 0
@@ -34391,6 +34292,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1485915765}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -34771,6 +34673,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1496633949}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -35669,6 +35572,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1505223911}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -43123,6 +43027,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1647653052}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -45529,6 +45434,7 @@ GameObject:
   - component: {fileID: 1816920444}
   - component: {fileID: 1816920443}
   - component: {fileID: 1816920442}
+  - component: {fileID: 1816920448}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((2,0),(2,1))
   m_TagString: Untagged
@@ -45566,17 +45472,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 440602205058498749
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 440602205058498749
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1816920442}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 1816920448}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &1816920443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45894,6 +45801,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1816920448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816920440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!43 &1824964345
 Mesh:
   m_ObjectHideFlags: 0
@@ -47272,6 +47193,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1881212082}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
@@ -47622,6 +47544,7 @@ GameObject:
   - component: {fileID: 1949979995}
   - component: {fileID: 1949979994}
   - component: {fileID: 1949979993}
+  - component: {fileID: 1949979999}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,2),(0,3))
   m_TagString: Untagged
@@ -47659,17 +47582,18 @@ MonoBehaviour:
   interactionEnabled: 1
   type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 440602205058498747
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 440602205058498747
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1949979993}
-        moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        gridObject: {fileID: 1949979999}
+        moveThreshold: 0.01
+        weight: 1
+        pushCoolDown: 1
 --- !u!64 &1949979994
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47987,6 +47911,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1949979999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949979991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!43 &1960829468
 Mesh:
   m_ObjectHideFlags: 0
@@ -51515,6 +51453,7 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2090540642}
+        gridObject: {fileID: 0}
         moveThreshold: 0
         weight: 0
         pushCoolDown: 0
