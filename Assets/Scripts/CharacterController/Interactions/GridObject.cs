@@ -25,6 +25,10 @@ namespace Interactions {
         public GridGroup manager;
 
         public void Start() {
+            if (manager == null) {
+                Debug.LogError($"No GridGroup manager found for GridObject {name}. If a GridGroup object exists as the direct parent, select it to auto-set the manager.");
+                return;
+            }
             _min = new Vector2Int(int.MaxValue, int.MaxValue);
             _max = new Vector2Int(int.MinValue, int.MinValue);
             foreach (var cell in cells) {

@@ -144,6 +144,10 @@ namespace Interactions {
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
             /// </summary>
             public override void Interact() {
+                if (gridObject == null) {
+                    Debug.LogError($"Not GridObject found on interaction {interactionObject.name}. Try pressing CTRL+ALT+R with this object selected to fix.");
+                    return;
+                }
                 if (!isPushing) {
                     player = GameObject.FindGameObjectWithTag("Player");
                     controller = player.GetComponent<Character.characterController>();
