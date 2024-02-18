@@ -50,7 +50,8 @@ namespace Interactions {
             var group = (GridGroup)serializedObject.targetObject;
             List<GridGroup.Cell> children = new List<GridGroup.Cell>();
             for (int i = 0; i < group.transform.childCount; i++) {
-                if (group.transform.GetChild(i).TryGetComponent(out BoxCollider c)) {
+                var child = group.transform.GetChild(i);
+                if (child.gameObject.activeInHierarchy && child.TryGetComponent(out BoxCollider c)) {
                     addGridObject(ref children, c, group);
                 }
             }
@@ -122,6 +123,7 @@ namespace Interactions {
                             }
                             serializedObject.ApplyModifiedProperties();
                         }
+                        Handles.color = Color.black;
 
                         if (cell.type == Cell.CellType.MAP_FULL) {
                             Handles.color = Color.green;
