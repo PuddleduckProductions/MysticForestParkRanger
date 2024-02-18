@@ -2416,8 +2416,7 @@ MonoBehaviour:
         interactionObject: {fileID: 118204802}
         gridObject: {fileID: 118204808}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 0
 --- !u!64 &118204803
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5586,8 +5585,7 @@ MonoBehaviour:
         interactionObject: {fileID: 311285679}
         gridObject: {fileID: 311285685}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 0
 --- !u!64 &311285680
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7634,8 +7632,7 @@ MonoBehaviour:
         interactionObject: {fileID: 427120895}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &427120896
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8015,8 +8012,7 @@ MonoBehaviour:
         interactionObject: {fileID: 429848733}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &429848734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9267,8 +9263,7 @@ MonoBehaviour:
         interactionObject: {fileID: 496020528}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &496020529
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12623,8 +12618,7 @@ MonoBehaviour:
         interactionObject: {fileID: 644940716}
         gridObject: {fileID: 644940722}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 0
 --- !u!64 &644940717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17083,8 +17077,7 @@ MonoBehaviour:
         interactionObject: {fileID: 723444935}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &723444936
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17615,8 +17608,7 @@ MonoBehaviour:
         interactionObject: {fileID: 748013137}
         gridObject: {fileID: 748013144}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 5
 --- !u!64 &748013138
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22123,8 +22115,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1035614646}
         gridObject: {fileID: 1035614653}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 5
 --- !u!64 &1035614647
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26237,8 +26228,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1221117623}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1221117624
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28254,8 +28244,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1269098511}
         gridObject: {fileID: 1269098517}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 0
 --- !u!64 &1269098512
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34360,8 +34349,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1485915765}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1485915766
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34741,8 +34729,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1496633949}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1496633950
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35640,8 +35627,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1505223911}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1505223912
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43095,8 +43081,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1647653052}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1647653053
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45548,8 +45533,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1816920442}
         gridObject: {fileID: 1816920448}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 0
 --- !u!64 &1816920443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47261,8 +47245,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1881212082}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1881212083
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47658,8 +47641,7 @@ MonoBehaviour:
         interactionObject: {fileID: 1949979993}
         gridObject: {fileID: 1949979999}
         moveThreshold: 0.01
-        weight: 1
-        pushCoolDown: 1
+        pushSpeed: 0
 --- !u!64 &1949979994
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51521,8 +51503,7 @@ MonoBehaviour:
         interactionObject: {fileID: 2090540642}
         gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!54 &2090540643
 Rigidbody:
   m_ObjectHideFlags: 0

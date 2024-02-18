@@ -105,6 +105,7 @@ namespace Interactions {
         /// <summary>
         /// Attempt to move the given gridObject in a direction.
         /// Assumes no diagonals.
+        /// Does not move the object physically in the space. You have to edit the transform yourself.
         /// Called by <see cref="GridObject.Move(Vector3)"/>, which you should call instead of this function.
         /// </summary>
         /// <param name="direction">The direction to move in. Assumes no diagonals.</param>
@@ -146,9 +147,6 @@ namespace Interactions {
                     return false;
                 }
             }
-
-            // TODO: Lerp
-            gridObject.transform.position += new Vector3(direction.x * (cellSpacing.x + cellSize.x), 0, direction.y * (cellSpacing.z + cellSize.z));
 
             MoveCells(ref gridObject.cells, direction);
             return true;

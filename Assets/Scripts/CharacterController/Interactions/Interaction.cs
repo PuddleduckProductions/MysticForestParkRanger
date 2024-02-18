@@ -5,7 +5,6 @@ using Utility;
 using InkTools;
 using System.Reflection;
 using System.Collections.Generic;
-using static Interactions.GridGroup;
 using System.Collections;
 
 namespace Interactions {
@@ -132,15 +131,13 @@ namespace Interactions {
             public float moveThreshold = 0.01f;
 
             /// <summary>
-            /// Weight of the Interactable Object, used with the CharacterController's
-            /// pushForce and movementSpeed to determine speed.
+            /// How fast the object should be pushed.
             /// </summary>
-            public float weight = 1f;
+            public float pushSpeed = 5f;
 
             /// <summary>
-            /// Time to wait inbetween pushes.
+            /// Whether or not the player is currently allowed to push
             /// </summary>
-            public float pushCoolDown = 1f;
             protected bool pushEnabled = true;
 
             /// <summary>
@@ -169,8 +166,20 @@ namespace Interactions {
             // Since Coroutines can't be run from non MonoBehaviours.
             protected static IEnumerator Push(PushableInteraction p, Vector3 dir) {
                 p.pushEnabled = false;
-                p.gridObject.Move(dir);
-                yield return new WaitForSeconds(p.pushCoolDown);
+                if (p.gridObject.Move(dir)) {
+                    var group = p.gridObject.manager;
+                    var toAdd = new Vector3(Mathf.RoundToInt(dir.x) * (group.cellSpacing.x + group.cellSize.x), 0,
+                        Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
+                    var targetPos = p.gridObject.transform.position + toAdd;
+                    var playerTargetPos = p.player.transform.position + toAdd;
+                    while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
+                        p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
+                        p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
+                        yield return new WaitForEndOfFrame();
+                    }
+                    p.gridObject.transform.position = targetPos;
+                    p.player.transform.position = playerTargetPos;
+                }
                 p.pushEnabled = true;
             }
 

@@ -44,7 +44,8 @@ namespace Interactions {
         }
 
         /// <summary>
-        /// Attempt to move this object in a given direction.
+        /// Attempt to move this object in a given direction on the grid.
+        /// Does NOT move the object's transform. That's the responsibility of whoever calls this function.
         /// </summary>
         /// <param name="direction">The direction to move in. Should be a normalized vector.</param>
         /// <returns>Whether or not the move was successful.</returns>
