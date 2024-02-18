@@ -117,18 +117,23 @@ namespace Interactions {
             return new Box(center, cellSize, edges);
         }
 
+        protected Vector2Int LocalToGridXY(Vector3 pos) {
+            int gridX = Mathf.FloorToInt(pos.x / (cellSize.x + cellSpacing.x));
+            int gridY = Mathf.FloorToInt(pos.z / (cellSize.z + cellSpacing.z));
+            return new Vector2Int(gridX, gridY);
+        }
+
         public Cell? LocalToCell(Vector3 pos) {
             //Vector3 localPos = PointToLocal(pos);
             //localPos -= gridOffset;
             //Debug.Log($"{localPos} {pos}");
             //Vector3 localPos = transform.rotation * (pos - (transform.position + gridOffset));
-            int gridX = Mathf.FloorToInt(pos.x / (cellSize.x + cellSpacing.x));
-            int gridY = Mathf.FloorToInt(pos.z / (cellSize.z + cellSpacing.z));
-            if (gridX < 0 || gridX >= gridDimensions.x || gridY < 0 || gridY >= gridDimensions.y) {
+            Vector2Int gridPos = LocalToGridXY(pos);
+            if (gridPos.x < 0 || gridPos.x >= gridDimensions.x || gridPos.y < 0 || gridPos.y >= gridDimensions.y) {
                 return null;
             }
             // TODO: Figure out multiple cells together to make one object.
-            return new Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY), this.transform.rotation);
+            return new Cell(GridGroup.Cell.CellType.FULL, gridPos, this.transform.rotation);
         }
 
         public Vector3 PointToLocal(Vector3 pos) {
