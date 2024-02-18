@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using Interactions;
 using NUnit;
+using static Interactions.GridGroup;
 
 namespace Interactions {
     [CustomEditor(typeof(GridGroup))]
@@ -60,16 +61,20 @@ namespace Interactions {
         public override void OnInspectorGUI() {
             base.OnInspectorGUI();
             Vector2Int gridSize = gridDimensions.vector2IntValue;
-            cells.ClearArray();
             cells.arraySize = gridSize.y * gridSize.x;
 
             for (int x = 0; x < gridSize.x; x++) {
                 for (int y = 0; y < gridSize.y; y++) {
                     // TODO: Get game objects involved.
                     var cell = cells.GetArrayElementAtIndex(y * gridSize.x + x);
+                    var typeValue = cell.FindPropertyRelative("type").enumValueIndex;
+                    // Since we no longer clear the array (to store MAP_FULL enums),
+                    // This is a way to avoid unnecessary info as we extend the cells:
+                    if (typeValue == 1) {
+                        cell.FindPropertyRelative("type").enumValueIndex = 0;
+                    }
 
                     var pos = new Vector2Int(x, y);
-                    var scale = new Vector2Int(1, 1);
                     cell.FindPropertyRelative("pos").vector2IntValue = pos;
                 }
             }
@@ -81,5 +86,40 @@ namespace Interactions {
             }
             serializedObject.ApplyModifiedProperties();
         }
+
+        private void OnSceneGUI() {
+            var group = (GridGroup)target;
+            foreach (var cell in group.cells) {
+                var box = group.CellToWorld(cell);
+                if (cell.type == Cell.CellType.FULL) {
+                    Handles.color = Color.red;
+                } else if (cell.pos == Vector2Int.zero) {
+                    Handles.color = Color.blue;
+                } else {
+                    Handles.color = Color.yellow;
+                    var smallest = Mathf.Min(box.scale.x, box.scale.y, box.scale.z);
+                    if (Handles.Button(box.center, Quaternion.identity, smallest/4f, smallest/2f, Handles.DotHandleCap)) {
+                        var cellToChange = cells.GetArrayElementAtIndex((cell.pos.y * gridDimensions.vector2IntValue.x) + cell.pos.x);
+
+                        var type = cellToChange.FindPropertyRelative("type");
+                        if (type.enumValueIndex == 2) {
+                            type.enumValueIndex = 0;
+                        } else {
+                            type.enumValueIndex = 2;
+                        }
+                        serializedObject.ApplyModifiedProperties();
+                    }
+
+                    if (cell.type == Cell.CellType.MAP_FULL) {
+                        Handles.color = Color.red;
+                    } else {
+                        Handles.color = Color.black;
+                    }
+                }
+                Handles.DrawWireCube(box.center, box.scale);
+            }
+        }
+
+        
     }
 }

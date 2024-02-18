@@ -1,11 +1,16 @@
 using UnityEngine;
 using System;
+using UnityEditor;
 
 namespace Interactions {
     public class GridGroup : MonoBehaviour {
         [Serializable]
         public struct Cell {
-            public enum CellType { EMPTY, FULL };
+            /// <summary>
+            /// EMPTY represents nothing. FULL represents an object (controlled by <see cref="GridObject"/>. MAP_FULL indicates a cell that's been set to full that can be
+            /// reset to EMPTY from the scene editor.
+            /// </summary>
+            public enum CellType { EMPTY, FULL, MAP_FULL };
             public CellType type;
             public Vector2Int pos;
             
@@ -165,20 +170,6 @@ namespace Interactions {
                 return this[target].type == Cell.CellType.EMPTY; 
             } else {
                 return false;
-            }
-        }
-
-        void OnDrawGizmos() {
-            foreach (var cell in cells) {
-                var box = CellToWorld(cell);
-                Gizmos.color = Color.black;
-                if (cell.type == Cell.CellType.FULL) {
-                    Gizmos.color = Color.red;
-                }
-                if (cell.pos == Vector2Int.zero) {
-                    Gizmos.color = Color.blue;
-                }
-                Gizmos.DrawWireCube(box.center, box.scale);
             }
         }
 
