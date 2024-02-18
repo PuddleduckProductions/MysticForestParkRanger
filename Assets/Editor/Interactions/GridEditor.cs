@@ -11,28 +11,35 @@ namespace Interactions {
     public class GridEditor : Editor {
 
         SerializedProperty cells;
-        SerializedProperty cellSize;
-        SerializedProperty cellSpacing;
         SerializedProperty gridDimensions;
         private void OnEnable() {
             cells = serializedObject.FindProperty("cells");
-            cellSize = serializedObject.FindProperty("cellSize");
-            cellSpacing = serializedObject.FindProperty("cellSpacing");
             gridDimensions = serializedObject.FindProperty("gridDimensions");
         }
 
+        HashSet<Vector2Int> objectColors = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> errorCells = new HashSet<Vector2Int>();
         protected void addGridObject(ref List<GridGroup.Cell> children, BoxCollider c, GridGroup group) {
-
-            
             List<GridGroup.Cell> toAdd = group.BoundsToCells(c);
             if (toAdd == null) {
                 return;
+            }
+
+            foreach (var cell in toAdd) {
+                if (objectColors.Contains(cell.pos)) {
+                    Debug.LogError($"{c.name} shares a cell with another object at {cell.pos}", c.gameObject);
+                    errorCells.Add(cell.pos);
+                    return;
+                } else {
+                    objectColors.Add(cell.pos);
+                }
             }
 
             if (c.TryGetComponent(out GridObject go)) {
                 go.cells = toAdd.ToArray();
                 go.manager = group;
             }
+
 
             children.AddRange(toAdd);
         }
@@ -55,7 +62,6 @@ namespace Interactions {
 
             for (int x = 0; x < gridSize.x; x++) {
                 for (int y = 0; y < gridSize.y; y++) {
-                    // TODO: Get game objects involved.
                     var cell = cells.GetArrayElementAtIndex(y * gridSize.x + x);
                     var typeValue = cell.FindPropertyRelative("type").enumValueIndex;
                     // Since we no longer clear the array (to store MAP_FULL enums),
@@ -71,6 +77,9 @@ namespace Interactions {
                 }
             }
 
+            objectColors.Clear();
+            errorCells.Clear();
+
             var children = gridObjectsToAdd();
             foreach (var child in children) {
                 var cell = cells.GetArrayElementAtIndex((child.pos.y * gridSize.x) + child.pos.x);
@@ -83,8 +92,13 @@ namespace Interactions {
             var group = (GridGroup)target;
             foreach (var cell in group.cells) {
                 var box = group.CellToWorld(cell);
-                if (cell.type == Cell.CellType.FULL) {
+                if (errorCells.Contains(cell.pos)) {
                     Handles.color = Color.red;
+                    Handles.DrawDottedLines(box.edges, 0.3f);
+                    Handles.DrawSolidDisc(box.center, group.transform.up, box.scale.x/4f);
+                    continue;
+                } else if (cell.type == Cell.CellType.FULL) {
+                    Handles.color = Color.green;
                 } else if (cell.pos == Vector2Int.zero) {
                     Handles.color = Color.blue;
                 } else {
@@ -103,7 +117,7 @@ namespace Interactions {
                     }
 
                     if (cell.type == Cell.CellType.MAP_FULL) {
-                        Handles.color = Color.red;
+                        Handles.color = Color.green;
                     } else {
                         Handles.color = Color.black;
                     }
