@@ -1,6 +1,7 @@
 using UnityEngine;
 
 namespace Interactions {
+    [RequireComponent(typeof(BoxCollider))]
     public class GridObject : MonoBehaviour {
         /// <summary>
         /// Set by <see cref="Interactions.GridEditor"/>.

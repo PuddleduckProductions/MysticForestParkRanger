@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using UnityEditor;
+using System.Collections.Generic;
 
 namespace Interactions {
     public class GridGroup : MonoBehaviour {
@@ -117,15 +117,42 @@ namespace Interactions {
             return new Box(center, cellSize, edges);
         }
 
-        public Cell? WorldToCell(Vector3 pos) {
-            Vector3 localPos = new Vector3(pos.x, 0, pos.z) - (transform.position + gridOffset);
-            int gridX = Mathf.FloorToInt(localPos.x / (cellSize.x + cellSpacing.x));
-            int gridY = Mathf.FloorToInt(localPos.z / (cellSize.z + cellSpacing.z));
+        public Cell? LocalToCell(Vector3 pos) {
+            //Vector3 localPos = PointToLocal(pos);
+            //localPos -= gridOffset;
+            //Debug.Log($"{localPos} {pos}");
+            //Vector3 localPos = transform.rotation * (pos - (transform.position + gridOffset));
+            int gridX = Mathf.FloorToInt(pos.x / (cellSize.x + cellSpacing.x));
+            int gridY = Mathf.FloorToInt(pos.z / (cellSize.z + cellSpacing.z));
             if (gridX < 0 || gridX >= gridDimensions.x || gridY < 0 || gridY >= gridDimensions.y) {
                 return null;
             }
             // TODO: Figure out multiple cells together to make one object.
             return new Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY), this.transform.rotation);
+        }
+
+        public Vector3 PointToLocal(Vector3 pos) {
+            return transform.InverseTransformPoint(pos) - gridOffset;
+        }
+
+        public List<Cell> BoundsToCells(BoxCollider c) {
+            var toAdd = new List<Cell>();
+
+            var start = PointToLocal(c.transform.TransformPoint(c.center - c.size/2));
+            var end = PointToLocal(c.transform.TransformPoint(c.center + c.size/2));
+
+            for (float x = start.x; x < end.x; x += cellSize.x + cellSpacing.x) {
+                for (float y = start.z; y < end.z; y += cellSize.z + cellSpacing.z) {
+                    // TODO: Figure out multiple cells together to make one object.
+                    var cell = LocalToCell(new Vector3(x, 0, y));
+                    if (cell == null) {
+                        Debug.LogWarning($"{c.name} does not fit in grid at {x},{y}");
+                        return null;
+                    }
+                    toAdd.Add((GridGroup.Cell)cell);
+                }
+            }
+            return toAdd;
         }
 
 

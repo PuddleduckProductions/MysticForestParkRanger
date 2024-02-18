@@ -21,22 +21,12 @@ namespace Interactions {
             gridDimensions = serializedObject.FindProperty("gridDimensions");
         }
 
-        protected void addGridObject(ref List<GridGroup.Cell> children, Collider c, GridGroup group) {
+        protected void addGridObject(ref List<GridGroup.Cell> children, BoxCollider c, GridGroup group) {
 
-            List<GridGroup.Cell> toAdd = new List<GridGroup.Cell>();
-            var start = c.bounds.center - c.bounds.extents;
-            var end = c.bounds.center + c.bounds.extents;
-
-            for (float x = start.x; x < end.x; x += cellSize.vector3Value.x + cellSpacing.vector3Value.x) {
-                for (float y = start.z; y < end.z; y += cellSize.vector3Value.z + cellSpacing.vector3Value.z) {
-                    // TODO: Figure out multiple cells together to make one object.
-                    var cell = group.WorldToCell(new Vector3(x, 0, y));
-                    if (cell == null) {
-                        Debug.LogWarning($"{c.name} does not fit in grid at {x},{y}");
-                        return;
-                    }
-                    toAdd.Add((GridGroup.Cell)cell);
-                }
+            
+            List<GridGroup.Cell> toAdd = group.BoundsToCells(c);
+            if (toAdd == null) {
+                return;
             }
 
             if (c.TryGetComponent(out GridObject go)) {
@@ -51,7 +41,7 @@ namespace Interactions {
             var group = (GridGroup)serializedObject.targetObject;
             List<GridGroup.Cell> children = new List<GridGroup.Cell>();
             for (int i = 0; i < group.transform.childCount; i++) {
-                if (group.transform.GetChild(i).TryGetComponent(out Collider c)) {
+                if (group.transform.GetChild(i).TryGetComponent(out BoxCollider c)) {
                     addGridObject(ref children, c, group);
                 }
             }
