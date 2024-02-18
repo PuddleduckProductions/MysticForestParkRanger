@@ -3,17 +3,7 @@ guid: 9ac26d33586ef0d4fb002ae897abf0f5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cigarette Body.001
-    second: {fileID: 2100000, guid: 5ef454e44a8e22f40878472d76694621, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: shrrom (flat)
-    second: {fileID: 2100000, guid: 5ef454e44a8e22f40878472d76694621, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
