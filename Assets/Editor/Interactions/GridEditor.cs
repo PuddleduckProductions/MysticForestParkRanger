@@ -76,6 +76,8 @@ namespace Interactions {
 
                     var pos = new Vector2Int(x, y);
                     cell.FindPropertyRelative("pos").vector2IntValue = pos;
+
+                    cell.FindPropertyRelative("rotation").quaternionValue = Quaternion.identity;
                 }
             }
 
@@ -116,7 +118,42 @@ namespace Interactions {
                         Handles.color = Color.black;
                     }
                 }
-                Handles.DrawWireCube(box.center, box.scale);
+
+                // Handles.DrawWireCube does not support rotation:
+                var bottom = box.center - box.scale/2;
+                var forward = Vector3.forward * box.scale.z;
+                var up = Vector3.up * box.scale.y;
+                var right = Vector3.right * box.scale.x;
+
+                var transform = ((GridGroup)target).transform;
+                var cube = new Vector3[] {
+                    // Left face
+                    bottom, bottom + forward, 
+                    bottom + forward, bottom + forward + up, 
+                    bottom + forward + up, bottom + up, 
+                    bottom + up, bottom,
+
+                    // Right face
+                    bottom, bottom + right,
+                    bottom + right, bottom + right + forward,
+                    bottom + right + forward, bottom + right + forward + up, 
+                    bottom + right + forward + up, bottom + right + up, 
+                    bottom + right + up, bottom + right,
+
+                    // Connect the three missing points
+                    bottom + up, bottom + up + right,
+                    bottom + up + forward, bottom + up + forward + right,
+                    bottom + forward, bottom + forward + right
+                    
+                };
+                for (int i = 0; i < cube.Length; i++) {
+                    // TODO: The rotation should be set in the editor itself.
+                    var newPoint = cube[i] - transform.position;
+                    newPoint = transform.rotation * newPoint;
+                    cube[i] = newPoint + transform.position;
+                }
+                Handles.DrawLines(cube);
+                //Handles.DrawWireCube(box.center, box.scale);
             }
         }
 

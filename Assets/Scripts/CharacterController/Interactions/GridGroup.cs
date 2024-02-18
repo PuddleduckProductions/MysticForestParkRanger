@@ -13,10 +13,12 @@ namespace Interactions {
             public enum CellType { EMPTY, FULL, MAP_FULL };
             public CellType type;
             public Vector2Int pos;
+            public Quaternion rotation;
             
-            public Cell(CellType type, Vector2Int pos) {
+            public Cell(CellType type, Vector2Int pos, Quaternion rot) {
                 this.type = type;
                 this.pos = pos;
+                this.rotation = rot;
             }
         }
 
@@ -86,7 +88,7 @@ namespace Interactions {
                 return null;
             }
             // TODO: Figure out multiple cells together to make one object.
-            return new Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY));
+            return new Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY), this.transform.rotation);
         }
 
 
