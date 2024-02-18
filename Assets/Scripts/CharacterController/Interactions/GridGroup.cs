@@ -116,28 +116,32 @@ namespace Interactions {
             Vector2Int increment = Vector2Int.zero;
             Vector2Int startPos = Vector2Int.zero;
             if (direction.x != 0) {
+                // Test along the y-axis:
                 testMin = gridObject.min.y;
                 testMax = gridObject.max.y;
+                // If we're testing to the left:
                 if (direction.x < 0) {
+                    // Start from the bottom left,
                     startPos = gridObject.min;
-                    increment = Vector2Int.left;
+                    // And move up to the top left.
+                    increment = Vector2Int.up;
                 } else {
                     startPos = gridObject.max;
-                    increment = Vector2Int.right;
+                    increment = Vector2Int.down;
                 }
             } else if (direction.y != 0) {
                 testMin = gridObject.min.x;
                 testMax = gridObject.max.x;
                 if (direction.y < 0) {
                     startPos = gridObject.min;
-                    increment = Vector2Int.down;
+                    increment = Vector2Int.right;
                 } else {
                     startPos = gridObject.max;
-                    increment = Vector2Int.up;
+                    increment = Vector2Int.left;
                 }
             }
 
-            for (int i = testMin; i <= testMax; i++) {
+            for (int i = 0; i <= testMax - testMin; i++) {
                 if (!MoveValid(startPos + increment * i, direction)) {
                     return false;
                 }
