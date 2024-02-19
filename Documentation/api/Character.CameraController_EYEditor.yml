@@ -1,55 +1,47 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.InteractionEditor
-  commentId: T:Interactions.InteractionEditor
-  id: InteractionEditor
-  parent: Interactions
+- uid: Character.CameraController_EYEditor
+  commentId: T:Character.CameraController_EYEditor
+  id: CameraController_EYEditor
+  parent: Character
   children:
-  - Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
-  - Interactions.InteractionEditor.OnInspectorGUI
+  - Character.CameraController_EYEditor.OnEnable
+  - Character.CameraController_EYEditor.OnInspectorGUI
+  - Character.CameraController_EYEditor.SaveChanges
+  - Character.CameraController_EYEditor.UpdateCams
   langs:
   - csharp
   - vb
-  name: InteractionEditor
-  nameWithType: InteractionEditor
-  fullName: Interactions.InteractionEditor
+  name: CameraController_EYEditor
+  nameWithType: CameraController_EYEditor
+  fullName: Character.CameraController_EYEditor
   type: Class
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Character/CameraControllerEditor_EY.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionEditor
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 12
+    id: CameraController_EYEditor
+    path: ../Assets/Editor/Character/CameraControllerEditor_EY.cs
+    startLine: 9
   assemblies:
   - EditorAssembly
-  namespace: Interactions
-  summary: >-
-    Editor for <xref href="Interactions.Interaction" data-throw-if-not-resolved="false"></xref>, to make selecting <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> automated and easy for designers.
-
-    TODO: Need to figure out how to access the serialized properties of InteractionBehavior.
-  example: []
+  namespace: Character
   syntax:
     content: >-
-      [CustomEditor(typeof(Interaction))]
+      [CustomEditor(typeof(CameraController_EY))]
 
-      [CanEditMultipleObjects]
-
-      public class InteractionEditor : Editor
+      public class CameraController_EYEditor : Editor
     content.vb: >-
-      <CustomEditor(GetType(Interaction))>
+      <CustomEditor(GetType(CameraController_EY))>
 
-      <CanEditMultipleObjects>
-
-      Public Class InteractionEditor Inherits Editor
+      Public Class CameraController_EYEditor Inherits Editor
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - UnityEditor.Editor
   inheritedMembers:
-  - UnityEditor.Editor.SaveChanges
   - UnityEditor.Editor.DiscardChanges
   - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
   - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
@@ -147,96 +139,124 @@ items:
     ctor: UnityEditor.CustomEditor.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: Interactions.Interaction
-  - type: UnityEditor.CanEditMultipleObjects
-    ctor: UnityEditor.CanEditMultipleObjects.#ctor
-    arguments: []
-- uid: Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
-  commentId: M:Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
-  id: CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
-  parent: Interactions.InteractionEditor
+      value: Character.CameraController_EY
+- uid: Character.CameraController_EYEditor.OnEnable
+  commentId: M:Character.CameraController_EYEditor.OnEnable
+  id: OnEnable
+  parent: Character.CameraController_EYEditor
   langs:
   - csharp
   - vb
-  name: CreateBehavior(Interaction, SerializedProperty, SerializedObject)
-  nameWithType: InteractionEditor.CreateBehavior(Interaction, SerializedProperty, SerializedObject)
-  fullName: Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction, UnityEditor.SerializedProperty, UnityEditor.SerializedObject)
+  name: OnEnable()
+  nameWithType: CameraController_EYEditor.OnEnable()
+  fullName: Character.CameraController_EYEditor.OnEnable()
   type: Method
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Character/CameraControllerEditor_EY.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CreateBehavior
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 25
+    id: OnEnable
+    path: ../Assets/Editor/Character/CameraControllerEditor_EY.cs
+    startLine: 16
   assemblies:
   - EditorAssembly
-  namespace: Interactions
-  summary: Assign our <xref href="Interactions.Interaction.behavior" data-throw-if-not-resolved="false"></xref> based on the given <xref href="Interactions.Interaction.type" data-throw-if-not-resolved="false"></xref>.
+  namespace: Character
+  syntax:
+    content: public void OnEnable()
+    content.vb: Public Sub OnEnable()
+  overload: Character.CameraController_EYEditor.OnEnable*
+- uid: Character.CameraController_EYEditor.SaveChanges
+  commentId: M:Character.CameraController_EYEditor.SaveChanges
+  id: SaveChanges
+  parent: Character.CameraController_EYEditor
+  langs:
+  - csharp
+  - vb
+  name: SaveChanges()
+  nameWithType: CameraController_EYEditor.SaveChanges()
+  fullName: Character.CameraController_EYEditor.SaveChanges()
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Character/CameraControllerEditor_EY.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: SaveChanges
+    path: ../Assets/Editor/Character/CameraControllerEditor_EY.cs
+    startLine: 24
+  assemblies:
+  - EditorAssembly
+  namespace: Character
+  summary: <p>Performs a save action on the contents of the editor.</p>
   example: []
   syntax:
-    content: public static void CreateBehavior(Interaction interaction, SerializedProperty behavior, SerializedObject so)
-    parameters:
-    - id: interaction
-      type: Interactions.Interaction
-      description: The parent to give our <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref>
-    - id: behavior
-      type: UnityEditor.SerializedProperty
-    - id: so
-      type: UnityEditor.SerializedObject
-    content.vb: Public Shared Sub CreateBehavior(interaction As Interaction, behavior As SerializedProperty, so As SerializedObject)
-  overload: Interactions.InteractionEditor.CreateBehavior*
-- uid: Interactions.InteractionEditor.OnInspectorGUI
-  commentId: M:Interactions.InteractionEditor.OnInspectorGUI
+    content: public override void SaveChanges()
+    content.vb: Public Overrides Sub SaveChanges()
+  overridden: UnityEditor.Editor.SaveChanges
+  overload: Character.CameraController_EYEditor.SaveChanges*
+- uid: Character.CameraController_EYEditor.UpdateCams
+  commentId: M:Character.CameraController_EYEditor.UpdateCams
+  id: UpdateCams
+  parent: Character.CameraController_EYEditor
+  langs:
+  - csharp
+  - vb
+  name: UpdateCams()
+  nameWithType: CameraController_EYEditor.UpdateCams()
+  fullName: Character.CameraController_EYEditor.UpdateCams()
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Character/CameraControllerEditor_EY.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: UpdateCams
+    path: ../Assets/Editor/Character/CameraControllerEditor_EY.cs
+    startLine: 29
+  assemblies:
+  - EditorAssembly
+  namespace: Character
+  syntax:
+    content: protected void UpdateCams()
+    content.vb: Protected Sub UpdateCams()
+  overload: Character.CameraController_EYEditor.UpdateCams*
+- uid: Character.CameraController_EYEditor.OnInspectorGUI
+  commentId: M:Character.CameraController_EYEditor.OnInspectorGUI
   id: OnInspectorGUI
-  parent: Interactions.InteractionEditor
+  parent: Character.CameraController_EYEditor
   langs:
   - csharp
   - vb
   name: OnInspectorGUI()
-  nameWithType: InteractionEditor.OnInspectorGUI()
-  fullName: Interactions.InteractionEditor.OnInspectorGUI()
+  nameWithType: CameraController_EYEditor.OnInspectorGUI()
+  fullName: Character.CameraController_EYEditor.OnInspectorGUI()
   type: Method
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Character/CameraControllerEditor_EY.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 42
+    path: ../Assets/Editor/Character/CameraControllerEditor_EY.cs
+    startLine: 60
   assemblies:
   - EditorAssembly
-  namespace: Interactions
+  namespace: Character
   summary: <p>Implement this function to make a custom inspector.</p>
   example: []
   syntax:
     content: public override void OnInspectorGUI()
     content.vb: Public Overrides Sub OnInspectorGUI()
   overridden: UnityEditor.Editor.OnInspectorGUI
-  overload: Interactions.InteractionEditor.OnInspectorGUI*
+  overload: Character.CameraController_EYEditor.OnInspectorGUI*
 references:
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions
-  commentId: N:Interactions
-  href: Interactions.html
-  name: Interactions
-  nameWithType: Interactions
-  fullName: Interactions
+- uid: Character
+  commentId: N:Character
+  href: Character.html
+  name: Character
+  nameWithType: Character
+  fullName: Character
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -269,25 +289,6 @@ references:
   name: Editor
   nameWithType: Editor
   fullName: UnityEditor.Editor
-- uid: UnityEditor.Editor.SaveChanges
-  commentId: M:UnityEditor.Editor.SaveChanges
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: SaveChanges()
-  nameWithType: Editor.SaveChanges()
-  fullName: UnityEditor.Editor.SaveChanges()
-  spec.csharp:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
-    isExternal: true
-  - name: (
-  - name: )
 - uid: UnityEditor.Editor.DiscardChanges
   commentId: M:UnityEditor.Editor.DiscardChanges
   parent: UnityEditor.Editor
@@ -3185,28 +3186,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: Interactions.Behaviors
-  commentId: N:Interactions.Behaviors
-  href: Interactions.html
-  name: Interactions.Behaviors
-  nameWithType: Interactions.Behaviors
-  fullName: Interactions.Behaviors
-  spec.csharp:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
-  spec.vb:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -3464,36 +3443,43 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Interactions.Interaction.behavior
-  commentId: F:Interactions.Interaction.behavior
-  name: behavior
-  nameWithType: Interaction.behavior
-  fullName: Interactions.Interaction.behavior
-- uid: Interactions.Interaction.type
-  commentId: F:Interactions.Interaction.type
-  name: type
-  nameWithType: Interaction.type
-  fullName: Interactions.Interaction.type
-- uid: Interactions.InteractionEditor.CreateBehavior*
-  commentId: Overload:Interactions.InteractionEditor.CreateBehavior
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_CreateBehavior_Interactions_Interaction_UnityEditor_SerializedProperty_UnityEditor_SerializedObject_
-  name: CreateBehavior
-  nameWithType: InteractionEditor.CreateBehavior
-  fullName: Interactions.InteractionEditor.CreateBehavior
-- uid: UnityEditor.SerializedProperty
-  commentId: T:UnityEditor.SerializedProperty
-  parent: UnityEditor
+- uid: Character.CameraController_EYEditor.OnEnable*
+  commentId: Overload:Character.CameraController_EYEditor.OnEnable
+  href: Character.CameraController_EYEditor.html#Character_CameraController_EYEditor_OnEnable
+  name: OnEnable
+  nameWithType: CameraController_EYEditor.OnEnable
+  fullName: Character.CameraController_EYEditor.OnEnable
+- uid: UnityEditor.Editor.SaveChanges
+  commentId: M:UnityEditor.Editor.SaveChanges
+  parent: UnityEditor.Editor
   isExternal: true
-  name: SerializedProperty
-  nameWithType: SerializedProperty
-  fullName: UnityEditor.SerializedProperty
-- uid: UnityEditor.SerializedObject
-  commentId: T:UnityEditor.SerializedObject
-  parent: UnityEditor
-  isExternal: true
-  name: SerializedObject
-  nameWithType: SerializedObject
-  fullName: UnityEditor.SerializedObject
+  name: SaveChanges()
+  nameWithType: Editor.SaveChanges()
+  fullName: UnityEditor.Editor.SaveChanges()
+  spec.csharp:
+  - uid: UnityEditor.Editor.SaveChanges
+    name: SaveChanges
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.Editor.SaveChanges
+    name: SaveChanges
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Character.CameraController_EYEditor.SaveChanges*
+  commentId: Overload:Character.CameraController_EYEditor.SaveChanges
+  href: Character.CameraController_EYEditor.html#Character_CameraController_EYEditor_SaveChanges
+  name: SaveChanges
+  nameWithType: CameraController_EYEditor.SaveChanges
+  fullName: Character.CameraController_EYEditor.SaveChanges
+- uid: Character.CameraController_EYEditor.UpdateCams*
+  commentId: Overload:Character.CameraController_EYEditor.UpdateCams
+  href: Character.CameraController_EYEditor.html#Character_CameraController_EYEditor_UpdateCams
+  name: UpdateCams
+  nameWithType: CameraController_EYEditor.UpdateCams
+  fullName: Character.CameraController_EYEditor.UpdateCams
 - uid: UnityEditor.Editor.OnInspectorGUI
   commentId: M:UnityEditor.Editor.OnInspectorGUI
   parent: UnityEditor.Editor
@@ -3513,9 +3499,9 @@ references:
     isExternal: true
   - name: (
   - name: )
-- uid: Interactions.InteractionEditor.OnInspectorGUI*
-  commentId: Overload:Interactions.InteractionEditor.OnInspectorGUI
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_OnInspectorGUI
+- uid: Character.CameraController_EYEditor.OnInspectorGUI*
+  commentId: Overload:Character.CameraController_EYEditor.OnInspectorGUI
+  href: Character.CameraController_EYEditor.html#Character_CameraController_EYEditor_OnInspectorGUI
   name: OnInspectorGUI
-  nameWithType: InteractionEditor.OnInspectorGUI
-  fullName: Interactions.InteractionEditor.OnInspectorGUI
+  nameWithType: CameraController_EYEditor.OnInspectorGUI
+  fullName: Character.CameraController_EYEditor.OnInspectorGUI
