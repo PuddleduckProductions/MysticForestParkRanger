@@ -142,9 +142,14 @@ namespace Interactions {
             var toAdd = new List<Cell>();
 
             var start = PointToLocal(c.transform.TransformPoint(c.center - c.size/2));
+            // Get the nearest point on the grid:
+            var startXY = LocalToGridXY(start);
+            // Then expand it back out to local space:
+            start = new Vector3(startXY.x * (cellSize.x + cellSpacing.x), start.y, startXY.y * (cellSize.z + cellSpacing.z));
+
             var end = PointToLocal(c.transform.TransformPoint(c.center + c.size/2));
             var endXY = LocalToGridXY(end + cellSize + cellSpacing);
-            end = new Vector3(endXY.x, end.y, endXY.y);
+            end = new Vector3(endXY.x * (cellSize.x + cellSpacing.x), end.y, endXY.y * (cellSize.z + cellSpacing.z));
 
             for (float x = start.x; x < end.x; x += cellSize.x + cellSpacing.x) {
                 for (float y = start.z; y < end.z; y += cellSize.z + cellSpacing.z) {
