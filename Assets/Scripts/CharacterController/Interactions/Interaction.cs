@@ -140,6 +140,16 @@ namespace Interactions {
             /// </summary>
             protected bool pushEnabled = true;
 
+            Vector3 groundOffset = Vector3.zero;
+
+            Vector3 pushableGetGround(Vector3 inPos) {
+                if (Physics.Raycast(inPos, -Vector3.up, out RaycastHit hit)) {
+                    return hit.point;
+                } else {
+                    return -groundOffset;
+                }
+            }
+
             /// <summary>
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
             /// </summary>
@@ -155,6 +165,8 @@ namespace Interactions {
                     pushEnabled = true;
 
                     controller.moveEnabled = false;
+
+                    groundOffset = pushableGetGround(interactionObject.transform.position) - interactionObject.transform.position;
 
                 } else {
                     // Force InteractionManager to call EndInteraction.
@@ -175,7 +187,13 @@ namespace Interactions {
                     var toAdd = new Vector3(Mathf.RoundToInt(dir.x) * (group.cellSpacing.x + group.cellSize.x), 0,
                         Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
                     var targetPos = p.gridObject.transform.position + toAdd;
-                    var playerTargetPos = p.player.transform.position + toAdd;
+
+                    var ground = p.pushableGetGround(targetPos) + p.groundOffset;
+                    var groundDist = targetPos - ground;
+                    targetPos += groundDist;
+
+                    var playerTargetPos = p.player.transform.position + toAdd + groundDist;
+
                     while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
                         p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
                         p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
