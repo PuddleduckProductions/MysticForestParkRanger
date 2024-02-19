@@ -141,6 +141,7 @@ namespace Interactions {
             protected bool pushEnabled = true;
 
             Vector3 groundOffset = Vector3.zero;
+            Vector3 playerGroundOffset = Vector3.zero;
 
             Vector3 pushableGetGround(Vector3 inPos) {
                 RaycastHit[] hits = Physics.RaycastAll(inPos, Vector3.down);
@@ -170,6 +171,7 @@ namespace Interactions {
                     controller.moveEnabled = false;
 
                     groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
+                    playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
 
                 } else {
                     // Force InteractionManager to call EndInteraction.
@@ -196,7 +198,11 @@ namespace Interactions {
                     var groundDist = ground - targetPos;
                     targetPos += groundDist;
 
-                    var playerTargetPos = p.player.transform.position + toAdd + groundDist;
+
+                    var playerTargetPos = p.player.transform.position + toAdd;
+                    var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
+                    var playerGroundDist = playerGround - playerTargetPos;
+                    playerTargetPos += playerGroundDist;
 
                     while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
                         p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
