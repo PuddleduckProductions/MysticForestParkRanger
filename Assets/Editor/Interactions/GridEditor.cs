@@ -17,7 +17,7 @@ namespace Interactions {
             gridDimensions = serializedObject.FindProperty("gridDimensions");
         }
 
-        HashSet<Vector2Int> objectColors = new HashSet<Vector2Int>();
+        Dictionary<Vector2Int, string> objectNames = new Dictionary<Vector2Int, string>();
         HashSet<Vector2Int> errorCells = new HashSet<Vector2Int>();
         protected void addGridObject(ref List<GridGroup.Cell> children, BoxCollider c, GridGroup group) {
             List<GridGroup.Cell> toAdd = group.BoundsToCells(c);
@@ -26,14 +26,14 @@ namespace Interactions {
             }
 
             foreach (var cell in toAdd) {
-                if (objectColors.Contains(cell.pos)) {
+                if (objectNames.TryGetValue(cell.pos, out string name)) {
                     errorCells.Add(cell.pos);
                     if (!hadErrors) {
-                        Debug.LogError($"{c.name} shares a cell with another object at {cell.pos}", c.gameObject);
+                        Debug.LogError($"{c.name} shares a cell with {name} at {cell.pos}", c.gameObject);
                     }
                     return;
                 } else {
-                    objectColors.Add(cell.pos);
+                    objectNames.Add(cell.pos, c.name);
                 }
             }
 
@@ -80,7 +80,7 @@ namespace Interactions {
                 }
             }
 
-            objectColors.Clear();
+            objectNames.Clear();
             hadErrors = errorCells.Count > 0;
             errorCells.Clear();
 
