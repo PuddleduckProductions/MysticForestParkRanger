@@ -35,7 +35,7 @@ namespace SceneValidation {
                     Assert.IsTrue(manager.PathExists(i.inkKnot));
                 }
             }
-        }
+        }   
     }
 
     public class PlayScenesProvider : IEnumerable {
