@@ -9,7 +9,9 @@ namespace Interactions.Behaviors {
         public override void Interact() {
             var player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
             var worldPos = interactionObject.transform.position + teleportLocal;
-            player.Move(worldPos - player.transform.position);
+            player.enabled = false;
+            player.transform.position = worldPos;
+            player.enabled = true;
         }
 
     }
