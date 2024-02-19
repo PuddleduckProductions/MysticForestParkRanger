@@ -77,8 +77,6 @@ namespace Interactions {
 
                     var pos = new Vector2Int(x, y);
                     cell.FindPropertyRelative("pos").vector2IntValue = pos;
-
-                    cell.FindPropertyRelative("rotation").quaternionValue = Quaternion.identity;
                 }
             }
 
