@@ -21,7 +21,7 @@ Y-axis may be added later? Not sure yet.
 ## Two: A child game object with a Pushable Interaction 
 This should be a child of the GridGroup component.
 
-![Grid Object](~/assets/images/interactions/interaction.md)
+![Grid Object](~/assets/images/interactions/grid-object.png)
 
 If you have a pushable interaction component that doesn't also have the `GridObject` component, press CTRL+ALT+R with the object selected. It should refresh and add the component.
 
