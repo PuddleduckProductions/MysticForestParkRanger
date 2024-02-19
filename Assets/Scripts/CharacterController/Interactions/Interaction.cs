@@ -143,11 +143,14 @@ namespace Interactions {
             Vector3 groundOffset = Vector3.zero;
 
             Vector3 pushableGetGround(Vector3 inPos) {
-                if (Physics.Raycast(inPos, -Vector3.up, out RaycastHit hit)) {
-                    return hit.point;
-                } else {
-                    return -groundOffset;
+                RaycastHit[] hits = Physics.RaycastAll(inPos, Vector3.down);
+                foreach (var hit in hits) {
+                    if (hit.collider.gameObject != interactionObject.gameObject) {
+                        return hit.point;
+                    }
                 }
+                Debug.LogError("Could not get ground.");
+                return inPos;
             }
 
             /// <summary>
@@ -166,7 +169,7 @@ namespace Interactions {
 
                     controller.moveEnabled = false;
 
-                    groundOffset = pushableGetGround(interactionObject.transform.position) - interactionObject.transform.position;
+                    groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
 
                 } else {
                     // Force InteractionManager to call EndInteraction.
@@ -188,8 +191,9 @@ namespace Interactions {
                         Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
                     var targetPos = p.gridObject.transform.position + toAdd;
 
-                    var ground = p.pushableGetGround(targetPos) + p.groundOffset;
-                    var groundDist = targetPos - ground;
+                    // FIXME: This. It's not a great solution for snapping to ground.
+                    var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
+                    var groundDist = ground - targetPos;
                     targetPos += groundDist;
 
                     var playerTargetPos = p.player.transform.position + toAdd + groundDist;
