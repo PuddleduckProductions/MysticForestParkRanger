@@ -7,7 +7,9 @@ namespace Interactions.Behaviors {
         public Vector3 teleportLocal;
 
         public override void Interact() {
-            GameObject.FindGameObjectWithTag("Player").transform.position = interactionObject.transform.position + teleportLocal;
+            var player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
+            var worldPos = interactionObject.transform.position + teleportLocal;
+            player.Move(worldPos - player.transform.position);
         }
 
     }
