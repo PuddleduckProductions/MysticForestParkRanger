@@ -108,7 +108,11 @@ namespace Interactions {
                     } else if (cell.pos == Vector2Int.zero) {
                         Handles.color = Color.blue;
                     } else {
-                        Handles.color = Color.yellow;
+                        if (cell.type == Cell.CellType.MAP_FULL) {
+                            Handles.color = Color.black;
+                        } else {
+                            Handles.color = Color.yellow;
+                        }
                         var smallest = Mathf.Min(box.scale.x, box.scale.y, box.scale.z);
                         if (Handles.Button(box.center, Quaternion.identity, smallest / 4f, smallest / 2f, Handles.DotHandleCap)) {
                             var cellToChange = cells.GetArrayElementAtIndex((cell.pos.y * gridDimensions.vector2IntValue.x) + cell.pos.x);
