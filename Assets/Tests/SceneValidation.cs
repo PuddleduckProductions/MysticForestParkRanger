@@ -1,14 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
 using InkTools;
 using Interactions.Behaviors;
 using Interactions;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEditor;
+using UnityEngine.SceneManagement;
 
 namespace SceneValidation {
+    [TestFixture]
+    [TestFixtureSource(typeof(PlayScenesProvider))]
     public class SceneValidation {
+        protected string scenePath;
+
+        public SceneValidation(string scenePath) {
+            this.scenePath = scenePath;
+        }
+
+        [OneTimeSetUp]
+        public void SetUp() {
+            SceneManager.LoadScene(this.scenePath);
+        }
+
         // TODO: This needs to be a play mode test.
         [Test]
         public void ValidateInkInteractions() {
@@ -22,19 +36,17 @@ namespace SceneValidation {
                 }
             }
         }
-        // A Test behaves as an ordinary method
-        [Test]
-        public void SceneValidationSimplePasses() {
-            // Use the Assert class to test conditions
-        }
+    }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator SceneValidationWithEnumeratorPasses() {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+    public class PlayScenesProvider : IEnumerable {
+        public IEnumerator GetEnumerator() {
+            foreach (var scene in EditorBuildSettings.scenes) {
+                if (!scene.enabled || scene.path == null) {
+                    continue;
+                }
+
+                yield return scene.path;
+            }
         }
     }
 }
