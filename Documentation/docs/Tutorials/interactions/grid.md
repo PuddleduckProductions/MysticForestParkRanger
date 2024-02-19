@@ -7,8 +7,9 @@ For anything involving a grid (right now just pushing and pulling), you need two
 
 You configure this like you would any grid, and it will update you to show you how your grid is configured.
 
-- RED means that the space is occupied.
+- GREEN means that the space is occupied.
 - BLACK means that the space is empty.
+- RED represents an error that needs to be resolved (usually two cells that have the same object occupying their space). You can check the console to learn more.
 - BLUE represents the grid origin (i.e.: 0,0).
 
 There are yellow squares at the center of each empty space (apart from the origin, since I don't want to change the colors there). If you click on one, it will change the square to RED to indicate that the space is now blocked. Click it again to change it back to an empty space.
