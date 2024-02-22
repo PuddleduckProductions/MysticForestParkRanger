@@ -8,8 +8,6 @@
 *.shader text
 
 Documentation/docfxfix.sh eol=lf
-Info.plist eol=lf
-Settings.json eol=lf
 
 # Optionally collapse Unity-generated files on GitHub diffs
 # [attr]unity-yaml        merge=unityyamlmerge text linguist-language=yaml linguist-generated

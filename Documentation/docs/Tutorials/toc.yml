@@ -1,8 +1,5 @@
 - name: Interaction System
-  href: interactions/interaction.md
-  items:
-    - name: The Grid System
-      href: interactions/grid.md
+  href: interaction.md
 - name: Adding Dynamic Cameras
   href: cameras.md
 - name: Unity Merge Tools

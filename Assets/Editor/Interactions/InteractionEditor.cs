@@ -23,7 +23,7 @@ namespace Interactions {
         /// Assign our <see cref="Interaction.behavior"/> based on the given <see cref="Interaction.type"/>.
         /// </summary>
         /// <param name="interaction">The parent to give our <see cref="InteractionBehavior"/></param>
-        public static void CreateBehavior(Interaction interaction, SerializedProperty behavior, SerializedObject so) {
+        private void CreateBehavior(Interaction interaction) {
             var behaviorAssembly = typeof(InteractionBehavior).Assembly;
             var subTypes = behaviorAssembly.GetTypes().Where(t => t.BaseType == typeof(InteractionBehavior));
 
@@ -37,7 +37,7 @@ namespace Interactions {
             if (constructor != null) {
                 behavior.managedReferenceValue = constructor.Invoke(new object[] { interaction });
             }
-            so.ApplyModifiedProperties();
+            serializedObject.ApplyModifiedProperties();
         }
 
         public override void OnInspectorGUI() {
@@ -47,7 +47,7 @@ namespace Interactions {
             InteractionType initialType = interaction.type;
             base.DrawDefaultInspector();
             if (interaction.behavior == null || initialType != interaction.type) {
-                CreateBehavior(interaction, behavior, serializedObject);
+                CreateBehavior(interaction);
             }
         }
     }

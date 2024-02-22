@@ -14,8 +14,7 @@ Each of the interaction types you could use are described under [Interaction.Beh
 ### Bugs
 Right now the system isn't fully tested and can have some bugs. Some things to test:
 1. If you open Unity Tests (Window->General->Test Runner), do all of the VerifyInteraction tests (under Edit Mode) return success?
-2. Try selecting the interactions that are giving you errors, and press CTRL+ALT+R (or Puddleduck->Interactions->Refresh Selected Interactions). That should refresh any data that hasn't been updated. This will clear any changes you have made though, so you will have to input that data again.
-3. Are there multiple main cameras in a scene? (There should only be one)
+2. Are there multiple main cameras in a scene? (There should only be one)
 
 If you find a bug, please report it in [issues](https://github.com/PuddleduckProductions/MysticForestParkRanger/issues) and label it to programming!
 

@@ -11,8 +11,6 @@ items:
   - Interactions.Behaviors.PickAndPutInteraction
   - Interactions.Behaviors.PushableInteraction
   - Interactions.Behaviors.PutTrigger
-  - Interactions.Behaviors.ShowImageInteraction
-  - Interactions.Behaviors.TeleportInteraction
   langs:
   - csharp
   - vb
@@ -50,7 +48,6 @@ references:
   fullName: Interactions.Behaviors.PickAndPutInteraction
 - uid: Interactions.Behaviors.PushableInteraction
   commentId: T:Interactions.Behaviors.PushableInteraction
-  parent: Interactions.Behaviors
   href: Interactions.Behaviors.PushableInteraction.html
   name: PushableInteraction
   nameWithType: PushableInteraction
@@ -61,18 +58,6 @@ references:
   name: PutTrigger
   nameWithType: PutTrigger
   fullName: Interactions.Behaviors.PutTrigger
-- uid: Interactions.Behaviors.ShowImageInteraction
-  commentId: T:Interactions.Behaviors.ShowImageInteraction
-  href: Interactions.Behaviors.ShowImageInteraction.html
-  name: ShowImageInteraction
-  nameWithType: ShowImageInteraction
-  fullName: Interactions.Behaviors.ShowImageInteraction
-- uid: Interactions.Behaviors.TeleportInteraction
-  commentId: T:Interactions.Behaviors.TeleportInteraction
-  href: Interactions.Behaviors.TeleportInteraction.html
-  name: TeleportInteraction
-  nameWithType: TeleportInteraction
-  fullName: Interactions.Behaviors.TeleportInteraction
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
   href: Interactions.html

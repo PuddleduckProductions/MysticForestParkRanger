@@ -508,7 +508,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: StartDialog
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 76
+    startLine: 74
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -540,7 +540,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: AdvanceStory
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 87
+    startLine: 85
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -566,7 +566,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EvaluateStory
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 100
+    startLine: 98
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -592,7 +592,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: TryFindCharacter
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 117
+    startLine: 115
   assemblies:
   - ScriptAssembly
   namespace: InkTools
@@ -628,7 +628,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: DrawDialog
     path: ../Assets/Scripts/Ink/InkManager.cs
-    startLine: 125
+    startLine: 123
   assemblies:
   - ScriptAssembly
   namespace: InkTools

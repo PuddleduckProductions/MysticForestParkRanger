@@ -21,7 +21,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionState
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -46,7 +46,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EMPTY
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -72,7 +72,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: HOLDING_INTERACTION
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - ScriptAssembly
   namespace: Interactions

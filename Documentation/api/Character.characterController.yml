@@ -5,13 +5,9 @@ items:
   id: characterController
   parent: Character
   children:
-  - Character.characterController.animator
-  - Character.characterController.input
-  - Character.characterController.intendedMove
   - Character.characterController.moveEnabled
   - Character.characterController.movementSpeed
   - Character.characterController.movementSpeedMultiplier
-  - Character.characterController.pushForce
   - Character.characterController.relativeDirectionalMovement
   - Character.characterController.rotationSpeed
   - Character.characterController.rotationSpeedMultiplier
@@ -184,43 +180,6 @@ items:
     return:
       type: System.Boolean
     content.vb: Public moveEnabled As Boolean
-- uid: Character.characterController.input
-  commentId: F:Character.characterController.input
-  id: input
-  parent: Character.characterController
-  langs:
-  - csharp
-  - vb
-  name: input
-  nameWithType: characterController.input
-  fullName: Character.characterController.input
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: input
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 10
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      public Vector2 input
-    return:
-      type: UnityEngine.Vector2
-    content.vb: >-
-      <HideInInspector>
-
-      Public input As Vector2
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
 - uid: Character.characterController.movementSpeed
   commentId: F:Character.characterController.movementSpeed
   id: movementSpeed
@@ -239,7 +198,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: movementSpeed
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -266,7 +225,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: rotationSpeed
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -293,7 +252,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: relativeDirectionalMovement
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -320,7 +279,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: rotationSpeedMultiplier
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -347,7 +306,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: movementSpeedMultiplier
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -356,89 +315,6 @@ items:
     return:
       type: System.Single
     content.vb: Public movementSpeedMultiplier As Single
-- uid: Character.characterController.pushForce
-  commentId: F:Character.characterController.pushForce
-  id: pushForce
-  parent: Character.characterController
-  langs:
-  - csharp
-  - vb
-  name: pushForce
-  nameWithType: characterController.pushForce
-  fullName: Character.characterController.pushForce
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: pushForce
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 18
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: public float pushForce
-    return:
-      type: System.Single
-    content.vb: Public pushForce As Single
-- uid: Character.characterController.animator
-  commentId: F:Character.characterController.animator
-  id: animator
-  parent: Character.characterController
-  langs:
-  - csharp
-  - vb
-  name: animator
-  nameWithType: characterController.animator
-  fullName: Character.characterController.animator
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: animator
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 22
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: public Animator animator
-    return:
-      type: UnityEngine.Animator
-    content.vb: Public animator As Animator
-- uid: Character.characterController.intendedMove
-  commentId: P:Character.characterController.intendedMove
-  id: intendedMove
-  parent: Character.characterController
-  langs:
-  - csharp
-  - vb
-  name: intendedMove
-  nameWithType: characterController.intendedMove
-  fullName: Character.characterController.intendedMove
-  type: Property
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: intendedMove
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 49
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: public Vector3 intendedMove { get; }
-    parameters: []
-    return:
-      type: UnityEngine.Vector3
-    content.vb: Public ReadOnly Property intendedMove As Vector3
-  overload: Character.characterController.intendedMove*
 references:
 - uid: Character
   commentId: N:Character
@@ -4805,13 +4681,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: UnityEngine.Vector2
-  commentId: T:UnityEngine.Vector2
-  parent: UnityEngine
-  isExternal: true
-  name: Vector2
-  nameWithType: Vector2
-  fullName: UnityEngine.Vector2
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -4823,23 +4692,3 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: UnityEngine.Animator
-  commentId: T:UnityEngine.Animator
-  parent: UnityEngine
-  isExternal: true
-  name: Animator
-  nameWithType: Animator
-  fullName: UnityEngine.Animator
-- uid: Character.characterController.intendedMove*
-  commentId: Overload:Character.characterController.intendedMove
-  href: Character.characterController.html#Character_characterController_intendedMove
-  name: intendedMove
-  nameWithType: characterController.intendedMove
-  fullName: Character.characterController.intendedMove
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3

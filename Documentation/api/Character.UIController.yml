@@ -6,7 +6,6 @@ items:
   parent: Character
   children:
   - Character.UIController.OnInteract(UnityEngine.InputSystem.InputValue)
-  - Character.UIController.OnPause(UnityEngine.InputSystem.InputValue)
   - Character.UIController.onInteract
   langs:
   - csharp
@@ -170,7 +169,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onInteract
     path: ../Assets/Scripts/CharacterController/UIController.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -197,7 +196,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInteract
     path: ../Assets/Scripts/CharacterController/UIController.cs
-    startLine: 18
+    startLine: 17
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -210,35 +209,6 @@ items:
       type: UnityEngine.InputSystem.InputValue
     content.vb: Public Sub OnInteract(value As InputValue)
   overload: Character.UIController.OnInteract*
-- uid: Character.UIController.OnPause(UnityEngine.InputSystem.InputValue)
-  commentId: M:Character.UIController.OnPause(UnityEngine.InputSystem.InputValue)
-  id: OnPause(UnityEngine.InputSystem.InputValue)
-  parent: Character.UIController
-  langs:
-  - csharp
-  - vb
-  name: OnPause(InputValue)
-  nameWithType: UIController.OnPause(InputValue)
-  fullName: Character.UIController.OnPause(UnityEngine.InputSystem.InputValue)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/UIController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: OnPause
-    path: ../Assets/Scripts/CharacterController/UIController.cs
-    startLine: 22
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: public void OnPause(InputValue value)
-    parameters:
-    - id: value
-      type: UnityEngine.InputSystem.InputValue
-    content.vb: Public Sub OnPause(value As InputValue)
-  overload: Character.UIController.OnPause*
 references:
 - uid: Character
   commentId: N:Character
@@ -4771,9 +4741,3 @@ references:
   - uid: UnityEngine.InputSystem
     name: InputSystem
     isExternal: true
-- uid: Character.UIController.OnPause*
-  commentId: Overload:Character.UIController.OnPause
-  href: Character.UIController.html#Character_UIController_OnPause_UnityEngine_InputSystem_InputValue_
-  name: OnPause
-  nameWithType: UIController.OnPause
-  fullName: Character.UIController.OnPause

@@ -30,7 +30,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionManager
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -180,7 +180,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionRange
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -207,7 +207,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: extentsScale
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -246,7 +246,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: mainCamera
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -273,7 +273,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: player
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -300,7 +300,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionsInScene
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 20
+    startLine: 19
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -327,7 +327,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionButton
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -354,7 +354,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionMode
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -381,7 +381,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: UpdateMode
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 51
+    startLine: 50
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -410,7 +410,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: StopCurrentInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 66
+    startLine: 65
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -441,7 +441,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 93
+    startLine: 92
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -469,7 +469,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: FindClosestInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 97
+    startLine: 96
   assemblies:
   - ScriptAssembly
   namespace: Interactions

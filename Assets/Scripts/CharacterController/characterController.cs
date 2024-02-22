@@ -33,31 +33,32 @@ namespace Character {
         // Update is called once per frame
         void Update() {
             if (moveEnabled) {
-                c.SimpleMove(intendedMove * movementSpeed);
-            }
+                float currRotationSpeed = rotationSpeed;
+                float currMoveSpeed = movementSpeed;
+                if (input.y <= 0) {
+                    currRotationSpeed *= rotationSpeedMultiplier; // Decrease rotation speed if not moving forward
+                    currMoveSpeed *= movementSpeed * movementSpeedMultiplier;
+                }
 
-            var xzVel = new Vector3(c.velocity.x, 0, c.velocity.z);
-
-            if (relativeDirectionalMovement) {
-                transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
-            } else if (xzVel != Vector3.zero) {
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(xzVel, transform.up), rotationSpeed * Time.deltaTime);
-            }
-
-            animator.SetBool("walking", xzVel.magnitude > 0.01f);
-        }
-
-        public Vector3 intendedMove {
-            get {
                 Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
 
                 Vector3 simplifiedForward = relativeDirectionalMovement ? transform.forward : simplifiedRot * Vector3.forward;
                 Vector3 simplifiedRight = relativeDirectionalMovement ? transform.right : simplifiedRot * Vector3.right;
 
                 Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x);
-                move.Normalize();
 
-                return move;
+
+                if (relativeDirectionalMovement) {
+                    transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
+                } else if (move != Vector3.zero) {
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), currRotationSpeed * Time.deltaTime);
+                }
+                move.Normalize();
+                c.SimpleMove(move * movementSpeed);
+
+                bool isWalking = input.magnitude > 0.01f;
+
+                animator.SetBool("walking", isWalking);
             }
         }
 
