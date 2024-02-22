@@ -3,86 +3,11 @@ guid: 9ac26d33586ef0d4fb002ae897abf0f5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blue
-    second: {fileID: 2100000, guid: efd22530ef1adae4bb2bb049ea2ae07f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brown
-    second: {fileID: 2100000, guid: 11137553c360b414b98df089d49c2847, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cyan
-    second: {fileID: 2100000, guid: efd22530ef1adae4bb2bb049ea2ae07f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dark Green
-    second: {fileID: 2100000, guid: 88d525bf9414bf24fa8a07fe7ae04a7f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Green
-    second: {fileID: 2100000, guid: 077d169a7de033d4fb2644fa50ee0264, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grey
-    second: {fileID: 2100000, guid: 12e5bcc6bef4a714599e79df5b49f826, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Light Brown
-    second: {fileID: 2100000, guid: cd82bcce009be1c4f9d507e57ef9458a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Light Yellow
-    second: {fileID: 2100000, guid: c3611031f4c2b3f4a877ff1773ac8a0e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LightRed
-    second: {fileID: 2100000, guid: fd21b0ca26923a1438ebd7427b21f21d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Log Brown
-    second: {fileID: 2100000, guid: 11137553c360b414b98df089d49c2847, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Log Light Brown
-    second: {fileID: 2100000, guid: cd82bcce009be1c4f9d507e57ef9458a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Orange
-    second: {fileID: 2100000, guid: c3611031f4c2b3f4a877ff1773ac8a0e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Red
-    second: {fileID: 2100000, guid: 5ef454e44a8e22f40878472d76694621, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Silver
-    second: {fileID: 2100000, guid: 95b0efdda0d7f134bbcf9a52bb91be66, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White
-    second: {fileID: 2100000, guid: 4073a8130faf60046a4e9a8586c10a19, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
-    materialSearch: 2
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
