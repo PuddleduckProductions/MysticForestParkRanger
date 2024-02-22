@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using UnityEditor;
+using System.Collections.Generic;
 
 namespace Interactions {
     public class GridGroup : MonoBehaviour {
@@ -23,9 +23,11 @@ namespace Interactions {
         public struct Box {
             public Vector3 scale;
             public Vector3 center;
-            public Box(Vector3 center, Vector3 scale) {
+            public Vector3[] edges;
+            public Box(Vector3 center, Vector3 scale, Vector3[] edges) {
                 this.center = center;
                 this.scale = scale;
+                this.edges = edges;
             }
         }
 
@@ -75,18 +77,92 @@ namespace Interactions {
 
         public Box CellToWorld(Cell cell) {
             var corner = transform.position + gridOffset + new Vector3(cell.pos.x * (cellSize.x + cellSpacing.x), 0, cell.pos.y * (cellSize.z + cellSpacing.z));
-            return new Box(corner + cellSize/2, cellSize);
+
+            var forward = Vector3.forward * cellSize.z;
+            var up = Vector3.up * cellSize.y;
+            var right = Vector3.right * cellSize.x;
+
+            var edges = new Vector3[] {
+                // Left face
+                corner, corner + forward,
+                corner + forward, corner + forward + up,
+                corner + forward + up, corner + up,
+                corner + up, corner,
+
+                // Right face
+                corner, corner + right,
+                corner + right, corner + right + forward,
+                corner + right + forward, corner + right + forward + up,
+                corner + right + forward + up, corner + right + up,
+                corner + right + up, corner + right,
+
+                // Connect the three missing points
+                corner + up, corner + up + right,
+                corner + up + forward, corner + up + forward + right,
+                corner + forward, corner + forward + right
+
+            };
+
+            Vector3 applyRot(Vector3 point) {
+                return (transform.rotation * (point - transform.position)) + transform.position;
+            }
+            for (int i = 0; i < edges.Length; i++) {
+                edges[i] = applyRot(edges[i]);
+            }
+
+            var center = applyRot(corner + cellSize / 2);
+            
+            return new Box(center, cellSize, edges);
         }
 
-        public Cell? WorldToCell(Vector3 pos) {
-            Vector3 localPos = new Vector3(pos.x, 0, pos.z) - (transform.position + gridOffset);
-            int gridX = Mathf.FloorToInt(localPos.x / (cellSize.x + cellSpacing.x));
-            int gridY = Mathf.FloorToInt(localPos.z / (cellSize.z + cellSpacing.z));
-            if (gridX < 0 || gridX >= gridDimensions.x || gridY < 0 || gridY >= gridDimensions.y) {
+        protected Vector2Int LocalToGridXY(Vector3 pos) {
+            int gridX = Mathf.FloorToInt(pos.x / (cellSize.x + cellSpacing.x));
+            int gridY = Mathf.FloorToInt(pos.z / (cellSize.z + cellSpacing.z));
+            return new Vector2Int(gridX, gridY);
+        }
+
+        public Cell? LocalToCell(Vector3 pos) {
+            //Vector3 localPos = PointToLocal(pos);
+            //localPos -= gridOffset;
+            //Debug.Log($"{localPos} {pos}");
+            //Vector3 localPos = transform.rotation * (pos - (transform.position + gridOffset));
+            Vector2Int gridPos = LocalToGridXY(pos);
+            if (gridPos.x < 0 || gridPos.x >= gridDimensions.x || gridPos.y < 0 || gridPos.y >= gridDimensions.y) {
                 return null;
             }
             // TODO: Figure out multiple cells together to make one object.
-            return new Cell(GridGroup.Cell.CellType.FULL, new Vector2Int(gridX, gridY));
+            return new Cell(GridGroup.Cell.CellType.FULL, gridPos);
+        }
+
+        public Vector3 PointToLocal(Vector3 pos) {
+            return transform.InverseTransformPoint(pos) - gridOffset;
+        }
+
+        public List<Cell> BoundsToCells(BoxCollider c) {
+            var toAdd = new List<Cell>();
+
+            var start = PointToLocal(c.transform.TransformPoint(c.center - c.size/2));
+            // Get the nearest point on the grid:
+            var startXY = LocalToGridXY(start);
+            // Then expand it back out to local space:
+            start = new Vector3(startXY.x * (cellSize.x + cellSpacing.x), start.y, startXY.y * (cellSize.z + cellSpacing.z));
+
+            var end = PointToLocal(c.transform.TransformPoint(c.center + c.size/2));
+            var endXY = LocalToGridXY(end + cellSize + cellSpacing);
+            end = new Vector3(endXY.x * (cellSize.x + cellSpacing.x), end.y, endXY.y * (cellSize.z + cellSpacing.z));
+
+            for (float x = start.x; x < end.x; x += cellSize.x + cellSpacing.x) {
+                for (float y = start.z; y < end.z; y += cellSize.z + cellSpacing.z) {
+                    // TODO: Figure out multiple cells together to make one object.
+                    var cell = LocalToCell(new Vector3(x, 0, y));
+                    if (cell == null) {
+                        Debug.LogWarning($"{c.name} does not fit in grid at {x},{y}");
+                        return null;
+                    }
+                    toAdd.Add((GridGroup.Cell)cell);
+                }
+            }
+            return toAdd;
         }
 
 

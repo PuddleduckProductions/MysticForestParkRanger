@@ -3,10 +3,9 @@ items:
 - uid: MysticForestParkRanger
   id: MysticForestParkRanger
   children:
-  - MysticForestParkRanger.BoolArray2D
-  - MysticForestParkRanger.BoolArray2DDrawer
-  - MysticForestParkRanger.GridGroup
-  - MysticForestParkRanger.test
+  - MysticForestParkRanger.CameraZone
+  - MysticForestParkRanger.InteractionShortcuts
+  - MysticForestParkRanger.PauseManager
   langs:
   - csharp
   - vb
@@ -17,27 +16,21 @@ items:
   assemblies:
   - EditorAssembly
 references:
-- uid: MysticForestParkRanger.BoolArray2D
-  commentId: T:MysticForestParkRanger.BoolArray2D
-  href: BoolArray2D.html
-  name: BoolArray2D
-  nameWithType: BoolArray2D
-  fullName: BoolArray2D
-- uid: MysticForestParkRanger.BoolArray2DDrawer
-  commentId: T:MysticForestParkRanger.BoolArray2DDrawer
-  href: BoolArray2DDrawer.html
-  name: BoolArray2DDrawer
-  nameWithType: BoolArray2DDrawer
-  fullName: BoolArray2DDrawer
-- uid: MysticForestParkRanger.GridGroup
-  commentId: T:MysticForestParkRanger.GridGroup
-  href: GridGroup.html
-  name: GridGroup
-  nameWithType: GridGroup
-  fullName: GridGroup
-- uid: MysticForestParkRanger.test
-  commentId: T:MysticForestParkRanger.test
-  href: test.html
-  name: test
-  nameWithType: test
-  fullName: test
+- uid: MysticForestParkRanger.CameraZone
+  commentId: T:MysticForestParkRanger.CameraZone
+  href: CameraZone.html
+  name: CameraZone
+  nameWithType: CameraZone
+  fullName: CameraZone
+- uid: MysticForestParkRanger.InteractionShortcuts
+  commentId: T:MysticForestParkRanger.InteractionShortcuts
+  href: InteractionShortcuts.html
+  name: InteractionShortcuts
+  nameWithType: InteractionShortcuts
+  fullName: InteractionShortcuts
+- uid: MysticForestParkRanger.PauseManager
+  commentId: T:MysticForestParkRanger.PauseManager
+  href: PauseManager.html
+  name: PauseManager
+  nameWithType: PauseManager
+  fullName: PauseManager

@@ -11,31 +11,29 @@ namespace Interactions {
     public class GridEditor : Editor {
 
         SerializedProperty cells;
-        SerializedProperty cellSize;
-        SerializedProperty cellSpacing;
         SerializedProperty gridDimensions;
         private void OnEnable() {
             cells = serializedObject.FindProperty("cells");
-            cellSize = serializedObject.FindProperty("cellSize");
-            cellSpacing = serializedObject.FindProperty("cellSpacing");
             gridDimensions = serializedObject.FindProperty("gridDimensions");
         }
 
-        protected void addGridObject(ref List<GridGroup.Cell> children, Collider c, GridGroup group) {
+        Dictionary<Vector2Int, string> objectNames = new Dictionary<Vector2Int, string>();
+        HashSet<Vector2Int> errorCells = new HashSet<Vector2Int>();
+        protected void addGridObject(ref List<GridGroup.Cell> children, BoxCollider c, GridGroup group) {
+            List<GridGroup.Cell> toAdd = group.BoundsToCells(c);
+            if (toAdd == null) {
+                return;
+            }
 
-            List<GridGroup.Cell> toAdd = new List<GridGroup.Cell>();
-            var start = c.bounds.center - c.bounds.extents;
-            var end = c.bounds.center + c.bounds.extents;
-
-            for (float x = start.x; x < end.x; x += cellSize.vector3Value.x + cellSpacing.vector3Value.x) {
-                for (float y = start.z; y < end.z; y += cellSize.vector3Value.z + cellSpacing.vector3Value.z) {
-                    // TODO: Figure out multiple cells together to make one object.
-                    var cell = group.WorldToCell(new Vector3(x, 0, y));
-                    if (cell == null) {
-                        Debug.LogWarning($"{c.name} does not fit in grid at {x},{y}");
-                        return;
+            foreach (var cell in toAdd) {
+                if (objectNames.TryGetValue(cell.pos, out string name)) {
+                    errorCells.Add(cell.pos);
+                    if (!hadErrors) {
+                        Debug.LogError($"{c.name} shares a cell with {name} at {cell.pos}", c.gameObject);
                     }
-                    toAdd.Add((GridGroup.Cell)cell);
+                    return;
+                } else {
+                    objectNames.Add(cell.pos, c.name);
                 }
             }
 
@@ -44,6 +42,7 @@ namespace Interactions {
                 go.manager = group;
             }
 
+
             children.AddRange(toAdd);
         }
 
@@ -51,12 +50,15 @@ namespace Interactions {
             var group = (GridGroup)serializedObject.targetObject;
             List<GridGroup.Cell> children = new List<GridGroup.Cell>();
             for (int i = 0; i < group.transform.childCount; i++) {
-                if (group.transform.GetChild(i).TryGetComponent(out Collider c)) {
+                var child = group.transform.GetChild(i);
+                if (child.gameObject.activeInHierarchy && child.TryGetComponent(out BoxCollider c)) {
                     addGridObject(ref children, c, group);
                 }
             }
             return children;
         }
+
+        bool hadErrors = false;
 
         public override void OnInspectorGUI() {
             base.OnInspectorGUI();
@@ -65,7 +67,6 @@ namespace Interactions {
 
             for (int x = 0; x < gridSize.x; x++) {
                 for (int y = 0; y < gridSize.y; y++) {
-                    // TODO: Get game objects involved.
                     var cell = cells.GetArrayElementAtIndex(y * gridSize.x + x);
                     var typeValue = cell.FindPropertyRelative("type").enumValueIndex;
                     // Since we no longer clear the array (to store MAP_FULL enums),
@@ -79,6 +80,10 @@ namespace Interactions {
                 }
             }
 
+            objectNames.Clear();
+            hadErrors = errorCells.Count > 0;
+            errorCells.Clear();
+
             var children = gridObjectsToAdd();
             foreach (var child in children) {
                 var cell = cells.GetArrayElementAtIndex((child.pos.y * gridSize.x) + child.pos.x);
@@ -91,32 +96,46 @@ namespace Interactions {
             var group = (GridGroup)target;
             foreach (var cell in group.cells) {
                 var box = group.CellToWorld(cell);
-                if (cell.type == Cell.CellType.FULL) {
+                Handles.color = Color.black;
+                if (errorCells.Contains(cell.pos)) {
                     Handles.color = Color.red;
-                } else if (cell.pos == Vector2Int.zero) {
-                    Handles.color = Color.blue;
-                } else {
-                    Handles.color = Color.yellow;
-                    var smallest = Mathf.Min(box.scale.x, box.scale.y, box.scale.z);
-                    if (Handles.Button(box.center, Quaternion.identity, smallest/4f, smallest/2f, Handles.DotHandleCap)) {
-                        var cellToChange = cells.GetArrayElementAtIndex((cell.pos.y * gridDimensions.vector2IntValue.x) + cell.pos.x);
-
-                        var type = cellToChange.FindPropertyRelative("type");
-                        if (type.enumValueIndex == 2) {
-                            type.enumValueIndex = 0;
-                        } else {
-                            type.enumValueIndex = 2;
-                        }
-                        serializedObject.ApplyModifiedProperties();
-                    }
-
-                    if (cell.type == Cell.CellType.MAP_FULL) {
-                        Handles.color = Color.red;
+                    Handles.DrawDottedLines(box.edges, 0.3f);
+                    Handles.DrawSolidDisc(box.center, group.transform.up, box.scale.x / 4f);
+                    continue;
+                } else if (errorCells.Count <= 0) {
+                    if (cell.type == Cell.CellType.FULL) {
+                        Handles.color = Color.green;
+                    } else if (cell.pos == Vector2Int.zero) {
+                        Handles.color = Color.blue;
                     } else {
+                        if (cell.type == Cell.CellType.MAP_FULL) {
+                            Handles.color = Color.black;
+                        } else {
+                            Handles.color = Color.yellow;
+                        }
+                        var smallest = Mathf.Min(box.scale.x, box.scale.y, box.scale.z);
+                        if (Handles.Button(box.center, Quaternion.identity, smallest / 4f, smallest / 2f, Handles.DotHandleCap)) {
+                            var cellToChange = cells.GetArrayElementAtIndex((cell.pos.y * gridDimensions.vector2IntValue.x) + cell.pos.x);
+
+                            var type = cellToChange.FindPropertyRelative("type");
+                            if (type.enumValueIndex == 2) {
+                                type.enumValueIndex = 0;
+                            } else {
+                                type.enumValueIndex = 2;
+                            }
+                            serializedObject.ApplyModifiedProperties();
+                        }
                         Handles.color = Color.black;
+
+                        if (cell.type == Cell.CellType.MAP_FULL) {
+                            Handles.color = Color.green;
+                        }
                     }
                 }
-                Handles.DrawWireCube(box.center, box.scale);
+
+                // Handles.DrawWireCube does not support rotation:
+                Handles.DrawLines(box.edges);
+                //Handles.DrawWireCube(box.center, box.scale);
             }
         }
 

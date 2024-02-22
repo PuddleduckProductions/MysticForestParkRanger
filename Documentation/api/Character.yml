@@ -6,6 +6,8 @@ items:
   children:
   - Character.CameraController
   - Character.CameraControllerEditor
+  - Character.CameraController_EY
+  - Character.CameraController_EYEditor
   - Character.UIController
   - Character.characterController
   langs:
@@ -31,6 +33,19 @@ references:
   name: CameraControllerEditor
   nameWithType: CameraControllerEditor
   fullName: Character.CameraControllerEditor
+- uid: Character.CameraController_EY
+  commentId: T:Character.CameraController_EY
+  parent: Character
+  href: Character.CameraController_EY.html
+  name: CameraController_EY
+  nameWithType: CameraController_EY
+  fullName: Character.CameraController_EY
+- uid: Character.CameraController_EYEditor
+  commentId: T:Character.CameraController_EYEditor
+  href: Character.CameraController_EYEditor.html
+  name: CameraController_EYEditor
+  nameWithType: CameraController_EYEditor
+  fullName: Character.CameraController_EYEditor
 - uid: Character.UIController
   commentId: T:Character.UIController
   href: Character.UIController.html

@@ -145,6 +145,20 @@ namespace Interactions {
             /// </summary>
             protected bool pushEnabled = true;
 
+            Vector3 groundOffset = Vector3.zero;
+            Vector3 playerGroundOffset = Vector3.zero;
+
+            Vector3 pushableGetGround(Vector3 inPos) {
+                RaycastHit[] hits = Physics.RaycastAll(inPos, Vector3.down);
+                foreach (var hit in hits) {
+                    if (hit.collider.gameObject != interactionObject.gameObject) {
+                        return hit.point;
+                    }
+                }
+                Debug.LogError("Could not get ground.");
+                return inPos;
+            }
+
             /// <summary>
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
             /// </summary>
@@ -160,6 +174,9 @@ namespace Interactions {
                     pushEnabled = true;
 
                     controller.moveEnabled = false;
+
+                    groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
+                    playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
 
                 } else {
                     // Force InteractionManager to call EndInteraction.
@@ -180,7 +197,18 @@ namespace Interactions {
                     var toAdd = new Vector3(Mathf.RoundToInt(dir.x) * (group.cellSpacing.x + group.cellSize.x), 0,
                         Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
                     var targetPos = p.gridObject.transform.position + toAdd;
+
+                    // FIXME: This. It's not a great solution for snapping to ground.
+                    var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
+                    var groundDist = ground - targetPos;
+                    targetPos += groundDist;
+
+
                     var playerTargetPos = p.player.transform.position + toAdd;
+                    var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
+                    var playerGroundDist = playerGround - playerTargetPos;
+                    playerTargetPos += playerGroundDist;
+
                     while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
                         p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
                         p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
@@ -368,7 +396,7 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, ShowImageInteraction, WaterPipe };
+        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, ShowImageInteraction, TeleportInteraction, WaterPipe};
         /// <summary>
         /// Should we allow interaction with this object?
         /// If this is set to false while <see cref="IsInteracting"/> is true,
