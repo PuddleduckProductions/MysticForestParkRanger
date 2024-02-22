@@ -20,6 +20,7 @@ namespace Interactions {
         protected GameObject player;
         protected Interaction[] interactionsInScene;
         protected RectTransform interactionButton;
+        public Animator animator;
 
         public enum InteractionState {
             EMPTY,
@@ -39,6 +40,7 @@ namespace Interactions {
 
         // Start is called before the first frame update
         void Start() {
+            animator = GetComponentInChildren<Animator>();
             interactionsInScene = GameObject.FindObjectsByType<Interaction>(FindObjectsSortMode.None);
             player = GameObject.FindGameObjectWithTag("Player");
             interactionButton = transform.GetChild(0).GetComponent<RectTransform>();
@@ -47,6 +49,7 @@ namespace Interactions {
             
             ((ISingleton<InteractionManager>)this).Initialize();
             ISingleton<Character.UIController>.Instance.onInteract.AddListener(Interact);
+            
         }
 
         protected void UpdateMode(InteractionState newState) {
@@ -66,6 +69,9 @@ namespace Interactions {
         /// </summary>
         public void StopCurrentInteraction() {
             if (interactionMode == InteractionState.HOLDING_INTERACTION) {
+                // interaction stopped, stop the animation
+                animator.SetBool("forwardHold",false);
+                animator.SetBool("backwardHold", false);
                 usingInteraction.EndInteraction();
                 usingInteraction = null;
                 interactionMode = InteractionState.EMPTY;
@@ -75,6 +81,7 @@ namespace Interactions {
         void Interact(bool interacted) {
             interactPressed = interacted;
             if (interactPressed) {
+                animator.SetBool("forwardHold",true);
                 if (closestInteraction != null) {
                     if (interactionMode == InteractionState.HOLDING_INTERACTION && closestInteraction != usingInteraction) {
                         closestInteraction.Interact(usingInteraction);
