@@ -69,9 +69,6 @@ namespace Interactions {
         /// </summary>
         public void StopCurrentInteraction() {
             if (interactionMode == InteractionState.HOLDING_INTERACTION) {
-                // interaction stopped, stop the animation
-                animator.SetBool("forwardHold",false);
-                animator.SetBool("backwardHold", false);
                 usingInteraction.EndInteraction();
                 usingInteraction = null;
                 interactionMode = InteractionState.EMPTY;
@@ -81,7 +78,6 @@ namespace Interactions {
         void Interact(bool interacted) {
             interactPressed = interacted;
             if (interactPressed) {
-                animator.SetBool("forwardHold",true);
                 if (closestInteraction != null) {
                     if (interactionMode == InteractionState.HOLDING_INTERACTION && closestInteraction != usingInteraction) {
                         closestInteraction.Interact(usingInteraction);
