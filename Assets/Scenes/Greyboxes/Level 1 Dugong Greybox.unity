@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2357,7 +2357,7 @@ MonoBehaviour:
       Data4: -1866025171
     Path: event:/Music/mbiraGroove
   Event: 
-  PlayEvent: 1
+  PlayEvent: 0
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
@@ -9335,6 +9335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493694500}
   - component: {fileID: 493694501}
+  - component: {fileID: 493694502}
   m_Layer: 0
   m_Name: FootSteps
   m_TagString: Untagged
@@ -9378,8 +9379,8 @@ MonoBehaviour:
       Data4: 965186114
     Path: event:/SFX/footsteps
   Event: 
-  PlayEvent: 11
-  StopEvent: 12
+  PlayEvent: 1
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -9388,6 +9389,18 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 3.2
   OverrideMaxDistance: 3.2
+--- !u!114 &493694502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493694499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1e2af43484144fca40c49db3e3fe74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &496020526
 GameObject:
   m_ObjectHideFlags: 0
@@ -12905,7 +12918,7 @@ MonoBehaviour:
       Data4: 1833252045
     Path: event:/Ambience/Ocean
   Event: 
-  PlayEvent: 3
+  PlayEvent: 0
   StopEvent: 4
   AllowFadeout: 1
   TriggerOnce: 0
@@ -24083,31 +24096,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.28235555
+      value: -36.45271
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.589964
+      value: 19.04
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.82371
+      value: 25.085363
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9267541
+      value: 0.4184073
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3741945
+      value: 0.12680449
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.030828554
+      value: 0.86070526
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012447612
+      value: -0.26084942
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24124,6 +24137,26 @@ PrefabInstance:
     - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: movementSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: footstepsEvent.Path
+      value: event:/SFX/footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: footstepsEvent.Guid.Data1
+      value: 1911532283
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: footstepsEvent.Guid.Data2
+      value: 1208113057
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: footstepsEvent.Guid.Data3
+      value: -632274295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: footstepsEvent.Guid.Data4
+      value: 965186114
       objectReference: {fileID: 0}
     - target: {fileID: 2985007778455347570, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: field of view
