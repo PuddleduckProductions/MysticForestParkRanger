@@ -12,8 +12,6 @@ namespace Character {
         public float movementSpeed = 3f;
         public float rotationSpeed = 75f;
         public bool relativeDirectionalMovement = true;
-        public float rotationSpeedMultiplier = 0.75f;
-        public float movementSpeedMultiplier = 0.5f;
 
         Camera mainCamera;
 
@@ -52,10 +50,6 @@ namespace Character {
             get {
                 float currRotationSpeed = rotationSpeed;
                 float currMoveSpeed = movementSpeed;
-                if (input.y <= 0) {
-                    currRotationSpeed *= rotationSpeedMultiplier; // Decrease rotation speed if not moving forward
-                    currMoveSpeed *= movementSpeed * movementSpeedMultiplier;
-                }
 
                 Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
 
