@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507855493973988113}
+  - component: {fileID: 3674522683427670620}
   m_Layer: 0
   m_Name: fern group
   m_TagString: Untagged
@@ -34,6 +35,27 @@ Transform:
   - {fileID: 2853348856363221108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3674522683427670620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926837690751461737}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.49388, y: 0.22786808, z: 2.0793958}
+  m_Center: {x: 0.08664916, y: 0.020000296, z: 0.18110506}
 --- !u!1 &4181964290312744049
 GameObject:
   m_ObjectHideFlags: 0
