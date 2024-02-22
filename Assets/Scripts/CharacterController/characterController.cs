@@ -63,14 +63,14 @@ namespace Character {
 
 
                 if (relativeDirectionalMovement) {
-                    transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
+                    transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
                 } else if (move != Vector3.zero) {
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), currRotationSpeed * Time.deltaTime);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), rotationSpeed * Time.deltaTime);
                 }
                 move.Normalize();
 
                 // adding acceleration
-                velocity += move * currMoveSpeed * Time.deltaTime;
+                velocity += move * movementSpeed * Time.deltaTime;
 
                 //applying friction
                 velocity *= friction;
