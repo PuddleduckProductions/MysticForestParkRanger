@@ -26,7 +26,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionBehavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -54,6 +54,8 @@ items:
   - Interactions.Behaviors.PickAndPutInteraction
   - Interactions.Behaviors.PushableInteraction
   - Interactions.Behaviors.PutTrigger
+  - Interactions.Behaviors.ShowImageInteraction
+  - Interactions.Behaviors.TeleportInteraction
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -84,7 +86,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionObject
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -133,7 +135,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 26
+    startLine: 25
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -165,7 +167,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 36
+    startLine: 35
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -200,7 +202,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 44
+    startLine: 43
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -237,7 +239,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 50
+    startLine: 49
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -270,7 +272,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 57
+    startLine: 56
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -307,7 +309,10 @@ items:
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: Should we allow interactions currently?
+  summary: >-
+    Should we allow interactions currently?
+
+    Default setting is as long as you're not holdign something else.
   example: []
   syntax:
     content: public virtual bool CanInteract(Interaction other = null)

@@ -5,6 +5,7 @@ items:
   id: InteractionEditor
   parent: Interactions
   children:
+  - Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
   - Interactions.InteractionEditor.OnInspectorGUI
   langs:
   - csharp
@@ -150,6 +151,42 @@ items:
   - type: UnityEditor.CanEditMultipleObjects
     ctor: UnityEditor.CanEditMultipleObjects.#ctor
     arguments: []
+- uid: Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
+  commentId: M:Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
+  id: CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
+  parent: Interactions.InteractionEditor
+  langs:
+  - csharp
+  - vb
+  name: CreateBehavior(Interaction, SerializedProperty, SerializedObject)
+  nameWithType: InteractionEditor.CreateBehavior(Interaction, SerializedProperty, SerializedObject)
+  fullName: Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction, UnityEditor.SerializedProperty, UnityEditor.SerializedObject)
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Interactions/InteractionEditor.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: CreateBehavior
+    path: ../Assets/Editor/Interactions/InteractionEditor.cs
+    startLine: 25
+  assemblies:
+  - EditorAssembly
+  namespace: Interactions
+  summary: Assign our <xref href="Interactions.Interaction.behavior" data-throw-if-not-resolved="false"></xref> based on the given <xref href="Interactions.Interaction.type" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static void CreateBehavior(Interaction interaction, SerializedProperty behavior, SerializedObject so)
+    parameters:
+    - id: interaction
+      type: Interactions.Interaction
+      description: The parent to give our <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref>
+    - id: behavior
+      type: UnityEditor.SerializedProperty
+    - id: so
+      type: UnityEditor.SerializedObject
+    content.vb: Public Shared Sub CreateBehavior(interaction As Interaction, behavior As SerializedProperty, so As SerializedObject)
+  overload: Interactions.InteractionEditor.CreateBehavior*
 - uid: Interactions.InteractionEditor.OnInspectorGUI
   commentId: M:Interactions.InteractionEditor.OnInspectorGUI
   id: OnInspectorGUI
@@ -3427,6 +3464,36 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: Interactions.Interaction.behavior
+  commentId: F:Interactions.Interaction.behavior
+  name: behavior
+  nameWithType: Interaction.behavior
+  fullName: Interactions.Interaction.behavior
+- uid: Interactions.Interaction.type
+  commentId: F:Interactions.Interaction.type
+  name: type
+  nameWithType: Interaction.type
+  fullName: Interactions.Interaction.type
+- uid: Interactions.InteractionEditor.CreateBehavior*
+  commentId: Overload:Interactions.InteractionEditor.CreateBehavior
+  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_CreateBehavior_Interactions_Interaction_UnityEditor_SerializedProperty_UnityEditor_SerializedObject_
+  name: CreateBehavior
+  nameWithType: InteractionEditor.CreateBehavior
+  fullName: Interactions.InteractionEditor.CreateBehavior
+- uid: UnityEditor.SerializedProperty
+  commentId: T:UnityEditor.SerializedProperty
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: UnityEditor.SerializedProperty
+- uid: UnityEditor.SerializedObject
+  commentId: T:UnityEditor.SerializedObject
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedObject
+  nameWithType: SerializedObject
+  fullName: UnityEditor.SerializedObject
 - uid: UnityEditor.Editor.OnInspectorGUI
   commentId: M:UnityEditor.Editor.OnInspectorGUI
   parent: UnityEditor.Editor

@@ -68,7 +68,9 @@ namespace InkTools {
         public bool hasInkJSON => inkJSONAsset != null;
 
         public bool PathExists(string pathName) {
-            return story.ContentAtPath(new Path(pathName)).obj != null;
+            var path = new Path(pathName);
+            var content = story.ContentAtPath(path);
+            return !(content.obj == null || content.obj == story.mainContentContainer && path.length > 0);
         }
 
         #region Flow Control

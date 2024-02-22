@@ -1,3 +1,4 @@
+using Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -75,7 +76,7 @@ namespace Interactions {
             interactPressed = interacted;
             if (interactPressed) {
                 if (closestInteraction != null) {
-                    if (interactionMode == InteractionState.HOLDING_INTERACTION) {
+                    if (interactionMode == InteractionState.HOLDING_INTERACTION && closestInteraction != usingInteraction) {
                         closestInteraction.Interact(usingInteraction);
                     } else if (interactionMode == InteractionState.EMPTY) {
                         closestInteraction.Interact();

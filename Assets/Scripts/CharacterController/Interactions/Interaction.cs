@@ -4,9 +4,8 @@ using UnityEngine.Events;
 using Utility;
 using InkTools;
 using System.Reflection;
-using Interactions.Behaviors;
-using Ink.Parsed;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Interactions {
     namespace Behaviors {
@@ -59,10 +58,11 @@ namespace Interactions {
 
             /// <summary>
             /// Should we allow interactions currently?
+            /// Default setting is as long as you're not holdign something else.
             /// </summary>
             /// <param name="other">The other object that wants to interact with us. Can be null.</param>
             /// <returns></returns>
-            public virtual bool CanInteract(Interaction other=null) { return true;  }
+            public virtual bool CanInteract(Interaction other=null) { return other == null;  }
         }
 
         /// <summary>
@@ -100,66 +100,130 @@ namespace Interactions {
 
         /// <summary>
         /// Push an object around.
-        /// TODO: Disable collider on push.
         /// </summary>
         [Serializable]
         public class PushableInteraction : InteractionBehavior {
-            public PushableInteraction(Interaction parent) : base(parent) { }
+            [SerializeField, HideInInspector]
+            GridObject gridObject;
+            public PushableInteraction(Interaction parent) : base(parent) { 
+                if (parent.TryGetComponent(out GridObject o)) {
+                    gridObject = o;
+                } else {
+                    gridObject = parent.gameObject.AddComponent<GridObject>();
+                }
+            }
             /// <summary>
-            /// Whether player is still pushing. Active until space is pressed.
+            /// Whether player is pushing. 
             /// </summary>
-
             protected bool isPushing;
             /// <summary>
             /// Our reference to the player.
             /// </summary>
             GameObject player;
+            /// <summary>
+            /// Our reference to the player's character controller script.
+            /// </summary>
+            Character.characterController controller;
 
             /// <summary>
-            /// Stored offset between the player and pushed object.
+            /// makes sure player is intentionally moving (mostly for controllers). 
             /// </summary>
-            Vector3 offset;
+            public float moveThreshold = 0.01f;
+
+            /// <summary>
+            /// How fast the object should be pushed.
+            /// </summary>
+            public float pushSpeed = 5f;
+
+            /// <summary>
+            /// Whether or not the player is currently allowed to push
+            /// </summary>
+            protected bool pushEnabled = true;
+
+            Vector3 groundOffset = Vector3.zero;
+            Vector3 playerGroundOffset = Vector3.zero;
+
+            Vector3 pushableGetGround(Vector3 inPos) {
+                RaycastHit[] hits = Physics.RaycastAll(inPos, Vector3.down);
+                foreach (var hit in hits) {
+                    if (hit.collider.gameObject != interactionObject.gameObject) {
+                        return hit.point;
+                    }
+                }
+                Debug.LogError("Could not get ground.");
+                return inPos;
+            }
 
             /// <summary>
             /// Set ourselves to push, and hook into the interaction system to get when space is pressed again (to <see cref="ReleasePush(bool)"/>
             /// </summary>
             public override void Interact() {
+                if (gridObject == null) {
+                    Debug.LogError($"Not GridObject found on interaction {interactionObject.name}. Try pressing CTRL+ALT+R with this object selected to fix.");
+                    return;
+                }
                 if (!isPushing) {
                     player = GameObject.FindGameObjectWithTag("Player");
+                    controller = player.GetComponent<Character.characterController>();
                     isPushing = true;
-                    offset = interactionObject.transform.position - player.transform.position;
-                    // TODO: Should be recursive.
-                    if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                        c.enabled = false;
-                    }
+                    pushEnabled = true;
+
+                    controller.moveEnabled = false;
+
+                    groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
+                    playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
+
                 } else {
                     // Force InteractionManager to call EndInteraction.
                     isPushing = false;
                 }
+
             }
 
             public override void EndInteraction() {
-                SnapToGrid(interactionObject.transform);
-                if (interactionObject.TryGetComponent<Collider>(out Collider c)) {
-                    c.enabled = true;
-                }
+                controller.moveEnabled = true;
             }
-            /// <summary>
-            /// Snap the object's position to the center of the nearest grid point
-            /// </summary>
-            private void SnapToGrid(Transform objTransform)
-            {
-                Vector3 position = objTransform.position;
-                //position.x = Mathf.Round(position.x / gridSize) * gridSize;
-                //position.z = Mathf.Round(position.z / gridSize) * gridSize;
-                objTransform.position = position;
+
+            // Since Coroutines can't be run from non MonoBehaviours.
+            protected static IEnumerator Push(PushableInteraction p, Vector3 dir) {
+                p.pushEnabled = false;
+                if (p.gridObject.Move(dir)) {
+                    var group = p.gridObject.manager;
+                    var toAdd = new Vector3(Mathf.RoundToInt(dir.x) * (group.cellSpacing.x + group.cellSize.x), 0,
+                        Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
+                    var targetPos = p.gridObject.transform.position + toAdd;
+
+                    // FIXME: This. It's not a great solution for snapping to ground.
+                    var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
+                    var groundDist = ground - targetPos;
+                    targetPos += groundDist;
+
+
+                    var playerTargetPos = p.player.transform.position + toAdd;
+                    var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
+                    var playerGroundDist = playerGround - playerTargetPos;
+                    playerTargetPos += playerGroundDist;
+
+                    while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
+                        p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
+                        p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
+                        yield return new WaitForEndOfFrame();
+                    }
+                    p.gridObject.transform.position = targetPos;
+                    p.player.transform.position = playerTargetPos;
+                }
+                p.pushEnabled = true;
             }
 
             /// <summary>
             /// Update the pushed object to move with us.
             /// </summary>
             public override bool Update() {
-                interactionObject.transform.position = player.transform.position + offset;
+                if (pushEnabled) {
+                    if (controller.intendedMove.magnitude > moveThreshold) {
+                        interactionObject.StartCoroutine(Push(this, controller.intendedMove));
+                    }
+                }
                 return isPushing;
             }
         }
@@ -327,7 +391,7 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction };
+        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, ShowImageInteraction, TeleportInteraction };
         /// <summary>
         /// Should we allow interaction with this object?
         /// If this is set to false while <see cref="IsInteracting"/> is true,
