@@ -1,62 +1,43 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  id: InteractionBehavior
+- uid: Interactions.Behaviors.ShowImageInteraction
+  commentId: T:Interactions.Behaviors.ShowImageInteraction
+  id: ShowImageInteraction
   parent: Interactions.Behaviors
   children:
-  - Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
-  - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  - Interactions.Behaviors.InteractionBehavior.EndInteraction
-  - Interactions.Behaviors.InteractionBehavior.Interact
-  - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  - Interactions.Behaviors.InteractionBehavior.Update
-  - Interactions.Behaviors.InteractionBehavior.interactionObject
+  - Interactions.Behaviors.ShowImageInteraction.#ctor(Interactions.Interaction)
+  - Interactions.Behaviors.ShowImageInteraction.EndInteraction
+  - Interactions.Behaviors.ShowImageInteraction.Interact
+  - Interactions.Behaviors.ShowImageInteraction.Update
+  - Interactions.Behaviors.ShowImageInteraction.imageToShow
   langs:
   - csharp
   - vb
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
+  name: ShowImageInteraction
+  nameWithType: ShowImageInteraction
+  fullName: Interactions.Behaviors.ShowImageInteraction
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/ShowImage.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionBehavior
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 16
+    id: ShowImageInteraction
+    path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
+    startLine: 9
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: >-
-    A serialized class meant to control different interaction behaviors when space is pressed on one.
-
-    This is to avoid having to attach multiple monobehaviors for anything with one interaction.
-
-    If you want to add your own, you can either use Custom (in progress), or create a subclass of InteractionBehavior.
-  example: []
   syntax:
-    content: >-
-      [Serializable]
-
-      public abstract class InteractionBehavior
-    content.vb: >-
-      <Serializable>
-
-      Public MustInherit Class InteractionBehavior
+    content: 'public class ShowImageInteraction : InteractionBehavior'
+    content.vb: Public Class ShowImageInteraction Inherits InteractionBehavior
   inheritance:
   - System.Object
-  derivedClasses:
-  - Interactions.Behaviors.CustomInteraction
-  - Interactions.Behaviors.InkInteraction
-  - Interactions.Behaviors.PickAndPutInteraction
-  - Interactions.Behaviors.PushableInteraction
-  - Interactions.Behaviors.PutTrigger
-  - Interactions.Behaviors.ShowImageInteraction
-  - Interactions.Behaviors.TeleportInteraction
+  - Interactions.Behaviors.InteractionBehavior
   inheritedMembers:
+  - Interactions.Behaviors.InteractionBehavior.interactionObject
+  - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -64,110 +45,84 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-  attributes:
-  - type: System.SerializableAttribute
-    ctor: System.SerializableAttribute.#ctor
-    arguments: []
-- uid: Interactions.Behaviors.InteractionBehavior.interactionObject
-  commentId: F:Interactions.Behaviors.InteractionBehavior.interactionObject
-  id: interactionObject
-  parent: Interactions.Behaviors.InteractionBehavior
-  langs:
-  - csharp
-  - vb
-  name: interactionObject
-  nameWithType: InteractionBehavior.interactionObject
-  fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionObject
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 23
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    Reference to the MonoBehaviour <xref href="Interactions.Interaction" data-throw-if-not-resolved="false"></xref> for accessing things like position.
-
-    It's a serialized field so we don't lose the reference to the parent when the scene starts.
-  example: []
-  syntax:
-    content: >-
-      [SerializeField]
-
-      [HideInInspector]
-
-      protected Interaction interactionObject
-    return:
-      type: Interactions.Interaction
-    content.vb: >-
-      <SerializeField>
-
-      <HideInInspector>
-
-      Protected interactionObject As Interaction
-  attributes:
-  - type: UnityEngine.SerializeField
-    ctor: UnityEngine.SerializeField.#ctor
-    arguments: []
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
+- uid: Interactions.Behaviors.ShowImageInteraction.#ctor(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.ShowImageInteraction.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
-  parent: Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors.ShowImageInteraction
   langs:
   - csharp
   - vb
-  name: InteractionBehavior(Interaction)
-  nameWithType: InteractionBehavior.InteractionBehavior(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.InteractionBehavior(Interactions.Interaction)
+  name: ShowImageInteraction(Interaction)
+  nameWithType: ShowImageInteraction.ShowImageInteraction(Interaction)
+  fullName: Interactions.Behaviors.ShowImageInteraction.ShowImageInteraction(Interactions.Interaction)
   type: Constructor
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/ShowImage.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 25
+    path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
   syntax:
-    content: public InteractionBehavior(Interaction parent)
+    content: public ShowImageInteraction(Interaction parent)
     parameters:
     - id: parent
       type: Interactions.Interaction
     content.vb: Public Sub New(parent As Interaction)
-  overload: Interactions.Behaviors.InteractionBehavior.#ctor*
-  nameWithType.vb: InteractionBehavior.New(Interaction)
-  fullName.vb: Interactions.Behaviors.InteractionBehavior.New(Interactions.Interaction)
+  overload: Interactions.Behaviors.ShowImageInteraction.#ctor*
+  nameWithType.vb: ShowImageInteraction.New(Interaction)
+  fullName.vb: Interactions.Behaviors.ShowImageInteraction.New(Interactions.Interaction)
   name.vb: New(Interaction)
-- uid: Interactions.Behaviors.InteractionBehavior.Interact
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
+- uid: Interactions.Behaviors.ShowImageInteraction.imageToShow
+  commentId: F:Interactions.Behaviors.ShowImageInteraction.imageToShow
+  id: imageToShow
+  parent: Interactions.Behaviors.ShowImageInteraction
+  langs:
+  - csharp
+  - vb
+  name: imageToShow
+  nameWithType: ShowImageInteraction.imageToShow
+  fullName: Interactions.Behaviors.ShowImageInteraction.imageToShow
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/ShowImage.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: imageToShow
+    path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: public Sprite imageToShow
+    return:
+      type: UnityEngine.Sprite
+    content.vb: Public imageToShow As Sprite
+- uid: Interactions.Behaviors.ShowImageInteraction.Interact
+  commentId: M:Interactions.Behaviors.ShowImageInteraction.Interact
   id: Interact
-  parent: Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors.ShowImageInteraction
   langs:
   - csharp
   - vb
   name: Interact()
-  nameWithType: InteractionBehavior.Interact()
-  fullName: Interactions.Behaviors.InteractionBehavior.Interact()
+  nameWithType: ShowImageInteraction.Interact()
+  fullName: Interactions.Behaviors.ShowImageInteraction.Interact()
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/ShowImage.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 35
+    path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
+    startLine: 14
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -181,65 +136,29 @@ items:
     interacted with and space is being pressed.
   example: []
   syntax:
-    content: public abstract void Interact()
-    content.vb: Public MustOverride Sub Interact()
-  overload: Interactions.Behaviors.InteractionBehavior.Interact*
-- uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  id: Interact(Interactions.Interaction)
-  parent: Interactions.Behaviors.InteractionBehavior
-  langs:
-  - csharp
-  - vb
-  name: Interact(Interaction)
-  nameWithType: InteractionBehavior.Interact(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 43
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    Function to call when the object is interacted with another interaction.
-
-    This will still be called even while <xref href="Interactions.Behaviors.InteractionBehavior.Update" data-throw-if-not-resolved="false"></xref> returns true, as long as this object is being
-
-    interacted with and space is being pressed on another object.
-  example: []
-  syntax:
-    content: public virtual void Interact(Interaction other)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-      description: The other interaction
-    content.vb: Public Overridable Sub Interact(other As Interaction)
-  overload: Interactions.Behaviors.InteractionBehavior.Interact*
-- uid: Interactions.Behaviors.InteractionBehavior.Update
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Update
+    content: public override void Interact()
+    content.vb: Public Overrides Sub Interact()
+  overridden: Interactions.Behaviors.InteractionBehavior.Interact
+  overload: Interactions.Behaviors.ShowImageInteraction.Interact*
+- uid: Interactions.Behaviors.ShowImageInteraction.Update
+  commentId: M:Interactions.Behaviors.ShowImageInteraction.Update
   id: Update
-  parent: Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors.ShowImageInteraction
   langs:
   - csharp
   - vb
   name: Update()
-  nameWithType: InteractionBehavior.Update()
-  fullName: Interactions.Behaviors.InteractionBehavior.Update()
+  nameWithType: ShowImageInteraction.Update()
+  fullName: Interactions.Behaviors.ShowImageInteraction.Update()
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/ShowImage.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 49
+    path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
+    startLine: 24
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -249,30 +168,31 @@ items:
     If this returns true, this supresses all other interactions in the scene.
   example: []
   syntax:
-    content: public virtual bool Update()
+    content: public override bool Update()
     return:
       type: System.Boolean
-    content.vb: Public Overridable Function Update() As Boolean
-  overload: Interactions.Behaviors.InteractionBehavior.Update*
-- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
-  commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction
+    content.vb: Public Overrides Function Update() As Boolean
+  overridden: Interactions.Behaviors.InteractionBehavior.Update
+  overload: Interactions.Behaviors.ShowImageInteraction.Update*
+- uid: Interactions.Behaviors.ShowImageInteraction.EndInteraction
+  commentId: M:Interactions.Behaviors.ShowImageInteraction.EndInteraction
   id: EndInteraction
-  parent: Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors.ShowImageInteraction
   langs:
   - csharp
   - vb
   name: EndInteraction()
-  nameWithType: InteractionBehavior.EndInteraction()
-  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction()
+  nameWithType: ShowImageInteraction.EndInteraction()
+  fullName: Interactions.Behaviors.ShowImageInteraction.EndInteraction()
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/ShowImage.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 56
+    path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
+    startLine: 28
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -284,47 +204,10 @@ items:
     but this may be called by other interactions who want to do interactions with your object in <xref href="Interactions.InteractionManager.StopCurrentInteraction" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public virtual void EndInteraction()
-    content.vb: Public Overridable Sub EndInteraction()
-  overload: Interactions.Behaviors.InteractionBehavior.EndInteraction*
-- uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  id: CanInteract(Interactions.Interaction)
-  parent: Interactions.Behaviors.InteractionBehavior
-  langs:
-  - csharp
-  - vb
-  name: CanInteract(Interaction)
-  nameWithType: InteractionBehavior.CanInteract(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CanInteract
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 64
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    Should we allow interactions currently?
-
-    Default setting is as long as you're not holdign something else.
-  example: []
-  syntax:
-    content: public virtual bool CanInteract(Interaction other = null)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-      description: The other object that wants to interact with us. Can be null.
-    return:
-      type: System.Boolean
-      description: ''
-    content.vb: Public Overridable Function CanInteract(other As Interaction = Nothing) As Boolean
-  overload: Interactions.Behaviors.InteractionBehavior.CanInteract*
+    content: public override void EndInteraction()
+    content.vb: Public Overrides Sub EndInteraction()
+  overridden: Interactions.Behaviors.InteractionBehavior.EndInteraction
+  overload: Interactions.Behaviors.ShowImageInteraction.EndInteraction*
 references:
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
@@ -359,6 +242,70 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: Interactions.Behaviors.InteractionBehavior
+  commentId: T:Interactions.Behaviors.InteractionBehavior
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.InteractionBehavior.html
+  name: InteractionBehavior
+  nameWithType: InteractionBehavior
+  fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Behaviors.InteractionBehavior.interactionObject
+  commentId: F:Interactions.Behaviors.InteractionBehavior.interactionObject
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_interactionObject
+  name: interactionObject
+  nameWithType: InteractionBehavior.interactionObject
+  fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
+- uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  name: Interact(Interaction)
+  nameWithType: InteractionBehavior.Interact(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  name: CanInteract(Interaction)
+  nameWithType: InteractionBehavior.CanInteract(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -585,6 +532,15 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Interactions.Behaviors.ShowImageInteraction.#ctor*
+  commentId: Overload:Interactions.Behaviors.ShowImageInteraction.#ctor
+  href: Interactions.Behaviors.ShowImageInteraction.html#Interactions_Behaviors_ShowImageInteraction__ctor_Interactions_Interaction_
+  name: ShowImageInteraction
+  nameWithType: ShowImageInteraction.ShowImageInteraction
+  fullName: Interactions.Behaviors.ShowImageInteraction.ShowImageInteraction
+  nameWithType.vb: ShowImageInteraction.New
+  fullName.vb: Interactions.Behaviors.ShowImageInteraction.New
+  name.vb: New
 - uid: Interactions.Interaction
   commentId: T:Interactions.Interaction
   parent: Interactions
@@ -598,15 +554,19 @@ references:
   name: Interactions
   nameWithType: Interactions
   fullName: Interactions
-- uid: Interactions.Behaviors.InteractionBehavior.#ctor*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.#ctor
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior__ctor_Interactions_Interaction_
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior.InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior.InteractionBehavior
-  nameWithType.vb: InteractionBehavior.New
-  fullName.vb: Interactions.Behaviors.InteractionBehavior.New
-  name.vb: New
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
 - uid: Interactions.InteractionManager
   commentId: T:Interactions.InteractionManager
   href: Interactions.InteractionManager.html
@@ -632,25 +592,37 @@ references:
     href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
   - name: (
   - name: )
-- uid: Interactions.Behaviors.InteractionBehavior.Interact*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.Interact
+- uid: Interactions.Behaviors.InteractionBehavior.Interact
+  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
+  parent: Interactions.Behaviors.InteractionBehavior
   href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  name: Interact()
+  nameWithType: InteractionBehavior.Interact()
+  fullName: Interactions.Behaviors.InteractionBehavior.Interact()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.Interact
+    name: Interact
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.ShowImageInteraction.Interact*
+  commentId: Overload:Interactions.Behaviors.ShowImageInteraction.Interact
+  href: Interactions.Behaviors.ShowImageInteraction.html#Interactions_Behaviors_ShowImageInteraction_Interact
   name: Interact
-  nameWithType: InteractionBehavior.Interact
-  fullName: Interactions.Behaviors.InteractionBehavior.Interact
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions.Behaviors.InteractionBehavior.Update*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.Update
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
+  nameWithType: ShowImageInteraction.Interact
+  fullName: Interactions.Behaviors.ShowImageInteraction.Interact
+- uid: Interactions.Behaviors.ShowImageInteraction.Update*
+  commentId: Overload:Interactions.Behaviors.ShowImageInteraction.Update
+  href: Interactions.Behaviors.ShowImageInteraction.html#Interactions_Behaviors_ShowImageInteraction_Update
   name: Update
-  nameWithType: InteractionBehavior.Update
-  fullName: Interactions.Behaviors.InteractionBehavior.Update
+  nameWithType: ShowImageInteraction.Update
+  fullName: Interactions.Behaviors.ShowImageInteraction.Update
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -680,15 +652,28 @@ references:
     href: Interactions.InteractionManager.html#Interactions_InteractionManager_StopCurrentInteraction
   - name: (
   - name: )
-- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.EndInteraction
+- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+  commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction
+  parent: Interactions.Behaviors.InteractionBehavior
   href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
+  name: EndInteraction()
+  nameWithType: InteractionBehavior.EndInteraction()
+  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.ShowImageInteraction.EndInteraction*
+  commentId: Overload:Interactions.Behaviors.ShowImageInteraction.EndInteraction
+  href: Interactions.Behaviors.ShowImageInteraction.html#Interactions_Behaviors_ShowImageInteraction_EndInteraction
   name: EndInteraction
-  nameWithType: InteractionBehavior.EndInteraction
-  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction
-- uid: Interactions.Behaviors.InteractionBehavior.CanInteract*
-  commentId: Overload:Interactions.Behaviors.InteractionBehavior.CanInteract
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
-  name: CanInteract
-  nameWithType: InteractionBehavior.CanInteract
-  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract
+  nameWithType: ShowImageInteraction.EndInteraction
+  fullName: Interactions.Behaviors.ShowImageInteraction.EndInteraction

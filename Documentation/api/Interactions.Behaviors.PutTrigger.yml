@@ -25,7 +25,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PutTrigger
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 287
+    startLine: 351
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -79,7 +79,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 289
+    startLine: 353
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -111,7 +111,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onChained
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 295
+    startLine: 359
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -152,7 +152,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: allowedTags
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 301
+    startLine: 365
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -193,7 +193,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 303
+    startLine: 367
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -229,7 +229,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 305
+    startLine: 369
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -267,11 +267,14 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 313
+    startLine: 377
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: Should we allow interactions currently?
+  summary: >-
+    Should we allow interactions currently?
+
+    Default setting is as long as you're not holdign something else.
   example: []
   syntax:
     content: public override bool CanInteract(Interaction other = null)

@@ -10,6 +10,8 @@ items:
   - Interactions.Interaction.InteractionType.PickAndPutInteraction
   - Interactions.Interaction.InteractionType.PushableInteraction
   - Interactions.Interaction.InteractionType.PutTrigger
+  - Interactions.Interaction.InteractionType.ShowImageInteraction
+  - Interactions.Interaction.InteractionType.TeleportInteraction
   langs:
   - csharp
   - vb
@@ -24,7 +26,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionType
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 329
+    startLine: 393
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -49,7 +51,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 329
+    startLine: 393
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -75,7 +77,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PushableInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 329
+    startLine: 393
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -101,7 +103,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PickAndPutInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 329
+    startLine: 393
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -127,7 +129,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PutTrigger
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 329
+    startLine: 393
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -153,12 +155,64 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CustomInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 329
+    startLine: 393
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
     content: CustomInteraction = 4
+    return:
+      type: Interactions.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType.ShowImageInteraction
+  commentId: F:Interactions.Interaction.InteractionType.ShowImageInteraction
+  id: ShowImageInteraction
+  parent: Interactions.Interaction.InteractionType
+  langs:
+  - csharp
+  - vb
+  name: ShowImageInteraction
+  nameWithType: Interaction.InteractionType.ShowImageInteraction
+  fullName: Interactions.Interaction.InteractionType.ShowImageInteraction
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: ShowImageInteraction
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 393
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: ShowImageInteraction = 5
+    return:
+      type: Interactions.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType.TeleportInteraction
+  commentId: F:Interactions.Interaction.InteractionType.TeleportInteraction
+  id: TeleportInteraction
+  parent: Interactions.Interaction.InteractionType
+  langs:
+  - csharp
+  - vb
+  name: TeleportInteraction
+  nameWithType: Interaction.InteractionType.TeleportInteraction
+  fullName: Interactions.Interaction.InteractionType.TeleportInteraction
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: TeleportInteraction
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 393
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: TeleportInteraction = 6
     return:
       type: Interactions.Interaction.InteractionType
 references:
