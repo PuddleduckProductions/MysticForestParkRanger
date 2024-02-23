@@ -69,15 +69,18 @@ namespace Character {
 
                 animator.SetBool("walking", isWalking);
                 
-                //if (isWalking) 
-                //{
-                //    footSteps.start();
-                //    print("walking");
-                //} else
-                //{
-                //    footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                //    print("stop");
-                //}
+                if (isWalking)
+                {
+                    footSteps.setPaused(false);
+                    print("walking");
+                }
+                else
+                {
+                    //footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                    footSteps.setPaused(true);
+                    print("stop");
+                    footSteps.setTimelinePosition(0);
+                }
             }
 
         }
