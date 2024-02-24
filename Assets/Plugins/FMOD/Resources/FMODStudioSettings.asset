@@ -462,8 +462,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: MFPR-FMOD_Repo/MFPR.fspro
-  sourceBankPath: MFPR-FMOD_Repo/Build
+  sourceProjectPath: ../MFPR-FMOD_Repo/MFPR.fspro
+  sourceBankPath: ../MFPR-FMOD_Repo/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
