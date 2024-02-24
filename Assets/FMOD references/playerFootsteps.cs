@@ -5,12 +5,12 @@ using UnityEngine;
 public class playerFootsteps : MonoBehaviour
 {
 
-    [SerializeField] public GameObject player;
+    public GameObject player;
     private Vector3 lastPosition;
     private Quaternion lastRotation;
     private Vector3 lastScale;
 
-    private FMOD.Studio.EventInstance instance;
+    public FMOD.Studio.EventInstance instance;
 
 
     // Start is called before the first frame update
@@ -19,18 +19,15 @@ public class playerFootsteps : MonoBehaviour
         lastPosition = player.transform.position;
         lastRotation = player.transform.rotation;
         lastScale = player.transform.localScale;
-        instance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/footsteps");
+        instance = FMODUnity.RuntimeManager.CreateInstance("");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.hasChanged)
+        if (player.transform.position != lastPosition || player.transform.rotation != lastRotation || player.transform.localScale != lastScale)
         {
             instance.start();
-            lastPosition = player.transform.position;
-            lastRotation = player.transform.rotation;
-            lastScale = player.transform.localScale;
         } 
         else
         {

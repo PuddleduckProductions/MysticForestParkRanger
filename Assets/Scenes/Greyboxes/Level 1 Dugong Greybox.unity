@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5437,8 +5437,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 15
-  OverrideMaxDistance: 25
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!135 &283069678
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9335,7 +9335,6 @@ GameObject:
   m_Component:
   - component: {fileID: 493694500}
   - component: {fileID: 493694501}
-  - component: {fileID: 493694502}
   m_Layer: 0
   m_Name: FootSteps
   m_TagString: Untagged
@@ -9367,40 +9366,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 493694499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1911532283
-      Data2: 1208113057
-      Data3: -632274295
-      Data4: 965186114
-    Path: event:/SFX/footsteps
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &493694502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493694499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd1e2af43484144fca40c49db3e3fe74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1976580243}
 --- !u!1 &496020526
 GameObject:
   m_ObjectHideFlags: 0
@@ -12842,7 +12811,7 @@ MonoBehaviour:
   - Name: riverProx
     Value: 1
   OverrideAttenuation: 0
-  OverrideMinDistance: 7
+  OverrideMinDistance: 1
   OverrideMaxDistance: 20
 --- !u!114 &623974137
 MonoBehaviour:
@@ -26788,7 +26757,7 @@ MonoBehaviour:
   - Name: riverProx
     Value: 1
   OverrideAttenuation: 0
-  OverrideMinDistance: 7
+  OverrideMinDistance: 1
   OverrideMaxDistance: 20
 --- !u!1 &1260206519
 GameObject:
@@ -29551,7 +29520,7 @@ MonoBehaviour:
   - Name: riverProx
     Value: 1
   OverrideAttenuation: 0
-  OverrideMinDistance: 7
+  OverrideMinDistance: 1
   OverrideMaxDistance: 20
 --- !u!43 &1311126101
 Mesh:
