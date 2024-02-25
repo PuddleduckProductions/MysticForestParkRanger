@@ -111,13 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveEnabled: 1
   input: {x: 0, y: 0}
-  movementSpeed: 3
+  movementSpeed: 4
   rotationSpeed: 75
   relativeDirectionalMovement: 0
-  rotationSpeedMultiplier: 0.75
-  movementSpeedMultiplier: 0.5
-  pushForce: 1
-  animator: {fileID: 0}
+  friction: 0.99
   footstepsEvent:
     Guid:
       Data1: 1911532283
