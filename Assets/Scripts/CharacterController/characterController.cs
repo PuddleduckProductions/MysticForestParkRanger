@@ -33,9 +33,9 @@ namespace Character {
             mainCamera = Camera.main;
             animator = GetComponentInChildren<Animator>();
 
-            footSteps = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
-            footSteps.start();
+                //footSteps = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
+                //FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
+                //footSteps.start();
             //animator = GetComponent<Animator>();
         }
 
@@ -57,13 +57,13 @@ namespace Character {
             
             animator.SetBool("walking", isWalking);
 
-            if (isWalking){
-                footSteps.setPaused(false);
-            } else {
-                //footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                footSteps.setPaused(true);
-                footSteps.setTimelinePosition(0);
-            }
+                //if (isWalking){
+                //    footSteps.setPaused(false);
+                //} else {
+                //    //footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                //    footSteps.setPaused(true);
+                //    footSteps.setTimelinePosition(0);
+                //}
         }
 
         public Vector3 intendedMove {

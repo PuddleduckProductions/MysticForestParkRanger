@@ -2357,7 +2357,7 @@ MonoBehaviour:
       Data4: -1866025171
     Path: event:/Music/mbiraGroove
   Event: 
-  PlayEvent: 0
+  PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
@@ -5435,9 +5435,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideAttenuation: 1
+  OverrideMinDistance: 15
+  OverrideMaxDistance: 23
 --- !u!135 &283069678
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5457,7 +5457,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 23.14298
+  m_Radius: 23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &284526331
 GameObject:
@@ -9321,50 +9321,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &493694499
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 493694500}
-  - component: {fileID: 493694501}
-  m_Layer: 0
-  m_Name: FootSteps
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &493694500
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493694499}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 693826582}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &493694501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493694499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1e2af43484144fca40c49db3e3fe74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &496020526
 GameObject:
   m_ObjectHideFlags: 0
@@ -12772,7 +12728,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 39.766953, y: 10, z: 21.660553}
+  m_Size: {x: 39.766953, y: 10, z: 21}
   m_Center: {x: 0.77204514, y: 0, z: -0.03752899}
 --- !u!114 &623974136
 MonoBehaviour:
@@ -12805,7 +12761,7 @@ MonoBehaviour:
   - Name: riverProx
     Value: 1
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
+  OverrideMinDistance: 7
   OverrideMaxDistance: 20
 --- !u!114 &623974137
 MonoBehaviour:
@@ -12881,16 +12837,16 @@ MonoBehaviour:
       Data4: 1833252045
     Path: event:/Ambience/Ocean
   Event: 
-  PlayEvent: 0
+  PlayEvent: 3
   StopEvent: 4
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideAttenuation: 1
+  OverrideMinDistance: 14
+  OverrideMaxDistance: 35
 --- !u!135 &635573716
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14193,7 +14149,6 @@ Transform:
   - {fileID: 1244908905}
   - {fileID: 623974134}
   - {fileID: 1308750313}
-  - {fileID: 493694500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &706930622
@@ -26701,7 +26656,7 @@ MonoBehaviour:
   - Name: riverProx
     Value: 1
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
+  OverrideMinDistance: 7
   OverrideMaxDistance: 20
 --- !u!1 &1260206519
 GameObject:
@@ -29430,7 +29385,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 37.776127, y: 10, z: 21.530655}
+  m_Size: {x: 31.89, y: 10, z: 21}
   m_Center: {x: -0.22336769, y: 0, z: -3.1126719}
 --- !u!114 &1308750315
 MonoBehaviour:
@@ -29463,7 +29418,7 @@ MonoBehaviour:
   - Name: riverProx
     Value: 1
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
+  OverrideMinDistance: 7
   OverrideMaxDistance: 20
 --- !u!43 &1311126101
 Mesh:
