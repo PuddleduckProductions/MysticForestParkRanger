@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5372967, g: 0.84301805, b: 0.8986328, a: 1}
+  m_IndirectSpecularColor: {r: 0.5372967, g: 0.8430187, b: 0.8986338, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2578,10 +2578,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 118204802}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &118204803
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5568,10 +5567,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 311285679}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &311285680
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7602,10 +7600,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 427120895}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &427120896
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7983,10 +7980,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 429848733}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &429848734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9235,10 +9231,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 496020528}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &496020529
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12755,10 +12750,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 644940716}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &644940717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17201,10 +17195,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 723444935}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &723444936
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17732,10 +17725,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 748013137}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &748013138
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22024,10 +22016,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1035614646}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1035614647
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23822,10 +23813,6 @@ PrefabInstance:
     - target: {fileID: 797713971942780096, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_DefaultBlend.m_Style
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
-      propertyPath: movementSpeed
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2985007778455347570, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: field of view
@@ -26029,10 +26016,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1221117623}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1221117624
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28045,10 +28031,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1269098511}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1269098512
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34137,10 +34122,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1485915765}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1485915766
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34518,10 +34502,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1496633949}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1496633950
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35417,10 +35400,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1505223911}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1505223912
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42872,10 +42854,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1647653052}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1647653053
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45324,10 +45305,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1816920442}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1816920443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47023,10 +47003,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1881212082}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1881212083
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47419,10 +47398,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1949979993}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!64 &1949979994
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51433,10 +51411,9 @@ MonoBehaviour:
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2090540642}
+        gridObject: {fileID: 0}
         moveThreshold: 0
-        weight: 0
-        cellLength: 0
-        pushCoolDown: 0
+        pushSpeed: 0
 --- !u!54 &2090540643
 Rigidbody:
   m_ObjectHideFlags: 0
