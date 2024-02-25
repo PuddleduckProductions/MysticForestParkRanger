@@ -21,11 +21,21 @@ namespace Character {
         public float friction = 0.99f; // friction value
 
         //private Animator animator;
+
+        //Fmod call
+        public FMODUnity.EventReference footstepsEvent;
+
+        FMOD.Studio.EventInstance footSteps;
+
         // Start is called before the first frame update
         void Start() {
             c = GetComponent<CharacterController>();
             mainCamera = Camera.main;
             animator = GetComponentInChildren<Animator>();
+
+            footSteps = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
+            footSteps.start();
             //animator = GetComponent<Animator>();
         }
 
@@ -43,7 +53,17 @@ namespace Character {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(xzVel, transform.up), rotationSpeed * Time.deltaTime);
             }
 
-            animator.SetBool("walking", xzVel.magnitude > 0.01f);
+            bool isWalking = xzVel.magnitude > 0.01f;
+            
+            animator.SetBool("walking", isWalking);
+
+            if (isWalking){
+                footSteps.setPaused(false);
+            } else {
+                //footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                footSteps.setPaused(true);
+                footSteps.setTimelinePosition(0);
+            }
         }
 
         public Vector3 intendedMove {
@@ -71,12 +91,13 @@ namespace Character {
 
                 // adding acceleration
                 velocity += move * movementSpeed * Time.deltaTime;
-
+                
                 //applying friction
                 velocity *= friction;
 
                 c.SimpleMove(velocity);
             }
+
         }
 
         void OnWalking(InputValue value) {
