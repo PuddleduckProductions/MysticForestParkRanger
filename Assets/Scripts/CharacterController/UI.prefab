@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRange: 1
-  extentsScale: {x: 1, y: 2, z: 1}
+  extentsScale: {x: 2, y: 2, z: 2}
   interactionMode: 0
 --- !u!1 &7439933351979529418
 GameObject:
