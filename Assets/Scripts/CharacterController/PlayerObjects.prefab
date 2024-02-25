@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveEnabled: 1
   input: {x: 0, y: 0}
-  movementSpeed: 20
+  movementSpeed: 4
   rotationSpeed: 75
   relativeDirectionalMovement: 0
   friction: 0.99
