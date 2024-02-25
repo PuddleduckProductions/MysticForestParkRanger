@@ -7,6 +7,10 @@ items:
     name: CameraController
   - uid: Character.CameraControllerEditor
     name: CameraControllerEditor
+  - uid: Character.CameraController_EY
+    name: CameraController_EY
+  - uid: Character.CameraController_EYEditor
+    name: CameraController_EYEditor
   - uid: Character.UIController
     name: UIController
   - uid: Character.characterController
@@ -49,6 +53,22 @@ items:
       name: PushableInteraction
     - uid: Interactions.Behaviors.PutTrigger
       name: PutTrigger
+    - uid: Interactions.Behaviors.ShowImageInteraction
+      name: ShowImageInteraction
+    - uid: Interactions.Behaviors.TeleportInteraction
+      name: TeleportInteraction
+  - uid: Interactions.GridEditor
+    name: GridEditor
+  - uid: Interactions.GridGroup
+    name: GridGroup
+  - uid: Interactions.GridGroup.Box
+    name: GridGroup.Box
+  - uid: Interactions.GridGroup.Cell
+    name: GridGroup.Cell
+  - uid: Interactions.GridGroup.Cell.CellType
+    name: GridGroup.Cell.CellType
+  - uid: Interactions.GridObject
+    name: GridObject
   - uid: Interactions.Interaction
     name: Interaction
   - uid: Interactions.Interaction.InteractionType
@@ -59,17 +79,17 @@ items:
     name: InteractionManager
   - uid: Interactions.InteractionManager.InteractionState
     name: InteractionManager.InteractionState
+  - uid: Interactions.ShowImage
+    name: ShowImage
 - uid: MysticForestParkRanger
   name: MysticForestParkRanger
   items:
-  - uid: MysticForestParkRanger.BoolArray2D
-    name: BoolArray2D
-  - uid: MysticForestParkRanger.BoolArray2DDrawer
-    name: BoolArray2DDrawer
-  - uid: MysticForestParkRanger.GridGroup
-    name: GridGroup
-  - uid: MysticForestParkRanger.test
-    name: test
+  - uid: MysticForestParkRanger.CameraZone
+    name: CameraZone
+  - uid: MysticForestParkRanger.InteractionShortcuts
+    name: InteractionShortcuts
+  - uid: MysticForestParkRanger.PauseManager
+    name: PauseManager
 - uid: Utility
   name: Utility
   items:
