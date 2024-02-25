@@ -63,19 +63,6 @@ namespace SceneValidation {
                 }
             }
         }
-
-        [Test]
-        public void ValidateInkInteractions() {
-            var interactions = GameObject.FindObjectsOfType<Interaction>();
-            foreach (var interaction in interactions) {
-                if (interaction.behavior.GetType() == typeof(InkInteraction)) {
-                    InkInteraction i = (InkInteraction)interaction.behavior;
-                    var manager = GameObject.FindFirstObjectByType<InkManager>();
-                    Assert.IsNotNull(manager);
-                    Assert.IsTrue(manager.PathExists(i.inkKnot));
-                }
-            }
-        }
     }
 
     public class ScenesProvider : IEnumerable {

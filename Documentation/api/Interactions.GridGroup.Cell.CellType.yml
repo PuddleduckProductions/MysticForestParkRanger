@@ -1,0 +1,159 @@
+### YamlMime:ManagedReference
+items:
+- uid: Interactions.GridGroup.Cell.CellType
+  commentId: T:Interactions.GridGroup.Cell.CellType
+  id: GridGroup.Cell.CellType
+  parent: Interactions
+  children:
+  - Interactions.GridGroup.Cell.CellType.EMPTY
+  - Interactions.GridGroup.Cell.CellType.FULL
+  - Interactions.GridGroup.Cell.CellType.MAP_FULL
+  langs:
+  - csharp
+  - vb
+  name: GridGroup.Cell.CellType
+  nameWithType: GridGroup.Cell.CellType
+  fullName: Interactions.GridGroup.Cell.CellType
+  type: Enum
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: CellType
+    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  summary: >-
+    EMPTY represents nothing. FULL represents an object (controlled by <xref href="Interactions.GridObject" data-throw-if-not-resolved="false"></xref>. MAP_FULL indicates a cell that's been set to full that can be
+
+    reset to EMPTY from the scene editor.
+  example: []
+  syntax:
+    content: public enum GridGroup.Cell.CellType
+    content.vb: Public Enum GridGroup.Cell.CellType
+- uid: Interactions.GridGroup.Cell.CellType.EMPTY
+  commentId: F:Interactions.GridGroup.Cell.CellType.EMPTY
+  id: EMPTY
+  parent: Interactions.GridGroup.Cell.CellType
+  langs:
+  - csharp
+  - vb
+  name: EMPTY
+  nameWithType: GridGroup.Cell.CellType.EMPTY
+  fullName: Interactions.GridGroup.Cell.CellType.EMPTY
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: EMPTY
+    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: EMPTY = 0
+    return:
+      type: Interactions.GridGroup.Cell.CellType
+- uid: Interactions.GridGroup.Cell.CellType.FULL
+  commentId: F:Interactions.GridGroup.Cell.CellType.FULL
+  id: FULL
+  parent: Interactions.GridGroup.Cell.CellType
+  langs:
+  - csharp
+  - vb
+  name: FULL
+  nameWithType: GridGroup.Cell.CellType.FULL
+  fullName: Interactions.GridGroup.Cell.CellType.FULL
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: FULL
+    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: FULL = 1
+    return:
+      type: Interactions.GridGroup.Cell.CellType
+- uid: Interactions.GridGroup.Cell.CellType.MAP_FULL
+  commentId: F:Interactions.GridGroup.Cell.CellType.MAP_FULL
+  id: MAP_FULL
+  parent: Interactions.GridGroup.Cell.CellType
+  langs:
+  - csharp
+  - vb
+  name: MAP_FULL
+  nameWithType: GridGroup.Cell.CellType.MAP_FULL
+  fullName: Interactions.GridGroup.Cell.CellType.MAP_FULL
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: MAP_FULL
+    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: MAP_FULL = 2
+    return:
+      type: Interactions.GridGroup.Cell.CellType
+references:
+- uid: Interactions.GridObject
+  commentId: T:Interactions.GridObject
+  parent: Interactions
+  href: Interactions.GridObject.html
+  name: GridObject
+  nameWithType: GridObject
+  fullName: Interactions.GridObject
+- uid: Interactions
+  commentId: N:Interactions
+  href: Interactions.html
+  name: Interactions
+  nameWithType: Interactions
+  fullName: Interactions
+- uid: Interactions.GridGroup.Cell.CellType
+  commentId: T:Interactions.GridGroup.Cell.CellType
+  parent: Interactions
+  href: Interactions.GridGroup.html
+  name: GridGroup.Cell.CellType
+  nameWithType: GridGroup.Cell.CellType
+  fullName: Interactions.GridGroup.Cell.CellType
+  spec.csharp:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell
+    name: Cell
+    href: Interactions.GridGroup.Cell.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell.CellType
+    name: CellType
+    href: Interactions.GridGroup.Cell.CellType.html
+  spec.vb:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell
+    name: Cell
+    href: Interactions.GridGroup.Cell.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell.CellType
+    name: CellType
+    href: Interactions.GridGroup.Cell.CellType.html

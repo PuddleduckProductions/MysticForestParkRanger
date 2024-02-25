@@ -12,33 +12,64 @@ namespace Character {
         public float movementSpeed = 3f;
         public float rotationSpeed = 75f;
         public bool relativeDirectionalMovement = true;
-        public float rotationSpeedMultiplier = 0.75f;
-        public float movementSpeedMultiplier = 0.5f;
-
-        //pushing force, make player stronger
-        public float pushForce = 1f;
 
         Camera mainCamera;
 
-        public Animator animator;
+        Animator animator;
+
+        Vector3 velocity; // velocity variable
+        public float friction = 0.99f; // friction value
+
         //private Animator animator;
+
+        //Fmod call
+        public FMODUnity.EventReference footstepsEvent;
+
+        FMOD.Studio.EventInstance footSteps;
+
         // Start is called before the first frame update
         void Start() {
             c = GetComponent<CharacterController>();
             mainCamera = Camera.main;
             animator = GetComponentInChildren<Animator>();
+
+            footSteps = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
+            footSteps.start();
             //animator = GetComponent<Animator>();
         }
 
         // Update is called once per frame
         void Update() {
             if (moveEnabled) {
+                c.SimpleMove(intendedMove * movementSpeed);
+            }
+
+            var xzVel = new Vector3(c.velocity.x, 0, c.velocity.z);
+
+            if (relativeDirectionalMovement) {
+                transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
+            } else if (xzVel != Vector3.zero) {
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(xzVel, transform.up), rotationSpeed * Time.deltaTime);
+            }
+
+            bool isWalking = xzVel.magnitude > 0.01f;
+            
+            animator.SetBool("walking", isWalking);
+
+            if (isWalking){
+                footSteps.setPaused(false);
+            } else {
+                //footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                footSteps.setPaused(true);
+                footSteps.setTimelinePosition(0);
+            }
+        }
+
+        public Vector3 intendedMove {
+            get {
                 float currRotationSpeed = rotationSpeed;
                 float currMoveSpeed = movementSpeed;
-                if (input.y <= 0) {
-                    currRotationSpeed *= rotationSpeedMultiplier; // Decrease rotation speed if not moving forward
-                    currMoveSpeed *= movementSpeed * movementSpeedMultiplier;
-                }
 
                 Quaternion simplifiedRot = Quaternion.AngleAxis(mainCamera.transform.eulerAngles.y, Vector3.up);
 
@@ -46,20 +77,27 @@ namespace Character {
                 Vector3 simplifiedRight = relativeDirectionalMovement ? transform.right : simplifiedRot * Vector3.right;
 
                 Vector3 move = (simplifiedForward * input.y + simplifiedRight * input.x);
+                move.Normalize();
+
+                return move;
 
 
                 if (relativeDirectionalMovement) {
-                    transform.Rotate(Vector3.up, input.x * currRotationSpeed * Time.deltaTime);
+                    transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
                 } else if (move != Vector3.zero) {
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), currRotationSpeed * Time.deltaTime);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(move, transform.up), rotationSpeed * Time.deltaTime);
                 }
                 move.Normalize();
-                c.SimpleMove(move * movementSpeed);
 
-                bool isWalking = input.magnitude > 0.01f;
+                // adding acceleration
+                velocity += move * movementSpeed * Time.deltaTime;
+                
+                //applying friction
+                velocity *= friction;
 
-                animator.SetBool("walking", isWalking);
+                c.SimpleMove(velocity);
             }
+
         }
 
         void OnWalking(InputValue value) {

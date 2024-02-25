@@ -5,11 +5,18 @@ items:
   id: Interactions
   children:
   - Interactions.Behaviors
+  - Interactions.GridEditor
+  - Interactions.GridGroup
+  - Interactions.GridGroup.Box
+  - Interactions.GridGroup.Cell
+  - Interactions.GridGroup.Cell.CellType
+  - Interactions.GridObject
   - Interactions.Interaction
   - Interactions.Interaction.InteractionType
   - Interactions.InteractionEditor
   - Interactions.InteractionManager
   - Interactions.InteractionManager.InteractionState
+  - Interactions.ShowImage
   langs:
   - csharp
   - vb
@@ -42,6 +49,103 @@ references:
   - uid: Interactions.Behaviors
     name: Behaviors
     href: Interactions.Behaviors.html
+- uid: Interactions.GridEditor
+  commentId: T:Interactions.GridEditor
+  href: Interactions.GridEditor.html
+  name: GridEditor
+  nameWithType: GridEditor
+  fullName: Interactions.GridEditor
+- uid: Interactions.GridGroup
+  commentId: T:Interactions.GridGroup
+  parent: Interactions
+  href: Interactions.GridGroup.html
+  name: GridGroup
+  nameWithType: GridGroup
+  fullName: Interactions.GridGroup
+- uid: Interactions.GridGroup.Box
+  commentId: T:Interactions.GridGroup.Box
+  parent: Interactions
+  href: Interactions.GridGroup.html
+  name: GridGroup.Box
+  nameWithType: GridGroup.Box
+  fullName: Interactions.GridGroup.Box
+  spec.csharp:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Box
+    name: Box
+    href: Interactions.GridGroup.Box.html
+  spec.vb:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Box
+    name: Box
+    href: Interactions.GridGroup.Box.html
+- uid: Interactions.GridGroup.Cell
+  commentId: T:Interactions.GridGroup.Cell
+  parent: Interactions
+  href: Interactions.GridGroup.html
+  name: GridGroup.Cell
+  nameWithType: GridGroup.Cell
+  fullName: Interactions.GridGroup.Cell
+  spec.csharp:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell
+    name: Cell
+    href: Interactions.GridGroup.Cell.html
+  spec.vb:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell
+    name: Cell
+    href: Interactions.GridGroup.Cell.html
+- uid: Interactions.GridGroup.Cell.CellType
+  commentId: T:Interactions.GridGroup.Cell.CellType
+  parent: Interactions
+  href: Interactions.GridGroup.html
+  name: GridGroup.Cell.CellType
+  nameWithType: GridGroup.Cell.CellType
+  fullName: Interactions.GridGroup.Cell.CellType
+  spec.csharp:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell
+    name: Cell
+    href: Interactions.GridGroup.Cell.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell.CellType
+    name: CellType
+    href: Interactions.GridGroup.Cell.CellType.html
+  spec.vb:
+  - uid: Interactions.GridGroup
+    name: GridGroup
+    href: Interactions.GridGroup.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell
+    name: Cell
+    href: Interactions.GridGroup.Cell.html
+  - name: .
+  - uid: Interactions.GridGroup.Cell.CellType
+    name: CellType
+    href: Interactions.GridGroup.Cell.CellType.html
+- uid: Interactions.GridObject
+  commentId: T:Interactions.GridObject
+  parent: Interactions
+  href: Interactions.GridObject.html
+  name: GridObject
+  nameWithType: GridObject
+  fullName: Interactions.GridObject
 - uid: Interactions.Interaction
   commentId: T:Interactions.Interaction
   parent: Interactions
@@ -107,6 +211,12 @@ references:
   - uid: Interactions.InteractionManager.InteractionState
     name: InteractionState
     href: Interactions.InteractionManager.InteractionState.html
+- uid: Interactions.ShowImage
+  commentId: T:Interactions.ShowImage
+  href: Interactions.ShowImage.html
+  name: ShowImage
+  nameWithType: ShowImage
+  fullName: Interactions.ShowImage
 - uid: Interactions
   commentId: N:Interactions
   href: Interactions.html
