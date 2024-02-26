@@ -49,6 +49,8 @@ namespace Character {
                 velocity *= friction;
 
                 c.SimpleMove(velocity);
+            } else {
+                velocity = Vector3.zero;
             }
 
             var xzVel = new Vector3(c.velocity.x, 0, c.velocity.z);
