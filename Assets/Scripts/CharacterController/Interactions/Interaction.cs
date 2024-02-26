@@ -190,7 +190,38 @@ namespace Interactions {
             }
 
             // Since Coroutines can't be run from non MonoBehaviours.
-            protected static IEnumerator Push(PushableInteraction p, Vector3 dir) {
+            protected static IEnumerator PushUpdate(PushableInteraction p, Vector2Int dir) {
+                var group = p.gridObject.manager;
+                var toAdd = new Vector3(dir.x * (group.cellSpacing.x + group.cellSize.x), 0,
+                    dir.y * (group.cellSpacing.z + group.cellSize.z));
+                var targetPos = p.gridObject.transform.position + toAdd;
+
+                // FIXME: This. It's not a great solution for snapping to ground.
+                var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
+                var groundDist = ground - targetPos;
+                targetPos += groundDist;
+
+
+                var playerTargetPos = p.player.transform.position + toAdd;
+                var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
+                var playerGroundDist = playerGround - playerTargetPos;
+                playerTargetPos += playerGroundDist;
+
+                while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
+                    p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
+                    p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
+                    yield return new WaitForEndOfFrame();
+                }
+                p.gridObject.transform.position = targetPos;
+                p.player.transform.position = playerTargetPos;
+
+                // Wait for the next update to roll around before resetting our pushing ability.
+                yield return new WaitForEndOfFrame();
+                p.pushEnabled = true;
+            }
+
+            protected void Push(Vector3 dir) {
+                pushEnabled = false;
                 var dirToMove = new Vector2Int(0, 0);
                 var x = Mathf.Abs(dir.x);
                 var z = Mathf.Abs(dir.z);
@@ -199,44 +230,19 @@ namespace Interactions {
                 } else {
                     dirToMove.y = Mathf.RoundToInt(dir.z);
                 }
-                Debug.Log(dirToMove);
-                if (p.gridObject.Move(dirToMove)) {
-                    var group = p.gridObject.manager;
-                    var toAdd = new Vector3(Mathf.RoundToInt(dir.x) * (group.cellSpacing.x + group.cellSize.x), 0,
-                        Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
-                    var targetPos = p.gridObject.transform.position + toAdd;
-
-                    // FIXME: This. It's not a great solution for snapping to ground.
-                    var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
-                    var groundDist = ground - targetPos;
-                    targetPos += groundDist;
-
-
-                    var playerTargetPos = p.player.transform.position + toAdd;
-                    var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
-                    var playerGroundDist = playerGround - playerTargetPos;
-                    playerTargetPos += playerGroundDist;
-
-                    while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
-                        p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
-                        p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
-                        yield return new WaitForEndOfFrame();
-                    }
-                    p.gridObject.transform.position = targetPos;
-                    p.player.transform.position = playerTargetPos;
+                if (dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
+                    interactionObject.StartCoroutine(PushUpdate(this, dirToMove));
+                } else {
+                    pushEnabled = true;
                 }
-                p.pushEnabled = true;
             }
 
             /// <summary>
             /// Update the pushed object to move with us.
             /// </summary>
             public override bool Update() {
-                if (pushEnabled) {
-                    if (controller.intendedMove.magnitude > moveThreshold) {
-                        pushEnabled = false;
-                        interactionObject.StartCoroutine(Push(this, controller.intendedMove));
-                    }
+                if (pushEnabled && controller.intendedMove.magnitude > moveThreshold) {
+                    Push(controller.intendedMove);
                 }
                 return isPushing;
             }

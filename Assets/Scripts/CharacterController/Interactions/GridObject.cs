@@ -55,9 +55,6 @@ namespace Interactions {
         /// <param name="direction">The direction to move in. Should be a basis vector with exactly ONE non-zero component.</param>
         /// <returns>Whether or not the move was successful.</returns>
         public bool Move(Vector2Int direction) {
-            if (direction == Vector2Int.zero) {
-                return false;
-            }
             if (manager.MoveObject(this, direction)) {
                 _min += direction;
                 _max += direction;
