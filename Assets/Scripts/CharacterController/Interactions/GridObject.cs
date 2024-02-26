@@ -52,13 +52,15 @@ namespace Interactions {
         /// Attempt to move this object in a given direction on the grid.
         /// Does NOT move the object's transform. That's the responsibility of whoever calls this function.
         /// </summary>
-        /// <param name="direction">The direction to move in. Should be a normalized vector.</param>
+        /// <param name="direction">The direction to move in. Should be a basis vector with exactly ONE non-zero component.</param>
         /// <returns>Whether or not the move was successful.</returns>
-        public bool Move(Vector3 direction) {
-            var gridMove = new Vector2Int(Mathf.RoundToInt(direction.x), Mathf.RoundToInt(direction.z));
-            if (manager.MoveObject(this, gridMove)) {
-                _min += gridMove;
-                _max += gridMove;
+        public bool Move(Vector2Int direction) {
+            if (direction == Vector2Int.zero) {
+                return false;
+            }
+            if (manager.MoveObject(this, direction)) {
+                _min += direction;
+                _max += direction;
                 return true;
             }
             return false;

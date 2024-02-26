@@ -191,8 +191,16 @@ namespace Interactions {
 
             // Since Coroutines can't be run from non MonoBehaviours.
             protected static IEnumerator Push(PushableInteraction p, Vector3 dir) {
-                p.pushEnabled = false;
-                if (p.gridObject.Move(dir)) {
+                var dirToMove = new Vector2Int(0, 0);
+                var x = Mathf.Abs(dir.x);
+                var z = Mathf.Abs(dir.z);
+                if (x > z) {
+                    dirToMove.x = Mathf.RoundToInt(dir.x);
+                } else {
+                    dirToMove.y = Mathf.RoundToInt(dir.z);
+                }
+                Debug.Log(dirToMove);
+                if (p.gridObject.Move(dirToMove)) {
                     var group = p.gridObject.manager;
                     var toAdd = new Vector3(Mathf.RoundToInt(dir.x) * (group.cellSpacing.x + group.cellSize.x), 0,
                         Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
@@ -226,6 +234,7 @@ namespace Interactions {
             public override bool Update() {
                 if (pushEnabled) {
                     if (controller.intendedMove.magnitude > moveThreshold) {
+                        pushEnabled = false;
                         interactionObject.StartCoroutine(Push(this, controller.intendedMove));
                     }
                 }
