@@ -207,9 +207,14 @@ namespace Interactions {
                 var playerGroundDist = playerGround - playerTargetPos;
                 playerTargetPos += playerGroundDist;
 
-                while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
-                    p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
-                    p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
+                var originalPos = p.gridObject.transform.position;
+                var originalPlayerPos = p.player.transform.position;
+
+                float timer = 0;
+                while (timer < 1f) {
+                    p.gridObject.transform.position = Vector3.Lerp(originalPos, targetPos, timer);
+                    p.player.transform.position = Vector3.Lerp(originalPlayerPos, playerTargetPos, timer);
+                    timer += Time.deltaTime * p.pushSpeed;
                     yield return new WaitForEndOfFrame();
                 }
                 p.gridObject.transform.position = targetPos;
