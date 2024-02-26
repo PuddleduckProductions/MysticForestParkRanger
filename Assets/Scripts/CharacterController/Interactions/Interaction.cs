@@ -178,7 +178,7 @@ namespace Interactions {
                     groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
                     playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
 
-                } else {
+                } else if (pushEnabled) { // Are we in the process of moving? Don't allow releasing push.
                     // Force InteractionManager to call EndInteraction.
                     isPushing = false;
                 }
