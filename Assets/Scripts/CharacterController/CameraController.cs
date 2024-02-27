@@ -67,7 +67,7 @@ namespace Character {
         }
 
         private void OnTriggerExit(Collider other) {
-            if (other.GetInstanceID() == activeZone.GetInstanceID()) {
+            if (activeZone != null && other.GetInstanceID() == activeZone.GetInstanceID()) {
                 activeZone = null;
             }
         }
