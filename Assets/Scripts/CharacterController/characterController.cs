@@ -43,7 +43,7 @@ namespace Character {
         void Update() {
             if (moveEnabled) {
                 // adding acceleration
-                velocity += intendedMove * movementSpeed * Time.deltaTime;
+                velocity += movementSpeed * Time.deltaTime * intendedMove;
 
                 //applying friction
                 velocity *= friction;
