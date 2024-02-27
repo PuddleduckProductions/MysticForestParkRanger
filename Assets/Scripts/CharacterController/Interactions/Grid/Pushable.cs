@@ -92,7 +92,8 @@ namespace Interactions.Behaviors {
 
         // Since Coroutines can't be run from non MonoBehaviours.
         protected static IEnumerator PushUpdate(PushableInteraction p, Vector2Int dir) {
-            var toAdd = p.gridObject.GetSomeAdjacent(dir) - p.gridObject.GetSomeAdjacent(Vector2Int.zero);
+            // Because the grid object has already been moved to the new cell, we use -dir to calculate offset:
+            var toAdd = p.gridObject.GetSomeAdjacent(Vector2Int.zero) - p.gridObject.GetSomeAdjacent(-dir);
             var targetPos = p.gridObject.transform.position + toAdd;
 
             // FIXME: This. It's not a great solution for snapping to ground.
