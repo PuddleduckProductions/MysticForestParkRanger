@@ -44,6 +44,11 @@ namespace Interactions {
             public virtual void Interact(Interaction other) { }
 
             /// <summary>
+            /// Called during <see cref="Interaction.Start"/>.
+            /// </summary>
+            public virtual void GameObjectStart() { }
+
+            /// <summary>
             /// Are we currently having an interaction happen? What do we need to do to update it?
             /// If this returns true, this supresses all other interactions in the scene.
             /// </summary>
@@ -173,7 +178,7 @@ namespace Interactions {
                     groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
                     playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
 
-                } else {
+                } else if (pushEnabled) { // Are we in the process of moving? Don't allow releasing push.
                     // Force InteractionManager to call EndInteraction.
                     isPushing = false;
                 }
@@ -185,44 +190,64 @@ namespace Interactions {
             }
 
             // Since Coroutines can't be run from non MonoBehaviours.
-            protected static IEnumerator Push(PushableInteraction p, Vector3 dir) {
-                p.pushEnabled = false;
-                if (p.gridObject.Move(dir)) {
-                    var group = p.gridObject.manager;
-                    var toAdd = new Vector3(Mathf.RoundToInt(dir.x) * (group.cellSpacing.x + group.cellSize.x), 0,
-                        Mathf.RoundToInt(dir.z) * (group.cellSpacing.z + group.cellSize.z));
-                    var targetPos = p.gridObject.transform.position + toAdd;
+            protected static IEnumerator PushUpdate(PushableInteraction p, Vector2Int dir) {
+                var group = p.gridObject.manager;
+                var toAdd = new Vector3(dir.x * (group.cellSpacing.x + group.cellSize.x), 0,
+                    dir.y * (group.cellSpacing.z + group.cellSize.z));
+                var targetPos = p.gridObject.transform.position + toAdd;
 
-                    // FIXME: This. It's not a great solution for snapping to ground.
-                    var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
-                    var groundDist = ground - targetPos;
-                    targetPos += groundDist;
+                // FIXME: This. It's not a great solution for snapping to ground.
+                var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
+                var groundDist = ground - targetPos;
+                targetPos += groundDist;
 
 
-                    var playerTargetPos = p.player.transform.position + toAdd;
-                    var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
-                    var playerGroundDist = playerGround - playerTargetPos;
-                    playerTargetPos += playerGroundDist;
+                var playerTargetPos = p.player.transform.position + toAdd;
+                var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
+                var playerGroundDist = playerGround - playerTargetPos;
+                playerTargetPos += playerGroundDist;
 
-                    while (Vector3.Distance(p.gridObject.transform.position, targetPos) > 0.01f) {
-                        p.gridObject.transform.position = Vector3.Lerp(p.gridObject.transform.position, targetPos, Time.deltaTime * p.pushSpeed);
-                        p.player.transform.position = Vector3.Lerp(p.player.transform.position, playerTargetPos, Time.deltaTime * p.pushSpeed);
-                        yield return new WaitForEndOfFrame();
-                    }
-                    p.gridObject.transform.position = targetPos;
-                    p.player.transform.position = playerTargetPos;
+                var originalPos = p.gridObject.transform.position;
+                var originalPlayerPos = p.player.transform.position;
+
+                float timer = 0;
+                while (timer < 1f) {
+                    p.gridObject.transform.position = Vector3.Lerp(originalPos, targetPos, timer);
+                    p.player.transform.position = Vector3.Lerp(originalPlayerPos, playerTargetPos, timer);
+                    timer += Time.deltaTime * p.pushSpeed;
+                    yield return new WaitForEndOfFrame();
                 }
+                p.gridObject.transform.position = targetPos;
+                p.player.transform.position = playerTargetPos;
+
+                // Wait for the next update to roll around before resetting our pushing ability.
+                yield return new WaitForEndOfFrame();
                 p.pushEnabled = true;
+            }
+
+            protected void Push(Vector3 dir) {
+                pushEnabled = false;
+                var dirToMove = new Vector2Int(0, 0);
+                var x = Mathf.Abs(dir.x);
+                var z = Mathf.Abs(dir.z);
+                if (x > z) {
+                    dirToMove.x = Mathf.RoundToInt(dir.x);
+                } else {
+                    dirToMove.y = Mathf.RoundToInt(dir.z);
+                }
+                if (dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
+                    interactionObject.StartCoroutine(PushUpdate(this, dirToMove));
+                } else {
+                    pushEnabled = true;
+                }
             }
 
             /// <summary>
             /// Update the pushed object to move with us.
             /// </summary>
             public override bool Update() {
-                if (pushEnabled) {
-                    if (controller.intendedMove.magnitude > moveThreshold) {
-                        interactionObject.StartCoroutine(Push(this, controller.intendedMove));
-                    }
+                if (pushEnabled && controller.intendedMove.magnitude > moveThreshold) {
+                    Push(controller.intendedMove);
                 }
                 return isPushing;
             }
@@ -391,7 +416,7 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, ShowImageInteraction, TeleportInteraction };
+        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, ShowImageInteraction, TeleportInteraction, WaterPipe};
         /// <summary>
         /// Should we allow interaction with this object?
         /// If this is set to false while <see cref="IsInteracting"/> is true,
@@ -401,6 +426,12 @@ namespace Interactions {
         public InteractionType type;
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;
+
+        private void Start() {
+            if (HasInteractionBehavior()) {
+                behavior.GameObjectStart();
+            }
+        }
 
         public bool HasInteractionBehavior() {
             return behavior != null;
@@ -427,7 +458,7 @@ namespace Interactions {
         /// </summary>
         /// <returns>Whether or not to keep using this interaction</returns>
         public bool InteractionUpdate() {
-            if (behavior != null) {
+            if (HasInteractionBehavior()) {
                 return behavior.Update();
             }
             return false;

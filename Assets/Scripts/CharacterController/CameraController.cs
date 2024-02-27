@@ -30,7 +30,11 @@ namespace Character {
 
         [SerializeField]
         GameObject player;
-        
+
+        /// <summary>
+        /// An override for any particular camera zones we want to set up.
+        /// </summary>
+        CameraZone activeZone;
 
         private void Awake() {
             mainCamera = Camera.main;
@@ -39,6 +43,10 @@ namespace Character {
 
         // Update is called once per frame
         void Update() {
+            if (activeZone != null) {
+                activeZone.zoneCamera.Priority = 25;
+                return;
+            }
             foreach (var cam in cameras) {
                 var pos = CameraHelper.WorldToScreenPointVcam(mainCamera, cam, player.transform.position);
                 // TODO: System for when the player gets obscured by objects
@@ -49,6 +57,18 @@ namespace Character {
                 }
                 // TODO: Project theoretical camera here and get if there is an overlap.
                 //var collider = cam.GetComponent<CinemachineCollider>();
+            }
+        }
+
+        private void OnTriggerStay(Collider other) {
+            if (other.TryGetComponent(out CameraZone zone)) {
+                activeZone = zone;
+            }
+        }
+
+        private void OnTriggerExit(Collider other) {
+            if (other.GetInstanceID() == activeZone.GetInstanceID()) {
+                activeZone = null;
             }
         }
     }
