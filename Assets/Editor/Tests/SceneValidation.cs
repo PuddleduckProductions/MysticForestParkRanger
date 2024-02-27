@@ -58,8 +58,7 @@ namespace SceneValidation {
             foreach (var interaction in interactions) {
                 if (interaction.behavior.GetType() == typeof(CustomInteraction)) {
                     CustomInteraction c = (CustomInteraction)interaction.behavior;
-                    Assert.IsNotNull(c.onUpdate);
-                    Assert.IsFalse(c.onUpdate.IsNull());
+                    Assert.IsNotNull(c.onUpdate, $"{interaction.name} custom interaction has been serialized incorrectly.");
                 }
             }
         }
