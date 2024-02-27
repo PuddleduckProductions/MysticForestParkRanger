@@ -112,7 +112,7 @@ MonoBehaviour:
   moveEnabled: 1
   input: {x: 0, y: 0}
   movementSpeed: 20
-  rotationSpeed: 75
+  rotationSpeed: 20
   relativeDirectionalMovement: 0
   friction: 0.99
   footstepsEvent:
