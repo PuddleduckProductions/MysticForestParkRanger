@@ -52809,11 +52809,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 232821584802076663, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 232821584802076663, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 232821584802076663, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -52825,7 +52825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 232821584802076663, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -733
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 232821584802076663, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -52914,10 +52914,6 @@ PrefabInstance:
     - target: {fileID: 8158480404355642181, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158480404355642181, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56926,6 +56922,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1133121033}
+  - {fileID: 1967094817}
   - {fileID: 1740200191}
   - {fileID: 1320486398}
   - {fileID: 1512729563}
@@ -56933,7 +56930,6 @@ SceneRoots:
   - {fileID: 699655828}
   - {fileID: 1338255370}
   - {fileID: 1125801207}
-  - {fileID: 1967094817}
   - {fileID: 2134173584}
   - {fileID: 1051481101}
   - {fileID: 265234076}
