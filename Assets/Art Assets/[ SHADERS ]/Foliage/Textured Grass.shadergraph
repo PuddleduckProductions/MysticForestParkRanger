@@ -374,6 +374,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "1e8c618554df4f80b8718dcfedb2892f",
+    "m_Id": -654350647,
+    "m_DisplayName": "Wind Intensity",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_Wind_Intensity",
+    "m_StageCapability": 3,
+    "m_Value": 1.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "26599ab874794366a69633fbe94669f9",
     "m_Id": 0,
@@ -637,6 +652,9 @@
             "m_Id": "71279eec1c5c41a795f61822a4f6a41e"
         },
         {
+            "m_Id": "1e8c618554df4f80b8718dcfedb2892f"
+        },
+        {
             "m_Id": "f02146bd76c14e178f00adf1c2807342"
         }
     ],
@@ -652,12 +670,14 @@
     "m_PropertyGuids": [
         "96e8b26e-db5e-4ea6-9ed9-dab87777bf3a",
         "277bd62c-ad45-4671-9e01-e86aec72ea2e",
-        "85cebfe0-193a-41f0-a4ee-cf58d929132b"
+        "85cebfe0-193a-41f0-a4ee-cf58d929132b",
+        "364b311c-e3bb-4969-ace4-dc4fc25001e8"
     ],
     "m_PropertyIds": [
         1512818649,
         621283355,
-        -1209900633
+        -1209900633,
+        -654350647
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []
