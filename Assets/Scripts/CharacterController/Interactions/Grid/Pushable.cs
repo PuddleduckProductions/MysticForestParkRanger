@@ -92,12 +92,11 @@ namespace Interactions.Behaviors {
 
         // Since Coroutines can't be run from non MonoBehaviours.
         protected static IEnumerator PushUpdate(PushableInteraction p, Vector2Int dir) {
-            var group = p.gridObject.manager;
-            var toAdd = new Vector3(dir.x * (group.cellSpacing.x + group.cellSize.x), 0,
-                dir.y * (group.cellSpacing.z + group.cellSize.z));
+            var toAdd = p.gridObject.GetSomeAdjacent(dir) - p.gridObject.GetSomeAdjacent(Vector2Int.zero);
             var targetPos = p.gridObject.transform.position + toAdd;
 
             // FIXME: This. It's not a great solution for snapping to ground.
+            // Should be navmesh.
             var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
             var groundDist = ground - targetPos;
             targetPos += groundDist;
