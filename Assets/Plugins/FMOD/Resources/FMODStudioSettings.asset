@@ -488,11 +488,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Music
-  - SFXAyeAye
-  - SFXDugong
-  - SFXGeneral
-  - SFXSeeds
-  - SFXTapir
+  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
