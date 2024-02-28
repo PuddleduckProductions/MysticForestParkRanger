@@ -112,9 +112,9 @@ MonoBehaviour:
   moveEnabled: 1
   input: {x: 0, y: 0}
   movementSpeed: 20
-  rotationSpeed: 75
+  rotationSpeed: 20
   relativeDirectionalMovement: 0
-  friction: 0.95
+  friction: 0.99
   footstepsEvent:
     Guid:
       Data1: 0
@@ -149,15 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63add9e8fc7a37b48afa3db475e181b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerCamera: {fileID: 4061772573286286167}
-  player: {fileID: 4410249516146352786}
+  cameras: []
+  playerCamera: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6313193292897490927
 GameObject:
   m_ObjectHideFlags: 0
