@@ -23,9 +23,7 @@ namespace Character {
         //private Animator animator;
 
         //Fmod call
-        public FMODUnity.EventReference footstepsEvent;
-
-        FMOD.Studio.EventInstance footSteps;
+        private FMOD.Studio.EventInstance footSteps;
 
         // Start is called before the first frame update
         void Start() {
@@ -33,9 +31,8 @@ namespace Character {
             mainCamera = Camera.main;
             animator = GetComponentInChildren<Animator>();
 
-                //footSteps = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
-                //FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
-                //footSteps.start();
+            footSteps = AudioManager.Instance.CreateFMODInstance(FMODEventList.Instance.playerFootsteps);//, this.transform);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
             //animator = GetComponent<Animator>();
         }
 
@@ -65,13 +62,14 @@ namespace Character {
             
             animator.SetBool("walking", isWalking);
 
-                //if (isWalking){
-                //    footSteps.setPaused(false);
-                //} else {
-                //    //footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                //    footSteps.setPaused(true);
-                //    footSteps.setTimelinePosition(0);
-                //}
+            //FMOD update
+            if (isWalking) {
+                if (AudioManager.Instance.isPlaybackStatePaused(footSteps)) {
+                    footSteps.start();
+                }
+            } else {
+                footSteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
         }
 
         public Vector3 intendedMove {

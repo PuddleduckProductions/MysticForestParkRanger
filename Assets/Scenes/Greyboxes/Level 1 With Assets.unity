@@ -4465,7 +4465,7 @@ Transform:
   m_GameObject: {fileID: 204375459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.07, y: -11.11, z: -17.73}
+  m_LocalPosition: {x: -33.1, y: -11.11, z: -25.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4490,8 +4490,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 31.89, y: 10, z: 21}
-  m_Center: {x: -0.22336769, y: 0, z: -3.1126719}
+  m_Size: {x: 32.37402, y: 10, z: 14.6255}
+  m_Center: {x: 0.018644333, y: 0, z: 0.07457924}
 --- !u!114 &204375462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4522,7 +4522,7 @@ MonoBehaviour:
   Params:
   - Name: riverProx
     Value: 1
-  OverrideAttenuation: 0
+  OverrideAttenuation: 1
   OverrideMinDistance: 7
   OverrideMaxDistance: 20
 --- !u!43 &215796613
@@ -9793,7 +9793,7 @@ Transform:
   m_GameObject: {fileID: 457175735}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.66, y: -4.92, z: 22.26}
+  m_LocalPosition: {x: -32.62, y: -9.24, z: 5.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9818,8 +9818,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.484287, y: 6.3167896, z: 17.931747}
-  m_Center: {x: -0.9298096, y: -0.75113773, z: -1.9835281}
+  m_Size: {x: 35.224533, y: 6.3167896, z: 10.578983}
+  m_Center: {x: -0.4095497, y: -0.75113773, z: 1.2269802}
 --- !u!114 &457175738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9850,9 +9850,9 @@ MonoBehaviour:
   Params:
   - Name: riverProx
     Value: 1
-  OverrideAttenuation: 0
-  OverrideMinDistance: 7
-  OverrideMaxDistance: 20
+  OverrideAttenuation: 1
+  OverrideMinDistance: 7.7935753
+  OverrideMaxDistance: 20.137384
 --- !u!1001 &459052227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13856,8 +13856,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633850151}
+  - component: {fileID: 633850152}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13876,6 +13877,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1227019634}
   - {fileID: 2790767}
   - {fileID: 1436109784}
   - {fileID: 1673818095}
@@ -13884,6 +13886,18 @@ Transform:
   - {fileID: 204375460}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &633850152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633850150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97abb540bf910e340b397364185f6904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &644940714
 GameObject:
   m_ObjectHideFlags: 0
@@ -15434,7 +15448,7 @@ Transform:
   m_GameObject: {fileID: 678675218}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.46, y: -7.29, z: 0.96}
+  m_LocalPosition: {x: -33.04, y: -7.29, z: -8.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15478,8 +15492,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 39.766953, y: 10, z: 21}
-  m_Center: {x: 0.77204514, y: 0, z: -0.03752899}
+  m_Size: {x: 37.640793, y: 10, z: 20.420145}
+  m_Center: {x: -1.010643, y: 0, z: -0.6063528}
 --- !u!114 &678675222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15510,9 +15524,9 @@ MonoBehaviour:
   Params:
   - Name: riverProx
     Value: 1
-  OverrideAttenuation: 0
+  OverrideAttenuation: 1
   OverrideMinDistance: 7
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 19.834265
 --- !u!1001 &691013258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26075,6 +26089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4364581695069736890, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -28424,6 +28439,57 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1227019633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227019634}
+  - component: {fileID: 1227019635}
+  m_Layer: 0
+  m_Name: FMODEventList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1227019634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227019633}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 633850151}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1227019635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227019633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e33aa9dba798a741bad507058695eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: 1911532283
+      Data2: 1208113057
+      Data3: -632274295
+      Data4: 965186114
+    Path: event:/SFX/footsteps
 --- !u!1001 &1227485962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35890,7 +35956,7 @@ Transform:
   m_GameObject: {fileID: 1436109783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.4, y: -5.27, z: -5.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35925,8 +35991,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 15
-  OverrideMaxDistance: 23
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 19
 --- !u!135 &1436109786
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35946,7 +36012,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 23
+  m_Radius: 19
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &1442698632
 Mesh:
@@ -45011,7 +45077,7 @@ Transform:
   m_GameObject: {fileID: 1673818094}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.36, y: -15.611, z: -52.55}
+  m_LocalPosition: {x: 0.58, y: -15.611, z: -52.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45065,8 +45131,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 14
-  OverrideMaxDistance: 35
+  OverrideMinDistance: 16
+  OverrideMaxDistance: 24
 --- !u!135 &1673818098
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -45086,7 +45152,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 35
+  m_Radius: 24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1688518398
 PrefabInstance:

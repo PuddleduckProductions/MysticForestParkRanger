@@ -156,8 +156,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  playerCamera: {fileID: 4061772573286286167}
-  player: {fileID: 4410249516146352786}
+  playerCamera: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6313193292897490927
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,9 +369,9 @@ GameObject:
   m_Component:
   - component: {fileID: 681473966647179586}
   - component: {fileID: 2985007778455347570}
-  - component: {fileID: 9216789208221781541}
   - component: {fileID: 797713971942780096}
   - component: {fileID: 3582603020631904706}
+  - component: {fileID: 4385389904893465460}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -387,8 +387,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390920822002572425}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.42472172, y: 0.070065066, z: -0.0329911, w: 0.90200555}
-  m_LocalPosition: {x: -1.5442219, y: 13.1, z: -9.88005}
+  m_LocalRotation: {x: 0.5659159, y: 0.12540092, z: -0.087596744, w: 0.81014854}
+  m_LocalPosition: {x: -0.19789371, y: 9.411038, z: -9.188688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -445,14 +445,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &9216789208221781541
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390920822002572425}
-  m_Enabled: 1
 --- !u!114 &797713971942780096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +523,19 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &4385389904893465460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390920822002572425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 4410249516146352786}
 --- !u!1001 &4286248686663610927
 PrefabInstance:
   m_ObjectHideFlags: 0
