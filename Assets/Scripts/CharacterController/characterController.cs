@@ -39,11 +39,14 @@ namespace Character {
             //animator = GetComponent<Animator>();
         }
 
+        Vector3 intendedForward = Vector3.zero;
+
         // Update is called once per frame
         void Update() {
+            var playerForward = intendedMove;
             if (moveEnabled) {
                 // adding acceleration
-                velocity += intendedMove * movementSpeed * Time.deltaTime;
+                velocity += movementSpeed * Time.deltaTime * playerForward;
 
                 //applying friction
                 velocity *= friction;
@@ -55,10 +58,14 @@ namespace Character {
 
             var xzVel = new Vector3(c.velocity.x, 0, c.velocity.z);
 
+            if (playerForward != Vector3.zero) {
+                intendedForward = playerForward;
+            }
+
             if (relativeDirectionalMovement) {
                 transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
             } else if (xzVel != Vector3.zero) {
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(xzVel, transform.up), rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(intendedForward, transform.up), rotationSpeed * Time.deltaTime);
             }
 
             bool isWalking = xzVel.magnitude > 0.01f;

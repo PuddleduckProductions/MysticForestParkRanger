@@ -62,5 +62,15 @@ namespace Interactions {
             }
             return false;
         }
+
+        /// <summary>
+        /// Get the first cell's neighbor cell in a direction.
+        /// Not useful for much other than getting the position offsets between two cells.
+        /// </summary>
+        /// <param name="direction">The direction to pick.</param>
+        /// <returns>The position of the neighboring cell.</returns>
+        public Vector3 GetSomeAdjacent(Vector2Int direction) {
+            return manager.CellToWorld(manager[cells[0].pos + direction]).center;
+        }
     }
 }
