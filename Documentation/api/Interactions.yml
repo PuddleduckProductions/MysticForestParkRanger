@@ -17,6 +17,7 @@ items:
   - Interactions.InteractionManager
   - Interactions.InteractionManager.InteractionState
   - Interactions.ShowImage
+  - Interactions.WaterSource
   langs:
   - csharp
   - vb
@@ -217,6 +218,12 @@ references:
   name: ShowImage
   nameWithType: ShowImage
   fullName: Interactions.ShowImage
+- uid: Interactions.WaterSource
+  commentId: T:Interactions.WaterSource
+  href: Interactions.WaterSource.html
+  name: WaterSource
+  nameWithType: WaterSource
+  fullName: Interactions.WaterSource
 - uid: Interactions
   commentId: N:Interactions
   href: Interactions.html
