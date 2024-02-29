@@ -119,10 +119,10 @@ namespace Interactions.Behaviors {
         public List<string> seedsToAccept;
 
         /// <summary>
-        /// A GameObject to instantiate when something has been planted here.
+        /// A reference to a GameObject to set active when something has been planted here.
         /// </summary>
-        [Tooltip("A GameObject to instantiate when something has been planted here.")]
-        public GameObject instantiateOnPlant;
+        [Tooltip("A reference to a GameObject to set active when something has been planted here.")]
+        public GameObject activateOnPlant;
         public DirtPatch(Interaction parent) : base(parent) { }
 
         public override void Interact() {
@@ -134,15 +134,15 @@ namespace Interactions.Behaviors {
             if (s.instantiateOnPlant != null) {
                 GameObject.Instantiate(s.instantiateOnPlant, interactionObject.transform);
             }
-            if (instantiateOnPlant != null) {
-                GameObject.Instantiate(instantiateOnPlant, interactionObject.transform);
+            if (activateOnPlant != null) {
+                activateOnPlant.SetActive(true);
             }
 
             GameObject.Destroy(other.gameObject);
         }
 
         public override bool CanInteract(Interaction other = null) {
-            if (other.behavior is Seed s) {
+            if (other != null && other.behavior is Seed s) {
                 if (seedsToAccept.Count == 0) {
                     return true;
                 } else {

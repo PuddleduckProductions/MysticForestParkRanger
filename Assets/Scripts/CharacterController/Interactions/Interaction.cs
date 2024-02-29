@@ -176,7 +176,8 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger, CustomInteraction, ShowImageInteraction, TeleportInteraction, WaterPipe};
+        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger,
+            CustomInteraction, ShowImageInteraction, TeleportInteraction, WaterPipe, DirtPatch, Seed};
         /// <summary>
         /// Should we allow interaction with this object?
         /// If this is set to false while <see cref="IsInteracting"/> is true,
@@ -207,6 +208,11 @@ namespace Interactions {
 
         public void EndInteraction() {
             behavior.EndInteraction();
+        }
+
+        public void OnDestroy() {
+            behavior.EndInteraction();
+            behavior = null;
         }
 
         public bool CanInteract(Interaction other=null) {

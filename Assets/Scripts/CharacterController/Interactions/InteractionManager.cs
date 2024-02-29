@@ -66,8 +66,10 @@ namespace Interactions {
         /// </summary>
         public void StopCurrentInteraction() {
             if (interactionMode == InteractionState.HOLDING_INTERACTION) {
-                usingInteraction.EndInteraction();
-                usingInteraction = null;
+                if (usingInteraction != null) {
+                    usingInteraction.EndInteraction();
+                    usingInteraction = null;
+                }
                 interactionMode = InteractionState.EMPTY;
             }
         }
