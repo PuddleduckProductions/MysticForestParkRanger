@@ -4,8 +4,6 @@ using UnityEngine.Events;
 using Utility;
 using InkTools;
 using System.Reflection;
-using System.Collections.Generic;
-using System.Collections;
 
 namespace Interactions {
     namespace Behaviors {
@@ -14,6 +12,10 @@ namespace Interactions {
         /// </summary>
         public class InteractionType : Attribute {
             public string path;
+            /// <summary>
+            /// Attribute for the editor to see and show up on the dropdown.
+            /// </summary>
+            /// <param name="path">The path to show as on the dropdown.</param>
             public InteractionType(string path) {
                 this.path = path;
             }

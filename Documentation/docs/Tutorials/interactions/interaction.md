@@ -31,7 +31,8 @@ If you want something a more long-term solution (i.e., re-usable behaviors) read
 You add your own scripted InteractionBehavior thusly:
 
 1. Create a subclass of [InteractionBehavior](~/api/Interactions.Behaviors.InteractionBehavior.yml)
-2. Go to [Interaction.InteractionType](~/api/Interactions.Interaction.yml#InteractionType) and add your class name there as an enumerator.
+2. Create an [InteractionType](~/api/Interactions.Behaviors.InteractionType.yml) attribute above the InteractionBehavior, along with the `Serializable` attribute.
+  a. `InteractionType` takes one `path` parameter: `InteractionType(string path)` for how the interaction type should appear in the dropdown. You can configure this however you want, but any changes in the path string will mean a change in serialization, so any objects that use this specific Interaction should be updated. 
 3. Your class should now appear in the dropdown.
 
 ## Setting up Interactions
