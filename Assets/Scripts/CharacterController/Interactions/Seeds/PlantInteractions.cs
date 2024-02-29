@@ -8,7 +8,7 @@ namespace Interactions.Behaviors {
     /// <summary>
     /// An object that can be picked up and placed within the world.
     /// </summary>
-    [Serializable]
+    [Serializable, InteractionType("Plants/PickAndPut")]
     public class PickAndPutInteraction : InteractionBehavior {
         public PickAndPutInteraction(Interaction parent) : base(parent) { }
         protected bool isPicking = false;
@@ -59,7 +59,7 @@ namespace Interactions.Behaviors {
     /// An object where a <see cref="PickAndPutInteraction"/> can be placed.
     /// TODO: Not finished, needs to be choosy.
     /// </summary>
-    [Serializable]
+    [Serializable, InteractionType("Plants/PutTrigger")]
     public class PutTrigger : InteractionBehavior {
         public PutTrigger(Interaction parent) : base(parent) { }
 
@@ -96,6 +96,7 @@ namespace Interactions.Behaviors {
         }
     }
 
+    [Serializable, InteractionType("Plants/Seed")]
     public class Seed : PickAndPutInteraction {
         public Seed(Interaction parent) : base(parent) { }
 
@@ -111,6 +112,7 @@ namespace Interactions.Behaviors {
         public string seedName;
     }
 
+    [Serializable, InteractionType("Plants/DirtPatch")]
     public class DirtPatch : InteractionBehavior {
         /// <summary>
         /// The <see cref="Seed.seedName"/> to accept. Will allow any seeds if blank.

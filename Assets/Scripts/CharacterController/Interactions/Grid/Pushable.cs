@@ -7,7 +7,7 @@ namespace Interactions.Behaviors {
     /// <summary>
     /// Push an object around.
     /// </summary>
-    [Serializable]
+    [Serializable, InteractionType("Grid/Pushable")]
     public class PushableInteraction : InteractionBehavior {
         [SerializeField, HideInInspector]
         GridObject gridObject;

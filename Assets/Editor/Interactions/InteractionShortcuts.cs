@@ -21,7 +21,7 @@ public class InteractionShortcuts
         Undo.RecordObjects(interactions, "Interactions to refresh");
         foreach (var interaction in interactions) {
             var so = new SerializedObject(interaction);
-            InteractionEditor.CreateBehavior(interaction, so.FindProperty("behavior"), so);
+            InteractionEditor.CreateBehavior(interaction.behaviorType, interaction, interaction.behavior.GetType(), so);
             Debug.Log($"Refreshed {interaction.name}");
         }
 
