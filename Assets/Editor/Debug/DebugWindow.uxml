@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/Debug/DebugWindowConsole.uss?fileID=7433441132597879392&amp;guid=b43ae00f8f122e747a9c84719bf4b9a1&amp;type=3#DebugWindowConsole" />
+    <ui:TextField picking-mode="Ignore" label="Game Object Name" name="teleportObjectName" />
+    <ui:Button text="Teleport!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="teleport" />
+    <ui:ScrollView name="consoleList" />
+</ui:UXML>
