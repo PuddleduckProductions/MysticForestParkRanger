@@ -15,12 +15,10 @@ namespace Character {
 
         Camera mainCamera;
 
-        Animator animator;
+        PlayerAnimator playerAnimator;
 
         Vector3 velocity; // velocity variable
         public float friction = 0.99f; // friction value
-
-        //private Animator animator;
 
         //Fmod call
         public FMODUnity.EventReference footstepsEvent;
@@ -31,7 +29,7 @@ namespace Character {
         void Start() {
             c = GetComponent<CharacterController>();
             mainCamera = Camera.main;
-            animator = GetComponentInChildren<Animator>();
+            playerAnimator = GetComponent<PlayerAnimator>();
 
                 //footSteps = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
                 //FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
@@ -56,7 +54,6 @@ namespace Character {
                 velocity = Vector3.zero;
             }
 
-            var xzVel = new Vector3(c.velocity.x, 0, c.velocity.z);
 
             if (playerForward != Vector3.zero) {
                 intendedForward = playerForward;
@@ -64,13 +61,9 @@ namespace Character {
 
             if (relativeDirectionalMovement) {
                 transform.Rotate(Vector3.up, input.x * rotationSpeed * Time.deltaTime);
-            } else if (xzVel != Vector3.zero) {
+            } else if (intendedForward != Vector3.zero) {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(intendedForward, transform.up), rotationSpeed * Time.deltaTime);
             }
-
-            bool isWalking = xzVel.magnitude > 0.01f;
-            
-            animator.SetBool("walking", isWalking);
 
                 //if (isWalking){
                 //    footSteps.setPaused(false);
