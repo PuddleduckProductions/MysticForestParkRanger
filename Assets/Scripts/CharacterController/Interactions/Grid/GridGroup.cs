@@ -165,6 +165,12 @@ namespace Interactions {
             return toAdd;
         }
 
+        public void EmptyCells(Cell[] cells) {
+            foreach (var cell in cells) {
+                GetCell(cell.pos).type = Cell.CellType.EMPTY;
+            }
+        }
+
 
         /// <summary>
         /// Move all cells of a given array in a specific direction.

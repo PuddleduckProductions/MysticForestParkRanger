@@ -1,12 +1,31 @@
 using UnityEngine;
+using Utility;
 
 namespace Interactions {
     [RequireComponent(typeof(BoxCollider))]
     public class GridObject : MonoBehaviour {
         /// <summary>
+        /// Position for when trigger <see cref="onGridUpdate"/> should be called.
+        /// If this is (-1, -1), then <see cref="onGridUpdate"/> will activate with every change in position.
+        /// </summary>
+        [Tooltip("Position for when trigger onGridUpdate should be called. If (-1,-1), then onGridUpdate will activate with every change in position.")]
+        public Vector2Int positionToActivate = -1 * Vector2Int.one;
+
+        /// <summary>
+        /// Called EITHER when this object's <see cref="cells"/> are updated, or when <see cref="positionToActivate"/> is reached.
+        /// If <see cref="positionToActivate"/> is (-1, -1), then this will always be called on a push.
+        /// Supports either onGridUpdate(); or onGridUpdate(Vector2Int minBound, Vector2Int maxBound);
+        /// </summary>
+        [SerializeField, Tooltip("Called when this object's cells are updated. If positionToActive is (-1, -1), then this will always be called on a push.")]
+        [SerializedMethod.MethodValidation(typeof(void), new System.Type[] {}),
+            SerializedMethod.MethodValidation(typeof(void), new System.Type[] { typeof(Vector2Int), typeof(Vector2Int) } )]
+        public SerializedMethod onGridUpdate = new SerializedMethod();
+
+        /// <summary>
         /// Set by <see cref="Interactions.GridEditor"/>.
         /// Local copy of the cells we own. We use these to access <see cref="manager"/>'s cells.
         /// </summary>
+        [HideInInspector]
         public GridGroup.Cell[] cells;
 
         /// <summary>
@@ -48,6 +67,14 @@ namespace Interactions {
             }
         }
 
+        protected void InvokeOnGridUpdate() {
+            if (onGridUpdate.parameters.Length > 0) {
+                onGridUpdate.Invoke(new object[] { _min, _max });
+            } else {
+                onGridUpdate.Invoke(new object[] { });
+            }
+        }
+
         /// <summary>
         /// Attempt to move this object in a given direction on the grid.
         /// Does NOT move the object's transform. That's the responsibility of whoever calls this function.
@@ -58,6 +85,16 @@ namespace Interactions {
             if (manager.MoveObject(this, direction)) {
                 _min += direction;
                 _max += direction;
+                if (!onGridUpdate.IsNull()) {
+                    if (positionToActivate.x >= 0 && positionToActivate.y >= 0) {
+                        if (positionToActivate.x >= _min.x && positionToActivate.x <= _max.x
+                            && positionToActivate.y >= _min.y && positionToActivate.y <= _max.y) {
+                            InvokeOnGridUpdate();
+                        }
+                    } else {
+                        InvokeOnGridUpdate();
+                    }
+                }
                 return true;
             }
             return false;
@@ -71,6 +108,25 @@ namespace Interactions {
         /// <returns>The position of the neighboring cell.</returns>
         public Vector3 GetSomeAdjacent(Vector2Int direction) {
             return manager.CellToWorld(manager[cells[0].pos + direction]).center;
+        }
+
+        /// <summary>
+        /// Remove this item from the <see cref="manager"/>.
+        /// </summary>
+        /// <param name="keepGridSpace">Whether or not to keep our object occupying its space in the grid.</param>
+        public void RemoveFromGrid(bool keepGridSpace) {
+            if (!keepGridSpace) {
+                manager.EmptyCells(cells);
+            }
+            Destroy(this);
+        }
+
+        public void RemoveFromGridFull() {
+            RemoveFromGrid(false);
+        }
+
+        public void RemoveFromGridKeepOccupied() {
+            RemoveFromGrid(true);
         }
     }
 }
