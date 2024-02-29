@@ -6,7 +6,7 @@ Playtests should be run at least once a week.
 
 ### The Rough Calendar
 
-1. Assets due Thursday morning through a pull request (or earlier if possible) 
+1. Assets due Thursday evening through a pull request (or earlier if possible) 
 	a. Playtesting form creation starts, due Sunday evening.
 	b. Playtesting document creation starts, due day before playtest.
 2. Playtest builds due by Saturday (or earlier if possible)
@@ -19,8 +19,9 @@ timeline
         Monday-Wednesday
         : Asset and Feature PRs
         Thursday
-        : Programming merges PRs
+        : PRs due
         Friday-Saturday
+        : Programming merges PRs
         : Playtest Build created
         : Playtest Form created
         : Playtest Instructions created
