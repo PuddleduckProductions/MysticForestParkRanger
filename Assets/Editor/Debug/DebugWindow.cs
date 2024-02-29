@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class DebugWindow : EditorWindow
@@ -29,6 +31,14 @@ public class DebugWindow : EditorWindow
         TeleportSetup();
     }
 
+    protected delegate void UpdateFunc();
+    protected event UpdateFunc onUpdate;
+
+    void Update() {
+        onUpdate?.Invoke();
+    }
+
+    #region Utility
     protected void Log(string message) {
         consoleList.Add(new Label(message));
     }
@@ -37,7 +47,26 @@ public class DebugWindow : EditorWindow
         get { return "DebugWindow/";  }
     }
 
+    bool VerifyPlayMode() {
+        if (!EditorApplication.isPlaying) {
+            Log("Not in play mode.");
+            return false;
+        }
+        return true;
+    }
+
+    GameObject GetPlayer() {
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) {
+            Log("Could not find player.");
+        }
+        return player;
+    }
+    #endregion
+
+    #region Teleportation
     TextField teleportObjName;
+    Button teleportToClick;
     private void TeleportSetup() {
         rootVisualElement.Query<Button>("teleport").First().RegisterCallback<ClickEvent>(Teleport);
         teleportObjName = rootVisualElement.Query<TextField>("teleportObjectName");
@@ -50,13 +79,13 @@ public class DebugWindow : EditorWindow
                 Teleport();
             }
         }, TrickleDown.TrickleDown);
+
+        teleportToClick = rootVisualElement.Query<Button>("teleportToClick");
+        teleportToClick.RegisterCallback<ClickEvent>(ClickTeleport);
     }
 
     private void Teleport(ClickEvent evt=null) {
-        if (!EditorApplication.isPlaying) {
-            Log("Not in play mode.");
-            return;
-        }
+        if (!VerifyPlayMode()) return;
         string name = rootVisualElement.Query<TextField>("teleportObjectName").First().value;
         var obj = GameObject.Find(name);
         if (obj == null) {
@@ -64,9 +93,8 @@ public class DebugWindow : EditorWindow
             return;
         }
 
-        var player = GameObject.FindGameObjectWithTag("Player");
+        var player = GetPlayer();
         if (player == null) {
-            Log("Player not found.");
             return;
         }
 
@@ -74,4 +102,49 @@ public class DebugWindow : EditorWindow
         player.transform.position = obj.transform.position + 5 * Vector3.up;
         player.GetComponent<CharacterController>().enabled = true;
     }
+
+    bool clickOnNextUpdate = false;
+    void CleanClickUpdate() {
+        onUpdate -= ClickTeleportUpdate;
+        teleportToClick.text = "Teleport to Click";
+        clickOnNextUpdate = false;
+    }
+
+    void ClickTeleportUpdate() {
+        if (clickOnNextUpdate) {
+            var mainCamera = Camera.main;
+            Debug.Log(Input.mousePosition);
+            if (mainCamera != null) {
+                var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit)) {
+                    var player = GetPlayer();
+                    if (player != null) {
+                        player.GetComponent<CharacterController>().enabled = false;
+                        player.transform.position = hit.point;
+                        player.GetComponent<CharacterController>().enabled = true;
+                    }
+                } else {
+                    Log("Could not find point.");
+                }
+            } else {
+                Log("Could not find main camera.");
+            }
+            CleanClickUpdate();
+        }
+
+        if (!VerifyPlayMode()) {
+            CleanClickUpdate();
+        }
+
+        if (Input.GetMouseButtonDown(0)) {
+            clickOnNextUpdate = true;
+        }
+    }
+
+    private void ClickTeleport(ClickEvent evt) {
+        if (!VerifyPlayMode()) return;
+        onUpdate += ClickTeleportUpdate;
+        teleportToClick.text = "Click on screen...";
+    }
+    #endregion
 }
