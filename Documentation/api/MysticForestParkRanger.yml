@@ -3,6 +3,7 @@ items:
 - uid: MysticForestParkRanger
   id: MysticForestParkRanger
   children:
+  - MysticForestParkRanger.AudioManager
   - MysticForestParkRanger.CameraZone
   - MysticForestParkRanger.InteractionShortcuts
   - MysticForestParkRanger.PauseManager
@@ -16,6 +17,12 @@ items:
   assemblies:
   - EditorAssembly
 references:
+- uid: MysticForestParkRanger.AudioManager
+  commentId: T:MysticForestParkRanger.AudioManager
+  href: AudioManager.html
+  name: AudioManager
+  nameWithType: AudioManager
+  fullName: AudioManager
 - uid: MysticForestParkRanger.CameraZone
   commentId: T:MysticForestParkRanger.CameraZone
   href: CameraZone.html

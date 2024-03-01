@@ -8,6 +8,7 @@ items:
   - Interactions.Behaviors.InteractionBehavior.#ctor(Interactions.Interaction)
   - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - Interactions.Behaviors.InteractionBehavior.EndInteraction
+  - Interactions.Behaviors.InteractionBehavior.GameObjectStart
   - Interactions.Behaviors.InteractionBehavior.Interact
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
   - Interactions.Behaviors.InteractionBehavior.Update
@@ -221,6 +222,34 @@ items:
       description: The other interaction
     content.vb: Public Overridable Sub Interact(other As Interaction)
   overload: Interactions.Behaviors.InteractionBehavior.Interact*
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  commentId: M:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  id: GameObjectStart
+  parent: Interactions.Behaviors.InteractionBehavior
+  langs:
+  - csharp
+  - vb
+  name: GameObjectStart()
+  nameWithType: InteractionBehavior.GameObjectStart()
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: GameObjectStart
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 48
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: Called during <xref href="Interactions.Interaction.Start" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public virtual void GameObjectStart()
+    content.vb: Public Overridable Sub GameObjectStart()
+  overload: Interactions.Behaviors.InteractionBehavior.GameObjectStart*
 - uid: Interactions.Behaviors.InteractionBehavior.Update
   commentId: M:Interactions.Behaviors.InteractionBehavior.Update
   id: Update
@@ -239,7 +268,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 49
+    startLine: 54
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -272,7 +301,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 56
+    startLine: 61
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -305,7 +334,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 64
+    startLine: 69
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -645,6 +674,30 @@ references:
   name: InteractionBehavior
   nameWithType: InteractionBehavior
   fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Interaction.Start
+  commentId: M:Interactions.Interaction.Start
+  href: Interactions.Interaction.html#Interactions_Interaction_Start
+  name: Start()
+  nameWithType: Interaction.Start()
+  fullName: Interactions.Interaction.Start()
+  spec.csharp:
+  - uid: Interactions.Interaction.Start
+    name: Start
+    href: Interactions.Interaction.html#Interactions_Interaction_Start
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Interaction.Start
+    name: Start
+    href: Interactions.Interaction.html#Interactions_Interaction_Start
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart*
+  commentId: Overload:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  name: GameObjectStart
+  nameWithType: InteractionBehavior.GameObjectStart
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart
 - uid: Interactions.Behaviors.InteractionBehavior.Update*
   commentId: Overload:Interactions.Behaviors.InteractionBehavior.Update
   href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
