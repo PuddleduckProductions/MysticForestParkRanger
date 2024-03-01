@@ -39,8 +39,7 @@ namespace Character {
 
         Vector3 intendedForward = Vector3.zero;
 
-        // Update is called once per frame
-        void Update() {
+        void FixedUpdate() {
             var playerForward = intendedMove;
             if (moveEnabled) {
                 // adding acceleration
