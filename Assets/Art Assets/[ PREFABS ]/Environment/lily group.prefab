@@ -102,6 +102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lilypad (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5500893311791539431, guid: 98d575406f25992478ca3713ff827496, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7443641480553496655, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
     - target: {fileID: 7249792853950554312, guid: 98d575406f25992478ca3713ff827496, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -188,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lilypad (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5500893311791539431, guid: 98d575406f25992478ca3713ff827496, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7443641480553496655, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
     - target: {fileID: 7249792853950554312, guid: 98d575406f25992478ca3713ff827496, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -274,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lilypad (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5500893311791539431, guid: 98d575406f25992478ca3713ff827496, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7443641480553496655, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
     - target: {fileID: 7249792853950554312, guid: 98d575406f25992478ca3713ff827496, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

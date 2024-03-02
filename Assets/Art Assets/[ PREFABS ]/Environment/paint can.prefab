@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2896664807777022250}
   - component: {fileID: 5309796811466414916}
   - component: {fileID: 8708930666956905884}
+  - component: {fileID: 3547738073609720046}
   m_Layer: 0
   m_Name: paint can
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6958540820000562837}
-  m_Mesh: {fileID: -6940323060518589033, guid: 9ac26d33586ef0d4fb002ae897abf0f5, type: 3}
+  m_Mesh: {fileID: -6940323060518589033, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
 --- !u!23 &8708930666956905884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3547738073609720046
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958540820000562837}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0068481504, y: 0.0072005712, z: 0.0069232583}
+  m_Center: {x: 0, y: 0, z: 0.0034616292}

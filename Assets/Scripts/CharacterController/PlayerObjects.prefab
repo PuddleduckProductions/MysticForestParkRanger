@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2437757445079718294}
   - component: {fileID: 910300882131061185}
   - component: {fileID: 7384292870035857171}
+  - component: {fileID: 8426180548669260447}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -112,7 +113,7 @@ MonoBehaviour:
   moveEnabled: 1
   input: {x: 0, y: 0}
   movementSpeed: 20
-  rotationSpeed: 75
+  rotationSpeed: 20
   relativeDirectionalMovement: 0
   friction: 0.95
   footstepsEvent:
@@ -155,8 +156,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   playerCamera: {fileID: 0}
   player: {fileID: 0}
+--- !u!114 &8426180548669260447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410249516146352786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1651aa6862477284dac431b64a26fcfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6313193292897490927
 GameObject:
   m_ObjectHideFlags: 0
