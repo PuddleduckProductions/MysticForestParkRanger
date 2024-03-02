@@ -26,8 +26,8 @@ namespace Character {
             mainCamera = Camera.main;
             playerAnimator = GetComponent<PlayerAnimator>();
 
-            AudioManager.Instance.RegisterSound("footsteps", "footsteps");//, this.transform);
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(AudioManager.Instance["footsteps"], this.transform);
+            //AudioManager.Instance.RegisterSound("footsteps", "footsteps");//, this.transform);
+            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(AudioManager.Instance["footsteps"], this.transform);
             //animator = GetComponent<Animator>();
         }
 

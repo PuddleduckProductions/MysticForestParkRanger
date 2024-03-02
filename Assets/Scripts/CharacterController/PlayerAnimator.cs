@@ -26,13 +26,13 @@ public class PlayerAnimator : MonoBehaviour
                 bool isWalking = xzVel.magnitude > 0.1f;
                 animator.SetBool("walking", isWalking);
 
-                if (isWalking) {
+                /*if (isWalking) {
                     if (AudioManager.Instance.isPlaybackStatePaused("footsteps")) {
                         AudioManager.Instance["footsteps"].start();
                     }
                 } else {
                     AudioManager.Instance["footsteps"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                }
+                }*/
                 break;
         }
     }
