@@ -1,6 +1,7 @@
 using UnityEngine;
 
 namespace Interactions.Behaviors {
+    [InteractionType("Misc/Teleport")]
     public class TeleportInteraction : InteractionBehavior {
         public TeleportInteraction(Interaction parent) : base(parent) { }
 
