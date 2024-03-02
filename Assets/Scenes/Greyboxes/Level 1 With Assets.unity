@@ -1624,13 +1624,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502913
+    rid: 3779462432521191500
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502913
+    - rid: 3779462432521191500
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 118204802}
@@ -3895,6 +3895,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2509496280883438998, guid: 4117eec58679da34ca4fee30bba16e12, type: 3}
       insertIndex: -1
       addedObject: {fileID: 175505076}
+    - targetCorrespondingSourceObject: {fileID: 2509496280883438998, guid: 4117eec58679da34ca4fee30bba16e12, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 175505077}
   m_SourcePrefab: {fileID: 100100000, guid: 4117eec58679da34ca4fee30bba16e12, type: 3}
 --- !u!4 &175505074 stripped
 Transform:
@@ -3919,17 +3922,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191527
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191527
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 175505076}
         teleportLocal: {x: 0, y: 0.5, z: 1}
+--- !u!114 &175505077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175505075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
 --- !u!4 &184641176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4351795118945880908, guid: a5a3ca06da8144247aae780a40ed07f7, type: 3}
@@ -6192,13 +6209,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502915
+    rid: 3779462432521191502
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502915
+    - rid: 3779462432521191502
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 311285679}
@@ -7045,13 +7062,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191533
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191533
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 320992928}
@@ -8371,13 +8388,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233862
+    rid: 3779462432521191511
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233862
+    - rid: 3779462432521191511
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 427120895}
@@ -8792,13 +8809,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233863
+    rid: 3779462432521191512
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233863
+    - rid: 3779462432521191512
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 429848733}
@@ -10392,13 +10409,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191529
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191529
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 483097057}
@@ -10653,13 +10670,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233857
+    rid: 3779462432521191506
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233857
+    - rid: 3779462432521191506
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 496020528}
@@ -11523,13 +11540,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 0
   behavior:
-    rid: 1844733413571690548
+    rid: 3779462432521191541
+  behaviorType: Misc/Ink
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690548
+    - rid: 3779462432521191541
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 551383887}
@@ -12223,9 +12240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 5
   behavior:
     rid: 3483134448140025856
+  behaviorType: 
   references:
     version: 2
     RefIds:
@@ -12429,34 +12446,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 4
   behavior:
-    rid: 5903353203081609234
+    rid: 3779462432521191540
+  behaviorType: Misc/ShowImage
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609234
-      type: {class: CustomInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
+    - rid: 3779462432521191540
+      type: {class: ShowImageInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 552429138}
-        onInteract:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 26547067}
-              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-              m_MethodName: SetActive
-              m_Mode: 6
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-        onUpdate:
-          methodName: 
-          targetObject: {fileID: 0}
+        imageToShow: {fileID: 0}
 --- !u!43 &554755811
 Mesh:
   m_ObjectHideFlags: 0
@@ -13949,13 +13949,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502912
+    rid: 3779462432521191499
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502912
+    - rid: 3779462432521191499
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 644940716}
@@ -15378,13 +15378,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191534
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191534
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 663600480}
@@ -19155,13 +19155,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233864
+    rid: 3779462432521191513
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233864
+    - rid: 3779462432521191513
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 723444935}
@@ -19866,13 +19866,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602205058498744
+    rid: 3779462432521191543
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602205058498744
+    - rid: 3779462432521191543
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 748013137}
@@ -22608,13 +22608,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191532
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191532
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 860598313}
@@ -24175,13 +24175,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233873
+    rid: 3779462432521191498
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233873
+    - rid: 3779462432521191498
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 975859362}
@@ -27450,13 +27450,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191536
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191536
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1202649463}
@@ -27843,13 +27843,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233861
+    rid: 3779462432521191510
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233861
+    - rid: 3779462432521191510
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1221117623}
@@ -28958,13 +28958,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191531
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191531
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1246585927}
@@ -29758,13 +29758,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502917
+    rid: 3779462432521191504
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502917
+    - rid: 3779462432521191504
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1269098511}
@@ -30986,13 +30986,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 5903353203081609217
+    rid: 3779462432521191539
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609217
+    - rid: 3779462432521191539
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1319011046}
@@ -36696,13 +36696,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191530
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191530
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1474761694}
@@ -36797,13 +36797,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233860
+    rid: 3779462432521191509
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233860
+    - rid: 3779462432521191509
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1485915765}
@@ -37283,13 +37283,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233859
+    rid: 3779462432521191508
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233859
+    - rid: 3779462432521191508
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1496633949}
@@ -37869,13 +37869,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233858
+    rid: 3779462432521191507
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233858
+    - rid: 3779462432521191507
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1505223911}
@@ -42924,13 +42924,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191528
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191528
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1537095165}
@@ -43952,13 +43952,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 0
   behavior:
-    rid: 1844733413571690548
+    rid: 3779462432521191542
+  behaviorType: Misc/Ink
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690548
+    - rid: 3779462432521191542
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1644434817}
@@ -44668,13 +44668,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233856
+    rid: 3779462432521191505
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233856
+    - rid: 3779462432521191505
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1647653052}
@@ -45582,13 +45582,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191535
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191535
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1696768323}
@@ -46737,13 +46737,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502916
+    rid: 3779462432521191503
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502916
+    - rid: 3779462432521191503
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1816920442}
@@ -49036,13 +49036,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502914
+    rid: 3779462432521191501
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502914
+    - rid: 3779462432521191501
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1949979993}
@@ -49438,13 +49438,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191515
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191515
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1956487654}
@@ -50362,13 +50362,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191538
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191538
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2018276687}
@@ -52077,13 +52077,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191537
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191537
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2107580794}
@@ -52317,13 +52317,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191516
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191516
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2112602573}
