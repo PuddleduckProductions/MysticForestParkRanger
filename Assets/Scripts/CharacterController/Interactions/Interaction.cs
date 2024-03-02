@@ -223,7 +223,6 @@ namespace Interactions {
         }
 
         public void OnDestroy() {
-            behavior.EndInteraction();
             behavior = null;
         }
 
