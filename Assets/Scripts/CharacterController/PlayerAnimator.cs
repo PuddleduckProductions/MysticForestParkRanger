@@ -18,10 +18,9 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         switch (ISingleton<InteractionManager>.Instance.currentInteractionType) {
-            case Interaction.InteractionType.PushableInteraction:
+            case "Grid/Pushable":
                 // Pushing interactions here
                 break;
-            case null:
             default: //If the value is null or something else, we can stick with regular animations
                 var xzVel = new Vector3(controller.velocity.x, 0, controller.velocity.z);
                 bool isWalking = xzVel.magnitude > 0.1f;
