@@ -5,7 +5,8 @@ items:
   id: GridObject
   parent: Interactions
   children:
-  - Interactions.GridObject.Move(UnityEngine.Vector3)
+  - Interactions.GridObject.GetSomeAdjacent(UnityEngine.Vector2Int)
+  - Interactions.GridObject.Move(UnityEngine.Vector2Int)
   - Interactions.GridObject.Start
   - Interactions.GridObject._max
   - Interactions.GridObject._min
@@ -22,11 +23,11 @@ items:
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GridObject
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 3
   assemblies:
   - ScriptAssembly
@@ -180,11 +181,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: cells
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 9
   assemblies:
   - ScriptAssembly
@@ -212,11 +213,11 @@ items:
   type: Property
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: min
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 15
   assemblies:
   - ScriptAssembly
@@ -246,11 +247,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: _min
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 16
   assemblies:
   - ScriptAssembly
@@ -273,11 +274,11 @@ items:
   type: Property
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: max
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 22
   assemblies:
   - ScriptAssembly
@@ -307,11 +308,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: _max
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 23
   assemblies:
   - ScriptAssembly
@@ -334,11 +335,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: manager
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 25
   assemblies:
   - ScriptAssembly
@@ -361,11 +362,11 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Start
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 27
   assemblies:
   - ScriptAssembly
@@ -374,24 +375,24 @@ items:
     content: public void Start()
     content.vb: Public Sub Start()
   overload: Interactions.GridObject.Start*
-- uid: Interactions.GridObject.Move(UnityEngine.Vector3)
-  commentId: M:Interactions.GridObject.Move(UnityEngine.Vector3)
-  id: Move(UnityEngine.Vector3)
+- uid: Interactions.GridObject.Move(UnityEngine.Vector2Int)
+  commentId: M:Interactions.GridObject.Move(UnityEngine.Vector2Int)
+  id: Move(UnityEngine.Vector2Int)
   parent: Interactions.GridObject
   langs:
   - csharp
   - vb
-  name: Move(Vector3)
-  nameWithType: GridObject.Move(Vector3)
-  fullName: Interactions.GridObject.Move(UnityEngine.Vector3)
+  name: Move(Vector2Int)
+  nameWithType: GridObject.Move(Vector2Int)
+  fullName: Interactions.GridObject.Move(UnityEngine.Vector2Int)
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridObject.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Move
-    path: ../Assets/Scripts/CharacterController/Interactions/GridObject.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
     startLine: 56
   assemblies:
   - ScriptAssembly
@@ -402,16 +403,54 @@ items:
     Does NOT move the object's transform. That's the responsibility of whoever calls this function.
   example: []
   syntax:
-    content: public bool Move(Vector3 direction)
+    content: public bool Move(Vector2Int direction)
     parameters:
     - id: direction
-      type: UnityEngine.Vector3
-      description: The direction to move in. Should be a normalized vector.
+      type: UnityEngine.Vector2Int
+      description: The direction to move in. Should be a basis vector with exactly ONE non-zero component.
     return:
       type: System.Boolean
       description: Whether or not the move was successful.
-    content.vb: Public Function Move(direction As Vector3) As Boolean
+    content.vb: Public Function Move(direction As Vector2Int) As Boolean
   overload: Interactions.GridObject.Move*
+- uid: Interactions.GridObject.GetSomeAdjacent(UnityEngine.Vector2Int)
+  commentId: M:Interactions.GridObject.GetSomeAdjacent(UnityEngine.Vector2Int)
+  id: GetSomeAdjacent(UnityEngine.Vector2Int)
+  parent: Interactions.GridObject
+  langs:
+  - csharp
+  - vb
+  name: GetSomeAdjacent(Vector2Int)
+  nameWithType: GridObject.GetSomeAdjacent(Vector2Int)
+  fullName: Interactions.GridObject.GetSomeAdjacent(UnityEngine.Vector2Int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: GetSomeAdjacent
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
+    startLine: 71
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  summary: >-
+    Get the first cell's neighbor cell in a direction.
+
+    Not useful for much other than getting the position offsets between two cells.
+  example: []
+  syntax:
+    content: public Vector3 GetSomeAdjacent(Vector2Int direction)
+    parameters:
+    - id: direction
+      type: UnityEngine.Vector2Int
+      description: The direction to pick.
+    return:
+      type: UnityEngine.Vector3
+      description: The position of the neighboring cell.
+    content.vb: Public Function GetSomeAdjacent(direction As Vector2Int) As Vector3
+  overload: Interactions.GridObject.GetSomeAdjacent*
 references:
 - uid: Interactions
   commentId: N:Interactions
@@ -4828,17 +4867,10 @@ references:
   fullName: Interactions.GridObject.Start
 - uid: Interactions.GridObject.Move*
   commentId: Overload:Interactions.GridObject.Move
-  href: Interactions.GridObject.html#Interactions_GridObject_Move_UnityEngine_Vector3_
+  href: Interactions.GridObject.html#Interactions_GridObject_Move_UnityEngine_Vector2Int_
   name: Move
   nameWithType: GridObject.Move
   fullName: Interactions.GridObject.Move
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -4850,3 +4882,16 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: Interactions.GridObject.GetSomeAdjacent*
+  commentId: Overload:Interactions.GridObject.GetSomeAdjacent
+  href: Interactions.GridObject.html#Interactions_GridObject_GetSomeAdjacent_UnityEngine_Vector2Int_
+  name: GetSomeAdjacent
+  nameWithType: GridObject.GetSomeAdjacent
+  fullName: Interactions.GridObject.GetSomeAdjacent
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3

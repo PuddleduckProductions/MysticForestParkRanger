@@ -17,11 +17,11 @@ items:
   type: Struct
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Cell
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 6
   assemblies:
   - ScriptAssembly
@@ -59,11 +59,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: type
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 13
   assemblies:
   - ScriptAssembly
@@ -86,11 +86,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: pos
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 14
   assemblies:
   - ScriptAssembly
@@ -113,11 +113,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 16
   assemblies:
   - ScriptAssembly

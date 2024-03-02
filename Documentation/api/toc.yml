@@ -7,10 +7,6 @@ items:
     name: CameraController
   - uid: Character.CameraControllerEditor
     name: CameraControllerEditor
-  - uid: Character.CameraController_EY
-    name: CameraController_EY
-  - uid: Character.CameraController_EYEditor
-    name: CameraController_EYEditor
   - uid: Character.UIController
     name: UIController
   - uid: Character.characterController
@@ -81,9 +77,13 @@ items:
     name: InteractionManager.InteractionState
   - uid: Interactions.ShowImage
     name: ShowImage
+  - uid: Interactions.WaterSource
+    name: WaterSource
 - uid: MysticForestParkRanger
   name: MysticForestParkRanger
   items:
+  - uid: MysticForestParkRanger.AudioManager
+    name: AudioManager
   - uid: MysticForestParkRanger.CameraZone
     name: CameraZone
   - uid: MysticForestParkRanger.InteractionShortcuts

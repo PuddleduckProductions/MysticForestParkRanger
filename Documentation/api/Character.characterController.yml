@@ -5,16 +5,14 @@ items:
   id: characterController
   parent: Character
   children:
-  - Character.characterController.animator
+  - Character.characterController.footstepsEvent
+  - Character.characterController.friction
   - Character.characterController.input
   - Character.characterController.intendedMove
   - Character.characterController.moveEnabled
   - Character.characterController.movementSpeed
-  - Character.characterController.movementSpeedMultiplier
-  - Character.characterController.pushForce
   - Character.characterController.relativeDirectionalMovement
   - Character.characterController.rotationSpeed
-  - Character.characterController.rotationSpeedMultiplier
   langs:
   - csharp
   - vb
@@ -302,114 +300,60 @@ items:
     return:
       type: System.Boolean
     content.vb: Public relativeDirectionalMovement As Boolean
-- uid: Character.characterController.rotationSpeedMultiplier
-  commentId: F:Character.characterController.rotationSpeedMultiplier
-  id: rotationSpeedMultiplier
+- uid: Character.characterController.friction
+  commentId: F:Character.characterController.friction
+  id: friction
   parent: Character.characterController
   langs:
   - csharp
   - vb
-  name: rotationSpeedMultiplier
-  nameWithType: characterController.rotationSpeedMultiplier
-  fullName: Character.characterController.rotationSpeedMultiplier
+  name: friction
+  nameWithType: characterController.friction
+  fullName: Character.characterController.friction
   type: Field
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: rotationSpeedMultiplier
+    id: friction
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 14
+    startLine: 20
   assemblies:
   - ScriptAssembly
   namespace: Character
   syntax:
-    content: public float rotationSpeedMultiplier
+    content: public float friction
     return:
       type: System.Single
-    content.vb: Public rotationSpeedMultiplier As Single
-- uid: Character.characterController.movementSpeedMultiplier
-  commentId: F:Character.characterController.movementSpeedMultiplier
-  id: movementSpeedMultiplier
+    content.vb: Public friction As Single
+- uid: Character.characterController.footstepsEvent
+  commentId: F:Character.characterController.footstepsEvent
+  id: footstepsEvent
   parent: Character.characterController
   langs:
   - csharp
   - vb
-  name: movementSpeedMultiplier
-  nameWithType: characterController.movementSpeedMultiplier
-  fullName: Character.characterController.movementSpeedMultiplier
+  name: footstepsEvent
+  nameWithType: characterController.footstepsEvent
+  fullName: Character.characterController.footstepsEvent
   type: Field
   source:
     remote:
       path: Assets/Scripts/CharacterController/characterController.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: movementSpeedMultiplier
+    id: footstepsEvent
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 15
+    startLine: 25
   assemblies:
   - ScriptAssembly
   namespace: Character
   syntax:
-    content: public float movementSpeedMultiplier
+    content: public EventReference footstepsEvent
     return:
-      type: System.Single
-    content.vb: Public movementSpeedMultiplier As Single
-- uid: Character.characterController.pushForce
-  commentId: F:Character.characterController.pushForce
-  id: pushForce
-  parent: Character.characterController
-  langs:
-  - csharp
-  - vb
-  name: pushForce
-  nameWithType: characterController.pushForce
-  fullName: Character.characterController.pushForce
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: pushForce
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 18
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: public float pushForce
-    return:
-      type: System.Single
-    content.vb: Public pushForce As Single
-- uid: Character.characterController.animator
-  commentId: F:Character.characterController.animator
-  id: animator
-  parent: Character.characterController
-  langs:
-  - csharp
-  - vb
-  name: animator
-  nameWithType: characterController.animator
-  fullName: Character.characterController.animator
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: animator
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 22
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: public Animator animator
-    return:
-      type: UnityEngine.Animator
-    content.vb: Public animator As Animator
+      type: FMODUnity.EventReference
+    content.vb: Public footstepsEvent As EventReference
 - uid: Character.characterController.intendedMove
   commentId: P:Character.characterController.intendedMove
   id: intendedMove
@@ -428,7 +372,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: intendedMove
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 49
+    startLine: 83
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -4823,13 +4767,17 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: UnityEngine.Animator
-  commentId: T:UnityEngine.Animator
-  parent: UnityEngine
-  isExternal: true
-  name: Animator
-  nameWithType: Animator
-  fullName: UnityEngine.Animator
+- uid: FMODUnity.EventReference
+  commentId: T:FMODUnity.EventReference
+  parent: FMODUnity
+  name: EventReference
+  nameWithType: EventReference
+  fullName: FMODUnity.EventReference
+- uid: FMODUnity
+  commentId: N:FMODUnity
+  name: FMODUnity
+  nameWithType: FMODUnity
+  fullName: FMODUnity
 - uid: Character.characterController.intendedMove*
   commentId: Overload:Character.characterController.intendedMove
   href: Character.characterController.html#Character_characterController_intendedMove
