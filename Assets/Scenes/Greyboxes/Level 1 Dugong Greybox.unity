@@ -2598,6 +2598,8 @@ GameObject:
   - component: {fileID: 118204804}
   - component: {fileID: 118204803}
   - component: {fileID: 118204802}
+  - component: {fileID: 118204809}
+  - component: {fileID: 118204808}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,1),(1,1))
   m_TagString: Untagged
@@ -2633,19 +2635,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191455
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191455
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 118204802}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 118204808}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &118204803
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2963,6 +2965,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &118204808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118204800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &118204809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118204800}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 2, z: 3}
+  m_Center: {x: 2.9908948, y: 1.4193525, z: 1.8832529}
 --- !u!43 &149787693
 Mesh:
   m_ObjectHideFlags: 0
@@ -5672,6 +5709,8 @@ GameObject:
   - component: {fileID: 311285681}
   - component: {fileID: 311285680}
   - component: {fileID: 311285679}
+  - component: {fileID: 311285686}
+  - component: {fileID: 311285685}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((1,2),(2,2))
   m_TagString: Untagged
@@ -5707,19 +5746,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191457
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191457
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 311285679}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 311285685}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &311285680
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6037,6 +6076,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &311285685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311285677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &311285686
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311285677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 2, z: 3}
+  m_Center: {x: 2.9908948, y: 1.4193525, z: 1.8832529}
 --- !u!1 &324151418
 GameObject:
   m_ObjectHideFlags: 0
@@ -7705,6 +7779,8 @@ GameObject:
   - component: {fileID: 427120897}
   - component: {fileID: 427120896}
   - component: {fileID: 427120895}
+  - component: {fileID: 427120902}
+  - component: {fileID: 427120901}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((3,0),(3,1))
   m_TagString: Untagged
@@ -7740,19 +7816,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191466
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191466
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 427120895}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 427120901}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &427120896
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8070,6 +8146,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &427120901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427120893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &427120902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427120893}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 4}
+  m_Center: {x: 2.9908955, y: 1.4193525, z: 1.8832521}
 --- !u!1 &429848731
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,6 +8196,8 @@ GameObject:
   - component: {fileID: 429848735}
   - component: {fileID: 429848734}
   - component: {fileID: 429848733}
+  - component: {fileID: 429848740}
+  - component: {fileID: 429848739}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((4,0),(4,0))
   m_TagString: Untagged
@@ -8120,19 +8233,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191467
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191467
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 429848733}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 429848739}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &429848734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8450,6 +8563,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &429848739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429848731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &429848740
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429848731}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 2.9908955, y: 1.4193525, z: 1.8832521}
 --- !u!1 &433883718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9336,6 +9484,8 @@ GameObject:
   - component: {fileID: 496020530}
   - component: {fileID: 496020529}
   - component: {fileID: 496020528}
+  - component: {fileID: 496020535}
+  - component: {fileID: 496020534}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((0,1),(1,1))
   m_TagString: Untagged
@@ -9371,19 +9521,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191461
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191461
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 496020528}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 496020534}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &496020529
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9701,6 +9851,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &496020534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496020526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &496020535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496020526}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.9999998, y: 2, z: 2}
+  m_Center: {x: 2.9908953, y: 1.4193525, z: 1.8832521}
 --- !u!43 &511825441
 Mesh:
   m_ObjectHideFlags: 0
@@ -10138,13 +10323,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 0
   behavior:
-    rid: 1844733413571690548
+    rid: 3779462432521191471
+  behaviorType: Misc/Ink
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690548
+    - rid: 3779462432521191471
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 551383887}
@@ -10837,13 +11022,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 5
   behavior:
-    rid: 3483134448140025856
+    rid: 3779462432521191470
+  behaviorType: Misc/ShowImage
   references:
     version: 2
     RefIds:
-    - rid: 3483134448140025856
+    - rid: 3779462432521191470
       type: {class: ShowImageInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 552429130}
@@ -12902,6 +13087,8 @@ GameObject:
   - component: {fileID: 644940718}
   - component: {fileID: 644940717}
   - component: {fileID: 644940716}
+  - component: {fileID: 644940723}
+  - component: {fileID: 644940722}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,0),(1,0))
   m_TagString: Untagged
@@ -12937,19 +13124,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191454
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191454
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 644940716}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 644940722}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &644940717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13267,6 +13454,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &644940722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644940714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &644940723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644940714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 2, z: 3}
+  m_Center: {x: 2.9908948, y: 1.4193525, z: 1.8832529}
 --- !u!4 &660970957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
@@ -17384,6 +17606,8 @@ GameObject:
   - component: {fileID: 723444937}
   - component: {fileID: 723444936}
   - component: {fileID: 723444935}
+  - component: {fileID: 723444942}
+  - component: {fileID: 723444941}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((4,1),(4,2))
   m_TagString: Untagged
@@ -17419,19 +17643,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191468
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191468
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 723444935}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 723444941}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &723444936
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17749,6 +17973,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &723444941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723444933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &723444942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723444933}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 4}
+  m_Center: {x: 2.9908957, y: 1.4193525, z: 1.8832529}
 --- !u!43 &723809126
 Mesh:
   m_ObjectHideFlags: 0
@@ -17929,6 +18188,8 @@ GameObject:
   - component: {fileID: 748013139}
   - component: {fileID: 748013138}
   - component: {fileID: 748013137}
+  - component: {fileID: 748013145}
+  - component: {fileID: 748013144}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -17949,19 +18210,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191473
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191473
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 748013137}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 748013144}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &748013138
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18294,6 +18555,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1150424420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &748013144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748013136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &748013145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748013136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.994988, y: 1.883578, z: 2.6122704}
+  m_Center: {x: 2.9908946, y: 0.9417903, z: 1.3019772}
 --- !u!1 &791579218
 GameObject:
   m_ObjectHideFlags: 0
@@ -22220,6 +22516,8 @@ GameObject:
   - component: {fileID: 1035614648}
   - component: {fileID: 1035614647}
   - component: {fileID: 1035614646}
+  - component: {fileID: 1035614654}
+  - component: {fileID: 1035614653}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -22240,19 +22538,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690555
+    rid: 3779462432521191474
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690555
+    - rid: 3779462432521191474
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1035614646}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1035614653}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1035614647
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22585,6 +22883,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1150424420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035614653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035614645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1035614654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035614645}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.312117, y: 1.4114009, z: 2.2722569}
+  m_Center: {x: 2.1530955, y: 0.70570046, z: -1.1345711}
 --- !u!43 &1048521707
 Mesh:
   m_ObjectHideFlags: 0
@@ -24010,31 +24343,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.28235555
+      value: -31.471615
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.589964
+      value: 16.2
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.82371
+      value: 9.094619
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9267541
+      value: 0.4645826
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3741945
+      value: 0.19346495
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.030828554
+      value: 0.79773355
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012447612
+      value: -0.33219814
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25853,6 +26186,8 @@ GameObject:
   - component: {fileID: 1221117625}
   - component: {fileID: 1221117624}
   - component: {fileID: 1221117623}
+  - component: {fileID: 1221117630}
+  - component: {fileID: 1221117629}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((2,2),(3,2))
   m_TagString: Untagged
@@ -25888,19 +26223,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191465
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191465
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1221117623}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1221117629}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1221117624
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26218,6 +26553,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1221117629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221117621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1221117630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221117621}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.9999998, y: 2, z: 2}
+  m_Center: {x: 2.9908953, y: 1.4193525, z: 1.8832521}
 --- !u!1 &1230465242
 GameObject:
   m_ObjectHideFlags: 0
@@ -27955,6 +28325,8 @@ GameObject:
   - component: {fileID: 1269098513}
   - component: {fileID: 1269098512}
   - component: {fileID: 1269098511}
+  - component: {fileID: 1269098518}
+  - component: {fileID: 1269098517}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((3,0),(3,0))
   m_TagString: Untagged
@@ -27990,19 +28362,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191459
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191459
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1269098511}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1269098517}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1269098512
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28320,6 +28692,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1269098517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269098509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1269098518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269098509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 2, z: 3}
+  m_Center: {x: 2.9908948, y: 1.4193525, z: 1.8832529}
 --- !u!43 &1279784219
 Mesh:
   m_ObjectHideFlags: 0
@@ -34133,6 +34540,8 @@ GameObject:
   - component: {fileID: 1485915767}
   - component: {fileID: 1485915766}
   - component: {fileID: 1485915765}
+  - component: {fileID: 1485915772}
+  - component: {fileID: 1485915771}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((1,4),(2,4))
   m_TagString: Untagged
@@ -34168,19 +34577,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191464
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191464
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1485915765}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1485915771}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1485915766
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34498,6 +34907,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1485915771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485915763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1485915772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485915763}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.9999998, y: 2, z: 2}
+  m_Center: {x: 2.9908953, y: 1.4193525, z: 1.8832521}
 --- !u!1 &1496633947
 GameObject:
   m_ObjectHideFlags: 0
@@ -34513,6 +34957,8 @@ GameObject:
   - component: {fileID: 1496633951}
   - component: {fileID: 1496633950}
   - component: {fileID: 1496633949}
+  - component: {fileID: 1496633956}
+  - component: {fileID: 1496633955}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((1,2),(1,3))
   m_TagString: Untagged
@@ -34548,19 +34994,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191463
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191463
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1496633949}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1496633955}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1496633950
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34878,6 +35324,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1496633955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496633947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1496633956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496633947}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 4}
+  m_Center: {x: 2.9908955, y: 1.4193525, z: 1.8832521}
 --- !u!43 &1497112891
 Mesh:
   m_ObjectHideFlags: 0
@@ -35411,6 +35892,8 @@ GameObject:
   - component: {fileID: 1505223913}
   - component: {fileID: 1505223912}
   - component: {fileID: 1505223911}
+  - component: {fileID: 1505223918}
+  - component: {fileID: 1505223917}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((0,2),(0,4))
   m_TagString: Untagged
@@ -35446,19 +35929,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191462
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191462
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1505223911}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1505223917}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1505223912
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35776,6 +36259,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1505223917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505223909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1505223918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505223909}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 6}
+  m_Center: {x: 2.9908957, y: 1.4193525, z: 1.883253}
 --- !u!43 &1517838817
 Mesh:
   m_ObjectHideFlags: 0
@@ -42186,13 +42704,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 0
   behavior:
-    rid: 1844733413571690548
+    rid: 3779462432521191472
+  behaviorType: Misc/Ink
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690548
+    - rid: 3779462432521191472
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1644434817}
@@ -42865,6 +43383,8 @@ GameObject:
   - component: {fileID: 1647653054}
   - component: {fileID: 1647653053}
   - component: {fileID: 1647653052}
+  - component: {fileID: 1647653059}
+  - component: {fileID: 1647653058}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((0,0,),(2,0))
   m_TagString: Untagged
@@ -42900,19 +43420,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191460
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191460
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1647653052}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1647653058}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1647653053
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43230,6 +43750,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1647653058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647653050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1647653059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647653050}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 2, z: 2}
+  m_Center: {x: 2.9908953, y: 1.4193525, z: 1.8832521}
 --- !u!43 &1648954422
 Mesh:
   m_ObjectHideFlags: 0
@@ -45316,6 +45871,8 @@ GameObject:
   - component: {fileID: 1816920444}
   - component: {fileID: 1816920443}
   - component: {fileID: 1816920442}
+  - component: {fileID: 1816920449}
+  - component: {fileID: 1816920448}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((2,0),(2,1))
   m_TagString: Untagged
@@ -45351,19 +45908,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191458
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191458
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1816920442}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1816920448}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1816920443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45681,6 +46238,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1816920448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816920440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1816920449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816920440}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 2, z: 6}
+  m_Center: {x: 2.9908948, y: 1.4193525, z: 1.883253}
 --- !u!43 &1824964345
 Mesh:
   m_ObjectHideFlags: 0
@@ -47029,6 +47621,8 @@ GameObject:
   - component: {fileID: 1881212084}
   - component: {fileID: 1881212083}
   - component: {fileID: 1881212082}
+  - component: {fileID: 1881212090}
+  - component: {fileID: 1881212089}
   m_Layer: 0
   m_Name: Base Cube
   m_TagString: Untagged
@@ -47049,19 +47643,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191475
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191475
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1881212082}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1881212089}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1881212083
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47394,6 +47988,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1634672543}
   m_LocalEulerAnglesHint: {x: 0, y: -19.534, z: 0}
+--- !u!114 &1881212089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881212081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1881212090
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881212081}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 2.9908955, y: 1.4193525, z: 1.8832521}
 --- !u!1 &1949979991
 GameObject:
   m_ObjectHideFlags: 0
@@ -47409,6 +48038,8 @@ GameObject:
   - component: {fileID: 1949979995}
   - component: {fileID: 1949979994}
   - component: {fileID: 1949979993}
+  - component: {fileID: 1949980000}
+  - component: {fileID: 1949979999}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,2),(0,3))
   m_TagString: Untagged
@@ -47444,19 +48075,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690553
+    rid: 3779462432521191456
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690553
+    - rid: 3779462432521191456
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1949979993}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 1949979999}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!64 &1949979994
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47774,6 +48405,41 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1949979999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949979991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &1949980000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949979991}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 2, z: 6}
+  m_Center: {x: 2.9908948, y: 1.4193525, z: 1.883253}
 --- !u!43 &1960829468
 Mesh:
   m_ObjectHideFlags: 0
@@ -51105,6 +51771,8 @@ GameObject:
   - component: {fileID: 2090540636}
   - component: {fileID: 2090540642}
   - component: {fileID: 2090540643}
+  - component: {fileID: 2090540645}
+  - component: {fileID: 2090540644}
   m_Layer: 0
   m_Name: Push Rock Into Hole
   m_TagString: Untagged
@@ -51457,19 +52125,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 1844733413571690529
+    rid: 3779462432521191469
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690529
+    - rid: 3779462432521191469
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2090540642}
-        gridObject: {fileID: 0}
-        moveThreshold: 0
-        pushSpeed: 0
+        gridObject: {fileID: 2090540644}
+        moveThreshold: 0.01
+        pushSpeed: 5
 --- !u!54 &2090540643
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51497,6 +52165,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &2090540644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090540635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cells: []
+  manager: {fileID: 0}
+--- !u!65 &2090540645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090540635}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.438972, y: 2.1121597, z: 1.5}
+  m_Center: {x: 3.0439384, y: 1.0716963, z: -0.8364217}
 --- !u!1 &2100269735
 GameObject:
   m_ObjectHideFlags: 3
