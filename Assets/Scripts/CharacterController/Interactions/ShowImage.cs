@@ -7,6 +7,7 @@ using Utility;
 
 namespace Interactions {
     namespace Behaviors {
+        [InteractionType("Misc/ShowImage")]
         public class ShowImageInteraction : InteractionBehavior {
             public ShowImageInteraction(Interaction parent) : base(parent) { }
 
