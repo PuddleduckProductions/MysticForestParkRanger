@@ -70,7 +70,7 @@ namespace Character {
         }
 
         private void OnTriggerExit(Collider other) {
-            if (activeZone != null && other.GetInstanceID() == activeZone.GetInstanceID()) {
+            if (activeZone != null && other.gameObject.GetInstanceID() == activeZone.gameObject.GetInstanceID()) {
                 activeZone.zoneCamera.Priority = 10;
                 activeZone = null;
             }

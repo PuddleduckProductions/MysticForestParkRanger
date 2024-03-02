@@ -2,7 +2,6 @@ using UnityEditor;
 
 namespace Interactions {
     using Behaviors;
-    using System.Diagnostics;
     using System.Linq;
     using System.Reflection;
     using static Interaction;
