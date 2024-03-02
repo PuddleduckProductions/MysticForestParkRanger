@@ -15,8 +15,6 @@ namespace Character {
 
         Camera mainCamera;
 
-        PlayerAnimator playerAnimator;
-
         Vector3 velocity; // velocity variable
         public float friction = 0.99f; // friction value
 
@@ -24,11 +22,9 @@ namespace Character {
         void Start() {
             c = GetComponent<CharacterController>();
             mainCamera = Camera.main;
-            playerAnimator = GetComponent<PlayerAnimator>();
 
             //AudioManager.Instance.RegisterSound("footsteps", "footsteps");//, this.transform);
             //FMODUnity.RuntimeManager.AttachInstanceToGameObject(AudioManager.Instance["footsteps"], this.transform);
-            //animator = GetComponent<Animator>();
         }
 
         Vector3 intendedForward = Vector3.zero;
@@ -76,7 +72,6 @@ namespace Character {
 
         void OnWalking(InputValue value) {
             input = value.Get<Vector2>();
-            // animator.SetBool("walking", true);
         }
     }
 }

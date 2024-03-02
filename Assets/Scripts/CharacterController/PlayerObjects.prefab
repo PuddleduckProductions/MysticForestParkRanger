@@ -116,13 +116,6 @@ MonoBehaviour:
   rotationSpeed: 20
   relativeDirectionalMovement: 0
   friction: 0.95
-  footstepsEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!114 &910300882131061185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameras:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -42117,10 +42117,6 @@ PrefabInstance:
       propertyPath: m_DefaultBlend.m_Style
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
-      propertyPath: movementSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2985007778455347570, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: field of view
       value: 60.000004
@@ -42280,10 +42276,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4410249516146352786, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 1976580250}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
 --- !u!43 &1137323341
 Mesh:
@@ -70072,18 +70065,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4450663657350451911, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
   m_PrefabInstance: {fileID: 1133121033}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1976580250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976580243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472d159390b4b6341ba20d2dddb3693f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1981972296
 GameObject:
   m_ObjectHideFlags: 3
