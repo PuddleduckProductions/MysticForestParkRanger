@@ -37,6 +37,14 @@ namespace Interactions {
         /// </summary>
         Interaction usingInteraction;
 
+        /// <summary>
+        /// The <see cref="Interaction.InteractionType"/> that <see cref="usingInteraction"/> is.
+        /// If there is no current interaction, will return null.
+        /// </summary>
+        public Interaction.InteractionType? currentInteractionType { get {
+                return (usingInteraction == null)? null : usingInteraction.type;
+            } }
+
         // Start is called before the first frame update
         void Start() {
             interactionsInScene = GameObject.FindObjectsByType<Interaction>(FindObjectsSortMode.None);
@@ -112,7 +120,7 @@ namespace Interactions {
             RaycastHit[] hits = Physics.BoxCastAll(playerPosition, interactionExtents* .5f, player.transform.forward, player.transform.rotation, interactionRange);
             foreach (RaycastHit hit in hits) {
                 if (hit.collider != null && hit.collider.TryGetComponent<Interaction>(out Interaction interaction)) {
-                    if(interaction.gameObject.activeInHierarchy
+                    if(interaction.enabled
                         // CanInteract accounts for the possibility that usingInteraction is null.
                         && interaction.interactionEnabled && interaction.CanInteract(usingInteraction)){
                         var distance = Vector3.Distance(playerPosition, hit.point); // get distance from player --> hit

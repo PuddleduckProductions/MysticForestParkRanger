@@ -12,6 +12,7 @@ items:
   - Interactions.Interaction.InteractionType.PutTrigger
   - Interactions.Interaction.InteractionType.ShowImageInteraction
   - Interactions.Interaction.InteractionType.TeleportInteraction
+  - Interactions.Interaction.InteractionType.WaterPipe
   langs:
   - csharp
   - vb
@@ -26,7 +27,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionType
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -51,7 +52,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -77,7 +78,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PushableInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -103,7 +104,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PickAndPutInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -129,7 +130,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PutTrigger
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -155,7 +156,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CustomInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -181,7 +182,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ShowImageInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -207,12 +208,38 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: TeleportInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 393
+    startLine: 268
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
     content: TeleportInteraction = 6
+    return:
+      type: Interactions.Interaction.InteractionType
+- uid: Interactions.Interaction.InteractionType.WaterPipe
+  commentId: F:Interactions.Interaction.InteractionType.WaterPipe
+  id: WaterPipe
+  parent: Interactions.Interaction.InteractionType
+  langs:
+  - csharp
+  - vb
+  name: WaterPipe
+  nameWithType: Interaction.InteractionType.WaterPipe
+  fullName: Interactions.Interaction.InteractionType.WaterPipe
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: WaterPipe
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 268
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: WaterPipe = 7
     return:
       type: Interactions.Interaction.InteractionType
 references:
