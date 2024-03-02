@@ -4,9 +4,10 @@ using UnityEngine;
 using Utility;
 using FMODUnity;
 using FMOD.Studio;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
-//public class AudioManager : MonoBehaviour, ISingleton<AudioManager>
+/// <summary>
+/// System for loading in and keeping track of sounds.
+/// </summary>
 public class AudioManager
 {
     protected static AudioManager _instance;
@@ -26,7 +27,8 @@ public class AudioManager
     SoundList eventRefs;
 
     public AudioManager() {
-        eventRefs = (SoundList)Resources.Load("MasterSoundList.asset");
+        eventRefs = (SoundList)Resources.Load("MasterSoundList");
+        eventRefs.Init();
     }
 
     protected Dictionary<string, EventInstance> sounds = new Dictionary<string, EventInstance>()    ;
@@ -37,17 +39,19 @@ public class AudioManager
         }
     }
 
-    public void RegisterSound(string name, EventReference soundEventPath)//, Transform objectTransform)
+    public EventInstance RegisterSound(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
         //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
         sounds.Add(name, soundInstance);
+        return soundInstance;
     }
 
-    public void RegisterSound(string instanceName, string eventRefName) {
-        //EventInstance soundInstance = RuntimeManager.CreateInstance(eventRefs[eventRefName]);
-        //sounds.Add(instanceName, soundInstance);
+    public EventInstance RegisterSound(string instanceName, string eventReferenceName) {
+        EventInstance soundInstance = RuntimeManager.CreateInstance(eventRefs[eventReferenceName]);
+        sounds.Add(instanceName, soundInstance);
+        return soundInstance;
     }
 
     public delegate EventInstance ModifySound(EventInstance inst);

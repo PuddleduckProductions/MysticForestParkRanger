@@ -22,9 +22,6 @@ namespace Character {
         void Start() {
             c = GetComponent<CharacterController>();
             mainCamera = Camera.main;
-
-            //AudioManager.Instance.RegisterSound("footsteps", "footsteps");//, this.transform);
-            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(AudioManager.Instance["footsteps"], this.transform);
         }
 
         Vector3 intendedForward = Vector3.zero;
