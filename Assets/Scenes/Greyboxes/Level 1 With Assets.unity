@@ -3830,9 +3830,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2509496280883438998, guid: 4117eec58679da34ca4fee30bba16e12, type: 3}
       insertIndex: -1
       addedObject: {fileID: 175505076}
-    - targetCorrespondingSourceObject: {fileID: 2509496280883438998, guid: 4117eec58679da34ca4fee30bba16e12, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 175505077}
   m_SourcePrefab: {fileID: 100100000, guid: 4117eec58679da34ca4fee30bba16e12, type: 3}
 --- !u!4 &175505074 stripped
 Transform:
@@ -3868,20 +3865,6 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 175505076}
         teleportLocal: {x: 0, y: 0.5, z: 1}
---- !u!114 &175505077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175505075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cells: []
-  manager: {fileID: 0}
 --- !u!4 &184641176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4351795118945880908, guid: a5a3ca06da8144247aae780a40ed07f7, type: 3}
