@@ -62,6 +62,9 @@ namespace Character {
 
         private void OnTriggerStay(Collider other) {
             if (other.TryGetComponent(out CameraZone zone)) {
+                if (activeZone != null) {
+                    activeZone.zoneCamera.Priority = 10;
+                }
                 activeZone = zone;
             }
         }

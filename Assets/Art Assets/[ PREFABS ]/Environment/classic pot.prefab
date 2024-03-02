@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5693535249899332235}
   - component: {fileID: 4954730740720910625}
   - component: {fileID: 3256503206392917310}
+  - component: {fileID: 7260172203488712652}
   m_Layer: 0
   m_Name: classic pot
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 2.3069217, y: 0, z: -1.0245321}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 600, y: 600, z: 138.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9003353085549565770, guid: 9ac26d33586ef0d4fb002ae897abf0f5, type: 3}
+  - {fileID: 2100000, guid: acaf5ff1c0b9f8f41bd431a9d060f0ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7260172203488712652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388843254991592462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.008411615, y: 0.008844496, z: 0.0066363714}
+  m_Center: {x: 0, y: -2.422883e-17, z: 0.0034099047}
