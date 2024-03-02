@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/Sound/SoundListEditor.uss?fileID=7433441132597879392&amp;guid=05664a713d2a4ca439b574dbf69762e9&amp;type=3#SoundListEditor" />
+    <ui:ListView focusable="true" />
+    <ui:GroupBox style="flex-direction: row; align-self: flex-end;">
+        <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="plus" style="align-self: flex-start;" />
+        <ui:Button text="-" parse-escape-sequences="true" display-tooltip-when-elided="true" name="minus" />
+    </ui:GroupBox>
+</ui:UXML>

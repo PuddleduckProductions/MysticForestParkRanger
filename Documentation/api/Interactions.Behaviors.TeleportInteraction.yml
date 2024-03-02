@@ -35,6 +35,7 @@ items:
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.GameObjectStart
   - Interactions.Behaviors.InteractionBehavior.Update
   - Interactions.Behaviors.InteractionBehavior.EndInteraction
   - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
@@ -212,6 +213,25 @@ references:
   - uid: Interactions.Interaction
     name: Interaction
     href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  commentId: M:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  name: GameObjectStart()
+  nameWithType: InteractionBehavior.GameObjectStart()
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
   - name: )
 - uid: Interactions.Behaviors.InteractionBehavior.Update
   commentId: M:Interactions.Behaviors.InteractionBehavior.Update

@@ -25,7 +25,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PutTrigger
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 351
+    startLine: 226
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -48,6 +48,7 @@ items:
   - Interactions.Behaviors.InteractionBehavior
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
+  - Interactions.Behaviors.InteractionBehavior.GameObjectStart
   - Interactions.Behaviors.InteractionBehavior.Update
   - Interactions.Behaviors.InteractionBehavior.EndInteraction
   - System.Object.Equals(System.Object)
@@ -79,7 +80,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 353
+    startLine: 228
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -111,7 +112,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onChained
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 359
+    startLine: 234
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -152,7 +153,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: allowedTags
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 365
+    startLine: 240
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -193,7 +194,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 367
+    startLine: 242
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -229,7 +230,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 369
+    startLine: 244
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -267,7 +268,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 377
+    startLine: 252
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -342,6 +343,25 @@ references:
   name: interactionObject
   nameWithType: InteractionBehavior.interactionObject
   fullName: Interactions.Behaviors.InteractionBehavior.interactionObject
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  commentId: M:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  name: GameObjectStart()
+  nameWithType: InteractionBehavior.GameObjectStart()
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
+  - name: )
 - uid: Interactions.Behaviors.InteractionBehavior.Update
   commentId: M:Interactions.Behaviors.InteractionBehavior.Update
   parent: Interactions.Behaviors.InteractionBehavior

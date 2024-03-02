@@ -37,6 +37,14 @@ namespace Interactions {
         /// </summary>
         Interaction usingInteraction;
 
+        /// <summary>
+        /// The <see cref="Interaction.InteractionType"/> that <see cref="usingInteraction"/> is.
+        /// If there is no current interaction, will return null.
+        /// </summary>
+        public Interaction.InteractionType? currentInteractionType { get {
+                return (usingInteraction == null)? null : usingInteraction.type;
+            } }
+
         // Start is called before the first frame update
         void Start() {
             interactionsInScene = GameObject.FindObjectsByType<Interaction>(FindObjectsSortMode.None);
