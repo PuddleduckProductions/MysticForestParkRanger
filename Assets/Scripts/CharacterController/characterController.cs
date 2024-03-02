@@ -20,17 +20,14 @@ namespace Character {
         Vector3 velocity; // velocity variable
         public float friction = 0.99f; // friction value
 
-        //Fmod call
-        private FMOD.Studio.EventInstance footSteps;
-
         // Start is called before the first frame update
         void Start() {
             c = GetComponent<CharacterController>();
             mainCamera = Camera.main;
             playerAnimator = GetComponent<PlayerAnimator>();
 
-            footSteps = AudioManager.Instance.CreateFMODInstance(FMODEventList.Instance.playerFootsteps);//, this.transform);
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
+            AudioManager.Instance.RegisterSound("footsteps", "footsteps");//, this.transform);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(AudioManager.Instance["footsteps"], this.transform);
             //animator = GetComponent<Animator>();
         }
 
@@ -60,15 +57,6 @@ namespace Character {
             } else if (intendedForward != Vector3.zero) {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(intendedForward, transform.up), rotationSpeed * Time.deltaTime);
             }
-
-            /*//FMOD update
-            if (isWalking) {
-                if (AudioManager.Instance.isPlaybackStatePaused(footSteps)) {
-                    footSteps.start();
-                }
-            } else {
-                footSteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }*/
         }
 
         public Vector3 intendedMove {
