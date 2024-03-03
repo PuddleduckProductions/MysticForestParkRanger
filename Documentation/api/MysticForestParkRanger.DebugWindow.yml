@@ -1,93 +1,111 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.InteractionEditor
-  commentId: T:Interactions.InteractionEditor
-  id: InteractionEditor
-  parent: Interactions
+- uid: MysticForestParkRanger.DebugWindow
+  commentId: T:MysticForestParkRanger.DebugWindow
+  id: DebugWindow
+  parent: MysticForestParkRanger
   children:
-  - Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  - Interactions.InteractionEditor.OnInspectorGUI
+  - MysticForestParkRanger.DebugWindow.CreateGUI
+  - MysticForestParkRanger.DebugWindow.Log(System.String)
+  - MysticForestParkRanger.DebugWindow.ShowExample
+  - MysticForestParkRanger.DebugWindow.onUpdate
+  - MysticForestParkRanger.DebugWindow.settingPath
   langs:
   - csharp
   - vb
-  name: InteractionEditor
-  nameWithType: InteractionEditor
-  fullName: Interactions.InteractionEditor
+  name: DebugWindow
+  nameWithType: DebugWindow
+  fullName: DebugWindow
   type: Class
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Debug/DebugWindow.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionEditor
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 12
+    id: DebugWindow
+    path: ../Assets/Editor/Debug/DebugWindow.cs
+    startLine: 6
   assemblies:
   - EditorAssembly
-  namespace: Interactions
-  summary: >-
-    Editor for <xref href="Interactions.Interaction" data-throw-if-not-resolved="false"></xref>, to make selecting <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> automated and easy for designers.
-
-    TODO: Need to figure out how to access the serialized properties of InteractionBehavior.
-  example: []
+  namespace: MysticForestParkRanger
   syntax:
-    content: >-
-      [CustomEditor(typeof(Interaction))]
-
-      [CanEditMultipleObjects]
-
-      public class InteractionEditor : Editor
-    content.vb: >-
-      <CustomEditor(GetType(Interaction))>
-
-      <CanEditMultipleObjects>
-
-      Public Class InteractionEditor Inherits Editor
+    content: 'public class DebugWindow : EditorWindow'
+    content.vb: Public Class DebugWindow Inherits EditorWindow
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
-  - UnityEditor.Editor
+  - UnityEditor.EditorWindow
   inheritedMembers:
-  - UnityEditor.Editor.SaveChanges
-  - UnityEditor.Editor.DiscardChanges
-  - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-  - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-  - UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-  - UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  - UnityEditor.Editor.DrawDefaultInspector
-  - UnityEditor.Editor.Repaint
-  - UnityEditor.Editor.CreateInspectorGUI
-  - UnityEditor.Editor.RequiresConstantRepaint
-  - UnityEditor.Editor.DrawHeader
-  - UnityEditor.Editor.OnHeaderGUI
-  - UnityEditor.Editor.ShouldHideOpenButton
-  - UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-  - UnityEditor.Editor.HasPreviewGUI
-  - UnityEditor.Editor.GetPreviewTitle
-  - UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-  - UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  - UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  - UnityEditor.Editor.OnPreviewSettings
-  - UnityEditor.Editor.GetInfoString
-  - UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  - UnityEditor.Editor.ReloadPreviewInstances
-  - UnityEditor.Editor.UseDefaultMargins
-  - UnityEditor.Editor.MoveNextTarget
-  - UnityEditor.Editor.ResetTarget
-  - UnityEditor.Editor.hasUnsavedChanges
-  - UnityEditor.Editor.saveChangesMessage
-  - UnityEditor.Editor.target
-  - UnityEditor.Editor.targets
-  - UnityEditor.Editor.serializedObject
-  - UnityEditor.Editor.finishedDefaultHeaderGUI
+  - UnityEditor.EditorWindow.BeginWindows
+  - UnityEditor.EditorWindow.EndWindows
+  - UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)
+  - UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent,System.Double)
+  - UnityEditor.EditorWindow.RemoveNotification
+  - UnityEditor.EditorWindow.ShowTab
+  - UnityEditor.EditorWindow.Focus
+  - UnityEditor.EditorWindow.ShowUtility
+  - UnityEditor.EditorWindow.ShowPopup
+  - UnityEditor.EditorWindow.ShowModalUtility
+  - UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect,UnityEngine.Vector2)
+  - UnityEditor.EditorWindow.Show
+  - UnityEditor.EditorWindow.Show(System.Boolean)
+  - UnityEditor.EditorWindow.ShowAuxWindow
+  - UnityEditor.EditorWindow.ShowModal
+  - UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String,System.Boolean)
+  - UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String)
+  - UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean)
+  - UnityEditor.EditorWindow.GetWindow(System.Type)
+  - UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean,System.String)
+  - UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean)
+  - UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect)
+  - UnityEditor.EditorWindow.GetWindow``1
+  - UnityEditor.EditorWindow.GetWindow``1(System.Boolean)
+  - UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String)
+  - UnityEditor.EditorWindow.GetWindow``1(System.String)
+  - UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean)
+  - UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String,System.Boolean)
+  - UnityEditor.EditorWindow.GetWindow``1(System.Type[])
+  - UnityEditor.EditorWindow.GetWindow``1(System.String,System.Type[])
+  - UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean,System.Type[])
+  - UnityEditor.EditorWindow.CreateWindow``1(System.Type[])
+  - UnityEditor.EditorWindow.CreateWindow``1(System.String,System.Type[])
+  - UnityEditor.EditorWindow.HasOpenInstances``1
+  - UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)
+  - UnityEditor.EditorWindow.FocusWindowIfItsOpen``1
+  - UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect)
+  - UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean)
+  - UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String)
+  - UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String,System.Boolean)
+  - UnityEditor.EditorWindow.SaveChanges
+  - UnityEditor.EditorWindow.DiscardChanges
+  - UnityEditor.EditorWindow.Close
+  - UnityEditor.EditorWindow.Repaint
+  - UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)
+  - UnityEditor.EditorWindow.GetExtraPaneTypes
+  - UnityEditor.EditorWindow.TryGetOverlay(System.String,UnityEditor.Overlays.Overlay@)
+  - UnityEditor.EditorWindow.OnBackingScaleFactorChanged
+  - UnityEditor.EditorWindow.dataModeController
+  - UnityEditor.EditorWindow.rootVisualElement
+  - UnityEditor.EditorWindow.overlayCanvas
+  - UnityEditor.EditorWindow.wantsMouseMove
+  - UnityEditor.EditorWindow.wantsMouseEnterLeaveWindow
+  - UnityEditor.EditorWindow.wantsLessLayoutEvents
+  - UnityEditor.EditorWindow.autoRepaintOnSceneChange
+  - UnityEditor.EditorWindow.maximized
+  - UnityEditor.EditorWindow.hasFocus
+  - UnityEditor.EditorWindow.docked
+  - UnityEditor.EditorWindow.focusedWindow
+  - UnityEditor.EditorWindow.mouseOverWindow
+  - UnityEditor.EditorWindow.hasUnsavedChanges
+  - UnityEditor.EditorWindow.saveChangesMessage
+  - UnityEditor.EditorWindow.minSize
+  - UnityEditor.EditorWindow.maxSize
+  - UnityEditor.EditorWindow.title
+  - UnityEditor.EditorWindow.titleContent
+  - UnityEditor.EditorWindow.depthBufferBits
+  - UnityEditor.EditorWindow.antiAlias
+  - UnityEditor.EditorWindow.position
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -142,109 +160,160 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: MysticForestParkRanger.DebugWindow.ShowExample
+  commentId: M:MysticForestParkRanger.DebugWindow.ShowExample
+  id: ShowExample
+  parent: MysticForestParkRanger.DebugWindow
+  langs:
+  - csharp
+  - vb
+  name: ShowExample()
+  nameWithType: DebugWindow.ShowExample()
+  fullName: DebugWindow.ShowExample()
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Debug/DebugWindow.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: ShowExample
+    path: ../Assets/Editor/Debug/DebugWindow.cs
+    startLine: 13
+  assemblies:
+  - EditorAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: >-
+      [MenuItem("Puddleduck/Debug Window ^&w")]
+
+      public static void ShowExample()
+    content.vb: >-
+      <MenuItem("Puddleduck/Debug Window ^&w")>
+
+      Public Shared Sub ShowExample()
+  overload: MysticForestParkRanger.DebugWindow.ShowExample*
   attributes:
-  - type: UnityEditor.CustomEditor
-    ctor: UnityEditor.CustomEditor.#ctor(System.Type)
+  - type: UnityEditor.MenuItem
+    ctor: UnityEditor.MenuItem.#ctor(System.String)
     arguments:
-    - type: System.Type
-      value: Interactions.Interaction
-  - type: UnityEditor.CanEditMultipleObjects
-    ctor: UnityEditor.CanEditMultipleObjects.#ctor
-    arguments: []
-- uid: Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  commentId: M:Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  id: CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  parent: Interactions.InteractionEditor
+    - type: System.String
+      value: Puddleduck/Debug Window ^&w
+- uid: MysticForestParkRanger.DebugWindow.CreateGUI
+  commentId: M:MysticForestParkRanger.DebugWindow.CreateGUI
+  id: CreateGUI
+  parent: MysticForestParkRanger.DebugWindow
   langs:
   - csharp
   - vb
-  name: CreateBehavior(string, Interaction, Type, SerializedObject)
-  nameWithType: InteractionEditor.CreateBehavior(string, Interaction, Type, SerializedObject)
-  fullName: Interactions.InteractionEditor.CreateBehavior(string, Interactions.Interaction, System.Type, UnityEditor.SerializedObject)
+  name: CreateGUI()
+  nameWithType: DebugWindow.CreateGUI()
+  fullName: DebugWindow.CreateGUI()
   type: Method
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Debug/DebugWindow.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CreateBehavior
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 30
+    id: CreateGUI
+    path: ../Assets/Editor/Debug/DebugWindow.cs
+    startLine: 20
   assemblies:
   - EditorAssembly
-  namespace: Interactions
-  summary: Assign our <xref href="Interactions.Interaction.behavior" data-throw-if-not-resolved="false"></xref> based on the selection from the menu.
-  example: []
+  namespace: MysticForestParkRanger
   syntax:
-    content: public static void CreateBehavior(string name, Interaction interaction, Type interactionType, SerializedObject so)
+    content: public void CreateGUI()
+    content.vb: Public Sub CreateGUI()
+  overload: MysticForestParkRanger.DebugWindow.CreateGUI*
+- uid: MysticForestParkRanger.DebugWindow.onUpdate
+  commentId: E:MysticForestParkRanger.DebugWindow.onUpdate
+  id: onUpdate
+  parent: MysticForestParkRanger.DebugWindow
+  langs:
+  - csharp
+  - vb
+  name: onUpdate
+  nameWithType: DebugWindow.onUpdate
+  fullName: DebugWindow.onUpdate
+  type: Event
+  source:
+    remote:
+      path: Assets/Editor/Debug/DebugWindow.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: onUpdate
+    path: ../Assets/Editor/Debug/DebugWindow.cs
+    startLine: 34
+  assemblies:
+  - EditorAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: protected event DebugWindow.UpdateFunc onUpdate
+    return:
+      type: MysticForestParkRanger.DebugWindow.UpdateFunc
+    content.vb: Protected Event onUpdate As DebugWindow.UpdateFunc
+- uid: MysticForestParkRanger.DebugWindow.Log(System.String)
+  commentId: M:MysticForestParkRanger.DebugWindow.Log(System.String)
+  id: Log(System.String)
+  parent: MysticForestParkRanger.DebugWindow
+  langs:
+  - csharp
+  - vb
+  name: Log(string)
+  nameWithType: DebugWindow.Log(string)
+  fullName: DebugWindow.Log(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Editor/Debug/DebugWindow.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Log
+    path: ../Assets/Editor/Debug/DebugWindow.cs
+    startLine: 41
+  assemblies:
+  - EditorAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: protected void Log(string message)
     parameters:
-    - id: name
+    - id: message
       type: System.String
-      description: The name of the behavior we're creating
-    - id: interaction
-      type: Interactions.Interaction
-      description: The parent to give our <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref>
-    - id: interactionType
-      type: System.Type
-      description: The type of <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> to use.
-    - id: so
-      type: UnityEditor.SerializedObject
-      description: Serialized object to apply changes to.
-    content.vb: Public Shared Sub CreateBehavior(name As String, interaction As Interaction, interactionType As Type, so As SerializedObject)
-  overload: Interactions.InteractionEditor.CreateBehavior*
-  nameWithType.vb: InteractionEditor.CreateBehavior(String, Interaction, Type, SerializedObject)
-  fullName.vb: Interactions.InteractionEditor.CreateBehavior(String, Interactions.Interaction, System.Type, UnityEditor.SerializedObject)
-  name.vb: CreateBehavior(String, Interaction, Type, SerializedObject)
-- uid: Interactions.InteractionEditor.OnInspectorGUI
-  commentId: M:Interactions.InteractionEditor.OnInspectorGUI
-  id: OnInspectorGUI
-  parent: Interactions.InteractionEditor
+    content.vb: Protected Sub Log(message As String)
+  overload: MysticForestParkRanger.DebugWindow.Log*
+  nameWithType.vb: DebugWindow.Log(String)
+  fullName.vb: DebugWindow.Log(String)
+  name.vb: Log(String)
+- uid: MysticForestParkRanger.DebugWindow.settingPath
+  commentId: P:MysticForestParkRanger.DebugWindow.settingPath
+  id: settingPath
+  parent: MysticForestParkRanger.DebugWindow
   langs:
   - csharp
   - vb
-  name: OnInspectorGUI()
-  nameWithType: InteractionEditor.OnInspectorGUI()
-  fullName: Interactions.InteractionEditor.OnInspectorGUI()
-  type: Method
+  name: settingPath
+  nameWithType: DebugWindow.settingPath
+  fullName: DebugWindow.settingPath
+  type: Property
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Editor/Debug/DebugWindow.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: OnInspectorGUI
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 39
+    id: settingPath
+    path: ../Assets/Editor/Debug/DebugWindow.cs
+    startLine: 45
   assemblies:
   - EditorAssembly
-  namespace: Interactions
-  summary: <p>Implement this function to make a custom inspector.</p>
-  example: []
+  namespace: MysticForestParkRanger
   syntax:
-    content: public override void OnInspectorGUI()
-    content.vb: Public Overrides Sub OnInspectorGUI()
-  overridden: UnityEditor.Editor.OnInspectorGUI
-  overload: Interactions.InteractionEditor.OnInspectorGUI*
+    content: protected string settingPath { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly Property settingPath As String
+  overload: MysticForestParkRanger.DebugWindow.settingPath*
 references:
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions
-  commentId: N:Interactions
-  href: Interactions.html
-  name: Interactions
-  nameWithType: Interactions
-  fullName: Interactions
+- uid: MysticForestParkRanger
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -270,802 +339,1700 @@ references:
   name: ScriptableObject
   nameWithType: ScriptableObject
   fullName: UnityEngine.ScriptableObject
-- uid: UnityEditor.Editor
-  commentId: T:UnityEditor.Editor
+- uid: UnityEditor.EditorWindow
+  commentId: T:UnityEditor.EditorWindow
   parent: UnityEditor
   isExternal: true
-  name: Editor
-  nameWithType: Editor
-  fullName: UnityEditor.Editor
-- uid: UnityEditor.Editor.SaveChanges
-  commentId: M:UnityEditor.Editor.SaveChanges
-  parent: UnityEditor.Editor
+  name: EditorWindow
+  nameWithType: EditorWindow
+  fullName: UnityEditor.EditorWindow
+- uid: UnityEditor.EditorWindow.BeginWindows
+  commentId: M:UnityEditor.EditorWindow.BeginWindows
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: SaveChanges()
-  nameWithType: Editor.SaveChanges()
-  fullName: UnityEditor.Editor.SaveChanges()
+  name: BeginWindows()
+  nameWithType: EditorWindow.BeginWindows()
+  fullName: UnityEditor.EditorWindow.BeginWindows()
   spec.csharp:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
+  - uid: UnityEditor.EditorWindow.BeginWindows
+    name: BeginWindows
     isExternal: true
   - name: (
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
+  - uid: UnityEditor.EditorWindow.BeginWindows
+    name: BeginWindows
     isExternal: true
   - name: (
   - name: )
-- uid: UnityEditor.Editor.DiscardChanges
-  commentId: M:UnityEditor.Editor.DiscardChanges
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.EndWindows
+  commentId: M:UnityEditor.EditorWindow.EndWindows
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: DiscardChanges()
-  nameWithType: Editor.DiscardChanges()
-  fullName: UnityEditor.Editor.DiscardChanges()
+  name: EndWindows()
+  nameWithType: EditorWindow.EndWindows()
+  fullName: UnityEditor.EditorWindow.EndWindows()
   spec.csharp:
-  - uid: UnityEditor.Editor.DiscardChanges
-    name: DiscardChanges
+  - uid: UnityEditor.EditorWindow.EndWindows
+    name: EndWindows
     isExternal: true
   - name: (
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.DiscardChanges
-    name: DiscardChanges
+  - uid: UnityEditor.EditorWindow.EndWindows
+    name: EndWindows
     isExternal: true
   - name: (
   - name: )
-- uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-  commentId: M:UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)
+  commentId: M:UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateEditorWithContext(Object[], Object, Type)
-  nameWithType: Editor.CreateEditorWithContext(Object[], Object, Type)
-  fullName: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[], UnityEngine.Object, System.Type)
-  nameWithType.vb: Editor.CreateEditorWithContext(Object(), Object, Type)
-  fullName.vb: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object(), UnityEngine.Object, System.Type)
-  name.vb: CreateEditorWithContext(Object(), Object, Type)
+  name: ShowNotification(GUIContent)
+  nameWithType: EditorWindow.ShowNotification(GUIContent)
+  fullName: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-    name: CreateEditorWithContext
+  - uid: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)
+    name: ShowNotification
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-    name: CreateEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-  commentId: M:UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: CreateEditorWithContext(Object[], Object)
-  nameWithType: Editor.CreateEditorWithContext(Object[], Object)
-  fullName: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[], UnityEngine.Object)
-  nameWithType.vb: Editor.CreateEditorWithContext(Object(), Object)
-  fullName.vb: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object(), UnityEngine.Object)
-  name.vb: CreateEditorWithContext(Object(), Object)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-    name: CreateEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
     isExternal: true
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-    name: CreateEditorWithContext
+  - uid: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)
+    name: ShowNotification
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
     isExternal: true
   - name: )
-- uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent,System.Double)
+  commentId: M:UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent,System.Double)
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditorWithContext(Object, Object, Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditorWithContext(Object, Object, Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object, UnityEngine.Object, System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditorWithContext(Object, Object, Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object, UnityEngine.Object, System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditorWithContext(Object, Object, Type, Editor)
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: ShowNotification(GUIContent, double)
+  nameWithType: EditorWindow.ShowNotification(GUIContent, double)
+  fullName: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent, double)
+  nameWithType.vb: EditorWindow.ShowNotification(GUIContent, Double)
+  fullName.vb: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent, Double)
+  name.vb: ShowNotification(GUIContent, Double)
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
+  - uid: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent,System.Double)
+    name: ShowNotification
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
     isExternal: true
   - name: ','
   - name: " "
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent,System.Double)
+    name: ShowNotification
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
     isExternal: true
   - name: ','
   - name: " "
-  - uid: System.Type
-    name: Type
+  - uid: System.Double
+    name: Double
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: UnityEditor.EditorWindow.RemoveNotification
+  commentId: M:UnityEditor.EditorWindow.RemoveNotification
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: RemoveNotification()
+  nameWithType: EditorWindow.RemoveNotification()
+  fullName: UnityEditor.EditorWindow.RemoveNotification()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.RemoveNotification
+    name: RemoveNotification
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.RemoveNotification
+    name: RemoveNotification
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.ShowTab
+  commentId: M:UnityEditor.EditorWindow.ShowTab
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: ShowTab()
+  nameWithType: EditorWindow.ShowTab()
+  fullName: UnityEditor.EditorWindow.ShowTab()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.ShowTab
+    name: ShowTab
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.ShowTab
+    name: ShowTab
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.Focus
+  commentId: M:UnityEditor.EditorWindow.Focus
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: Focus()
+  nameWithType: EditorWindow.Focus()
+  fullName: UnityEditor.EditorWindow.Focus()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.Focus
+    name: Focus
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.Focus
+    name: Focus
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.ShowUtility
+  commentId: M:UnityEditor.EditorWindow.ShowUtility
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: ShowUtility()
+  nameWithType: EditorWindow.ShowUtility()
+  fullName: UnityEditor.EditorWindow.ShowUtility()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.ShowUtility
+    name: ShowUtility
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.ShowUtility
+    name: ShowUtility
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.ShowPopup
+  commentId: M:UnityEditor.EditorWindow.ShowPopup
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: ShowPopup()
+  nameWithType: EditorWindow.ShowPopup()
+  fullName: UnityEditor.EditorWindow.ShowPopup()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.ShowPopup
+    name: ShowPopup
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.ShowPopup
+    name: ShowPopup
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.ShowModalUtility
+  commentId: M:UnityEditor.EditorWindow.ShowModalUtility
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: ShowModalUtility()
+  nameWithType: EditorWindow.ShowModalUtility()
+  fullName: UnityEditor.EditorWindow.ShowModalUtility()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.ShowModalUtility
+    name: ShowModalUtility
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.ShowModalUtility
+    name: ShowModalUtility
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect,UnityEngine.Vector2)
+  commentId: M:UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect,UnityEngine.Vector2)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: ShowAsDropDown(Rect, Vector2)
+  nameWithType: EditorWindow.ShowAsDropDown(Rect, Vector2)
+  fullName: UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect, UnityEngine.Vector2)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect,UnityEngine.Vector2)
+    name: ShowAsDropDown
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
   - name: ','
   - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
+  - uid: UnityEngine.Vector2
+    name: Vector2
     isExternal: true
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
+  - uid: UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect,UnityEngine.Vector2)
+    name: ShowAsDropDown
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: UnityEngine.Rect
+    name: Rect
     isExternal: true
   - name: ','
   - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
+  - uid: UnityEngine.Vector2
+    name: Vector2
     isExternal: true
   - name: )
-- uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.Show
+  commentId: M:UnityEditor.EditorWindow.Show
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditorWithContext(Object[], Object, Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditorWithContext(Object[], Object, Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[], UnityEngine.Object, System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditorWithContext(Object(), Object, Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object(), UnityEngine.Object, System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditorWithContext(Object(), Object, Type, Editor)
+  name: Show()
+  nameWithType: EditorWindow.Show()
+  fullName: UnityEditor.EditorWindow.Show()
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
+  - uid: UnityEditor.EditorWindow.Show
+    name: Show
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: UnityEditor.EditorWindow.Show
+    name: Show
     isExternal: true
   - name: (
   - name: )
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.Show(System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.Show(System.Boolean)
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditor(Object, Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditor(Object, Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object, System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditor(Object, Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object, System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditor(Object, Type, Editor)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: Show(bool)
+  nameWithType: EditorWindow.Show(bool)
+  fullName: UnityEditor.EditorWindow.Show(bool)
+  nameWithType.vb: EditorWindow.Show(Boolean)
+  fullName.vb: UnityEditor.EditorWindow.Show(Boolean)
+  name.vb: Show(Boolean)
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
+  - uid: UnityEditor.EditorWindow.Show(System.Boolean)
+    name: Show
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: System.Boolean
+    name: bool
     isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
+  - uid: UnityEditor.EditorWindow.Show(System.Boolean)
+    name: Show
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: System.Boolean
+    name: Boolean
     isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.ShowAuxWindow
+  commentId: M:UnityEditor.EditorWindow.ShowAuxWindow
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditor(Object[], Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditor(Object[], Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[], System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditor(Object(), Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object(), System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditor(Object(), Type, Editor)
+  name: ShowAuxWindow()
+  nameWithType: EditorWindow.ShowAuxWindow()
+  fullName: UnityEditor.EditorWindow.ShowAuxWindow()
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
+  - uid: UnityEditor.EditorWindow.ShowAuxWindow
+    name: ShowAuxWindow
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: UnityEditor.EditorWindow.ShowAuxWindow
+    name: ShowAuxWindow
     isExternal: true
   - name: (
   - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.ShowModal
+  commentId: M:UnityEditor.EditorWindow.ShowModal
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: CreateEditor(Object)
-  nameWithType: Editor.CreateEditor(Object)
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
+  name: ShowModal()
+  nameWithType: EditorWindow.ShowModal()
+  fullName: UnityEditor.EditorWindow.ShowModal()
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-    name: CreateEditor
+  - uid: UnityEditor.EditorWindow.ShowModal
+    name: ShowModal
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-    name: CreateEditor
+  - uid: UnityEditor.EditorWindow.ShowModal
+    name: ShowModal
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
   - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String,System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String,System.Boolean)
+  parent: UnityEditor.EditorWindow
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateEditor(Object, Type)
-  nameWithType: Editor.CreateEditor(Object, Type)
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object, System.Type)
+  name: GetWindow(Type, bool, string, bool)
+  nameWithType: EditorWindow.GetWindow(Type, bool, string, bool)
+  fullName: UnityEditor.EditorWindow.GetWindow(System.Type, bool, string, bool)
+  nameWithType.vb: EditorWindow.GetWindow(Type, Boolean, String, Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(System.Type, Boolean, String, Boolean)
+  name.vb: GetWindow(Type, Boolean, String, Boolean)
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-    name: CreateEditor
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String,System.Boolean)
+    name: GetWindow
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
   - name: ','
   - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String,System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: (
   - uid: System.Type
     name: Type
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: CreateEditor(Object[])
-  nameWithType: Editor.CreateEditor(Object[])
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  nameWithType.vb: Editor.CreateEditor(Object())
-  fullName.vb: UnityEditor.Editor.CreateEditor(UnityEngine.Object())
-  name.vb: CreateEditor(Object())
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-    name: CreateEditor
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
     isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
     isExternal: true
-  - name: '['
-  - name: ']'
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-    name: CreateEditor
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
     isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-  - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String)
+  commentId: M:UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String)
+  parent: UnityEditor.EditorWindow
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateEditor(Object[], Type)
-  nameWithType: Editor.CreateEditor(Object[], Type)
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object[], System.Type)
-  nameWithType.vb: Editor.CreateEditor(Object(), Type)
-  fullName.vb: UnityEditor.Editor.CreateEditor(UnityEngine.Object(), System.Type)
-  name.vb: CreateEditor(Object(), Type)
+  name: GetWindow(Type, bool, string)
+  nameWithType: EditorWindow.GetWindow(Type, bool, string)
+  fullName: UnityEditor.EditorWindow.GetWindow(System.Type, bool, string)
+  nameWithType.vb: EditorWindow.GetWindow(Type, Boolean, String)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(System.Type, Boolean, String)
+  name.vb: GetWindow(Type, Boolean, String)
   spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-    name: CreateEditor
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String)
+    name: GetWindow
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: System.Type
+    name: Type
     isExternal: true
-  - name: '['
-  - name: ']'
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String)
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: GetWindow(Type, bool)
+  nameWithType: EditorWindow.GetWindow(Type, bool)
+  fullName: UnityEditor.EditorWindow.GetWindow(System.Type, bool)
+  nameWithType.vb: EditorWindow.GetWindow(Type, Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(System.Type, Boolean)
+  name.vb: GetWindow(Type, Boolean)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow(System.Type)
+  commentId: M:UnityEditor.EditorWindow.GetWindow(System.Type)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: GetWindow(Type)
+  nameWithType: EditorWindow.GetWindow(Type)
+  fullName: UnityEditor.EditorWindow.GetWindow(System.Type)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type)
+    name: GetWindow
+    isExternal: true
+  - name: (
   - uid: System.Type
     name: Type
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-    name: CreateEditor
+  - uid: UnityEditor.EditorWindow.GetWindow(System.Type)
+    name: GetWindow
     isExternal: true
   - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
-- uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  commentId: M:UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean,System.String)
+  commentId: M:UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean,System.String)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: GetWindowWithRect(Type, Rect, bool, string)
+  nameWithType: EditorWindow.GetWindowWithRect(Type, Rect, bool, string)
+  fullName: UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect, bool, string)
+  nameWithType.vb: EditorWindow.GetWindowWithRect(Type, Rect, Boolean, String)
+  fullName.vb: UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect, Boolean, String)
+  name.vb: GetWindowWithRect(Type, Rect, Boolean, String)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean,System.String)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean,System.String)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: GetWindowWithRect(Type, Rect, bool)
+  nameWithType: EditorWindow.GetWindowWithRect(Type, Rect, bool)
+  fullName: UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect, bool)
+  nameWithType.vb: EditorWindow.GetWindowWithRect(Type, Rect, Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect, Boolean)
+  name.vb: GetWindowWithRect(Type, Rect, Boolean)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect)
+  commentId: M:UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: GetWindowWithRect(Type, Rect)
+  nameWithType: EditorWindow.GetWindowWithRect(Type, Rect)
+  fullName: UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: GetWindow<T>()
+  nameWithType: EditorWindow.GetWindow<T>()
+  fullName: UnityEditor.EditorWindow.GetWindow<T>()
+  nameWithType.vb: EditorWindow.GetWindow(Of T)()
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)()
+  name.vb: GetWindow(Of T)()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.Boolean)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: GetWindow<T>(bool)
+  nameWithType: EditorWindow.GetWindow<T>(bool)
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(bool)
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(Boolean)
+  name.vb: GetWindow(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String)
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: GetWindow<T>(bool, string)
+  nameWithType: EditorWindow.GetWindow<T>(bool, string)
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(bool, string)
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(Boolean, String)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(Boolean, String)
+  name.vb: GetWindow(Of T)(Boolean, String)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String)
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String)
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.String)
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.String)
+  parent: UnityEditor.EditorWindow
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.string
-  name: DrawPropertiesExcluding(SerializedObject, params string[])
-  nameWithType: Editor.DrawPropertiesExcluding(SerializedObject, params string[])
-  fullName: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject, params string[])
-  nameWithType.vb: Editor.DrawPropertiesExcluding(SerializedObject, ParamArray String())
-  fullName.vb: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject, ParamArray String())
-  name.vb: DrawPropertiesExcluding(SerializedObject, ParamArray String())
+  name: GetWindow<T>(string)
+  nameWithType: EditorWindow.GetWindow<T>(string)
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(string)
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(String)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(String)
+  name.vb: GetWindow(Of T)(String)
   spec.csharp:
-  - uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-    name: DrawPropertiesExcluding
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String)
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String)
+    name: GetWindow
     isExternal: true
   - name: (
-  - uid: UnityEditor.SerializedObject
-    name: SerializedObject
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.String
+    name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetWindow<T>(string, bool)
+  nameWithType: EditorWindow.GetWindow<T>(string, bool)
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(string, bool)
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(String, Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(String, Boolean)
+  name.vb: GetWindow(Of T)(String, Boolean)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String,System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String,System.Boolean)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: GetWindow<T>(bool, string, bool)
+  nameWithType: EditorWindow.GetWindow<T>(bool, string, bool)
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(bool, string, bool)
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(Boolean, String, Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(Boolean, String, Boolean)
+  name.vb: GetWindow(Of T)(Boolean, String, Boolean)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String,System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String,System.Boolean)
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.Type[])
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.Type[])
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: GetWindow<T>(params Type[])
+  nameWithType: EditorWindow.GetWindow<T>(params Type[])
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(params System.Type[])
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(ParamArray Type())
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(ParamArray System.Type())
+  name.vb: GetWindow(Of T)(ParamArray Type())
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Type[])
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: params
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.Type[])
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: (
+  - name: )
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Type[])
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.String,System.Type[])
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetWindow<T>(string, params Type[])
+  nameWithType: EditorWindow.GetWindow<T>(string, params Type[])
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(string, params System.Type[])
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(String, ParamArray Type())
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(String, ParamArray System.Type())
+  name.vb: GetWindow(Of T)(String, ParamArray Type())
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Type[])
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - name: params
   - name: " "
-  - uid: System.String
-    name: string
+  - uid: System.Type
+    name: Type
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: '['
   - name: ']'
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-    name: DrawPropertiesExcluding
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Type[])
+    name: GetWindow
     isExternal: true
   - name: (
-  - uid: UnityEditor.SerializedObject
-    name: SerializedObject
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.String
+    name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - name: ParamArray
   - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: (
+  - name: )
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean,System.Type[])
+  commentId: M:UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean,System.Type[])
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetWindow<T>(string, bool, params Type[])
+  nameWithType: EditorWindow.GetWindow<T>(string, bool, params Type[])
+  fullName: UnityEditor.EditorWindow.GetWindow<T>(string, bool, params System.Type[])
+  nameWithType.vb: EditorWindow.GetWindow(Of T)(String, Boolean, ParamArray Type())
+  fullName.vb: UnityEditor.EditorWindow.GetWindow(Of T)(String, Boolean, ParamArray System.Type())
+  name.vb: GetWindow(Of T)(String, Boolean, ParamArray Type())
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean,System.Type[])
+    name: GetWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean,System.Type[])
+    name: GetWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
   - uid: System.String
     name: String
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: (
-  - name: )
-  - name: )
-- uid: UnityEditor.Editor.DrawDefaultInspector
-  commentId: M:UnityEditor.Editor.DrawDefaultInspector
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DrawDefaultInspector()
-  nameWithType: Editor.DrawDefaultInspector()
-  fullName: UnityEditor.Editor.DrawDefaultInspector()
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawDefaultInspector
-    name: DrawDefaultInspector
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawDefaultInspector
-    name: DrawDefaultInspector
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.Repaint
-  commentId: M:UnityEditor.Editor.Repaint
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: Repaint()
-  nameWithType: Editor.Repaint()
-  fullName: UnityEditor.Editor.Repaint()
-  spec.csharp:
-  - uid: UnityEditor.Editor.Repaint
-    name: Repaint
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.Repaint
-    name: Repaint
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.CreateInspectorGUI
-  commentId: M:UnityEditor.Editor.CreateInspectorGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: CreateInspectorGUI()
-  nameWithType: Editor.CreateInspectorGUI()
-  fullName: UnityEditor.Editor.CreateInspectorGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateInspectorGUI
-    name: CreateInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateInspectorGUI
-    name: CreateInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.RequiresConstantRepaint
-  commentId: M:UnityEditor.Editor.RequiresConstantRepaint
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: RequiresConstantRepaint()
-  nameWithType: Editor.RequiresConstantRepaint()
-  fullName: UnityEditor.Editor.RequiresConstantRepaint()
-  spec.csharp:
-  - uid: UnityEditor.Editor.RequiresConstantRepaint
-    name: RequiresConstantRepaint
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.RequiresConstantRepaint
-    name: RequiresConstantRepaint
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.DrawHeader
-  commentId: M:UnityEditor.Editor.DrawHeader
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DrawHeader()
-  nameWithType: Editor.DrawHeader()
-  fullName: UnityEditor.Editor.DrawHeader()
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawHeader
-    name: DrawHeader
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawHeader
-    name: DrawHeader
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.OnHeaderGUI
-  commentId: M:UnityEditor.Editor.OnHeaderGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnHeaderGUI()
-  nameWithType: Editor.OnHeaderGUI()
-  fullName: UnityEditor.Editor.OnHeaderGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnHeaderGUI
-    name: OnHeaderGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnHeaderGUI
-    name: OnHeaderGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.ShouldHideOpenButton
-  commentId: M:UnityEditor.Editor.ShouldHideOpenButton
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: ShouldHideOpenButton()
-  nameWithType: Editor.ShouldHideOpenButton()
-  fullName: UnityEditor.Editor.ShouldHideOpenButton()
-  spec.csharp:
-  - uid: UnityEditor.Editor.ShouldHideOpenButton
-    name: ShouldHideOpenButton
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.ShouldHideOpenButton
-    name: ShouldHideOpenButton
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DrawFoldoutInspector(Object, ref Editor)
-  nameWithType: Editor.DrawFoldoutInspector(Object, ref Editor)
-  fullName: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.DrawFoldoutInspector(Object, Editor)
-  fullName.vb: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object, UnityEditor.Editor)
-  name.vb: DrawFoldoutInspector(Object, Editor)
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-    name: DrawFoldoutInspector
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
   - name: ','
   - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
+  - uid: System.Boolean
+    name: Boolean
     isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-    name: DrawFoldoutInspector
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
+  - name: ParamArray
+  - name: " "
+  - uid: System.Type
+    name: Type
     isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.HasPreviewGUI
-  commentId: M:UnityEditor.Editor.HasPreviewGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: HasPreviewGUI()
-  nameWithType: Editor.HasPreviewGUI()
-  fullName: UnityEditor.Editor.HasPreviewGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.HasPreviewGUI
-    name: HasPreviewGUI
-    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
+  - name: )
+  - name: )
+- uid: UnityEditor.EditorWindow.CreateWindow``1(System.Type[])
+  commentId: M:UnityEditor.EditorWindow.CreateWindow``1(System.Type[])
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: CreateWindow<T>(params Type[])
+  nameWithType: EditorWindow.CreateWindow<T>(params Type[])
+  fullName: UnityEditor.EditorWindow.CreateWindow<T>(params System.Type[])
+  nameWithType.vb: EditorWindow.CreateWindow(Of T)(ParamArray Type())
+  fullName.vb: UnityEditor.EditorWindow.CreateWindow(Of T)(ParamArray System.Type())
+  name.vb: CreateWindow(Of T)(ParamArray Type())
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.CreateWindow``1(System.Type[])
+    name: CreateWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: params
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '['
+  - name: ']'
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.HasPreviewGUI
-    name: HasPreviewGUI
+  - uid: UnityEditor.EditorWindow.CreateWindow``1(System.Type[])
+    name: CreateWindow
     isExternal: true
   - name: (
+  - name: Of
+  - name: " "
+  - name: T
   - name: )
-- uid: UnityEditor.Editor.GetPreviewTitle
-  commentId: M:UnityEditor.Editor.GetPreviewTitle
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: GetPreviewTitle()
-  nameWithType: Editor.GetPreviewTitle()
-  fullName: UnityEditor.Editor.GetPreviewTitle()
-  spec.csharp:
-  - uid: UnityEditor.Editor.GetPreviewTitle
-    name: GetPreviewTitle
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: System.Type
+    name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
   - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.GetPreviewTitle
-    name: GetPreviewTitle
-    isExternal: true
-  - name: (
   - name: )
-- uid: UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-  commentId: M:UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.CreateWindow``1(System.String,System.Type[])
+  commentId: M:UnityEditor.EditorWindow.CreateWindow``1(System.String,System.Type[])
+  parent: UnityEditor.EditorWindow
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.string
-  name: RenderStaticPreview(string, Object[], int, int)
-  nameWithType: Editor.RenderStaticPreview(string, Object[], int, int)
-  fullName: UnityEditor.Editor.RenderStaticPreview(string, UnityEngine.Object[], int, int)
-  nameWithType.vb: Editor.RenderStaticPreview(String, Object(), Integer, Integer)
-  fullName.vb: UnityEditor.Editor.RenderStaticPreview(String, UnityEngine.Object(), Integer, Integer)
-  name.vb: RenderStaticPreview(String, Object(), Integer, Integer)
+  name: CreateWindow<T>(string, params Type[])
+  nameWithType: EditorWindow.CreateWindow<T>(string, params Type[])
+  fullName: UnityEditor.EditorWindow.CreateWindow<T>(string, params System.Type[])
+  nameWithType.vb: EditorWindow.CreateWindow(Of T)(String, ParamArray Type())
+  fullName.vb: UnityEditor.EditorWindow.CreateWindow(Of T)(String, ParamArray System.Type())
+  name.vb: CreateWindow(Of T)(String, ParamArray Type())
   spec.csharp:
-  - uid: UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-    name: RenderStaticPreview
+  - uid: UnityEditor.EditorWindow.CreateWindow``1(System.String,System.Type[])
+    name: CreateWindow
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.CreateWindow``1(System.String,System.Type[])
+    name: CreateWindow
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: (
+  - name: )
+  - name: )
+- uid: UnityEditor.EditorWindow.HasOpenInstances``1
+  commentId: M:UnityEditor.EditorWindow.HasOpenInstances``1
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: HasOpenInstances<T>()
+  nameWithType: EditorWindow.HasOpenInstances<T>()
+  fullName: UnityEditor.EditorWindow.HasOpenInstances<T>()
+  nameWithType.vb: EditorWindow.HasOpenInstances(Of T)()
+  fullName.vb: UnityEditor.EditorWindow.HasOpenInstances(Of T)()
+  name.vb: HasOpenInstances(Of T)()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.HasOpenInstances``1
+    name: HasOpenInstances
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.HasOpenInstances``1
+    name: HasOpenInstances
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)
+  commentId: M:UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FocusWindowIfItsOpen(Type)
+  nameWithType: EditorWindow.FocusWindowIfItsOpen(Type)
+  fullName: UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)
+    name: FocusWindowIfItsOpen
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)
+    name: FocusWindowIfItsOpen
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEditor.EditorWindow.FocusWindowIfItsOpen``1
+  commentId: M:UnityEditor.EditorWindow.FocusWindowIfItsOpen``1
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: FocusWindowIfItsOpen<T>()
+  nameWithType: EditorWindow.FocusWindowIfItsOpen<T>()
+  fullName: UnityEditor.EditorWindow.FocusWindowIfItsOpen<T>()
+  nameWithType.vb: EditorWindow.FocusWindowIfItsOpen(Of T)()
+  fullName.vb: UnityEditor.EditorWindow.FocusWindowIfItsOpen(Of T)()
+  name.vb: FocusWindowIfItsOpen(Of T)()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.FocusWindowIfItsOpen``1
+    name: FocusWindowIfItsOpen
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.FocusWindowIfItsOpen``1
+    name: FocusWindowIfItsOpen
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect)
+  commentId: M:UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: GetWindowWithRect<T>(Rect)
+  nameWithType: EditorWindow.GetWindowWithRect<T>(Rect)
+  fullName: UnityEditor.EditorWindow.GetWindowWithRect<T>(UnityEngine.Rect)
+  nameWithType.vb: EditorWindow.GetWindowWithRect(Of T)(Rect)
+  fullName.vb: UnityEditor.EditorWindow.GetWindowWithRect(Of T)(UnityEngine.Rect)
+  name.vb: GetWindowWithRect(Of T)(Rect)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: GetWindowWithRect<T>(Rect, bool)
+  nameWithType: EditorWindow.GetWindowWithRect<T>(Rect, bool)
+  fullName: UnityEditor.EditorWindow.GetWindowWithRect<T>(UnityEngine.Rect, bool)
+  nameWithType.vb: EditorWindow.GetWindowWithRect(Of T)(Rect, Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindowWithRect(Of T)(UnityEngine.Rect, Boolean)
+  name.vb: GetWindowWithRect(Of T)(Rect, Boolean)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String)
+  commentId: M:UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: GetWindowWithRect<T>(Rect, bool, string)
+  nameWithType: EditorWindow.GetWindowWithRect<T>(Rect, bool, string)
+  fullName: UnityEditor.EditorWindow.GetWindowWithRect<T>(UnityEngine.Rect, bool, string)
+  nameWithType.vb: EditorWindow.GetWindowWithRect(Of T)(Rect, Boolean, String)
+  fullName.vb: UnityEditor.EditorWindow.GetWindowWithRect(Of T)(UnityEngine.Rect, Boolean, String)
+  name.vb: GetWindowWithRect(Of T)(Rect, Boolean, String)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String,System.Boolean)
+  commentId: M:UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String,System.Boolean)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: GetWindowWithRect<T>(Rect, bool, string, bool)
+  nameWithType: EditorWindow.GetWindowWithRect<T>(Rect, bool, string, bool)
+  fullName: UnityEditor.EditorWindow.GetWindowWithRect<T>(UnityEngine.Rect, bool, string, bool)
+  nameWithType.vb: EditorWindow.GetWindowWithRect(Of T)(Rect, Boolean, String, Boolean)
+  fullName.vb: UnityEditor.EditorWindow.GetWindowWithRect(Of T)(UnityEngine.Rect, Boolean, String, Boolean)
+  name.vb: GetWindowWithRect(Of T)(Rect, Boolean, String, Boolean)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String,System.Boolean)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String,System.Boolean)
+    name: GetWindowWithRect
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEditor.EditorWindow.SaveChanges
+  commentId: M:UnityEditor.EditorWindow.SaveChanges
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: SaveChanges()
+  nameWithType: EditorWindow.SaveChanges()
+  fullName: UnityEditor.EditorWindow.SaveChanges()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.SaveChanges
+    name: SaveChanges
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.SaveChanges
+    name: SaveChanges
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.DiscardChanges
+  commentId: M:UnityEditor.EditorWindow.DiscardChanges
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: DiscardChanges()
+  nameWithType: EditorWindow.DiscardChanges()
+  fullName: UnityEditor.EditorWindow.DiscardChanges()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.DiscardChanges
+    name: DiscardChanges
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.DiscardChanges
+    name: DiscardChanges
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.Close
+  commentId: M:UnityEditor.EditorWindow.Close
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: Close()
+  nameWithType: EditorWindow.Close()
+  fullName: UnityEditor.EditorWindow.Close()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.Close
+    name: Close
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.Close
+    name: Close
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.Repaint
+  commentId: M:UnityEditor.EditorWindow.Repaint
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: Repaint()
+  nameWithType: EditorWindow.Repaint()
+  fullName: UnityEditor.EditorWindow.Repaint()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.Repaint
+    name: Repaint
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.Repaint
+    name: Repaint
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)
+  commentId: M:UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: SendEvent(Event)
+  nameWithType: EditorWindow.SendEvent(Event)
+  fullName: UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)
+    name: SendEvent
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Event
+    name: Event
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)
+    name: SendEvent
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Event
+    name: Event
+    isExternal: true
+  - name: )
+- uid: UnityEditor.EditorWindow.GetExtraPaneTypes
+  commentId: M:UnityEditor.EditorWindow.GetExtraPaneTypes
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: GetExtraPaneTypes()
+  nameWithType: EditorWindow.GetExtraPaneTypes()
+  fullName: UnityEditor.EditorWindow.GetExtraPaneTypes()
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.GetExtraPaneTypes
+    name: GetExtraPaneTypes
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.EditorWindow.GetExtraPaneTypes
+    name: GetExtraPaneTypes
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEditor.EditorWindow.TryGetOverlay(System.String,UnityEditor.Overlays.Overlay@)
+  commentId: M:UnityEditor.EditorWindow.TryGetOverlay(System.String,UnityEditor.Overlays.Overlay@)
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: TryGetOverlay(string, out Overlay)
+  nameWithType: EditorWindow.TryGetOverlay(string, out Overlay)
+  fullName: UnityEditor.EditorWindow.TryGetOverlay(string, out UnityEditor.Overlays.Overlay)
+  nameWithType.vb: EditorWindow.TryGetOverlay(String, Overlay)
+  fullName.vb: UnityEditor.EditorWindow.TryGetOverlay(String, UnityEditor.Overlays.Overlay)
+  name.vb: TryGetOverlay(String, Overlay)
+  spec.csharp:
+  - uid: UnityEditor.EditorWindow.TryGetOverlay(System.String,UnityEditor.Overlays.Overlay@)
+    name: TryGetOverlay
     isExternal: true
   - name: (
   - uid: System.String
@@ -1074,27 +2041,15 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
+  - name: out
   - name: " "
-  - uid: System.Int32
-    name: int
+  - uid: UnityEditor.Overlays.Overlay
+    name: Overlay
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-    name: RenderStaticPreview
+  - uid: UnityEditor.EditorWindow.TryGetOverlay(System.String,UnityEditor.Overlays.Overlay@)
+    name: TryGetOverlay
     isExternal: true
   - name: (
   - uid: System.String
@@ -1103,275 +2058,176 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
-  - uid: UnityEngine.Object
-    name: Object
+  - uid: UnityEditor.Overlays.Overlay
+    name: Overlay
     isExternal: true
-  - name: (
   - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  commentId: M:UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.OnBackingScaleFactorChanged
+  commentId: M:UnityEditor.EditorWindow.OnBackingScaleFactorChanged
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: OnPreviewGUI(Rect, GUIStyle)
-  nameWithType: Editor.OnPreviewGUI(Rect, GUIStyle)
-  fullName: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect, UnityEngine.GUIStyle)
+  name: OnBackingScaleFactorChanged()
+  nameWithType: EditorWindow.OnBackingScaleFactorChanged()
+  fullName: UnityEditor.EditorWindow.OnBackingScaleFactorChanged()
   spec.csharp:
-  - uid: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnPreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnPreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  commentId: M:UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnInteractivePreviewGUI(Rect, GUIStyle)
-  nameWithType: Editor.OnInteractivePreviewGUI(Rect, GUIStyle)
-  fullName: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect, UnityEngine.GUIStyle)
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnInteractivePreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnInteractivePreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.OnPreviewSettings
-  commentId: M:UnityEditor.Editor.OnPreviewSettings
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnPreviewSettings()
-  nameWithType: Editor.OnPreviewSettings()
-  fullName: UnityEditor.Editor.OnPreviewSettings()
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnPreviewSettings
-    name: OnPreviewSettings
+  - uid: UnityEditor.EditorWindow.OnBackingScaleFactorChanged
+    name: OnBackingScaleFactorChanged
     isExternal: true
   - name: (
   - name: )
   spec.vb:
-  - uid: UnityEditor.Editor.OnPreviewSettings
-    name: OnPreviewSettings
+  - uid: UnityEditor.EditorWindow.OnBackingScaleFactorChanged
+    name: OnBackingScaleFactorChanged
     isExternal: true
   - name: (
   - name: )
-- uid: UnityEditor.Editor.GetInfoString
-  commentId: M:UnityEditor.Editor.GetInfoString
-  parent: UnityEditor.Editor
+- uid: UnityEditor.EditorWindow.dataModeController
+  commentId: P:UnityEditor.EditorWindow.dataModeController
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: GetInfoString()
-  nameWithType: Editor.GetInfoString()
-  fullName: UnityEditor.Editor.GetInfoString()
-  spec.csharp:
-  - uid: UnityEditor.Editor.GetInfoString
-    name: GetInfoString
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.GetInfoString
-    name: GetInfoString
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  commentId: M:UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  parent: UnityEditor.Editor
+  name: dataModeController
+  nameWithType: EditorWindow.dataModeController
+  fullName: UnityEditor.EditorWindow.dataModeController
+- uid: UnityEditor.EditorWindow.rootVisualElement
+  commentId: P:UnityEditor.EditorWindow.rootVisualElement
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: DrawPreview(Rect)
-  nameWithType: Editor.DrawPreview(Rect)
-  fullName: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-    name: DrawPreview
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-    name: DrawPreview
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.ReloadPreviewInstances
-  commentId: M:UnityEditor.Editor.ReloadPreviewInstances
-  parent: UnityEditor.Editor
+  name: rootVisualElement
+  nameWithType: EditorWindow.rootVisualElement
+  fullName: UnityEditor.EditorWindow.rootVisualElement
+- uid: UnityEditor.EditorWindow.overlayCanvas
+  commentId: P:UnityEditor.EditorWindow.overlayCanvas
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: ReloadPreviewInstances()
-  nameWithType: Editor.ReloadPreviewInstances()
-  fullName: UnityEditor.Editor.ReloadPreviewInstances()
-  spec.csharp:
-  - uid: UnityEditor.Editor.ReloadPreviewInstances
-    name: ReloadPreviewInstances
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.ReloadPreviewInstances
-    name: ReloadPreviewInstances
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.UseDefaultMargins
-  commentId: M:UnityEditor.Editor.UseDefaultMargins
-  parent: UnityEditor.Editor
+  name: overlayCanvas
+  nameWithType: EditorWindow.overlayCanvas
+  fullName: UnityEditor.EditorWindow.overlayCanvas
+- uid: UnityEditor.EditorWindow.wantsMouseMove
+  commentId: P:UnityEditor.EditorWindow.wantsMouseMove
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: UseDefaultMargins()
-  nameWithType: Editor.UseDefaultMargins()
-  fullName: UnityEditor.Editor.UseDefaultMargins()
-  spec.csharp:
-  - uid: UnityEditor.Editor.UseDefaultMargins
-    name: UseDefaultMargins
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.UseDefaultMargins
-    name: UseDefaultMargins
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.MoveNextTarget
-  commentId: M:UnityEditor.Editor.MoveNextTarget
-  parent: UnityEditor.Editor
+  name: wantsMouseMove
+  nameWithType: EditorWindow.wantsMouseMove
+  fullName: UnityEditor.EditorWindow.wantsMouseMove
+- uid: UnityEditor.EditorWindow.wantsMouseEnterLeaveWindow
+  commentId: P:UnityEditor.EditorWindow.wantsMouseEnterLeaveWindow
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: MoveNextTarget()
-  nameWithType: Editor.MoveNextTarget()
-  fullName: UnityEditor.Editor.MoveNextTarget()
-  spec.csharp:
-  - uid: UnityEditor.Editor.MoveNextTarget
-    name: MoveNextTarget
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.MoveNextTarget
-    name: MoveNextTarget
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.ResetTarget
-  commentId: M:UnityEditor.Editor.ResetTarget
-  parent: UnityEditor.Editor
+  name: wantsMouseEnterLeaveWindow
+  nameWithType: EditorWindow.wantsMouseEnterLeaveWindow
+  fullName: UnityEditor.EditorWindow.wantsMouseEnterLeaveWindow
+- uid: UnityEditor.EditorWindow.wantsLessLayoutEvents
+  commentId: P:UnityEditor.EditorWindow.wantsLessLayoutEvents
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: ResetTarget()
-  nameWithType: Editor.ResetTarget()
-  fullName: UnityEditor.Editor.ResetTarget()
-  spec.csharp:
-  - uid: UnityEditor.Editor.ResetTarget
-    name: ResetTarget
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.ResetTarget
-    name: ResetTarget
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.hasUnsavedChanges
-  commentId: P:UnityEditor.Editor.hasUnsavedChanges
-  parent: UnityEditor.Editor
+  name: wantsLessLayoutEvents
+  nameWithType: EditorWindow.wantsLessLayoutEvents
+  fullName: UnityEditor.EditorWindow.wantsLessLayoutEvents
+- uid: UnityEditor.EditorWindow.autoRepaintOnSceneChange
+  commentId: P:UnityEditor.EditorWindow.autoRepaintOnSceneChange
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: autoRepaintOnSceneChange
+  nameWithType: EditorWindow.autoRepaintOnSceneChange
+  fullName: UnityEditor.EditorWindow.autoRepaintOnSceneChange
+- uid: UnityEditor.EditorWindow.maximized
+  commentId: P:UnityEditor.EditorWindow.maximized
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: maximized
+  nameWithType: EditorWindow.maximized
+  fullName: UnityEditor.EditorWindow.maximized
+- uid: UnityEditor.EditorWindow.hasFocus
+  commentId: P:UnityEditor.EditorWindow.hasFocus
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: hasFocus
+  nameWithType: EditorWindow.hasFocus
+  fullName: UnityEditor.EditorWindow.hasFocus
+- uid: UnityEditor.EditorWindow.docked
+  commentId: P:UnityEditor.EditorWindow.docked
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: docked
+  nameWithType: EditorWindow.docked
+  fullName: UnityEditor.EditorWindow.docked
+- uid: UnityEditor.EditorWindow.focusedWindow
+  commentId: P:UnityEditor.EditorWindow.focusedWindow
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: focusedWindow
+  nameWithType: EditorWindow.focusedWindow
+  fullName: UnityEditor.EditorWindow.focusedWindow
+- uid: UnityEditor.EditorWindow.mouseOverWindow
+  commentId: P:UnityEditor.EditorWindow.mouseOverWindow
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: mouseOverWindow
+  nameWithType: EditorWindow.mouseOverWindow
+  fullName: UnityEditor.EditorWindow.mouseOverWindow
+- uid: UnityEditor.EditorWindow.hasUnsavedChanges
+  commentId: P:UnityEditor.EditorWindow.hasUnsavedChanges
+  parent: UnityEditor.EditorWindow
   isExternal: true
   name: hasUnsavedChanges
-  nameWithType: Editor.hasUnsavedChanges
-  fullName: UnityEditor.Editor.hasUnsavedChanges
-- uid: UnityEditor.Editor.saveChangesMessage
-  commentId: P:UnityEditor.Editor.saveChangesMessage
-  parent: UnityEditor.Editor
+  nameWithType: EditorWindow.hasUnsavedChanges
+  fullName: UnityEditor.EditorWindow.hasUnsavedChanges
+- uid: UnityEditor.EditorWindow.saveChangesMessage
+  commentId: P:UnityEditor.EditorWindow.saveChangesMessage
+  parent: UnityEditor.EditorWindow
   isExternal: true
   name: saveChangesMessage
-  nameWithType: Editor.saveChangesMessage
-  fullName: UnityEditor.Editor.saveChangesMessage
-- uid: UnityEditor.Editor.target
-  commentId: P:UnityEditor.Editor.target
-  parent: UnityEditor.Editor
+  nameWithType: EditorWindow.saveChangesMessage
+  fullName: UnityEditor.EditorWindow.saveChangesMessage
+- uid: UnityEditor.EditorWindow.minSize
+  commentId: P:UnityEditor.EditorWindow.minSize
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: target
-  nameWithType: Editor.target
-  fullName: UnityEditor.Editor.target
-- uid: UnityEditor.Editor.targets
-  commentId: P:UnityEditor.Editor.targets
-  parent: UnityEditor.Editor
+  name: minSize
+  nameWithType: EditorWindow.minSize
+  fullName: UnityEditor.EditorWindow.minSize
+- uid: UnityEditor.EditorWindow.maxSize
+  commentId: P:UnityEditor.EditorWindow.maxSize
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: targets
-  nameWithType: Editor.targets
-  fullName: UnityEditor.Editor.targets
-- uid: UnityEditor.Editor.serializedObject
-  commentId: P:UnityEditor.Editor.serializedObject
-  parent: UnityEditor.Editor
+  name: maxSize
+  nameWithType: EditorWindow.maxSize
+  fullName: UnityEditor.EditorWindow.maxSize
+- uid: UnityEditor.EditorWindow.title
+  commentId: P:UnityEditor.EditorWindow.title
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: serializedObject
-  nameWithType: Editor.serializedObject
-  fullName: UnityEditor.Editor.serializedObject
-- uid: UnityEditor.Editor.finishedDefaultHeaderGUI
-  commentId: E:UnityEditor.Editor.finishedDefaultHeaderGUI
-  parent: UnityEditor.Editor
+  name: title
+  nameWithType: EditorWindow.title
+  fullName: UnityEditor.EditorWindow.title
+- uid: UnityEditor.EditorWindow.titleContent
+  commentId: P:UnityEditor.EditorWindow.titleContent
+  parent: UnityEditor.EditorWindow
   isExternal: true
-  name: finishedDefaultHeaderGUI
-  nameWithType: Editor.finishedDefaultHeaderGUI
-  fullName: UnityEditor.Editor.finishedDefaultHeaderGUI
+  name: titleContent
+  nameWithType: EditorWindow.titleContent
+  fullName: UnityEditor.EditorWindow.titleContent
+- uid: UnityEditor.EditorWindow.depthBufferBits
+  commentId: P:UnityEditor.EditorWindow.depthBufferBits
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: depthBufferBits
+  nameWithType: EditorWindow.depthBufferBits
+  fullName: UnityEditor.EditorWindow.depthBufferBits
+- uid: UnityEditor.EditorWindow.antiAlias
+  commentId: P:UnityEditor.EditorWindow.antiAlias
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: antiAlias
+  nameWithType: EditorWindow.antiAlias
+  fullName: UnityEditor.EditorWindow.antiAlias
+- uid: UnityEditor.EditorWindow.position
+  commentId: P:UnityEditor.EditorWindow.position
+  parent: UnityEditor.EditorWindow
+  isExternal: true
+  name: position
+  nameWithType: EditorWindow.position
+  fullName: UnityEditor.EditorWindow.position
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -3193,28 +4049,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: Interactions.Behaviors
-  commentId: N:Interactions.Behaviors
-  href: Interactions.html
-  name: Interactions.Behaviors
-  nameWithType: Interactions.Behaviors
-  fullName: Interactions.Behaviors
-  spec.csharp:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
-  spec.vb:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -3472,17 +4306,46 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Interactions.Interaction.behavior
-  commentId: F:Interactions.Interaction.behavior
-  name: behavior
-  nameWithType: Interaction.behavior
-  fullName: Interactions.Interaction.behavior
-- uid: Interactions.InteractionEditor.CreateBehavior*
-  commentId: Overload:Interactions.InteractionEditor.CreateBehavior
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_CreateBehavior_System_String_Interactions_Interaction_System_Type_UnityEditor_SerializedObject_
-  name: CreateBehavior
-  nameWithType: InteractionEditor.CreateBehavior
-  fullName: Interactions.InteractionEditor.CreateBehavior
+- uid: MysticForestParkRanger.DebugWindow.ShowExample*
+  commentId: Overload:MysticForestParkRanger.DebugWindow.ShowExample
+  href: MysticForestParkRanger.DebugWindow.html#DebugWindow_ShowExample
+  name: ShowExample
+  nameWithType: DebugWindow.ShowExample
+  fullName: DebugWindow.ShowExample
+- uid: MysticForestParkRanger.DebugWindow.CreateGUI*
+  commentId: Overload:MysticForestParkRanger.DebugWindow.CreateGUI
+  href: MysticForestParkRanger.DebugWindow.html#DebugWindow_CreateGUI
+  name: CreateGUI
+  nameWithType: DebugWindow.CreateGUI
+  fullName: DebugWindow.CreateGUI
+- uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+  commentId: T:MysticForestParkRanger.DebugWindow.UpdateFunc
+  href: DebugWindow.html
+  name: DebugWindow.UpdateFunc
+  nameWithType: DebugWindow.UpdateFunc
+  fullName: DebugWindow.UpdateFunc
+  spec.csharp:
+  - uid: MysticForestParkRanger.DebugWindow
+    name: DebugWindow
+    href: DebugWindow.html
+  - name: .
+  - uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+    name: UpdateFunc
+    href: DebugWindow.UpdateFunc.html
+  spec.vb:
+  - uid: MysticForestParkRanger.DebugWindow
+    name: DebugWindow
+    href: DebugWindow.html
+  - name: .
+  - uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+    name: UpdateFunc
+    href: DebugWindow.UpdateFunc.html
+- uid: MysticForestParkRanger.DebugWindow.Log*
+  commentId: Overload:MysticForestParkRanger.DebugWindow.Log
+  href: MysticForestParkRanger.DebugWindow.html#DebugWindow_Log_System_String_
+  name: Log
+  nameWithType: DebugWindow.Log
+  fullName: DebugWindow.Log
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -3494,43 +4357,9 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
-- uid: UnityEditor.SerializedObject
-  commentId: T:UnityEditor.SerializedObject
-  parent: UnityEditor
-  isExternal: true
-  name: SerializedObject
-  nameWithType: SerializedObject
-  fullName: UnityEditor.SerializedObject
-- uid: UnityEditor.Editor.OnInspectorGUI
-  commentId: M:UnityEditor.Editor.OnInspectorGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnInspectorGUI()
-  nameWithType: Editor.OnInspectorGUI()
-  fullName: UnityEditor.Editor.OnInspectorGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnInspectorGUI
-    name: OnInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnInspectorGUI
-    name: OnInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Interactions.InteractionEditor.OnInspectorGUI*
-  commentId: Overload:Interactions.InteractionEditor.OnInspectorGUI
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_OnInspectorGUI
-  name: OnInspectorGUI
-  nameWithType: InteractionEditor.OnInspectorGUI
-  fullName: Interactions.InteractionEditor.OnInspectorGUI
+- uid: MysticForestParkRanger.DebugWindow.settingPath*
+  commentId: Overload:MysticForestParkRanger.DebugWindow.settingPath
+  href: MysticForestParkRanger.DebugWindow.html#DebugWindow_settingPath
+  name: settingPath
+  nameWithType: DebugWindow.settingPath
+  fullName: DebugWindow.settingPath

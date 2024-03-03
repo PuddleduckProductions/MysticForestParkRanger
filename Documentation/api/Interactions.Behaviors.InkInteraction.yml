@@ -23,7 +23,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 76
+    startLine: 88
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -36,9 +36,13 @@ items:
     content: >-
       [Serializable]
 
+      [InteractionType("Misc/Ink")]
+
       public class InkInteraction : InteractionBehavior
     content.vb: >-
       <Serializable>
+
+      <InteractionType("Misc/Ink")>
 
       Public Class InkInteraction Inherits InteractionBehavior
   inheritance:
@@ -61,6 +65,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: Interactions.Behaviors.InteractionType
+    ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Misc/Ink
 - uid: Interactions.Behaviors.InkInteraction.inkKnot
   commentId: F:Interactions.Behaviors.InkInteraction.inkKnot
   id: inkKnot
@@ -79,7 +88,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: inkKnot
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 81
+    startLine: 93
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -108,7 +117,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 82
+    startLine: 94
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -140,7 +149,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 91
+    startLine: 103
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -169,7 +178,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 100
+    startLine: 112
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors

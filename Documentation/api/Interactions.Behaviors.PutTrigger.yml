@@ -20,12 +20,12 @@ items:
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PutTrigger
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 226
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 61
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -38,9 +38,13 @@ items:
     content: >-
       [Serializable]
 
+      [InteractionType("Plants/PutTrigger")]
+
       public class PutTrigger : InteractionBehavior
     content.vb: >-
       <Serializable>
+
+      <InteractionType("Plants/PutTrigger")>
 
       Public Class PutTrigger Inherits InteractionBehavior
   inheritance:
@@ -62,6 +66,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: Interactions.Behaviors.InteractionType
+    ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Plants/PutTrigger
 - uid: Interactions.Behaviors.PutTrigger.#ctor(Interactions.Interaction)
   commentId: M:Interactions.Behaviors.PutTrigger.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
@@ -75,12 +84,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 228
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 63
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -107,12 +116,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onChained
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 234
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 69
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -148,12 +157,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: allowedTags
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 240
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 75
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -189,12 +198,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 242
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 77
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -225,12 +234,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 244
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 79
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -263,12 +272,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 252
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 87
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -292,6 +301,7 @@ items:
 references:
 - uid: Interactions.Behaviors.PickAndPutInteraction
   commentId: T:Interactions.Behaviors.PickAndPutInteraction
+  parent: Interactions.Behaviors
   href: Interactions.Behaviors.PickAndPutInteraction.html
   name: PickAndPutInteraction
   nameWithType: PickAndPutInteraction

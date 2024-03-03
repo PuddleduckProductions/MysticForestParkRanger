@@ -9,6 +9,7 @@ items:
   - Interactions.InteractionManager.FindClosestInteraction
   - Interactions.InteractionManager.StopCurrentInteraction
   - Interactions.InteractionManager.UpdateMode(Interactions.InteractionManager.InteractionState)
+  - Interactions.InteractionManager.currentInteractionType
   - Interactions.InteractionManager.extentsScale
   - Interactions.InteractionManager.interactionButton
   - Interactions.InteractionManager.interactionMode
@@ -363,6 +364,40 @@ items:
     return:
       type: Interactions.InteractionManager.InteractionState
     content.vb: Public interactionMode As InteractionManager.InteractionState
+- uid: Interactions.InteractionManager.currentInteractionType
+  commentId: P:Interactions.InteractionManager.currentInteractionType
+  id: currentInteractionType
+  parent: Interactions.InteractionManager
+  langs:
+  - csharp
+  - vb
+  name: currentInteractionType
+  nameWithType: InteractionManager.currentInteractionType
+  fullName: Interactions.InteractionManager.currentInteractionType
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: currentInteractionType
+    path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
+    startLine: 43
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  summary: >-
+    The Interaction.InteractionType that <xref href="Interactions.InteractionManager.usingInteraction" data-throw-if-not-resolved="false"></xref> is.
+
+    If there is no current interaction, will return null.
+  example: []
+  syntax:
+    content: public string currentInteractionType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property currentInteractionType As String
+  overload: Interactions.InteractionManager.currentInteractionType*
 - uid: Interactions.InteractionManager.UpdateMode(Interactions.InteractionManager.InteractionState)
   commentId: M:Interactions.InteractionManager.UpdateMode(Interactions.InteractionManager.InteractionState)
   id: UpdateMode(Interactions.InteractionManager.InteractionState)
@@ -381,7 +416,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: UpdateMode
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 51
+    startLine: 59
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -410,7 +445,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: StopCurrentInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 66
+    startLine: 74
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -441,7 +476,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 93
+    startLine: 103
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -469,7 +504,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: FindClosestInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/InteractionManager.cs
-    startLine: 97
+    startLine: 107
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -4979,6 +5014,29 @@ references:
   - uid: Interactions.InteractionManager.InteractionState
     name: InteractionState
     href: Interactions.InteractionManager.InteractionState.html
+- uid: Interactions.InteractionManager.usingInteraction
+  commentId: F:Interactions.InteractionManager.usingInteraction
+  href: Interactions.InteractionManager.html#Interactions_InteractionManager_usingInteraction
+  name: usingInteraction
+  nameWithType: InteractionManager.usingInteraction
+  fullName: Interactions.InteractionManager.usingInteraction
+- uid: Interactions.InteractionManager.currentInteractionType*
+  commentId: Overload:Interactions.InteractionManager.currentInteractionType
+  href: Interactions.InteractionManager.html#Interactions_InteractionManager_currentInteractionType
+  name: currentInteractionType
+  nameWithType: InteractionManager.currentInteractionType
+  fullName: Interactions.InteractionManager.currentInteractionType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Interactions.InteractionManager.UpdateMode*
   commentId: Overload:Interactions.InteractionManager.UpdateMode
   href: Interactions.InteractionManager.html#Interactions_InteractionManager_UpdateMode_Interactions_InteractionManager_InteractionState_

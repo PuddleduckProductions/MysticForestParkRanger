@@ -1,93 +1,46 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.InteractionEditor
-  commentId: T:Interactions.InteractionEditor
-  id: InteractionEditor
-  parent: Interactions
+- uid: MysticForestParkRanger.SoundList
+  commentId: T:MysticForestParkRanger.SoundList
+  id: SoundList
+  parent: MysticForestParkRanger
   children:
-  - Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  - Interactions.InteractionEditor.OnInspectorGUI
+  - MysticForestParkRanger.SoundList.Init
+  - MysticForestParkRanger.SoundList.Item(System.String)
+  - MysticForestParkRanger.SoundList.eventDict
+  - MysticForestParkRanger.SoundList.events
   langs:
   - csharp
   - vb
-  name: InteractionEditor
-  nameWithType: InteractionEditor
-  fullName: Interactions.InteractionEditor
+  name: SoundList
+  nameWithType: SoundList
+  fullName: SoundList
   type: Class
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Scripts/Sound/SoundList.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionEditor
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 12
+    id: SoundList
+    path: ../Assets/Scripts/Sound/SoundList.cs
+    startLine: 5
   assemblies:
-  - EditorAssembly
-  namespace: Interactions
-  summary: >-
-    Editor for <xref href="Interactions.Interaction" data-throw-if-not-resolved="false"></xref>, to make selecting <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> automated and easy for designers.
-
-    TODO: Need to figure out how to access the serialized properties of InteractionBehavior.
-  example: []
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
   syntax:
     content: >-
-      [CustomEditor(typeof(Interaction))]
+      [CreateAssetMenu(fileName = "SoundList", menuName = "ScriptableObjects/SoundList")]
 
-      [CanEditMultipleObjects]
-
-      public class InteractionEditor : Editor
+      public class SoundList : ScriptableObject
     content.vb: >-
-      <CustomEditor(GetType(Interaction))>
+      <CreateAssetMenu(fileName:="SoundList", menuName:="ScriptableObjects/SoundList")>
 
-      <CanEditMultipleObjects>
-
-      Public Class InteractionEditor Inherits Editor
+      Public Class SoundList Inherits ScriptableObject
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
-  - UnityEditor.Editor
   inheritedMembers:
-  - UnityEditor.Editor.SaveChanges
-  - UnityEditor.Editor.DiscardChanges
-  - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-  - UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-  - UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  - UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-  - UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  - UnityEditor.Editor.DrawDefaultInspector
-  - UnityEditor.Editor.Repaint
-  - UnityEditor.Editor.CreateInspectorGUI
-  - UnityEditor.Editor.RequiresConstantRepaint
-  - UnityEditor.Editor.DrawHeader
-  - UnityEditor.Editor.OnHeaderGUI
-  - UnityEditor.Editor.ShouldHideOpenButton
-  - UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-  - UnityEditor.Editor.HasPreviewGUI
-  - UnityEditor.Editor.GetPreviewTitle
-  - UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-  - UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  - UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  - UnityEditor.Editor.OnPreviewSettings
-  - UnityEditor.Editor.GetInfoString
-  - UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  - UnityEditor.Editor.ReloadPreviewInstances
-  - UnityEditor.Editor.UseDefaultMargins
-  - UnityEditor.Editor.MoveNextTarget
-  - UnityEditor.Editor.ResetTarget
-  - UnityEditor.Editor.hasUnsavedChanges
-  - UnityEditor.Editor.saveChangesMessage
-  - UnityEditor.Editor.target
-  - UnityEditor.Editor.targets
-  - UnityEditor.Editor.serializedObject
-  - UnityEditor.Editor.finishedDefaultHeaderGUI
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -143,108 +96,132 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   attributes:
-  - type: UnityEditor.CustomEditor
-    ctor: UnityEditor.CustomEditor.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: Interactions.Interaction
-  - type: UnityEditor.CanEditMultipleObjects
-    ctor: UnityEditor.CanEditMultipleObjects.#ctor
+  - type: UnityEngine.CreateAssetMenuAttribute
+    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
     arguments: []
-- uid: Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  commentId: M:Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  id: CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
-  parent: Interactions.InteractionEditor
+    namedArguments:
+    - name: fileName
+      type: System.String
+      value: SoundList
+    - name: menuName
+      type: System.String
+      value: ScriptableObjects/SoundList
+- uid: MysticForestParkRanger.SoundList.eventDict
+  commentId: F:MysticForestParkRanger.SoundList.eventDict
+  id: eventDict
+  parent: MysticForestParkRanger.SoundList
   langs:
   - csharp
   - vb
-  name: CreateBehavior(string, Interaction, Type, SerializedObject)
-  nameWithType: InteractionEditor.CreateBehavior(string, Interaction, Type, SerializedObject)
-  fullName: Interactions.InteractionEditor.CreateBehavior(string, Interactions.Interaction, System.Type, UnityEditor.SerializedObject)
-  type: Method
+  name: eventDict
+  nameWithType: SoundList.eventDict
+  fullName: SoundList.eventDict
+  type: Field
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Scripts/Sound/SoundList.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CreateBehavior
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 30
+    id: eventDict
+    path: ../Assets/Scripts/Sound/SoundList.cs
+    startLine: 8
   assemblies:
-  - EditorAssembly
-  namespace: Interactions
-  summary: Assign our <xref href="Interactions.Interaction.behavior" data-throw-if-not-resolved="false"></xref> based on the selection from the menu.
-  example: []
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
   syntax:
-    content: public static void CreateBehavior(string name, Interaction interaction, Type interactionType, SerializedObject so)
+    content: protected Dictionary<string, EventReference> eventDict
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,FMODUnity.EventReference}
+    content.vb: Protected eventDict As Dictionary(Of String, EventReference)
+- uid: MysticForestParkRanger.SoundList.events
+  commentId: F:MysticForestParkRanger.SoundList.events
+  id: events
+  parent: MysticForestParkRanger.SoundList
+  langs:
+  - csharp
+  - vb
+  name: events
+  nameWithType: SoundList.events
+  fullName: SoundList.events
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Sound/SoundList.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: events
+    path: ../Assets/Scripts/Sound/SoundList.cs
+    startLine: 9
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public List<EventReference> events
+    return:
+      type: System.Collections.Generic.List{FMODUnity.EventReference}
+    content.vb: Public events As List(Of EventReference)
+- uid: MysticForestParkRanger.SoundList.Item(System.String)
+  commentId: P:MysticForestParkRanger.SoundList.Item(System.String)
+  id: Item(System.String)
+  parent: MysticForestParkRanger.SoundList
+  langs:
+  - csharp
+  - vb
+  name: this[string]
+  nameWithType: SoundList.this[string]
+  fullName: SoundList.this[string]
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Sound/SoundList.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: this[]
+    path: ../Assets/Scripts/Sound/SoundList.cs
+    startLine: 11
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public EventReference this[string name] { get; }
     parameters:
     - id: name
       type: System.String
-      description: The name of the behavior we're creating
-    - id: interaction
-      type: Interactions.Interaction
-      description: The parent to give our <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref>
-    - id: interactionType
-      type: System.Type
-      description: The type of <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> to use.
-    - id: so
-      type: UnityEditor.SerializedObject
-      description: Serialized object to apply changes to.
-    content.vb: Public Shared Sub CreateBehavior(name As String, interaction As Interaction, interactionType As Type, so As SerializedObject)
-  overload: Interactions.InteractionEditor.CreateBehavior*
-  nameWithType.vb: InteractionEditor.CreateBehavior(String, Interaction, Type, SerializedObject)
-  fullName.vb: Interactions.InteractionEditor.CreateBehavior(String, Interactions.Interaction, System.Type, UnityEditor.SerializedObject)
-  name.vb: CreateBehavior(String, Interaction, Type, SerializedObject)
-- uid: Interactions.InteractionEditor.OnInspectorGUI
-  commentId: M:Interactions.InteractionEditor.OnInspectorGUI
-  id: OnInspectorGUI
-  parent: Interactions.InteractionEditor
+    return:
+      type: FMODUnity.EventReference
+    content.vb: Public ReadOnly Default Property this[](name As String) As EventReference
+  overload: MysticForestParkRanger.SoundList.Item*
+  nameWithType.vb: SoundList.this[](String)
+  fullName.vb: SoundList.this[](String)
+  name.vb: this[](String)
+- uid: MysticForestParkRanger.SoundList.Init
+  commentId: M:MysticForestParkRanger.SoundList.Init
+  id: Init
+  parent: MysticForestParkRanger.SoundList
   langs:
   - csharp
   - vb
-  name: OnInspectorGUI()
-  nameWithType: InteractionEditor.OnInspectorGUI()
-  fullName: Interactions.InteractionEditor.OnInspectorGUI()
+  name: Init()
+  nameWithType: SoundList.Init()
+  fullName: SoundList.Init()
   type: Method
   source:
     remote:
-      path: Assets/Editor/Interactions/InteractionEditor.cs
+      path: Assets/Scripts/Sound/SoundList.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: OnInspectorGUI
-    path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 39
+    id: Init
+    path: ../Assets/Scripts/Sound/SoundList.cs
+    startLine: 17
   assemblies:
-  - EditorAssembly
-  namespace: Interactions
-  summary: <p>Implement this function to make a custom inspector.</p>
-  example: []
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
   syntax:
-    content: public override void OnInspectorGUI()
-    content.vb: Public Overrides Sub OnInspectorGUI()
-  overridden: UnityEditor.Editor.OnInspectorGUI
-  overload: Interactions.InteractionEditor.OnInspectorGUI*
+    content: public void Init()
+    content.vb: Public Sub Init()
+  overload: MysticForestParkRanger.SoundList.Init*
 references:
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions
-  commentId: N:Interactions
-  href: Interactions.html
-  name: Interactions
-  nameWithType: Interactions
-  fullName: Interactions
+- uid: MysticForestParkRanger
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -270,1108 +247,6 @@ references:
   name: ScriptableObject
   nameWithType: ScriptableObject
   fullName: UnityEngine.ScriptableObject
-- uid: UnityEditor.Editor
-  commentId: T:UnityEditor.Editor
-  parent: UnityEditor
-  isExternal: true
-  name: Editor
-  nameWithType: Editor
-  fullName: UnityEditor.Editor
-- uid: UnityEditor.Editor.SaveChanges
-  commentId: M:UnityEditor.Editor.SaveChanges
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: SaveChanges()
-  nameWithType: Editor.SaveChanges()
-  fullName: UnityEditor.Editor.SaveChanges()
-  spec.csharp:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.SaveChanges
-    name: SaveChanges
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.DiscardChanges
-  commentId: M:UnityEditor.Editor.DiscardChanges
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DiscardChanges()
-  nameWithType: Editor.DiscardChanges()
-  fullName: UnityEditor.Editor.DiscardChanges()
-  spec.csharp:
-  - uid: UnityEditor.Editor.DiscardChanges
-    name: DiscardChanges
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DiscardChanges
-    name: DiscardChanges
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-  commentId: M:UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateEditorWithContext(Object[], Object, Type)
-  nameWithType: Editor.CreateEditorWithContext(Object[], Object, Type)
-  fullName: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[], UnityEngine.Object, System.Type)
-  nameWithType.vb: Editor.CreateEditorWithContext(Object(), Object, Type)
-  fullName.vb: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object(), UnityEngine.Object, System.Type)
-  name.vb: CreateEditorWithContext(Object(), Object, Type)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-    name: CreateEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type)
-    name: CreateEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-  commentId: M:UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: CreateEditorWithContext(Object[], Object)
-  nameWithType: Editor.CreateEditorWithContext(Object[], Object)
-  fullName: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[], UnityEngine.Object)
-  nameWithType.vb: Editor.CreateEditorWithContext(Object(), Object)
-  fullName.vb: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object(), UnityEngine.Object)
-  name.vb: CreateEditorWithContext(Object(), Object)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-    name: CreateEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[],UnityEngine.Object)
-    name: CreateEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditorWithContext(Object, Object, Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditorWithContext(Object, Object, Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object, UnityEngine.Object, System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditorWithContext(Object, Object, Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object, UnityEngine.Object, System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditorWithContext(Object, Object, Type, Editor)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object,UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditorWithContext(Object[], Object, Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditorWithContext(Object[], Object, Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[], UnityEngine.Object, System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditorWithContext(Object(), Object, Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object(), UnityEngine.Object, System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditorWithContext(Object(), Object, Type, Editor)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditorWithContext(UnityEngine.Object[],UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditorWithContext
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditor(Object, Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditor(Object, Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object, System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditor(Object, Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object, System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditor(Object, Type, Editor)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object,System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateCachedEditor(Object[], Type, ref Editor)
-  nameWithType: Editor.CreateCachedEditor(Object[], Type, ref Editor)
-  fullName: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[], System.Type, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.CreateCachedEditor(Object(), Type, Editor)
-  fullName.vb: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object(), System.Type, UnityEditor.Editor)
-  name.vb: CreateCachedEditor(Object(), Type, Editor)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateCachedEditor(UnityEngine.Object[],System.Type,UnityEditor.Editor@)
-    name: CreateCachedEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: CreateEditor(Object)
-  nameWithType: Editor.CreateEditor(Object)
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object)
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateEditor(Object, Type)
-  nameWithType: Editor.CreateEditor(Object, Type)
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object, System.Type)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object,System.Type)
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: CreateEditor(Object[])
-  nameWithType: Editor.CreateEditor(Object[])
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-  nameWithType.vb: Editor.CreateEditor(Object())
-  fullName.vb: UnityEditor.Editor.CreateEditor(UnityEngine.Object())
-  name.vb: CreateEditor(Object())
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[])
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: )
-- uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-  commentId: M:UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: CreateEditor(Object[], Type)
-  nameWithType: Editor.CreateEditor(Object[], Type)
-  fullName: UnityEditor.Editor.CreateEditor(UnityEngine.Object[], System.Type)
-  nameWithType.vb: Editor.CreateEditor(Object(), Type)
-  fullName.vb: UnityEditor.Editor.CreateEditor(UnityEngine.Object(), System.Type)
-  name.vb: CreateEditor(Object(), Type)
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateEditor(UnityEngine.Object[],System.Type)
-    name: CreateEditor
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  commentId: M:UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: DrawPropertiesExcluding(SerializedObject, params string[])
-  nameWithType: Editor.DrawPropertiesExcluding(SerializedObject, params string[])
-  fullName: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject, params string[])
-  nameWithType.vb: Editor.DrawPropertiesExcluding(SerializedObject, ParamArray String())
-  fullName.vb: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject, ParamArray String())
-  name.vb: DrawPropertiesExcluding(SerializedObject, ParamArray String())
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-    name: DrawPropertiesExcluding
-    isExternal: true
-  - name: (
-  - uid: UnityEditor.SerializedObject
-    name: SerializedObject
-    isExternal: true
-  - name: ','
-  - name: " "
-  - name: params
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject,System.String[])
-    name: DrawPropertiesExcluding
-    isExternal: true
-  - name: (
-  - uid: UnityEditor.SerializedObject
-    name: SerializedObject
-    isExternal: true
-  - name: ','
-  - name: " "
-  - name: ParamArray
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: (
-  - name: )
-  - name: )
-- uid: UnityEditor.Editor.DrawDefaultInspector
-  commentId: M:UnityEditor.Editor.DrawDefaultInspector
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DrawDefaultInspector()
-  nameWithType: Editor.DrawDefaultInspector()
-  fullName: UnityEditor.Editor.DrawDefaultInspector()
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawDefaultInspector
-    name: DrawDefaultInspector
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawDefaultInspector
-    name: DrawDefaultInspector
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.Repaint
-  commentId: M:UnityEditor.Editor.Repaint
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: Repaint()
-  nameWithType: Editor.Repaint()
-  fullName: UnityEditor.Editor.Repaint()
-  spec.csharp:
-  - uid: UnityEditor.Editor.Repaint
-    name: Repaint
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.Repaint
-    name: Repaint
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.CreateInspectorGUI
-  commentId: M:UnityEditor.Editor.CreateInspectorGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: CreateInspectorGUI()
-  nameWithType: Editor.CreateInspectorGUI()
-  fullName: UnityEditor.Editor.CreateInspectorGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.CreateInspectorGUI
-    name: CreateInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.CreateInspectorGUI
-    name: CreateInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.RequiresConstantRepaint
-  commentId: M:UnityEditor.Editor.RequiresConstantRepaint
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: RequiresConstantRepaint()
-  nameWithType: Editor.RequiresConstantRepaint()
-  fullName: UnityEditor.Editor.RequiresConstantRepaint()
-  spec.csharp:
-  - uid: UnityEditor.Editor.RequiresConstantRepaint
-    name: RequiresConstantRepaint
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.RequiresConstantRepaint
-    name: RequiresConstantRepaint
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.DrawHeader
-  commentId: M:UnityEditor.Editor.DrawHeader
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DrawHeader()
-  nameWithType: Editor.DrawHeader()
-  fullName: UnityEditor.Editor.DrawHeader()
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawHeader
-    name: DrawHeader
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawHeader
-    name: DrawHeader
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.OnHeaderGUI
-  commentId: M:UnityEditor.Editor.OnHeaderGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnHeaderGUI()
-  nameWithType: Editor.OnHeaderGUI()
-  fullName: UnityEditor.Editor.OnHeaderGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnHeaderGUI
-    name: OnHeaderGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnHeaderGUI
-    name: OnHeaderGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.ShouldHideOpenButton
-  commentId: M:UnityEditor.Editor.ShouldHideOpenButton
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: ShouldHideOpenButton()
-  nameWithType: Editor.ShouldHideOpenButton()
-  fullName: UnityEditor.Editor.ShouldHideOpenButton()
-  spec.csharp:
-  - uid: UnityEditor.Editor.ShouldHideOpenButton
-    name: ShouldHideOpenButton
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.ShouldHideOpenButton
-    name: ShouldHideOpenButton
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-  commentId: M:UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DrawFoldoutInspector(Object, ref Editor)
-  nameWithType: Editor.DrawFoldoutInspector(Object, ref Editor)
-  fullName: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object, ref UnityEditor.Editor)
-  nameWithType.vb: Editor.DrawFoldoutInspector(Object, Editor)
-  fullName.vb: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object, UnityEditor.Editor)
-  name.vb: DrawFoldoutInspector(Object, Editor)
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-    name: DrawFoldoutInspector
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - name: ref
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object,UnityEditor.Editor@)
-    name: DrawFoldoutInspector
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEditor.Editor
-    name: Editor
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.HasPreviewGUI
-  commentId: M:UnityEditor.Editor.HasPreviewGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: HasPreviewGUI()
-  nameWithType: Editor.HasPreviewGUI()
-  fullName: UnityEditor.Editor.HasPreviewGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.HasPreviewGUI
-    name: HasPreviewGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.HasPreviewGUI
-    name: HasPreviewGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.GetPreviewTitle
-  commentId: M:UnityEditor.Editor.GetPreviewTitle
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: GetPreviewTitle()
-  nameWithType: Editor.GetPreviewTitle()
-  fullName: UnityEditor.Editor.GetPreviewTitle()
-  spec.csharp:
-  - uid: UnityEditor.Editor.GetPreviewTitle
-    name: GetPreviewTitle
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.GetPreviewTitle
-    name: GetPreviewTitle
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-  commentId: M:UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-  parent: UnityEditor.Editor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: RenderStaticPreview(string, Object[], int, int)
-  nameWithType: Editor.RenderStaticPreview(string, Object[], int, int)
-  fullName: UnityEditor.Editor.RenderStaticPreview(string, UnityEngine.Object[], int, int)
-  nameWithType.vb: Editor.RenderStaticPreview(String, Object(), Integer, Integer)
-  fullName.vb: UnityEditor.Editor.RenderStaticPreview(String, UnityEngine.Object(), Integer, Integer)
-  name.vb: RenderStaticPreview(String, Object(), Integer, Integer)
-  spec.csharp:
-  - uid: UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-    name: RenderStaticPreview
-    isExternal: true
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: '['
-  - name: ']'
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.RenderStaticPreview(System.String,UnityEngine.Object[],System.Int32,System.Int32)
-    name: RenderStaticPreview
-    isExternal: true
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.Object
-    name: Object
-    isExternal: true
-  - name: (
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  commentId: M:UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnPreviewGUI(Rect, GUIStyle)
-  nameWithType: Editor.OnPreviewGUI(Rect, GUIStyle)
-  fullName: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect, UnityEngine.GUIStyle)
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnPreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnPreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  commentId: M:UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnInteractivePreviewGUI(Rect, GUIStyle)
-  nameWithType: Editor.OnInteractivePreviewGUI(Rect, GUIStyle)
-  fullName: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect, UnityEngine.GUIStyle)
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnInteractivePreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnInteractivePreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)
-    name: OnInteractivePreviewGUI
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: UnityEngine.GUIStyle
-    name: GUIStyle
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.OnPreviewSettings
-  commentId: M:UnityEditor.Editor.OnPreviewSettings
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnPreviewSettings()
-  nameWithType: Editor.OnPreviewSettings()
-  fullName: UnityEditor.Editor.OnPreviewSettings()
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnPreviewSettings
-    name: OnPreviewSettings
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnPreviewSettings
-    name: OnPreviewSettings
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.GetInfoString
-  commentId: M:UnityEditor.Editor.GetInfoString
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: GetInfoString()
-  nameWithType: Editor.GetInfoString()
-  fullName: UnityEditor.Editor.GetInfoString()
-  spec.csharp:
-  - uid: UnityEditor.Editor.GetInfoString
-    name: GetInfoString
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.GetInfoString
-    name: GetInfoString
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  commentId: M:UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: DrawPreview(Rect)
-  nameWithType: Editor.DrawPreview(Rect)
-  fullName: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-  spec.csharp:
-  - uid: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-    name: DrawPreview
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.DrawPreview(UnityEngine.Rect)
-    name: DrawPreview
-    isExternal: true
-  - name: (
-  - uid: UnityEngine.Rect
-    name: Rect
-    isExternal: true
-  - name: )
-- uid: UnityEditor.Editor.ReloadPreviewInstances
-  commentId: M:UnityEditor.Editor.ReloadPreviewInstances
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: ReloadPreviewInstances()
-  nameWithType: Editor.ReloadPreviewInstances()
-  fullName: UnityEditor.Editor.ReloadPreviewInstances()
-  spec.csharp:
-  - uid: UnityEditor.Editor.ReloadPreviewInstances
-    name: ReloadPreviewInstances
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.ReloadPreviewInstances
-    name: ReloadPreviewInstances
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.UseDefaultMargins
-  commentId: M:UnityEditor.Editor.UseDefaultMargins
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: UseDefaultMargins()
-  nameWithType: Editor.UseDefaultMargins()
-  fullName: UnityEditor.Editor.UseDefaultMargins()
-  spec.csharp:
-  - uid: UnityEditor.Editor.UseDefaultMargins
-    name: UseDefaultMargins
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.UseDefaultMargins
-    name: UseDefaultMargins
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.MoveNextTarget
-  commentId: M:UnityEditor.Editor.MoveNextTarget
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: MoveNextTarget()
-  nameWithType: Editor.MoveNextTarget()
-  fullName: UnityEditor.Editor.MoveNextTarget()
-  spec.csharp:
-  - uid: UnityEditor.Editor.MoveNextTarget
-    name: MoveNextTarget
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.MoveNextTarget
-    name: MoveNextTarget
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.ResetTarget
-  commentId: M:UnityEditor.Editor.ResetTarget
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: ResetTarget()
-  nameWithType: Editor.ResetTarget()
-  fullName: UnityEditor.Editor.ResetTarget()
-  spec.csharp:
-  - uid: UnityEditor.Editor.ResetTarget
-    name: ResetTarget
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.ResetTarget
-    name: ResetTarget
-    isExternal: true
-  - name: (
-  - name: )
-- uid: UnityEditor.Editor.hasUnsavedChanges
-  commentId: P:UnityEditor.Editor.hasUnsavedChanges
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: hasUnsavedChanges
-  nameWithType: Editor.hasUnsavedChanges
-  fullName: UnityEditor.Editor.hasUnsavedChanges
-- uid: UnityEditor.Editor.saveChangesMessage
-  commentId: P:UnityEditor.Editor.saveChangesMessage
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: saveChangesMessage
-  nameWithType: Editor.saveChangesMessage
-  fullName: UnityEditor.Editor.saveChangesMessage
-- uid: UnityEditor.Editor.target
-  commentId: P:UnityEditor.Editor.target
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: target
-  nameWithType: Editor.target
-  fullName: UnityEditor.Editor.target
-- uid: UnityEditor.Editor.targets
-  commentId: P:UnityEditor.Editor.targets
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: targets
-  nameWithType: Editor.targets
-  fullName: UnityEditor.Editor.targets
-- uid: UnityEditor.Editor.serializedObject
-  commentId: P:UnityEditor.Editor.serializedObject
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: serializedObject
-  nameWithType: Editor.serializedObject
-  fullName: UnityEditor.Editor.serializedObject
-- uid: UnityEditor.Editor.finishedDefaultHeaderGUI
-  commentId: E:UnityEditor.Editor.finishedDefaultHeaderGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: finishedDefaultHeaderGUI
-  nameWithType: Editor.finishedDefaultHeaderGUI
-  fullName: UnityEditor.Editor.finishedDefaultHeaderGUI
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -3193,28 +2068,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: Interactions.Behaviors
-  commentId: N:Interactions.Behaviors
-  href: Interactions.html
-  name: Interactions.Behaviors
-  nameWithType: Interactions.Behaviors
-  fullName: Interactions.Behaviors
-  spec.csharp:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
-  spec.vb:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -3228,12 +2081,6 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
-- uid: UnityEditor
-  commentId: N:UnityEditor
-  isExternal: true
-  name: UnityEditor
-  nameWithType: UnityEditor
-  fullName: UnityEditor
 - uid: UnityEngine.Object.Instantiate``1(``0)
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
   isExternal: true
@@ -3472,17 +2319,188 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Interactions.Interaction.behavior
-  commentId: F:Interactions.Interaction.behavior
-  name: behavior
-  nameWithType: Interaction.behavior
-  fullName: Interactions.Interaction.behavior
-- uid: Interactions.InteractionEditor.CreateBehavior*
-  commentId: Overload:Interactions.InteractionEditor.CreateBehavior
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_CreateBehavior_System_String_Interactions_Interaction_System_Type_UnityEditor_SerializedObject_
-  name: CreateBehavior
-  nameWithType: InteractionEditor.CreateBehavior
-  fullName: Interactions.InteractionEditor.CreateBehavior
+- uid: System.Collections.Generic.Dictionary{System.String,FMODUnity.EventReference}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,FMODUnity.EventReference}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, EventReference>
+  nameWithType: Dictionary<string, EventReference>
+  fullName: System.Collections.Generic.Dictionary<string, FMODUnity.EventReference>
+  nameWithType.vb: Dictionary(Of String, EventReference)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, FMODUnity.EventReference)
+  name.vb: Dictionary(Of String, EventReference)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: FMODUnity.EventReference
+    name: EventReference
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: FMODUnity.EventReference
+    name: EventReference
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.List{FMODUnity.EventReference}
+  commentId: T:System.Collections.Generic.List{FMODUnity.EventReference}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<EventReference>
+  nameWithType: List<EventReference>
+  fullName: System.Collections.Generic.List<FMODUnity.EventReference>
+  nameWithType.vb: List(Of EventReference)
+  fullName.vb: System.Collections.Generic.List(Of FMODUnity.EventReference)
+  name.vb: List(Of EventReference)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: FMODUnity.EventReference
+    name: EventReference
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: FMODUnity.EventReference
+    name: EventReference
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: MysticForestParkRanger.SoundList.Item*
+  commentId: Overload:MysticForestParkRanger.SoundList.Item
+  href: MysticForestParkRanger.SoundList.html#SoundList_Item_System_String_
+  name: this
+  nameWithType: SoundList.this
+  fullName: SoundList.this
+  nameWithType.vb: SoundList.this[]
+  fullName.vb: SoundList.this[]
+  name.vb: this[]
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -3494,43 +2512,20 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
-- uid: UnityEditor.SerializedObject
-  commentId: T:UnityEditor.SerializedObject
-  parent: UnityEditor
-  isExternal: true
-  name: SerializedObject
-  nameWithType: SerializedObject
-  fullName: UnityEditor.SerializedObject
-- uid: UnityEditor.Editor.OnInspectorGUI
-  commentId: M:UnityEditor.Editor.OnInspectorGUI
-  parent: UnityEditor.Editor
-  isExternal: true
-  name: OnInspectorGUI()
-  nameWithType: Editor.OnInspectorGUI()
-  fullName: UnityEditor.Editor.OnInspectorGUI()
-  spec.csharp:
-  - uid: UnityEditor.Editor.OnInspectorGUI
-    name: OnInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: UnityEditor.Editor.OnInspectorGUI
-    name: OnInspectorGUI
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Interactions.InteractionEditor.OnInspectorGUI*
-  commentId: Overload:Interactions.InteractionEditor.OnInspectorGUI
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_OnInspectorGUI
-  name: OnInspectorGUI
-  nameWithType: InteractionEditor.OnInspectorGUI
-  fullName: Interactions.InteractionEditor.OnInspectorGUI
+- uid: FMODUnity.EventReference
+  commentId: T:FMODUnity.EventReference
+  parent: FMODUnity
+  name: EventReference
+  nameWithType: EventReference
+  fullName: FMODUnity.EventReference
+- uid: FMODUnity
+  commentId: N:FMODUnity
+  name: FMODUnity
+  nameWithType: FMODUnity
+  fullName: FMODUnity
+- uid: MysticForestParkRanger.SoundList.Init*
+  commentId: Overload:MysticForestParkRanger.SoundList.Init
+  href: MysticForestParkRanger.SoundList.html#SoundList_Init
+  name: Init
+  nameWithType: SoundList.Init
+  fullName: SoundList.Init

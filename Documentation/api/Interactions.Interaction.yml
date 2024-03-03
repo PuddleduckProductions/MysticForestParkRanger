@@ -11,9 +11,10 @@ items:
   - Interactions.Interaction.Interact
   - Interactions.Interaction.Interact(Interactions.Interaction)
   - Interactions.Interaction.InteractionUpdate
+  - Interactions.Interaction.OnDestroy
   - Interactions.Interaction.behavior
+  - Interactions.Interaction.behaviorType
   - Interactions.Interaction.interactionEnabled
-  - Interactions.Interaction.type
   langs:
   - csharp
   - vb
@@ -28,7 +29,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interaction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 264
+    startLine: 186
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -195,7 +196,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionEnabled
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 274
+    startLine: 195
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -211,33 +212,6 @@ items:
     return:
       type: System.Boolean
     content.vb: Public interactionEnabled As Boolean
-- uid: Interactions.Interaction.type
-  commentId: F:Interactions.Interaction.type
-  id: type
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: type
-  nameWithType: Interaction.type
-  fullName: Interactions.Interaction.type
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: type
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 275
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public Interaction.InteractionType type
-    return:
-      type: Interactions.Interaction.InteractionType
-    content.vb: Public type As Interaction.InteractionType
 - uid: Interactions.Interaction.behavior
   commentId: F:Interactions.Interaction.behavior
   id: behavior
@@ -256,7 +230,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: behavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 277
+    startLine: 197
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -274,6 +248,43 @@ items:
   attributes:
   - type: UnityEngine.SerializeReference
     ctor: UnityEngine.SerializeReference.#ctor
+    arguments: []
+- uid: Interactions.Interaction.behaviorType
+  commentId: F:Interactions.Interaction.behaviorType
+  id: behaviorType
+  parent: Interactions.Interaction
+  langs:
+  - csharp
+  - vb
+  name: behaviorType
+  nameWithType: Interaction.behaviorType
+  fullName: Interactions.Interaction.behaviorType
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: behaviorType
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 200
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: >-
+      [HideInInspector]
+
+      public string behaviorType
+    return:
+      type: System.String
+    content.vb: >-
+      <HideInInspector>
+
+      Public behaviorType As String
+  attributes:
+  - type: UnityEngine.HideInInspector
+    ctor: UnityEngine.HideInInspector.#ctor
     arguments: []
 - uid: Interactions.Interaction.HasInteractionBehavior
   commentId: M:Interactions.Interaction.HasInteractionBehavior
@@ -293,7 +304,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: HasInteractionBehavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 285
+    startLine: 208
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -321,7 +332,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 289
+    startLine: 212
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -347,7 +358,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 293
+    startLine: 216
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -376,7 +387,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 297
+    startLine: 220
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -384,6 +395,32 @@ items:
     content: public void EndInteraction()
     content.vb: Public Sub EndInteraction()
   overload: Interactions.Interaction.EndInteraction*
+- uid: Interactions.Interaction.OnDestroy
+  commentId: M:Interactions.Interaction.OnDestroy
+  id: OnDestroy
+  parent: Interactions.Interaction
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy()
+  nameWithType: Interaction.OnDestroy()
+  fullName: Interactions.Interaction.OnDestroy()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: OnDestroy
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 224
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public void OnDestroy()
+    content.vb: Public Sub OnDestroy()
+  overload: Interactions.Interaction.OnDestroy*
 - uid: Interactions.Interaction.CanInteract(Interactions.Interaction)
   commentId: M:Interactions.Interaction.CanInteract(Interactions.Interaction)
   id: CanInteract(Interactions.Interaction)
@@ -402,7 +439,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 301
+    startLine: 228
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -433,7 +470,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionUpdate
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 309
+    startLine: 236
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -4818,29 +4855,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: Interactions.Interaction.InteractionType
-  commentId: T:Interactions.Interaction.InteractionType
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction.InteractionType
-  nameWithType: Interaction.InteractionType
-  fullName: Interactions.Interaction.InteractionType
-  spec.csharp:
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
-  - name: .
-  - uid: Interactions.Interaction.InteractionType
-    name: InteractionType
-    href: Interactions.Interaction.InteractionType.html
-  spec.vb:
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
-  - name: .
-  - uid: Interactions.Interaction.InteractionType
-    name: InteractionType
-    href: Interactions.Interaction.InteractionType.html
 - uid: Interactions.Behaviors.InteractionBehavior
   commentId: T:Interactions.Behaviors.InteractionBehavior
   parent: Interactions.Behaviors
@@ -4870,6 +4884,17 @@ references:
   - uid: Interactions.Behaviors
     name: Behaviors
     href: Interactions.Behaviors.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Interactions.Interaction.HasInteractionBehavior*
   commentId: Overload:Interactions.Interaction.HasInteractionBehavior
   href: Interactions.Interaction.html#Interactions_Interaction_HasInteractionBehavior
@@ -4895,6 +4920,12 @@ references:
   name: EndInteraction
   nameWithType: Interaction.EndInteraction
   fullName: Interactions.Interaction.EndInteraction
+- uid: Interactions.Interaction.OnDestroy*
+  commentId: Overload:Interactions.Interaction.OnDestroy
+  href: Interactions.Interaction.html#Interactions_Interaction_OnDestroy
+  name: OnDestroy
+  nameWithType: Interaction.OnDestroy
+  fullName: Interactions.Interaction.OnDestroy
 - uid: Interactions.Interaction.CanInteract*
   commentId: Overload:Interactions.Interaction.CanInteract
   href: Interactions.Interaction.html#Interactions_Interaction_CanInteract_Interactions_Interaction_

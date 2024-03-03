@@ -1,55 +1,53 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.Behaviors.PickAndPutInteraction
-  commentId: T:Interactions.Behaviors.PickAndPutInteraction
-  id: PickAndPutInteraction
+- uid: Interactions.Behaviors.Seed
+  commentId: T:Interactions.Behaviors.Seed
+  id: Seed
   parent: Interactions.Behaviors
   children:
-  - Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
-  - Interactions.Behaviors.PickAndPutInteraction.EndInteraction
-  - Interactions.Behaviors.PickAndPutInteraction.Interact
-  - Interactions.Behaviors.PickAndPutInteraction.Update
-  - Interactions.Behaviors.PickAndPutInteraction.isPicking
+  - Interactions.Behaviors.Seed.#ctor(Interactions.Interaction)
+  - Interactions.Behaviors.Seed.instantiateOnPlant
+  - Interactions.Behaviors.Seed.seedName
   langs:
   - csharp
   - vb
-  name: PickAndPutInteraction
-  nameWithType: PickAndPutInteraction
-  fullName: Interactions.Behaviors.PickAndPutInteraction
+  name: Seed
+  nameWithType: Seed
+  fullName: Interactions.Behaviors.Seed
   type: Class
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: PickAndPutInteraction
+    id: Seed
     path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-    startLine: 10
+    startLine: 98
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: An object that can be picked up and placed within the world.
-  example: []
   syntax:
     content: >-
       [Serializable]
 
-      [InteractionType("Plants/PickAndPut")]
+      [InteractionType("Plants/Seed")]
 
-      public class PickAndPutInteraction : InteractionBehavior
+      public class Seed : PickAndPutInteraction
     content.vb: >-
       <Serializable>
 
-      <InteractionType("Plants/PickAndPut")>
+      <InteractionType("Plants/Seed")>
 
-      Public Class PickAndPutInteraction Inherits InteractionBehavior
+      Public Class Seed Inherits PickAndPutInteraction
   inheritance:
   - System.Object
   - Interactions.Behaviors.InteractionBehavior
-  derivedClasses:
-  - Interactions.Behaviors.Seed
-  - Interactions.Behaviors.WaterPipe
+  - Interactions.Behaviors.PickAndPutInteraction
   inheritedMembers:
+  - Interactions.Behaviors.PickAndPutInteraction.isPicking
+  - Interactions.Behaviors.PickAndPutInteraction.Interact
+  - Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+  - Interactions.Behaviors.PickAndPutInteraction.Update
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
   - Interactions.Behaviors.InteractionBehavior.GameObjectStart
@@ -69,17 +67,17 @@ items:
     ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
     arguments:
     - type: System.String
-      value: Plants/PickAndPut
-- uid: Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
+      value: Plants/Seed
+- uid: Interactions.Behaviors.Seed.#ctor(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.Seed.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
-  parent: Interactions.Behaviors.PickAndPutInteraction
+  parent: Interactions.Behaviors.Seed
   langs:
   - csharp
   - vb
-  name: PickAndPutInteraction(Interaction)
-  nameWithType: PickAndPutInteraction.PickAndPutInteraction(Interaction)
-  fullName: Interactions.Behaviors.PickAndPutInteraction.PickAndPutInteraction(Interactions.Interaction)
+  name: Seed(Interaction)
+  nameWithType: Seed.Seed(Interaction)
+  fullName: Interactions.Behaviors.Seed.Seed(Interactions.Interaction)
   type: Constructor
   source:
     remote:
@@ -88,151 +86,102 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-    startLine: 12
+    startLine: 100
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
   syntax:
-    content: public PickAndPutInteraction(Interaction parent)
+    content: public Seed(Interaction parent)
     parameters:
     - id: parent
       type: Interactions.Interaction
     content.vb: Public Sub New(parent As Interaction)
-  overload: Interactions.Behaviors.PickAndPutInteraction.#ctor*
-  nameWithType.vb: PickAndPutInteraction.New(Interaction)
-  fullName.vb: Interactions.Behaviors.PickAndPutInteraction.New(Interactions.Interaction)
+  overload: Interactions.Behaviors.Seed.#ctor*
+  nameWithType.vb: Seed.New(Interaction)
+  fullName.vb: Interactions.Behaviors.Seed.New(Interactions.Interaction)
   name.vb: New(Interaction)
-- uid: Interactions.Behaviors.PickAndPutInteraction.isPicking
-  commentId: F:Interactions.Behaviors.PickAndPutInteraction.isPicking
-  id: isPicking
-  parent: Interactions.Behaviors.PickAndPutInteraction
+- uid: Interactions.Behaviors.Seed.instantiateOnPlant
+  commentId: F:Interactions.Behaviors.Seed.instantiateOnPlant
+  id: instantiateOnPlant
+  parent: Interactions.Behaviors.Seed
   langs:
   - csharp
   - vb
-  name: isPicking
-  nameWithType: PickAndPutInteraction.isPicking
-  fullName: Interactions.Behaviors.PickAndPutInteraction.isPicking
+  name: instantiateOnPlant
+  nameWithType: Seed.instantiateOnPlant
+  fullName: Interactions.Behaviors.Seed.instantiateOnPlant
   type: Field
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: isPicking
+    id: instantiateOnPlant
     path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-    startLine: 13
+    startLine: 106
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
+  summary: The object to instantiate when this is planted.
+  example: []
   syntax:
-    content: protected bool isPicking
+    content: >-
+      [Tooltip("The object to instantiate when this is planted.")]
+
+      public GameObject instantiateOnPlant
     return:
-      type: System.Boolean
-    content.vb: Protected isPicking As Boolean
-- uid: Interactions.Behaviors.PickAndPutInteraction.Interact
-  commentId: M:Interactions.Behaviors.PickAndPutInteraction.Interact
-  id: Interact
-  parent: Interactions.Behaviors.PickAndPutInteraction
+      type: UnityEngine.GameObject
+    content.vb: >-
+      <Tooltip("The object to instantiate when this is planted.")>
+
+      Public instantiateOnPlant As GameObject
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: The object to instantiate when this is planted.
+- uid: Interactions.Behaviors.Seed.seedName
+  commentId: F:Interactions.Behaviors.Seed.seedName
+  id: seedName
+  parent: Interactions.Behaviors.Seed
   langs:
   - csharp
   - vb
-  name: Interact()
-  nameWithType: PickAndPutInteraction.Interact()
-  fullName: Interactions.Behaviors.PickAndPutInteraction.Interact()
-  type: Method
+  name: seedName
+  nameWithType: Seed.seedName
+  fullName: Interactions.Behaviors.Seed.seedName
+  type: Field
   source:
     remote:
       path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interact
+    id: seedName
     path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-    startLine: 20
+    startLine: 111
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
-  summary: >-
-    Function to call when the object is interacted with (i.e., Space is pressed)
-
-    Called by <xref href="Interactions.InteractionManager" data-throw-if-not-resolved="false"></xref>.
-
-    This will still be called even while <xref href="Interactions.Behaviors.InteractionBehavior.Update" data-throw-if-not-resolved="false"></xref> returns true, as long as this object is being
-
-    interacted with and space is being pressed.
+  summary: The name of the seed. Used by <xref href="Interactions.Behaviors.DirtPatch" data-throw-if-not-resolved="false"></xref> in <xref href="Interactions.Behaviors.DirtPatch.seedsToAccept" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public override void Interact()
-    content.vb: Public Overrides Sub Interact()
-  overridden: Interactions.Behaviors.InteractionBehavior.Interact
-  overload: Interactions.Behaviors.PickAndPutInteraction.Interact*
-- uid: Interactions.Behaviors.PickAndPutInteraction.EndInteraction
-  commentId: M:Interactions.Behaviors.PickAndPutInteraction.EndInteraction
-  id: EndInteraction
-  parent: Interactions.Behaviors.PickAndPutInteraction
-  langs:
-  - csharp
-  - vb
-  name: EndInteraction()
-  nameWithType: PickAndPutInteraction.EndInteraction()
-  fullName: Interactions.Behaviors.PickAndPutInteraction.EndInteraction()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: EndInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-    startLine: 35
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    What <xref href="Interactions.InteractionManager" data-throw-if-not-resolved="false"></xref> calls when we stop interacting for whatever reason.
+    content: >-
+      [Tooltip("The name of the seed. Used by DirtPatch in seedsToAccept.")]
 
-    Use this to clean up. You can trigger this yourself when you return false in <xref href="Interactions.Behaviors.InteractionBehavior.Update" data-throw-if-not-resolved="false"></xref>,
-
-    but this may be called by other interactions who want to do interactions with your object in <xref href="Interactions.InteractionManager.StopCurrentInteraction" data-throw-if-not-resolved="false"></xref>
-  example: []
-  syntax:
-    content: public override void EndInteraction()
-    content.vb: Public Overrides Sub EndInteraction()
-  overridden: Interactions.Behaviors.InteractionBehavior.EndInteraction
-  overload: Interactions.Behaviors.PickAndPutInteraction.EndInteraction*
-- uid: Interactions.Behaviors.PickAndPutInteraction.Update
-  commentId: M:Interactions.Behaviors.PickAndPutInteraction.Update
-  id: Update
-  parent: Interactions.Behaviors.PickAndPutInteraction
-  langs:
-  - csharp
-  - vb
-  name: Update()
-  nameWithType: PickAndPutInteraction.Update()
-  fullName: Interactions.Behaviors.PickAndPutInteraction.Update()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Update
-    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
-    startLine: 50
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  summary: >-
-    Are we currently having an interaction happen? What do we need to do to update it?
-
-    If this returns true, this supresses all other interactions in the scene.
-  example: []
-  syntax:
-    content: public override bool Update()
+      public string seedName
     return:
-      type: System.Boolean
-    content.vb: Public Overrides Function Update() As Boolean
-  overridden: Interactions.Behaviors.InteractionBehavior.Update
-  overload: Interactions.Behaviors.PickAndPutInteraction.Update*
+      type: System.String
+    content.vb: >-
+      <Tooltip("The name of the seed. Used by DirtPatch in seedsToAccept.")>
+
+      Public seedName As String
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: The name of the seed. Used by DirtPatch in seedsToAccept.
 references:
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
@@ -274,6 +223,77 @@ references:
   name: InteractionBehavior
   nameWithType: InteractionBehavior
   fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Behaviors.PickAndPutInteraction
+  commentId: T:Interactions.Behaviors.PickAndPutInteraction
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.PickAndPutInteraction.html
+  name: PickAndPutInteraction
+  nameWithType: PickAndPutInteraction
+  fullName: Interactions.Behaviors.PickAndPutInteraction
+- uid: Interactions.Behaviors.PickAndPutInteraction.isPicking
+  commentId: F:Interactions.Behaviors.PickAndPutInteraction.isPicking
+  parent: Interactions.Behaviors.PickAndPutInteraction
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_isPicking
+  name: isPicking
+  nameWithType: PickAndPutInteraction.isPicking
+  fullName: Interactions.Behaviors.PickAndPutInteraction.isPicking
+- uid: Interactions.Behaviors.PickAndPutInteraction.Interact
+  commentId: M:Interactions.Behaviors.PickAndPutInteraction.Interact
+  parent: Interactions.Behaviors.PickAndPutInteraction
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Interact
+  name: Interact()
+  nameWithType: PickAndPutInteraction.Interact()
+  fullName: Interactions.Behaviors.PickAndPutInteraction.Interact()
+  spec.csharp:
+  - uid: Interactions.Behaviors.PickAndPutInteraction.Interact
+    name: Interact
+    href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Interact
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.PickAndPutInteraction.Interact
+    name: Interact
+    href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Interact
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+  commentId: M:Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+  parent: Interactions.Behaviors.PickAndPutInteraction
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_EndInteraction
+  name: EndInteraction()
+  nameWithType: PickAndPutInteraction.EndInteraction()
+  fullName: Interactions.Behaviors.PickAndPutInteraction.EndInteraction()
+  spec.csharp:
+  - uid: Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_EndInteraction
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.PickAndPutInteraction.EndInteraction
+    name: EndInteraction
+    href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_EndInteraction
+  - name: (
+  - name: )
+- uid: Interactions.Behaviors.PickAndPutInteraction.Update
+  commentId: M:Interactions.Behaviors.PickAndPutInteraction.Update
+  parent: Interactions.Behaviors.PickAndPutInteraction
+  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Update
+  name: Update()
+  nameWithType: PickAndPutInteraction.Update()
+  fullName: Interactions.Behaviors.PickAndPutInteraction.Update()
+  spec.csharp:
+  - uid: Interactions.Behaviors.PickAndPutInteraction.Update
+    name: Update
+    href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.PickAndPutInteraction.Update
+    name: Update
+    href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Update
+  - name: (
+  - name: )
 - uid: Interactions.Behaviors.InteractionBehavior.interactionObject
   commentId: F:Interactions.Behaviors.InteractionBehavior.interactionObject
   parent: Interactions.Behaviors.InteractionBehavior
@@ -576,14 +596,14 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Interactions.Behaviors.PickAndPutInteraction.#ctor*
-  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.#ctor
-  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction__ctor_Interactions_Interaction_
-  name: PickAndPutInteraction
-  nameWithType: PickAndPutInteraction.PickAndPutInteraction
-  fullName: Interactions.Behaviors.PickAndPutInteraction.PickAndPutInteraction
-  nameWithType.vb: PickAndPutInteraction.New
-  fullName.vb: Interactions.Behaviors.PickAndPutInteraction.New
+- uid: Interactions.Behaviors.Seed.#ctor*
+  commentId: Overload:Interactions.Behaviors.Seed.#ctor
+  href: Interactions.Behaviors.Seed.html#Interactions_Behaviors_Seed__ctor_Interactions_Interaction_
+  name: Seed
+  nameWithType: Seed.Seed
+  fullName: Interactions.Behaviors.Seed.Seed
+  nameWithType.vb: Seed.New
+  fullName.vb: Interactions.Behaviors.Seed.New
   name.vb: New
 - uid: Interactions.Interaction
   commentId: T:Interactions.Interaction
@@ -598,113 +618,39 @@ references:
   name: Interactions
   nameWithType: Interactions
   fullName: Interactions
-- uid: System.Boolean
-  commentId: T:System.Boolean
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: Interactions.Behaviors.DirtPatch
+  commentId: T:Interactions.Behaviors.DirtPatch
+  href: Interactions.Behaviors.DirtPatch.html
+  name: DirtPatch
+  nameWithType: DirtPatch
+  fullName: Interactions.Behaviors.DirtPatch
+- uid: Interactions.Behaviors.DirtPatch.seedsToAccept
+  commentId: F:Interactions.Behaviors.DirtPatch.seedsToAccept
+  href: Interactions.Behaviors.DirtPatch.html#Interactions_Behaviors_DirtPatch_seedsToAccept
+  name: seedsToAccept
+  nameWithType: DirtPatch.seedsToAccept
+  fullName: Interactions.Behaviors.DirtPatch.seedsToAccept
+- uid: System.String
+  commentId: T:System.String
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: Interactions.InteractionManager
-  commentId: T:Interactions.InteractionManager
-  href: Interactions.InteractionManager.html
-  name: InteractionManager
-  nameWithType: InteractionManager
-  fullName: Interactions.InteractionManager
-- uid: Interactions.Behaviors.InteractionBehavior.Update
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Update
-  parent: Interactions.Behaviors.InteractionBehavior
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
-  name: Update()
-  nameWithType: InteractionBehavior.Update()
-  fullName: Interactions.Behaviors.InteractionBehavior.Update()
-  spec.csharp:
-  - uid: Interactions.Behaviors.InteractionBehavior.Update
-    name: Update
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Interactions.Behaviors.InteractionBehavior.Update
-    name: Update
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Update
-  - name: (
-  - name: )
-- uid: Interactions.Behaviors.InteractionBehavior.Interact
-  commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
-  parent: Interactions.Behaviors.InteractionBehavior
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
-  name: Interact()
-  nameWithType: InteractionBehavior.Interact()
-  fullName: Interactions.Behaviors.InteractionBehavior.Interact()
-  spec.csharp:
-  - uid: Interactions.Behaviors.InteractionBehavior.Interact
-    name: Interact
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Interactions.Behaviors.InteractionBehavior.Interact
-    name: Interact
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_Interact
-  - name: (
-  - name: )
-- uid: Interactions.Behaviors.PickAndPutInteraction.Interact*
-  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.Interact
-  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Interact
-  name: Interact
-  nameWithType: PickAndPutInteraction.Interact
-  fullName: Interactions.Behaviors.PickAndPutInteraction.Interact
-- uid: Interactions.InteractionManager.StopCurrentInteraction
-  commentId: M:Interactions.InteractionManager.StopCurrentInteraction
-  href: Interactions.InteractionManager.html#Interactions_InteractionManager_StopCurrentInteraction
-  name: StopCurrentInteraction()
-  nameWithType: InteractionManager.StopCurrentInteraction()
-  fullName: Interactions.InteractionManager.StopCurrentInteraction()
-  spec.csharp:
-  - uid: Interactions.InteractionManager.StopCurrentInteraction
-    name: StopCurrentInteraction
-    href: Interactions.InteractionManager.html#Interactions_InteractionManager_StopCurrentInteraction
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Interactions.InteractionManager.StopCurrentInteraction
-    name: StopCurrentInteraction
-    href: Interactions.InteractionManager.html#Interactions_InteractionManager_StopCurrentInteraction
-  - name: (
-  - name: )
-- uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
-  commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction
-  parent: Interactions.Behaviors.InteractionBehavior
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
-  name: EndInteraction()
-  nameWithType: InteractionBehavior.EndInteraction()
-  fullName: Interactions.Behaviors.InteractionBehavior.EndInteraction()
-  spec.csharp:
-  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
-    name: EndInteraction
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
-    name: EndInteraction
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_EndInteraction
-  - name: (
-  - name: )
-- uid: Interactions.Behaviors.PickAndPutInteraction.EndInteraction*
-  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.EndInteraction
-  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_EndInteraction
-  name: EndInteraction
-  nameWithType: PickAndPutInteraction.EndInteraction
-  fullName: Interactions.Behaviors.PickAndPutInteraction.EndInteraction
-- uid: Interactions.Behaviors.PickAndPutInteraction.Update*
-  commentId: Overload:Interactions.Behaviors.PickAndPutInteraction.Update
-  href: Interactions.Behaviors.PickAndPutInteraction.html#Interactions_Behaviors_PickAndPutInteraction_Update
-  name: Update
-  nameWithType: PickAndPutInteraction.Update
-  fullName: Interactions.Behaviors.PickAndPutInteraction.Update
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

@@ -7,6 +7,7 @@ items:
   children:
   - Interactions.GridGroup.BoundsToCells(UnityEngine.BoxCollider)
   - Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell)
+  - Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
   - Interactions.GridGroup.GetCell(UnityEngine.Vector2Int)
   - Interactions.GridGroup.Item(System.Int32)
   - Interactions.GridGroup.Item(System.Int32,System.Int32)
@@ -600,6 +601,38 @@ items:
       type: System.Collections.Generic.List{Interactions.GridGroup.Cell}
     content.vb: Public Function BoundsToCells(c As BoxCollider) As List(Of GridGroup.Cell)
   overload: Interactions.GridGroup.BoundsToCells*
+- uid: Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
+  commentId: M:Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
+  id: EmptyCells(Interactions.GridGroup.Cell[])
+  parent: Interactions.GridGroup
+  langs:
+  - csharp
+  - vb
+  name: EmptyCells(Cell[])
+  nameWithType: GridGroup.EmptyCells(GridGroup.Cell[])
+  fullName: Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: EmptyCells
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
+    startLine: 167
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public void EmptyCells(GridGroup.Cell[] cells)
+    parameters:
+    - id: cells
+      type: Interactions.GridGroup.Cell[]
+    content.vb: Public Sub EmptyCells(cells As GridGroup.Cell())
+  overload: Interactions.GridGroup.EmptyCells*
+  nameWithType.vb: GridGroup.EmptyCells(GridGroup.Cell())
+  fullName.vb: Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell())
+  name.vb: EmptyCells(Cell())
 - uid: Interactions.GridGroup.MoveCells(Interactions.GridGroup.Cell[]@,UnityEngine.Vector2Int)
   commentId: M:Interactions.GridGroup.MoveCells(Interactions.GridGroup.Cell[]@,UnityEngine.Vector2Int)
   id: MoveCells(Interactions.GridGroup.Cell[]@,UnityEngine.Vector2Int)
@@ -618,7 +651,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveCells
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 176
+    startLine: 182
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -661,7 +694,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveObject
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 193
+    startLine: 199
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -705,7 +738,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveValid
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 242
+    startLine: 248
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -5387,6 +5420,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Interactions.GridGroup.EmptyCells*
+  commentId: Overload:Interactions.GridGroup.EmptyCells
+  href: Interactions.GridGroup.html#Interactions_GridGroup_EmptyCells_Interactions_GridGroup_Cell___
+  name: EmptyCells
+  nameWithType: GridGroup.EmptyCells
+  fullName: Interactions.GridGroup.EmptyCells
 - uid: Interactions.GridGroup.MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   commentId: M:Interactions.GridGroup.MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   isExternal: true

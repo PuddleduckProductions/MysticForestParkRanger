@@ -5,7 +5,6 @@ items:
   id: characterController
   parent: Character
   children:
-  - Character.characterController.footstepsEvent
   - Character.characterController.friction
   - Character.characterController.input
   - Character.characterController.intendedMove
@@ -318,7 +317,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: friction
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 20
+    startLine: 18
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -327,33 +326,6 @@ items:
     return:
       type: System.Single
     content.vb: Public friction As Single
-- uid: Character.characterController.footstepsEvent
-  commentId: F:Character.characterController.footstepsEvent
-  id: footstepsEvent
-  parent: Character.characterController
-  langs:
-  - csharp
-  - vb
-  name: footstepsEvent
-  nameWithType: characterController.footstepsEvent
-  fullName: Character.characterController.footstepsEvent
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/characterController.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: footstepsEvent
-    path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 25
-  assemblies:
-  - ScriptAssembly
-  namespace: Character
-  syntax:
-    content: public EventReference footstepsEvent
-    return:
-      type: FMODUnity.EventReference
-    content.vb: Public footstepsEvent As EventReference
 - uid: Character.characterController.intendedMove
   commentId: P:Character.characterController.intendedMove
   id: intendedMove
@@ -372,7 +344,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: intendedMove
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 83
+    startLine: 54
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -4767,17 +4739,6 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: FMODUnity.EventReference
-  commentId: T:FMODUnity.EventReference
-  parent: FMODUnity
-  name: EventReference
-  nameWithType: EventReference
-  fullName: FMODUnity.EventReference
-- uid: FMODUnity
-  commentId: N:FMODUnity
-  name: FMODUnity
-  nameWithType: FMODUnity
-  fullName: FMODUnity
 - uid: Character.characterController.intendedMove*
   commentId: Overload:Character.characterController.intendedMove
   href: Character.characterController.html#Character_characterController_intendedMove

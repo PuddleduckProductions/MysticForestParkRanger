@@ -1,0 +1,182 @@
+### YamlMime:ManagedReference
+items:
+- uid: Interactions.Behaviors.WaterPipe.PipeType
+  commentId: T:Interactions.Behaviors.WaterPipe.PipeType
+  id: WaterPipe.PipeType
+  parent: Interactions.Behaviors
+  children:
+  - Interactions.Behaviors.WaterPipe.PipeType.Corner
+  - Interactions.Behaviors.WaterPipe.PipeType.FourLeaf
+  - Interactions.Behaviors.WaterPipe.PipeType.Straight
+  - Interactions.Behaviors.WaterPipe.PipeType.ThreeLeaf
+  langs:
+  - csharp
+  - vb
+  name: WaterPipe.PipeType
+  nameWithType: WaterPipe.PipeType
+  fullName: Interactions.Behaviors.WaterPipe.PipeType
+  type: Enum
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: PipeType
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: public enum WaterPipe.PipeType
+    content.vb: Public Enum WaterPipe.PipeType
+- uid: Interactions.Behaviors.WaterPipe.PipeType.Straight
+  commentId: F:Interactions.Behaviors.WaterPipe.PipeType.Straight
+  id: Straight
+  parent: Interactions.Behaviors.WaterPipe.PipeType
+  langs:
+  - csharp
+  - vb
+  name: Straight
+  nameWithType: WaterPipe.PipeType.Straight
+  fullName: Interactions.Behaviors.WaterPipe.PipeType.Straight
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Straight
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: Straight = 0
+    return:
+      type: Interactions.Behaviors.WaterPipe.PipeType
+- uid: Interactions.Behaviors.WaterPipe.PipeType.Corner
+  commentId: F:Interactions.Behaviors.WaterPipe.PipeType.Corner
+  id: Corner
+  parent: Interactions.Behaviors.WaterPipe.PipeType
+  langs:
+  - csharp
+  - vb
+  name: Corner
+  nameWithType: WaterPipe.PipeType.Corner
+  fullName: Interactions.Behaviors.WaterPipe.PipeType.Corner
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Corner
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: Corner = 1
+    return:
+      type: Interactions.Behaviors.WaterPipe.PipeType
+- uid: Interactions.Behaviors.WaterPipe.PipeType.FourLeaf
+  commentId: F:Interactions.Behaviors.WaterPipe.PipeType.FourLeaf
+  id: FourLeaf
+  parent: Interactions.Behaviors.WaterPipe.PipeType
+  langs:
+  - csharp
+  - vb
+  name: FourLeaf
+  nameWithType: WaterPipe.PipeType.FourLeaf
+  fullName: Interactions.Behaviors.WaterPipe.PipeType.FourLeaf
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: FourLeaf
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: FourLeaf = 2
+    return:
+      type: Interactions.Behaviors.WaterPipe.PipeType
+- uid: Interactions.Behaviors.WaterPipe.PipeType.ThreeLeaf
+  commentId: F:Interactions.Behaviors.WaterPipe.PipeType.ThreeLeaf
+  id: ThreeLeaf
+  parent: Interactions.Behaviors.WaterPipe.PipeType
+  langs:
+  - csharp
+  - vb
+  name: ThreeLeaf
+  nameWithType: WaterPipe.PipeType.ThreeLeaf
+  fullName: Interactions.Behaviors.WaterPipe.PipeType.ThreeLeaf
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: ThreeLeaf
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/WaterPipe.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: ThreeLeaf = 3
+    return:
+      type: Interactions.Behaviors.WaterPipe.PipeType
+references:
+- uid: Interactions.Behaviors
+  commentId: N:Interactions.Behaviors
+  href: Interactions.html
+  name: Interactions.Behaviors
+  nameWithType: Interactions.Behaviors
+  fullName: Interactions.Behaviors
+  spec.csharp:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+  spec.vb:
+  - uid: Interactions
+    name: Interactions
+    href: Interactions.html
+  - name: .
+  - uid: Interactions.Behaviors
+    name: Behaviors
+    href: Interactions.Behaviors.html
+- uid: Interactions.Behaviors.WaterPipe.PipeType
+  commentId: T:Interactions.Behaviors.WaterPipe.PipeType
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.WaterPipe.html
+  name: WaterPipe.PipeType
+  nameWithType: WaterPipe.PipeType
+  fullName: Interactions.Behaviors.WaterPipe.PipeType
+  spec.csharp:
+  - uid: Interactions.Behaviors.WaterPipe
+    name: WaterPipe
+    href: Interactions.Behaviors.WaterPipe.html
+  - name: .
+  - uid: Interactions.Behaviors.WaterPipe.PipeType
+    name: PipeType
+    href: Interactions.Behaviors.WaterPipe.PipeType.html
+  spec.vb:
+  - uid: Interactions.Behaviors.WaterPipe
+    name: WaterPipe
+    href: Interactions.Behaviors.WaterPipe.html
+  - name: .
+  - uid: Interactions.Behaviors.WaterPipe.PipeType
+    name: PipeType
+    href: Interactions.Behaviors.WaterPipe.PipeType.html

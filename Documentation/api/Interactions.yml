@@ -12,7 +12,6 @@ items:
   - Interactions.GridGroup.Cell.CellType
   - Interactions.GridObject
   - Interactions.Interaction
-  - Interactions.Interaction.InteractionType
   - Interactions.InteractionEditor
   - Interactions.InteractionManager
   - Interactions.InteractionManager.InteractionState
@@ -154,29 +153,6 @@ references:
   name: Interaction
   nameWithType: Interaction
   fullName: Interactions.Interaction
-- uid: Interactions.Interaction.InteractionType
-  commentId: T:Interactions.Interaction.InteractionType
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction.InteractionType
-  nameWithType: Interaction.InteractionType
-  fullName: Interactions.Interaction.InteractionType
-  spec.csharp:
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
-  - name: .
-  - uid: Interactions.Interaction.InteractionType
-    name: InteractionType
-    href: Interactions.Interaction.InteractionType.html
-  spec.vb:
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
-  - name: .
-  - uid: Interactions.Interaction.InteractionType
-    name: InteractionType
-    href: Interactions.Interaction.InteractionType.html
 - uid: Interactions.InteractionEditor
   commentId: T:Interactions.InteractionEditor
   href: Interactions.InteractionEditor.html

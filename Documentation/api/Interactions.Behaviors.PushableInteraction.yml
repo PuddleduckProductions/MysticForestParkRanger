@@ -6,10 +6,11 @@ items:
   parent: Interactions.Behaviors
   children:
   - Interactions.Behaviors.PushableInteraction.#ctor(Interactions.Interaction)
+  - Interactions.Behaviors.PushableInteraction.CanInteract(Interactions.Interaction)
   - Interactions.Behaviors.PushableInteraction.EndInteraction
   - Interactions.Behaviors.PushableInteraction.Interact
   - Interactions.Behaviors.PushableInteraction.Push(UnityEngine.Vector3)
-  - Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Vector2Int)
+  - Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
   - Interactions.Behaviors.PushableInteraction.Update
   - Interactions.Behaviors.PushableInteraction.isPushing
   - Interactions.Behaviors.PushableInteraction.moveThreshold
@@ -39,9 +40,13 @@ items:
     content: >-
       [Serializable]
 
+      [InteractionType("Grid/Pushable")]
+
       public class PushableInteraction : InteractionBehavior
     content.vb: >-
       <Serializable>
+
+      <InteractionType("Grid/Pushable")>
 
       Public Class PushableInteraction Inherits InteractionBehavior
   inheritance:
@@ -51,7 +56,6 @@ items:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
   - Interactions.Behaviors.InteractionBehavior.GameObjectStart
-  - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -63,6 +67,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: Interactions.Behaviors.InteractionType
+    ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Grid/Pushable
 - uid: Interactions.Behaviors.PushableInteraction.#ctor(Interactions.Interaction)
   commentId: M:Interactions.Behaviors.PushableInteraction.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
@@ -240,6 +249,45 @@ items:
     content.vb: Public Overrides Sub Interact()
   overridden: Interactions.Behaviors.InteractionBehavior.Interact
   overload: Interactions.Behaviors.PushableInteraction.Interact*
+- uid: Interactions.Behaviors.PushableInteraction.CanInteract(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.PushableInteraction.CanInteract(Interactions.Interaction)
+  id: CanInteract(Interactions.Interaction)
+  parent: Interactions.Behaviors.PushableInteraction
+  langs:
+  - csharp
+  - vb
+  name: CanInteract(Interaction)
+  nameWithType: PushableInteraction.CanInteract(Interaction)
+  fullName: Interactions.Behaviors.PushableInteraction.CanInteract(Interactions.Interaction)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: CanInteract
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
+    startLine: 87
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  summary: >-
+    Should we allow interactions currently?
+
+    Default setting is as long as you're not holdign something else.
+  example: []
+  syntax:
+    content: public override bool CanInteract(Interaction other = null)
+    parameters:
+    - id: other
+      type: Interactions.Interaction
+      description: The other object that wants to interact with us. Can be null.
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Overrides Function CanInteract(other As Interaction = Nothing) As Boolean
+  overridden: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  overload: Interactions.Behaviors.PushableInteraction.CanInteract*
 - uid: Interactions.Behaviors.PushableInteraction.EndInteraction
   commentId: M:Interactions.Behaviors.PushableInteraction.EndInteraction
   id: EndInteraction
@@ -258,7 +306,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 88
+    startLine: 91
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -274,16 +322,16 @@ items:
     content.vb: Public Overrides Sub EndInteraction()
   overridden: Interactions.Behaviors.InteractionBehavior.EndInteraction
   overload: Interactions.Behaviors.PushableInteraction.EndInteraction*
-- uid: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Vector2Int)
-  commentId: M:Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Vector2Int)
-  id: PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Vector2Int)
+- uid: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
+  commentId: M:Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
+  id: PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
   parent: Interactions.Behaviors.PushableInteraction
   langs:
   - csharp
   - vb
-  name: PushUpdate(PushableInteraction, Vector2Int)
-  nameWithType: PushableInteraction.PushUpdate(PushableInteraction, Vector2Int)
-  fullName: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction, UnityEngine.Vector2Int)
+  name: PushUpdate(PushableInteraction, Transform, Vector3)
+  nameWithType: PushableInteraction.PushUpdate(PushableInteraction, Transform, Vector3)
+  fullName: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction, UnityEngine.Transform, UnityEngine.Vector3)
   type: Method
   source:
     remote:
@@ -292,20 +340,22 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PushUpdate
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 93
+    startLine: 96
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
   syntax:
-    content: protected static IEnumerator PushUpdate(PushableInteraction p, Vector2Int dir)
+    content: protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd)
     parameters:
     - id: p
       type: Interactions.Behaviors.PushableInteraction
-    - id: dir
-      type: UnityEngine.Vector2Int
+    - id: transformToMove
+      type: UnityEngine.Transform
+    - id: toAdd
+      type: UnityEngine.Vector3
     return:
       type: System.Collections.IEnumerator
-    content.vb: Protected Shared Function PushUpdate(p As PushableInteraction, dir As Vector2Int) As IEnumerator
+    content.vb: Protected Shared Function PushUpdate(p As PushableInteraction, transformToMove As Transform, toAdd As Vector3) As IEnumerator
   overload: Interactions.Behaviors.PushableInteraction.PushUpdate*
 - uid: Interactions.Behaviors.PushableInteraction.Push(UnityEngine.Vector3)
   commentId: M:Interactions.Behaviors.PushableInteraction.Push(UnityEngine.Vector3)
@@ -325,7 +375,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Push
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 128
+    startLine: 132
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -354,7 +404,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 148
+    startLine: 156
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -458,31 +508,6 @@ references:
     name: GameObjectStart
     href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
   - name: (
-  - name: )
-- uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  parent: Interactions.Behaviors.InteractionBehavior
-  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
-  name: CanInteract(Interaction)
-  nameWithType: InteractionBehavior.CanInteract(Interaction)
-  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-  spec.csharp:
-  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-    name: CanInteract
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
-  - name: (
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
-  - name: )
-  spec.vb:
-  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
-    name: CanInteract
-    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
-  - name: (
-  - uid: Interactions.Interaction
-    name: Interaction
-    href: Interactions.Interaction.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -779,6 +804,37 @@ references:
   name: Interact
   nameWithType: PushableInteraction.Interact
   fullName: Interactions.Behaviors.PushableInteraction.Interact
+- uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  name: CanInteract(Interaction)
+  nameWithType: InteractionBehavior.CanInteract(Interaction)
+  fullName: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
+    name: CanInteract
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_CanInteract_Interactions_Interaction_
+  - name: (
+  - uid: Interactions.Interaction
+    name: Interaction
+    href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.PushableInteraction.CanInteract*
+  commentId: Overload:Interactions.Behaviors.PushableInteraction.CanInteract
+  href: Interactions.Behaviors.PushableInteraction.html#Interactions_Behaviors_PushableInteraction_CanInteract_Interactions_Interaction_
+  name: CanInteract
+  nameWithType: PushableInteraction.CanInteract
+  fullName: Interactions.Behaviors.PushableInteraction.CanInteract
 - uid: Interactions.InteractionManager
   commentId: T:Interactions.InteractionManager
   href: Interactions.InteractionManager.html
@@ -849,7 +905,7 @@ references:
   fullName: Interactions.Behaviors.PushableInteraction.EndInteraction
 - uid: Interactions.Behaviors.PushableInteraction.PushUpdate*
   commentId: Overload:Interactions.Behaviors.PushableInteraction.PushUpdate
-  href: Interactions.Behaviors.PushableInteraction.html#Interactions_Behaviors_PushableInteraction_PushUpdate_Interactions_Behaviors_PushableInteraction_UnityEngine_Vector2Int_
+  href: Interactions.Behaviors.PushableInteraction.html#Interactions_Behaviors_PushableInteraction_PushUpdate_Interactions_Behaviors_PushableInteraction_UnityEngine_Transform_UnityEngine_Vector3_
   name: PushUpdate
   nameWithType: PushableInteraction.PushUpdate
   fullName: Interactions.Behaviors.PushableInteraction.PushUpdate
@@ -860,13 +916,20 @@ references:
   name: PushableInteraction
   nameWithType: PushableInteraction
   fullName: Interactions.Behaviors.PushableInteraction
-- uid: UnityEngine.Vector2Int
-  commentId: T:UnityEngine.Vector2Int
+- uid: UnityEngine.Transform
+  commentId: T:UnityEngine.Transform
   parent: UnityEngine
   isExternal: true
-  name: Vector2Int
-  nameWithType: Vector2Int
-  fullName: UnityEngine.Vector2Int
+  name: Transform
+  nameWithType: Transform
+  fullName: UnityEngine.Transform
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
 - uid: System.Collections.IEnumerator
   commentId: T:System.Collections.IEnumerator
   parent: System.Collections
@@ -914,13 +977,6 @@ references:
   name: Push
   nameWithType: PushableInteraction.Push
   fullName: Interactions.Behaviors.PushableInteraction.Push
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3
 - uid: Interactions.Behaviors.PushableInteraction.Update*
   commentId: Overload:Interactions.Behaviors.PushableInteraction.Update
   href: Interactions.Behaviors.PushableInteraction.html#Interactions_Behaviors_PushableInteraction_Update

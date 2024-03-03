@@ -4,9 +4,14 @@ items:
   id: MysticForestParkRanger
   children:
   - MysticForestParkRanger.AudioManager
+  - MysticForestParkRanger.AudioManager.ModifySound
   - MysticForestParkRanger.CameraZone
+  - MysticForestParkRanger.DebugWindow
+  - MysticForestParkRanger.DebugWindow.UpdateFunc
   - MysticForestParkRanger.InteractionShortcuts
   - MysticForestParkRanger.PauseManager
+  - MysticForestParkRanger.PlayerAnimator
+  - MysticForestParkRanger.SoundList
   langs:
   - csharp
   - vb
@@ -23,12 +28,62 @@ references:
   name: AudioManager
   nameWithType: AudioManager
   fullName: AudioManager
+- uid: MysticForestParkRanger.AudioManager.ModifySound
+  commentId: T:MysticForestParkRanger.AudioManager.ModifySound
+  href: AudioManager.html
+  name: AudioManager.ModifySound
+  nameWithType: AudioManager.ModifySound
+  fullName: AudioManager.ModifySound
+  spec.csharp:
+  - uid: MysticForestParkRanger.AudioManager
+    name: AudioManager
+    href: AudioManager.html
+  - name: .
+  - uid: MysticForestParkRanger.AudioManager.ModifySound
+    name: ModifySound
+    href: AudioManager.ModifySound.html
+  spec.vb:
+  - uid: MysticForestParkRanger.AudioManager
+    name: AudioManager
+    href: AudioManager.html
+  - name: .
+  - uid: MysticForestParkRanger.AudioManager.ModifySound
+    name: ModifySound
+    href: AudioManager.ModifySound.html
 - uid: MysticForestParkRanger.CameraZone
   commentId: T:MysticForestParkRanger.CameraZone
   href: CameraZone.html
   name: CameraZone
   nameWithType: CameraZone
   fullName: CameraZone
+- uid: MysticForestParkRanger.DebugWindow
+  commentId: T:MysticForestParkRanger.DebugWindow
+  href: DebugWindow.html
+  name: DebugWindow
+  nameWithType: DebugWindow
+  fullName: DebugWindow
+- uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+  commentId: T:MysticForestParkRanger.DebugWindow.UpdateFunc
+  href: DebugWindow.html
+  name: DebugWindow.UpdateFunc
+  nameWithType: DebugWindow.UpdateFunc
+  fullName: DebugWindow.UpdateFunc
+  spec.csharp:
+  - uid: MysticForestParkRanger.DebugWindow
+    name: DebugWindow
+    href: DebugWindow.html
+  - name: .
+  - uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+    name: UpdateFunc
+    href: DebugWindow.UpdateFunc.html
+  spec.vb:
+  - uid: MysticForestParkRanger.DebugWindow
+    name: DebugWindow
+    href: DebugWindow.html
+  - name: .
+  - uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+    name: UpdateFunc
+    href: DebugWindow.UpdateFunc.html
 - uid: MysticForestParkRanger.InteractionShortcuts
   commentId: T:MysticForestParkRanger.InteractionShortcuts
   href: InteractionShortcuts.html
@@ -41,3 +96,15 @@ references:
   name: PauseManager
   nameWithType: PauseManager
   fullName: PauseManager
+- uid: MysticForestParkRanger.PlayerAnimator
+  commentId: T:MysticForestParkRanger.PlayerAnimator
+  href: PlayerAnimator.html
+  name: PlayerAnimator
+  nameWithType: PlayerAnimator
+  fullName: PlayerAnimator
+- uid: MysticForestParkRanger.SoundList
+  commentId: T:MysticForestParkRanger.SoundList
+  href: SoundList.html
+  name: SoundList
+  nameWithType: SoundList
+  fullName: SoundList

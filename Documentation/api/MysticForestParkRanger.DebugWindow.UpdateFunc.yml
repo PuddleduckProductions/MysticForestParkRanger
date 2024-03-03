@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+  commentId: T:MysticForestParkRanger.DebugWindow.UpdateFunc
+  id: DebugWindow.UpdateFunc
+  parent: MysticForestParkRanger
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: DebugWindow.UpdateFunc
+  nameWithType: DebugWindow.UpdateFunc
+  fullName: DebugWindow.UpdateFunc
+  type: Delegate
+  source:
+    remote:
+      path: Assets/Editor/Debug/DebugWindow.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: UpdateFunc
+    path: ../Assets/Editor/Debug/DebugWindow.cs
+    startLine: 33
+  assemblies:
+  - EditorAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: protected delegate void DebugWindow.UpdateFunc()
+    content.vb: Protected Delegate Sub DebugWindow.UpdateFunc()
+references:
+- uid: MysticForestParkRanger
