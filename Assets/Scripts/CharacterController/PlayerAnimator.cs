@@ -1,4 +1,5 @@
 using FMOD.Studio;
+using FMODUnity;
 using Interactions;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,13 +12,15 @@ public class PlayerAnimator : MonoBehaviour
     CharacterController controller;
 
     EventInstance footsteps;
+    [SerializeField]
+    EventReference footstepRef;
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
 
         // Can't hear footsteps for whatever reason,
-        footsteps = AudioManager.Instance.RegisterSound("footsteps", "event:/SFX/footsteps");
+        footsteps = AudioManager.Instance.RegisterSound("footsteps", footstepRef);
         // But this works just as well with music:
         //footsteps = AudioManager.Instance.RegisterSound("footsteps", "event:/Music/mbiraGroove");
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(footsteps, this.transform);

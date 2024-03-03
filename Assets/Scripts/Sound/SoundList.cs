@@ -17,8 +17,8 @@ public class SoundList : ScriptableObject
 
     public void Init() {
         foreach (var e in events) {
-            if (!eventDict.ContainsKey(e.Path)) {
-                eventDict.Add(e.Path, e);
+            if (!eventDict.ContainsKey(e.Guid.ToString())) {
+                eventDict.Add(e.Guid.ToString(), e);
             }
         }
     }

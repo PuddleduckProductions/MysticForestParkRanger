@@ -143,14 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63add9e8fc7a37b48afa3db475e181b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  cameras: []
   playerCamera: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &8426180548669260447
@@ -165,6 +158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1651aa6862477284dac431b64a26fcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footstepRef:
+    Guid:
+      Data1: 1911532283
+      Data2: 1208113057
+      Data3: -632274295
+      Data4: 965186114
+    Path: event:/SFX/footsteps
 --- !u!1 &6313193292897490927
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6624208356344952886}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.42472172, y: 0.07006506, z: -0.0329911, w: 0.90200555}
+  m_LocalRotation: {x: 0.42472172, y: 0.070065066, z: -0.0329911, w: 0.90200555}
   m_LocalPosition: {x: -1.5442219, y: 13.1, z: -9.88005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -394,7 +394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390920822002572425}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.42472172, y: 0.07006504, z: -0.03299108, w: 0.90200555}
+  m_LocalRotation: {x: 0.42472172, y: 0.070065066, z: -0.0329911, w: 0.90200555}
   m_LocalPosition: {x: -1.5442219, y: 13.1, z: -9.88005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
