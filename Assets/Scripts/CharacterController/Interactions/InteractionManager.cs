@@ -41,8 +41,8 @@ namespace Interactions {
         /// The <see cref="Interaction.InteractionType"/> that <see cref="usingInteraction"/> is.
         /// If there is no current interaction, will return null.
         /// </summary>
-        public Interaction.InteractionType? currentInteractionType { get {
-                return (usingInteraction == null)? null : usingInteraction.type;
+        public string currentInteractionType { get {
+                return (usingInteraction == null)? null : usingInteraction.behaviorType;
             } }
 
         // Start is called before the first frame update

@@ -4,11 +4,23 @@ using UnityEngine.Events;
 using Utility;
 using InkTools;
 using System.Reflection;
-using System.Collections.Generic;
-using System.Collections;
 
 namespace Interactions {
     namespace Behaviors {
+        /// <summary>
+        /// Attribute for InteractionBehavior to add it to <see cref="Interactions.InteractionEditor"/>
+        /// </summary>
+        public class InteractionType : Attribute {
+            public string path;
+            /// <summary>
+            /// Attribute for the editor to see and show up on the dropdown.
+            /// </summary>
+            /// <param name="path">The path to show as on the dropdown.</param>
+            public InteractionType(string path) {
+                this.path = path;
+            }
+        }
+
         /// <summary>
         /// A serialized class meant to control different interaction behaviors when space is pressed on one.
         /// This is to avoid having to attach multiple monobehaviors for anything with one interaction.
@@ -74,7 +86,7 @@ namespace Interactions {
         /// For displaying dialog in Ink. By default, loads `interact_Name` knot in Ink. Can be changed.
         /// Tests check to see if the selected knot exists. If you get an error on tests regarding an invalid knot, this is why.
         /// </summary>
-        [Serializable]
+        [Serializable, InteractionType("Misc/Ink")]
         public class InkInteraction : InteractionBehavior {
             /// <summary>
             /// Knot to start on interaction.
@@ -108,7 +120,7 @@ namespace Interactions {
         /// Called once.
         /// TODO: Updates.
         /// </summary>
-        [Serializable]
+        [Serializable, InteractionType("Misc/Custom")]
         public class CustomInteraction : InteractionBehavior {
 
             public CustomInteraction(Interaction parent) : base(parent) { }
@@ -176,17 +188,17 @@ namespace Interactions {
 
     [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
     public class Interaction : MonoBehaviour {
-        public enum InteractionType { InkInteraction, PushableInteraction, PickAndPutInteraction, PutTrigger,
-            CustomInteraction, ShowImageInteraction, TeleportInteraction, WaterPipe, DirtPatch, Seed};
         /// <summary>
         /// Should we allow interaction with this object?
         /// If this is set to false while <see cref="IsInteracting"/> is true,
         /// this will allow control over <see cref="InteractionManager.interactionButton"/>
         /// </summary>
         public bool interactionEnabled = true;
-        public InteractionType type;
         [SerializeReference]
         public Behaviors.InteractionBehavior behavior;
+
+        [HideInInspector]
+        public string behaviorType;
 
         private void Start() {
             if (HasInteractionBehavior()) {

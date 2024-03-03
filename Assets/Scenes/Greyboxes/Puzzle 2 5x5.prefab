@@ -369,13 +369,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233861
+    rid: 3779462432521191615
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233861
+    - rid: 3779462432521191615
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 158750651745608775}
@@ -489,15 +489,15 @@ MonoBehaviour:
     pos: {x: 3, y: 0}
   - type: 0
     pos: {x: 4, y: 0}
-  - type: 0
+  - type: 1
     pos: {x: 5, y: 0}
-  - type: 0
+  - type: 1
     pos: {x: 6, y: 0}
-  - type: 0
+  - type: 1
     pos: {x: 7, y: 0}
-  - type: 0
+  - type: 1
     pos: {x: 8, y: 0}
-  - type: 0
+  - type: 1
     pos: {x: 9, y: 0}
   - type: 0
     pos: {x: 0, y: 1}
@@ -509,15 +509,15 @@ MonoBehaviour:
     pos: {x: 3, y: 1}
   - type: 0
     pos: {x: 4, y: 1}
-  - type: 0
+  - type: 1
     pos: {x: 5, y: 1}
-  - type: 0
+  - type: 1
     pos: {x: 6, y: 1}
   - type: 0
     pos: {x: 7, y: 1}
-  - type: 0
+  - type: 1
     pos: {x: 8, y: 1}
-  - type: 0
+  - type: 1
     pos: {x: 9, y: 1}
   - type: 0
     pos: {x: 0, y: 2}
@@ -529,15 +529,15 @@ MonoBehaviour:
     pos: {x: 3, y: 2}
   - type: 0
     pos: {x: 4, y: 2}
-  - type: 0
+  - type: 1
     pos: {x: 5, y: 2}
-  - type: 0
+  - type: 1
     pos: {x: 6, y: 2}
-  - type: 0
+  - type: 1
     pos: {x: 7, y: 2}
-  - type: 0
+  - type: 1
     pos: {x: 8, y: 2}
-  - type: 0
+  - type: 1
     pos: {x: 9, y: 2}
   - type: 0
     pos: {x: 0, y: 3}
@@ -549,9 +549,9 @@ MonoBehaviour:
     pos: {x: 3, y: 3}
   - type: 0
     pos: {x: 4, y: 3}
-  - type: 0
+  - type: 1
     pos: {x: 5, y: 3}
-  - type: 0
+  - type: 1
     pos: {x: 6, y: 3}
   - type: 0
     pos: {x: 7, y: 3}
@@ -569,11 +569,11 @@ MonoBehaviour:
     pos: {x: 3, y: 4}
   - type: 0
     pos: {x: 4, y: 4}
-  - type: 0
+  - type: 1
     pos: {x: 5, y: 4}
-  - type: 0
+  - type: 1
     pos: {x: 6, y: 4}
-  - type: 0
+  - type: 1
     pos: {x: 7, y: 4}
   - type: 0
     pos: {x: 8, y: 4}
@@ -948,13 +948,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233856
+    rid: 3779462432521191610
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233856
+    - rid: 3779462432521191610
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 4783808181357540463}
@@ -1371,13 +1371,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233863
+    rid: 3779462432521191617
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233863
+    - rid: 3779462432521191617
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 925323306159760342}
@@ -1790,13 +1790,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233859
+    rid: 3779462432521191613
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233859
+    - rid: 3779462432521191613
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 4819458477651582197}
@@ -2211,13 +2211,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233858
+    rid: 3779462432521191612
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233858
+    - rid: 3779462432521191612
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 271147784909594668}
@@ -2634,13 +2634,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233860
+    rid: 3779462432521191614
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233860
+    - rid: 3779462432521191614
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 4357679108438737374}
@@ -3055,13 +3055,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233862
+    rid: 3779462432521191616
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233862
+    - rid: 3779462432521191616
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 7617499487283674551}
@@ -3476,13 +3476,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233864
+    rid: 3779462432521191618
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233864
+    - rid: 3779462432521191618
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 4399807542032250339}
@@ -3897,13 +3897,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233857
+    rid: 3779462432521191611
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233857
+    - rid: 3779462432521191611
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2339465437895594006}

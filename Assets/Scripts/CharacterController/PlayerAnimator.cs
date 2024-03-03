@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using Interactions;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,17 +9,26 @@ public class PlayerAnimator : MonoBehaviour
 {
     Animator animator;
     CharacterController controller;
+
+    EventInstance footsteps;
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
+
+        // Can't hear footsteps for whatever reason,
+        footsteps = AudioManager.Instance.RegisterSound("footsteps", "event:/SFX/footsteps");
+        // But this works just as well with music:
+        //footsteps = AudioManager.Instance.RegisterSound("footsteps", "event:/Music/mbiraGroove");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(footsteps, this.transform);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         switch (ISingleton<InteractionManager>.Instance.currentInteractionType) {
-            case Interaction.InteractionType.PushableInteraction:
+            case "Grid/Pushable":
                 // Pushing interactions here
                 break;
             case null:
@@ -26,6 +36,14 @@ public class PlayerAnimator : MonoBehaviour
                 var xzVel = new Vector3(controller.velocity.x, 0, controller.velocity.z);
                 bool isWalking = xzVel.magnitude > 0.1f;
                 animator.SetBool("walking", isWalking);
+
+                if (isWalking) {
+                    if (AudioManager.Instance.isPlaybackStatePaused("footsteps")) {
+                        footsteps.start();
+                    }
+                } else {
+                    footsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
                 break;
         }
     }

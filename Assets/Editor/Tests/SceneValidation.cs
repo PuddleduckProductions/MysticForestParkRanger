@@ -39,7 +39,7 @@ namespace SceneValidation {
             var interactions = GameObject.FindObjectsOfType<Interaction>();
             foreach (var interaction in interactions) {
                 Assert.IsTrue(interaction.HasInteractionBehavior(),
-                    $"{EditorSceneManager.GetActiveScene().name} invalid interaction {interaction.type} on {interaction.name}");
+                    $"{EditorSceneManager.GetActiveScene().name} invalid interaction {interaction.behaviorType} on {interaction.name}");
             }
         }
 
