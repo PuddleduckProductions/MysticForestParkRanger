@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 [CreateAssetMenu(fileName = "SoundList", menuName ="ScriptableObjects/SoundList")]
 public class SoundList : ScriptableObject
 {
-    protected Dictionary<string, FMODUnity.EventReference> eventDict = new Dictionary<string, FMODUnity.EventReference>();
-    public List<FMODUnity.EventReference> events = new List<FMODUnity.EventReference>();
+    protected Dictionary<string, EventReference> eventDict = new Dictionary<string, EventReference>();
+    public List<EventReference> events = new List<EventReference>();
 
-    public FMODUnity.EventReference this[string name] {
+    public EventReference this[string name] {
         get {
             return eventDict[name];
         }
