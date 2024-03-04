@@ -143,7 +143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63add9e8fc7a37b48afa3db475e181b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras: []
+  cameras:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerCamera: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &8426180548669260447
