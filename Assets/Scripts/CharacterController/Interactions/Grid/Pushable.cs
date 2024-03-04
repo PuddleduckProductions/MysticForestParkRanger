@@ -86,7 +86,7 @@ namespace Interactions.Behaviors {
         }
 
         public override bool CanInteract(Interaction other = null) {
-            return base.CanInteract(other) || gridObject != null;
+            return base.CanInteract(other) && gridObject != null;
         }
 
         public override void EndInteraction() {
