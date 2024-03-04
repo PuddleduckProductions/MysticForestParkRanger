@@ -12,7 +12,6 @@ public class AsyncSceneLoader : MonoBehaviour
     private IEnumerator SceneLoading() {
         var loader = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loader;
-
         var scene = SceneManager.GetSceneByName(sceneToLoad);
         SceneManager.SetActiveScene(scene);
         var objs = scene.GetRootGameObjects();

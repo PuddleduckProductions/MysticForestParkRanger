@@ -44,7 +44,9 @@ public class AudioManager
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
         //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
-        sounds.Add(name, soundInstance);
+        if (!sounds.ContainsKey(name)) {
+            sounds.Add(name, soundInstance);
+        }
         return soundInstance;
     }
 
