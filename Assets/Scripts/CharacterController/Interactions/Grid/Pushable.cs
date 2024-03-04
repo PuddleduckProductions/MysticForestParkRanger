@@ -136,7 +136,7 @@ namespace Interactions.Behaviors {
             // Because gridObject may get destroyed while we're moving it: 
             Transform gridObjectTransform = gridObject.transform;
 
-            dir = gridObjectTransform.TransformDirection(dir);
+            dir = gridObjectTransform.InverseTransformDirection(dir);
 
             var dirToMove = new Vector2Int(0, 0);
             var x = Mathf.Abs(dir.x);
