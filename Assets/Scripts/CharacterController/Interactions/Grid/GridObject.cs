@@ -132,5 +132,13 @@ namespace Interactions {
         public void RemoveFromGridKeepOccupied() {
             RemoveFromGrid(true);
         }
+
+        /// <summary>
+        /// Get a direction in the grid from a world direction.
+        /// </summary>
+        /// <param name="dir">World direction.</param>
+        public Vector3 GetGridDirectionFromWorld(Vector3 dir) {
+            return manager.transform.InverseTransformDirection(dir);
+        }
     }
 }
