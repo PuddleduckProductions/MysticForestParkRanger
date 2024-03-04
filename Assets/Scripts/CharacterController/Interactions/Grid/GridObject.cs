@@ -106,8 +106,12 @@ namespace Interactions {
         /// </summary>
         /// <param name="direction">The direction to pick.</param>
         /// <returns>The position of the neighboring cell.</returns>
-        public Vector3 GetSomeAdjacent(Vector2Int direction) {
-            return manager.CellToWorld(manager[cells[0].pos + direction]).center;
+        public Vector3? GetSomeAdjacent(Vector2Int direction) {
+            var refCell = cells[0].pos + direction;
+            if (manager.HasCell(refCell)) {
+                return manager.CellToWorld(manager[refCell]).center;
+            }
+            return null;
         }
 
         /// <summary>
