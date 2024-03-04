@@ -132,6 +132,12 @@ namespace Interactions.Behaviors {
 
         protected void Push(Vector3 dir) {
             pushEnabled = false;
+
+            // Because gridObject may get destroyed while we're moving it: 
+            Transform gridObjectTransform = gridObject.transform;
+
+            dir = gridObjectTransform.TransformDirection(dir);
+
             var dirToMove = new Vector2Int(0, 0);
             var x = Mathf.Abs(dir.x);
             var z = Mathf.Abs(dir.z);
@@ -140,8 +146,6 @@ namespace Interactions.Behaviors {
             } else {
                 dirToMove.y = Mathf.RoundToInt(dir.z);
             }
-            // Because gridObject may get destroyed while we're moving it: 
-            Transform gridObjectTransform = gridObject.transform;
 
             var toAdd = gridObject.GetSomeAdjacent(dirToMove) - gridObject.GetSomeAdjacent(Vector2Int.zero);
             if (dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
