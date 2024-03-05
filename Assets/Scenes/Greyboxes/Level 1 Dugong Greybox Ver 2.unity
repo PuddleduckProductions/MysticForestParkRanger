@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 40000283}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((3,0),(3,0))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5955,7 +5955,7 @@ GameObject:
   - component: {fileID: 228893521}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((1,2),(2,2))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9598,7 +9598,7 @@ GameObject:
   - component: {fileID: 318732690}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((3,0),(3,1))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10640,7 +10640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327487888}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09906999, y: -0.88007396, z: 0.21067916, w: 0.4138469}
+  m_LocalRotation: {x: 0.100328095, y: -0.87942874, z: 0.21335374, w: 0.4135452}
   m_LocalPosition: {x: 39.88421, y: 19.04, z: 38.069305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14462,7 +14462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549002009}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07728998, y: -0.9214567, z: 0.2430149, w: 0.29306588}
+  m_LocalRotation: {x: 0.0785066, y: -0.9204395, z: 0.24684136, w: 0.2927409}
   m_LocalPosition: {x: 31.9138, y: 16.2, z: 22.11112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15194,7 +15194,7 @@ GameObject:
   - component: {fileID: 581083288}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,1),(1,1))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18223,7 +18223,7 @@ GameObject:
   - component: {fileID: 646885613}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((4,1),(4,2))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20719,7 +20719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716681214}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.037093107, y: -0.9597216, z: 0.23272102, w: 0.15296881}
+  m_LocalRotation: {x: 0.037113115, y: -0.9596912, z: 0.23284654, w: 0.15296395}
   m_LocalPosition: {x: 23.47219, y: 24.13, z: 54.520676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23266,7 +23266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814305499}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.02017023, y: 0.9583874, z: -0.2760102, w: 0.07003689}
+  m_LocalRotation: {x: 0.020231435, y: 0.95814645, z: -0.27684543, w: 0.07001985}
   m_LocalPosition: {x: -0.6904721, y: 20.64, z: 43.365723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40586,6 +40586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118234984}
+  - component: {fileID: 1118234986}
   m_Layer: 0
   m_Name: Puzzle 0 Trash Plant
   m_TagString: Untagged
@@ -40610,6 +40611,19 @@ Transform:
   - {fileID: 960064831}
   m_Father: {fileID: 2874281095207483792}
   m_LocalEulerAnglesHint: {x: 0, y: -277.009, z: 0}
+--- !u!114 &1118234986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118234983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5ada64a42038d4aa30c06c002a6f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
 --- !u!1 &1120067936
 GameObject:
   m_ObjectHideFlags: 0
@@ -41051,7 +41065,7 @@ GameObject:
   - component: {fileID: 1121513460}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((1,4),(2,4))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42382,6 +42396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1142562764}
+  - component: {fileID: 1142562765}
   m_Layer: 0
   m_Name: Puzzle 1 Trash Plant
   m_TagString: Untagged
@@ -42406,6 +42421,19 @@ Transform:
   - {fileID: 1911379130}
   m_Father: {fileID: 1872557097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1142562765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142562763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5ada64a42038d4aa30c06c002a6f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
 --- !u!1 &1155313674
 GameObject:
   m_ObjectHideFlags: 0
@@ -43561,7 +43589,7 @@ GameObject:
   - component: {fileID: 1179025942}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((0,1),(1,1))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43986,7 +44014,7 @@ GameObject:
   - component: {fileID: 1179623487}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((2,2),(3,2))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45935,7 +45963,7 @@ GameObject:
   - component: {fileID: 1213744847}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((4,0),(4,0))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53585,7 +53613,7 @@ GameObject:
   - component: {fileID: 1430427980}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((0,2),(0,4))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54855,7 +54883,7 @@ GameObject:
   - component: {fileID: 1440965652}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((0,0,),(2,0))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60240,7 +60268,7 @@ GameObject:
   - component: {fileID: 1670948092}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,2),(0,3))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63483,7 +63511,7 @@ GameObject:
   - component: {fileID: 1784626069}
   m_Layer: 0
   m_Name: Puzzle 2 Cube ((1,2),(1,3))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66157,7 +66185,7 @@ GameObject:
   - component: {fileID: 1885677492}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((2,0),(2,1))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68946,7 +68974,7 @@ GameObject:
   - component: {fileID: 1958192411}
   m_Layer: 0
   m_Name: Puzzle 1 Cube ((0,0),(1,0))
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71256,6 +71284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2062259626}
+  - component: {fileID: 2062259627}
   m_Layer: 0
   m_Name: Puzzle 2 Trash Plant
   m_TagString: Untagged
@@ -71280,6 +71309,19 @@ Transform:
   - {fileID: 749579015}
   m_Father: {fileID: 1194673789}
   m_LocalEulerAnglesHint: {x: 0, y: 68.143, z: 0}
+--- !u!114 &2062259627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062259625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5ada64a42038d4aa30c06c002a6f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 4
 --- !u!43 &2064470346
 Mesh:
   m_ObjectHideFlags: 0
@@ -71519,7 +71561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066869581}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.008180743, y: 0.93017375, z: -0.36644053, w: 0.020766024}
+  m_LocalRotation: {x: 0.008322043, y: 0.9276554, z: -0.3727698, w: 0.020709803}
   m_LocalPosition: {x: -0.39769506, y: 10.441076, z: -2.007516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -74168,7 +74210,7 @@ GameObject:
   - component: {fileID: 2073169926861382302}
   m_Layer: 0
   m_Name: Puzzle 0 Cube 2
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74963,7 +75005,7 @@ GameObject:
   - component: {fileID: 4837711234484980801}
   m_Layer: 0
   m_Name: Puzzle 0 Cube 1
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
