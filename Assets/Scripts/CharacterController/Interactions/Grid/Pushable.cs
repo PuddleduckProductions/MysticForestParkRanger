@@ -86,7 +86,7 @@ namespace Interactions.Behaviors {
         }
 
         public override bool CanInteract(Interaction other = null) {
-            return base.CanInteract(other) || gridObject != null;
+            return base.CanInteract(other) && gridObject != null;
         }
 
         public override void EndInteraction() {
@@ -132,6 +132,12 @@ namespace Interactions.Behaviors {
 
         protected void Push(Vector3 dir) {
             pushEnabled = false;
+
+            // Because gridObject may get destroyed while we're moving it: 
+            Transform gridObjectTransform = gridObject.transform;
+
+            dir = gridObject.GetGridDirectionFromWorld(dir);
+
             var dirToMove = new Vector2Int(0, 0);
             var x = Mathf.Abs(dir.x);
             var z = Mathf.Abs(dir.z);
@@ -140,12 +146,11 @@ namespace Interactions.Behaviors {
             } else {
                 dirToMove.y = Mathf.RoundToInt(dir.z);
             }
-            // Because gridObject may get destroyed while we're moving it: 
-            Transform gridObjectTransform = gridObject.transform;
 
-            var toAdd = gridObject.GetSomeAdjacent(dirToMove) - gridObject.GetSomeAdjacent(Vector2Int.zero);
-            if (dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
-                interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, toAdd));
+            var target = gridObject.GetSomeAdjacent(dirToMove);
+            var start = gridObject.GetSomeAdjacent(Vector2Int.zero);
+            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
+                interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s));
             } else {
                 pushEnabled = true;
             }
