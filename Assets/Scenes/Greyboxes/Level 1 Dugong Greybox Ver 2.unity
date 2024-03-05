@@ -1116,6 +1116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 0}
@@ -5085,7 +5089,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2896664807777022250, guid: 99b7c8d7d3f536c448262d6ab59fef93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.17
+      value: 7.85
       objectReference: {fileID: 0}
     - target: {fileID: 2896664807777022250, guid: 99b7c8d7d3f536c448262d6ab59fef93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5093,7 +5097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2896664807777022250, guid: 99b7c8d7d3f536c448262d6ab59fef93, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.81
+      value: -2.96
       objectReference: {fileID: 0}
     - target: {fileID: 2896664807777022250, guid: 99b7c8d7d3f536c448262d6ab59fef93, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6004,6 +6008,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -9622,6 +9630,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 8, y: 0}
@@ -10628,7 +10640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327487888}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13394435, y: -0.8334232, z: 0.23063795, w: 0.4840154}
+  m_LocalRotation: {x: 0.09564858, y: -0.8863447, z: 0.21164636, w: 0.40056255}
   m_LocalPosition: {x: 39.88421, y: 19.04, z: 38.069305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14450,7 +14462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549002009}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1326071, y: -0.86323404, z: 0.2958348, w: 0.38694215}
+  m_LocalRotation: {x: 0.07182296, y: -0.92752564, z: 0.24068995, w: 0.27677783}
   m_LocalPosition: {x: 31.9138, y: 16.2, z: 22.11112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15235,6 +15247,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 1}
@@ -15940,7 +15956,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584300272}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04963474, y: -0.6759783, z: 0.045722075, w: 0.73382515}
+  m_LocalRotation: {x: 0.040960986, y: -0.7436179, z: 0.0457499, w: 0.665779}
   m_LocalPosition: {x: 67.03, y: 10.14, z: -5.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18239,6 +18255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 1}
@@ -19016,6 +19036,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 161425686699999802, guid: 261dbf134819c2642b5352e50bc6f674, type: 3}
   m_PrefabInstance: {fileID: 674172196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &688596151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 966078493262752400, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
+  m_PrefabInstance: {fileID: 1957998675}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &689954410
 Mesh:
@@ -20699,7 +20724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716681214}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05342831, y: -0.9423438, z: 0.27496484, w: 0.18310645}
+  m_LocalRotation: {x: 0.034701407, y: -0.96200347, z: 0.22771361, w: 0.14660025}
   m_LocalPosition: {x: 23.47219, y: 24.13, z: 54.520676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22529,6 +22554,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4144211850773651157, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
   m_PrefabInstance: {fileID: 1957998675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &743265712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688596151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e444c4960e6907488a4725445bf64c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionEnabled: 1
+  behavior:
+    rid: 223461552823992320
+  behaviorType: Misc/ShowImage
+  references:
+    version: 2
+    RefIds:
+    - rid: 223461552823992320
+      type: {class: ShowImageInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
+      data:
+        interactionObject: {fileID: 743265712}
+        imageToShow: {fileID: 21300000, guid: 45fe55fe3d823834589ec482ef2399ba, type: 3}
 --- !u!4 &749579015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1779868671328588405, guid: d82e4262914659449a7aacab279d6563, type: 3}
@@ -23246,7 +23295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814305499}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.037210535, y: 0.92674786, z: -0.36145794, w: 0.0954047}
+  m_LocalRotation: {x: 0.019281054, y: 0.9612215, z: -0.26614317, w: 0.06963682}
   m_LocalPosition: {x: -0.6904721, y: 20.64, z: 43.365723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -41063,6 +41112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 4}
@@ -43673,6 +43726,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 1}
@@ -44094,6 +44151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 2}
@@ -46039,6 +46100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 0}
@@ -53685,6 +53750,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -54951,6 +55020,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 0}
@@ -58237,7 +58310,7 @@ Transform:
   m_GameObject: {fileID: 1592769517}
   serializedVersion: 2
   m_LocalRotation: {x: 1.0827297e-17, y: -0.2211729, z: 2.4555094e-18, w: 0.9752346}
-  m_LocalPosition: {x: 3.08, y: 1.27, z: -0.88}
+  m_LocalPosition: {x: 3.08, y: 2.31, z: -0.88}
   m_LocalScale: {x: 1.3989, y: 1.3989, z: 1.3989}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60353,6 +60426,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 2}
@@ -63571,6 +63648,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 2}
@@ -66262,6 +66343,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 0}
@@ -68933,15 +69018,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4144211850773651157, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0724442
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 4144211850773651157, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08979657
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4144211850773651157, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.39424887
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4144211850773651157, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68974,7 +69059,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 966078493262752400, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 743265712}
   m_SourcePrefab: {fileID: 100100000, guid: e773c5ad4d955ee439de71c1bac9b082, type: 3}
 --- !u!1 &1958192409
 GameObject:
@@ -69047,6 +69135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 0}
@@ -74825,6 +74917,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 0}
@@ -74866,6 +74962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 2}
