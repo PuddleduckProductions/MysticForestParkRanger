@@ -44,7 +44,12 @@ public class AudioManager
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
         //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
-        sounds.Add(name, soundInstance);
+        //UPDATE: Check to see if the name is already being used, if so, replace the old instance with the new one
+        if (!sounds.ContainsKey(name)) {
+            sounds.Add(name, soundInstance);
+        } else {
+            sounds[name] = soundInstance;
+        }
         return soundInstance;
     }
 
@@ -79,10 +84,15 @@ public class AudioManager
         return false;
     }
 
-    public void PlayOneShot(EventReference soundEventPath, Vector3 position)
-    {
-        FMODUnity.RuntimeManager.PlayOneShot(soundEventPath, position);
-    }
+    //public void PlayOneShotWithParameters(EventReference soundEventPath, string parameterName, float parameterValue)//, Vector3 position)
+    //{
+    //    EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
+    //    soundInstance.setParameterByName(parameterName, parameterValue);
+
+    //    //instance.set3DAttributes(position.To3DAttributes());
+    //    soundInstance.start();
+    //    soundInstance.release();
+    //}
 
     public void StartFMODEvent(string name)
     {

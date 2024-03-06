@@ -19,10 +19,7 @@ public class PlayerAnimator : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
 
-        // Can't hear footsteps for whatever reason,
         footsteps = AudioManager.Instance.RegisterSound("footsteps", footstepRef);
-        // But this works just as well with music:
-        //footsteps = AudioManager.Instance.RegisterSound("footsteps", "event:/Music/mbiraGroove");
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(footsteps, this.transform);
 
     }

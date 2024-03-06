@@ -4,6 +4,8 @@ using UnityEngine.Events;
 using Utility;
 using InkTools;
 using System.Reflection;
+using FMOD.Studio;
+using FMODUnity;
 
 namespace Interactions {
     namespace Behaviors {
@@ -88,6 +90,17 @@ namespace Interactions {
         /// </summary>
         [Serializable, InteractionType("Misc/Ink")]
         public class InkInteraction : InteractionBehavior {
+
+            //FMOD character voices
+            //private EventInstance characterVoice;
+            [SerializeField]
+            private EventReference characterVoiceRef;
+            //set this in the inspector
+            [SerializeField]
+            [Range(0, 3)]
+            public int emotionType;
+
+
             /// <summary>
             /// Knot to start on interaction.
             /// </summary>
@@ -104,9 +117,17 @@ namespace Interactions {
             public override void Interact() {
                 if (!setup) {
                     ISingleton<InkManager>.Instance.StartDialog(inkKnot);
+                    
+                    //FMOD
+                    //characterVoice = AudioManager.Instance.RegisterSound("characterVoice", characterVoiceRef);
+                    RuntimeManager.StudioSystem.setParameterByName("emotionType", (float)emotionType);
+                    RuntimeManager.PlayOneShot(characterVoiceRef);
+
                     setup = true;
                 } else if (InkManager.storyActive) {
                     ISingleton<InkManager>.Instance.AdvanceStory();
+                    //FMOD
+                    RuntimeManager.PlayOneShot(characterVoiceRef);
                 }
             }
 
