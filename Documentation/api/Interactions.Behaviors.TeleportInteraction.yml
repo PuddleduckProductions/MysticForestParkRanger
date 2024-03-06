@@ -27,14 +27,21 @@ items:
   - ScriptAssembly
   namespace: Interactions.Behaviors
   syntax:
-    content: 'public class TeleportInteraction : InteractionBehavior'
-    content.vb: Public Class TeleportInteraction Inherits InteractionBehavior
+    content: >-
+      [InteractionType("Misc/Teleport")]
+
+      public class TeleportInteraction : InteractionBehavior
+    content.vb: >-
+      <InteractionType("Misc/Teleport")>
+
+      Public Class TeleportInteraction Inherits InteractionBehavior
   inheritance:
   - System.Object
   - Interactions.Behaviors.InteractionBehavior
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.GameObjectStart
   - Interactions.Behaviors.InteractionBehavior.Update
   - Interactions.Behaviors.InteractionBehavior.EndInteraction
   - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
@@ -45,6 +52,12 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+  attributes:
+  - type: Interactions.Behaviors.InteractionType
+    ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Misc/Teleport
 - uid: Interactions.Behaviors.TeleportInteraction.#ctor(Interactions.Interaction)
   commentId: M:Interactions.Behaviors.TeleportInteraction.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
@@ -63,7 +76,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Greybox.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -95,7 +108,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: teleportLocal
     path: ../Assets/Scripts/CharacterController/Interactions/Greybox.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -122,7 +135,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Greybox.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -212,6 +225,25 @@ references:
   - uid: Interactions.Interaction
     name: Interaction
     href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  commentId: M:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  name: GameObjectStart()
+  nameWithType: InteractionBehavior.GameObjectStart()
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
   - name: )
 - uid: Interactions.Behaviors.InteractionBehavior.Update
   commentId: M:Interactions.Behaviors.InteractionBehavior.Update

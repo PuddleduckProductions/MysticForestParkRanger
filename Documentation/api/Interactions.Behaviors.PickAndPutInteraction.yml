@@ -19,12 +19,12 @@ items:
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PickAndPutInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 300
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -34,17 +34,25 @@ items:
     content: >-
       [Serializable]
 
+      [InteractionType("Plants/PickAndPut")]
+
       public class PickAndPutInteraction : InteractionBehavior
     content.vb: >-
       <Serializable>
+
+      <InteractionType("Plants/PickAndPut")>
 
       Public Class PickAndPutInteraction Inherits InteractionBehavior
   inheritance:
   - System.Object
   - Interactions.Behaviors.InteractionBehavior
+  derivedClasses:
+  - Interactions.Behaviors.Seed
+  - Interactions.Behaviors.WaterPipe
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.GameObjectStart
   - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -57,6 +65,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: Interactions.Behaviors.InteractionType
+    ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Plants/PickAndPut
 - uid: Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
   commentId: M:Interactions.Behaviors.PickAndPutInteraction.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
@@ -70,12 +83,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 302
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 12
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -102,12 +115,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isPicking
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 303
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 13
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -129,12 +142,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 310
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 20
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -165,12 +178,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 325
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 35
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -199,12 +212,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 340
+    path: ../Assets/Scripts/CharacterController/Interactions/Seeds/PlantInteractions.cs
+    startLine: 50
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -292,6 +305,25 @@ references:
   - uid: Interactions.Interaction
     name: Interaction
     href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  commentId: M:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  name: GameObjectStart()
+  nameWithType: InteractionBehavior.GameObjectStart()
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
   - name: )
 - uid: Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   commentId: M:Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)

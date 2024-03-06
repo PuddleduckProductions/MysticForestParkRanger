@@ -15,32 +15,18 @@ namespace Character {
 
         Camera mainCamera;
 
-        PlayerAnimator playerAnimator;
-
         Vector3 velocity; // velocity variable
         public float friction = 0.99f; // friction value
-
-        //Fmod call
-        public FMODUnity.EventReference footstepsEvent;
-
-        FMOD.Studio.EventInstance footSteps;
 
         // Start is called before the first frame update
         void Start() {
             c = GetComponent<CharacterController>();
             mainCamera = Camera.main;
-            playerAnimator = GetComponent<PlayerAnimator>();
-
-                //footSteps = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
-                //FMODUnity.RuntimeManager.AttachInstanceToGameObject(footSteps, this.transform);
-                //footSteps.start();
-            //animator = GetComponent<Animator>();
         }
 
         Vector3 intendedForward = Vector3.zero;
 
-        // Update is called once per frame
-        void Update() {
+        void FixedUpdate() {
             var playerForward = intendedMove;
             if (moveEnabled) {
                 // adding acceleration
@@ -64,14 +50,6 @@ namespace Character {
             } else if (intendedForward != Vector3.zero) {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(intendedForward, transform.up), rotationSpeed * Time.deltaTime);
             }
-
-                //if (isWalking){
-                //    footSteps.setPaused(false);
-                //} else {
-                //    //footSteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                //    footSteps.setPaused(true);
-                //    footSteps.setTimelinePosition(0);
-                //}
         }
 
         public Vector3 intendedMove {
@@ -91,7 +69,6 @@ namespace Character {
 
         void OnWalking(InputValue value) {
             input = value.Get<Vector2>();
-            // animator.SetBool("walking", true);
         }
     }
 }

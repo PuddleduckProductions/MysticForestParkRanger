@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: MysticForestParkRanger.AudioManager.ModifySound
+  commentId: T:MysticForestParkRanger.AudioManager.ModifySound
+  id: AudioManager.ModifySound
+  parent: MysticForestParkRanger
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: AudioManager.ModifySound
+  nameWithType: AudioManager.ModifySound
+  fullName: AudioManager.ModifySound
+  type: Delegate
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: ModifySound
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 56
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public delegate EventInstance AudioManager.ModifySound(EventInstance inst)
+    parameters:
+    - id: inst
+      type: FMOD.Studio.EventInstance
+    return:
+      type: FMOD.Studio.EventInstance
+    content.vb: Public Delegate Function AudioManager.ModifySound(inst As EventInstance) As EventInstance
+references:
+- uid: MysticForestParkRanger
+- uid: FMOD.Studio.EventInstance
+  commentId: T:FMOD.Studio.EventInstance
+  parent: FMOD.Studio
+  name: EventInstance
+  nameWithType: EventInstance
+  fullName: FMOD.Studio.EventInstance
+- uid: FMOD.Studio
+  commentId: N:FMOD.Studio
+  name: FMOD.Studio
+  nameWithType: FMOD.Studio
+  fullName: FMOD.Studio
+  spec.csharp:
+  - uid: FMOD
+    name: FMOD
+  - name: .
+  - uid: FMOD.Studio
+    name: Studio
+  spec.vb:
+  - uid: FMOD
+    name: FMOD
+  - name: .
+  - uid: FMOD.Studio
+    name: Studio

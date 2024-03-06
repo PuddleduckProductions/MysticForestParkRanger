@@ -21,7 +21,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ShowImage
     path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -169,7 +169,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Show
     path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -198,7 +198,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Hide
     path: ../Assets/Scripts/CharacterController/Interactions/ShowImage.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - ScriptAssembly
   namespace: Interactions

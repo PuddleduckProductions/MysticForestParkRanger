@@ -7,10 +7,6 @@ items:
     name: CameraController
   - uid: Character.CameraControllerEditor
     name: CameraControllerEditor
-  - uid: Character.CameraController_EY
-    name: CameraController_EY
-  - uid: Character.CameraController_EYEditor
-    name: CameraController_EYEditor
   - uid: Character.UIController
     name: UIController
   - uid: Character.characterController
@@ -43,20 +39,32 @@ items:
     items:
     - uid: Interactions.Behaviors.CustomInteraction
       name: CustomInteraction
+    - uid: Interactions.Behaviors.DirtPatch
+      name: DirtPatch
     - uid: Interactions.Behaviors.InkInteraction
       name: InkInteraction
     - uid: Interactions.Behaviors.InteractionBehavior
       name: InteractionBehavior
+    - uid: Interactions.Behaviors.InteractionType
+      name: InteractionType
     - uid: Interactions.Behaviors.PickAndPutInteraction
       name: PickAndPutInteraction
     - uid: Interactions.Behaviors.PushableInteraction
       name: PushableInteraction
     - uid: Interactions.Behaviors.PutTrigger
       name: PutTrigger
+    - uid: Interactions.Behaviors.Seed
+      name: Seed
     - uid: Interactions.Behaviors.ShowImageInteraction
       name: ShowImageInteraction
     - uid: Interactions.Behaviors.TeleportInteraction
       name: TeleportInteraction
+    - uid: Interactions.Behaviors.WaterPipe
+      name: WaterPipe
+    - uid: Interactions.Behaviors.WaterPipe.PipeType
+      name: WaterPipe.PipeType
+    - uid: Interactions.Behaviors.WaterPipe.Source
+      name: WaterPipe.Source
   - uid: Interactions.GridEditor
     name: GridEditor
   - uid: Interactions.GridGroup
@@ -71,8 +79,6 @@ items:
     name: GridObject
   - uid: Interactions.Interaction
     name: Interaction
-  - uid: Interactions.Interaction.InteractionType
-    name: Interaction.InteractionType
   - uid: Interactions.InteractionEditor
     name: InteractionEditor
   - uid: Interactions.InteractionManager
@@ -81,15 +87,29 @@ items:
     name: InteractionManager.InteractionState
   - uid: Interactions.ShowImage
     name: ShowImage
+  - uid: Interactions.WaterSource
+    name: WaterSource
 - uid: MysticForestParkRanger
   name: MysticForestParkRanger
   items:
+  - uid: MysticForestParkRanger.AudioManager
+    name: AudioManager
+  - uid: MysticForestParkRanger.AudioManager.ModifySound
+    name: AudioManager.ModifySound
   - uid: MysticForestParkRanger.CameraZone
     name: CameraZone
+  - uid: MysticForestParkRanger.DebugWindow
+    name: DebugWindow
+  - uid: MysticForestParkRanger.DebugWindow.UpdateFunc
+    name: DebugWindow.UpdateFunc
   - uid: MysticForestParkRanger.InteractionShortcuts
     name: InteractionShortcuts
   - uid: MysticForestParkRanger.PauseManager
     name: PauseManager
+  - uid: MysticForestParkRanger.PlayerAnimator
+    name: PlayerAnimator
+  - uid: MysticForestParkRanger.SoundList
+    name: SoundList
 - uid: Utility
   name: Utility
   items:

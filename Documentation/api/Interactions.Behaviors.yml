@@ -6,13 +6,19 @@ items:
   parent: Interactions
   children:
   - Interactions.Behaviors.CustomInteraction
+  - Interactions.Behaviors.DirtPatch
   - Interactions.Behaviors.InkInteraction
   - Interactions.Behaviors.InteractionBehavior
+  - Interactions.Behaviors.InteractionType
   - Interactions.Behaviors.PickAndPutInteraction
   - Interactions.Behaviors.PushableInteraction
   - Interactions.Behaviors.PutTrigger
+  - Interactions.Behaviors.Seed
   - Interactions.Behaviors.ShowImageInteraction
   - Interactions.Behaviors.TeleportInteraction
+  - Interactions.Behaviors.WaterPipe
+  - Interactions.Behaviors.WaterPipe.PipeType
+  - Interactions.Behaviors.WaterPipe.Source
   langs:
   - csharp
   - vb
@@ -29,6 +35,12 @@ references:
   name: CustomInteraction
   nameWithType: CustomInteraction
   fullName: Interactions.Behaviors.CustomInteraction
+- uid: Interactions.Behaviors.DirtPatch
+  commentId: T:Interactions.Behaviors.DirtPatch
+  href: Interactions.Behaviors.DirtPatch.html
+  name: DirtPatch
+  nameWithType: DirtPatch
+  fullName: Interactions.Behaviors.DirtPatch
 - uid: Interactions.Behaviors.InkInteraction
   commentId: T:Interactions.Behaviors.InkInteraction
   href: Interactions.Behaviors.InkInteraction.html
@@ -42,8 +54,16 @@ references:
   name: InteractionBehavior
   nameWithType: InteractionBehavior
   fullName: Interactions.Behaviors.InteractionBehavior
+- uid: Interactions.Behaviors.InteractionType
+  commentId: T:Interactions.Behaviors.InteractionType
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.InteractionType.html
+  name: InteractionType
+  nameWithType: InteractionType
+  fullName: Interactions.Behaviors.InteractionType
 - uid: Interactions.Behaviors.PickAndPutInteraction
   commentId: T:Interactions.Behaviors.PickAndPutInteraction
+  parent: Interactions.Behaviors
   href: Interactions.Behaviors.PickAndPutInteraction.html
   name: PickAndPutInteraction
   nameWithType: PickAndPutInteraction
@@ -61,6 +81,12 @@ references:
   name: PutTrigger
   nameWithType: PutTrigger
   fullName: Interactions.Behaviors.PutTrigger
+- uid: Interactions.Behaviors.Seed
+  commentId: T:Interactions.Behaviors.Seed
+  href: Interactions.Behaviors.Seed.html
+  name: Seed
+  nameWithType: Seed
+  fullName: Interactions.Behaviors.Seed
 - uid: Interactions.Behaviors.ShowImageInteraction
   commentId: T:Interactions.Behaviors.ShowImageInteraction
   href: Interactions.Behaviors.ShowImageInteraction.html
@@ -73,6 +99,57 @@ references:
   name: TeleportInteraction
   nameWithType: TeleportInteraction
   fullName: Interactions.Behaviors.TeleportInteraction
+- uid: Interactions.Behaviors.WaterPipe
+  commentId: T:Interactions.Behaviors.WaterPipe
+  href: Interactions.Behaviors.WaterPipe.html
+  name: WaterPipe
+  nameWithType: WaterPipe
+  fullName: Interactions.Behaviors.WaterPipe
+- uid: Interactions.Behaviors.WaterPipe.PipeType
+  commentId: T:Interactions.Behaviors.WaterPipe.PipeType
+  parent: Interactions.Behaviors
+  href: Interactions.Behaviors.WaterPipe.html
+  name: WaterPipe.PipeType
+  nameWithType: WaterPipe.PipeType
+  fullName: Interactions.Behaviors.WaterPipe.PipeType
+  spec.csharp:
+  - uid: Interactions.Behaviors.WaterPipe
+    name: WaterPipe
+    href: Interactions.Behaviors.WaterPipe.html
+  - name: .
+  - uid: Interactions.Behaviors.WaterPipe.PipeType
+    name: PipeType
+    href: Interactions.Behaviors.WaterPipe.PipeType.html
+  spec.vb:
+  - uid: Interactions.Behaviors.WaterPipe
+    name: WaterPipe
+    href: Interactions.Behaviors.WaterPipe.html
+  - name: .
+  - uid: Interactions.Behaviors.WaterPipe.PipeType
+    name: PipeType
+    href: Interactions.Behaviors.WaterPipe.PipeType.html
+- uid: Interactions.Behaviors.WaterPipe.Source
+  commentId: T:Interactions.Behaviors.WaterPipe.Source
+  href: Interactions.Behaviors.WaterPipe.html
+  name: WaterPipe.Source
+  nameWithType: WaterPipe.Source
+  fullName: Interactions.Behaviors.WaterPipe.Source
+  spec.csharp:
+  - uid: Interactions.Behaviors.WaterPipe
+    name: WaterPipe
+    href: Interactions.Behaviors.WaterPipe.html
+  - name: .
+  - uid: Interactions.Behaviors.WaterPipe.Source
+    name: Source
+    href: Interactions.Behaviors.WaterPipe.Source.html
+  spec.vb:
+  - uid: Interactions.Behaviors.WaterPipe
+    name: WaterPipe
+    href: Interactions.Behaviors.WaterPipe.html
+  - name: .
+  - uid: Interactions.Behaviors.WaterPipe.Source
+    name: Source
+    href: Interactions.Behaviors.WaterPipe.Source.html
 - uid: Interactions.Behaviors
   commentId: N:Interactions.Behaviors
   href: Interactions.html

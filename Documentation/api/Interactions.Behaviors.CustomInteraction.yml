@@ -26,7 +26,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CustomInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 235
+    startLine: 122
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -41,9 +41,13 @@ items:
     content: >-
       [Serializable]
 
+      [InteractionType("Misc/Custom")]
+
       public class CustomInteraction : InteractionBehavior
     content.vb: >-
       <Serializable>
+
+      <InteractionType("Misc/Custom")>
 
       Public Class CustomInteraction Inherits InteractionBehavior
   inheritance:
@@ -52,6 +56,7 @@ items:
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.GameObjectStart
   - Interactions.Behaviors.InteractionBehavior.EndInteraction
   - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - System.Object.Equals(System.Object)
@@ -65,6 +70,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: Interactions.Behaviors.InteractionType
+    ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Misc/Custom
 - uid: Interactions.Behaviors.CustomInteraction.#ctor(Interactions.Interaction)
   commentId: M:Interactions.Behaviors.CustomInteraction.#ctor(Interactions.Interaction)
   id: '#ctor(Interactions.Interaction)'
@@ -83,7 +93,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 238
+    startLine: 125
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -115,7 +125,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 248
+    startLine: 135
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -171,7 +181,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onUpdate
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 263
+    startLine: 150
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -238,7 +248,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 265
+    startLine: 152
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -274,7 +284,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ValidateUpdateFunc
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 274
+    startLine: 161
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -309,7 +319,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CallUpdate
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 280
+    startLine: 167
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -337,7 +347,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 292
+    startLine: 179
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -425,6 +435,25 @@ references:
   - uid: Interactions.Interaction
     name: Interaction
     href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  commentId: M:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  name: GameObjectStart()
+  nameWithType: InteractionBehavior.GameObjectStart()
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
   - name: )
 - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
   commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction

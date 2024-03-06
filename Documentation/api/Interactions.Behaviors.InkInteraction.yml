@@ -23,7 +23,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 71
+    startLine: 88
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -36,9 +36,13 @@ items:
     content: >-
       [Serializable]
 
+      [InteractionType("Misc/Ink")]
+
       public class InkInteraction : InteractionBehavior
     content.vb: >-
       <Serializable>
+
+      <InteractionType("Misc/Ink")>
 
       Public Class InkInteraction Inherits InteractionBehavior
   inheritance:
@@ -47,6 +51,7 @@ items:
   inheritedMembers:
   - Interactions.Behaviors.InteractionBehavior.interactionObject
   - Interactions.Behaviors.InteractionBehavior.Interact(Interactions.Interaction)
+  - Interactions.Behaviors.InteractionBehavior.GameObjectStart
   - Interactions.Behaviors.InteractionBehavior.EndInteraction
   - Interactions.Behaviors.InteractionBehavior.CanInteract(Interactions.Interaction)
   - System.Object.Equals(System.Object)
@@ -60,6 +65,11 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
+  - type: Interactions.Behaviors.InteractionType
+    ctor: Interactions.Behaviors.InteractionType.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Misc/Ink
 - uid: Interactions.Behaviors.InkInteraction.inkKnot
   commentId: F:Interactions.Behaviors.InkInteraction.inkKnot
   id: inkKnot
@@ -78,7 +88,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: inkKnot
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 76
+    startLine: 93
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -107,7 +117,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 77
+    startLine: 94
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -139,7 +149,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -168,7 +178,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 95
+    startLine: 112
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -256,6 +266,25 @@ references:
   - uid: Interactions.Interaction
     name: Interaction
     href: Interactions.Interaction.html
+  - name: )
+- uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  commentId: M:Interactions.Behaviors.InteractionBehavior.GameObjectStart
+  parent: Interactions.Behaviors.InteractionBehavior
+  href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  name: GameObjectStart()
+  nameWithType: InteractionBehavior.GameObjectStart()
+  fullName: Interactions.Behaviors.InteractionBehavior.GameObjectStart()
+  spec.csharp:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Interactions.Behaviors.InteractionBehavior.GameObjectStart
+    name: GameObjectStart
+    href: Interactions.Behaviors.InteractionBehavior.html#Interactions_Behaviors_InteractionBehavior_GameObjectStart
+  - name: (
   - name: )
 - uid: Interactions.Behaviors.InteractionBehavior.EndInteraction
   commentId: M:Interactions.Behaviors.InteractionBehavior.EndInteraction

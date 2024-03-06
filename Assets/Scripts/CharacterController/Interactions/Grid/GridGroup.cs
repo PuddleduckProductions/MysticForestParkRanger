@@ -71,6 +71,10 @@ namespace Interactions {
             set { cells[idx] = value; }
         }
 
+        public bool HasCell(Vector2Int idx) {
+            return idx.y >= 0 && idx.y < gridDimensions.y && idx.x >= 0 && idx.x < gridDimensions.x;
+        }
+
         public ref Cell GetCell(Vector2Int idx) {
             return ref cells[idx.y * gridDimensions.x + idx.x];
         }
@@ -127,7 +131,7 @@ namespace Interactions {
             //Debug.Log($"{localPos} {pos}");
             //Vector3 localPos = transform.rotation * (pos - (transform.position + gridOffset));
             Vector2Int gridPos = LocalToGridXY(pos);
-            if (gridPos.x < 0 || gridPos.x >= gridDimensions.x || gridPos.y < 0 || gridPos.y >= gridDimensions.y) {
+            if (!HasCell(gridPos)) {
                 return null;
             }
             // TODO: Figure out multiple cells together to make one object.
@@ -163,6 +167,12 @@ namespace Interactions {
                 }
             }
             return toAdd;
+        }
+
+        public void EmptyCells(Cell[] cells) {
+            foreach (var cell in cells) {
+                GetCell(cell.pos).type = Cell.CellType.EMPTY;
+            }
         }
 
 

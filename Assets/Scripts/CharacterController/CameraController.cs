@@ -62,12 +62,15 @@ namespace Character {
 
         private void OnTriggerStay(Collider other) {
             if (other.TryGetComponent(out CameraZone zone)) {
+                if (activeZone != null) {
+                    activeZone.zoneCamera.Priority = 10;
+                }
                 activeZone = zone;
             }
         }
 
         private void OnTriggerExit(Collider other) {
-            if (activeZone != null && other.GetInstanceID() == activeZone.GetInstanceID()) {
+            if (activeZone != null && other.gameObject.GetInstanceID() == activeZone.gameObject.GetInstanceID()) {
                 activeZone.zoneCamera.Priority = 10;
                 activeZone = null;
             }

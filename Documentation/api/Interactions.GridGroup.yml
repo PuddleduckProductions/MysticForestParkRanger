@@ -7,6 +7,7 @@ items:
   children:
   - Interactions.GridGroup.BoundsToCells(UnityEngine.BoxCollider)
   - Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell)
+  - Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
   - Interactions.GridGroup.GetCell(UnityEngine.Vector2Int)
   - Interactions.GridGroup.Item(System.Int32)
   - Interactions.GridGroup.Item(System.Int32,System.Int32)
@@ -31,11 +32,11 @@ items:
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GridGroup
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 5
   assemblies:
   - ScriptAssembly
@@ -177,11 +178,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: cellSize
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 36
   assemblies:
   - ScriptAssembly
@@ -206,11 +207,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: cellSpacing
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 41
   assemblies:
   - ScriptAssembly
@@ -235,11 +236,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: gridOffset
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 46
   assemblies:
   - ScriptAssembly
@@ -264,11 +265,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: gridDimensions
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 48
   assemblies:
   - ScriptAssembly
@@ -291,11 +292,11 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: cells
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 50
   assemblies:
   - ScriptAssembly
@@ -318,11 +319,11 @@ items:
   type: Property
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: this[]
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 58
   assemblies:
   - ScriptAssembly
@@ -359,11 +360,11 @@ items:
   type: Property
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: this[]
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 63
   assemblies:
   - ScriptAssembly
@@ -393,11 +394,11 @@ items:
   type: Property
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: this[]
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 68
   assemblies:
   - ScriptAssembly
@@ -427,11 +428,11 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GetCell
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 73
   assemblies:
   - ScriptAssembly
@@ -458,11 +459,11 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CellToWorld
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 77
   assemblies:
   - ScriptAssembly
@@ -489,11 +490,11 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: LocalToGridXY
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 117
   assemblies:
   - ScriptAssembly
@@ -520,11 +521,11 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: LocalToCell
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 123
   assemblies:
   - ScriptAssembly
@@ -551,11 +552,11 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PointToLocal
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 136
   assemblies:
   - ScriptAssembly
@@ -582,11 +583,11 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: BoundsToCells
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
     startLine: 140
   assemblies:
   - ScriptAssembly
@@ -600,6 +601,38 @@ items:
       type: System.Collections.Generic.List{Interactions.GridGroup.Cell}
     content.vb: Public Function BoundsToCells(c As BoxCollider) As List(Of GridGroup.Cell)
   overload: Interactions.GridGroup.BoundsToCells*
+- uid: Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
+  commentId: M:Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
+  id: EmptyCells(Interactions.GridGroup.Cell[])
+  parent: Interactions.GridGroup
+  langs:
+  - csharp
+  - vb
+  name: EmptyCells(Cell[])
+  nameWithType: GridGroup.EmptyCells(GridGroup.Cell[])
+  fullName: Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: EmptyCells
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
+    startLine: 167
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions
+  syntax:
+    content: public void EmptyCells(GridGroup.Cell[] cells)
+    parameters:
+    - id: cells
+      type: Interactions.GridGroup.Cell[]
+    content.vb: Public Sub EmptyCells(cells As GridGroup.Cell())
+  overload: Interactions.GridGroup.EmptyCells*
+  nameWithType.vb: GridGroup.EmptyCells(GridGroup.Cell())
+  fullName.vb: Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell())
+  name.vb: EmptyCells(Cell())
 - uid: Interactions.GridGroup.MoveCells(Interactions.GridGroup.Cell[]@,UnityEngine.Vector2Int)
   commentId: M:Interactions.GridGroup.MoveCells(Interactions.GridGroup.Cell[]@,UnityEngine.Vector2Int)
   id: MoveCells(Interactions.GridGroup.Cell[]@,UnityEngine.Vector2Int)
@@ -613,12 +646,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveCells
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 176
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
+    startLine: 182
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -656,12 +689,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveObject
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 193
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
+    startLine: 199
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -672,7 +705,7 @@ items:
 
     Does not move the object physically in the space. You have to edit the transform yourself.
 
-    Called by <xref href="Interactions.GridObject.Move(UnityEngine.Vector3)" data-throw-if-not-resolved="false"></xref>, which you should call instead of this function.
+    Called by GridObject.Move(Vector3), which you should call instead of this function.
   example: []
   syntax:
     content: public bool MoveObject(GridObject gridObject, Vector2Int direction)
@@ -700,12 +733,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/GridGroup.cs
+      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveValid
-    path: ../Assets/Scripts/CharacterController/Interactions/GridGroup.cs
-    startLine: 242
+    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
+    startLine: 248
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -5387,6 +5420,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Interactions.GridGroup.EmptyCells*
+  commentId: Overload:Interactions.GridGroup.EmptyCells
+  href: Interactions.GridGroup.html#Interactions_GridGroup_EmptyCells_Interactions_GridGroup_Cell___
+  name: EmptyCells
+  nameWithType: GridGroup.EmptyCells
+  fullName: Interactions.GridGroup.EmptyCells
 - uid: Interactions.GridGroup.MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   commentId: M:Interactions.GridGroup.MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   isExternal: true
@@ -5428,31 +5467,6 @@ references:
   name: MoveCells
   nameWithType: GridGroup.MoveCells
   fullName: Interactions.GridGroup.MoveCells
-- uid: Interactions.GridObject.Move(UnityEngine.Vector3)
-  commentId: M:Interactions.GridObject.Move(UnityEngine.Vector3)
-  isExternal: true
-  href: Interactions.GridObject.html#Interactions_GridObject_Move_UnityEngine_Vector3_
-  name: Move(Vector3)
-  nameWithType: GridObject.Move(Vector3)
-  fullName: Interactions.GridObject.Move(UnityEngine.Vector3)
-  spec.csharp:
-  - uid: Interactions.GridObject.Move(UnityEngine.Vector3)
-    name: Move
-    href: Interactions.GridObject.html#Interactions_GridObject_Move_UnityEngine_Vector3_
-  - name: (
-  - uid: UnityEngine.Vector3
-    name: Vector3
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Interactions.GridObject.Move(UnityEngine.Vector3)
-    name: Move
-    href: Interactions.GridObject.html#Interactions_GridObject_Move_UnityEngine_Vector3_
-  - name: (
-  - uid: UnityEngine.Vector3
-    name: Vector3
-    isExternal: true
-  - name: )
 - uid: Interactions.GridGroup.MoveObject*
   commentId: Overload:Interactions.GridGroup.MoveObject
   href: Interactions.GridGroup.html#Interactions_GridGroup_MoveObject_Interactions_GridObject_UnityEngine_Vector2Int_

@@ -5,7 +5,7 @@ items:
   id: InteractionEditor
   parent: Interactions
   children:
-  - Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
+  - Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
   - Interactions.InteractionEditor.OnInspectorGUI
   langs:
   - csharp
@@ -151,16 +151,16 @@ items:
   - type: UnityEditor.CanEditMultipleObjects
     ctor: UnityEditor.CanEditMultipleObjects.#ctor
     arguments: []
-- uid: Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
-  commentId: M:Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
-  id: CreateBehavior(Interactions.Interaction,UnityEditor.SerializedProperty,UnityEditor.SerializedObject)
+- uid: Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
+  commentId: M:Interactions.InteractionEditor.CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
+  id: CreateBehavior(System.String,Interactions.Interaction,System.Type,UnityEditor.SerializedObject)
   parent: Interactions.InteractionEditor
   langs:
   - csharp
   - vb
-  name: CreateBehavior(Interaction, SerializedProperty, SerializedObject)
-  nameWithType: InteractionEditor.CreateBehavior(Interaction, SerializedProperty, SerializedObject)
-  fullName: Interactions.InteractionEditor.CreateBehavior(Interactions.Interaction, UnityEditor.SerializedProperty, UnityEditor.SerializedObject)
+  name: CreateBehavior(string, Interaction, Type, SerializedObject)
+  nameWithType: InteractionEditor.CreateBehavior(string, Interaction, Type, SerializedObject)
+  fullName: Interactions.InteractionEditor.CreateBehavior(string, Interactions.Interaction, System.Type, UnityEditor.SerializedObject)
   type: Method
   source:
     remote:
@@ -169,24 +169,32 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CreateBehavior
     path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 25
+    startLine: 30
   assemblies:
   - EditorAssembly
   namespace: Interactions
-  summary: Assign our <xref href="Interactions.Interaction.behavior" data-throw-if-not-resolved="false"></xref> based on the given <xref href="Interactions.Interaction.type" data-throw-if-not-resolved="false"></xref>.
+  summary: Assign our <xref href="Interactions.Interaction.behavior" data-throw-if-not-resolved="false"></xref> based on the selection from the menu.
   example: []
   syntax:
-    content: public static void CreateBehavior(Interaction interaction, SerializedProperty behavior, SerializedObject so)
+    content: public static void CreateBehavior(string name, Interaction interaction, Type interactionType, SerializedObject so)
     parameters:
+    - id: name
+      type: System.String
+      description: The name of the behavior we're creating
     - id: interaction
       type: Interactions.Interaction
       description: The parent to give our <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref>
-    - id: behavior
-      type: UnityEditor.SerializedProperty
+    - id: interactionType
+      type: System.Type
+      description: The type of <xref href="Interactions.Behaviors.InteractionBehavior" data-throw-if-not-resolved="false"></xref> to use.
     - id: so
       type: UnityEditor.SerializedObject
-    content.vb: Public Shared Sub CreateBehavior(interaction As Interaction, behavior As SerializedProperty, so As SerializedObject)
+      description: Serialized object to apply changes to.
+    content.vb: Public Shared Sub CreateBehavior(name As String, interaction As Interaction, interactionType As Type, so As SerializedObject)
   overload: Interactions.InteractionEditor.CreateBehavior*
+  nameWithType.vb: InteractionEditor.CreateBehavior(String, Interaction, Type, SerializedObject)
+  fullName.vb: Interactions.InteractionEditor.CreateBehavior(String, Interactions.Interaction, System.Type, UnityEditor.SerializedObject)
+  name.vb: CreateBehavior(String, Interaction, Type, SerializedObject)
 - uid: Interactions.InteractionEditor.OnInspectorGUI
   commentId: M:Interactions.InteractionEditor.OnInspectorGUI
   id: OnInspectorGUI
@@ -205,7 +213,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: OnInspectorGUI
     path: ../Assets/Editor/Interactions/InteractionEditor.cs
-    startLine: 42
+    startLine: 39
   assemblies:
   - EditorAssembly
   namespace: Interactions
@@ -3469,24 +3477,31 @@ references:
   name: behavior
   nameWithType: Interaction.behavior
   fullName: Interactions.Interaction.behavior
-- uid: Interactions.Interaction.type
-  commentId: F:Interactions.Interaction.type
-  name: type
-  nameWithType: Interaction.type
-  fullName: Interactions.Interaction.type
 - uid: Interactions.InteractionEditor.CreateBehavior*
   commentId: Overload:Interactions.InteractionEditor.CreateBehavior
-  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_CreateBehavior_Interactions_Interaction_UnityEditor_SerializedProperty_UnityEditor_SerializedObject_
+  href: Interactions.InteractionEditor.html#Interactions_InteractionEditor_CreateBehavior_System_String_Interactions_Interaction_System_Type_UnityEditor_SerializedObject_
   name: CreateBehavior
   nameWithType: InteractionEditor.CreateBehavior
   fullName: Interactions.InteractionEditor.CreateBehavior
-- uid: UnityEditor.SerializedProperty
-  commentId: T:UnityEditor.SerializedProperty
-  parent: UnityEditor
+- uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
-  name: SerializedProperty
-  nameWithType: SerializedProperty
-  fullName: UnityEditor.SerializedProperty
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
 - uid: UnityEditor.SerializedObject
   commentId: T:UnityEditor.SerializedObject
   parent: UnityEditor

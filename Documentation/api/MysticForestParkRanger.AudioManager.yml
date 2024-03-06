@@ -1,0 +1,984 @@
+### YamlMime:ManagedReference
+items:
+- uid: MysticForestParkRanger.AudioManager
+  commentId: T:MysticForestParkRanger.AudioManager
+  id: AudioManager
+  parent: MysticForestParkRanger
+  children:
+  - MysticForestParkRanger.AudioManager.#ctor
+  - MysticForestParkRanger.AudioManager.Instance
+  - MysticForestParkRanger.AudioManager.Item(System.String)
+  - MysticForestParkRanger.AudioManager.PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
+  - MysticForestParkRanger.AudioManager.RegisterSound(System.String,FMODUnity.EventReference)
+  - MysticForestParkRanger.AudioManager.RegisterSound(System.String,System.String)
+  - MysticForestParkRanger.AudioManager.SoundExists(System.String)
+  - MysticForestParkRanger.AudioManager.StartFMODEvent(System.String)
+  - MysticForestParkRanger.AudioManager.StopFMODEvent(System.String)
+  - MysticForestParkRanger.AudioManager.UpdateSound(System.String,AudioManager.ModifySound)
+  - MysticForestParkRanger.AudioManager._instance
+  - MysticForestParkRanger.AudioManager.isPlaybackStatePaused(System.String)
+  - MysticForestParkRanger.AudioManager.sounds
+  langs:
+  - csharp
+  - vb
+  name: AudioManager
+  nameWithType: AudioManager
+  fullName: AudioManager
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: AudioManager
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 10
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  summary: System for loading in and keeping track of sounds.
+  example: []
+  syntax:
+    content: public class AudioManager
+    content.vb: Public Class AudioManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: MysticForestParkRanger.AudioManager._instance
+  commentId: F:MysticForestParkRanger.AudioManager._instance
+  id: _instance
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: _instance
+  nameWithType: AudioManager._instance
+  fullName: AudioManager._instance
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: _instance
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: protected static AudioManager _instance
+    return:
+      type: MysticForestParkRanger.AudioManager
+    content.vb: Protected Shared _instance As AudioManager
+- uid: MysticForestParkRanger.AudioManager.Instance
+  commentId: P:MysticForestParkRanger.AudioManager.Instance
+  id: Instance
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: AudioManager.Instance
+  fullName: AudioManager.Instance
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Instance
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 13
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public static AudioManager Instance { get; }
+    parameters: []
+    return:
+      type: MysticForestParkRanger.AudioManager
+    content.vb: Public Shared ReadOnly Property Instance As AudioManager
+  overload: MysticForestParkRanger.AudioManager.Instance*
+- uid: MysticForestParkRanger.AudioManager.#ctor
+  commentId: M:MysticForestParkRanger.AudioManager.#ctor
+  id: '#ctor'
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: AudioManager()
+  nameWithType: AudioManager.AudioManager()
+  fullName: AudioManager.AudioManager()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: .ctor
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 28
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public AudioManager()
+    content.vb: Public Sub New()
+  overload: MysticForestParkRanger.AudioManager.#ctor*
+  nameWithType.vb: AudioManager.New()
+  fullName.vb: AudioManager.New()
+  name.vb: New()
+- uid: MysticForestParkRanger.AudioManager.sounds
+  commentId: F:MysticForestParkRanger.AudioManager.sounds
+  id: sounds
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: sounds
+  nameWithType: AudioManager.sounds
+  fullName: AudioManager.sounds
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: sounds
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 33
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: protected Dictionary<string, EventInstance> sounds
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,FMOD.Studio.EventInstance}
+    content.vb: Protected sounds As Dictionary(Of String, EventInstance)
+- uid: MysticForestParkRanger.AudioManager.Item(System.String)
+  commentId: P:MysticForestParkRanger.AudioManager.Item(System.String)
+  id: Item(System.String)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: this[string]
+  nameWithType: AudioManager.this[string]
+  fullName: AudioManager.this[string]
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: this[]
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 35
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public EventInstance this[string name] { get; }
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: FMOD.Studio.EventInstance
+    content.vb: Public ReadOnly Default Property this[](name As String) As EventInstance
+  overload: MysticForestParkRanger.AudioManager.Item*
+  nameWithType.vb: AudioManager.this[](String)
+  fullName.vb: AudioManager.this[](String)
+  name.vb: this[](String)
+- uid: MysticForestParkRanger.AudioManager.RegisterSound(System.String,FMODUnity.EventReference)
+  commentId: M:MysticForestParkRanger.AudioManager.RegisterSound(System.String,FMODUnity.EventReference)
+  id: RegisterSound(System.String,FMODUnity.EventReference)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: RegisterSound(string, EventReference)
+  nameWithType: AudioManager.RegisterSound(string, EventReference)
+  fullName: AudioManager.RegisterSound(string, FMODUnity.EventReference)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: RegisterSound
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 41
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public EventInstance RegisterSound(string name, EventReference soundEventPath)
+    parameters:
+    - id: name
+      type: System.String
+    - id: soundEventPath
+      type: FMODUnity.EventReference
+    return:
+      type: FMOD.Studio.EventInstance
+    content.vb: Public Function RegisterSound(name As String, soundEventPath As EventReference) As EventInstance
+  overload: MysticForestParkRanger.AudioManager.RegisterSound*
+  nameWithType.vb: AudioManager.RegisterSound(String, EventReference)
+  fullName.vb: AudioManager.RegisterSound(String, FMODUnity.EventReference)
+  name.vb: RegisterSound(String, EventReference)
+- uid: MysticForestParkRanger.AudioManager.RegisterSound(System.String,System.String)
+  commentId: M:MysticForestParkRanger.AudioManager.RegisterSound(System.String,System.String)
+  id: RegisterSound(System.String,System.String)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: RegisterSound(string, string)
+  nameWithType: AudioManager.RegisterSound(string, string)
+  fullName: AudioManager.RegisterSound(string, string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: RegisterSound
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 50
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public EventInstance RegisterSound(string instanceName, string eventReferenceName)
+    parameters:
+    - id: instanceName
+      type: System.String
+    - id: eventReferenceName
+      type: System.String
+    return:
+      type: FMOD.Studio.EventInstance
+    content.vb: Public Function RegisterSound(instanceName As String, eventReferenceName As String) As EventInstance
+  overload: MysticForestParkRanger.AudioManager.RegisterSound*
+  nameWithType.vb: AudioManager.RegisterSound(String, String)
+  fullName.vb: AudioManager.RegisterSound(String, String)
+  name.vb: RegisterSound(String, String)
+- uid: MysticForestParkRanger.AudioManager.UpdateSound(System.String,AudioManager.ModifySound)
+  commentId: M:MysticForestParkRanger.AudioManager.UpdateSound(System.String,AudioManager.ModifySound)
+  id: UpdateSound(System.String,AudioManager.ModifySound)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: UpdateSound(string, ModifySound)
+  nameWithType: AudioManager.UpdateSound(string, AudioManager.ModifySound)
+  fullName: AudioManager.UpdateSound(string, AudioManager.ModifySound)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: UpdateSound
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 58
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void UpdateSound(string name, AudioManager.ModifySound updateFunc)
+    parameters:
+    - id: name
+      type: System.String
+    - id: updateFunc
+      type: MysticForestParkRanger.AudioManager.ModifySound
+    content.vb: Public Sub UpdateSound(name As String, updateFunc As AudioManager.ModifySound)
+  overload: MysticForestParkRanger.AudioManager.UpdateSound*
+  nameWithType.vb: AudioManager.UpdateSound(String, AudioManager.ModifySound)
+  fullName.vb: AudioManager.UpdateSound(String, AudioManager.ModifySound)
+  name.vb: UpdateSound(String, ModifySound)
+- uid: MysticForestParkRanger.AudioManager.SoundExists(System.String)
+  commentId: M:MysticForestParkRanger.AudioManager.SoundExists(System.String)
+  id: SoundExists(System.String)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: SoundExists(string)
+  nameWithType: AudioManager.SoundExists(string)
+  fullName: AudioManager.SoundExists(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: SoundExists
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 63
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public bool SoundExists(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function SoundExists(name As String) As Boolean
+  overload: MysticForestParkRanger.AudioManager.SoundExists*
+  nameWithType.vb: AudioManager.SoundExists(String)
+  fullName.vb: AudioManager.SoundExists(String)
+  name.vb: SoundExists(String)
+- uid: MysticForestParkRanger.AudioManager.isPlaybackStatePaused(System.String)
+  commentId: M:MysticForestParkRanger.AudioManager.isPlaybackStatePaused(System.String)
+  id: isPlaybackStatePaused(System.String)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: isPlaybackStatePaused(string)
+  nameWithType: AudioManager.isPlaybackStatePaused(string)
+  fullName: AudioManager.isPlaybackStatePaused(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: isPlaybackStatePaused
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 69
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public bool isPlaybackStatePaused(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function isPlaybackStatePaused(name As String) As Boolean
+  overload: MysticForestParkRanger.AudioManager.isPlaybackStatePaused*
+  nameWithType.vb: AudioManager.isPlaybackStatePaused(String)
+  fullName.vb: AudioManager.isPlaybackStatePaused(String)
+  name.vb: isPlaybackStatePaused(String)
+- uid: MysticForestParkRanger.AudioManager.PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
+  commentId: M:MysticForestParkRanger.AudioManager.PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
+  id: PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: PlayOneShot(EventReference, Vector3)
+  nameWithType: AudioManager.PlayOneShot(EventReference, Vector3)
+  fullName: AudioManager.PlayOneShot(FMODUnity.EventReference, UnityEngine.Vector3)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: PlayOneShot
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 81
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void PlayOneShot(EventReference soundEventPath, Vector3 position)
+    parameters:
+    - id: soundEventPath
+      type: FMODUnity.EventReference
+    - id: position
+      type: UnityEngine.Vector3
+    content.vb: Public Sub PlayOneShot(soundEventPath As EventReference, position As Vector3)
+  overload: MysticForestParkRanger.AudioManager.PlayOneShot*
+- uid: MysticForestParkRanger.AudioManager.StartFMODEvent(System.String)
+  commentId: M:MysticForestParkRanger.AudioManager.StartFMODEvent(System.String)
+  id: StartFMODEvent(System.String)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: StartFMODEvent(string)
+  nameWithType: AudioManager.StartFMODEvent(string)
+  fullName: AudioManager.StartFMODEvent(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: StartFMODEvent
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 86
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void StartFMODEvent(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub StartFMODEvent(name As String)
+  overload: MysticForestParkRanger.AudioManager.StartFMODEvent*
+  nameWithType.vb: AudioManager.StartFMODEvent(String)
+  fullName.vb: AudioManager.StartFMODEvent(String)
+  name.vb: StartFMODEvent(String)
+- uid: MysticForestParkRanger.AudioManager.StopFMODEvent(System.String)
+  commentId: M:MysticForestParkRanger.AudioManager.StopFMODEvent(System.String)
+  id: StopFMODEvent(System.String)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: StopFMODEvent(string)
+  nameWithType: AudioManager.StopFMODEvent(string)
+  fullName: AudioManager.StopFMODEvent(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: StopFMODEvent
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 91
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void StopFMODEvent(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub StopFMODEvent(name As String)
+  overload: MysticForestParkRanger.AudioManager.StopFMODEvent*
+  nameWithType.vb: AudioManager.StopFMODEvent(String)
+  fullName.vb: AudioManager.StopFMODEvent(String)
+  name.vb: StopFMODEvent(String)
+references:
+- uid: MysticForestParkRanger
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MysticForestParkRanger.AudioManager
+  commentId: T:MysticForestParkRanger.AudioManager
+  href: AudioManager.html
+  name: AudioManager
+  nameWithType: AudioManager
+  fullName: AudioManager
+- uid: MysticForestParkRanger.AudioManager.Instance*
+  commentId: Overload:MysticForestParkRanger.AudioManager.Instance
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_Instance
+  name: Instance
+  nameWithType: AudioManager.Instance
+  fullName: AudioManager.Instance
+- uid: MysticForestParkRanger.AudioManager.#ctor*
+  commentId: Overload:MysticForestParkRanger.AudioManager.#ctor
+  href: MysticForestParkRanger.AudioManager.html#AudioManager__ctor
+  name: AudioManager
+  nameWithType: AudioManager.AudioManager
+  fullName: AudioManager.AudioManager
+  nameWithType.vb: AudioManager.New
+  fullName.vb: AudioManager.New
+  name.vb: New
+- uid: System.Collections.Generic.Dictionary{System.String,FMOD.Studio.EventInstance}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,FMOD.Studio.EventInstance}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, EventInstance>
+  nameWithType: Dictionary<string, EventInstance>
+  fullName: System.Collections.Generic.Dictionary<string, FMOD.Studio.EventInstance>
+  nameWithType.vb: Dictionary(Of String, EventInstance)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, FMOD.Studio.EventInstance)
+  name.vb: Dictionary(Of String, EventInstance)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: FMOD.Studio.EventInstance
+    name: EventInstance
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: FMOD.Studio.EventInstance
+    name: EventInstance
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: MysticForestParkRanger.AudioManager.Item*
+  commentId: Overload:MysticForestParkRanger.AudioManager.Item
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_Item_System_String_
+  name: this
+  nameWithType: AudioManager.this
+  fullName: AudioManager.this
+  nameWithType.vb: AudioManager.this[]
+  fullName.vb: AudioManager.this[]
+  name.vb: this[]
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: FMOD.Studio.EventInstance
+  commentId: T:FMOD.Studio.EventInstance
+  parent: FMOD.Studio
+  name: EventInstance
+  nameWithType: EventInstance
+  fullName: FMOD.Studio.EventInstance
+- uid: FMOD.Studio
+  commentId: N:FMOD.Studio
+  name: FMOD.Studio
+  nameWithType: FMOD.Studio
+  fullName: FMOD.Studio
+  spec.csharp:
+  - uid: FMOD
+    name: FMOD
+  - name: .
+  - uid: FMOD.Studio
+    name: Studio
+  spec.vb:
+  - uid: FMOD
+    name: FMOD
+  - name: .
+  - uid: FMOD.Studio
+    name: Studio
+- uid: MysticForestParkRanger.AudioManager.RegisterSound*
+  commentId: Overload:MysticForestParkRanger.AudioManager.RegisterSound
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_RegisterSound_System_String_FMODUnity_EventReference_
+  name: RegisterSound
+  nameWithType: AudioManager.RegisterSound
+  fullName: AudioManager.RegisterSound
+- uid: FMODUnity.EventReference
+  commentId: T:FMODUnity.EventReference
+  parent: FMODUnity
+  name: EventReference
+  nameWithType: EventReference
+  fullName: FMODUnity.EventReference
+- uid: FMODUnity
+  commentId: N:FMODUnity
+  name: FMODUnity
+  nameWithType: FMODUnity
+  fullName: FMODUnity
+- uid: MysticForestParkRanger.AudioManager.UpdateSound*
+  commentId: Overload:MysticForestParkRanger.AudioManager.UpdateSound
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_UpdateSound_System_String_AudioManager_ModifySound_
+  name: UpdateSound
+  nameWithType: AudioManager.UpdateSound
+  fullName: AudioManager.UpdateSound
+- uid: MysticForestParkRanger.AudioManager.ModifySound
+  commentId: T:MysticForestParkRanger.AudioManager.ModifySound
+  href: AudioManager.html
+  name: AudioManager.ModifySound
+  nameWithType: AudioManager.ModifySound
+  fullName: AudioManager.ModifySound
+  spec.csharp:
+  - uid: MysticForestParkRanger.AudioManager
+    name: AudioManager
+    href: AudioManager.html
+  - name: .
+  - uid: MysticForestParkRanger.AudioManager.ModifySound
+    name: ModifySound
+    href: AudioManager.ModifySound.html
+  spec.vb:
+  - uid: MysticForestParkRanger.AudioManager
+    name: AudioManager
+    href: AudioManager.html
+  - name: .
+  - uid: MysticForestParkRanger.AudioManager.ModifySound
+    name: ModifySound
+    href: AudioManager.ModifySound.html
+- uid: MysticForestParkRanger.AudioManager.SoundExists*
+  commentId: Overload:MysticForestParkRanger.AudioManager.SoundExists
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_SoundExists_System_String_
+  name: SoundExists
+  nameWithType: AudioManager.SoundExists
+  fullName: AudioManager.SoundExists
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: MysticForestParkRanger.AudioManager.isPlaybackStatePaused*
+  commentId: Overload:MysticForestParkRanger.AudioManager.isPlaybackStatePaused
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_isPlaybackStatePaused_System_String_
+  name: isPlaybackStatePaused
+  nameWithType: AudioManager.isPlaybackStatePaused
+  fullName: AudioManager.isPlaybackStatePaused
+- uid: MysticForestParkRanger.AudioManager.PlayOneShot*
+  commentId: Overload:MysticForestParkRanger.AudioManager.PlayOneShot
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_PlayOneShot_FMODUnity_EventReference_UnityEngine_Vector3_
+  name: PlayOneShot
+  nameWithType: AudioManager.PlayOneShot
+  fullName: AudioManager.PlayOneShot
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: MysticForestParkRanger.AudioManager.StartFMODEvent*
+  commentId: Overload:MysticForestParkRanger.AudioManager.StartFMODEvent
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_StartFMODEvent_System_String_
+  name: StartFMODEvent
+  nameWithType: AudioManager.StartFMODEvent
+  fullName: AudioManager.StartFMODEvent
+- uid: MysticForestParkRanger.AudioManager.StopFMODEvent*
+  commentId: Overload:MysticForestParkRanger.AudioManager.StopFMODEvent
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_StopFMODEvent_System_String_
+  name: StopFMODEvent
+  nameWithType: AudioManager.StopFMODEvent
+  fullName: AudioManager.StopFMODEvent

@@ -154,71 +154,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 661024688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2790765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2790767}
-  - component: {fileID: 2790766}
-  m_Layer: 0
-  m_Name: Background Music
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2790766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2790765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1369212523
-      Data2: 1245799878
-      Data3: -1739917440
-      Data4: -1866025171
-    Path: event:/Music/mbiraGroove
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: areaShift
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!4 &2790767
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2790765}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.374423, y: 28.1, z: -3.6675014}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 633850151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &11573720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1624,13 +1559,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502913
+    rid: 3779462432521191500
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502913
+    - rid: 3779462432521191500
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 118204802}
@@ -1944,6 +1879,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 1}
@@ -3919,13 +3858,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191527
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191527
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 175505076}
@@ -4438,93 +4377,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9165661780565323801, guid: 180d13f35a61c664faab8da04eb1609b, type: 3}
   m_PrefabInstance: {fileID: 196165479}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &204375459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 204375460}
-  - component: {fileID: 204375462}
-  - component: {fileID: 204375461}
-  m_Layer: 0
-  m_Name: River Ambience (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &204375460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204375459}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.07, y: -11.11, z: -17.73}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 633850151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &204375461
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204375459}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.89, y: 10, z: 21}
-  m_Center: {x: -0.22336769, y: 0, z: -3.1126719}
---- !u!114 &204375462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204375459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  EventReference:
-    Guid:
-      Data1: -547373402
-      Data2: 1139666372
-      Data3: -1136105854
-      Data4: 226093232
-    Path: event:/Ambience/River
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: riverProx
-    Value: 1
-  OverrideAttenuation: 0
-  OverrideMinDistance: 7
-  OverrideMaxDistance: 20
 --- !u!43 &215796613
 Mesh:
   m_ObjectHideFlags: 0
@@ -6192,13 +6044,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502915
+    rid: 3779462432521191502
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502915
+    - rid: 3779462432521191502
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 311285679}
@@ -6512,6 +6364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -7045,13 +6901,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191533
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191533
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 320992928}
@@ -8371,13 +8227,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233862
+    rid: 3779462432521191511
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233862
+    - rid: 3779462432521191511
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 427120895}
@@ -8713,6 +8569,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 8, y: 0}
@@ -8792,13 +8652,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233863
+    rid: 3779462432521191512
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233863
+    - rid: 3779462432521191512
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 429848733}
@@ -9134,6 +8994,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 0}
@@ -9766,93 +9630,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1319011045}
   m_SourcePrefab: {fileID: 100100000, guid: 7fa6b1076c9c4ff4586ef2c8bf9e02e7, type: 3}
---- !u!1 &457175735
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 457175736}
-  - component: {fileID: 457175738}
-  - component: {fileID: 457175737}
-  m_Layer: 0
-  m_Name: River Ambience
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &457175736
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457175735}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.66, y: -4.92, z: 22.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 633850151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &457175737
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457175735}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 32.484287, y: 6.3167896, z: 17.931747}
-  m_Center: {x: -0.9298096, y: -0.75113773, z: -1.9835281}
---- !u!114 &457175738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457175735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  EventReference:
-    Guid:
-      Data1: -547373402
-      Data2: 1139666372
-      Data3: -1136105854
-      Data4: 226093232
-    Path: event:/Ambience/River
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: riverProx
-    Value: 1
-  OverrideAttenuation: 0
-  OverrideMinDistance: 7
-  OverrideMaxDistance: 20
 --- !u!1001 &459052227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10392,13 +10169,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191529
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191529
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 483097057}
@@ -10653,13 +10430,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233857
+    rid: 3779462432521191506
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233857
+    - rid: 3779462432521191506
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 496020528}
@@ -10995,6 +10772,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 1}
@@ -11523,13 +11304,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 0
   behavior:
-    rid: 1844733413571690548
+    rid: 3779462432521191541
+  behaviorType: Misc/Ink
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690548
+    - rid: 3779462432521191541
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 551383887}
@@ -12223,9 +12004,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 5
   behavior:
     rid: 3483134448140025856
+  behaviorType: 
   references:
     version: 2
     RefIds:
@@ -12429,34 +12210,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 4
   behavior:
-    rid: 5903353203081609234
+    rid: 3779462432521191540
+  behaviorType: Misc/ShowImage
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609234
-      type: {class: CustomInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
+    - rid: 3779462432521191540
+      type: {class: ShowImageInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 552429138}
-        onInteract:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 26547067}
-              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-              m_MethodName: SetActive
-              m_Mode: 6
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-        onUpdate:
-          methodName: 
-          targetObject: {fileID: 0}
+        imageToShow: {fileID: 0}
 --- !u!43 &554755811
 Mesh:
   m_ObjectHideFlags: 0
@@ -13847,43 +13611,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 167021715}
---- !u!1 &633850150
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 633850151}
-  m_Layer: 0
-  m_Name: Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &633850151
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633850150}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1979275, y: 15.45298, z: 33.269356}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2790767}
-  - {fileID: 1436109784}
-  - {fileID: 1673818095}
-  - {fileID: 457175736}
-  - {fileID: 678675219}
-  - {fileID: 204375460}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &644940714
 GameObject:
   m_ObjectHideFlags: 0
@@ -13935,13 +13662,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502912
+    rid: 3779462432521191499
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502912
+    - rid: 3779462432521191499
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 644940716}
@@ -14255,6 +13982,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 0}
@@ -15364,13 +15095,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191534
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191534
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 663600480}
@@ -15406,113 +15137,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.017295817, y: 0.029083138, z: 0.010190221}
   m_Center: {x: 0.0070366496, y: 0.01276427, z: 0.00008634711}
---- !u!1 &678675218
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 678675219}
-  - component: {fileID: 678675222}
-  - component: {fileID: 678675221}
-  - component: {fileID: 678675220}
-  m_Layer: 0
-  m_Name: River Ambience (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &678675219
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678675218}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.46, y: -7.29, z: 0.96}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 633850151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &678675220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678675218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  Emitters:
-  - Target: {fileID: 2790766}
-    Params:
-    - Name: areaShift
-      Value: 1
-  TriggerEvent: 3
---- !u!65 &678675221
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678675218}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 39.766953, y: 10, z: 21}
-  m_Center: {x: 0.77204514, y: 0, z: -0.03752899}
---- !u!114 &678675222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678675218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  EventReference:
-    Guid:
-      Data1: -547373402
-      Data2: 1139666372
-      Data3: -1136105854
-      Data4: 226093232
-    Path: event:/Ambience/River
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: riverProx
-    Value: 1
-  OverrideAttenuation: 0
-  OverrideMinDistance: 7
-  OverrideMaxDistance: 20
 --- !u!1001 &691013258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19141,13 +18765,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233864
+    rid: 3779462432521191513
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233864
+    - rid: 3779462432521191513
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 723444935}
@@ -19483,6 +19107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 1}
@@ -19852,13 +19480,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602205058498744
+    rid: 3779462432521191543
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602205058498744
+    - rid: 3779462432521191543
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 748013137}
@@ -20187,6 +19815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 2, y: 0}
@@ -22594,13 +22226,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191532
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191532
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 860598313}
@@ -24161,13 +23793,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233873
+    rid: 3779462432521191498
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233873
+    - rid: 3779462432521191498
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 975859362}
@@ -24186,6 +23818,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: 1, y: 0}
+  onGridUpdate:
+    methodName: RemoveFromGridKeepOccupied
+    targetObject: {fileID: 975859363}
   cells:
   - type: 1
     pos: {x: 0, y: 0}
@@ -26075,6 +25711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4364581695069736890, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -27435,13 +27072,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191536
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191536
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1202649463}
@@ -27828,13 +27465,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233861
+    rid: 3779462432521191510
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233861
+    - rid: 3779462432521191510
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1221117623}
@@ -28170,6 +27807,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 2}
@@ -28892,13 +28533,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191531
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191531
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1246585927}
@@ -29692,13 +29333,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502917
+    rid: 3779462432521191504
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502917
+    - rid: 3779462432521191504
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1269098511}
@@ -30012,6 +29653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 0}
@@ -30903,6 +30548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 2, y: 1}
@@ -30920,13 +30569,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 5903353203081609217
+    rid: 3779462432521191539
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609217
+    - rid: 3779462432521191539
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1319011046}
@@ -35863,91 +35512,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670977446527959989, guid: f988cf89c7dc8b645aa5469df424b2ad, type: 3}
   m_PrefabInstance: {fileID: 474769039}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1436109783
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1436109784}
-  - component: {fileID: 1436109786}
-  - component: {fileID: 1436109785}
-  m_Layer: 0
-  m_Name: Bird Ambience
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1436109784
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436109783}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 633850151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1436109785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436109783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  EventReference:
-    Guid:
-      Data1: 663557547
-      Data2: 1170806107
-      Data3: -1522502227
-      Data4: -115574016
-    Path: event:/Ambience/Birds
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 15
-  OverrideMaxDistance: 23
---- !u!135 &1436109786
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436109783}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 23
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &1442698632
 Mesh:
   m_ObjectHideFlags: 0
@@ -36630,13 +36194,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191530
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191530
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1474761694}
@@ -36731,13 +36295,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233860
+    rid: 3779462432521191509
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233860
+    - rid: 3779462432521191509
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1485915765}
@@ -37073,6 +36637,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 4}
@@ -37217,13 +36785,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233859
+    rid: 3779462432521191508
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233859
+    - rid: 3779462432521191508
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1496633949}
@@ -37559,6 +37127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 2}
@@ -37803,13 +37375,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233858
+    rid: 3779462432521191507
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233858
+    - rid: 3779462432521191507
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1505223911}
@@ -38145,6 +37717,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -42858,13 +42434,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191528
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191528
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1537095165}
@@ -43886,13 +43462,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 0
   behavior:
-    rid: 1844733413571690548
+    rid: 3779462432521191542
+  behaviorType: Misc/Ink
   references:
     version: 2
     RefIds:
-    - rid: 1844733413571690548
+    - rid: 3779462432521191542
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1644434817}
@@ -44602,13 +44178,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 3483134540906233856
+    rid: 3779462432521191505
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 3483134540906233856
+    - rid: 3779462432521191505
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1647653052}
@@ -44944,6 +44520,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 0}
@@ -44983,111 +44563,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4214182703681800112, guid: 245b0e1139defa3419c4e9d6f10054d6, type: 3}
   m_PrefabInstance: {fileID: 1580307896}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1673818094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1673818095}
-  - component: {fileID: 1673818098}
-  - component: {fileID: 1673818097}
-  - component: {fileID: 1673818096}
-  m_Layer: 0
-  m_Name: Ocean Ambience
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1673818095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673818094}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.36, y: -15.611, z: -52.55}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 633850151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1673818096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673818094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  Emitters:
-  - Target: {fileID: 2790766}
-    Params:
-    - Name: areaShift
-      Value: 0
-  TriggerEvent: 3
---- !u!114 &1673818097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673818094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  EventReference:
-    Guid:
-      Data1: -1346262031
-      Data2: 1306834974
-      Data3: 1022944413
-      Data4: 1833252045
-    Path: event:/Ambience/Ocean
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 14
-  OverrideMaxDistance: 35
---- !u!135 &1673818098
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673818094}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 35
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1688518398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45516,13 +44991,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 0
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191535
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191535
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1696768323}
@@ -46671,13 +46146,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502916
+    rid: 3779462432521191503
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502916
+    - rid: 3779462432521191503
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1816920442}
@@ -46991,6 +46466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 0}
@@ -48970,13 +48449,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 1
   behavior:
-    rid: 440602220638502914
+    rid: 3779462432521191501
+  behaviorType: Grid/Pushable
   references:
     version: 2
     RefIds:
-    - rid: 440602220638502914
+    - rid: 3779462432521191501
       type: {class: PushableInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1949979993}
@@ -49290,6 +48769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 2}
@@ -49372,13 +48855,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191515
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191515
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1956487654}
@@ -50296,13 +49779,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191538
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191538
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2018276687}
@@ -52011,13 +51494,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191537
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191537
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2107580794}
@@ -52251,13 +51734,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionEnabled: 1
-  type: 6
   behavior:
-    rid: 5903353203081609222
+    rid: 3779462432521191516
+  behaviorType: Misc/Teleport
   references:
     version: 2
     RefIds:
-    - rid: 5903353203081609222
+    - rid: 3779462432521191516
       type: {class: TeleportInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 2112602573}
@@ -52925,7 +52408,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1133121033}
   - {fileID: 691013258}
-  - {fileID: 633850151}
   - {fileID: 913734505}
   - {fileID: 1634672543}
   - {fileID: 1128842484}

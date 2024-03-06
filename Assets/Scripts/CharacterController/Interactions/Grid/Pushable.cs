@@ -7,7 +7,7 @@ namespace Interactions.Behaviors {
     /// <summary>
     /// Push an object around.
     /// </summary>
-    [Serializable]
+    [Serializable, InteractionType("Grid/Pushable")]
     public class PushableInteraction : InteractionBehavior {
         [SerializeField, HideInInspector]
         GridObject gridObject;
@@ -83,7 +83,10 @@ namespace Interactions.Behaviors {
                                       // Force InteractionManager to call EndInteraction.
                 isPushing = false;
             }
+        }
 
+        public override bool CanInteract(Interaction other = null) {
+            return base.CanInteract(other) && gridObject != null;
         }
 
         public override void EndInteraction() {
@@ -91,9 +94,7 @@ namespace Interactions.Behaviors {
         }
 
         // Since Coroutines can't be run from non MonoBehaviours.
-        protected static IEnumerator PushUpdate(PushableInteraction p, Vector2Int dir) {
-            // Because the grid object has already been moved to the new cell, we use -dir to calculate offset:
-            var toAdd = p.gridObject.GetSomeAdjacent(Vector2Int.zero) - p.gridObject.GetSomeAdjacent(-dir);
+        protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd) {
             var targetPos = p.gridObject.transform.position + toAdd;
 
             // FIXME: This. It's not a great solution for snapping to ground.
@@ -108,26 +109,35 @@ namespace Interactions.Behaviors {
             var playerGroundDist = playerGround - playerTargetPos;
             playerTargetPos += playerGroundDist;
 
-            var originalPos = p.gridObject.transform.position;
+            var originalPos = transformToMove.position;
             var originalPlayerPos = p.player.transform.position;
 
             float timer = 0;
             while (timer < 1f) {
-                p.gridObject.transform.position = Vector3.Lerp(originalPos, targetPos, timer);
+                transformToMove.position = Vector3.Lerp(originalPos, targetPos, timer);
                 p.player.transform.position = Vector3.Lerp(originalPlayerPos, playerTargetPos, timer);
                 timer += Time.deltaTime * p.pushSpeed;
                 yield return new WaitForEndOfFrame();
             }
-            p.gridObject.transform.position = targetPos;
+            transformToMove.position = targetPos;
             p.player.transform.position = playerTargetPos;
 
             // Wait for the next update to roll around before resetting our pushing ability.
             yield return new WaitForEndOfFrame();
+            if (p.gridObject == null) {
+                p.isPushing = false;
+            }
             p.pushEnabled = true;
         }
 
         protected void Push(Vector3 dir) {
             pushEnabled = false;
+
+            // Because gridObject may get destroyed while we're moving it: 
+            Transform gridObjectTransform = gridObject.transform;
+
+            dir = gridObject.GetGridDirectionFromWorld(dir);
+
             var dirToMove = new Vector2Int(0, 0);
             var x = Mathf.Abs(dir.x);
             var z = Mathf.Abs(dir.z);
@@ -136,8 +146,11 @@ namespace Interactions.Behaviors {
             } else {
                 dirToMove.y = Mathf.RoundToInt(dir.z);
             }
-            if (dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
-                interactionObject.StartCoroutine(PushUpdate(this, dirToMove));
+
+            var target = gridObject.GetSomeAdjacent(dirToMove);
+            var start = gridObject.GetSomeAdjacent(Vector2Int.zero);
+            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
+                interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s));
             } else {
                 pushEnabled = true;
             }
