@@ -1116,6 +1116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 0}
@@ -2030,6 +2034,111 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &70173601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70173602}
+  - component: {fileID: 70173605}
+  - component: {fileID: 70173604}
+  - component: {fileID: 70173603}
+  m_Layer: 0
+  m_Name: sfxOcean
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &70173602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70173601}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.3399215, z: 0.0000000011059454, w: 0.9404538}
+  m_LocalPosition: {x: -28.744663, y: -7.099983, z: 5.1972017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1884130423}
+  m_LocalEulerAnglesHint: {x: 0, y: 39.744, z: 0}
+--- !u!114 &70173603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70173601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1884130422}
+    Params:
+    - Name: musicShift
+      Value: 0
+  TriggerEvent: 3
+--- !u!114 &70173604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70173601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1346262031
+      Data2: 1306834974
+      Data3: 1022944413
+      Data4: 1833252045
+    Path: event:/Ambience/Ocean
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 24.270424
+  OverrideMaxDistance: 38.869377
+--- !u!65 &70173605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70173601}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 33.47048, y: 9.334325, z: 36.479427}
+  m_Center: {x: 0.9363847, y: 3.3023546, z: 19.951956}
 --- !u!4 &71788295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9165661780565323801, guid: 180d13f35a61c664faab8da04eb1609b, type: 3}
@@ -6004,6 +6113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -9622,6 +9735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 8, y: 0}
@@ -10628,7 +10745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327487888}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13394435, y: -0.8334232, z: 0.23063795, w: 0.4840154}
+  m_LocalRotation: {x: 0.09564858, y: -0.8863447, z: 0.21164636, w: 0.40056255}
   m_LocalPosition: {x: 39.88421, y: 19.04, z: 38.069305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14450,7 +14567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549002009}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1326071, y: -0.86323404, z: 0.2958348, w: 0.38694215}
+  m_LocalRotation: {x: 0.07182296, y: -0.92752564, z: 0.24068995, w: 0.27677783}
   m_LocalPosition: {x: 31.9138, y: 16.2, z: 22.11112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15235,6 +15352,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 1}
@@ -15940,7 +16061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584300272}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04963474, y: -0.6759783, z: 0.045722075, w: 0.73382515}
+  m_LocalRotation: {x: 0.040960986, y: -0.7436179, z: 0.0457499, w: 0.665779}
   m_LocalPosition: {x: 67.03, y: 10.14, z: -5.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15987,6 +16108,91 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 941219234}
+--- !u!1 &587689519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 587689520}
+  - component: {fileID: 587689522}
+  - component: {fileID: 587689521}
+  m_Layer: 0
+  m_Name: sfxRiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &587689520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587689519}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.08224824, z: 0.0000000037252903, w: 0.9966119}
+  m_LocalPosition: {x: 44.4, y: 1, z: 49.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1884130423}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.436, z: 0}
+--- !u!114 &587689521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587689519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -547373402
+      Data2: 1139666372
+      Data3: -1136105854
+      Data4: 226093232
+    Path: event:/Ambience/River
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10.99765
+  OverrideMaxDistance: 23.275484
+--- !u!65 &587689522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587689519}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 46.002728, y: 9.6, z: 25.706059}
+  m_Center: {x: 0.0024431127, y: 0.00000003763171, z: 5.2716904}
 --- !u!43 &593302385
 Mesh:
   m_ObjectHideFlags: 0
@@ -17877,6 +18083,91 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c91627cb183d148a3591c7277e250f, type: 3}
+--- !u!1 &635192889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635192890}
+  - component: {fileID: 635192892}
+  - component: {fileID: 635192891}
+  m_Layer: 0
+  m_Name: sfxRiver (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &635192890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635192889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000009313226, y: -0.8792791, z: 0.000000007450581, w: 0.4763071}
+  m_LocalPosition: {x: 40, y: -2.4, z: 8.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1884130423}
+  m_LocalEulerAnglesHint: {x: 0, y: -123.111, z: 0}
+--- !u!114 &635192891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635192889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -547373402
+      Data2: 1139666372
+      Data3: -1136105854
+      Data4: 226093232
+    Path: event:/Ambience/River
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10.247303
+  OverrideMaxDistance: 24.287352
+--- !u!65 &635192892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635192889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 47.787697, y: 9.6, z: 15.57193}
+  m_Center: {x: -2.598372, y: 0.0000000012090533, z: 2.2744782}
 --- !u!1001 &635950990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18239,6 +18530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 1}
@@ -19853,6 +20148,14 @@ MonoBehaviour:
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 715347959}
+        characterVoiceRef:
+          Guid:
+            Data1: 366031315
+            Data2: 1219917500
+            Data3: -125200722
+            Data4: 1444540790
+          Path: event:/Voice/dugongVoice
+        emotionType: 2
         inkKnot: interact_Dugong
 --- !u!64 &715347960
 MeshCollider:
@@ -20699,7 +21002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716681214}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05342831, y: -0.9423438, z: 0.27496484, w: 0.18310645}
+  m_LocalRotation: {x: 0.034701407, y: -0.96200347, z: 0.22771361, w: 0.14660025}
   m_LocalPosition: {x: 23.47219, y: 24.13, z: 54.520676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23246,7 +23549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814305499}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.037210535, y: 0.92674786, z: -0.36145794, w: 0.0954047}
+  m_LocalRotation: {x: 0.019281054, y: 0.9612215, z: -0.26614317, w: 0.06963682}
   m_LocalPosition: {x: -0.6904721, y: 20.64, z: 43.365723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -41063,6 +41366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 4}
@@ -43673,6 +43980,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 1}
@@ -44094,6 +44405,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 2}
@@ -45311,6 +45626,14 @@ MonoBehaviour:
       type: {class: InkInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
       data:
         interactionObject: {fileID: 1198443677}
+        characterVoiceRef:
+          Guid:
+            Data1: 366031315
+            Data2: 1219917500
+            Data3: -125200722
+            Data4: 1444540790
+          Path: event:/Voice/dugongVoice
+        emotionType: 3
         inkKnot: interact_Dugong
 --- !u!64 &1198443678
 MeshCollider:
@@ -46039,6 +46362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 0}
@@ -53685,6 +54012,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -54951,6 +55282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 0}
@@ -60353,6 +60688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 2}
@@ -63571,6 +63910,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 2}
@@ -63941,6 +64284,111 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1786841326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786841327}
+  - component: {fileID: 1786841329}
+  - component: {fileID: 1786841328}
+  - component: {fileID: 1786841330}
+  m_Layer: 0
+  m_Name: sfxRiver (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786841327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786841326}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000000018626451, y: -0.18217409, z: 0.0000000055879354, w: 0.98326635}
+  m_LocalPosition: {x: 47.31, y: 1, z: 31.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1884130423}
+  m_LocalEulerAnglesHint: {x: 0, y: -20.993, z: 0}
+--- !u!114 &1786841328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786841326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -547373402
+      Data2: 1139666372
+      Data3: -1136105854
+      Data4: 226093232
+    Path: event:/Ambience/River
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10.373825
+  OverrideMaxDistance: 23.141556
+--- !u!65 &1786841329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786841326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 48.372295, y: 9.6, z: 13.144724}
+  m_Center: {x: -1.7626618, y: 0.0000000055845875, z: -0.09912553}
+--- !u!114 &1786841330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786841326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1884130422}
+    Params:
+    - Name: musicShift
+      Value: 1
+  TriggerEvent: 3
 --- !u!1 &1795737077
 GameObject:
   m_ObjectHideFlags: 0
@@ -66191,6 +66639,75 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1884130421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884130423}
+  - component: {fileID: 1884130422}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1884130422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884130421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1369212523
+      Data2: 1245799878
+      Data3: -1739917440
+      Data4: -1866025171
+    Path: event:/Music/mbiraGroove
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1884130423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884130421}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.034928776, y: -0.33593476, z: -0.0088635, w: 0.94119567}
+  m_LocalPosition: {x: 22.32, y: 7.24, z: -4.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 70173602}
+  - {fileID: 1911394216}
+  - {fileID: 2014322075}
+  - {fileID: 587689520}
+  - {fileID: 1786841327}
+  - {fileID: 635192890}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1885677490
 GameObject:
   m_ObjectHideFlags: 0
@@ -66262,6 +66779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 0}
@@ -66791,6 +67312,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1779868671328588405, guid: d82e4262914659449a7aacab279d6563, type: 3}
   m_PrefabInstance: {fileID: 1911379129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1911394215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911394216}
+  - component: {fileID: 1911394219}
+  - component: {fileID: 1911394218}
+  - component: {fileID: 1911394217}
+  m_Layer: 0
+  m_Name: sfxOcean (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1911394216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911394215}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.08224824, z: 0.0000000037252903, w: 0.9966119}
+  m_LocalPosition: {x: 46.53, y: -7.1, z: -34.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1884130423}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.436, z: 0}
+--- !u!114 &1911394217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911394215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1884130422}
+    Params:
+    - Name: musicShift
+      Value: 0
+  TriggerEvent: 3
+--- !u!114 &1911394218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911394215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1346262031
+      Data2: 1306834974
+      Data3: 1022944413
+      Data4: 1833252045
+    Path: event:/Ambience/Ocean
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 11.748633
+  OverrideMaxDistance: 29.347057
+--- !u!65 &1911394219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911394215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 33.47048, y: 10.57536, z: 19.826708}
+  m_Center: {x: 0.93641627, y: 3.9227934, z: 17.87862}
 --- !u!1 &1916212980
 GameObject:
   m_ObjectHideFlags: 0
@@ -69047,6 +69673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 0}
@@ -70956,6 +71586,69 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2014322074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2014322075}
+  - component: {fileID: 2014322077}
+  m_Layer: 0
+  m_Name: sfxBirds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2014322075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014322074}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.08224824, z: 0.0000000037252903, w: 0.9966119}
+  m_LocalPosition: {x: 7.8, y: 6.9, z: 52.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1884130423}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.436, z: 0}
+--- !u!114 &2014322077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014322074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 663557547
+      Data2: 1170806107
+      Data3: -1522502227
+      Data4: -115574016
+    Path: event:/Ambience/Birds
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 19.4
+  OverrideMaxDistance: 28
 --- !u!1001 &2023193832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74825,6 +75518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 0}
@@ -74866,6 +75563,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 2}
@@ -75113,6 +75814,7 @@ SceneRoots:
   - {fileID: 1338255370}
   - {fileID: 1125801207}
   - {fileID: 2134173584}
+  - {fileID: 1884130423}
   - {fileID: 1051481101}
   - {fileID: 265234076}
   - {fileID: 1230829964}
