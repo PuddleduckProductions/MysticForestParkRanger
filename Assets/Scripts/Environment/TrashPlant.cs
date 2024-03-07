@@ -14,6 +14,9 @@ public class TrashPlant : MonoBehaviour
                 if (c.TryGetComponent(out Interaction i)) {
                     i.EndInteraction();
                 }
+                if (c.TryGetComponent(out GridObject g)) {
+                    g.RemoveFromGridFull();
+                }
                 Destroy(c.gameObject);
             }
         }
