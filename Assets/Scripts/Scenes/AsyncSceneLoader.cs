@@ -10,6 +10,7 @@ public class AsyncSceneLoader : MonoBehaviour
     public Vector3 rotation;
 
     private IEnumerator SceneLoading() {
+        var old = SceneManager.GetActiveScene();
         var loader = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loader;
         var scene = SceneManager.GetSceneByName(sceneToLoad);
@@ -17,15 +18,16 @@ public class AsyncSceneLoader : MonoBehaviour
         var objs = scene.GetRootGameObjects();
         var parent = new GameObject("TransformParent");
         foreach (var obj in objs ) {
-            if (obj.name == "PlayerObjects" || obj.name == "UI") {
+            if (obj.name == "PlayerObjects" || obj.name == "UI" || obj.TryGetComponent(out Light l)) {
                 obj.SetActive(false);
             }
             obj.transform.SetParent(parent.transform);
         }
         parent.transform.position += offset;
         parent.transform.rotation = Quaternion.Euler(rotation);
+        SceneManager.SetActiveScene(old);
     }
-    private void OnTriggerEnter(Collider other) {
+    private void Awake() {
         StartCoroutine(SceneLoading());
     }
 }
