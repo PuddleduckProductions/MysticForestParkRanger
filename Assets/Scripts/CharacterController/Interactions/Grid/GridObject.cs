@@ -147,5 +147,13 @@ namespace Interactions {
         public Vector3 GetGridDirectionFromWorld(Vector3 dir) {
             return manager.transform.InverseTransformDirection(dir);
         }
+
+        public void OnDrawGizmos() {
+            Gizmos.color = Color.green;
+            foreach (var cell in cells) {
+                var box = manager.CellToWorld(cell);
+                Gizmos.DrawLineList(box.edges);
+            }
+        }
     }
 }
