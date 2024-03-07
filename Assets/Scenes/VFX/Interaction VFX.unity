@@ -1581,11 +1581,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.07006504
+      value: 0.070065066
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.03299108
+      value: -0.0329911
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1597,11 +1597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.07006504
+      value: 0.070065066
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.03299108
+      value: -0.0329911
       objectReference: {fileID: 0}
     - target: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   cells:
   - type: 0
     pos: {x: 0, y: 0}
-  - type: 0
+  - type: 2
     pos: {x: 1, y: 0}
   - type: 0
     pos: {x: 2, y: 0}
@@ -2309,7 +2309,7 @@ MonoBehaviour:
     pos: {x: 0, y: 1}
   - type: 0
     pos: {x: 1, y: 1}
-  - type: 0
+  - type: 2
     pos: {x: 2, y: 1}
   - type: 0
     pos: {x: 0, y: 2}
@@ -2568,7 +2568,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1810949152}
-  - component: {fileID: 1810949155}
   m_Layer: 0
   m_Name: Pushable Interaction
   m_TagString: Untagged
@@ -2592,27 +2591,6 @@ Transform:
   - {fileID: 1628795395}
   m_Father: {fileID: 2106478454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1810949155
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810949151}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1923905494
 GameObject:
   m_ObjectHideFlags: 0
