@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6689,7 +6689,7 @@ GameObject:
   - component: {fileID: 240503053}
   - component: {fileID: 240503052}
   - component: {fileID: 240503051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10147,7 +10147,7 @@ GameObject:
   - component: {fileID: 319277710}
   - component: {fileID: 319277709}
   - component: {fileID: 319277708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Beach & Grass Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22941,6 +22941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wood (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8795688701413032358, guid: dd570f6bc0a6b044e9daa6c82496a5b9, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24894,7 +24898,7 @@ GameObject:
   - component: {fileID: 867376025}
   - component: {fileID: 867376024}
   - component: {fileID: 867376023}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Riverbank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35419,7 +35423,7 @@ GameObject:
   - component: {fileID: 903960629}
   - component: {fileID: 903960628}
   - component: {fileID: 903960627}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Beach & Grass Ramp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35827,7 +35831,7 @@ GameObject:
   - component: {fileID: 911879436}
   - component: {fileID: 911879435}
   - component: {fileID: 911879434}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ocean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42628,6 +42632,10 @@ PrefabInstance:
       propertyPath: cameras.Array.data[6]
       value: 
       objectReference: {fileID: 2070271747}
+    - target: {fileID: 8426180548669260447, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: floorLayer.m_Bits
+      value: 31744
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
