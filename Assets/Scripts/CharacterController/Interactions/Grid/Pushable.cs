@@ -3,6 +3,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
+using FMOD.Studio;
 
 namespace Interactions.Behaviors {
     /// <summary>
@@ -46,6 +48,16 @@ namespace Interactions.Behaviors {
         /// Whether or not the player is currently allowed to push
         /// </summary>
         protected bool pushEnabled = true;
+
+        /// <summary>
+        /// FMOD event reference
+        /// </summary
+        //public EventInstance dragSound;
+        [SerializeField]
+        public EventReference dragSoundRef;
+        [SerializeField]
+        [Range(0, 2)]
+        public int materialType;
 
         Vector3 groundOffset = Vector3.zero;
         Vector3 playerGroundOffset = Vector3.zero;
@@ -165,6 +177,8 @@ namespace Interactions.Behaviors {
             var start = gridObject.GetSomeAdjacent(Vector2Int.zero);
             if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.MoveIsValid(dirToMove)) {
                 interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s, dirToMove));
+                //FMOD
+                AudioManager.Instance.PlayOneShotWithParameters("dragSound", dragSoundRef, "materialType", (float)materialType);
             } else {
                 pushEnabled = true;
             }

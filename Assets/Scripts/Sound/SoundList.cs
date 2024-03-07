@@ -9,6 +9,13 @@ public class SoundList : ScriptableObject
     protected Dictionary<string, EventReference> eventDict = new Dictionary<string, EventReference>();
     public List<EventReference> events = new List<EventReference>();
 
+    // Music & Ambience are played in Event Emitters attached to game objects on and within the 'AudioManager' game object
+
+    // SFX
+    //EventReference playerFootsteps;
+    //EventReference dugongVoice;
+    //EventReference dragOnSand;
+
     public EventReference this[string name] {
         get {
             return eventDict[name];
