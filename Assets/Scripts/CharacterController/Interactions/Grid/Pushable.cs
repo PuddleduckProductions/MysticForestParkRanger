@@ -132,10 +132,12 @@ namespace Interactions.Behaviors {
                 timer += Time.fixedDeltaTime * p.pushSpeed;
                 yield return new WaitForFixedUpdate();
                 var colliders = Physics.OverlapSphere(p.player.transform.position, 1f);
+                var interactionId = p.interactionObject.gameObject.GetInstanceID();
                 foreach (var collider in colliders) {
                     var colliderID = collider.gameObject.GetInstanceID();
+                    var parentId = collider.transform.parent.gameObject.GetInstanceID();
                     if (!collider.isTrigger && collider.tag != "Navmesh" && 
-                        p.interactionObject.gameObject.GetInstanceID() != colliderID && p.player.gameObject.GetInstanceID() != colliderID) {
+                        interactionId != colliderID && interactionId != parentId && p.player.gameObject.GetInstanceID() != colliderID) {
                         p.ResetPushing(originalPos, originalPlayerPos, transformToMove);
                         yield break;
                     }
