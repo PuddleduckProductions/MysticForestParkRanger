@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Greyboxes/Old Builds/Level 1 Dugong Greybox Ver 2.unity
     guid: 94a92eb0b3441934ebef5fd434d80ee6
+  - enabled: 1
+    path: Assets/Scenes/Greyboxes/level 3.unity
+    guid: d028c4985b980be4b89179a9b4c86366
   m_configObjects: {}
