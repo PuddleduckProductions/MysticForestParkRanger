@@ -23,8 +23,8 @@ public class AsyncSceneLoader : MonoBehaviour
             }
             obj.transform.SetParent(parent.transform);
         }
-        parent.transform.position += offset;
-        parent.transform.rotation = Quaternion.Euler(rotation);
+        parent.transform.position += this.transform.TransformPoint(offset);
+        parent.transform.rotation = Quaternion.Euler(rotation + this.transform.eulerAngles);
         SceneManager.SetActiveScene(old);
     }
     private void Awake() {
