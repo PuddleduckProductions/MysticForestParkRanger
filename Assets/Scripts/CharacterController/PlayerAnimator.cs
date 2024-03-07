@@ -37,7 +37,7 @@ public class PlayerAnimator : MonoBehaviour
             case null:
             default: //If the value is null or something else, we can stick with regular animations
                 var xzVel = new Vector3(controller.velocity.x, 0, controller.velocity.z);
-                bool isWalking = xzVel.magnitude > 0.1f;
+                bool isWalking = xzVel.magnitude > 2f;
                 animator.SetBool("walking", isWalking);
 
                 if (isWalking) {
