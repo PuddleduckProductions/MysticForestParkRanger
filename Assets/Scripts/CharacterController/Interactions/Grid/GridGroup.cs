@@ -200,8 +200,15 @@ namespace Interactions {
         /// Called by <see cref="GridObject.Move(Vector3)"/>, which you should call instead of this function.
         /// </summary>
         /// <param name="direction">The direction to move in. Assumes no diagonals.</param>
+        public void MoveObject(GridObject gridObject, Vector2Int direction) {
+            MoveCells(ref gridObject.cells, direction);
+        }
+
+        /// <summary>
+        /// Test if the movement of a grid object is valid.
+        /// </summary>
         /// <returns>Whether or not the move was successful.</returns>
-        public bool MoveObject(GridObject gridObject, Vector2Int direction) {
+        public bool MoveObjectIsValid(GridObject gridObject, Vector2Int direction) {
             // Test the edges of a move.
             int testMin = 0;
             int testMax = 0;
@@ -239,9 +246,8 @@ namespace Interactions {
                 }
             }
 
-            MoveCells(ref gridObject.cells, direction);
             return true;
-        } 
+        }
 
         /// <summary>
         /// Return whether or not the given move from one cell to another would be valid.

@@ -2,6 +2,7 @@ using Interactions.Behaviors;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Interactions.Behaviors {
     /// <summary>
@@ -49,15 +50,13 @@ namespace Interactions.Behaviors {
         Vector3 groundOffset = Vector3.zero;
         Vector3 playerGroundOffset = Vector3.zero;
 
-        Vector3 pushableGetGround(Vector3 inPos) {
-            RaycastHit[] hits = Physics.RaycastAll(inPos, Vector3.down);
-            foreach (var hit in hits) {
-                if (hit.collider.gameObject != interactionObject.gameObject) {
-                    return hit.point;
-                }
+        float pushableGetGround(Vector3 inPos) {
+            if(NavMesh.SamplePosition(inPos, out NavMeshHit hit, 5.0f, NavMesh.AllAreas)) {
+                return hit.position.y;
             }
+
             Debug.LogError("Could not get ground.");
-            return inPos;
+            return inPos.y;
         }
 
         /// <summary>
@@ -76,8 +75,8 @@ namespace Interactions.Behaviors {
 
                 controller.moveEnabled = false;
 
-                groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
-                playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
+                groundOffset = interactionObject.transform.position - Vector3.up * pushableGetGround(interactionObject.transform.position);
+                playerGroundOffset = player.transform.position - Vector3.up * pushableGetGround(player.transform.position);
 
             } else if (pushEnabled) { // Are we in the process of moving? Don't allow releasing push.
                                       // Force InteractionManager to call EndInteraction.
@@ -93,28 +92,21 @@ namespace Interactions.Behaviors {
             controller.moveEnabled = true;
         }
 
-        bool isPlayerColliding = false;
-        void PlayerCollision() {
-            if (!pushEnabled) {
-                isPlayerColliding = true;
-            }
+        void ResetPushing(Vector3 originalPos, Vector3 originalPlayerPos, Transform transformToMove) {
+            isPushing = false;
+            pushEnabled = false;
+            transformToMove.position = originalPos;
+            player.transform.position = originalPlayerPos;
         }
 
         // Since Coroutines can't be run from non MonoBehaviours.
         protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd, Vector2Int dirToMove) {
             var targetPos = p.gridObject.transform.position + toAdd;
-
-            // FIXME: This. It's not a great solution for snapping to ground.
-            // Should be navmesh.
-            var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
-            var groundDist = ground - targetPos;
-            targetPos += groundDist;
+            targetPos = new Vector3(targetPos.x, p.pushableGetGround(targetPos), targetPos.z);
 
 
             var playerTargetPos = p.player.transform.position + toAdd;
-            var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
-            var playerGroundDist = playerGround - playerTargetPos;
-            playerTargetPos += playerGroundDist;
+            playerTargetPos = new Vector3(playerTargetPos.x, p.pushableGetGround(playerTargetPos), playerTargetPos.z);
 
             var originalPos = transformToMove.position;
             var originalPlayerPos = p.player.transform.position;
@@ -128,12 +120,9 @@ namespace Interactions.Behaviors {
                 var colliders = Physics.OverlapSphere(p.player.transform.position, 1f);
                 foreach (var collider in colliders) {
                     var colliderID = collider.gameObject.GetInstanceID();
-                    if (!collider.isTrigger && collider.tag != "Ground" && 
+                    if (!collider.isTrigger && collider.tag != "Navmesh" && 
                         p.interactionObject.gameObject.GetInstanceID() != colliderID && p.player.gameObject.GetInstanceID() != colliderID) {
-                        p.isPushing = false;
-                        p.pushEnabled = false;
-                        transformToMove.position = originalPos;
-                        p.player.transform.position = originalPlayerPos;
+                        p.ResetPushing(originalPos, originalPlayerPos, transformToMove);
                         yield break;
                     }
                 }
@@ -170,7 +159,7 @@ namespace Interactions.Behaviors {
 
             var target = gridObject.GetSomeAdjacent(dirToMove);
             var start = gridObject.GetSomeAdjacent(Vector2Int.zero);
-            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero) {
+            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.MoveIsValid(dirToMove)) {
                 interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s, dirToMove));
             } else {
                 pushEnabled = true;
