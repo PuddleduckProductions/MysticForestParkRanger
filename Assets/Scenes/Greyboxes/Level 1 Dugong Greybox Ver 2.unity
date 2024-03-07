@@ -6570,7 +6570,7 @@ GameObject:
   - component: {fileID: 240503051}
   m_Layer: 0
   m_Name: River
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10020,7 +10020,7 @@ GameObject:
   - component: {fileID: 319277708}
   m_Layer: 0
   m_Name: Beach & Grass Ramp
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24573,7 +24573,7 @@ GameObject:
   - component: {fileID: 867376023}
   m_Layer: 0
   m_Name: Riverbank
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35098,7 +35098,7 @@ GameObject:
   - component: {fileID: 903960627}
   m_Layer: 0
   m_Name: Beach & Grass Ramp (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

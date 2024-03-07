@@ -93,8 +93,15 @@ namespace Interactions.Behaviors {
             controller.moveEnabled = true;
         }
 
+        bool isPlayerColliding = false;
+        void PlayerCollision() {
+            if (!pushEnabled) {
+                isPlayerColliding = true;
+            }
+        }
+
         // Since Coroutines can't be run from non MonoBehaviours.
-        protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd) {
+        protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd, Vector2Int dirToMove) {
             var targetPos = p.gridObject.transform.position + toAdd;
 
             // FIXME: This. It's not a great solution for snapping to ground.
@@ -116,14 +123,28 @@ namespace Interactions.Behaviors {
             while (timer < 1f) {
                 transformToMove.position = Vector3.Lerp(originalPos, targetPos, timer);
                 p.player.transform.position = Vector3.Lerp(originalPlayerPos, playerTargetPos, timer);
-                timer += Time.deltaTime * p.pushSpeed;
-                yield return new WaitForEndOfFrame();
+                timer += Time.fixedDeltaTime * p.pushSpeed;
+                yield return new WaitForFixedUpdate();
+                var colliders = Physics.OverlapSphere(p.player.transform.position, 1f);
+                foreach (var collider in colliders) {
+                    var colliderID = collider.gameObject.GetInstanceID();
+                    if (!collider.isTrigger && collider.tag != "Ground" && 
+                        p.interactionObject.gameObject.GetInstanceID() != colliderID && p.player.gameObject.GetInstanceID() != colliderID) {
+                        p.isPushing = false;
+                        p.pushEnabled = false;
+                        transformToMove.position = originalPos;
+                        p.player.transform.position = originalPlayerPos;
+                        yield break;
+                    }
+                }
             }
             transformToMove.position = targetPos;
             p.player.transform.position = playerTargetPos;
 
             // Wait for the next update to roll around before resetting our pushing ability.
             yield return new WaitForEndOfFrame();
+            // Finish by updating the actual grid position:
+            p.gridObject.Move(dirToMove);
             if (p.gridObject == null) {
                 p.isPushing = false;
             }
@@ -149,8 +170,8 @@ namespace Interactions.Behaviors {
 
             var target = gridObject.GetSomeAdjacent(dirToMove);
             var start = gridObject.GetSomeAdjacent(Vector2Int.zero);
-            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
-                interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s));
+            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero) {
+                interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s, dirToMove));
             } else {
                 pushEnabled = true;
             }
