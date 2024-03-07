@@ -79,12 +79,16 @@ namespace Interactions {
             return ref cells[idx.y * gridDimensions.x + idx.x];
         }
 
-        public Box CellToWorld(Cell cell) {
+        public Box CellToWorld(Cell cell, float size = 1.0f) {
             var corner = transform.position + gridOffset + new Vector3(cell.pos.x * (cellSize.x + cellSpacing.x), 0, cell.pos.y * (cellSize.z + cellSpacing.z));
 
-            var forward = Vector3.forward * cellSize.z;
-            var up = Vector3.up * cellSize.y;
-            var right = Vector3.right * cellSize.x;
+            var forward = Vector3.forward * cellSize.z * size;
+            var up = Vector3.up * cellSize.y * size;
+            var right = Vector3.right * cellSize.x * size;
+
+            corner += (Vector3.forward * cellSize.z - forward) / 2;
+            corner += (Vector3.up * cellSize.y - up) / 2;
+            corner += (Vector3.right * cellSize.x - right) / 2;
 
             var edges = new Vector3[] {
                 // Left face
@@ -265,5 +269,18 @@ namespace Interactions {
             }
         }
 
+        private void OnDrawGizmos() {
+            #if UNITY_EDITOR
+            if (UnityEditor.Selection.activeGameObject == null || UnityEditor.Selection.activeGameObject.GetInstanceID() != gameObject.GetInstanceID()) {
+                Gizmos.color = Color.white;
+                foreach (var cell in cells) {
+                    if (cell.type == Cell.CellType.FULL) {
+                        var box = CellToWorld(cell);
+                        Gizmos.DrawLineList(box.edges);
+                    }
+                }
+            }
+            #endif
+        }
     }
 }

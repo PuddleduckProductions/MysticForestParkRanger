@@ -151,7 +151,7 @@ namespace Interactions {
         public void OnDrawGizmos() {
             Gizmos.color = Color.green;
             foreach (var cell in cells) {
-                var box = manager.CellToWorld(cell);
+                var box = manager.CellToWorld(cell, 0.5f);
                 Gizmos.DrawLineList(box.edges);
             }
         }
