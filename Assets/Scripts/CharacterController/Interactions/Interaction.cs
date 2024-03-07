@@ -92,10 +92,9 @@ namespace Interactions {
         public class InkInteraction : InteractionBehavior {
 
             //FMOD character voices
-            //private EventInstance characterVoice;
+            //Set these in the inspector
             [SerializeField]
-            private EventReference characterVoiceRef;
-            //set this in the inspector
+            public EventReference characterVoiceRef;
             [SerializeField]
             [Range(0, 3)]
             public int emotionType;
@@ -119,15 +118,13 @@ namespace Interactions {
                     ISingleton<InkManager>.Instance.StartDialog(inkKnot);
                     
                     //FMOD
-                    //characterVoice = AudioManager.Instance.RegisterSound("characterVoice", characterVoiceRef);
-                    RuntimeManager.StudioSystem.setParameterByName("emotionType", (float)emotionType);
-                    RuntimeManager.PlayOneShot(characterVoiceRef);
+                    AudioManager.Instance.PlayOneShotWithParameters("characterVoice", characterVoiceRef, "emotionType", (float)emotionType);
 
                     setup = true;
                 } else if (InkManager.storyActive) {
                     ISingleton<InkManager>.Instance.AdvanceStory();
                     //FMOD
-                    RuntimeManager.PlayOneShot(characterVoiceRef);
+                    AudioManager.Instance.PlayOneShotWithParameters("characterVoice", characterVoiceRef, "emotionType", (float)emotionType);
                 }
             }
 

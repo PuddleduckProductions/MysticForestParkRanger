@@ -19,6 +19,7 @@ public class PlayerAnimator : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
 
+        //TODO: when the level ends, release 'footsteps' from memory
         footsteps = AudioManager.Instance.RegisterSound("footsteps", footstepRef);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(footsteps, this.transform);
 

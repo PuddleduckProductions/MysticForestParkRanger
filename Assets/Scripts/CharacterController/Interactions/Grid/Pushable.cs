@@ -2,6 +2,8 @@ using Interactions.Behaviors;
 using System;
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 namespace Interactions.Behaviors {
     /// <summary>
@@ -46,6 +48,16 @@ namespace Interactions.Behaviors {
         /// </summary>
         protected bool pushEnabled = true;
 
+        /// <summary>
+        /// FMOD event reference
+        /// </summary
+        //public EventInstance dragSound;
+        [SerializeField]
+        public EventReference dragSoundRef;
+        [SerializeField]
+        [Range(0, 2)]
+        public int materialType;
+
         Vector3 groundOffset = Vector3.zero;
         Vector3 playerGroundOffset = Vector3.zero;
 
@@ -78,7 +90,6 @@ namespace Interactions.Behaviors {
 
                 groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
                 playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
-
             } else if (pushEnabled) { // Are we in the process of moving? Don't allow releasing push.
                                       // Force InteractionManager to call EndInteraction.
                 isPushing = false;
@@ -146,6 +157,9 @@ namespace Interactions.Behaviors {
             var toAdd = gridObject.GetSomeAdjacent(dirToMove) - gridObject.GetSomeAdjacent(Vector2Int.zero);
             if (dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
                 interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, toAdd));
+
+                //FMOD
+                AudioManager.Instance.PlayOneShotWithParameters("dragSound", dragSoundRef, "materialType", (float)materialType);
             } else {
                 pushEnabled = true;
             }

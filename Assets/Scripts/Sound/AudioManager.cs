@@ -39,6 +39,7 @@ public class AudioManager
         }
     }
 
+    //Using the FMOD Event Reference, and returning the Event Instance
     public EventInstance RegisterSound(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
@@ -53,10 +54,22 @@ public class AudioManager
         return soundInstance;
     }
 
+    //WIP: Using the path of the Event Reference
     public EventInstance RegisterSound(string instanceName, string eventReferenceName) {
         EventInstance soundInstance = RuntimeManager.CreateInstance(eventRefs[eventReferenceName]);
         sounds.Add(instanceName, soundInstance);
         return soundInstance;
+    }
+
+    // Using the Event Instance, and returning nothing
+    public void RegisterSound2(string name, EventInstance soundInstance) {
+        //UPDATE: Check to see if the name is already being used, if so, replace the old instance with the new one. Else, add new key-value
+        if (!sounds.ContainsKey(name)) {
+            sounds.Add(name, soundInstance);
+        }
+        else {
+            sounds[name] = soundInstance;
+        }
     }
 
     public delegate EventInstance ModifySound(EventInstance inst);
@@ -72,8 +85,7 @@ public class AudioManager
 
 
 
-    public bool isPlaybackStatePaused(string name)
-    {
+    public bool isPlaybackStatePaused(string name) {
         PLAYBACK_STATE playbackState;
         EventInstance soundInstance = sounds[name];
         soundInstance.getPlaybackState(out playbackState);
@@ -84,24 +96,30 @@ public class AudioManager
         return false;
     }
 
-    //public void PlayOneShotWithParameters(EventReference soundEventPath, string parameterName, float parameterValue)//, Vector3 position)
-    //{
-    //    EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-    //    soundInstance.setParameterByName(parameterName, parameterValue);
-
-    //    //instance.set3DAttributes(position.To3DAttributes());
-    //    soundInstance.start();
-    //    soundInstance.release();
-    //}
-
-    public void StartFMODEvent(string name)
+    public void PlayOneShot(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
-        sounds[name].start();
+        EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
+        //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
+
+        //Registering sound
+        RegisterSound2(name, soundInstance);
+
+        //Start and release the event from memory
+        soundInstance.start();
+        soundInstance.release();
     }
 
-    public void StopFMODEvent(string name)
+    public void PlayOneShotWithParameters(string soundEventName, EventReference soundEventPath, string parameterName, float parameterValue)//, Vector3 position)
     {
-        sounds[name].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
+        soundInstance.setParameterByName(parameterName, parameterValue); //ONLY WORKS ON LOCAL VARIABLES
+
+        //Registering sound
+        RegisterSound2(soundEventName, soundInstance);
+
+        //instance.set3DAttributes(position.To3DAttributes());
+        soundInstance.start();
+        soundInstance.release();
     }
 
 }

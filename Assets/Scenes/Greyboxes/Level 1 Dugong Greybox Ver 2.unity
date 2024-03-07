@@ -1150,6 +1150,14 @@ MonoBehaviour:
         gridObject: {fileID: 40000284}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!33 &40000286
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -6149,6 +6157,14 @@ MonoBehaviour:
         gridObject: {fileID: 228893522}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!33 &228893524
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -9792,6 +9808,14 @@ MonoBehaviour:
         gridObject: {fileID: 318732690}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 1
 --- !u!64 &318732693
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15388,6 +15412,14 @@ MonoBehaviour:
         gridObject: {fileID: 581083289}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!33 &581083291
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -18587,6 +18619,14 @@ MonoBehaviour:
         gridObject: {fileID: 646885613}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 1
 --- !u!64 &646885616
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41423,6 +41463,14 @@ MonoBehaviour:
         gridObject: {fileID: 1121513460}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!64 &1121513463
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44037,6 +44085,14 @@ MonoBehaviour:
         gridObject: {fileID: 1179025942}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!64 &1179025945
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44462,6 +44518,14 @@ MonoBehaviour:
         gridObject: {fileID: 1179623487}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!64 &1179623490
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46417,6 +46481,14 @@ MonoBehaviour:
         gridObject: {fileID: 1213744847}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!64 &1213744850
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54071,6 +54143,14 @@ MonoBehaviour:
         gridObject: {fileID: 1430427980}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 1
 --- !u!64 &1430427983
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55341,6 +55421,14 @@ MonoBehaviour:
         gridObject: {fileID: 1440965652}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!64 &1440965655
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60724,6 +60812,14 @@ MonoBehaviour:
         gridObject: {fileID: 1670948093}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 1
 --- !u!33 &1670948095
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -63967,6 +64063,14 @@ MonoBehaviour:
         gridObject: {fileID: 1784626069}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 1
 --- !u!64 &1784626072
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66815,6 +66919,14 @@ MonoBehaviour:
         gridObject: {fileID: 1885677493}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 1
 --- !u!33 &1885677495
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -69709,6 +69821,14 @@ MonoBehaviour:
         gridObject: {fileID: 1958192412}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!33 &1958192414
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -75483,6 +75603,14 @@ MonoBehaviour:
         gridObject: {fileID: 6076892263856062270}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!4 &3677421958988534827
 Transform:
   m_ObjectHideFlags: 0
@@ -75682,6 +75810,14 @@ MonoBehaviour:
         gridObject: {fileID: 4457357772156372268}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 0
 --- !u!1 &8215458899154662271
 GameObject:
   m_ObjectHideFlags: 0
