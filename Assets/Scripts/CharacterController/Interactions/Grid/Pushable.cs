@@ -101,6 +101,8 @@ namespace Interactions.Behaviors {
 
         // Since Coroutines can't be run from non MonoBehaviours.
         protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd, Vector2Int dirToMove) {
+            p.player.GetComponent<PlayerAnimator>().UpdatePush(dirToMove);
+
             var targetPos = p.gridObject.transform.position + toAdd;
             targetPos = new Vector3(targetPos.x, p.pushableGetGround(targetPos), targetPos.z);
 
@@ -134,6 +136,8 @@ namespace Interactions.Behaviors {
             yield return new WaitForEndOfFrame();
             // Finish by updating the actual grid position:
             p.gridObject.Move(dirToMove);
+
+            p.player.GetComponent<PlayerAnimator>().UpdatePush(Vector2Int.zero);
             if (p.gridObject == null) {
                 p.isPushing = false;
             }

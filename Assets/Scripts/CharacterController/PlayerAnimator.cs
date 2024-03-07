@@ -27,17 +27,24 @@ public class PlayerAnimator : MonoBehaviour
 
     }
 
+    Vector2Int pushDir;
+    public void UpdatePush(Vector2Int dir) {
+        // Temp fix, this should be a trigger:
+        //animator.SetBool("walking", false);
+        pushDir = dir;
+    }
     // Update is called once per frame
     void Update()
     {
         switch (ISingleton<InteractionManager>.Instance.currentInteractionType) {
             case "Grid/Pushable":
                 // Pushing interactions here
+                animator.SetBool("forwardHold", pushDir.magnitude > 0);
                 break;
             case null:
             default: //If the value is null or something else, we can stick with regular animations
                 var xzVel = new Vector3(controller.velocity.x, 0, controller.velocity.z);
-                bool isWalking = xzVel.magnitude > 0.1f;
+                bool isWalking = xzVel.magnitude > 2f;
                 animator.SetBool("walking", isWalking);
 
                 if (isWalking) {
