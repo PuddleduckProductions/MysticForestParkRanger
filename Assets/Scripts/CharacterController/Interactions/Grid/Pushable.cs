@@ -124,6 +124,8 @@ namespace Interactions.Behaviors {
 
             // Wait for the next update to roll around before resetting our pushing ability.
             yield return new WaitForEndOfFrame();
+
+            p.player.GetComponent<PlayerAnimator>().UpdatePush(Vector2Int.zero);
             if (p.gridObject == null) {
                 p.isPushing = false;
             }
@@ -150,6 +152,7 @@ namespace Interactions.Behaviors {
             var target = gridObject.GetSomeAdjacent(dirToMove);
             var start = gridObject.GetSomeAdjacent(Vector2Int.zero);
             if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
+                player.GetComponent<PlayerAnimator>().UpdatePush(dirToMove);
                 interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s));
             } else {
                 pushEnabled = true;
