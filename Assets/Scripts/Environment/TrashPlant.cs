@@ -6,6 +6,7 @@ using UnityEngine;
 public class TrashPlant : MonoBehaviour
 {
     public float radius = 1f;
+    public int trashTillHappy = 3;
     // Temp code for now, we may want to change for later:
     private void FixedUpdate() {
         var colliders = Physics.OverlapSphere(transform.position, radius);
@@ -18,7 +19,11 @@ public class TrashPlant : MonoBehaviour
                     g.RemoveFromGridFull();
                 }
                 Destroy(c.gameObject);
+                trashTillHappy--;
             }
+        }
+        if(trashTillHappy<=0){
+            this.gameObject.SetActive(false);
         }
     }
 
