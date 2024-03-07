@@ -14710,7 +14710,7 @@ GameObject:
   - component: {fileID: 403437465}
   m_Layer: 0
   m_Name: Navmesh
-  m_TagString: Untagged
+  m_TagString: Navmesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27130,7 +27130,7 @@ GameObject:
   - component: {fileID: 867376023}
   m_Layer: 0
   m_Name: Riverbank
-  m_TagString: Untagged
+  m_TagString: Navmesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37263,7 +37263,7 @@ GameObject:
   - component: {fileID: 903960627}
   m_Layer: 0
   m_Name: Beach & Grass Ramp (1)
-  m_TagString: Untagged
+  m_TagString: Navmesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
