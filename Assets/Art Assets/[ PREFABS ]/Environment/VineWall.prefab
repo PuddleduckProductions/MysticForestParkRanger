@@ -65,6 +65,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4858754479126628372}
     m_Modifications:
+    - target: {fileID: 768606281742271927, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3824453222541365002, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
     - target: {fileID: 6487124882598673864, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
       propertyPath: m_Name
       value: Vine Climb (1)
@@ -139,6 +143,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4858754479126628372}
     m_Modifications:
+    - target: {fileID: 768606281742271927, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3824453222541365002, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
     - target: {fileID: 6487124882598673864, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
       propertyPath: m_Name
       value: Vine Climb (2)
@@ -213,6 +221,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4858754479126628372}
     m_Modifications:
+    - target: {fileID: 768606281742271927, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3824453222541365002, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
     - target: {fileID: 6487124882598673864, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
       propertyPath: m_Name
       value: Vine Climb (3)
@@ -287,6 +299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4858754479126628372}
     m_Modifications:
+    - target: {fileID: 768606281742271927, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3824453222541365002, guid: 08501ccd98e7a2e4a97fb0899ac72c2a, type: 3}
     - target: {fileID: 6487124882598673864, guid: 22517c08c1db04b47b88db9fa85a1683, type: 3}
       propertyPath: m_Name
       value: Vine Climb
