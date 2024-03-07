@@ -189,11 +189,16 @@ namespace Interactions {
         /// <param name="direction">Direction to move the cells in.</param>
         /// <returns></returns>
         protected void MoveCells(ref Cell[] cells, Vector2Int direction) {
+            // Empty cells before moving.
+            // Avoids an issue where a cell moves into a cell that's already been moved.
+            foreach (var cell in cells) {
+                GetCell(cell.pos).type = Cell.CellType.EMPTY;
+            }
+
             for (int i = 0; i < cells.Length; i++) {
                 var cell = cells[i];
-                GetCell(cell.pos).type = Cell.CellType.EMPTY;
                 cells[i].pos += direction;
-                GetCell(cell.pos + direction).type = cell.type;
+                GetCell(cells[i].pos).type = cell.type;
             }
         }
 
