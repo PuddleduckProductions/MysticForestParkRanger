@@ -44,6 +44,23 @@ namespace SceneValidation {
         }
 
         [Test]
+        public void VerifyGround() {
+            var interactions = GameObject.FindObjectsOfType<GridObject>();
+            foreach (var i in interactions) {
+                var collisions = Physics.OverlapSphere(i.transform.position, 1f);
+                var hasGround = false;
+                foreach (var c in collisions) {
+                    if (c.tag == "Navmesh") {
+                        hasGround = true;
+                        break;
+                    }
+                }
+                // Is there only the self-collision, or is there truly no ground?
+                Assert.IsTrue(collisions.Length <= 1 || hasGround, $"Could not find a tagged Navmesh object near GridObject {i.name}. This will result in a pushable that does not move if it detects any collisions nearby.");
+            }
+        }
+
+        [Test]
         public void ValidateInkManager() {
             Assert.IsTrue(GameObject.FindObjectsOfType<InkManager>().Length <= 1, "More than one InkManager in the scene.");
             var manager = GameObject.FindObjectOfType<InkManager>();
