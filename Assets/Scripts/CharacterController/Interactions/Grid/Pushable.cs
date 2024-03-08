@@ -63,7 +63,7 @@ namespace Interactions.Behaviors {
         Vector3 playerGroundOffset = Vector3.zero;
 
         float pushableGetGround(Vector3 inPos) {
-            if(NavMesh.SamplePosition(inPos, out NavMeshHit hit, 5.0f, NavMesh.AllAreas)) {
+            if(NavMesh.SamplePosition(inPos, out NavMeshHit hit, 10.0f, NavMesh.AllAreas)) {
                 return hit.position.y;
             }
 
