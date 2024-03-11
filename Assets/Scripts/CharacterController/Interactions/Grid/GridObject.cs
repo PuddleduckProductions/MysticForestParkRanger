@@ -121,6 +121,13 @@ namespace Interactions {
             return null;
         }
 
+        public bool HasCell(Vector2Int pos) {
+            foreach (var cell in cells) {
+                if (cell.pos == pos) return true;
+            }
+            return false;
+        }
+
         /// <summary>
         /// Remove this item from the <see cref="manager"/>.
         /// </summary>

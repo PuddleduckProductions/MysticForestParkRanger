@@ -129,6 +129,12 @@ namespace Interactions {
             return new Vector2Int(gridX, gridY);
         }
 
+        /// <summary>
+        /// Get where a cell would be from a given position.
+        /// Does not grab any data from <see cref="cells"/>, instead just position data.
+        /// </summary>
+        /// <param name="pos">The local position to look at.</param>
+        /// <returns>A <see cref="Cell"/> with position data.</returns>
         public Cell? LocalToCell(Vector3 pos) {
             //Vector3 localPos = PointToLocal(pos);
             //localPos -= gridOffset;
@@ -258,6 +264,10 @@ namespace Interactions {
             return true;
         }
 
+        public bool IsValidCell(Vector2Int pos) {
+            return pos.x >= 0 && pos.x < gridDimensions.x && pos.y >= 0 && pos.y < gridDimensions.y;
+        }
+
         /// <summary>
         /// Return whether or not the given move from one cell to another would be valid.
         /// Does not count for overlapping moves (i.e., you're moving one cell owned by one object onto another cell owned by the same object).
@@ -267,7 +277,7 @@ namespace Interactions {
         /// <returns>Whether or not the move is valid.</returns>
         public bool MoveValid(Vector2Int pos, Vector2Int direction) {
             var target = pos + direction;
-            if (target.x >= 0 && target.x < gridDimensions.x && target.y >= 0 && target.y < gridDimensions.y) {
+            if (IsValidCell(target)) {
                 return this[target].type == Cell.CellType.EMPTY; 
             } else {
                 return false;
