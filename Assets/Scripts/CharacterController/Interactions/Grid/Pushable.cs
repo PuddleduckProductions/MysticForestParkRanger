@@ -103,13 +103,6 @@ namespace Interactions.Behaviors {
             controller.moveEnabled = true;
         }
 
-        void ResetPushing(Vector3 originalPos, Vector3 originalPlayerPos, Transform transformToMove) {
-            isPushing = false;
-            pushEnabled = false;
-            transformToMove.position = originalPos;
-            player.transform.position = originalPlayerPos;
-        }
-
         // Since Coroutines can't be run from non MonoBehaviours.
         protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd, Vector2Int dirToMove) {
             p.player.GetComponent<PlayerAnimator>().UpdatePush(dirToMove);
@@ -130,14 +123,22 @@ namespace Interactions.Behaviors {
                 p.player.transform.position = Vector3.Lerp(originalPlayerPos, playerTargetPos, timer);
                 timer += Time.fixedDeltaTime * p.pushSpeed;
                 yield return new WaitForFixedUpdate();
-                var colliders = Physics.OverlapSphere(p.player.transform.position, 1f);
+                var colliders = Physics.OverlapSphere(p.player.transform.position, 0.2f);
                 var interactionId = p.interactionObject.gameObject.GetInstanceID();
                 foreach (var collider in colliders) {
                     var colliderID = collider.gameObject.GetInstanceID();
                     var parentId = collider.transform.parent.gameObject.GetInstanceID();
-                    if (!collider.isTrigger && collider.tag != "Navmesh" && 
+                    if (!collider.isTrigger && collider.tag != "Navmesh" &&
                         interactionId != colliderID && interactionId != parentId && p.player.gameObject.GetInstanceID() != colliderID) {
-                        p.ResetPushing(originalPos, originalPlayerPos, transformToMove);
+                        while (timer > 0) {
+                            transformToMove.position = Vector3.Lerp(originalPos, targetPos, timer);
+                            p.player.transform.position = Vector3.Lerp(originalPlayerPos, playerTargetPos, timer);
+                            timer -= Time.fixedDeltaTime * p.pushSpeed;
+                            yield return new WaitForFixedUpdate();
+                        }
+                        transformToMove.position = originalPos;
+                        p.player.transform.position = originalPlayerPos;
+                        p.pushEnabled = true;
                         yield break;
                     }
                 }
