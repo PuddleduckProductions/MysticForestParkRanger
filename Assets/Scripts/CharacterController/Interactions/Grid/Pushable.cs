@@ -58,8 +58,8 @@ namespace Interactions.Behaviors {
         [Range(0, 2)]
         public int materialType;
 
-        Vector3 groundOffset = Vector3.zero;
-        Vector3 playerGroundOffset = Vector3.zero;
+        float groundOffset = 0;
+        float playerGroundOffset = 0;
 
         float pushableGetGround(Vector3 inPos) {
             if(NavMesh.SamplePosition(inPos, out NavMeshHit hit, 10.0f, NavMesh.AllAreas)) {
@@ -86,8 +86,8 @@ namespace Interactions.Behaviors {
 
                 controller.moveEnabled = false;
 
-                groundOffset = interactionObject.transform.position - Vector3.up * pushableGetGround(interactionObject.transform.position);
-                playerGroundOffset = player.transform.position - Vector3.up * pushableGetGround(player.transform.position);
+                groundOffset = interactionObject.transform.position.y - pushableGetGround(interactionObject.transform.position);
+                playerGroundOffset = player.transform.position.y - pushableGetGround(player.transform.position);
 
             } else if (pushEnabled) { // Are we in the process of moving? Don't allow releasing push.
                                       // Force InteractionManager to call EndInteraction.
@@ -115,11 +115,11 @@ namespace Interactions.Behaviors {
             p.player.GetComponent<PlayerAnimator>().UpdatePush(dirToMove);
 
             var targetPos = p.gridObject.transform.position + toAdd;
-            targetPos = new Vector3(targetPos.x, p.pushableGetGround(targetPos), targetPos.z);
+            targetPos = new Vector3(targetPos.x, p.pushableGetGround(targetPos) + p.groundOffset, targetPos.z);
 
 
             var playerTargetPos = p.player.transform.position + toAdd;
-            playerTargetPos = new Vector3(playerTargetPos.x, p.pushableGetGround(playerTargetPos), playerTargetPos.z);
+            playerTargetPos = new Vector3(playerTargetPos.x, p.pushableGetGround(playerTargetPos) + p.playerGroundOffset, playerTargetPos.z);
 
             var originalPos = transformToMove.position;
             var originalPlayerPos = p.player.transform.position;
