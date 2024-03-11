@@ -46,6 +46,10 @@ public class PlayerAnimator : MonoBehaviour
                 break;
             case null:
             default: //If the value is null or something else, we can stick with regular animations
+                // Reset forwardHold in case we were on that before:
+                // ARTISTS, YOU SHOULD BE MAKING THIS A TRIGGER SO I DON'T HAVE TO DO THIS.
+                animator.SetBool("forwardHold", false);
+
                 var xzVel = new Vector3(controller.velocity.x, 0, controller.velocity.z);
                 bool isWalking = xzVel.magnitude > 2f;
                 animator.SetBool("walking", isWalking);

@@ -169,6 +169,9 @@ MonoBehaviour:
       Data3: -632274295
       Data4: 965186114
     Path: event:/SFX/footsteps
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &6313193292897490927
 GameObject:
   m_ObjectHideFlags: 0
