@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trash
+  - Navmesh
   layers:
   - Default
   - TransparentFX
@@ -16,11 +17,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - floor Grass
+  - floor Water
+  - floor Sand
+  - floor Wood
+  - flood Stone
   - 
   - 
   - 

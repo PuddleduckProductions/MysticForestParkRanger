@@ -79,12 +79,16 @@ namespace Interactions {
             return ref cells[idx.y * gridDimensions.x + idx.x];
         }
 
-        public Box CellToWorld(Cell cell) {
+        public Box CellToWorld(Cell cell, float size = 1.0f) {
             var corner = transform.position + gridOffset + new Vector3(cell.pos.x * (cellSize.x + cellSpacing.x), 0, cell.pos.y * (cellSize.z + cellSpacing.z));
 
-            var forward = Vector3.forward * cellSize.z;
-            var up = Vector3.up * cellSize.y;
-            var right = Vector3.right * cellSize.x;
+            var forward = Vector3.forward * cellSize.z * size;
+            var up = Vector3.up * cellSize.y * size;
+            var right = Vector3.right * cellSize.x * size;
+
+            corner += (Vector3.forward * cellSize.z - forward) / 2;
+            corner += (Vector3.up * cellSize.y - up) / 2;
+            corner += (Vector3.right * cellSize.x - right) / 2;
 
             var edges = new Vector3[] {
                 // Left face
@@ -185,11 +189,16 @@ namespace Interactions {
         /// <param name="direction">Direction to move the cells in.</param>
         /// <returns></returns>
         protected void MoveCells(ref Cell[] cells, Vector2Int direction) {
+            // Empty cells before moving.
+            // Avoids an issue where a cell moves into a cell that's already been moved.
+            foreach (var cell in cells) {
+                GetCell(cell.pos).type = Cell.CellType.EMPTY;
+            }
+
             for (int i = 0; i < cells.Length; i++) {
                 var cell = cells[i];
-                GetCell(cell.pos).type = Cell.CellType.EMPTY;
                 cells[i].pos += direction;
-                GetCell(cell.pos + direction).type = cell.type;
+                GetCell(cells[i].pos).type = cell.type;
             }
         }
 
@@ -200,8 +209,15 @@ namespace Interactions {
         /// Called by <see cref="GridObject.Move(Vector3)"/>, which you should call instead of this function.
         /// </summary>
         /// <param name="direction">The direction to move in. Assumes no diagonals.</param>
+        public void MoveObject(GridObject gridObject, Vector2Int direction) {
+            MoveCells(ref gridObject.cells, direction);
+        }
+
+        /// <summary>
+        /// Test if the movement of a grid object is valid.
+        /// </summary>
         /// <returns>Whether or not the move was successful.</returns>
-        public bool MoveObject(GridObject gridObject, Vector2Int direction) {
+        public bool MoveObjectIsValid(GridObject gridObject, Vector2Int direction) {
             // Test the edges of a move.
             int testMin = 0;
             int testMax = 0;
@@ -239,9 +255,8 @@ namespace Interactions {
                 }
             }
 
-            MoveCells(ref gridObject.cells, direction);
             return true;
-        } 
+        }
 
         /// <summary>
         /// Return whether or not the given move from one cell to another would be valid.
@@ -259,5 +274,18 @@ namespace Interactions {
             }
         }
 
+        private void OnDrawGizmos() {
+            #if UNITY_EDITOR
+            if (UnityEditor.Selection.activeGameObject == null || UnityEditor.Selection.activeGameObject.GetInstanceID() != gameObject.GetInstanceID()) {
+                Gizmos.color = Color.white;
+                foreach (var cell in cells) {
+                    if (cell.type == Cell.CellType.FULL) {
+                        var box = CellToWorld(cell);
+                        Gizmos.DrawLineList(box.edges);
+                    }
+                }
+            }
+            #endif
+        }
     }
 }

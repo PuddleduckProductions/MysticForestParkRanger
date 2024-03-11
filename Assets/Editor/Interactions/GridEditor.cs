@@ -62,6 +62,9 @@ namespace Interactions {
 
         public override void OnInspectorGUI() {
             base.OnInspectorGUI();
+            if (EditorApplication.isPlaying) {
+                return;
+            }
             Vector2Int gridSize = gridDimensions.vector2IntValue;
             cells.arraySize = gridSize.y * gridSize.x;
 

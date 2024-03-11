@@ -1,3 +1,4 @@
+using Interactions;
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
@@ -29,6 +30,8 @@ public class DebugWindow : EditorWindow
 
         consoleList = root.Query<ScrollView>("consoleList");
         TeleportSetup();
+
+        GridSetup();
     }
 
     protected delegate void UpdateFunc();
@@ -145,6 +148,21 @@ public class DebugWindow : EditorWindow
         if (!VerifyPlayMode()) return;
         onUpdate += ClickTeleportUpdate;
         teleportToClick.text = "Click on screen...";
+    }
+    #endregion
+
+    #region Grids
+    void GridSetup() {
+        Button button = rootVisualElement.Query<Button>("removeFromGrid");
+        button.RegisterCallback<ClickEvent>((e) => {
+            VerifyPlayMode();
+            if (Selection.activeGameObject.TryGetComponent(out GridObject g)) {
+                g.RemoveFromGridFull();
+                GameObject.Destroy(g.gameObject);
+            } else {
+                Log("No GridObject found on selected object.");
+            }
+        });
     }
     #endregion
 }

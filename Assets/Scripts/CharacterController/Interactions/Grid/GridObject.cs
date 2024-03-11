@@ -78,26 +78,33 @@ namespace Interactions {
         /// <summary>
         /// Attempt to move this object in a given direction on the grid.
         /// Does NOT move the object's transform. That's the responsibility of whoever calls this function.
+        /// Does NOT check move validity. This should be tested with <see cref="MoveIsValid(Vector2Int)"/>
         /// </summary>
         /// <param name="direction">The direction to move in. Should be a basis vector with exactly ONE non-zero component.</param>
         /// <returns>Whether or not the move was successful.</returns>
-        public bool Move(Vector2Int direction) {
-            if (manager.MoveObject(this, direction)) {
-                _min += direction;
-                _max += direction;
-                if (!onGridUpdate.IsNull()) {
-                    if (positionToActivate.x >= 0 && positionToActivate.y >= 0) {
-                        if (positionToActivate.x >= _min.x && positionToActivate.x <= _max.x
-                            && positionToActivate.y >= _min.y && positionToActivate.y <= _max.y) {
-                            InvokeOnGridUpdate();
-                        }
-                    } else {
+        public void Move(Vector2Int direction) {
+            manager.MoveObject(this, direction);
+            _min += direction;
+            _max += direction;
+            if (!onGridUpdate.IsNull()) {
+                if (positionToActivate.x >= 0 && positionToActivate.y >= 0) {
+                    if (positionToActivate.x >= _min.x && positionToActivate.x <= _max.x
+                        && positionToActivate.y >= _min.y && positionToActivate.y <= _max.y) {
                         InvokeOnGridUpdate();
                     }
+                } else {
+                    InvokeOnGridUpdate();
                 }
-                return true;
             }
-            return false;
+        }
+
+        /// <summary>
+        /// Whether or not a move in a given direction is valid.
+        /// </summary>
+        /// <param name="direction">The direction to move in.</param>
+        /// <returns>The validity.</returns>
+        public bool MoveIsValid(Vector2Int direction) {
+            return manager.MoveObjectIsValid(this, direction);
         }
 
         /// <summary>
@@ -139,6 +146,14 @@ namespace Interactions {
         /// <param name="dir">World direction.</param>
         public Vector3 GetGridDirectionFromWorld(Vector3 dir) {
             return manager.transform.InverseTransformDirection(dir);
+        }
+
+        public void OnDrawGizmos() {
+            Gizmos.color = Color.green;
+            foreach (var cell in cells) {
+                var box = manager.CellToWorld(cell, 0.5f);
+                Gizmos.DrawLineList(box.edges);
+            }
         }
     }
 }

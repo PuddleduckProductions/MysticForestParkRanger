@@ -10,6 +10,11 @@ namespace Utility {
     public interface ISingleton<T> where T : MonoBehaviour {
         public static T Instance { get; protected set; }
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        public static void Init() {
+            Instance = null;
+        }
+
         public void Initialize() {
             if (Instance == null) {
                 Instance = (T)this;

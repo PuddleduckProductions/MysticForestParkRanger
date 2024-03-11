@@ -488,11 +488,11 @@ MonoBehaviour:
   - Master
   Banks:
   - Music
-  - SFXAyeAye
-  - SFXDugong
+  - SFX_LV1
+  - SFX_LV2
+  - SFX_LV3
   - SFXGeneral
   - SFXSeeds
-  - SFXTapir
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

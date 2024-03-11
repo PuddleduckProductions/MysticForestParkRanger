@@ -2,6 +2,9 @@ using Interactions.Behaviors;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
+using FMODUnity;
+using FMOD.Studio;
 
 namespace Interactions.Behaviors {
     /// <summary>
@@ -46,18 +49,26 @@ namespace Interactions.Behaviors {
         /// </summary>
         protected bool pushEnabled = true;
 
+        /// <summary>
+        /// FMOD event reference
+        /// </summary
+        //public EventInstance dragSound;
+        [SerializeField]
+        public EventReference dragSoundRef;
+        [SerializeField]
+        [Range(0, 2)]
+        public int materialType;
+
         Vector3 groundOffset = Vector3.zero;
         Vector3 playerGroundOffset = Vector3.zero;
 
-        Vector3 pushableGetGround(Vector3 inPos) {
-            RaycastHit[] hits = Physics.RaycastAll(inPos, Vector3.down);
-            foreach (var hit in hits) {
-                if (hit.collider.gameObject != interactionObject.gameObject) {
-                    return hit.point;
-                }
+        float pushableGetGround(Vector3 inPos) {
+            if(NavMesh.SamplePosition(inPos, out NavMeshHit hit, 10.0f, NavMesh.AllAreas)) {
+                return hit.position.y;
             }
+
             Debug.LogError("Could not get ground.");
-            return inPos;
+            return inPos.y;
         }
 
         /// <summary>
@@ -76,8 +87,8 @@ namespace Interactions.Behaviors {
 
                 controller.moveEnabled = false;
 
-                groundOffset = interactionObject.transform.position - pushableGetGround(interactionObject.transform.position);
-                playerGroundOffset = player.transform.position - pushableGetGround(player.transform.position);
+                groundOffset = interactionObject.transform.position - Vector3.up * pushableGetGround(interactionObject.transform.position);
+                playerGroundOffset = player.transform.position - Vector3.up * pushableGetGround(player.transform.position);
 
             } else if (pushEnabled) { // Are we in the process of moving? Don't allow releasing push.
                                       // Force InteractionManager to call EndInteraction.
@@ -93,21 +104,23 @@ namespace Interactions.Behaviors {
             controller.moveEnabled = true;
         }
 
-        // Since Coroutines can't be run from non MonoBehaviours.
-        protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd) {
-            var targetPos = p.gridObject.transform.position + toAdd;
+        void ResetPushing(Vector3 originalPos, Vector3 originalPlayerPos, Transform transformToMove) {
+            isPushing = false;
+            pushEnabled = false;
+            transformToMove.position = originalPos;
+            player.transform.position = originalPlayerPos;
+        }
 
-            // FIXME: This. It's not a great solution for snapping to ground.
-            // Should be navmesh.
-            var ground = p.pushableGetGround(targetPos + 2 * Vector3.up) + p.groundOffset;
-            var groundDist = ground - targetPos;
-            targetPos += groundDist;
+        // Since Coroutines can't be run from non MonoBehaviours.
+        protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd, Vector2Int dirToMove) {
+            p.player.GetComponent<PlayerAnimator>().UpdatePush(dirToMove);
+
+            var targetPos = p.gridObject.transform.position + toAdd;
+            targetPos = new Vector3(targetPos.x, p.pushableGetGround(targetPos), targetPos.z);
 
 
             var playerTargetPos = p.player.transform.position + toAdd;
-            var playerGround = p.pushableGetGround(playerTargetPos) + p.playerGroundOffset;
-            var playerGroundDist = playerGround - playerTargetPos;
-            playerTargetPos += playerGroundDist;
+            playerTargetPos = new Vector3(playerTargetPos.x, p.pushableGetGround(playerTargetPos), playerTargetPos.z);
 
             var originalPos = transformToMove.position;
             var originalPlayerPos = p.player.transform.position;
@@ -116,14 +129,29 @@ namespace Interactions.Behaviors {
             while (timer < 1f) {
                 transformToMove.position = Vector3.Lerp(originalPos, targetPos, timer);
                 p.player.transform.position = Vector3.Lerp(originalPlayerPos, playerTargetPos, timer);
-                timer += Time.deltaTime * p.pushSpeed;
-                yield return new WaitForEndOfFrame();
+                timer += Time.fixedDeltaTime * p.pushSpeed;
+                yield return new WaitForFixedUpdate();
+                var colliders = Physics.OverlapSphere(p.player.transform.position, 1f);
+                var interactionId = p.interactionObject.gameObject.GetInstanceID();
+                foreach (var collider in colliders) {
+                    var colliderID = collider.gameObject.GetInstanceID();
+                    var parentId = collider.transform.parent.gameObject.GetInstanceID();
+                    if (!collider.isTrigger && collider.tag != "Navmesh" && 
+                        interactionId != colliderID && interactionId != parentId && p.player.gameObject.GetInstanceID() != colliderID) {
+                        p.ResetPushing(originalPos, originalPlayerPos, transformToMove);
+                        yield break;
+                    }
+                }
             }
             transformToMove.position = targetPos;
             p.player.transform.position = playerTargetPos;
 
             // Wait for the next update to roll around before resetting our pushing ability.
             yield return new WaitForEndOfFrame();
+            // Finish by updating the actual grid position:
+            p.gridObject.Move(dirToMove);
+
+            p.player.GetComponent<PlayerAnimator>().UpdatePush(Vector2Int.zero);
             if (p.gridObject == null) {
                 p.isPushing = false;
             }
@@ -149,8 +177,10 @@ namespace Interactions.Behaviors {
 
             var target = gridObject.GetSomeAdjacent(dirToMove);
             var start = gridObject.GetSomeAdjacent(Vector2Int.zero);
-            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.Move(dirToMove)) {
-                interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s));
+            if (target is Vector3 t && start is Vector3 s && dirToMove != Vector2Int.zero && gridObject.MoveIsValid(dirToMove)) {
+                interactionObject.StartCoroutine(PushUpdate(this, gridObjectTransform, t - s, dirToMove));
+                //FMOD
+                AudioManager.Instance.PlayOneShotWithParameters("dragSound", dragSoundRef, "materialType", (float)materialType);
             } else {
                 pushEnabled = true;
             }

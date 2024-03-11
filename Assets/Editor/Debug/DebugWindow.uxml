@@ -3,5 +3,7 @@
     <ui:TextField picking-mode="Ignore" label="Game Object Name" name="teleportObjectName" />
     <ui:Button text="Teleport!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="teleport" />
     <ui:Button text="Teleport to Click" parse-escape-sequences="true" display-tooltip-when-elided="true" name="teleportToClick" />
+    <ui:Label text="Grid Debug"/>
+    <ui:Button text="Remove Selected Object from Grid" parse-escape-sequences="true" display-tooltip-when-elided="true" name="removeFromGrid" />
     <ui:ScrollView name="consoleList" />
 </ui:UXML>
