@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5372967, g: 0.8430187, b: 0.8986338, a: 1}
+  m_IndirectSpecularColor: {r: 0.5372967, g: 0.84301805, b: 0.8986328, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1589,11 +1589,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &40000286
 MeshFilter:
@@ -6332,11 +6332,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &228893524
 MeshFilter:
@@ -7383,7 +7383,7 @@ GameObject:
   - component: {fileID: 240503052}
   - component: {fileID: 240503051}
   - component: {fileID: 240503056}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12342,11 +12342,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &318732694
 MeshFilter:
@@ -14185,6 +14185,91 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &374789091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374789092}
+  - component: {fileID: 374789095}
+  - component: {fileID: 374789094}
+  m_Layer: 0
+  m_Name: sfxRiver (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &374789092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374789091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000000018626451, y: -0.18217409, z: 0.0000000055879354, w: 0.98326635}
+  m_LocalPosition: {x: 47.31, y: 1, z: 31.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: -20.993, z: 0}
+--- !u!114 &374789094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374789091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -547373402
+      Data2: 1139666372
+      Data3: -1136105854
+      Data4: 226093232
+    Path: event:/Ambience/River
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10.373825
+  OverrideMaxDistance: 23.141556
+--- !u!65 &374789095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374789091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 48.372295, y: 9.6, z: 13.144724}
+  m_Center: {x: -1.7626618, y: 0.0000000055845875, z: -0.09912553}
 --- !u!4 &376200538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 161425686699999802, guid: 261dbf134819c2642b5352e50bc6f674, type: 3}
@@ -18071,12 +18156,12 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
-        materialType: 0
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!33 &581083291
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -21371,11 +21456,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &646885617
 MeshFilter:
@@ -21691,6 +21776,91 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &648453855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648453856}
+  - component: {fileID: 648453858}
+  - component: {fileID: 648453857}
+  m_Layer: 0
+  m_Name: sfxRiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &648453856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648453855}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.08224824, z: 0.0000000037252903, w: 0.9966119}
+  m_LocalPosition: {x: 44.4, y: 1, z: 49.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.436, z: 0}
+--- !u!114 &648453857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648453855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -547373402
+      Data2: 1139666372
+      Data3: -1136105854
+      Data4: 226093232
+    Path: event:/Ambience/River
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10.99765
+  OverrideMaxDistance: 23.275484
+--- !u!65 &648453858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648453855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 46.002728, y: 9.6, z: 25.706059}
+  m_Center: {x: 0.0024431127, y: 0.00000003763171, z: 5.2716904}
 --- !u!43 &648514277
 Mesh:
   m_ObjectHideFlags: 0
@@ -23075,12 +23245,12 @@ MonoBehaviour:
         interactionObject: {fileID: 715347959}
         characterVoiceRef:
           Guid:
-            Data1: 0
-            Data2: 0
-            Data3: 0
-            Data4: 0
-          Path: 
-        emotionType: 0
+            Data1: 366031315
+            Data2: 1219917500
+            Data3: -125200722
+            Data4: 1444540790
+          Path: event:/Voice/dugongVoice
+        emotionType: 2
         inkKnot: interact_Dugong
 --- !u!64 &715347960
 MeshCollider:
@@ -24445,6 +24615,69 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &728121114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 728121115}
+  - component: {fileID: 728121116}
+  m_Layer: 0
+  m_Name: sfxBirds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &728121115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728121114}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.08224824, z: 0.0000000037252903, w: 0.9966119}
+  m_LocalPosition: {x: 7.8, y: 6.9, z: 52.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.436, z: 0}
+--- !u!114 &728121116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728121114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 663557547
+      Data2: 1170806107
+      Data3: -1522502227
+      Data4: -115574016
+    Path: event:/Ambience/Birds
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 19.4
+  OverrideMaxDistance: 28
 --- !u!4 &730149636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4845011087986518975, guid: f4c8d78e6957a7d45b318122e8ab57a8, type: 3}
@@ -27689,7 +27922,7 @@ GameObject:
   - component: {fileID: 867376025}
   - component: {fileID: 867376024}
   - component: {fileID: 867376023}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Riverbank
   m_TagString: Navmesh
   m_Icon: {fileID: 0}
@@ -37988,7 +38221,7 @@ GameObject:
   - component: {fileID: 903960629}
   - component: {fileID: 903960628}
   - component: {fileID: 903960627}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Beach & Grass Ramp (1)
   m_TagString: Navmesh
   m_Icon: {fileID: 0}
@@ -45947,11 +46180,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &1121513464
 MeshFilter:
@@ -47105,6 +47338,10 @@ PrefabInstance:
       propertyPath: cameras.Array.data[6]
       value: 
       objectReference: {fileID: 2070271747}
+    - target: {fileID: 8426180548669260447, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: floorLayer.m_Bits
+      value: 31744
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48299,11 +48536,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &1179025946
 MeshFilter:
@@ -48730,12 +48967,12 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
-        materialType: 0
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!33 &1179623491
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -50024,12 +50261,12 @@ MonoBehaviour:
         interactionObject: {fileID: 1198443677}
         characterVoiceRef:
           Guid:
-            Data1: 0
-            Data2: 0
-            Data3: 0
-            Data4: 0
-          Path: 
-        emotionType: 0
+            Data1: 366031315
+            Data2: 1219917500
+            Data3: -125200722
+            Data4: 1444540790
+          Path: event:/Voice/dugongVoice
+        emotionType: 3
         inkKnot: interact_Dugong
 --- !u!64 &1198443678
 MeshCollider:
@@ -50821,12 +51058,12 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
-        materialType: 0
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!33 &1213744851
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -59514,11 +59751,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &1430427984
 MeshFilter:
@@ -59848,7 +60085,7 @@ GameObject:
   - component: {fileID: 1432257874}
   - component: {fileID: 1432257873}
   - component: {fileID: 1432257872}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Dock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60625,12 +60862,12 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
-        materialType: 0
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!33 &1440965656
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -62389,6 +62626,149 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6547421074206835490, guid: dd570f6bc0a6b044e9daa6c82496a5b9, type: 3}
   m_PrefabInstance: {fileID: 1054669767}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1480818816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480818817}
+  - component: {fileID: 1480818820}
+  - component: {fileID: 1480818819}
+  - component: {fileID: 1480818818}
+  m_Layer: 0
+  m_Name: sfxOcean (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480818817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480818816}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.08224824, z: 0.0000000037252903, w: 0.9966119}
+  m_LocalPosition: {x: 46.53, y: -7.1, z: -34.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.436, z: 0}
+--- !u!114 &1480818818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480818816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1785245710}
+    Params:
+    - Name: musicShift
+      Value: 0
+  TriggerEvent: 3
+--- !u!114 &1480818819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480818816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1346262031
+      Data2: 1306834974
+      Data3: 1022944413
+      Data4: 1833252045
+    Path: event:/Ambience/Ocean
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 11.748633
+  OverrideMaxDistance: 29.347057
+--- !u!65 &1480818820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480818816}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 33.47048, y: 10.57536, z: 19.826708}
+  m_Center: {x: 0.93641627, y: 3.9227934, z: 17.87862}
+--- !u!1 &1489678569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489678570}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1489678570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489678569}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.034928776, y: -0.33593476, z: -0.0088635, w: 0.94119567}
+  m_LocalPosition: {x: 22.32, y: 7.24, z: -4.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1785245709}
+  - {fileID: 2024446369}
+  - {fileID: 1480818817}
+  - {fileID: 728121115}
+  - {fileID: 648453856}
+  - {fileID: 374789092}
+  - {fileID: 1714601115}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1499478567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66389,11 +66769,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &1670948095
 MeshFilter:
@@ -69184,6 +69564,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3865618205605897007, guid: c2f50bc8cfaa2ac4491279bad85e24dd, type: 3}
   m_PrefabInstance: {fileID: 172672878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1714601114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714601115}
+  - component: {fileID: 1714601117}
+  - component: {fileID: 1714601116}
+  - component: {fileID: 1714601118}
+  m_Layer: 0
+  m_Name: sfxRiver (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1714601115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714601114}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000009313226, y: -0.8792791, z: 0.000000007450581, w: 0.4763071}
+  m_LocalPosition: {x: 40, y: -2.4, z: 8.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: -123.111, z: 0}
+--- !u!114 &1714601116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714601114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -547373402
+      Data2: 1139666372
+      Data3: -1136105854
+      Data4: 226093232
+    Path: event:/Ambience/River
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10.247303
+  OverrideMaxDistance: 24.287352
+--- !u!65 &1714601117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714601114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 47.787697, y: 9.6, z: 15.57193}
+  m_Center: {x: -2.598372, y: 0.0000000012090533, z: 2.2744782}
+--- !u!114 &1714601118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714601114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1785245710}
+    Params:
+    - Name: musicShift
+      Value: 1
+  TriggerEvent: 3
 --- !u!1001 &1730938398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70474,11 +70959,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &1784626073
 MeshFilter:
@@ -70794,6 +71279,91 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &1785245708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785245709}
+  - component: {fileID: 1785245711}
+  - component: {fileID: 1785245710}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1785245709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785245708}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.5, y: 9.4, z: 19.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1785245710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785245708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1369212523
+      Data2: 1245799878
+      Data3: -1739917440
+      Data4: -1866025171
+    Path: event:/Music/mbiraGroove
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!135 &1785245711
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785245708}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 62
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1795737077
 GameObject:
   m_ObjectHideFlags: 0
@@ -73766,11 +74336,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!33 &1885677495
 MeshFilter:
@@ -76945,12 +77515,12 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
-        materialType: 0
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!33 &1958192414
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -79174,6 +79744,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9165661780565323801, guid: 180d13f35a61c664faab8da04eb1609b, type: 3}
   m_PrefabInstance: {fileID: 2023193832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2024446368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024446369}
+  - component: {fileID: 2024446372}
+  - component: {fileID: 2024446371}
+  - component: {fileID: 2024446370}
+  m_Layer: 0
+  m_Name: sfxOcean
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2024446369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024446368}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.3399215, z: 0.0000000011059454, w: 0.9404538}
+  m_LocalPosition: {x: -28.744663, y: -7.099983, z: 5.1972017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: 39.744, z: 0}
+--- !u!114 &2024446370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024446368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1785245710}
+    Params:
+    - Name: musicShift
+      Value: 0
+  TriggerEvent: 3
+--- !u!114 &2024446371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024446368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1346262031
+      Data2: 1306834974
+      Data3: 1022944413
+      Data4: 1833252045
+    Path: event:/Ambience/Ocean
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 24.270424
+  OverrideMaxDistance: 38.869377
+--- !u!65 &2024446372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024446368}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 33.47048, y: 9.334325, z: 36.479427}
+  m_Center: {x: 0.9363847, y: 3.3023546, z: 19.951956}
 --- !u!1001 &2035031214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82864,12 +83539,12 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: -2117939799
-            Data2: 1327943473
-            Data3: 1279602865
-            Data4: 1601450471
-          Path: event:/SFX/Drag Interactions/dragOverConcrete
-        materialType: 0
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+        materialType: 2
 --- !u!4 &3677421958988534827
 Transform:
   m_ObjectHideFlags: 0
@@ -83073,11 +83748,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: -2117939799
-            Data2: 1327943473
-            Data3: 1279602865
-            Data4: 1601450471
-          Path: event:/SFX/Drag Interactions/dragOverConcrete
+            Data1: 1111497711
+            Data2: 1115783818
+            Data3: -1031061859
+            Data4: 985565671
+          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
         materialType: 0
 --- !u!114 &7638721224943177856
 MonoBehaviour:
@@ -83241,6 +83916,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1133121033}
   - {fileID: 1967094817}
+  - {fileID: 1489678570}
   - {fileID: 32170180}
   - {fileID: 403437464}
   - {fileID: 579078600}

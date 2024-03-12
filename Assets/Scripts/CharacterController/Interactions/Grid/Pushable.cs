@@ -56,7 +56,7 @@ namespace Interactions.Behaviors {
         public EventReference dragSoundRef;
         [SerializeField]
         [Range(0, 2)]
-        public int materialType;
+        public int materialType; //0 == Wood, 1 == Rubber, 2 == Cement
 
         float groundOffset = 0;
         float playerGroundOffset = 0;
