@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5372967, g: 0.8430187, b: 0.8986338, a: 1}
+  m_IndirectSpecularColor: {r: 0.5372967, g: 0.84301805, b: 0.8986328, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1589,11 +1589,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &40000286
 MeshFilter:
@@ -6327,11 +6327,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &228893524
 MeshFilter:
@@ -11974,11 +11974,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &318732694
 MeshFilter:
@@ -12944,75 +12944,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efa4aa0cae1d2dc4391c96265a469075, type: 3}
---- !u!1001 &347226972
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 715347958}
-    m_Modifications:
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 382.32135
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 382.32135
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 382.3214
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.3052852
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.3561885
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.57963604
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5362218
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5362218
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.4609405
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.4609406
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.972
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 81.735
-      objectReference: {fileID: 0}
-    - target: {fileID: 7401562576538777587, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-      propertyPath: m_Name
-      value: Dugong
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
 --- !u!43 &347638185
 Mesh:
   m_ObjectHideFlags: 0
@@ -17828,11 +17759,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &581083291
 MeshFilter:
@@ -20770,11 +20701,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &646885617
 MeshFilter:
@@ -22435,8 +22366,7 @@ Transform:
   m_LocalPosition: {x: 6.18, y: 13.77, z: 70.5}
   m_LocalScale: {x: 0.42017, y: 0.42017, z: 0.42017}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1779289567}
+  m_Children: []
   m_Father: {fileID: 1393084929}
   m_LocalEulerAnglesHint: {x: 0, y: 0.369, z: 0}
 --- !u!114 &715347959
@@ -44795,7 +44725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4
-  trashTillHappy: 2
+  trashTillHappy: 3
 --- !u!1001 &1120449055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44976,11 +44906,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1121513464
 MeshFilter:
@@ -46002,6 +45932,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 405180308166303818, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5cd53f6524bed98419c890eb6ffbc408, type: 2}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -46102,6 +46036,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 399897432}
+    - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
+      propertyPath: cameras.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[0]
       value: 
@@ -46358,7 +46296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  trashTillHappy: 4
+  trashTillHappy: 3
 --- !u!4 &1150574478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4383583793311563238, guid: 98d575406f25992478ca3713ff827496, type: 3}
@@ -47324,11 +47262,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1179025946
 MeshFilter:
@@ -47755,11 +47693,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1179623491
 MeshFilter:
@@ -49806,11 +49744,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1213744851
 MeshFilter:
@@ -58474,11 +58412,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1430427984
 MeshFilter:
@@ -59585,11 +59523,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1440965656
 MeshFilter:
@@ -65334,11 +65272,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1670948095
 MeshFilter:
@@ -69029,11 +68967,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &1779289567 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6001536981361905947, guid: b7df32e50f6bd664684fdc1201377770, type: 3}
-  m_PrefabInstance: {fileID: 347226972}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1781174309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69409,11 +69342,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1784626073
 MeshFilter:
@@ -72499,11 +72432,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1885677495
 MeshFilter:
@@ -75673,11 +75606,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: 949759744
-            Data2: 1231890003
-            Data3: 1528945026
-            Data4: -1527302305
-          Path: event:/SFX/Drag Interactions/dragOverSand
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!33 &1958192414
 MeshFilter:
@@ -78248,7 +78181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4
-  trashTillHappy: 8
+  trashTillHappy: 3
 --- !u!43 &2064470346
 Mesh:
   m_ObjectHideFlags: 0
@@ -80823,6 +80756,103 @@ Transform:
   - {fileID: 1520880767}
   m_Father: {fileID: 1466805787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2143404013
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 71.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.73298734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.68024236
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 85.725
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_Name
+      value: dugong
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.41515875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.263547
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5401688
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5797137
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.13580102
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7822475
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.18324585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 26.368
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552637497278081227, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 106.917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 418bfac149bbc664cbe2efbb70670a80, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8284cf7d824ec2640b00a3b9264e310e, type: 3}
 --- !u!43 &2143956717
 Mesh:
   m_ObjectHideFlags: 0
@@ -81582,11 +81612,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: -2117939799
-            Data2: 1327943473
-            Data3: 1279602865
-            Data4: 1601450471
-          Path: event:/SFX/Drag Interactions/dragOverConcrete
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!4 &3677421958988534827
 Transform:
@@ -81791,11 +81821,11 @@ MonoBehaviour:
         pushSpeed: 2
         dragSoundRef:
           Guid:
-            Data1: -2117939799
-            Data2: 1327943473
-            Data3: 1279602865
-            Data4: 1601450471
-          Path: event:/SFX/Drag Interactions/dragOverConcrete
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
         materialType: 0
 --- !u!114 &7638721224943177856
 MonoBehaviour:
@@ -81994,3 +82024,4 @@ SceneRoots:
   - {fileID: 335970932}
   - {fileID: 1472877833}
   - {fileID: 1731966752}
+  - {fileID: 2143404013}
