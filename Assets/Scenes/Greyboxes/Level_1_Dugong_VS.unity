@@ -1587,6 +1587,13 @@ MonoBehaviour:
         gridObject: {fileID: 40000284}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -6330,6 +6337,13 @@ MonoBehaviour:
         gridObject: {fileID: 228893522}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -12340,6 +12354,13 @@ MonoBehaviour:
         gridObject: {fileID: 318732690}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -18154,6 +18175,13 @@ MonoBehaviour:
         gridObject: {fileID: 581083289}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -18161,7 +18189,7 @@ MonoBehaviour:
             Data3: -1031061859
             Data4: 985565671
           Path: event:/SFX/Drag Interactions/dragOverSandTEMP
-        materialType: 2
+        materialType: 3
 --- !u!33 &581083291
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -21454,6 +21482,13 @@ MonoBehaviour:
         gridObject: {fileID: 646885613}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -46178,6 +46213,13 @@ MonoBehaviour:
         gridObject: {fileID: 1121513460}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -48534,6 +48576,13 @@ MonoBehaviour:
         gridObject: {fileID: 1179025942}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -48965,6 +49014,13 @@ MonoBehaviour:
         gridObject: {fileID: 1179623487}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -48972,7 +49028,7 @@ MonoBehaviour:
             Data3: -1031061859
             Data4: 985565671
           Path: event:/SFX/Drag Interactions/dragOverSandTEMP
-        materialType: 2
+        materialType: 3
 --- !u!33 &1179623491
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -51056,6 +51112,13 @@ MonoBehaviour:
         gridObject: {fileID: 1213744847}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -59749,6 +59812,13 @@ MonoBehaviour:
         gridObject: {fileID: 1430427980}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -60860,6 +60930,13 @@ MonoBehaviour:
         gridObject: {fileID: 1440965652}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -60867,7 +60944,7 @@ MonoBehaviour:
             Data3: -1031061859
             Data4: 985565671
           Path: event:/SFX/Drag Interactions/dragOverSandTEMP
-        materialType: 2
+        materialType: 3
 --- !u!33 &1440965656
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -66767,6 +66844,13 @@ MonoBehaviour:
         gridObject: {fileID: 1670948093}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -70957,6 +71041,13 @@ MonoBehaviour:
         gridObject: {fileID: 1784626069}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -74334,6 +74425,13 @@ MonoBehaviour:
         gridObject: {fileID: 1885677493}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -77513,6 +77611,13 @@ MonoBehaviour:
         gridObject: {fileID: 1958192412}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -77520,7 +77625,7 @@ MonoBehaviour:
             Data3: -1031061859
             Data4: 985565671
           Path: event:/SFX/Drag Interactions/dragOverSandTEMP
-        materialType: 2
+        materialType: 3
 --- !u!33 &1958192414
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -83537,6 +83642,13 @@ MonoBehaviour:
         gridObject: {fileID: 6076892263856062270}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711
@@ -83746,6 +83858,13 @@ MonoBehaviour:
         gridObject: {fileID: 4457357772156372268}
         moveThreshold: 0.01
         pushSpeed: 2
+        grabSoundRef:
+          Guid:
+            Data1: 1879563584
+            Data2: 1216018902
+            Data3: 1245435321
+            Data4: 1944818118
+          Path: event:/SFX/Grab&Drag/grabObject
         dragSoundRef:
           Guid:
             Data1: 1111497711

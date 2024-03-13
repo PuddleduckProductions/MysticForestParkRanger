@@ -49,14 +49,14 @@ namespace Interactions.Behaviors {
         protected bool pushEnabled = true;
 
         /// <summary>
-        /// FMOD event reference
+        /// FMOD event reference and parameters
         /// </summary
-        //public EventInstance dragSound;
         [SerializeField]
+        //TO DO: define 'grabSoundRef' in the script to prevent setting it in teh inspector on every draggable object manually
+        public EventReference grabSoundRef;
         public EventReference dragSoundRef;
-        [SerializeField]
-        [Range(0, 2)]
-        public int materialType; //0 == Wood, 1 == Rubber, 2 == Cement
+        [Range(0, 3)]
+        public int materialType; // 0 == wood, 1 == rubber, 2 == cement, 3 == metal
 
         float groundOffset = 0;
         float playerGroundOffset = 0;
@@ -89,6 +89,9 @@ namespace Interactions.Behaviors {
                 groundOffset = interactionObject.transform.position.y - pushableGetGround(interactionObject.transform.position);
                 playerGroundOffset = player.transform.position.y - pushableGetGround(player.transform.position);
 
+                //FMOD
+                AudioManager.Instance.PlayOneShotWithParameters("grabSound", grabSoundRef, "materialType", (float)materialType);
+
             } else if (pushEnabled) { // Are we in the process of moving? Don't allow releasing push.
                                       // Force InteractionManager to call EndInteraction.
                 isPushing = false;
@@ -101,6 +104,9 @@ namespace Interactions.Behaviors {
 
         public override void EndInteraction() {
             controller.moveEnabled = true;
+
+            //FMOD
+            AudioManager.Instance.PlayOneShotWithParameters("grabSound", grabSoundRef, "materialType", (float)materialType);
         }
 
         // Since Coroutines can't be run from non MonoBehaviours.
