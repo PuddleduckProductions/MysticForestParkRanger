@@ -31,6 +31,8 @@ public class MainMenuManager : MonoBehaviour
         {
             GoBack();
         }
+        // Set muisc volume to musicVolume.normalizedValue;
+        // Set SFX volume to sfxVolume.normalizedValue;
     }
 
     public void OpenSettings(Button button)
@@ -69,11 +71,20 @@ public class MainMenuManager : MonoBehaviour
 
     public float GetMusicVolume()
     {
-        return musicVolume.value;
+        return musicVolume.normalizedValue;
     }
 
     public float GetSFXVolume()
     {
-        return sfxVolume.value;
+        return sfxVolume.normalizedValue;
+    }
+    
+    public void SetLanguage(string language = "English"){
+        if(language == "Japanese"){
+            // Set language to Japanese
+        }
+        else{
+            // Set language to English
+        }
     }
 }
