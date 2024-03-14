@@ -64,7 +64,7 @@ namespace Interactions {
 
             /// <summary>
             /// Are we currently having an interaction happen? What do we need to do to update it?
-            /// If this returns true, this supresses all other interactions in the scene.
+            /// If this returns true, this suppresses all other interactions in the scene.
             /// </summary>
             public virtual bool Update() { return false; }
 
@@ -77,7 +77,7 @@ namespace Interactions {
 
             /// <summary>
             /// Should we allow interactions currently?
-            /// Default setting is as long as you're not holdign something else.
+            /// Default setting is as long as you're not holding something else.
             /// </summary>
             /// <param name="other">The other object that wants to interact with us. Can be null.</param>
             /// <returns></returns>
