@@ -8,6 +8,8 @@ items:
   - Interactions.Behaviors.InkInteraction.#ctor(Interactions.Interaction)
   - Interactions.Behaviors.InkInteraction.Interact
   - Interactions.Behaviors.InkInteraction.Update
+  - Interactions.Behaviors.InkInteraction.characterVoiceRef
+  - Interactions.Behaviors.InkInteraction.emotionType
   - Interactions.Behaviors.InkInteraction.inkKnot
   langs:
   - csharp
@@ -23,7 +25,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InkInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 88
+    startLine: 90
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -70,6 +72,91 @@ items:
     arguments:
     - type: System.String
       value: Misc/Ink
+- uid: Interactions.Behaviors.InkInteraction.characterVoiceRef
+  commentId: F:Interactions.Behaviors.InkInteraction.characterVoiceRef
+  id: characterVoiceRef
+  parent: Interactions.Behaviors.InkInteraction
+  langs:
+  - csharp
+  - vb
+  name: characterVoiceRef
+  nameWithType: InkInteraction.characterVoiceRef
+  fullName: Interactions.Behaviors.InkInteraction.characterVoiceRef
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: characterVoiceRef
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 96
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: >-
+      [SerializeField]
+
+      public EventReference characterVoiceRef
+    return:
+      type: FMODUnity.EventReference
+    content.vb: >-
+      <SerializeField>
+
+      Public characterVoiceRef As EventReference
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: Interactions.Behaviors.InkInteraction.emotionType
+  commentId: F:Interactions.Behaviors.InkInteraction.emotionType
+  id: emotionType
+  parent: Interactions.Behaviors.InkInteraction
+  langs:
+  - csharp
+  - vb
+  name: emotionType
+  nameWithType: InkInteraction.emotionType
+  fullName: Interactions.Behaviors.InkInteraction.emotionType
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: emotionType
+    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
+    startLine: 99
+  assemblies:
+  - ScriptAssembly
+  namespace: Interactions.Behaviors
+  syntax:
+    content: >-
+      [SerializeField]
+
+      [Range(0, 3)]
+
+      public int emotionType
+    return:
+      type: System.Int32
+    content.vb: >-
+      <SerializeField>
+
+      <Range(0, 3)>
+
+      Public emotionType As Integer
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+  - type: UnityEngine.RangeAttribute
+    ctor: UnityEngine.RangeAttribute.#ctor(System.Single,System.Single)
+    arguments:
+    - type: System.Single
+      value: 0
+    - type: System.Single
+      value: 3
 - uid: Interactions.Behaviors.InkInteraction.inkKnot
   commentId: F:Interactions.Behaviors.InkInteraction.inkKnot
   id: inkKnot
@@ -88,7 +175,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: inkKnot
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 93
+    startLine: 105
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -117,7 +204,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 94
+    startLine: 106
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -149,7 +236,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 103
+    startLine: 115
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -178,7 +265,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 112
+    startLine: 130
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -556,6 +643,28 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: FMODUnity.EventReference
+  commentId: T:FMODUnity.EventReference
+  parent: FMODUnity
+  name: EventReference
+  nameWithType: EventReference
+  fullName: FMODUnity.EventReference
+- uid: FMODUnity
+  commentId: N:FMODUnity
+  name: FMODUnity
+  nameWithType: FMODUnity
+  fullName: FMODUnity
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.String
   commentId: T:System.String
   parent: System
