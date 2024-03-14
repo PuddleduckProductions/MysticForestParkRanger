@@ -10,11 +10,9 @@ items:
   - Interactions.Behaviors.PushableInteraction.EndInteraction
   - Interactions.Behaviors.PushableInteraction.Interact
   - Interactions.Behaviors.PushableInteraction.Push(UnityEngine.Vector3)
-  - Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3,UnityEngine.Vector2Int)
+  - Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
   - Interactions.Behaviors.PushableInteraction.Update
-  - Interactions.Behaviors.PushableInteraction.dragSoundRef
   - Interactions.Behaviors.PushableInteraction.isPushing
-  - Interactions.Behaviors.PushableInteraction.materialType
   - Interactions.Behaviors.PushableInteraction.moveThreshold
   - Interactions.Behaviors.PushableInteraction.pushEnabled
   - Interactions.Behaviors.PushableInteraction.pushSpeed
@@ -32,7 +30,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PushableInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 11
+    startLine: 9
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -92,7 +90,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 15
+    startLine: 13
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -124,7 +122,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isPushing
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 25
+    startLine: 23
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -153,7 +151,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: moveThreshold
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 38
+    startLine: 36
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -182,7 +180,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: pushSpeed
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 43
+    startLine: 41
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -211,7 +209,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: pushEnabled
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 48
+    startLine: 46
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -222,91 +220,6 @@ items:
     return:
       type: System.Boolean
     content.vb: Protected pushEnabled As Boolean
-- uid: Interactions.Behaviors.PushableInteraction.dragSoundRef
-  commentId: F:Interactions.Behaviors.PushableInteraction.dragSoundRef
-  id: dragSoundRef
-  parent: Interactions.Behaviors.PushableInteraction
-  langs:
-  - csharp
-  - vb
-  name: dragSoundRef
-  nameWithType: PushableInteraction.dragSoundRef
-  fullName: Interactions.Behaviors.PushableInteraction.dragSoundRef
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: dragSoundRef
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 55
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  syntax:
-    content: >-
-      [SerializeField]
-
-      public EventReference dragSoundRef
-    return:
-      type: FMODUnity.EventReference
-    content.vb: >-
-      <SerializeField>
-
-      Public dragSoundRef As EventReference
-  attributes:
-  - type: UnityEngine.SerializeField
-    ctor: UnityEngine.SerializeField.#ctor
-    arguments: []
-- uid: Interactions.Behaviors.PushableInteraction.materialType
-  commentId: F:Interactions.Behaviors.PushableInteraction.materialType
-  id: materialType
-  parent: Interactions.Behaviors.PushableInteraction
-  langs:
-  - csharp
-  - vb
-  name: materialType
-  nameWithType: PushableInteraction.materialType
-  fullName: Interactions.Behaviors.PushableInteraction.materialType
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: materialType
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 58
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions.Behaviors
-  syntax:
-    content: >-
-      [SerializeField]
-
-      [Range(0, 2)]
-
-      public int materialType
-    return:
-      type: System.Int32
-    content.vb: >-
-      <SerializeField>
-
-      <Range(0, 2)>
-
-      Public materialType As Integer
-  attributes:
-  - type: UnityEngine.SerializeField
-    ctor: UnityEngine.SerializeField.#ctor
-    arguments: []
-  - type: UnityEngine.RangeAttribute
-    ctor: UnityEngine.RangeAttribute.#ctor(System.Single,System.Single)
-    arguments:
-    - type: System.Single
-      value: 0
-    - type: System.Single
-      value: 2
 - uid: Interactions.Behaviors.PushableInteraction.Interact
   commentId: M:Interactions.Behaviors.PushableInteraction.Interact
   id: Interact
@@ -325,7 +238,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 75
+    startLine: 65
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -354,7 +267,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 97
+    startLine: 87
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -393,7 +306,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 101
+    startLine: 91
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -409,16 +322,16 @@ items:
     content.vb: Public Overrides Sub EndInteraction()
   overridden: Interactions.Behaviors.InteractionBehavior.EndInteraction
   overload: Interactions.Behaviors.PushableInteraction.EndInteraction*
-- uid: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3,UnityEngine.Vector2Int)
-  commentId: M:Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3,UnityEngine.Vector2Int)
-  id: PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3,UnityEngine.Vector2Int)
+- uid: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
+  commentId: M:Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
+  id: PushUpdate(Interactions.Behaviors.PushableInteraction,UnityEngine.Transform,UnityEngine.Vector3)
   parent: Interactions.Behaviors.PushableInteraction
   langs:
   - csharp
   - vb
-  name: PushUpdate(PushableInteraction, Transform, Vector3, Vector2Int)
-  nameWithType: PushableInteraction.PushUpdate(PushableInteraction, Transform, Vector3, Vector2Int)
-  fullName: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction, UnityEngine.Transform, UnityEngine.Vector3, UnityEngine.Vector2Int)
+  name: PushUpdate(PushableInteraction, Transform, Vector3)
+  nameWithType: PushableInteraction.PushUpdate(PushableInteraction, Transform, Vector3)
+  fullName: Interactions.Behaviors.PushableInteraction.PushUpdate(Interactions.Behaviors.PushableInteraction, UnityEngine.Transform, UnityEngine.Vector3)
   type: Method
   source:
     remote:
@@ -427,12 +340,12 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PushUpdate
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 106
+    startLine: 96
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
   syntax:
-    content: protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd, Vector2Int dirToMove)
+    content: protected static IEnumerator PushUpdate(PushableInteraction p, Transform transformToMove, Vector3 toAdd)
     parameters:
     - id: p
       type: Interactions.Behaviors.PushableInteraction
@@ -440,11 +353,9 @@ items:
       type: UnityEngine.Transform
     - id: toAdd
       type: UnityEngine.Vector3
-    - id: dirToMove
-      type: UnityEngine.Vector2Int
     return:
       type: System.Collections.IEnumerator
-    content.vb: Protected Shared Function PushUpdate(p As PushableInteraction, transformToMove As Transform, toAdd As Vector3, dirToMove As Vector2Int) As IEnumerator
+    content.vb: Protected Shared Function PushUpdate(p As PushableInteraction, transformToMove As Transform, toAdd As Vector3) As IEnumerator
   overload: Interactions.Behaviors.PushableInteraction.PushUpdate*
 - uid: Interactions.Behaviors.PushableInteraction.Push(UnityEngine.Vector3)
   commentId: M:Interactions.Behaviors.PushableInteraction.Push(UnityEngine.Vector3)
@@ -464,7 +375,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Push
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 160
+    startLine: 132
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -493,7 +404,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/Pushable.cs
-    startLine: 197
+    startLine: 156
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -868,28 +779,6 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: FMODUnity.EventReference
-  commentId: T:FMODUnity.EventReference
-  parent: FMODUnity
-  name: EventReference
-  nameWithType: EventReference
-  fullName: FMODUnity.EventReference
-- uid: FMODUnity
-  commentId: N:FMODUnity
-  name: FMODUnity
-  nameWithType: FMODUnity
-  fullName: FMODUnity
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: Interactions.Behaviors.InteractionBehavior.Interact
   commentId: M:Interactions.Behaviors.InteractionBehavior.Interact
   parent: Interactions.Behaviors.InteractionBehavior
@@ -1016,7 +905,7 @@ references:
   fullName: Interactions.Behaviors.PushableInteraction.EndInteraction
 - uid: Interactions.Behaviors.PushableInteraction.PushUpdate*
   commentId: Overload:Interactions.Behaviors.PushableInteraction.PushUpdate
-  href: Interactions.Behaviors.PushableInteraction.html#Interactions_Behaviors_PushableInteraction_PushUpdate_Interactions_Behaviors_PushableInteraction_UnityEngine_Transform_UnityEngine_Vector3_UnityEngine_Vector2Int_
+  href: Interactions.Behaviors.PushableInteraction.html#Interactions_Behaviors_PushableInteraction_PushUpdate_Interactions_Behaviors_PushableInteraction_UnityEngine_Transform_UnityEngine_Vector3_
   name: PushUpdate
   nameWithType: PushableInteraction.PushUpdate
   fullName: Interactions.Behaviors.PushableInteraction.PushUpdate
@@ -1041,13 +930,6 @@ references:
   name: Vector3
   nameWithType: Vector3
   fullName: UnityEngine.Vector3
-- uid: UnityEngine.Vector2Int
-  commentId: T:UnityEngine.Vector2Int
-  parent: UnityEngine
-  isExternal: true
-  name: Vector2Int
-  nameWithType: Vector2Int
-  fullName: UnityEngine.Vector2Int
 - uid: System.Collections.IEnumerator
   commentId: T:System.Collections.IEnumerator
   parent: System.Collections

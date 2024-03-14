@@ -5,13 +5,9 @@ items:
   id: GridObject
   parent: Interactions
   children:
-  - Interactions.GridObject.GetGridDirectionFromWorld(UnityEngine.Vector3)
   - Interactions.GridObject.GetSomeAdjacent(UnityEngine.Vector2Int)
-  - Interactions.GridObject.HasCell(UnityEngine.Vector2Int)
   - Interactions.GridObject.InvokeOnGridUpdate
   - Interactions.GridObject.Move(UnityEngine.Vector2Int)
-  - Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-  - Interactions.GridObject.OnDrawGizmos
   - Interactions.GridObject.RemoveFromGrid(System.Boolean)
   - Interactions.GridObject.RemoveFromGridFull
   - Interactions.GridObject.RemoveFromGridKeepOccupied
@@ -544,7 +540,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Move
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 84
+    startLine: 83
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -552,52 +548,18 @@ items:
     Attempt to move this object in a given direction on the grid.
 
     Does NOT move the object's transform. That's the responsibility of whoever calls this function.
-
-    Does NOT check move validity. This should be tested with <xref href="Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public void Move(Vector2Int direction)
+    content: public bool Move(Vector2Int direction)
     parameters:
     - id: direction
       type: UnityEngine.Vector2Int
       description: The direction to move in. Should be a basis vector with exactly ONE non-zero component.
-    content.vb: Public Sub Move(direction As Vector2Int)
-  overload: Interactions.GridObject.Move*
-- uid: Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-  commentId: M:Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-  id: MoveIsValid(UnityEngine.Vector2Int)
-  parent: Interactions.GridObject
-  langs:
-  - csharp
-  - vb
-  name: MoveIsValid(Vector2Int)
-  nameWithType: GridObject.MoveIsValid(Vector2Int)
-  fullName: Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: MoveIsValid
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 105
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  summary: Whether or not a move in a given direction is valid.
-  example: []
-  syntax:
-    content: public bool MoveIsValid(Vector2Int direction)
-    parameters:
-    - id: direction
-      type: UnityEngine.Vector2Int
-      description: The direction to move in.
     return:
       type: System.Boolean
-      description: The validity.
-    content.vb: Public Function MoveIsValid(direction As Vector2Int) As Boolean
-  overload: Interactions.GridObject.MoveIsValid*
+      description: Whether or not the move was successful.
+    content.vb: Public Function Move(direction As Vector2Int) As Boolean
+  overload: Interactions.GridObject.Move*
 - uid: Interactions.GridObject.GetSomeAdjacent(UnityEngine.Vector2Int)
   commentId: M:Interactions.GridObject.GetSomeAdjacent(UnityEngine.Vector2Int)
   id: GetSomeAdjacent(UnityEngine.Vector2Int)
@@ -616,7 +578,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GetSomeAdjacent
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 115
+    startLine: 108
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -626,47 +588,16 @@ items:
     Not useful for much other than getting the position offsets between two cells.
   example: []
   syntax:
-    content: public Vector3? GetSomeAdjacent(Vector2Int direction)
+    content: public Vector3 GetSomeAdjacent(Vector2Int direction)
     parameters:
     - id: direction
       type: UnityEngine.Vector2Int
       description: The direction to pick.
     return:
-      type: System.Nullable{UnityEngine.Vector3}
+      type: UnityEngine.Vector3
       description: The position of the neighboring cell.
-    content.vb: Public Function GetSomeAdjacent(direction As Vector2Int) As Vector3?
+    content.vb: Public Function GetSomeAdjacent(direction As Vector2Int) As Vector3
   overload: Interactions.GridObject.GetSomeAdjacent*
-- uid: Interactions.GridObject.HasCell(UnityEngine.Vector2Int)
-  commentId: M:Interactions.GridObject.HasCell(UnityEngine.Vector2Int)
-  id: HasCell(UnityEngine.Vector2Int)
-  parent: Interactions.GridObject
-  langs:
-  - csharp
-  - vb
-  name: HasCell(Vector2Int)
-  nameWithType: GridObject.HasCell(Vector2Int)
-  fullName: Interactions.GridObject.HasCell(UnityEngine.Vector2Int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: HasCell
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 123
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public bool HasCell(Vector2Int pos)
-    parameters:
-    - id: pos
-      type: UnityEngine.Vector2Int
-    return:
-      type: System.Boolean
-    content.vb: Public Function HasCell(pos As Vector2Int) As Boolean
-  overload: Interactions.GridObject.HasCell*
 - uid: Interactions.GridObject.RemoveFromGrid(System.Boolean)
   commentId: M:Interactions.GridObject.RemoveFromGrid(System.Boolean)
   id: RemoveFromGrid(System.Boolean)
@@ -685,7 +616,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: RemoveFromGrid
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 134
+    startLine: 116
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -720,7 +651,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: RemoveFromGridFull
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 141
+    startLine: 123
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -746,7 +677,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: RemoveFromGridKeepOccupied
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 145
+    startLine: 127
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -754,66 +685,6 @@ items:
     content: public void RemoveFromGridKeepOccupied()
     content.vb: Public Sub RemoveFromGridKeepOccupied()
   overload: Interactions.GridObject.RemoveFromGridKeepOccupied*
-- uid: Interactions.GridObject.GetGridDirectionFromWorld(UnityEngine.Vector3)
-  commentId: M:Interactions.GridObject.GetGridDirectionFromWorld(UnityEngine.Vector3)
-  id: GetGridDirectionFromWorld(UnityEngine.Vector3)
-  parent: Interactions.GridObject
-  langs:
-  - csharp
-  - vb
-  name: GetGridDirectionFromWorld(Vector3)
-  nameWithType: GridObject.GetGridDirectionFromWorld(Vector3)
-  fullName: Interactions.GridObject.GetGridDirectionFromWorld(UnityEngine.Vector3)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: GetGridDirectionFromWorld
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 153
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  summary: Get a direction in the grid from a world direction.
-  example: []
-  syntax:
-    content: public Vector3 GetGridDirectionFromWorld(Vector3 dir)
-    parameters:
-    - id: dir
-      type: UnityEngine.Vector3
-      description: World direction.
-    return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function GetGridDirectionFromWorld(dir As Vector3) As Vector3
-  overload: Interactions.GridObject.GetGridDirectionFromWorld*
-- uid: Interactions.GridObject.OnDrawGizmos
-  commentId: M:Interactions.GridObject.OnDrawGizmos
-  id: OnDrawGizmos
-  parent: Interactions.GridObject
-  langs:
-  - csharp
-  - vb
-  name: OnDrawGizmos()
-  nameWithType: GridObject.OnDrawGizmos()
-  fullName: Interactions.GridObject.OnDrawGizmos()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: OnDrawGizmos
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridObject.cs
-    startLine: 157
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void OnDrawGizmos()
-    content.vb: Public Sub OnDrawGizmos()
-  overload: Interactions.GridObject.OnDrawGizmos*
 references:
 - uid: Interactions
   commentId: N:Interactions
@@ -5265,43 +5136,12 @@ references:
   name: InvokeOnGridUpdate
   nameWithType: GridObject.InvokeOnGridUpdate
   fullName: Interactions.GridObject.InvokeOnGridUpdate
-- uid: Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-  commentId: M:Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-  isExternal: true
-  href: Interactions.GridObject.html#Interactions_GridObject_MoveIsValid_UnityEngine_Vector2Int_
-  name: MoveIsValid(Vector2Int)
-  nameWithType: GridObject.MoveIsValid(Vector2Int)
-  fullName: Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-  spec.csharp:
-  - uid: Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-    name: MoveIsValid
-    href: Interactions.GridObject.html#Interactions_GridObject_MoveIsValid_UnityEngine_Vector2Int_
-  - name: (
-  - uid: UnityEngine.Vector2Int
-    name: Vector2Int
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Interactions.GridObject.MoveIsValid(UnityEngine.Vector2Int)
-    name: MoveIsValid
-    href: Interactions.GridObject.html#Interactions_GridObject_MoveIsValid_UnityEngine_Vector2Int_
-  - name: (
-  - uid: UnityEngine.Vector2Int
-    name: Vector2Int
-    isExternal: true
-  - name: )
 - uid: Interactions.GridObject.Move*
   commentId: Overload:Interactions.GridObject.Move
   href: Interactions.GridObject.html#Interactions_GridObject_Move_UnityEngine_Vector2Int_
   name: Move
   nameWithType: GridObject.Move
   fullName: Interactions.GridObject.Move
-- uid: Interactions.GridObject.MoveIsValid*
-  commentId: Overload:Interactions.GridObject.MoveIsValid
-  href: Interactions.GridObject.html#Interactions_GridObject_MoveIsValid_UnityEngine_Vector2Int_
-  name: MoveIsValid
-  nameWithType: GridObject.MoveIsValid
-  fullName: Interactions.GridObject.MoveIsValid
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -5319,57 +5159,13 @@ references:
   name: GetSomeAdjacent
   nameWithType: GridObject.GetSomeAdjacent
   fullName: Interactions.GridObject.GetSomeAdjacent
-- uid: System.Nullable{UnityEngine.Vector3}
-  commentId: T:System.Nullable{UnityEngine.Vector3}
-  parent: System
-  definition: System.Nullable`1
-  name: Vector3?
-  nameWithType: Vector3?
-  fullName: UnityEngine.Vector3?
-  spec.csharp:
-  - uid: UnityEngine.Vector3
-    name: Vector3
-    isExternal: true
-  - name: '?'
-  spec.vb:
-  - uid: UnityEngine.Vector3
-    name: Vector3
-    isExternal: true
-  - name: '?'
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: Interactions.GridObject.HasCell*
-  commentId: Overload:Interactions.GridObject.HasCell
-  href: Interactions.GridObject.html#Interactions_GridObject_HasCell_UnityEngine_Vector2Int_
-  name: HasCell
-  nameWithType: GridObject.HasCell
-  fullName: Interactions.GridObject.HasCell
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
 - uid: Interactions.GridObject.RemoveFromGrid*
   commentId: Overload:Interactions.GridObject.RemoveFromGrid
   href: Interactions.GridObject.html#Interactions_GridObject_RemoveFromGrid_System_Boolean_
@@ -5388,22 +5184,3 @@ references:
   name: RemoveFromGridKeepOccupied
   nameWithType: GridObject.RemoveFromGridKeepOccupied
   fullName: Interactions.GridObject.RemoveFromGridKeepOccupied
-- uid: Interactions.GridObject.GetGridDirectionFromWorld*
-  commentId: Overload:Interactions.GridObject.GetGridDirectionFromWorld
-  href: Interactions.GridObject.html#Interactions_GridObject_GetGridDirectionFromWorld_UnityEngine_Vector3_
-  name: GetGridDirectionFromWorld
-  nameWithType: GridObject.GetGridDirectionFromWorld
-  fullName: Interactions.GridObject.GetGridDirectionFromWorld
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3
-- uid: Interactions.GridObject.OnDrawGizmos*
-  commentId: Overload:Interactions.GridObject.OnDrawGizmos
-  href: Interactions.GridObject.html#Interactions_GridObject_OnDrawGizmos
-  name: OnDrawGizmos
-  nameWithType: GridObject.OnDrawGizmos
-  fullName: Interactions.GridObject.OnDrawGizmos

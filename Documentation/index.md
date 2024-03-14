@@ -5,8 +5,6 @@ _layout: landing
 # Mystic Forest Park Ranger
 Welcome to the documentation for MysticForestParkRanger!
 
-If you're a grader, please <a href="#archival-stuff">scroll below</a>.
-
 Download the latest build here: <script src="~/assets/js/download-latest.js"></script>
 
 <button onclick="downloadLatestBuildArtifact()">Click to download</button>
@@ -35,39 +33,3 @@ Run `build.sh` in `Documentation/docs`.
 If you want to preview the docs, you can add `build.sh --serve`  to run a local server.
 
 If you experience any bugs, let Tyler know.
-
-# Archival Stuff
-This project was created partly for CMPM 171, with the requirement of a vertical slice due by March 15th.
-
-Build download: <button onclick="downloadLatestBuildArtifact()">Click to download</button>
-
-Current credits:
-![Credits page](~/assets/images/Creditspage.png)
-
-We made the game under these course constraints:
-- A download size of &lt; 100 mb
-	- We had to make no special concessions with our design or format to meet this requirement.
-- Support of 2+ languages, one of which must be logographic or left to right.
-	- We had friends who offered to translate to Japanese and/or Korean. We chose Japanese.
-- The game must be playable with limited vision (contrast and color sensitivity)
-	- We went with a toon shading look to avoid any crucial details being lost with vision problems.
-- The game must be playable with one hand.
-	- Our game does not require heavy action, and the WASD keys and the spacebar are reachable entirely with one hand.
-- The game must be playable without any sound cues.
-	- Our game's sound uses background sounds only to enhance gameplay. Loss of sound means nothing to overall enjoyment of the experience.
-- The game should reach a natural resting point every two minutes of active play.
-	- Our game is a puzzle game, there is no loop containing active play.
-
-## Prototypes
-
-### Lo-Fi Prototypes
-Video Montage created by Emily. Prototypes created by Tyler.
-
-Throughout making these prototypes we learned how the core gameplay would be structured. We learned a lot about our control scheme and how players would interact with the scene.
-> [!Video https://puddleduckproductions.github.io/MysticForestParkRanger/assets/videos/lofivideomontage.mp4]
-
-### Hi-Fi Prototypes
-Video Montage by Athena. Dugong Blockout made by Ethan. Aye Aye blockout made by Alex. Tapir blockout made by Tatiana, Tyler, and Madison. Further mechanics prototyping made by Tyler. Shaders and models made by Athena and Kay.
-
-We were highly focused on blockouts through these hi-fi prototypes. We really wanted to know how players would parse puzzles and how they would navigate the space. We learned quite a bit about what mechanics would and wouldn't work for us and our vision for the game when testing these prototypes.
-> [!Video https://puddleduckproductions.github.io/MysticForestParkRanger/assets/videos/hifivideomontage.mp4]

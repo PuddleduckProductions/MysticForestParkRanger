@@ -19,7 +19,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: UpdateFunc
     path: ../Assets/Editor/Debug/DebugWindow.cs
-    startLine: 36
+    startLine: 33
   assemblies:
   - EditorAssembly
   namespace: MysticForestParkRanger

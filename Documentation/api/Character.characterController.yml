@@ -26,7 +26,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: characterController
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 7
+    startLine: 6
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: moveEnabled
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -199,7 +199,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: input
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -236,7 +236,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: movementSpeed
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -263,7 +263,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: rotationSpeed
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -290,7 +290,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: relativeDirectionalMovement
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -317,7 +317,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: friction
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - ScriptAssembly
   namespace: Character
@@ -344,7 +344,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: intendedMove
     path: ../Assets/Scripts/CharacterController/characterController.cs
-    startLine: 55
+    startLine: 54
   assemblies:
   - ScriptAssembly
   namespace: Character

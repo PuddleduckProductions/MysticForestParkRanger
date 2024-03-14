@@ -6,11 +6,9 @@ items:
   parent: Interactions
   children:
   - Interactions.GridGroup.BoundsToCells(UnityEngine.BoxCollider)
-  - Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell,System.Single)
+  - Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell)
   - Interactions.GridGroup.EmptyCells(Interactions.GridGroup.Cell[])
   - Interactions.GridGroup.GetCell(UnityEngine.Vector2Int)
-  - Interactions.GridGroup.HasCell(UnityEngine.Vector2Int)
-  - Interactions.GridGroup.IsValidCell(UnityEngine.Vector2Int)
   - Interactions.GridGroup.Item(System.Int32)
   - Interactions.GridGroup.Item(System.Int32,System.Int32)
   - Interactions.GridGroup.Item(UnityEngine.Vector2Int)
@@ -18,7 +16,6 @@ items:
   - Interactions.GridGroup.LocalToGridXY(UnityEngine.Vector3)
   - Interactions.GridGroup.MoveCells(Interactions.GridGroup.Cell[]@,UnityEngine.Vector2Int)
   - Interactions.GridGroup.MoveObject(Interactions.GridObject,UnityEngine.Vector2Int)
-  - Interactions.GridGroup.MoveObjectIsValid(Interactions.GridObject,UnityEngine.Vector2Int)
   - Interactions.GridGroup.MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   - Interactions.GridGroup.PointToLocal(UnityEngine.Vector3)
   - Interactions.GridGroup.cellSize
@@ -418,37 +415,6 @@ items:
   nameWithType.vb: GridGroup.this[](Integer)
   fullName.vb: Interactions.GridGroup.this[](Integer)
   name.vb: this[](Integer)
-- uid: Interactions.GridGroup.HasCell(UnityEngine.Vector2Int)
-  commentId: M:Interactions.GridGroup.HasCell(UnityEngine.Vector2Int)
-  id: HasCell(UnityEngine.Vector2Int)
-  parent: Interactions.GridGroup
-  langs:
-  - csharp
-  - vb
-  name: HasCell(Vector2Int)
-  nameWithType: GridGroup.HasCell(Vector2Int)
-  fullName: Interactions.GridGroup.HasCell(UnityEngine.Vector2Int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: HasCell
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 73
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public bool HasCell(Vector2Int idx)
-    parameters:
-    - id: idx
-      type: UnityEngine.Vector2Int
-    return:
-      type: System.Boolean
-    content.vb: Public Function HasCell(idx As Vector2Int) As Boolean
-  overload: Interactions.GridGroup.HasCell*
 - uid: Interactions.GridGroup.GetCell(UnityEngine.Vector2Int)
   commentId: M:Interactions.GridGroup.GetCell(UnityEngine.Vector2Int)
   id: GetCell(UnityEngine.Vector2Int)
@@ -467,7 +433,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GetCell
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 77
+    startLine: 73
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -480,16 +446,16 @@ items:
       type: Interactions.GridGroup.Cell
     content.vb: Public ByRef Function GetCell(idx As Vector2Int) As GridGroup.Cell
   overload: Interactions.GridGroup.GetCell*
-- uid: Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell,System.Single)
-  commentId: M:Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell,System.Single)
-  id: CellToWorld(Interactions.GridGroup.Cell,System.Single)
+- uid: Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell)
+  commentId: M:Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell)
+  id: CellToWorld(Interactions.GridGroup.Cell)
   parent: Interactions.GridGroup
   langs:
   - csharp
   - vb
-  name: CellToWorld(Cell, float)
-  nameWithType: GridGroup.CellToWorld(GridGroup.Cell, float)
-  fullName: Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell, float)
+  name: CellToWorld(Cell)
+  nameWithType: GridGroup.CellToWorld(GridGroup.Cell)
+  fullName: Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell)
   type: Method
   source:
     remote:
@@ -498,24 +464,19 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CellToWorld
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 81
+    startLine: 77
   assemblies:
   - ScriptAssembly
   namespace: Interactions
   syntax:
-    content: public GridGroup.Box CellToWorld(GridGroup.Cell cell, float size = 1)
+    content: public GridGroup.Box CellToWorld(GridGroup.Cell cell)
     parameters:
     - id: cell
       type: Interactions.GridGroup.Cell
-    - id: size
-      type: System.Single
     return:
       type: Interactions.GridGroup.Box
-    content.vb: Public Function CellToWorld(cell As GridGroup.Cell, size As Single = 1) As GridGroup.Box
+    content.vb: Public Function CellToWorld(cell As GridGroup.Cell) As GridGroup.Box
   overload: Interactions.GridGroup.CellToWorld*
-  nameWithType.vb: GridGroup.CellToWorld(GridGroup.Cell, Single)
-  fullName.vb: Interactions.GridGroup.CellToWorld(Interactions.GridGroup.Cell, Single)
-  name.vb: CellToWorld(Cell, Single)
 - uid: Interactions.GridGroup.LocalToGridXY(UnityEngine.Vector3)
   commentId: M:Interactions.GridGroup.LocalToGridXY(UnityEngine.Vector3)
   id: LocalToGridXY(UnityEngine.Vector3)
@@ -534,7 +495,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: LocalToGridXY
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 125
+    startLine: 117
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -565,24 +526,17 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: LocalToCell
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 137
+    startLine: 123
   assemblies:
   - ScriptAssembly
   namespace: Interactions
-  summary: >-
-    Get where a cell would be from a given position.
-
-    Does not grab any data from <xref href="Interactions.GridGroup.cells" data-throw-if-not-resolved="false"></xref>, instead just position data.
-  example: []
   syntax:
     content: public GridGroup.Cell? LocalToCell(Vector3 pos)
     parameters:
     - id: pos
       type: UnityEngine.Vector3
-      description: The local position to look at.
     return:
       type: System.Nullable{Interactions.GridGroup.Cell}
-      description: A <xref href="Interactions.GridGroup.Cell" data-throw-if-not-resolved="false"></xref> with position data.
     content.vb: Public Function LocalToCell(pos As Vector3) As GridGroup.Cell?
   overload: Interactions.GridGroup.LocalToCell*
 - uid: Interactions.GridGroup.PointToLocal(UnityEngine.Vector3)
@@ -603,7 +557,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PointToLocal
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 150
+    startLine: 136
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -634,7 +588,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: BoundsToCells
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 154
+    startLine: 140
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -665,7 +619,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EmptyCells
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 181
+    startLine: 167
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -697,7 +651,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveCells
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 196
+    startLine: 182
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -740,7 +694,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveObject
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 217
+    startLine: 199
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -754,82 +708,18 @@ items:
     Called by GridObject.Move(Vector3), which you should call instead of this function.
   example: []
   syntax:
-    content: public void MoveObject(GridObject gridObject, Vector2Int direction)
+    content: public bool MoveObject(GridObject gridObject, Vector2Int direction)
     parameters:
     - id: gridObject
       type: Interactions.GridObject
     - id: direction
       type: UnityEngine.Vector2Int
       description: The direction to move in. Assumes no diagonals.
-    content.vb: Public Sub MoveObject(gridObject As GridObject, direction As Vector2Int)
-  overload: Interactions.GridGroup.MoveObject*
-- uid: Interactions.GridGroup.MoveObjectIsValid(Interactions.GridObject,UnityEngine.Vector2Int)
-  commentId: M:Interactions.GridGroup.MoveObjectIsValid(Interactions.GridObject,UnityEngine.Vector2Int)
-  id: MoveObjectIsValid(Interactions.GridObject,UnityEngine.Vector2Int)
-  parent: Interactions.GridGroup
-  langs:
-  - csharp
-  - vb
-  name: MoveObjectIsValid(GridObject, Vector2Int)
-  nameWithType: GridGroup.MoveObjectIsValid(GridObject, Vector2Int)
-  fullName: Interactions.GridGroup.MoveObjectIsValid(Interactions.GridObject, UnityEngine.Vector2Int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: MoveObjectIsValid
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 225
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  summary: Test if the movement of a grid object is valid.
-  example: []
-  syntax:
-    content: public bool MoveObjectIsValid(GridObject gridObject, Vector2Int direction)
-    parameters:
-    - id: gridObject
-      type: Interactions.GridObject
-    - id: direction
-      type: UnityEngine.Vector2Int
     return:
       type: System.Boolean
       description: Whether or not the move was successful.
-    content.vb: Public Function MoveObjectIsValid(gridObject As GridObject, direction As Vector2Int) As Boolean
-  overload: Interactions.GridGroup.MoveObjectIsValid*
-- uid: Interactions.GridGroup.IsValidCell(UnityEngine.Vector2Int)
-  commentId: M:Interactions.GridGroup.IsValidCell(UnityEngine.Vector2Int)
-  id: IsValidCell(UnityEngine.Vector2Int)
-  parent: Interactions.GridGroup
-  langs:
-  - csharp
-  - vb
-  name: IsValidCell(Vector2Int)
-  nameWithType: GridGroup.IsValidCell(Vector2Int)
-  fullName: Interactions.GridGroup.IsValidCell(UnityEngine.Vector2Int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: IsValidCell
-    path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 266
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public bool IsValidCell(Vector2Int pos)
-    parameters:
-    - id: pos
-      type: UnityEngine.Vector2Int
-    return:
-      type: System.Boolean
-    content.vb: Public Function IsValidCell(pos As Vector2Int) As Boolean
-  overload: Interactions.GridGroup.IsValidCell*
+    content.vb: Public Function MoveObject(gridObject As GridObject, direction As Vector2Int) As Boolean
+  overload: Interactions.GridGroup.MoveObject*
 - uid: Interactions.GridGroup.MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   commentId: M:Interactions.GridGroup.MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   id: MoveValid(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
@@ -848,7 +738,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: MoveValid
     path: ../Assets/Scripts/CharacterController/Interactions/Grid/GridGroup.cs
-    startLine: 277
+    startLine: 248
   assemblies:
   - ScriptAssembly
   namespace: Interactions
@@ -5304,23 +5194,6 @@ references:
   - uid: Interactions.GridGroup.Cell
     name: Cell
     href: Interactions.GridGroup.Cell.html
-- uid: Interactions.GridGroup.HasCell*
-  commentId: Overload:Interactions.GridGroup.HasCell
-  href: Interactions.GridGroup.html#Interactions_GridGroup_HasCell_UnityEngine_Vector2Int_
-  name: HasCell
-  nameWithType: GridGroup.HasCell
-  fullName: Interactions.GridGroup.HasCell
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: Interactions.GridGroup.GetCell*
   commentId: Overload:Interactions.GridGroup.GetCell
   href: Interactions.GridGroup.html#Interactions_GridGroup_GetCell_UnityEngine_Vector2Int_
@@ -5329,21 +5202,10 @@ references:
   fullName: Interactions.GridGroup.GetCell
 - uid: Interactions.GridGroup.CellToWorld*
   commentId: Overload:Interactions.GridGroup.CellToWorld
-  href: Interactions.GridGroup.html#Interactions_GridGroup_CellToWorld_Interactions_GridGroup_Cell_System_Single_
+  href: Interactions.GridGroup.html#Interactions_GridGroup_CellToWorld_Interactions_GridGroup_Cell_
   name: CellToWorld
   nameWithType: GridGroup.CellToWorld
   fullName: Interactions.GridGroup.CellToWorld
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
 - uid: Interactions.GridGroup.Box
   commentId: T:Interactions.GridGroup.Box
   parent: Interactions
@@ -5373,12 +5235,6 @@ references:
   name: LocalToGridXY
   nameWithType: GridGroup.LocalToGridXY
   fullName: Interactions.GridGroup.LocalToGridXY
-- uid: Interactions.GridGroup.cells
-  commentId: F:Interactions.GridGroup.cells
-  href: Interactions.GridGroup.html#Interactions_GridGroup_cells
-  name: cells
-  nameWithType: GridGroup.cells
-  fullName: Interactions.GridGroup.cells
 - uid: Interactions.GridGroup.LocalToCell*
   commentId: Overload:Interactions.GridGroup.LocalToCell
   href: Interactions.GridGroup.html#Interactions_GridGroup_LocalToCell_UnityEngine_Vector3_
@@ -5624,18 +5480,17 @@ references:
   name: GridObject
   nameWithType: GridObject
   fullName: Interactions.GridObject
-- uid: Interactions.GridGroup.MoveObjectIsValid*
-  commentId: Overload:Interactions.GridGroup.MoveObjectIsValid
-  href: Interactions.GridGroup.html#Interactions_GridGroup_MoveObjectIsValid_Interactions_GridObject_UnityEngine_Vector2Int_
-  name: MoveObjectIsValid
-  nameWithType: GridGroup.MoveObjectIsValid
-  fullName: Interactions.GridGroup.MoveObjectIsValid
-- uid: Interactions.GridGroup.IsValidCell*
-  commentId: Overload:Interactions.GridGroup.IsValidCell
-  href: Interactions.GridGroup.html#Interactions_GridGroup_IsValidCell_UnityEngine_Vector2Int_
-  name: IsValidCell
-  nameWithType: GridGroup.IsValidCell
-  fullName: Interactions.GridGroup.IsValidCell
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Interactions.GridGroup.MoveValid*
   commentId: Overload:Interactions.GridGroup.MoveValid
   href: Interactions.GridGroup.html#Interactions_GridGroup_MoveValid_UnityEngine_Vector2Int_UnityEngine_Vector2Int_

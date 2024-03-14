@@ -4,9 +4,7 @@ items:
   commentId: T:MysticForestParkRanger.PlayerAnimator
   id: PlayerAnimator
   parent: MysticForestParkRanger
-  children:
-  - MysticForestParkRanger.PlayerAnimator.UpdatePush(UnityEngine.Vector2Int)
-  - MysticForestParkRanger.PlayerAnimator.floorLayer
+  children: []
   langs:
   - csharp
   - vb
@@ -149,62 +147,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: MysticForestParkRanger.PlayerAnimator.floorLayer
-  commentId: F:MysticForestParkRanger.PlayerAnimator.floorLayer
-  id: floorLayer
-  parent: MysticForestParkRanger.PlayerAnimator
-  langs:
-  - csharp
-  - vb
-  name: floorLayer
-  nameWithType: PlayerAnimator.floorLayer
-  fullName: PlayerAnimator.floorLayer
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/PlayerAnimator.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: floorLayer
-    path: ../Assets/Scripts/CharacterController/PlayerAnimator.cs
-    startLine: 18
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public LayerMask floorLayer
-    return:
-      type: UnityEngine.LayerMask
-    content.vb: Public floorLayer As LayerMask
-- uid: MysticForestParkRanger.PlayerAnimator.UpdatePush(UnityEngine.Vector2Int)
-  commentId: M:MysticForestParkRanger.PlayerAnimator.UpdatePush(UnityEngine.Vector2Int)
-  id: UpdatePush(UnityEngine.Vector2Int)
-  parent: MysticForestParkRanger.PlayerAnimator
-  langs:
-  - csharp
-  - vb
-  name: UpdatePush(Vector2Int)
-  nameWithType: PlayerAnimator.UpdatePush(Vector2Int)
-  fullName: PlayerAnimator.UpdatePush(UnityEngine.Vector2Int)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/PlayerAnimator.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: UpdatePush
-    path: ../Assets/Scripts/CharacterController/PlayerAnimator.cs
-    startLine: 33
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public void UpdatePush(Vector2Int dir)
-    parameters:
-    - id: dir
-      type: UnityEngine.Vector2Int
-    content.vb: Public Sub UpdatePush(dir As Vector2Int)
-  overload: MysticForestParkRanger.PlayerAnimator.UpdatePush*
 references:
 - uid: MysticForestParkRanger
 - uid: System.Object
@@ -4555,23 +4497,3 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: UnityEngine.LayerMask
-  commentId: T:UnityEngine.LayerMask
-  parent: UnityEngine
-  isExternal: true
-  name: LayerMask
-  nameWithType: LayerMask
-  fullName: UnityEngine.LayerMask
-- uid: MysticForestParkRanger.PlayerAnimator.UpdatePush*
-  commentId: Overload:MysticForestParkRanger.PlayerAnimator.UpdatePush
-  href: MysticForestParkRanger.PlayerAnimator.html#PlayerAnimator_UpdatePush_UnityEngine_Vector2Int_
-  name: UpdatePush
-  nameWithType: PlayerAnimator.UpdatePush
-  fullName: PlayerAnimator.UpdatePush
-- uid: UnityEngine.Vector2Int
-  commentId: T:UnityEngine.Vector2Int
-  parent: UnityEngine
-  isExternal: true
-  name: Vector2Int
-  nameWithType: Vector2Int
-  fullName: UnityEngine.Vector2Int
