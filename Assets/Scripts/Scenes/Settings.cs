@@ -23,16 +23,16 @@ public class Settings : MonoBehaviour
         }
         var slider = GameObject.Find("SFX Slider").GetComponent<Slider>();
         slider.value = volume * slider.maxValue;
-        UpdateVolume();
+        //UpdateVolume();
     }
 
-    public void UpdateVolume() {
-        var slider = GameObject.Find("SFX Slider").GetComponent<Slider>();
-        var volume =  slider.value/slider.maxValue;
-        AudioManager.Instance.volume = volume;
-        PlayerPrefs.SetFloat("volume", volume);
-        PlayerPrefs.Save();
-    }
+    //public void UpdateVolume() {
+    //    var slider = GameObject.Find("SFX Slider").GetComponent<Slider>();
+    //    var volume =  slider.value/slider.maxValue;
+    //    AudioManager.Instance.volume = volume;
+    //    PlayerPrefs.SetFloat("volume", volume);
+    //    PlayerPrefs.Save();
+    //}
 
     public void UpdateLanguage(string language) {
         PlayerPrefs.SetString("language", language);

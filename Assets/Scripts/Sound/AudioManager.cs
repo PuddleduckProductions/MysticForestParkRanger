@@ -24,21 +24,48 @@ public class AudioManager
         _instance = null;
     }
 
+
+    // VOLUME BUSSES
+
+    //bus variables
+    public FMOD.Studio.Bus masBus;
+    //public FMOD.Studio.Bus musBus;
+    //public FMOD.Studio.Bus sfxBus;
+    //public FMOD.Studio.Bus voiceBus;
+    //public FMOD.Studio.Bus dragBus;
+    //public FMOD.Studio.Bus ambiBus;
+
+    //bus paths
+    public string masVolBusPath = "bus:/";
+    public string musVolBusPath = "bus:/Music";
+    public string sfxVolBusPath = "bus:/SFX";
+    //public string voiceVolBusPath = "bus:/SFX/Voice";
+    //public string dragVolBusPath = "bus:/SFX/Dragging";
+    //public string ambiVolBusPath = "bus:/SFX/Ambience";
+
+    //volume values
+    public float volume; //sfx, accourding to settings.cs
+    //public float musVolume;
+    //public float sfxVolume;
+
+
+    public void setVolume(float volu)
+    {
+        volume = volu;
+        masBus = FMODUnity.RuntimeManager.GetBus(masVolBusPath);
+        masBus.setVolume(volu);
+    }
+
+
+
+    // SOUNDLIST
+
     SoundList eventRefs;
 
     public AudioManager() {
         eventRefs = (SoundList)Resources.Load("MasterSoundList");
         eventRefs.Init();
     }
-
-    private float _volume = 1.0f;
-
-    public float volume { get { return _volume; } set {
-            _volume = value;
-            foreach (var sound in sounds) {
-                sound.Value.setVolume(_volume);
-            }
-        }}
 
     protected Dictionary<string, EventInstance> sounds = new Dictionary<string, EventInstance>()    ;
 
@@ -52,7 +79,6 @@ public class AudioManager
     public EventInstance RegisterSound(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-        soundInstance.setVolume(volume);
         //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
         //UPDATE: Check to see if the name is already being used, if so, replace the old instance with the new one
@@ -67,7 +93,6 @@ public class AudioManager
     //WIP: Using the path of the Event Reference
     public EventInstance RegisterSound(string instanceName, string eventReferenceName) {
         EventInstance soundInstance = RuntimeManager.CreateInstance(eventRefs[eventReferenceName]);
-        soundInstance.setVolume(volume);
         sounds.Add(instanceName, soundInstance);
         return soundInstance;
     }
@@ -95,6 +120,8 @@ public class AudioManager
         return sounds.ContainsKey(name);
     }
 
+
+    //OTHER METHODS
 
 
     public bool isPlaybackStatePaused(string name) {
@@ -126,7 +153,6 @@ public class AudioManager
     public void PlayOneShot(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-        soundInstance.setVolume(volume);
         //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
         //Registering sound
@@ -140,7 +166,6 @@ public class AudioManager
     public void PlayOneShotWithParameters(string soundEventName, EventReference soundEventPath, string parameterName, float parameterValue)//, Vector3 position)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-        soundInstance.setVolume(volume);
         soundInstance.setParameterByName(parameterName, parameterValue); //ONLY WORKS ON LOCAL VARIABLES
 
         //Registering sound

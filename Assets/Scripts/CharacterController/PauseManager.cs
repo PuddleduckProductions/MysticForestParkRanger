@@ -21,7 +21,7 @@ public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
         ((ISingleton<PauseManager>)this).Initialize();
         menu = transform.GetChild(0).gameObject;
         uiInput = GetComponentInParent<InputSystemUIInputModule>();
-        EventSystem.current.SetSelectedGameObject(musicVolume.gameObject);
+        EventSystem.current.SetSelectedGameObject(sfxVolume.gameObject);
     }
     
     private void Update()
@@ -30,10 +30,11 @@ public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
         {
             Resume();
         }
-        /* if(isPaused){
+        if(isPaused){
             // Set muisc volume to musicVolume.normalizedValue;
             // Set SFX volume to sfxVolume.normalizedValue;
-        } */
+            UpdateVolume();
+        }
     }
 
     public void Pause() {
@@ -52,7 +53,17 @@ public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
     {
         Application.Quit();
     }
-    
+
+    public void UpdateVolume()
+    {
+        var slider = GameObject.Find("SFX Slider").GetComponent<Slider>();
+        var volume = slider.value / slider.maxValue;
+        AudioManager.Instance.volume = volume;
+        AudioManager.Instance.setVolume(volume);
+        PlayerPrefs.SetFloat("volume", volume);
+        PlayerPrefs.Save();
+    }
+
     public void SetLanguage(string language = "English"){
         if(language == "Japanese"){
             // Set language to Japanese
