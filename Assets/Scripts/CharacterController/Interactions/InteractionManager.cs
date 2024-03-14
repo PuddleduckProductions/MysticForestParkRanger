@@ -20,7 +20,7 @@ namespace Interactions {
         protected GameObject player;
         protected Interaction[] interactionsInScene;
         protected RectTransform interactionButton;
-
+        int language = 0;
         public enum InteractionState {
             EMPTY,
             HOLDING_INTERACTION
@@ -49,7 +49,7 @@ namespace Interactions {
         void Start() {
             interactionsInScene = GameObject.FindObjectsByType<Interaction>(FindObjectsSortMode.None);
             player = GameObject.FindGameObjectWithTag("Player");
-            interactionButton = transform.GetChild(0).GetComponent<RectTransform>();
+            interactionButton = transform.GetChild(language).GetComponent<RectTransform>();
 
             mainCamera = Camera.main;
             

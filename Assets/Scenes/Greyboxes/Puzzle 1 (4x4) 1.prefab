@@ -359,6 +359,14 @@ MonoBehaviour:
         gridObject: {fileID: 8771567077908809671}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!114 &8771567077908809671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 0}
@@ -793,6 +805,14 @@ MonoBehaviour:
         gridObject: {fileID: 5208920550861154045}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!114 &5208920550861154045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,6 +825,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 1}
@@ -1191,6 +1215,14 @@ MonoBehaviour:
         gridObject: {fileID: 3281316498599610041}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!114 &3281316498599610041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,6 +1235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 0}
@@ -1587,6 +1623,14 @@ MonoBehaviour:
         gridObject: {fileID: 5283894651955393238}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!114 &5283894651955393238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1599,6 +1643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -1985,6 +2033,14 @@ MonoBehaviour:
         gridObject: {fileID: 5270368227377455031}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!114 &5270368227377455031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1997,6 +2053,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 4, y: 2}
@@ -2383,6 +2443,14 @@ MonoBehaviour:
         gridObject: {fileID: 1621338394850245187}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!114 &1621338394850245187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2395,6 +2463,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 0}
@@ -2486,13 +2558,13 @@ MonoBehaviour:
     pos: {x: 2, y: 0}
   - type: 0
     pos: {x: 3, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 4, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 7, y: 0}
   - type: 2
     pos: {x: 0, y: 1}
@@ -2502,11 +2574,11 @@ MonoBehaviour:
     pos: {x: 2, y: 1}
   - type: 0
     pos: {x: 3, y: 1}
-  - type: 1
+  - type: 0
     pos: {x: 4, y: 1}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 1}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 1}
   - type: 0
     pos: {x: 7, y: 1}
@@ -2518,11 +2590,11 @@ MonoBehaviour:
     pos: {x: 2, y: 2}
   - type: 0
     pos: {x: 3, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 4, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 2}
   - type: 0
     pos: {x: 7, y: 2}
@@ -2534,7 +2606,7 @@ MonoBehaviour:
     pos: {x: 2, y: 3}
   - type: 0
     pos: {x: 3, y: 3}
-  - type: 1
+  - type: 0
     pos: {x: 4, y: 3}
   - type: 0
     pos: {x: 5, y: 3}

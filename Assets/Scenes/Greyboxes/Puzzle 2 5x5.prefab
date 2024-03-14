@@ -382,6 +382,14 @@ MonoBehaviour:
         gridObject: {fileID: 989256416304307220}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &5305417051977003882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -415,6 +423,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 7, y: 2}
@@ -489,15 +501,15 @@ MonoBehaviour:
     pos: {x: 3, y: 0}
   - type: 0
     pos: {x: 4, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 7, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 8, y: 0}
-  - type: 1
+  - type: 0
     pos: {x: 9, y: 0}
   - type: 0
     pos: {x: 0, y: 1}
@@ -509,15 +521,15 @@ MonoBehaviour:
     pos: {x: 3, y: 1}
   - type: 0
     pos: {x: 4, y: 1}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 1}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 1}
   - type: 0
     pos: {x: 7, y: 1}
-  - type: 1
+  - type: 0
     pos: {x: 8, y: 1}
-  - type: 1
+  - type: 0
     pos: {x: 9, y: 1}
   - type: 0
     pos: {x: 0, y: 2}
@@ -529,15 +541,15 @@ MonoBehaviour:
     pos: {x: 3, y: 2}
   - type: 0
     pos: {x: 4, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 7, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 8, y: 2}
-  - type: 1
+  - type: 0
     pos: {x: 9, y: 2}
   - type: 0
     pos: {x: 0, y: 3}
@@ -549,9 +561,9 @@ MonoBehaviour:
     pos: {x: 3, y: 3}
   - type: 0
     pos: {x: 4, y: 3}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 3}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 3}
   - type: 0
     pos: {x: 7, y: 3}
@@ -569,11 +581,11 @@ MonoBehaviour:
     pos: {x: 3, y: 4}
   - type: 0
     pos: {x: 4, y: 4}
-  - type: 1
+  - type: 0
     pos: {x: 5, y: 4}
-  - type: 1
+  - type: 0
     pos: {x: 6, y: 4}
-  - type: 1
+  - type: 0
     pos: {x: 7, y: 4}
   - type: 0
     pos: {x: 8, y: 4}
@@ -961,6 +973,14 @@ MonoBehaviour:
         gridObject: {fileID: 7553617871512017175}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &8124147236506418058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -994,6 +1014,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 0}
@@ -1384,6 +1408,14 @@ MonoBehaviour:
         gridObject: {fileID: 7621112098633218990}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &3968126108186337331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1417,6 +1449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 0}
@@ -1803,6 +1839,14 @@ MonoBehaviour:
         gridObject: {fileID: 6478239649748149790}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &1037569096367548338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1836,6 +1880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 2}
@@ -2224,6 +2272,14 @@ MonoBehaviour:
         gridObject: {fileID: 7980793639615827635}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &4639401444399663237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2257,6 +2313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 2}
@@ -2647,6 +2707,14 @@ MonoBehaviour:
         gridObject: {fileID: 3554919690148185178}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &5794183472099406659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2680,6 +2748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 6, y: 4}
@@ -3068,6 +3140,14 @@ MonoBehaviour:
         gridObject: {fileID: 2062738266104080736}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &298519338654240547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3101,6 +3181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 8, y: 0}
@@ -3489,6 +3573,14 @@ MonoBehaviour:
         gridObject: {fileID: 5847928262710194606}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &905617715428686532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3522,6 +3614,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 9, y: 1}
@@ -3910,6 +4006,14 @@ MonoBehaviour:
         gridObject: {fileID: 1268243913608369563}
         moveThreshold: 0.01
         pushSpeed: 5
+        dragSoundRef:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: 
+        materialType: 0
 --- !u!65 &8669829326854578963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3943,6 +4047,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec398622a64e0bc449e57a91fc35953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToActivate: {x: -1, y: -1}
+  onGridUpdate:
+    methodName: 
+    targetObject: {fileID: 0}
   cells:
   - type: 1
     pos: {x: 5, y: 1}

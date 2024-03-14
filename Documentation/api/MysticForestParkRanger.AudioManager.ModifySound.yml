@@ -19,7 +19,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ModifySound
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 56
+    startLine: 85
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger

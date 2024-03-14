@@ -5,6 +5,7 @@ items:
   id: ISingleton`1
   parent: Utility
   children:
+  - Utility.ISingleton`1.Init
   - Utility.ISingleton`1.Initialize
   - Utility.ISingleton`1.Instance
   langs:
@@ -67,6 +68,46 @@ items:
   overload: Utility.ISingleton`1.Instance*
   nameWithType.vb: ISingleton(Of T).Instance
   fullName.vb: Utility.ISingleton(Of T).Instance
+- uid: Utility.ISingleton`1.Init
+  commentId: M:Utility.ISingleton`1.Init
+  id: Init
+  parent: Utility.ISingleton`1
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: ISingleton<T>.Init()
+  fullName: Utility.ISingleton<T>.Init()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Util/Singleton.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Init
+    path: ../Assets/Scripts/Util/Singleton.cs
+    startLine: 12
+  assemblies:
+  - ScriptAssembly
+  namespace: Utility
+  syntax:
+    content: >-
+      [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+
+      public static void Init()
+    content.vb: >-
+      <RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)>
+
+      Public Shared Sub Init()
+  overload: Utility.ISingleton`1.Init*
+  attributes:
+  - type: UnityEngine.RuntimeInitializeOnLoadMethodAttribute
+    ctor: UnityEngine.RuntimeInitializeOnLoadMethodAttribute.#ctor(UnityEngine.RuntimeInitializeLoadType)
+    arguments:
+    - type: UnityEngine.RuntimeInitializeLoadType
+      value: 4
+  nameWithType.vb: ISingleton(Of T).Init()
+  fullName.vb: Utility.ISingleton(Of T).Init()
 - uid: Utility.ISingleton`1.Initialize
   commentId: M:Utility.ISingleton`1.Initialize
   id: Initialize
@@ -85,7 +126,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Initialize
     path: ../Assets/Scripts/Util/Singleton.cs
-    startLine: 12
+    startLine: 17
   assemblies:
   - ScriptAssembly
   namespace: Utility
@@ -121,6 +162,14 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: Utility.ISingleton`1.Init*
+  commentId: Overload:Utility.ISingleton`1.Init
+  href: Utility.ISingleton-1.html#Utility_ISingleton_1_Init
+  name: Init
+  nameWithType: ISingleton<T>.Init
+  fullName: Utility.ISingleton<T>.Init
+  nameWithType.vb: ISingleton(Of T).Init
+  fullName.vb: Utility.ISingleton(Of T).Init
 - uid: Utility.ISingleton`1.Initialize*
   commentId: Overload:Utility.ISingleton`1.Initialize
   href: Utility.ISingleton-1.html#Utility_ISingleton_1_Initialize
