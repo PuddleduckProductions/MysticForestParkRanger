@@ -3131,19 +3131,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3989553
+      value: 0.39895517
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18785357
+      value: 0.18785354
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8120085
+      value: 0.81200856
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.38234535
+      value: -0.38234544
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3155,19 +3155,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3989553
+      value: 0.39895517
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18785357
+      value: 0.18785354
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8120085
+      value: 0.81200856
       objectReference: {fileID: 0}
     - target: {fileID: 4654254489624391069, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.38234535
+      value: -0.38234544
       objectReference: {fileID: 0}
     - target: {fileID: 4878524142877450093, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3258,281 +3258,120 @@ Transform:
   - {fileID: 861550258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &931726130602020946
-MeshFilter:
+--- !u!1001 &8769481352901617344
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6491976863247900902}
-  m_Mesh: {fileID: 384157382413462314, guid: 83bea21fd1717184291a430b7676fcd7, type: 3}
---- !u!4 &2456104911117006706
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862194863080417078}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &2526635308772734449
-MeshRenderer:
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1395205012026550485, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_Name
+      value: Vine Grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.470987
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.8099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7237397
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000062031364
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6900731
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000005586212
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790197067931308418, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5202a9d351553b447a7f72a97a683c39, type: 3}
+--- !u!1001 &8909831931694433791
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6491976863247900902}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5c2deb6d39a48df44add1afab6da67b6, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &5799988769116345328
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6491976863247900902}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000062031364, y: -0.6900731, z: -0.0000005586212, w: 0.7237397}
-  m_LocalPosition: {x: -2.470987, y: 0, z: 3.8099995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6491976863247900902
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5799988769116345328}
-  - component: {fileID: 931726130602020946}
-  - component: {fileID: 2526635308772734449}
-  - component: {fileID: 6491976863247900904}
-  - component: {fileID: 6491976863247900903}
-  m_Layer: 0
-  m_Name: Vine Grab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &6491976863247900903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6491976863247900902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e444c4960e6907488a4725445bf64c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionEnabled: 1
-  behavior:
-    rid: 1579038655834750993
-  behaviorType: Plants/VineGrowth
-  references:
-    version: 2
-    RefIds:
-    - rid: 1579038655834750993
-      type: {class: VineGrowthInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
-      data:
-        interactionObject: {fileID: 6491976863247900903}
-        onInteract:
-          m_PersistentCalls:
-            m_Calls: []
-        onUpdate:
-          methodName: 
-          targetObject: {fileID: 0}
-        targetMaterial: {fileID: 2100000, guid: 5c2deb6d39a48df44add1afab6da67b6, type: 2}
-        transitionDuration: 2
---- !u!65 &6491976863247900904
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6491976863247900902}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.272639, y: 6.435465, z: 0.9923064}
-  m_Center: {x: -2.6772218, y: 2.9162111, z: -0.06682208}
---- !u!23 &6655488167650600903
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862194863080417078}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5c2deb6d39a48df44add1afab6da67b6, type: 2}
-  - {fileID: 2100000, guid: 5c2deb6d39a48df44add1afab6da67b6, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6862194863080417078
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2456104911117006706}
-  - component: {fileID: 7716972177088426260}
-  - component: {fileID: 6655488167650600903}
-  - component: {fileID: 7716972177088426261}
-  - component: {fileID: 7716972177088426262}
-  m_Layer: 0
-  m_Name: Vine Climb
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!33 &7716972177088426260
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862194863080417078}
-  m_Mesh: {fileID: -3824453222541365002, guid: 83bea21fd1717184291a430b7676fcd7, type: 3}
---- !u!65 &7716972177088426261
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862194863080417078}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.2679094, y: 6.358808, z: 1.1993686}
-  m_Center: {x: 0.08045, y: 3.0497034, z: -0.04247105}
---- !u!114 &7716972177088426262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862194863080417078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e444c4960e6907488a4725445bf64c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionEnabled: 1
-  behavior:
-    rid: 1579038655834750994
-  behaviorType: Plants/VineGrowth
-  references:
-    version: 2
-    RefIds:
-    - rid: 1579038655834750994
-      type: {class: VineGrowthInteraction, ns: Interactions.Behaviors, asm: ScriptAssembly}
-      data:
-        interactionObject: {fileID: 7716972177088426262}
-        onInteract:
-          m_PersistentCalls:
-            m_Calls: []
-        onUpdate:
-          methodName: 
-          targetObject: {fileID: 0}
-        targetMaterial: {fileID: 2100000, guid: 5c2deb6d39a48df44add1afab6da67b6, type: 2}
-        transitionDuration: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162316830539000902, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983089201995763438, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
+      propertyPath: m_Name
+      value: Vine Climb
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 127fc12a668be9d43a355943bff000a8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3544,5 +3383,5 @@ SceneRoots:
   - {fileID: 262866316}
   - {fileID: 718302084}
   - {fileID: 2083567117}
-  - {fileID: 2456104911117006706}
-  - {fileID: 5799988769116345328}
+  - {fileID: 8909831931694433791}
+  - {fileID: 8769481352901617344}
