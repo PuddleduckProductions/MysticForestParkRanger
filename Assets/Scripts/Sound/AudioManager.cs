@@ -31,6 +31,15 @@ public class AudioManager
         eventRefs.Init();
     }
 
+    private float _volume = 1.0f;
+
+    public float volume { get { return _volume; } set {
+            _volume = value;
+            foreach (var sound in sounds) {
+                sound.Value.setVolume(_volume);
+            }
+        }}
+
     protected Dictionary<string, EventInstance> sounds = new Dictionary<string, EventInstance>()    ;
 
     public EventInstance this[string name] {
@@ -43,6 +52,7 @@ public class AudioManager
     public EventInstance RegisterSound(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
+        soundInstance.setVolume(volume);
         //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
         //UPDATE: Check to see if the name is already being used, if so, replace the old instance with the new one
@@ -57,6 +67,7 @@ public class AudioManager
     //WIP: Using the path of the Event Reference
     public EventInstance RegisterSound(string instanceName, string eventReferenceName) {
         EventInstance soundInstance = RuntimeManager.CreateInstance(eventRefs[eventReferenceName]);
+        soundInstance.setVolume(volume);
         sounds.Add(instanceName, soundInstance);
         return soundInstance;
     }
@@ -115,6 +126,7 @@ public class AudioManager
     public void PlayOneShot(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
+        soundInstance.setVolume(volume);
         //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
         //Registering sound
@@ -128,6 +140,7 @@ public class AudioManager
     public void PlayOneShotWithParameters(string soundEventName, EventReference soundEventPath, string parameterName, float parameterValue)//, Vector3 position)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
+        soundInstance.setVolume(volume);
         soundInstance.setParameterByName(parameterName, parameterValue); //ONLY WORKS ON LOCAL VARIABLES
 
         //Registering sound

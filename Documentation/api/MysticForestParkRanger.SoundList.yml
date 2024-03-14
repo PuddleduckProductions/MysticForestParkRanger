@@ -178,7 +178,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: this[]
     path: ../Assets/Scripts/Sound/SoundList.cs
-    startLine: 11
+    startLine: 18
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -212,7 +212,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Init
     path: ../Assets/Scripts/Sound/SoundList.cs
-    startLine: 17
+    startLine: 24
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger

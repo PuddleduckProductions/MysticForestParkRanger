@@ -24,7 +24,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: DebugWindow
     path: ../Assets/Editor/Debug/DebugWindow.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - EditorAssembly
   namespace: MysticForestParkRanger
@@ -178,7 +178,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: ShowExample
     path: ../Assets/Editor/Debug/DebugWindow.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - EditorAssembly
   namespace: MysticForestParkRanger
@@ -216,7 +216,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CreateGUI
     path: ../Assets/Editor/Debug/DebugWindow.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - EditorAssembly
   namespace: MysticForestParkRanger
@@ -242,7 +242,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: onUpdate
     path: ../Assets/Editor/Debug/DebugWindow.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - EditorAssembly
   namespace: MysticForestParkRanger
@@ -269,7 +269,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Log
     path: ../Assets/Editor/Debug/DebugWindow.cs
-    startLine: 41
+    startLine: 44
   assemblies:
   - EditorAssembly
   namespace: MysticForestParkRanger
@@ -301,7 +301,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: settingPath
     path: ../Assets/Editor/Debug/DebugWindow.cs
-    startLine: 45
+    startLine: 48
   assemblies:
   - EditorAssembly
   namespace: MysticForestParkRanger
