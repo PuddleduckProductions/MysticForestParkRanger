@@ -1,51 +1,38 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  id: Interaction
-  parent: Interactions
+- uid: MysticForestParkRanger.MainMenuManager
+  commentId: T:MysticForestParkRanger.MainMenuManager
+  id: MainMenuManager
+  parent: MysticForestParkRanger
   children:
-  - Interactions.Interaction.CanInteract(Interactions.Interaction)
-  - Interactions.Interaction.EndInteraction
-  - Interactions.Interaction.HasInteractionBehavior
-  - Interactions.Interaction.Interact
-  - Interactions.Interaction.Interact(Interactions.Interaction)
-  - Interactions.Interaction.InteractionUpdate
-  - Interactions.Interaction.OnDestroy
-  - Interactions.Interaction.behavior
-  - Interactions.Interaction.behaviorType
-  - Interactions.Interaction.interactionEnabled
+  - MysticForestParkRanger.MainMenuManager.GetMusicVolume
+  - MysticForestParkRanger.MainMenuManager.GetSFXVolume
+  - MysticForestParkRanger.MainMenuManager.GoBack
+  - MysticForestParkRanger.MainMenuManager.OpenCredits(UnityEngine.UI.Button)
+  - MysticForestParkRanger.MainMenuManager.OpenSettings(UnityEngine.UI.Button)
+  - MysticForestParkRanger.MainMenuManager.Quit
+  - MysticForestParkRanger.MainMenuManager.SetLanguage(System.String)
   langs:
   - csharp
   - vb
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
+  name: MainMenuManager
+  nameWithType: MainMenuManager
+  fullName: MainMenuManager
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interaction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 204
+    id: MainMenuManager
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 6
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
+  namespace: MysticForestParkRanger
   syntax:
-    content: >-
-      [RequireComponent(typeof(Collider))]
-
-      [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
-
-      public class Interaction : MonoBehaviour
-    content.vb: >-
-      <RequireComponent(GetType(Collider))>
-
-      <HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")>
-
-      Public Class Interaction Inherits MonoBehaviour
+    content: 'public class MainMenuManager : MonoBehaviour'
+    content.vb: Public Class MainMenuManager Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -167,329 +154,206 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  attributes:
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: UnityEngine.Collider
-  - type: UnityEngine.HelpURLAttribute
-    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html
-- uid: Interactions.Interaction.interactionEnabled
-  commentId: F:Interactions.Interaction.interactionEnabled
-  id: interactionEnabled
-  parent: Interactions.Interaction
+- uid: MysticForestParkRanger.MainMenuManager.OpenSettings(UnityEngine.UI.Button)
+  commentId: M:MysticForestParkRanger.MainMenuManager.OpenSettings(UnityEngine.UI.Button)
+  id: OpenSettings(UnityEngine.UI.Button)
+  parent: MysticForestParkRanger.MainMenuManager
   langs:
   - csharp
   - vb
-  name: interactionEnabled
-  nameWithType: Interaction.interactionEnabled
-  fullName: Interactions.Interaction.interactionEnabled
-  type: Field
+  name: OpenSettings(Button)
+  nameWithType: MainMenuManager.OpenSettings(Button)
+  fullName: MainMenuManager.OpenSettings(UnityEngine.UI.Button)
+  type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionEnabled
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 213
+    id: OpenSettings
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 37
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
-  summary: >-
-    Should we allow interaction with this object?
-
-    If this is set to false while IsInteracting is true,
-
-    this will allow control over <xref href="Interactions.InteractionManager.interactionButton" data-throw-if-not-resolved="false"></xref>
-  example: []
+  namespace: MysticForestParkRanger
   syntax:
-    content: public bool interactionEnabled
-    return:
-      type: System.Boolean
-    content.vb: Public interactionEnabled As Boolean
-- uid: Interactions.Interaction.behavior
-  commentId: F:Interactions.Interaction.behavior
-  id: behavior
-  parent: Interactions.Interaction
+    content: public void OpenSettings(Button button)
+    parameters:
+    - id: button
+      type: UnityEngine.UI.Button
+    content.vb: Public Sub OpenSettings(button As Button)
+  overload: MysticForestParkRanger.MainMenuManager.OpenSettings*
+- uid: MysticForestParkRanger.MainMenuManager.OpenCredits(UnityEngine.UI.Button)
+  commentId: M:MysticForestParkRanger.MainMenuManager.OpenCredits(UnityEngine.UI.Button)
+  id: OpenCredits(UnityEngine.UI.Button)
+  parent: MysticForestParkRanger.MainMenuManager
   langs:
   - csharp
   - vb
-  name: behavior
-  nameWithType: Interaction.behavior
-  fullName: Interactions.Interaction.behavior
-  type: Field
+  name: OpenCredits(Button)
+  nameWithType: MainMenuManager.OpenCredits(Button)
+  fullName: MainMenuManager.OpenCredits(UnityEngine.UI.Button)
+  type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: behavior
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 215
+    id: OpenCredits
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 46
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
+  namespace: MysticForestParkRanger
   syntax:
-    content: >-
-      [SerializeReference]
-
-      public InteractionBehavior behavior
-    return:
-      type: Interactions.Behaviors.InteractionBehavior
-    content.vb: >-
-      <SerializeReference>
-
-      Public behavior As InteractionBehavior
-  attributes:
-  - type: UnityEngine.SerializeReference
-    ctor: UnityEngine.SerializeReference.#ctor
-    arguments: []
-- uid: Interactions.Interaction.behaviorType
-  commentId: F:Interactions.Interaction.behaviorType
-  id: behaviorType
-  parent: Interactions.Interaction
+    content: public void OpenCredits(Button button)
+    parameters:
+    - id: button
+      type: UnityEngine.UI.Button
+    content.vb: Public Sub OpenCredits(button As Button)
+  overload: MysticForestParkRanger.MainMenuManager.OpenCredits*
+- uid: MysticForestParkRanger.MainMenuManager.GoBack
+  commentId: M:MysticForestParkRanger.MainMenuManager.GoBack
+  id: GoBack
+  parent: MysticForestParkRanger.MainMenuManager
   langs:
   - csharp
   - vb
-  name: behaviorType
-  nameWithType: Interaction.behaviorType
-  fullName: Interactions.Interaction.behaviorType
-  type: Field
+  name: GoBack()
+  nameWithType: MainMenuManager.GoBack()
+  fullName: MainMenuManager.GoBack()
+  type: Method
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: behaviorType
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 218
+    id: GoBack
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 55
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
+  namespace: MysticForestParkRanger
   syntax:
-    content: >-
-      [HideInInspector]
-
-      public string behaviorType
+    content: public void GoBack()
+    content.vb: Public Sub GoBack()
+  overload: MysticForestParkRanger.MainMenuManager.GoBack*
+- uid: MysticForestParkRanger.MainMenuManager.Quit
+  commentId: M:MysticForestParkRanger.MainMenuManager.Quit
+  id: Quit
+  parent: MysticForestParkRanger.MainMenuManager
+  langs:
+  - csharp
+  - vb
+  name: Quit()
+  nameWithType: MainMenuManager.Quit()
+  fullName: MainMenuManager.Quit()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Quit
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 66
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void Quit()
+    content.vb: Public Sub Quit()
+  overload: MysticForestParkRanger.MainMenuManager.Quit*
+- uid: MysticForestParkRanger.MainMenuManager.GetMusicVolume
+  commentId: M:MysticForestParkRanger.MainMenuManager.GetMusicVolume
+  id: GetMusicVolume
+  parent: MysticForestParkRanger.MainMenuManager
+  langs:
+  - csharp
+  - vb
+  name: GetMusicVolume()
+  nameWithType: MainMenuManager.GetMusicVolume()
+  fullName: MainMenuManager.GetMusicVolume()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: GetMusicVolume
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 71
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public float GetMusicVolume()
     return:
+      type: System.Single
+    content.vb: Public Function GetMusicVolume() As Single
+  overload: MysticForestParkRanger.MainMenuManager.GetMusicVolume*
+- uid: MysticForestParkRanger.MainMenuManager.GetSFXVolume
+  commentId: M:MysticForestParkRanger.MainMenuManager.GetSFXVolume
+  id: GetSFXVolume
+  parent: MysticForestParkRanger.MainMenuManager
+  langs:
+  - csharp
+  - vb
+  name: GetSFXVolume()
+  nameWithType: MainMenuManager.GetSFXVolume()
+  fullName: MainMenuManager.GetSFXVolume()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: GetSFXVolume
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 76
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public float GetSFXVolume()
+    return:
+      type: System.Single
+    content.vb: Public Function GetSFXVolume() As Single
+  overload: MysticForestParkRanger.MainMenuManager.GetSFXVolume*
+- uid: MysticForestParkRanger.MainMenuManager.SetLanguage(System.String)
+  commentId: M:MysticForestParkRanger.MainMenuManager.SetLanguage(System.String)
+  id: SetLanguage(System.String)
+  parent: MysticForestParkRanger.MainMenuManager
+  langs:
+  - csharp
+  - vb
+  name: SetLanguage(string)
+  nameWithType: MainMenuManager.SetLanguage(string)
+  fullName: MainMenuManager.SetLanguage(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/MainMenuManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: SetLanguage
+    path: ../Assets/Scripts/CharacterController/MainMenuManager.cs
+    startLine: 81
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void SetLanguage(string language = "English")
+    parameters:
+    - id: language
       type: System.String
-    content.vb: >-
-      <HideInInspector>
-
-      Public behaviorType As String
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: Interactions.Interaction.HasInteractionBehavior
-  commentId: M:Interactions.Interaction.HasInteractionBehavior
-  id: HasInteractionBehavior
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: HasInteractionBehavior()
-  nameWithType: Interaction.HasInteractionBehavior()
-  fullName: Interactions.Interaction.HasInteractionBehavior()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: HasInteractionBehavior
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 226
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public bool HasInteractionBehavior()
-    return:
-      type: System.Boolean
-    content.vb: Public Function HasInteractionBehavior() As Boolean
-  overload: Interactions.Interaction.HasInteractionBehavior*
-- uid: Interactions.Interaction.Interact
-  commentId: M:Interactions.Interaction.Interact
-  id: Interact
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: Interact()
-  nameWithType: Interaction.Interact()
-  fullName: Interactions.Interaction.Interact()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 230
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void Interact()
-    content.vb: Public Sub Interact()
-  overload: Interactions.Interaction.Interact*
-- uid: Interactions.Interaction.Interact(Interactions.Interaction)
-  commentId: M:Interactions.Interaction.Interact(Interactions.Interaction)
-  id: Interact(Interactions.Interaction)
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: Interact(Interaction)
-  nameWithType: Interaction.Interact(Interaction)
-  fullName: Interactions.Interaction.Interact(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 234
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void Interact(Interaction other)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-    content.vb: Public Sub Interact(other As Interaction)
-  overload: Interactions.Interaction.Interact*
-- uid: Interactions.Interaction.EndInteraction
-  commentId: M:Interactions.Interaction.EndInteraction
-  id: EndInteraction
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: EndInteraction()
-  nameWithType: Interaction.EndInteraction()
-  fullName: Interactions.Interaction.EndInteraction()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: EndInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 238
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void EndInteraction()
-    content.vb: Public Sub EndInteraction()
-  overload: Interactions.Interaction.EndInteraction*
-- uid: Interactions.Interaction.OnDestroy
-  commentId: M:Interactions.Interaction.OnDestroy
-  id: OnDestroy
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: OnDestroy()
-  nameWithType: Interaction.OnDestroy()
-  fullName: Interactions.Interaction.OnDestroy()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: OnDestroy
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 242
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void OnDestroy()
-    content.vb: Public Sub OnDestroy()
-  overload: Interactions.Interaction.OnDestroy*
-- uid: Interactions.Interaction.CanInteract(Interactions.Interaction)
-  commentId: M:Interactions.Interaction.CanInteract(Interactions.Interaction)
-  id: CanInteract(Interactions.Interaction)
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: CanInteract(Interaction)
-  nameWithType: Interaction.CanInteract(Interaction)
-  fullName: Interactions.Interaction.CanInteract(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CanInteract
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 246
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public bool CanInteract(Interaction other = null)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-    return:
-      type: System.Boolean
-    content.vb: Public Function CanInteract(other As Interaction = Nothing) As Boolean
-  overload: Interactions.Interaction.CanInteract*
-- uid: Interactions.Interaction.InteractionUpdate
-  commentId: M:Interactions.Interaction.InteractionUpdate
-  id: InteractionUpdate
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: InteractionUpdate()
-  nameWithType: Interaction.InteractionUpdate()
-  fullName: Interactions.Interaction.InteractionUpdate()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionUpdate
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 254
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  summary: Is this interaction still being used?
-  example: []
-  syntax:
-    content: public bool InteractionUpdate()
-    return:
-      type: System.Boolean
-      description: Whether or not to keep using this interaction
-    content.vb: Public Function InteractionUpdate() As Boolean
-  overload: Interactions.Interaction.InteractionUpdate*
+    content.vb: Public Sub SetLanguage(language As String = "English")
+  overload: MysticForestParkRanger.MainMenuManager.SetLanguage*
+  nameWithType.vb: MainMenuManager.SetLanguage(String)
+  fullName.vb: MainMenuManager.SetLanguage(String)
+  name.vb: SetLanguage(String)
 references:
-- uid: Interactions
-  commentId: N:Interactions
-  href: Interactions.html
-  name: Interactions
-  nameWithType: Interactions
-  fullName: Interactions
+- uid: MysticForestParkRanger
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -4838,52 +4702,88 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Interactions.InteractionManager.interactionButton
-  commentId: F:Interactions.InteractionManager.interactionButton
-  href: Interactions.InteractionManager.html#Interactions_InteractionManager_interactionButton
-  name: interactionButton
-  nameWithType: InteractionManager.interactionButton
-  fullName: Interactions.InteractionManager.interactionButton
-- uid: System.Boolean
-  commentId: T:System.Boolean
+- uid: MysticForestParkRanger.MainMenuManager.OpenSettings*
+  commentId: Overload:MysticForestParkRanger.MainMenuManager.OpenSettings
+  href: MysticForestParkRanger.MainMenuManager.html#MainMenuManager_OpenSettings_UnityEngine_UI_Button_
+  name: OpenSettings
+  nameWithType: MainMenuManager.OpenSettings
+  fullName: MainMenuManager.OpenSettings
+- uid: UnityEngine.UI.Button
+  commentId: T:UnityEngine.UI.Button
+  parent: UnityEngine.UI
+  isExternal: true
+  name: Button
+  nameWithType: Button
+  fullName: UnityEngine.UI.Button
+- uid: UnityEngine.UI
+  commentId: N:UnityEngine.UI
+  isExternal: true
+  name: UnityEngine.UI
+  nameWithType: UnityEngine.UI
+  fullName: UnityEngine.UI
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UI
+    name: UI
+    isExternal: true
+- uid: MysticForestParkRanger.MainMenuManager.OpenCredits*
+  commentId: Overload:MysticForestParkRanger.MainMenuManager.OpenCredits
+  href: MysticForestParkRanger.MainMenuManager.html#MainMenuManager_OpenCredits_UnityEngine_UI_Button_
+  name: OpenCredits
+  nameWithType: MainMenuManager.OpenCredits
+  fullName: MainMenuManager.OpenCredits
+- uid: MysticForestParkRanger.MainMenuManager.GoBack*
+  commentId: Overload:MysticForestParkRanger.MainMenuManager.GoBack
+  href: MysticForestParkRanger.MainMenuManager.html#MainMenuManager_GoBack
+  name: GoBack
+  nameWithType: MainMenuManager.GoBack
+  fullName: MainMenuManager.GoBack
+- uid: MysticForestParkRanger.MainMenuManager.Quit*
+  commentId: Overload:MysticForestParkRanger.MainMenuManager.Quit
+  href: MysticForestParkRanger.MainMenuManager.html#MainMenuManager_Quit
+  name: Quit
+  nameWithType: MainMenuManager.Quit
+  fullName: MainMenuManager.Quit
+- uid: MysticForestParkRanger.MainMenuManager.GetMusicVolume*
+  commentId: Overload:MysticForestParkRanger.MainMenuManager.GetMusicVolume
+  href: MysticForestParkRanger.MainMenuManager.html#MainMenuManager_GetMusicVolume
+  name: GetMusicVolume
+  nameWithType: MainMenuManager.GetMusicVolume
+  fullName: MainMenuManager.GetMusicVolume
+- uid: System.Single
+  commentId: T:System.Single
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions.Behaviors
-  commentId: N:Interactions.Behaviors
-  href: Interactions.html
-  name: Interactions.Behaviors
-  nameWithType: Interactions.Behaviors
-  fullName: Interactions.Behaviors
-  spec.csharp:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
-  spec.vb:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: MysticForestParkRanger.MainMenuManager.GetSFXVolume*
+  commentId: Overload:MysticForestParkRanger.MainMenuManager.GetSFXVolume
+  href: MysticForestParkRanger.MainMenuManager.html#MainMenuManager_GetSFXVolume
+  name: GetSFXVolume
+  nameWithType: MainMenuManager.GetSFXVolume
+  fullName: MainMenuManager.GetSFXVolume
+- uid: MysticForestParkRanger.MainMenuManager.SetLanguage*
+  commentId: Overload:MysticForestParkRanger.MainMenuManager.SetLanguage
+  href: MysticForestParkRanger.MainMenuManager.html#MainMenuManager_SetLanguage_System_String_
+  name: SetLanguage
+  nameWithType: MainMenuManager.SetLanguage
+  fullName: MainMenuManager.SetLanguage
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -4895,46 +4795,3 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Interactions.Interaction.HasInteractionBehavior*
-  commentId: Overload:Interactions.Interaction.HasInteractionBehavior
-  href: Interactions.Interaction.html#Interactions_Interaction_HasInteractionBehavior
-  name: HasInteractionBehavior
-  nameWithType: Interaction.HasInteractionBehavior
-  fullName: Interactions.Interaction.HasInteractionBehavior
-- uid: Interactions.Interaction.Interact*
-  commentId: Overload:Interactions.Interaction.Interact
-  href: Interactions.Interaction.html#Interactions_Interaction_Interact
-  name: Interact
-  nameWithType: Interaction.Interact
-  fullName: Interactions.Interaction.Interact
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
-- uid: Interactions.Interaction.EndInteraction*
-  commentId: Overload:Interactions.Interaction.EndInteraction
-  href: Interactions.Interaction.html#Interactions_Interaction_EndInteraction
-  name: EndInteraction
-  nameWithType: Interaction.EndInteraction
-  fullName: Interactions.Interaction.EndInteraction
-- uid: Interactions.Interaction.OnDestroy*
-  commentId: Overload:Interactions.Interaction.OnDestroy
-  href: Interactions.Interaction.html#Interactions_Interaction_OnDestroy
-  name: OnDestroy
-  nameWithType: Interaction.OnDestroy
-  fullName: Interactions.Interaction.OnDestroy
-- uid: Interactions.Interaction.CanInteract*
-  commentId: Overload:Interactions.Interaction.CanInteract
-  href: Interactions.Interaction.html#Interactions_Interaction_CanInteract_Interactions_Interaction_
-  name: CanInteract
-  nameWithType: Interaction.CanInteract
-  fullName: Interactions.Interaction.CanInteract
-- uid: Interactions.Interaction.InteractionUpdate*
-  commentId: Overload:Interactions.Interaction.InteractionUpdate
-  href: Interactions.Interaction.html#Interactions_Interaction_InteractionUpdate
-  name: InteractionUpdate
-  nameWithType: Interaction.InteractionUpdate
-  fullName: Interactions.Interaction.InteractionUpdate

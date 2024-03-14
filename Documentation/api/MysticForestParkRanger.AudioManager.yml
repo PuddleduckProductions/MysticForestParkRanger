@@ -8,16 +8,17 @@ items:
   - MysticForestParkRanger.AudioManager.#ctor
   - MysticForestParkRanger.AudioManager.Instance
   - MysticForestParkRanger.AudioManager.Item(System.String)
-  - MysticForestParkRanger.AudioManager.PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
+  - MysticForestParkRanger.AudioManager.PlayOneShot(System.String,FMODUnity.EventReference)
+  - MysticForestParkRanger.AudioManager.PlayOneShotWithParameters(System.String,FMODUnity.EventReference,System.String,System.Single)
   - MysticForestParkRanger.AudioManager.RegisterSound(System.String,FMODUnity.EventReference)
   - MysticForestParkRanger.AudioManager.RegisterSound(System.String,System.String)
+  - MysticForestParkRanger.AudioManager.RegisterSound2(System.String,FMOD.Studio.EventInstance)
   - MysticForestParkRanger.AudioManager.SoundExists(System.String)
-  - MysticForestParkRanger.AudioManager.StartFMODEvent(System.String)
-  - MysticForestParkRanger.AudioManager.StopFMODEvent(System.String)
   - MysticForestParkRanger.AudioManager.UpdateSound(System.String,AudioManager.ModifySound)
   - MysticForestParkRanger.AudioManager._instance
   - MysticForestParkRanger.AudioManager.isPlaybackStatePaused(System.String)
   - MysticForestParkRanger.AudioManager.sounds
+  - MysticForestParkRanger.AudioManager.volume
   langs:
   - csharp
   - vb
@@ -136,6 +137,35 @@ items:
   nameWithType.vb: AudioManager.New()
   fullName.vb: AudioManager.New()
   name.vb: New()
+- uid: MysticForestParkRanger.AudioManager.volume
+  commentId: P:MysticForestParkRanger.AudioManager.volume
+  id: volume
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: volume
+  nameWithType: AudioManager.volume
+  fullName: AudioManager.volume
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: volume
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 35
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public float volume { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property volume As Single
+  overload: MysticForestParkRanger.AudioManager.volume*
 - uid: MysticForestParkRanger.AudioManager.sounds
   commentId: F:MysticForestParkRanger.AudioManager.sounds
   id: sounds
@@ -154,7 +184,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: sounds
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 33
+    startLine: 42
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -181,7 +211,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: this[]
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 35
+    startLine: 44
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -215,7 +245,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: RegisterSound
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 41
+    startLine: 51
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -251,7 +281,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: RegisterSound
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 50
+    startLine: 67
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -269,6 +299,40 @@ items:
   nameWithType.vb: AudioManager.RegisterSound(String, String)
   fullName.vb: AudioManager.RegisterSound(String, String)
   name.vb: RegisterSound(String, String)
+- uid: MysticForestParkRanger.AudioManager.RegisterSound2(System.String,FMOD.Studio.EventInstance)
+  commentId: M:MysticForestParkRanger.AudioManager.RegisterSound2(System.String,FMOD.Studio.EventInstance)
+  id: RegisterSound2(System.String,FMOD.Studio.EventInstance)
+  parent: MysticForestParkRanger.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: RegisterSound2(string, EventInstance)
+  nameWithType: AudioManager.RegisterSound2(string, EventInstance)
+  fullName: AudioManager.RegisterSound2(string, FMOD.Studio.EventInstance)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Sound/AudioManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: RegisterSound2
+    path: ../Assets/Scripts/Sound/AudioManager.cs
+    startLine: 75
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void RegisterSound2(string name, EventInstance soundInstance)
+    parameters:
+    - id: name
+      type: System.String
+    - id: soundInstance
+      type: FMOD.Studio.EventInstance
+    content.vb: Public Sub RegisterSound2(name As String, soundInstance As EventInstance)
+  overload: MysticForestParkRanger.AudioManager.RegisterSound2*
+  nameWithType.vb: AudioManager.RegisterSound2(String, EventInstance)
+  fullName.vb: AudioManager.RegisterSound2(String, FMOD.Studio.EventInstance)
+  name.vb: RegisterSound2(String, EventInstance)
 - uid: MysticForestParkRanger.AudioManager.UpdateSound(System.String,AudioManager.ModifySound)
   commentId: M:MysticForestParkRanger.AudioManager.UpdateSound(System.String,AudioManager.ModifySound)
   id: UpdateSound(System.String,AudioManager.ModifySound)
@@ -287,7 +351,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: UpdateSound
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 58
+    startLine: 87
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -321,7 +385,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: SoundExists
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 63
+    startLine: 92
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -355,7 +419,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isPlaybackStatePaused
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 69
+    startLine: 98
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -371,16 +435,16 @@ items:
   nameWithType.vb: AudioManager.isPlaybackStatePaused(String)
   fullName.vb: AudioManager.isPlaybackStatePaused(String)
   name.vb: isPlaybackStatePaused(String)
-- uid: MysticForestParkRanger.AudioManager.PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
-  commentId: M:MysticForestParkRanger.AudioManager.PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
-  id: PlayOneShot(FMODUnity.EventReference,UnityEngine.Vector3)
+- uid: MysticForestParkRanger.AudioManager.PlayOneShot(System.String,FMODUnity.EventReference)
+  commentId: M:MysticForestParkRanger.AudioManager.PlayOneShot(System.String,FMODUnity.EventReference)
+  id: PlayOneShot(System.String,FMODUnity.EventReference)
   parent: MysticForestParkRanger.AudioManager
   langs:
   - csharp
   - vb
-  name: PlayOneShot(EventReference, Vector3)
-  nameWithType: AudioManager.PlayOneShot(EventReference, Vector3)
-  fullName: AudioManager.PlayOneShot(FMODUnity.EventReference, UnityEngine.Vector3)
+  name: PlayOneShot(string, EventReference)
+  nameWithType: AudioManager.PlayOneShot(string, EventReference)
+  fullName: AudioManager.PlayOneShot(string, FMODUnity.EventReference)
   type: Method
   source:
     remote:
@@ -389,83 +453,60 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PlayOneShot
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 81
+    startLine: 109
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
   syntax:
-    content: public void PlayOneShot(EventReference soundEventPath, Vector3 position)
+    content: public void PlayOneShot(string name, EventReference soundEventPath)
     parameters:
+    - id: name
+      type: System.String
     - id: soundEventPath
       type: FMODUnity.EventReference
-    - id: position
-      type: UnityEngine.Vector3
-    content.vb: Public Sub PlayOneShot(soundEventPath As EventReference, position As Vector3)
+    content.vb: Public Sub PlayOneShot(name As String, soundEventPath As EventReference)
   overload: MysticForestParkRanger.AudioManager.PlayOneShot*
-- uid: MysticForestParkRanger.AudioManager.StartFMODEvent(System.String)
-  commentId: M:MysticForestParkRanger.AudioManager.StartFMODEvent(System.String)
-  id: StartFMODEvent(System.String)
+  nameWithType.vb: AudioManager.PlayOneShot(String, EventReference)
+  fullName.vb: AudioManager.PlayOneShot(String, FMODUnity.EventReference)
+  name.vb: PlayOneShot(String, EventReference)
+- uid: MysticForestParkRanger.AudioManager.PlayOneShotWithParameters(System.String,FMODUnity.EventReference,System.String,System.Single)
+  commentId: M:MysticForestParkRanger.AudioManager.PlayOneShotWithParameters(System.String,FMODUnity.EventReference,System.String,System.Single)
+  id: PlayOneShotWithParameters(System.String,FMODUnity.EventReference,System.String,System.Single)
   parent: MysticForestParkRanger.AudioManager
   langs:
   - csharp
   - vb
-  name: StartFMODEvent(string)
-  nameWithType: AudioManager.StartFMODEvent(string)
-  fullName: AudioManager.StartFMODEvent(string)
+  name: PlayOneShotWithParameters(string, EventReference, string, float)
+  nameWithType: AudioManager.PlayOneShotWithParameters(string, EventReference, string, float)
+  fullName: AudioManager.PlayOneShotWithParameters(string, FMODUnity.EventReference, string, float)
   type: Method
   source:
     remote:
       path: Assets/Scripts/Sound/AudioManager.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: StartFMODEvent
+    id: PlayOneShotWithParameters
     path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 86
+    startLine: 123
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
   syntax:
-    content: public void StartFMODEvent(string name)
+    content: public void PlayOneShotWithParameters(string soundEventName, EventReference soundEventPath, string parameterName, float parameterValue)
     parameters:
-    - id: name
+    - id: soundEventName
       type: System.String
-    content.vb: Public Sub StartFMODEvent(name As String)
-  overload: MysticForestParkRanger.AudioManager.StartFMODEvent*
-  nameWithType.vb: AudioManager.StartFMODEvent(String)
-  fullName.vb: AudioManager.StartFMODEvent(String)
-  name.vb: StartFMODEvent(String)
-- uid: MysticForestParkRanger.AudioManager.StopFMODEvent(System.String)
-  commentId: M:MysticForestParkRanger.AudioManager.StopFMODEvent(System.String)
-  id: StopFMODEvent(System.String)
-  parent: MysticForestParkRanger.AudioManager
-  langs:
-  - csharp
-  - vb
-  name: StopFMODEvent(string)
-  nameWithType: AudioManager.StopFMODEvent(string)
-  fullName: AudioManager.StopFMODEvent(string)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/Sound/AudioManager.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: StopFMODEvent
-    path: ../Assets/Scripts/Sound/AudioManager.cs
-    startLine: 91
-  assemblies:
-  - ScriptAssembly
-  namespace: MysticForestParkRanger
-  syntax:
-    content: public void StopFMODEvent(string name)
-    parameters:
-    - id: name
+    - id: soundEventPath
+      type: FMODUnity.EventReference
+    - id: parameterName
       type: System.String
-    content.vb: Public Sub StopFMODEvent(name As String)
-  overload: MysticForestParkRanger.AudioManager.StopFMODEvent*
-  nameWithType.vb: AudioManager.StopFMODEvent(String)
-  fullName.vb: AudioManager.StopFMODEvent(String)
-  name.vb: StopFMODEvent(String)
+    - id: parameterValue
+      type: System.Single
+    content.vb: Public Sub PlayOneShotWithParameters(soundEventName As String, soundEventPath As EventReference, parameterName As String, parameterValue As Single)
+  overload: MysticForestParkRanger.AudioManager.PlayOneShotWithParameters*
+  nameWithType.vb: AudioManager.PlayOneShotWithParameters(String, EventReference, String, Single)
+  fullName.vb: AudioManager.PlayOneShotWithParameters(String, FMODUnity.EventReference, String, Single)
+  name.vb: PlayOneShotWithParameters(String, EventReference, String, Single)
 references:
 - uid: MysticForestParkRanger
 - uid: System.Object
@@ -726,6 +767,23 @@ references:
   nameWithType.vb: AudioManager.New
   fullName.vb: AudioManager.New
   name.vb: New
+- uid: MysticForestParkRanger.AudioManager.volume*
+  commentId: Overload:MysticForestParkRanger.AudioManager.volume
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_volume
+  name: volume
+  nameWithType: AudioManager.volume
+  fullName: AudioManager.volume
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: System.Collections.Generic.Dictionary{System.String,FMOD.Studio.EventInstance}
   commentId: T:System.Collections.Generic.Dictionary{System.String,FMOD.Studio.EventInstance}
   parent: System.Collections.Generic
@@ -900,6 +958,12 @@ references:
   name: FMODUnity
   nameWithType: FMODUnity
   fullName: FMODUnity
+- uid: MysticForestParkRanger.AudioManager.RegisterSound2*
+  commentId: Overload:MysticForestParkRanger.AudioManager.RegisterSound2
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_RegisterSound2_System_String_FMOD_Studio_EventInstance_
+  name: RegisterSound2
+  nameWithType: AudioManager.RegisterSound2
+  fullName: AudioManager.RegisterSound2
 - uid: MysticForestParkRanger.AudioManager.UpdateSound*
   commentId: Overload:MysticForestParkRanger.AudioManager.UpdateSound
   href: MysticForestParkRanger.AudioManager.html#AudioManager_UpdateSound_System_String_AudioManager_ModifySound_
@@ -953,32 +1017,13 @@ references:
   fullName: AudioManager.isPlaybackStatePaused
 - uid: MysticForestParkRanger.AudioManager.PlayOneShot*
   commentId: Overload:MysticForestParkRanger.AudioManager.PlayOneShot
-  href: MysticForestParkRanger.AudioManager.html#AudioManager_PlayOneShot_FMODUnity_EventReference_UnityEngine_Vector3_
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_PlayOneShot_System_String_FMODUnity_EventReference_
   name: PlayOneShot
   nameWithType: AudioManager.PlayOneShot
   fullName: AudioManager.PlayOneShot
-- uid: UnityEngine.Vector3
-  commentId: T:UnityEngine.Vector3
-  parent: UnityEngine
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: UnityEngine.Vector3
-- uid: UnityEngine
-  commentId: N:UnityEngine
-  isExternal: true
-  name: UnityEngine
-  nameWithType: UnityEngine
-  fullName: UnityEngine
-- uid: MysticForestParkRanger.AudioManager.StartFMODEvent*
-  commentId: Overload:MysticForestParkRanger.AudioManager.StartFMODEvent
-  href: MysticForestParkRanger.AudioManager.html#AudioManager_StartFMODEvent_System_String_
-  name: StartFMODEvent
-  nameWithType: AudioManager.StartFMODEvent
-  fullName: AudioManager.StartFMODEvent
-- uid: MysticForestParkRanger.AudioManager.StopFMODEvent*
-  commentId: Overload:MysticForestParkRanger.AudioManager.StopFMODEvent
-  href: MysticForestParkRanger.AudioManager.html#AudioManager_StopFMODEvent_System_String_
-  name: StopFMODEvent
-  nameWithType: AudioManager.StopFMODEvent
-  fullName: AudioManager.StopFMODEvent
+- uid: MysticForestParkRanger.AudioManager.PlayOneShotWithParameters*
+  commentId: Overload:MysticForestParkRanger.AudioManager.PlayOneShotWithParameters
+  href: MysticForestParkRanger.AudioManager.html#AudioManager_PlayOneShotWithParameters_System_String_FMODUnity_EventReference_System_String_System_Single_
+  name: PlayOneShotWithParameters
+  nameWithType: AudioManager.PlayOneShotWithParameters
+  fullName: AudioManager.PlayOneShotWithParameters

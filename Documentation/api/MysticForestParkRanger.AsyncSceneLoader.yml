@@ -1,51 +1,34 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  id: Interaction
-  parent: Interactions
+- uid: MysticForestParkRanger.AsyncSceneLoader
+  commentId: T:MysticForestParkRanger.AsyncSceneLoader
+  id: AsyncSceneLoader
+  parent: MysticForestParkRanger
   children:
-  - Interactions.Interaction.CanInteract(Interactions.Interaction)
-  - Interactions.Interaction.EndInteraction
-  - Interactions.Interaction.HasInteractionBehavior
-  - Interactions.Interaction.Interact
-  - Interactions.Interaction.Interact(Interactions.Interaction)
-  - Interactions.Interaction.InteractionUpdate
-  - Interactions.Interaction.OnDestroy
-  - Interactions.Interaction.behavior
-  - Interactions.Interaction.behaviorType
-  - Interactions.Interaction.interactionEnabled
+  - MysticForestParkRanger.AsyncSceneLoader.offset
+  - MysticForestParkRanger.AsyncSceneLoader.rotation
+  - MysticForestParkRanger.AsyncSceneLoader.sceneToLoad
   langs:
   - csharp
   - vb
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
+  name: AsyncSceneLoader
+  nameWithType: AsyncSceneLoader
+  fullName: AsyncSceneLoader
   type: Class
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/Scenes/AsyncSceneLoader.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interaction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 204
+    id: AsyncSceneLoader
+    path: ../Assets/Scripts/Scenes/AsyncSceneLoader.cs
+    startLine: 6
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
+  namespace: MysticForestParkRanger
   syntax:
-    content: >-
-      [RequireComponent(typeof(Collider))]
-
-      [HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")]
-
-      public class Interaction : MonoBehaviour
-    content.vb: >-
-      <RequireComponent(GetType(Collider))>
-
-      <HelpURL("https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html")>
-
-      Public Class Interaction Inherits MonoBehaviour
+    content: 'public class AsyncSceneLoader : MonoBehaviour'
+    content.vb: Public Class AsyncSceneLoader Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -167,329 +150,89 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  attributes:
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: UnityEngine.Collider
-  - type: UnityEngine.HelpURLAttribute
-    ctor: UnityEngine.HelpURLAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: https://puddleduckproductions.github.io/MysticForestParkRanger/docs/Tutorials/interaction.html
-- uid: Interactions.Interaction.interactionEnabled
-  commentId: F:Interactions.Interaction.interactionEnabled
-  id: interactionEnabled
-  parent: Interactions.Interaction
+- uid: MysticForestParkRanger.AsyncSceneLoader.sceneToLoad
+  commentId: F:MysticForestParkRanger.AsyncSceneLoader.sceneToLoad
+  id: sceneToLoad
+  parent: MysticForestParkRanger.AsyncSceneLoader
   langs:
   - csharp
   - vb
-  name: interactionEnabled
-  nameWithType: Interaction.interactionEnabled
-  fullName: Interactions.Interaction.interactionEnabled
+  name: sceneToLoad
+  nameWithType: AsyncSceneLoader.sceneToLoad
+  fullName: AsyncSceneLoader.sceneToLoad
   type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/Scenes/AsyncSceneLoader.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: interactionEnabled
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 213
+    id: sceneToLoad
+    path: ../Assets/Scripts/Scenes/AsyncSceneLoader.cs
+    startLine: 8
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
-  summary: >-
-    Should we allow interaction with this object?
-
-    If this is set to false while IsInteracting is true,
-
-    this will allow control over <xref href="Interactions.InteractionManager.interactionButton" data-throw-if-not-resolved="false"></xref>
-  example: []
+  namespace: MysticForestParkRanger
   syntax:
-    content: public bool interactionEnabled
-    return:
-      type: System.Boolean
-    content.vb: Public interactionEnabled As Boolean
-- uid: Interactions.Interaction.behavior
-  commentId: F:Interactions.Interaction.behavior
-  id: behavior
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: behavior
-  nameWithType: Interaction.behavior
-  fullName: Interactions.Interaction.behavior
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: behavior
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 215
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: >-
-      [SerializeReference]
-
-      public InteractionBehavior behavior
-    return:
-      type: Interactions.Behaviors.InteractionBehavior
-    content.vb: >-
-      <SerializeReference>
-
-      Public behavior As InteractionBehavior
-  attributes:
-  - type: UnityEngine.SerializeReference
-    ctor: UnityEngine.SerializeReference.#ctor
-    arguments: []
-- uid: Interactions.Interaction.behaviorType
-  commentId: F:Interactions.Interaction.behaviorType
-  id: behaviorType
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: behaviorType
-  nameWithType: Interaction.behaviorType
-  fullName: Interactions.Interaction.behaviorType
-  type: Field
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: behaviorType
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 218
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      public string behaviorType
+    content: public string sceneToLoad
     return:
       type: System.String
-    content.vb: >-
-      <HideInInspector>
-
-      Public behaviorType As String
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: Interactions.Interaction.HasInteractionBehavior
-  commentId: M:Interactions.Interaction.HasInteractionBehavior
-  id: HasInteractionBehavior
-  parent: Interactions.Interaction
+    content.vb: Public sceneToLoad As String
+- uid: MysticForestParkRanger.AsyncSceneLoader.offset
+  commentId: F:MysticForestParkRanger.AsyncSceneLoader.offset
+  id: offset
+  parent: MysticForestParkRanger.AsyncSceneLoader
   langs:
   - csharp
   - vb
-  name: HasInteractionBehavior()
-  nameWithType: Interaction.HasInteractionBehavior()
-  fullName: Interactions.Interaction.HasInteractionBehavior()
-  type: Method
+  name: offset
+  nameWithType: AsyncSceneLoader.offset
+  fullName: AsyncSceneLoader.offset
+  type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/Scenes/AsyncSceneLoader.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: HasInteractionBehavior
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 226
+    id: offset
+    path: ../Assets/Scripts/Scenes/AsyncSceneLoader.cs
+    startLine: 9
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
+  namespace: MysticForestParkRanger
   syntax:
-    content: public bool HasInteractionBehavior()
+    content: public Vector3 offset
     return:
-      type: System.Boolean
-    content.vb: Public Function HasInteractionBehavior() As Boolean
-  overload: Interactions.Interaction.HasInteractionBehavior*
-- uid: Interactions.Interaction.Interact
-  commentId: M:Interactions.Interaction.Interact
-  id: Interact
-  parent: Interactions.Interaction
+      type: UnityEngine.Vector3
+    content.vb: Public offset As Vector3
+- uid: MysticForestParkRanger.AsyncSceneLoader.rotation
+  commentId: F:MysticForestParkRanger.AsyncSceneLoader.rotation
+  id: rotation
+  parent: MysticForestParkRanger.AsyncSceneLoader
   langs:
   - csharp
   - vb
-  name: Interact()
-  nameWithType: Interaction.Interact()
-  fullName: Interactions.Interaction.Interact()
-  type: Method
+  name: rotation
+  nameWithType: AsyncSceneLoader.rotation
+  fullName: AsyncSceneLoader.rotation
+  type: Field
   source:
     remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
+      path: Assets/Scripts/Scenes/AsyncSceneLoader.cs
       branch: master
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 230
+    id: rotation
+    path: ../Assets/Scripts/Scenes/AsyncSceneLoader.cs
+    startLine: 10
   assemblies:
   - ScriptAssembly
-  namespace: Interactions
+  namespace: MysticForestParkRanger
   syntax:
-    content: public void Interact()
-    content.vb: Public Sub Interact()
-  overload: Interactions.Interaction.Interact*
-- uid: Interactions.Interaction.Interact(Interactions.Interaction)
-  commentId: M:Interactions.Interaction.Interact(Interactions.Interaction)
-  id: Interact(Interactions.Interaction)
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: Interact(Interaction)
-  nameWithType: Interaction.Interact(Interaction)
-  fullName: Interactions.Interaction.Interact(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: Interact
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 234
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void Interact(Interaction other)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
-    content.vb: Public Sub Interact(other As Interaction)
-  overload: Interactions.Interaction.Interact*
-- uid: Interactions.Interaction.EndInteraction
-  commentId: M:Interactions.Interaction.EndInteraction
-  id: EndInteraction
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: EndInteraction()
-  nameWithType: Interaction.EndInteraction()
-  fullName: Interactions.Interaction.EndInteraction()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: EndInteraction
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 238
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void EndInteraction()
-    content.vb: Public Sub EndInteraction()
-  overload: Interactions.Interaction.EndInteraction*
-- uid: Interactions.Interaction.OnDestroy
-  commentId: M:Interactions.Interaction.OnDestroy
-  id: OnDestroy
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: OnDestroy()
-  nameWithType: Interaction.OnDestroy()
-  fullName: Interactions.Interaction.OnDestroy()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: OnDestroy
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 242
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public void OnDestroy()
-    content.vb: Public Sub OnDestroy()
-  overload: Interactions.Interaction.OnDestroy*
-- uid: Interactions.Interaction.CanInteract(Interactions.Interaction)
-  commentId: M:Interactions.Interaction.CanInteract(Interactions.Interaction)
-  id: CanInteract(Interactions.Interaction)
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: CanInteract(Interaction)
-  nameWithType: Interaction.CanInteract(Interaction)
-  fullName: Interactions.Interaction.CanInteract(Interactions.Interaction)
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: CanInteract
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 246
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  syntax:
-    content: public bool CanInteract(Interaction other = null)
-    parameters:
-    - id: other
-      type: Interactions.Interaction
+    content: public Vector3 rotation
     return:
-      type: System.Boolean
-    content.vb: Public Function CanInteract(other As Interaction = Nothing) As Boolean
-  overload: Interactions.Interaction.CanInteract*
-- uid: Interactions.Interaction.InteractionUpdate
-  commentId: M:Interactions.Interaction.InteractionUpdate
-  id: InteractionUpdate
-  parent: Interactions.Interaction
-  langs:
-  - csharp
-  - vb
-  name: InteractionUpdate()
-  nameWithType: Interaction.InteractionUpdate()
-  fullName: Interactions.Interaction.InteractionUpdate()
-  type: Method
-  source:
-    remote:
-      path: Assets/Scripts/CharacterController/Interactions/Interaction.cs
-      branch: master
-      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
-    id: InteractionUpdate
-    path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 254
-  assemblies:
-  - ScriptAssembly
-  namespace: Interactions
-  summary: Is this interaction still being used?
-  example: []
-  syntax:
-    content: public bool InteractionUpdate()
-    return:
-      type: System.Boolean
-      description: Whether or not to keep using this interaction
-    content.vb: Public Function InteractionUpdate() As Boolean
-  overload: Interactions.Interaction.InteractionUpdate*
+      type: UnityEngine.Vector3
+    content.vb: Public rotation As Vector3
 references:
-- uid: Interactions
-  commentId: N:Interactions
-  href: Interactions.html
-  name: Interactions
-  nameWithType: Interactions
-  fullName: Interactions
+- uid: MysticForestParkRanger
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -4838,52 +4581,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Interactions.InteractionManager.interactionButton
-  commentId: F:Interactions.InteractionManager.interactionButton
-  href: Interactions.InteractionManager.html#Interactions_InteractionManager_interactionButton
-  name: interactionButton
-  nameWithType: InteractionManager.interactionButton
-  fullName: Interactions.InteractionManager.interactionButton
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: Interactions.Behaviors.InteractionBehavior
-  commentId: T:Interactions.Behaviors.InteractionBehavior
-  parent: Interactions.Behaviors
-  href: Interactions.Behaviors.InteractionBehavior.html
-  name: InteractionBehavior
-  nameWithType: InteractionBehavior
-  fullName: Interactions.Behaviors.InteractionBehavior
-- uid: Interactions.Behaviors
-  commentId: N:Interactions.Behaviors
-  href: Interactions.html
-  name: Interactions.Behaviors
-  nameWithType: Interactions.Behaviors
-  fullName: Interactions.Behaviors
-  spec.csharp:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
-  spec.vb:
-  - uid: Interactions
-    name: Interactions
-    href: Interactions.html
-  - name: .
-  - uid: Interactions.Behaviors
-    name: Behaviors
-    href: Interactions.Behaviors.html
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -4895,46 +4592,10 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Interactions.Interaction.HasInteractionBehavior*
-  commentId: Overload:Interactions.Interaction.HasInteractionBehavior
-  href: Interactions.Interaction.html#Interactions_Interaction_HasInteractionBehavior
-  name: HasInteractionBehavior
-  nameWithType: Interaction.HasInteractionBehavior
-  fullName: Interactions.Interaction.HasInteractionBehavior
-- uid: Interactions.Interaction.Interact*
-  commentId: Overload:Interactions.Interaction.Interact
-  href: Interactions.Interaction.html#Interactions_Interaction_Interact
-  name: Interact
-  nameWithType: Interaction.Interact
-  fullName: Interactions.Interaction.Interact
-- uid: Interactions.Interaction
-  commentId: T:Interactions.Interaction
-  parent: Interactions
-  href: Interactions.Interaction.html
-  name: Interaction
-  nameWithType: Interaction
-  fullName: Interactions.Interaction
-- uid: Interactions.Interaction.EndInteraction*
-  commentId: Overload:Interactions.Interaction.EndInteraction
-  href: Interactions.Interaction.html#Interactions_Interaction_EndInteraction
-  name: EndInteraction
-  nameWithType: Interaction.EndInteraction
-  fullName: Interactions.Interaction.EndInteraction
-- uid: Interactions.Interaction.OnDestroy*
-  commentId: Overload:Interactions.Interaction.OnDestroy
-  href: Interactions.Interaction.html#Interactions_Interaction_OnDestroy
-  name: OnDestroy
-  nameWithType: Interaction.OnDestroy
-  fullName: Interactions.Interaction.OnDestroy
-- uid: Interactions.Interaction.CanInteract*
-  commentId: Overload:Interactions.Interaction.CanInteract
-  href: Interactions.Interaction.html#Interactions_Interaction_CanInteract_Interactions_Interaction_
-  name: CanInteract
-  nameWithType: Interaction.CanInteract
-  fullName: Interactions.Interaction.CanInteract
-- uid: Interactions.Interaction.InteractionUpdate*
-  commentId: Overload:Interactions.Interaction.InteractionUpdate
-  href: Interactions.Interaction.html#Interactions_Interaction_InteractionUpdate
-  name: InteractionUpdate
-  nameWithType: Interaction.InteractionUpdate
-  fullName: Interactions.Interaction.InteractionUpdate
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
