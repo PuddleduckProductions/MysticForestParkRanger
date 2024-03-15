@@ -2498,6 +2498,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 129327243}
         imageToShow: {fileID: 21300000, guid: efd91009d6a9d2d4abfeec684e48320e, type: 3}
+        japanese: {fileID: 21300000, guid: 787af782cd846ea4898ebb3c7ccaf256, type: 3}
 --- !u!64 &129327244
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10343,6 +10344,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 332271355}
         imageToShow: {fileID: 21300000, guid: 1f64ef20194bced4882731dc9cb284a4, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &332271356
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10646,6 +10648,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 355363916}
         imageToShow: {fileID: 21300000, guid: 538f1ef812b264c41812c80791219393, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &355363917
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15734,6 +15737,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 547444022}
         imageToShow: {fileID: 21300000, guid: 1f64ef20194bced4882731dc9cb284a4, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &547444023
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17851,6 +17855,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 633844748}
         imageToShow: {fileID: 21300000, guid: 538f1ef812b264c41812c80791219393, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &633844749
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33881,6 +33886,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 948142371}
         imageToShow: {fileID: 21300000, guid: 7850cec7a5fda39498601c3a10ced03d, type: 3}
+        japanese: {fileID: 0}
 --- !u!1 &948438334
 GameObject:
   m_ObjectHideFlags: 0
@@ -42623,6 +42629,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 1144387186}
         imageToShow: {fileID: 21300000, guid: 538f1ef812b264c41812c80791219393, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &1144387187
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43036,6 +43043,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 1152006804}
         imageToShow: {fileID: 21300000, guid: 963c66d55287b264aae5314ce7928738, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &1152006805
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52282,6 +52290,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 1365665296}
         imageToShow: {fileID: 21300000, guid: c846cc0886cd5fc4fbb2fadd88686537, type: 3}
+        japanese: {fileID: 0}
 --- !u!43 &1366003201
 Mesh:
   m_ObjectHideFlags: 0
@@ -54243,15 +54252,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.07403292
+      value: -0.07403291
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9138255
+      value: 0.9138256
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19377528
+      value: -0.19377527
       objectReference: {fileID: 0}
     - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: friction
@@ -55976,6 +55985,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 1509043689}
         imageToShow: {fileID: 21300000, guid: 538f1ef812b264c41812c80791219393, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &1509043690
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62451,6 +62461,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 1626381320}
         imageToShow: {fileID: 21300000, guid: 538f1ef812b264c41812c80791219393, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &1626381321
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -71370,7 +71381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011126964}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20211987, y: -0.22005077, z: 0.04666142, w: 0.9531778}
+  m_LocalRotation: {x: 0.20211986, y: -0.22005078, z: 0.04666142, w: 0.9531778}
   m_LocalPosition: {x: -42.046318, y: 66.682846, z: 120.32232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -71870,6 +71881,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 2048851504}
         imageToShow: {fileID: 21300000, guid: 538f1ef812b264c41812c80791219393, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &2048851505
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -75371,6 +75383,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 2056854936}
         imageToShow: {fileID: 21300000, guid: 1f64ef20194bced4882731dc9cb284a4, type: 3}
+        japanese: {fileID: 0}
 --- !u!64 &2056854937
 MeshCollider:
   m_ObjectHideFlags: 0
