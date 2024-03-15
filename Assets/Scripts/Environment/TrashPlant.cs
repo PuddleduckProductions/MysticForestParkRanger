@@ -12,6 +12,7 @@ public class TrashPlant : MonoBehaviour
     //FMOD
     [SerializeField]
     public EventReference retractSound;
+    public EventReference successSound;
 
     // Temp code for now, we may want to change for later:
     private void FixedUpdate() {
@@ -30,6 +31,7 @@ public class TrashPlant : MonoBehaviour
         }
         if(trashTillHappy<=0){
             AudioManager.Instance.PlayOneShot("vinesRetract", retractSound, GetComponent<Transform>());
+            RuntimeManager.PlayOneShot(successSound);
             this.gameObject.SetActive(false);
         }
     }

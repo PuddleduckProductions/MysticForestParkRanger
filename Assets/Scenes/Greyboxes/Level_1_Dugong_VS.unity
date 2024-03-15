@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.53832453, g: 0.8430281, b: 0.8986922, a: 1}
+  m_IndirectSpecularColor: {r: 0.5372967, g: 0.84301805, b: 0.8986328, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -842,6 +842,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   trashTillHappy: 8
+  retractSound:
+    Guid:
+      Data1: 1935857002
+      Data2: 1324978634
+      Data3: 222265790
+      Data4: 1717641258
+    Path: event:/SFX/vinesRetract
+  successSound:
+    Guid:
+      Data1: 1950542584
+      Data2: 1339655564
+      Data3: 330540943
+      Data4: 1710265906
+    Path: event:/SFX/UI/Success
 --- !u!1001 &24828880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22773,6 +22787,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   trashTillHappy: 4
+  retractSound:
+    Guid:
+      Data1: 1935857002
+      Data2: 1324978634
+      Data3: 222265790
+      Data4: 1717641258
+    Path: event:/SFX/vinesRetract
+  successSound:
+    Guid:
+      Data1: 1950542584
+      Data2: 1339655564
+      Data3: 330540943
+      Data4: 1710265906
+    Path: event:/SFX/UI/Success
 --- !u!1001 &682171482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24034,12 +24062,12 @@ MonoBehaviour:
         interactionObject: {fileID: 715347959}
         characterVoiceRef:
           Guid:
-            Data1: 0
-            Data2: 0
-            Data3: 0
-            Data4: 0
-          Path: 
-        emotionType: 0
+            Data1: 366031315
+            Data2: 1219917500
+            Data3: -125200722
+            Data4: 1444540790
+          Path: event:/Voice/dugongVoice
+        emotionType: 2
         inkKnot: interact_Dugong
 --- !u!64 &715347960
 MeshCollider:
@@ -51472,12 +51500,12 @@ MonoBehaviour:
         interactionObject: {fileID: 1198443677}
         characterVoiceRef:
           Guid:
-            Data1: 0
-            Data2: 0
-            Data3: 0
-            Data4: 0
-          Path: 
-        emotionType: 0
+            Data1: 366031315
+            Data2: 1219917500
+            Data3: -125200722
+            Data4: 1444540790
+          Path: event:/Voice/dugongVoice
+        emotionType: 3
         inkKnot: interact_Dugong
 --- !u!64 &1198443678
 MeshCollider:
@@ -60712,6 +60740,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   trashTillHappy: 2
+  retractSound:
+    Guid:
+      Data1: 1935857002
+      Data2: 1324978634
+      Data3: 222265790
+      Data4: 1717641258
+    Path: event:/SFX/vinesRetract
+  successSound:
+    Guid:
+      Data1: 1950542584
+      Data2: 1339655564
+      Data3: 330540943
+      Data4: 1710265906
+    Path: event:/SFX/UI/Success
 --- !u!1 &1432257870
 GameObject:
   m_ObjectHideFlags: 0
@@ -79218,7 +79260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2838917590271360286, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3185866943364741786, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -79286,7 +79328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438672057862728577, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4846428142394361960, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_Sprite
@@ -79306,7 +79348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717436321329993939, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5717436321329993939, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -79314,7 +79356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717436321329993939, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5946171465929717513, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_Name
@@ -79440,6 +79482,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7848020845128279368, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8122732179405594157, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -79454,7 +79500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440253995551524970, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8440253995551524970, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -79462,11 +79508,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440253995551524970, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9009435160807324644, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052114117673933440, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: m_Value
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
