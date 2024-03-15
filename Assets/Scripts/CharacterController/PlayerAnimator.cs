@@ -67,7 +67,7 @@ public class PlayerAnimator : MonoBehaviour
                     FloorCheck();
                 } else {
                     //AudioManager.Instance.StopEventLoop(footstepName);
-                    if (!AudioManager.Instance.isPlaybackStatePaused(footsteps))
+                    if (!AudioManager.Instance.isPlaybackStatePaused(footsteps)) // TO DO: another bool for when the pause menu is up
                     {
                         footsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                     }

@@ -32407,15 +32407,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.07403292
+      value: -0.07403291
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9138255
+      value: 0.9138256
       objectReference: {fileID: 0}
     - target: {fileID: 681473966647179586, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19377528
+      value: -0.19377527
       objectReference: {fileID: 0}
     - target: {fileID: 2437757445079718294, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: movementSpeed
@@ -43373,6 +43373,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4436050775801161174, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6213844383016406511, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: extentsScale.x
       value: 2
@@ -43380,6 +43384,10 @@ PrefabInstance:
     - target: {fileID: 6213844383016406511, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: extentsScale.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122732179405594157, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8158480404355642181, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_Name
@@ -46105,7 +46113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011126964}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20211987, y: -0.22005077, z: 0.04666142, w: 0.9531778}
+  m_LocalRotation: {x: 0.20211986, y: -0.22005078, z: 0.04666142, w: 0.9531778}
   m_LocalPosition: {x: -42.046318, y: 66.682846, z: 120.32232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -46169,6 +46169,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   trashTillHappy: 2
+  retractSound:
+    Guid:
+      Data1: 1935857002
+      Data2: 1324978634
+      Data3: 222265790
+      Data4: 1717641258
+    Path: event:/SFX/vinesRetract
 --- !u!1001 &1120449055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47747,6 +47754,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   trashTillHappy: 4
+  retractSound:
+    Guid:
+      Data1: 1935857002
+      Data2: 1324978634
+      Data3: 222265790
+      Data4: 1717641258
+    Path: event:/SFX/vinesRetract
 --- !u!4 &1150574478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4383583793311563238, guid: 98d575406f25992478ca3713ff827496, type: 3}
@@ -80618,6 +80632,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   trashTillHappy: 8
+  retractSound:
+    Guid:
+      Data1: 1935857002
+      Data2: 1324978634
+      Data3: 222265790
+      Data4: 1717641258
+    Path: event:/SFX/vinesRetract
 --- !u!43 &2064470346
 Mesh:
   m_ObjectHideFlags: 0

@@ -165,10 +165,22 @@ public class AudioManager
         return false;
     }
 
-    public void PlayOneShot(string name, EventReference soundEventPath)//, Transform objectTransform)
+    public void PlayOneShot(string name, EventReference soundEventPath)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-        //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
+
+        //Registering sound
+        RegisterSound2(name, soundInstance);
+
+        //Start and release the event from memory
+        soundInstance.start();
+        soundInstance.release();
+    }
+
+    public void PlayOneShot(string name, EventReference soundEventPath, Transform objectTransform)
+    {
+        EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
         //Registering sound
         RegisterSound2(name, soundInstance);
