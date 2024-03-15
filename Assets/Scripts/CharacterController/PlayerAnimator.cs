@@ -12,12 +12,14 @@ public class PlayerAnimator : MonoBehaviour
     CharacterController controller;
 
     EventInstance footsteps;
+    string footstepName;
     [SerializeField]
     EventReference footstepRef;
 
     Ray floorRay;
     public LayerMask floorLayer;
     private int dist = 10;
+    public int previousFloor = 0;
 
     void Awake()
     {
@@ -25,7 +27,8 @@ public class PlayerAnimator : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         //TODO: when the level ends, release 'footsteps' from memory
-        footsteps = AudioManager.Instance.RegisterSound("footsteps", footstepRef);
+        footstepName = "footsteps";
+        footsteps = AudioManager.Instance.RegisterSound(footstepName, footstepRef);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(footsteps, this.transform);
 
     }
@@ -54,14 +57,21 @@ public class PlayerAnimator : MonoBehaviour
                 bool isWalking = xzVel.magnitude > 2f;
                 animator.SetBool("walking", isWalking);
                 
+                //FMOD
                 if (isWalking) {
-                    FloorCheck();
-                    if (AudioManager.Instance.isPlaybackStatePaused("footsteps")) {
+                    //AudioManager.Instance.PlayEventLoop(footstepName, footstepRef);
+                    if (AudioManager.Instance.isPlaybackStatePaused(footsteps))
+                    {
                         footsteps.start();
-
                     }
+                    FloorCheck();
                 } else {
-                    footsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    //AudioManager.Instance.StopEventLoop(footstepName);
+                    if (!AudioManager.Instance.isPlaybackStatePaused(footsteps)) // TO DO: another bool for when the pause menu is up
+                    {
+                        footsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    }
+                    
                 }
                 break;
   
@@ -80,26 +90,39 @@ public class PlayerAnimator : MonoBehaviour
         if (Physics.Raycast(floorRay, out RaycastHit hit, dist, floorLayer))
         {
             int currentFloor = hit.collider.gameObject.layer;
-            switch (currentFloor)
-            {
-                case 10:
-                    footsteps.setParameterByNameWithLabel("floorType", "Grass");
-                    break;
-                case 11:
-                    footsteps.setParameterByNameWithLabel("floorType", "Water");
-                    break;
-                case 12:
-                    footsteps.setParameterByNameWithLabel("floorType", "Sand");
-                    break;
-                case 13:
-                    footsteps.setParameterByNameWithLabel("floorType", "Wood");
-                    break;
-                case 14:
-                    footsteps.setParameterByNameWithLabel("floorType", "Concrete");
-                    break;
+
+            //TODO: refine the system so it doesn't set the parameter constantly. Only when the ground changes, or when the event turns on
+           if (currentFloor != previousFloor)
+           {
+                switch (currentFloor)
+                {
+                    case 10: //grass
+                        //AudioManager.Instance.SetLocalParameter(footstepName, "floorType", 0f);
+                        footsteps.setParameterByName("floorType", 0f);
+                        previousFloor = currentFloor;
+                        break;
+                    case 11: //water
+                        //AudioManager.Instance.SetLocalParameter(footstepName, "floorType", 1f);
+                        footsteps.setParameterByName("floorType", 1f);
+                        previousFloor = currentFloor;
+                        break;
+                    case 12: //sand
+                        //AudioManager.Instance.SetLocalParameter(footstepName, "floorType", 2f);
+                        footsteps.setParameterByName("floorType", 2f);
+                        previousFloor = currentFloor;
+                        break;
+                    case 13: //wood
+                        //AudioManager.Instance.SetLocalParameter(footstepName, "floorType", 3f);
+                        footsteps.setParameterByName("floorType", 3f);
+                        previousFloor = currentFloor;
+                        break;
+                    case 14: //concrete
+                        //AudioManager.Instance.SetLocalParameter(footstepName, "floorType", 4f);
+                        footsteps.setParameterByName("floorType", 3f);
+                        previousFloor = currentFloor;
+                        break;
+                }
             }
-
-
         } 
     }
 }

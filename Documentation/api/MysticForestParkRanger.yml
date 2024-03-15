@@ -3,15 +3,19 @@ items:
 - uid: MysticForestParkRanger
   id: MysticForestParkRanger
   children:
+  - MysticForestParkRanger.AsyncSceneLoader
   - MysticForestParkRanger.AudioManager
   - MysticForestParkRanger.AudioManager.ModifySound
   - MysticForestParkRanger.CameraZone
   - MysticForestParkRanger.DebugWindow
   - MysticForestParkRanger.DebugWindow.UpdateFunc
   - MysticForestParkRanger.InteractionShortcuts
+  - MysticForestParkRanger.MainMenuManager
   - MysticForestParkRanger.PauseManager
   - MysticForestParkRanger.PlayerAnimator
+  - MysticForestParkRanger.Settings
   - MysticForestParkRanger.SoundList
+  - MysticForestParkRanger.TrashPlant
   langs:
   - csharp
   - vb
@@ -22,6 +26,12 @@ items:
   assemblies:
   - EditorAssembly
 references:
+- uid: MysticForestParkRanger.AsyncSceneLoader
+  commentId: T:MysticForestParkRanger.AsyncSceneLoader
+  href: AsyncSceneLoader.html
+  name: AsyncSceneLoader
+  nameWithType: AsyncSceneLoader
+  fullName: AsyncSceneLoader
 - uid: MysticForestParkRanger.AudioManager
   commentId: T:MysticForestParkRanger.AudioManager
   href: AudioManager.html
@@ -90,6 +100,12 @@ references:
   name: InteractionShortcuts
   nameWithType: InteractionShortcuts
   fullName: InteractionShortcuts
+- uid: MysticForestParkRanger.MainMenuManager
+  commentId: T:MysticForestParkRanger.MainMenuManager
+  href: MainMenuManager.html
+  name: MainMenuManager
+  nameWithType: MainMenuManager
+  fullName: MainMenuManager
 - uid: MysticForestParkRanger.PauseManager
   commentId: T:MysticForestParkRanger.PauseManager
   href: PauseManager.html
@@ -102,9 +118,21 @@ references:
   name: PlayerAnimator
   nameWithType: PlayerAnimator
   fullName: PlayerAnimator
+- uid: MysticForestParkRanger.Settings
+  commentId: T:MysticForestParkRanger.Settings
+  href: Settings.html
+  name: Settings
+  nameWithType: Settings
+  fullName: Settings
 - uid: MysticForestParkRanger.SoundList
   commentId: T:MysticForestParkRanger.SoundList
   href: SoundList.html
   name: SoundList
   nameWithType: SoundList
   fullName: SoundList
+- uid: MysticForestParkRanger.TrashPlant
+  commentId: T:MysticForestParkRanger.TrashPlant
+  href: TrashPlant.html
+  name: TrashPlant
+  nameWithType: TrashPlant
+  fullName: TrashPlant

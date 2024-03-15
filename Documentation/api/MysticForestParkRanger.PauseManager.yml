@@ -6,7 +6,9 @@ items:
   parent: MysticForestParkRanger
   children:
   - MysticForestParkRanger.PauseManager.Pause
+  - MysticForestParkRanger.PauseManager.Quit
   - MysticForestParkRanger.PauseManager.Resume
+  - MysticForestParkRanger.PauseManager.SetLanguage(System.String)
   - MysticForestParkRanger.PauseManager.isPaused
   langs:
   - csharp
@@ -22,7 +24,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: PauseManager
     path: ../Assets/Scripts/CharacterController/PauseManager.cs
-    startLine: 5
+    startLine: 8
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -170,7 +172,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: isPaused
     path: ../Assets/Scripts/CharacterController/PauseManager.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -199,7 +201,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Pause
     path: ../Assets/Scripts/CharacterController/PauseManager.cs
-    startLine: 16
+    startLine: 38
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -225,7 +227,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Resume
     path: ../Assets/Scripts/CharacterController/PauseManager.cs
-    startLine: 22
+    startLine: 44
   assemblies:
   - ScriptAssembly
   namespace: MysticForestParkRanger
@@ -233,6 +235,64 @@ items:
     content: public void Resume()
     content.vb: Public Sub [Resume]()
   overload: MysticForestParkRanger.PauseManager.Resume*
+- uid: MysticForestParkRanger.PauseManager.Quit
+  commentId: M:MysticForestParkRanger.PauseManager.Quit
+  id: Quit
+  parent: MysticForestParkRanger.PauseManager
+  langs:
+  - csharp
+  - vb
+  name: Quit()
+  nameWithType: PauseManager.Quit()
+  fullName: PauseManager.Quit()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/PauseManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: Quit
+    path: ../Assets/Scripts/CharacterController/PauseManager.cs
+    startLine: 50
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void Quit()
+    content.vb: Public Sub Quit()
+  overload: MysticForestParkRanger.PauseManager.Quit*
+- uid: MysticForestParkRanger.PauseManager.SetLanguage(System.String)
+  commentId: M:MysticForestParkRanger.PauseManager.SetLanguage(System.String)
+  id: SetLanguage(System.String)
+  parent: MysticForestParkRanger.PauseManager
+  langs:
+  - csharp
+  - vb
+  name: SetLanguage(string)
+  nameWithType: PauseManager.SetLanguage(string)
+  fullName: PauseManager.SetLanguage(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/CharacterController/PauseManager.cs
+      branch: master
+      repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
+    id: SetLanguage
+    path: ../Assets/Scripts/CharacterController/PauseManager.cs
+    startLine: 55
+  assemblies:
+  - ScriptAssembly
+  namespace: MysticForestParkRanger
+  syntax:
+    content: public void SetLanguage(string language = "English")
+    parameters:
+    - id: language
+      type: System.String
+    content.vb: Public Sub SetLanguage(language As String = "English")
+  overload: MysticForestParkRanger.PauseManager.SetLanguage*
+  nameWithType.vb: PauseManager.SetLanguage(String)
+  fullName.vb: PauseManager.SetLanguage(String)
+  name.vb: SetLanguage(String)
 references:
 - uid: MysticForestParkRanger
 - uid: System.Object
@@ -4674,3 +4734,26 @@ references:
   name: Resume
   nameWithType: PauseManager.Resume
   fullName: PauseManager.Resume
+- uid: MysticForestParkRanger.PauseManager.Quit*
+  commentId: Overload:MysticForestParkRanger.PauseManager.Quit
+  href: MysticForestParkRanger.PauseManager.html#PauseManager_Quit
+  name: Quit
+  nameWithType: PauseManager.Quit
+  fullName: PauseManager.Quit
+- uid: MysticForestParkRanger.PauseManager.SetLanguage*
+  commentId: Overload:MysticForestParkRanger.PauseManager.SetLanguage
+  href: MysticForestParkRanger.PauseManager.html#PauseManager_SetLanguage_System_String_
+  name: SetLanguage
+  nameWithType: PauseManager.SetLanguage
+  fullName: PauseManager.SetLanguage
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

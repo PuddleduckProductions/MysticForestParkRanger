@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "171MysticForestParkRanger.sln"
+    "dotnet.defaultSolution": "MysticForestParkRanger.sln"
 }

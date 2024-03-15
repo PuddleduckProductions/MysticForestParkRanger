@@ -27,7 +27,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: InteractionBehavior
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -88,7 +88,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: interactionObject
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 35
+    startLine: 37
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -137,7 +137,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: .ctor
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 37
+    startLine: 39
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -169,7 +169,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 47
+    startLine: 49
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -204,7 +204,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Interact
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 55
+    startLine: 57
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -241,7 +241,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: GameObjectStart
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 60
+    startLine: 62
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -269,7 +269,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: Update
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 66
+    startLine: 68
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -302,7 +302,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: EndInteraction
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 73
+    startLine: 75
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
@@ -335,7 +335,7 @@ items:
       repo: https://github.com/PuddleduckProductions/MysticForestParkRanger.git
     id: CanInteract
     path: ../Assets/Scripts/CharacterController/Interactions/Interaction.cs
-    startLine: 81
+    startLine: 83
   assemblies:
   - ScriptAssembly
   namespace: Interactions.Behaviors
