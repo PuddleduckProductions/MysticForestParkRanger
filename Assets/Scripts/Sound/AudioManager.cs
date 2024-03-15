@@ -29,8 +29,8 @@ public class AudioManager
 
     //bus variables
     public FMOD.Studio.Bus masBus;
-    //public FMOD.Studio.Bus musBus;
-    //public FMOD.Studio.Bus sfxBus;
+    public FMOD.Studio.Bus musBus;
+    public FMOD.Studio.Bus sfxBus;
     //public FMOD.Studio.Bus voiceBus;
     //public FMOD.Studio.Bus dragBus;
     //public FMOD.Studio.Bus ambiBus;
@@ -44,16 +44,31 @@ public class AudioManager
     //public string ambiVolBusPath = "bus:/SFX/Ambience";
 
     //volume values
-    public float volume; //sfx, accourding to settings.cs
-    //public float musVolume;
-    //public float sfxVolume;
+    //public float volume = 1f;
+    //public float musVolume = 1f;
+    //public float sfxVolume = 1f;
 
 
-    public void setVolume(float volu)
+    public void SetSfxVolume(float sfxVol)
     {
-        volume = volu;
-        masBus = FMODUnity.RuntimeManager.GetBus(masVolBusPath);
-        masBus.setVolume(volu);
+        //if(sfxVolume != sfxVol)
+        //{
+            //sfxVolume = sfxVol;
+        sfxBus = FMODUnity.RuntimeManager.GetBus(sfxVolBusPath);
+        sfxBus.setVolume(sfxVol);
+        //}
+        
+    }
+
+    public void SetMusicVolume(float musVol)
+    {
+        //if (musVolume != musVol)
+        //{
+            //musVolume = musVol;
+        musBus = FMODUnity.RuntimeManager.GetBus(musVolBusPath);
+        musBus.setVolume(musVol);
+        //}
+
     }
 
 
