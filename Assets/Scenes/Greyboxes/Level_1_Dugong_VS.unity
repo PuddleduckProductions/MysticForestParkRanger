@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5372967, g: 0.8430187, b: 0.8986338, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1293,8 +1293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: alex-greybox
-  offset: {x: 62.8, y: -15.9, z: 21.9}
-  rotation: {x: 0, y: 59, z: 0}
+  offset: {x: 92.2, y: -2.8, z: 29}
+  rotation: {x: 0, y: 49.999996, z: 0}
+  scale: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!4 &36169402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4507855493973988113, guid: b3499dac262b6b44d802dbd536d782e6, type: 3}
@@ -64022,6 +64023,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1855174067}
+    - target: {fileID: 8105991693237479231, guid: 0da548b1f77ee9142a51a1c8bfdb7520, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8175575804348251641, guid: 0da548b1f77ee9142a51a1c8bfdb7520, type: 3}
       propertyPath: m_Mesh
       value: 
