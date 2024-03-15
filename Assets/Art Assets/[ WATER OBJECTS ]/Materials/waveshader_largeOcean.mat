@@ -94,9 +94,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_27389F11: 0.75
+    - Vector1_27389F11: 0.4
     - Vector1_B5940D59: 2
-    - Vector1_B7DE3985: 0.109
+    - Vector1_B7DE3985: 0.159
     - _Absorption_Coefficient: 0.205
     - _AlphaClip: 0
     - _AlphaToMask: 0
