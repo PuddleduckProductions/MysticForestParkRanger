@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utility;
@@ -10,15 +11,23 @@ public class Settings : MonoBehaviour
     public float sfxVol = 1f;
     public float musVol = 1f;
 
+    public List<GameObject> englishObjects;
+    public List<GameObject> japaneseObjects;
+
     void Awake() {
         var lang = PlayerPrefs.GetString("language");
         switch (lang) {
             case "English":
                 GameObject.Find("English").GetComponent<Button>().onClick.Invoke();
-            break;
+                UpdateLanguage(lang);
+                break;
             case "Japanese":
                 GameObject.Find("Japanese").GetComponent<Button>().onClick.Invoke();
-            break;
+                UpdateLanguage(lang);
+                break;
+            default:
+                UpdateLanguage("English");
+                break;
         }
         var volume = 1f;
 
@@ -28,6 +37,10 @@ public class Settings : MonoBehaviour
         var slider = GameObject.Find("SFX Slider").GetComponent<Slider>();
         slider.value = volume * slider.maxValue;
         UpdateVolume();
+    }
+
+    private void Start() {
+        gameObject.SetActive(false);
     }
 
     public void Update()
@@ -64,6 +77,13 @@ public class Settings : MonoBehaviour
 
     public void UpdateLanguage(string language) {
         PlayerPrefs.SetString("language", language);
+
+        foreach (var obj in englishObjects) {
+            obj.gameObject.SetActive(language == "English");
+        }
+        foreach (var obj in japaneseObjects) {
+            obj.gameObject.SetActive(language == "Japanese");
+        }
         PlayerPrefs.Save();
     }
 }
