@@ -21,7 +21,7 @@ TagManager:
   - floor Water
   - floor Sand
   - floor Wood
-  - flood Stone
+  - floor Stone
   - 
   - 
   - 
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: boat
+    uniqueID: 931436281
     locked: 0

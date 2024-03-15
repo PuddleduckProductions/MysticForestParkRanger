@@ -94,7 +94,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_27389F11: 1
+    - Vector1_27389F11: 0.75
     - Vector1_B5940D59: 2
     - Vector1_B7DE3985: 0.109
     - _Absorption_Coefficient: 0.205
@@ -115,8 +115,9 @@ Material:
     - _FoamAmount: 0
     - _Foam_Amount: 2.73
     - _Foam_Cutoff: 0.78
+    - _Foam_Intersection_Amount: 3.61
     - _Foam_Scale: 50
-    - _Foam_Speed: 0.01
+    - _Foam_Speed: 0.005
     - _Frequency: 3.6
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -130,7 +131,7 @@ Material:
     - _ReceiveShadows: 1
     - _RefractionStrength: 0.02
     - _Refraction_Scale: 1
-    - _Refraction_Speed: 0.103
+    - _Refraction_Speed: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -138,7 +139,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Water_Depth: 6.29
+    - _Water_Depth: 3.1
     - _Water_Height: 10
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -147,11 +148,11 @@ Material:
     - _Absorption_Color: {r: 1, g: 0.09307521, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepWater: {r: 0, g: 0.10013289, b: 0.24528301, a: 0.83137256}
+    - _DeepWater: {r: 0, g: 0.02438312, b: 0.07924521, a: 0.83137256}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Foam_Color: {r: 7.0465865, g: 7.0465865, b: 7.0465865, a: 0.53333336}
+    - _Foam_Color: {r: 0.78113204, g: 0.78113204, b: 0.78113204, a: 0.74509805}
     - _Foam_Direction: {r: 1, g: 1, b: 0, a: 0}
-    - _ShallowWater: {r: 1, g: 1, b: 1, a: 0.72156864}
+    - _ShallowWater: {r: 0, g: 0.13646662, b: 0.83396226, a: 0.7176471}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Water_Color: {r: 0.9386792, g: 0.9773113, b: 1, a: 0}
   m_BuildTextureStacks: []
