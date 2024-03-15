@@ -1302,6 +1302,7 @@ MonoBehaviour:
   sceneToLoad: alex-greybox
   offset: {x: 131.0834, y: 7.6000004, z: 134.97552}
   rotation: {x: 0, y: 167.89, z: 0}
+  scale: {x: 0, y: 0, z: 0}
 --- !u!4 &36169402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4507855493973988113, guid: b3499dac262b6b44d802dbd536d782e6, type: 3}
@@ -26734,6 +26735,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 743265712}
         imageToShow: {fileID: 21300000, guid: 45fe55fe3d823834589ec482ef2399ba, type: 3}
+        japanese: {fileID: 0}
 --- !u!4 &751401539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 111813251335181377, guid: b1c91627cb183d148a3591c7277e250f, type: 3}
@@ -26944,6 +26946,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c32f8dc8152571f44aceddbab69b2998, type: 3}
+--- !u!114 &787022996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9052114117673933440, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+  m_PrefabInstance: {fileID: 1967094817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &789745528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53872,6 +53885,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1270238494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7848020845128279368, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+  m_PrefabInstance: {fileID: 1967094817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1273884193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1041807018689845325, guid: e4bd99d4ea9048b4b9b7b144a193cd3c, type: 3}
@@ -65251,6 +65275,7 @@ MonoBehaviour:
       data:
         interactionObject: {fileID: 1592769520}
         imageToShow: {fileID: 21300000, guid: 45fe55fe3d823834589ec482ef2399ba, type: 3}
+        japanese: {fileID: 0}
 --- !u!33 &1592769521
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -72074,7 +72099,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 62
+  m_Radius: 70
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1795737077
 GameObject:
@@ -79212,6 +79237,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 326093881008562751, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: sfxVolume
+      value: 
+      objectReference: {fileID: 1270238494}
+    - target: {fileID: 326093881008562751, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: musicVolume
+      value: 
+      objectReference: {fileID: 787022996}
     - target: {fileID: 1557146379108937635, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_Name
       value: English Language Text
