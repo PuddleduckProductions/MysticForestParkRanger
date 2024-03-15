@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Greyboxes/alex-greybox.unity
     guid: fa9f15ba2f510f547a684f9ec346747c
   - enabled: 1
-    path: Assets/Scenes/Greyboxes/level 3.unity
+    path: Assets/Scenes/Greyboxes/Greyboxes before 3.15/level 3.unity
     guid: d028c4985b980be4b89179a9b4c86366
   - enabled: 1
     path: Assets/Scenes/Beginning.unity
