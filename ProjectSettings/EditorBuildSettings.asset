@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beginning.unity
     guid: e929ee9fa1269854aaa588fb71835ca2
+  - enabled: 1
+    path: Assets/Scenes/Greyboxes/level 3 with assets YIPEEE.unity
+    guid: 9e82f1ff6579aa84ea64c1301b32ae6b
   m_configObjects: {}

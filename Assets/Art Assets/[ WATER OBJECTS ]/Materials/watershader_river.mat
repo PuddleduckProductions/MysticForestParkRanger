@@ -32,7 +32,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _DeepWater
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -117,7 +117,7 @@ Material:
     - _Foam_Cutoff: 0.82
     - _Foam_Intersection_Amount: 1
     - _Foam_Scale: 0.02
-    - _Foam_Speed: 50
+    - _Foam_Speed: 20
     - _Frequency: 3.6
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -151,7 +151,7 @@ Material:
     - _DeepWater: {r: 0, g: 0.08301887, b: 0.19245279, a: 0.87058824}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Foam_Color: {r: 1.2721518, g: 1.3594148, b: 1.4422256, a: 0.7019608}
-    - _Foam_Direction: {r: 25, g: 5, b: 0, a: 0}
+    - _Foam_Direction: {r: 43.89, g: 5, b: 0, a: 0}
     - _ShallowWater: {r: 0.21483088, g: 0.48101202, b: 0.79622644, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Water_Color: {r: 0.9386792, g: 0.9773113, b: 1, a: 0}

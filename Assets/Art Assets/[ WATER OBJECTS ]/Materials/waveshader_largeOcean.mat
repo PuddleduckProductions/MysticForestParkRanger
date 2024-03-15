@@ -94,8 +94,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_27389F11: 0.4
-    - Vector1_B5940D59: 2
+    - Vector1_27389F11: 0.1
+    - Vector1_B5940D59: 1
     - Vector1_B7DE3985: 0.159
     - _Absorption_Coefficient: 0.205
     - _AlphaClip: 0
@@ -116,8 +116,8 @@ Material:
     - _Foam_Amount: 2.73
     - _Foam_Cutoff: 0.78
     - _Foam_Intersection_Amount: 3.61
-    - _Foam_Scale: 50
-    - _Foam_Speed: 0.005
+    - _Foam_Scale: 500
+    - _Foam_Speed: 0.0005
     - _Frequency: 3.6
     - _GlossMapScale: 0
     - _Glossiness: 0
