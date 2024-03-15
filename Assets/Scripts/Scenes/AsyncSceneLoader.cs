@@ -9,6 +9,7 @@ public class AsyncSceneLoader : MonoBehaviour
     public string sceneToLoad;
     public Vector3 offset;
     public Vector3 rotation;
+    public Vector3 scale;
 
     private IEnumerator SceneLoading() {
         var old = SceneManager.GetActiveScene();
@@ -38,6 +39,7 @@ public class AsyncSceneLoader : MonoBehaviour
         }
         parent.transform.position += this.transform.TransformPoint(offset);
         parent.transform.rotation = Quaternion.Euler(rotation + this.transform.eulerAngles);
+        parent.transform.localScale = scale;
         SceneManager.SetActiveScene(old);
     }
     private void Awake() {

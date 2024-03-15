@@ -12,12 +12,17 @@ namespace Interactions {
             public ShowImageInteraction(Interaction parent) : base(parent) { }
 
             public Sprite imageToShow;
+            public Sprite japanese;
             bool isShowing = false;
             public override void Interact() {
                 if (!isShowing) {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<characterController>().moveEnabled = false;
                     isShowing = true;
-                    ISingleton<ShowImage>.Instance.Show(imageToShow);
+                    if (PlayerPrefs.GetString("language") == "Japanese") {
+                        ISingleton<ShowImage>.Instance.Show(japanese);
+                    } else {
+                        ISingleton<ShowImage>.Instance.Show(imageToShow);
+                    }
                 } else {
                     isShowing = false;
                 }

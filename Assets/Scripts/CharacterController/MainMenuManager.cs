@@ -23,6 +23,8 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         uiInput = FindObjectOfType<InputSystemUIInputModule>();
+        EventSystem.current.SetSelectedGameObject(mainMenu.transform.GetChild(0).gameObject);
+        Cursor.visible = false;
     }
 
     private void Update()
