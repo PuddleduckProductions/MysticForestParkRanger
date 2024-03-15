@@ -92,8 +92,6 @@ items:
 - uid: MysticForestParkRanger
   name: MysticForestParkRanger
   items:
-  - uid: MysticForestParkRanger.AsyncSceneLoader
-    name: AsyncSceneLoader
   - uid: MysticForestParkRanger.AudioManager
     name: AudioManager
   - uid: MysticForestParkRanger.AudioManager.ModifySound
@@ -106,18 +104,12 @@ items:
     name: DebugWindow.UpdateFunc
   - uid: MysticForestParkRanger.InteractionShortcuts
     name: InteractionShortcuts
-  - uid: MysticForestParkRanger.MainMenuManager
-    name: MainMenuManager
   - uid: MysticForestParkRanger.PauseManager
     name: PauseManager
   - uid: MysticForestParkRanger.PlayerAnimator
     name: PlayerAnimator
-  - uid: MysticForestParkRanger.Settings
-    name: Settings
   - uid: MysticForestParkRanger.SoundList
     name: SoundList
-  - uid: MysticForestParkRanger.TrashPlant
-    name: TrashPlant
 - uid: Utility
   name: Utility
   items:

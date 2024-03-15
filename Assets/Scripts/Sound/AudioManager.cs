@@ -24,57 +24,6 @@ public class AudioManager
         _instance = null;
     }
 
-
-    // VOLUME BUSSES
-
-    //bus variables
-    public FMOD.Studio.Bus masBus;
-    public FMOD.Studio.Bus musBus;
-    public FMOD.Studio.Bus sfxBus;
-    //public FMOD.Studio.Bus voiceBus;
-    //public FMOD.Studio.Bus dragBus;
-    //public FMOD.Studio.Bus ambiBus;
-
-    //bus paths
-    public string masVolBusPath = "bus:/";
-    public string musVolBusPath = "bus:/Music";
-    public string sfxVolBusPath = "bus:/SFX";
-    //public string voiceVolBusPath = "bus:/SFX/Voice";
-    //public string dragVolBusPath = "bus:/SFX/Dragging";
-    //public string ambiVolBusPath = "bus:/SFX/Ambience";
-
-    //volume values
-    //public float volume = 1f;
-    //public float musVolume = 1f;
-    //public float sfxVolume = 1f;
-
-
-    public void SetSfxVolume(float sfxVol)
-    {
-        //if(sfxVolume != sfxVol)
-        //{
-            //sfxVolume = sfxVol;
-        sfxBus = FMODUnity.RuntimeManager.GetBus(sfxVolBusPath);
-        sfxBus.setVolume(sfxVol);
-        //}
-        
-    }
-
-    public void SetMusicVolume(float musVol)
-    {
-        //if (musVolume != musVol)
-        //{
-            //musVolume = musVol;
-        musBus = FMODUnity.RuntimeManager.GetBus(musVolBusPath);
-        musBus.setVolume(musVol);
-        //}
-
-    }
-
-
-
-    // SOUNDLIST
-
     SoundList eventRefs;
 
     public AudioManager() {
@@ -130,20 +79,13 @@ public class AudioManager
         sounds[name] = updateFunc(sound);
     }
 
-    public bool SoundExists(string name)
-    {
+    public bool SoundExists(string name) {
         return sounds.ContainsKey(name);
     }
 
 
-    //OTHER METHODS
-
 
     public bool isPlaybackStatePaused(string name) {
-        //if (!SoundExists(name))
-        //{
-        //    return true;
-        //}
         PLAYBACK_STATE playbackState;
         EventInstance soundInstance = sounds[name];
         soundInstance.getPlaybackState(out playbackState);
@@ -154,33 +96,10 @@ public class AudioManager
         return false;
     }
 
-    public bool isPlaybackStatePaused(EventInstance soundInstance)
-    {
-        PLAYBACK_STATE playbackState;
-        soundInstance.getPlaybackState(out playbackState);
-        if (playbackState == PLAYBACK_STATE.STOPPED)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public void PlayOneShot(string name, EventReference soundEventPath)
+    public void PlayOneShot(string name, EventReference soundEventPath)//, Transform objectTransform)
     {
         EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-
-        //Registering sound
-        RegisterSound2(name, soundInstance);
-
-        //Start and release the event from memory
-        soundInstance.start();
-        soundInstance.release();
-    }
-
-    public void PlayOneShot(string name, EventReference soundEventPath, Transform objectTransform)
-    {
-        EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
+        //RuntimeManager.AttachInstanceToGameObject(soundInstance, objectTransform);
 
         //Registering sound
         RegisterSound2(name, soundInstance);
@@ -203,38 +122,4 @@ public class AudioManager
         soundInstance.release();
     }
 
-    //THESE 3 ARE UNUSED
-    public void PlayEventLoop(string name, EventReference soundEventPath)
-    {
-        if (isPlaybackStatePaused(name)) {
-            if (!sounds.ContainsKey(name))
-            {
-                EventInstance soundInstance = RuntimeManager.CreateInstance(soundEventPath);
-                RegisterSound2(name, soundInstance);
-            }
-            sounds[name].start();
-            Debug.Log("footsteps are RUNNING");
-        }
-    }
-
-    public void StopEventLoop(string name)
-    {
-        if (sounds.ContainsKey(name))
-        {
-            if (!isPlaybackStatePaused(name))
-            {
-                sounds[name].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                //sounds[name].release();
-                Debug.Log("footsteps are STOPPING");
-            }
-        }
-    }
-
-    public void SetLocalParameter(string name, string parameterName, float parameterValue)
-    {
-        if (sounds.ContainsKey(name))
-        {
-            sounds[name].setParameterByName(parameterName, parameterValue);
-        }
-    }
 }

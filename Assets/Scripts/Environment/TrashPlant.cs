@@ -2,17 +2,11 @@ using Interactions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class TrashPlant : MonoBehaviour
 {
     public float radius = 1f;
     public int trashTillHappy = 3;
-
-    //FMOD
-    [SerializeField]
-    public EventReference retractSound;
-
     // Temp code for now, we may want to change for later:
     private void FixedUpdate() {
         var colliders = Physics.OverlapSphere(transform.position, radius);
@@ -29,7 +23,6 @@ public class TrashPlant : MonoBehaviour
             }
         }
         if(trashTillHappy<=0){
-            AudioManager.Instance.PlayOneShot("vinesRetract", retractSound, GetComponent<Transform>());
             this.gameObject.SetActive(false);
         }
     }
