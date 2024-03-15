@@ -11,9 +11,6 @@ public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
     public bool isPaused { get; private set; }
     [SerializeField] Slider musicVolume;
     [SerializeField] Slider sfxVolume;
-    
-    public float sfxVol = 1f;
-    public float musVol = 1f;
 
     GameObject menu;
     InputSystemUIInputModule uiInput;
@@ -34,14 +31,6 @@ public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
         {
             Resume();
         }
-        
-        if (isPaused)
-        {
-            if (isAnyVolChanged())
-            {
-                UpdateVolume();
-            }
-        }
     }
 
     public void Pause() {
@@ -61,29 +50,30 @@ public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
         Application.Quit();
     }
 
-    public bool isAnyVolChanged()
-    {
-        var sfxSlider = GameObject.Find("SFX Slider").GetComponent<Slider>();
-        var musSlider = GameObject.Find("Music Slider").GetComponent<Slider>();
-        if (sfxVol != sfxSlider.value / sfxSlider.maxValue | musVol != musSlider.value / musSlider.maxValue)
-        {
-            return true;
-        }
-        return false;
-    }
+    //public bool isAnyVolChanged()
+    //{
+    //    var sfxSlider = GameObject.Find("SFX Slider").GetComponent<Slider>();
+    //    var musSlider = GameObject.Find("Music Slider").GetComponent<Slider>();
+    //    if (sfxVol != sfxSlider.value / sfxSlider.maxValue | musVol != musSlider.value / musSlider.maxValue)
+    //    {
+    //        return true;
+    //    }
+    //    return false;
+    //}
 
 
-    public void UpdateVolume()
-    {
-        var sfxSlider = GameObject.Find("SFX Slider").GetComponent<Slider>();
-        AudioManager.Instance.SetSfxVolume(sfxSlider.value / sfxSlider.maxValue);
-        var musSlider = GameObject.Find("Music Slider").GetComponent<Slider>();
-        AudioManager.Instance.SetMusicVolume(musSlider.value / musSlider.maxValue);
+    //public void UpdateVolume()
+    //{
+    //    var sfxSlider = GameObject.Find("SFX Slider").GetComponent<Slider>();
+    //    sfxVol = sfxSlider.value / sfxSlider.maxValue;
+    //    AudioManager.Instance.SetSfxVolume(sfxVol);
+    //    var musSlider = GameObject.Find("Music Slider").GetComponent<Slider>();
+    //    musVol = musSlider.value / musSlider.maxValue;
+    //    AudioManager.Instance.SetMusicVolume(musVol);
 
-        PlayerPrefs.SetFloat("volume", (sfxSlider.value / sfxSlider.maxValue));
-        PlayerPrefs.Save();
-
-    }
+    //    PlayerPrefs.SetFloat("volume", (sfxSlider.value / sfxSlider.maxValue));
+    //    PlayerPrefs.Save();
+    //}
 
     public void SetLanguage(string language = "English"){
         if(language == "Japanese"){
