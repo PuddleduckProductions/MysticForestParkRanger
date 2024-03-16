@@ -1234,9 +1234,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: alex-greybox
-  offset: {x: 92.2, y: -2.8, z: 29}
+  offset: {x: 63.8, y: -13.7, z: -27}
   rotation: {x: 0, y: 49.999996, z: 0}
-  scale: {x: 0.5, y: 0.5, z: 0.5}
+  scale: {x: 1, y: 1, z: 1}
 --- !u!4 &36169402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4507855493973988113, guid: b3499dac262b6b44d802dbd536d782e6, type: 3}
