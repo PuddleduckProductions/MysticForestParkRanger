@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Utility;
 
 public class Settings : MonoBehaviour
 {
+
+    [SerializeField] Slider musicVolume;
+    [SerializeField] Slider sfxVolume;
 
     public float sfxVol = 1f;
     public float musVol = 1f;
@@ -41,6 +45,8 @@ public class Settings : MonoBehaviour
 
     private void Start() {
         gameObject.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(sfxVolume.gameObject);
+        EventSystem.current.SetSelectedGameObject(musicVolume.gameObject);
     }
 
     public void Update()
@@ -66,13 +72,14 @@ public class Settings : MonoBehaviour
     public void UpdateVolume()
     {
         var sfxSlider = GameObject.Find("SFX Slider").GetComponent<Slider>();
-        AudioManager.Instance.SetSfxVolume(sfxSlider.value / sfxSlider.maxValue);
+        sfxVol = sfxSlider.value / sfxSlider.maxValue;
+        AudioManager.Instance.SetSfxVolume(sfxVol);
         var musSlider = GameObject.Find("Music Slider").GetComponent<Slider>();
-        AudioManager.Instance.SetMusicVolume(musSlider.value / musSlider.maxValue);
+        musVol = musSlider.value / musSlider.maxValue;
+        AudioManager.Instance.SetMusicVolume(musVol);
 
         PlayerPrefs.SetFloat("volume", (sfxSlider.value / sfxSlider.maxValue));
         PlayerPrefs.Save();
-
     }
 
     public void UpdateLanguage(string language) {
