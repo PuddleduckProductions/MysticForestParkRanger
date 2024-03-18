@@ -716,7 +716,7 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 43.173706
+  OverrideMinDistance: 110
   OverrideMaxDistance: 2000
 --- !u!4 &1226211809
 Transform:
@@ -727,7 +727,7 @@ Transform:
   m_GameObject: {fileID: 1226211807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.522339, y: 13.5, z: 59.61736}
+  m_LocalPosition: {x: 440.9, y: 182.6, z: 472.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -964,9 +964,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideAttenuation: 1
+  OverrideMinDistance: 110
+  OverrideMaxDistance: 1000
 --- !u!4 &1827253371
 Transform:
   m_ObjectHideFlags: 0
@@ -976,7 +976,7 @@ Transform:
   m_GameObject: {fileID: 1827253369}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.522339, y: 13.5, z: 59.61736}
+  m_LocalPosition: {x: 397.6, y: 174, z: 483.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

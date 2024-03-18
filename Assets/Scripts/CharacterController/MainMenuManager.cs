@@ -33,8 +33,6 @@ public class MainMenuManager : MonoBehaviour
         {
             GoBack();
         }
-        // Set muisc volume to musicVolume.normalizedValue;
-        // Set SFX volume to sfxVolume.normalizedValue;
     }
 
     public void OpenSettings(Button button)

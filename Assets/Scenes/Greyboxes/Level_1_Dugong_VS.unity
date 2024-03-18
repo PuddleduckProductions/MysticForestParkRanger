@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5372967, g: 0.8430187, b: 0.8986338, a: 1}
+  m_IndirectSpecularColor: {r: 0.5372967, g: 0.84301805, b: 0.8986328, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2254,7 +2254,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &83340041
 MeshFilter:
@@ -3878,6 +3878,13 @@ MonoBehaviour:
       Data3: 222265790
       Data4: 1717641258
     Path: event:/SFX/vinesRetract
+  successSound:
+    Guid:
+      Data1: 1950542584
+      Data2: 1339655564
+      Data3: 330540943
+      Data4: 1710265906
+    Path: event:/SFX/UI/Success
 --- !u!4 &132403839
 Transform:
   m_ObjectHideFlags: 0
@@ -6685,7 +6692,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 3
 --- !u!33 &180824575
 MeshFilter:
@@ -15103,6 +15110,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 161425686699999802, guid: 261dbf134819c2642b5352e50bc6f674, type: 3}
   m_PrefabInstance: {fileID: 1009198067}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &380913628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -614552676
+      Data2: 1181926469
+      Data3: 1437848710
+      Data4: 702162753
+    Path: event:/SFX/UI/Menu/Select
+  Event: 
+  PlayEvent: 19
+  StopEvent: 20
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &380913629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -505549386
+      Data2: 1293187932
+      Data3: -1534456179
+      Data4: -1419225229
+    Path: event:/SFX/UI/Menu/Hover
+  Event: 
+  PlayEvent: 17
+  StopEvent: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &381964856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15822,6 +15891,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3865618205605897007, guid: c2f50bc8cfaa2ac4491279bad85e24dd, type: 3}
   m_PrefabInstance: {fileID: 405686012}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &411554714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411554715}
+  - component: {fileID: 411554717}
+  - component: {fileID: 411554716}
+  m_Layer: 0
+  m_Name: sfxOcean (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &411554715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411554714}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.08224824, z: 0.0000000037252903, w: 0.9966119}
+  m_LocalPosition: {x: 117.7, y: -5.3, z: -43.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489678570}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.436, z: 0}
+--- !u!114 &411554716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411554714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1346262031
+      Data2: 1306834974
+      Data3: 1022944413
+      Data4: 1833252045
+    Path: event:/Ambience/Ocean
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 11
+  OverrideMaxDistance: 40
+--- !u!135 &411554717
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411554714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 40
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &411683543
 Mesh:
   m_ObjectHideFlags: 0
@@ -21834,7 +21988,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 3
 --- !u!33 &620032550
 MeshFilter:
@@ -22591,7 +22745,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &634217011
 MeshFilter:
@@ -23370,7 +23524,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 2
 --- !u!33 &643679861
 MeshFilter:
@@ -28371,7 +28525,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &714925605
 MeshFilter:
@@ -43826,7 +43980,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 2
 --- !u!33 &915017178
 MeshFilter:
@@ -45882,7 +46036,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1008916466
 MeshFilter:
@@ -50075,7 +50229,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1085072206
 MeshFilter:
@@ -50732,7 +50886,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 3
 --- !u!33 &1103187384
 MeshFilter:
@@ -51855,7 +52009,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1113946629
 MeshFilter:
@@ -53277,23 +53431,23 @@ PrefabInstance:
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[0]
       value: 
-      objectReference: {fileID: 784126714}
+      objectReference: {fileID: 327487890}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[1]
       value: 
-      objectReference: {fileID: 327487890}
+      objectReference: {fileID: 549002011}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[2]
       value: 
-      objectReference: {fileID: 549002011}
+      objectReference: {fileID: 584300274}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[3]
       value: 
-      objectReference: {fileID: 584300274}
+      objectReference: {fileID: 716681215}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[4]
       value: 
-      objectReference: {fileID: 716681215}
+      objectReference: {fileID: 784126714}
     - target: {fileID: 7384292870035857171, guid: bf7affb430eebbf4da21bfa296dc7d1b, type: 3}
       propertyPath: cameras.Array.data[5]
       value: 
@@ -53775,7 +53929,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1157577793
 MeshFilter:
@@ -55622,11 +55776,11 @@ MonoBehaviour:
         interactionObject: {fileID: 1198443677}
         characterVoiceRef:
           Guid:
-            Data1: 0
-            Data2: 0
-            Data3: 0
-            Data4: 0
-          Path: 
+            Data1: 366031315
+            Data2: 1219917500
+            Data3: -125200722
+            Data4: 1444540790
+          Path: event:/Voice/dugongVoice
         emotionType: 0
         inkKnot: interact_Dugong
 --- !u!64 &1198443678
@@ -63504,7 +63658,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1369211891
 MeshFilter:
@@ -66176,7 +66330,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1457685437
 MeshFilter:
@@ -67968,6 +68122,7 @@ Transform:
   - {fileID: 1785245709}
   - {fileID: 2024446369}
   - {fileID: 1480818817}
+  - {fileID: 411554715}
   - {fileID: 728121115}
   - {fileID: 648453856}
   - {fileID: 374789092}
@@ -76630,7 +76785,7 @@ Transform:
   m_GameObject: {fileID: 1785245708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.5, y: 9.4, z: 19.2}
+  m_LocalPosition: {x: 26.3, y: 3.9, z: 5.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76686,7 +76841,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 62
+  m_Radius: 67
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1795737077
 GameObject:
@@ -77266,7 +77421,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1798418825
 MeshFilter:
@@ -80338,7 +80493,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 0
 --- !u!33 &1914642740
 MeshFilter:
@@ -81881,7 +82036,7 @@ MonoBehaviour:
             Data2: 1115783818
             Data3: -1031061859
             Data4: 985565671
-          Path: event:/SFX/Drag Interactions/dragOverSandTEMP
+          Path: event:/SFX/Grab&Drag/dragSand_Short
         materialType: 3
 --- !u!33 &1919664293
 MeshFilter:
@@ -84176,7 +84331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438672057862728577, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4846428142394361960, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_Sprite
@@ -84330,6 +84485,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7848020845128279368, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8122732179405594157, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -84358,11 +84517,245 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9052114117673933440, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      propertyPath: m_Value
+      value: 16.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 742150661755585146, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967094827}
+    - targetCorrespondingSourceObject: {fileID: 742150661755585146, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967094826}
+    - targetCorrespondingSourceObject: {fileID: 26121506415404836, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967094825}
+    - targetCorrespondingSourceObject: {fileID: 26121506415404836, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967094824}
+    - targetCorrespondingSourceObject: {fileID: 5536454351396404304, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 380913629}
+    - targetCorrespondingSourceObject: {fileID: 5536454351396404304, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 380913628}
+    - targetCorrespondingSourceObject: {fileID: 9176453714369804767, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967094823}
+    - targetCorrespondingSourceObject: {fileID: 9176453714369804767, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967094822}
   m_SourcePrefab: {fileID: 100100000, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+--- !u!1 &1967094818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9176453714369804767, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+  m_PrefabInstance: {fileID: 1967094817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1967094819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 26121506415404836, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+  m_PrefabInstance: {fileID: 1967094817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1967094820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5536454351396404304, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+  m_PrefabInstance: {fileID: 1967094817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1967094821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 742150661755585146, guid: 41ca7b010d51b884dbb7db09f4f7c55c, type: 3}
+  m_PrefabInstance: {fileID: 1967094817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1967094822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -614552676
+      Data2: 1181926469
+      Data3: 1437848710
+      Data4: 702162753
+    Path: event:/SFX/UI/Menu/Select
+  Event: 
+  PlayEvent: 19
+  StopEvent: 20
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1967094823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -505549386
+      Data2: 1293187932
+      Data3: -1534456179
+      Data4: -1419225229
+    Path: event:/SFX/UI/Menu/Hover
+  Event: 
+  PlayEvent: 17
+  StopEvent: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1967094824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -614552676
+      Data2: 1181926469
+      Data3: 1437848710
+      Data4: 702162753
+    Path: event:/SFX/UI/Menu/Select
+  Event: 
+  PlayEvent: 19
+  StopEvent: 20
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1967094825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -505549386
+      Data2: 1293187932
+      Data3: -1534456179
+      Data4: -1419225229
+    Path: event:/SFX/UI/Menu/Hover
+  Event: 
+  PlayEvent: 17
+  StopEvent: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1967094826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -614552676
+      Data2: 1181926469
+      Data3: 1437848710
+      Data4: 702162753
+    Path: event:/SFX/UI/Menu/Select
+  Event: 
+  PlayEvent: 19
+  StopEvent: 20
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1967094827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967094821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -505549386
+      Data2: 1293187932
+      Data3: -1534456179
+      Data4: -1419225229
+    Path: event:/SFX/UI/Menu/Hover
+  Event: 
+  PlayEvent: 17
+  StopEvent: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1968992414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86019,6 +86412,13 @@ MonoBehaviour:
       Data3: 222265790
       Data4: 1717641258
     Path: event:/SFX/vinesRetract
+  successSound:
+    Guid:
+      Data1: 1950542584
+      Data2: 1339655564
+      Data3: 330540943
+      Data4: 1710265906
+    Path: event:/SFX/UI/Success
 --- !u!4 &2027170738
 Transform:
   m_ObjectHideFlags: 0
@@ -89589,6 +89989,13 @@ MonoBehaviour:
       Data3: 222265790
       Data4: 1717641258
     Path: event:/SFX/vinesRetract
+  successSound:
+    Guid:
+      Data1: 1950542584
+      Data2: 1339655564
+      Data3: 330540943
+      Data4: 1710265906
+    Path: event:/SFX/UI/Success
 --- !u!4 &2144021830
 Transform:
   m_ObjectHideFlags: 0

@@ -45,8 +45,8 @@ public class Settings : MonoBehaviour
 
     private void Start() {
         gameObject.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(sfxVolume.gameObject);
-        EventSystem.current.SetSelectedGameObject(musicVolume.gameObject);
+        //EventSystem.current.SetSelectedGameObject(sfxVolume.gameObject);
+        //EventSystem.current.SetSelectedGameObject(musicVolume.gameObject);
     }
 
     public void Update()

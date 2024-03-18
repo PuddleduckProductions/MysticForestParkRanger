@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5372967, g: 0.84301805, b: 0.8986328, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33616,7 +33616,7 @@ Transform:
   m_GameObject: {fileID: 948438334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.790047, y: 32.4, z: -38.58001}
+  m_LocalPosition: {x: -63.2, y: 25.4, z: -44.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52106,7 +52106,7 @@ GameObject:
   - component: {fileID: 1375786166}
   - component: {fileID: 1375786165}
   - component: {fileID: 1375786164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bottom plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52471,7 +52471,7 @@ Transform:
   m_GameObject: {fileID: 1379474785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -120.1, y: -19.9, z: 7.6}
+  m_LocalPosition: {x: -88.3, y: -19.9, z: 13.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52532,7 +52532,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 117
+  m_Radius: 140
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1379738282 stripped
 Transform:
@@ -66872,7 +66872,7 @@ Transform:
   m_GameObject: {fileID: 1742675725}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.300056, y: 32.4, z: -38.80001}
+  m_LocalPosition: {x: -71.1001, y: 21.9, z: -44.60002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70916,7 +70916,7 @@ Transform:
   m_GameObject: {fileID: 1983404760}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.4814713, z: -0, w: 0.8764619}
-  m_LocalPosition: {x: -2.050026, y: 72.08, z: 34.36001}
+  m_LocalPosition: {x: -37.91, y: 64.69, z: 21.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70960,8 +70960,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.8, y: 9, z: 29}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.8, y: 9, z: 38.30764}
+  m_Center: {x: -0.00000833751, y: 0, z: -0.44493198}
 --- !u!43 &1984415454
 Mesh:
   m_ObjectHideFlags: 0

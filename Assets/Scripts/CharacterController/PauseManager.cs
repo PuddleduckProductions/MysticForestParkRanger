@@ -9,8 +9,8 @@ using Utility;
 public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
 {
     public bool isPaused { get; private set; }
-    [SerializeField] Slider musicVolume;
-    [SerializeField] Slider sfxVolume;
+    //[SerializeField] Slider musicVolume;
+    //[SerializeField] Slider sfxVolume;
 
     GameObject menu;
     InputSystemUIInputModule uiInput;
@@ -21,8 +21,8 @@ public class PauseManager : MonoBehaviour, ISingleton<PauseManager>
         ((ISingleton<PauseManager>)this).Initialize();
         menu = transform.GetChild(0).gameObject;
         uiInput = GetComponentInParent<InputSystemUIInputModule>();
-        EventSystem.current.SetSelectedGameObject(sfxVolume.gameObject);
-        EventSystem.current.SetSelectedGameObject(musicVolume.gameObject);
+        //EventSystem.current.SetSelectedGameObject(sfxVolume.gameObject);
+        //EventSystem.current.SetSelectedGameObject(musicVolume.gameObject);
     }
     
     private void Update()
